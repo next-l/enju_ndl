@@ -250,12 +250,12 @@ module EnjuNdl
         return publishers
       end
     end
+  end
 
-    class RecordNotFound < StandardError
-    end
+  class RecordNotFound < StandardError
+  end
 
-    class InvalidIsbn < StandardError
-    end
+  class InvalidIsbn < StandardError
   end
 end
 
