@@ -46,7 +46,8 @@ module EnjuNdl
             :language_id => language_id,
             :isbn => isbn,
             :pub_date => pub_date,
-            :nbn => nbn
+            :nbn => nbn,
+            :ndc => ndc
           )
           manifestation.publishers << publisher_patrons
         end
