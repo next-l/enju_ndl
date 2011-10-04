@@ -12,15 +12,15 @@ module EnjuNdl
 
     module ClassMethods
       def enju_ndl_search
-        include EnjuNdl::NdlSearch::ClassMethods
+        include EnjuNdl::NdlSearch
       end
 
       def enju_ndl_crd
-        include EnjuNdl::Crd::ClassMethods
+        include EnjuNdl::Crd
       end
 
       def enju_ndl_porta
-        include EnjuNdl::Porta::ClassMethods
+        include EnjuNdl::Porta
       end
     end
   end

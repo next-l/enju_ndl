@@ -1,6 +1,10 @@
 # -*- encoding: utf-8 -*-
 module EnjuNdl
   module Crd
+    def self.included(base)
+      base.extend ClassMethods
+    end
+
     module ClassMethods
       def get_crd_response(options)
         params = {:query_logic => 1, :results_num => 1, :results_num => 200, :sort => 10}.merge(options)

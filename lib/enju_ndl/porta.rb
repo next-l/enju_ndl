@@ -1,6 +1,10 @@
 # -*- encoding: utf-8 -*-
 module EnjuNdl
   module Porta
+    def self.included(base)
+      base.extend ClassMethods
+    end
+
     module ClassMethods
       def import_isbn(isbn)
         isbn = ISBN_Tools.cleanup(isbn)

@@ -1,6 +1,10 @@
 # -*- encoding: utf-8 -*-
 module EnjuNdl
   module NdlSearch
+    def self.included(base)
+      base.extend ClassMethods
+    end
+
     module ClassMethods
       def rss_import(url)
         doc = Nokogiri::XML(open(url))
