@@ -45,9 +45,8 @@ class Book
       :transcription => doc.xpath('//dcndl:titleTranscription').collect(&:content).join(' ').tr('ａ-ｚＡ-Ｚ０-９　', 'a-zA-Z0-9 ').squeeze(' '),
       :original => doc.xpath('//dcterms:alternative').collect(&:content).join(' ').tr('ａ-ｚＡ-Ｚ０-９　', 'a-zA-Z0-9 ').squeeze(' ')
     }
-    language = Language.where(
-      :iso_639_2 => doc.at('//dc:language[@xsi:type="dcterms:ISO639-2"]').content.downcase
-    ).first
+    lang = doc.at('//dc:language[@xsi:type="dcterms:ISO639-2"]').try(:content)
+    language = Language.where(:iso_639_2 => lang.downcase).first if lang
     manifestation = Manifestation.new(
       :original_title => title[:manifestation],
       :title_transcription => title[:title_transcription],
