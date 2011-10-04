@@ -40,6 +40,7 @@ module EnjuNdl
             :pub_date => pub_date,
             :nbn => nbn
           )
+          manifestation.ndc = ndc if manifestation.respond_to?(:ndc)
           manifestation.publishers << publisher_patrons
         end
 
