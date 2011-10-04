@@ -1,3 +1,4 @@
+# -*- encoding: utf-8 -*-
 module EnjuNdl
   module NdlSearch
     module ClassMethods

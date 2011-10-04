@@ -1,3 +1,4 @@
+# -*- encoding: utf-8 -*-
 module EnjuNdl
   module Crd
     module ClassMethods
