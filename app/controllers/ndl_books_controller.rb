@@ -23,7 +23,7 @@ class NdlBooksController < ApplicationController
         redirect_to manifestation_items_url(@manifestation)
       else
         flash[:notice] = t('page.resource_not_found')
-        redirect_to books_url
+        redirect_to ndl_books_url
       end
     end
   end
