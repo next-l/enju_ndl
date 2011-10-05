@@ -4,6 +4,8 @@ module NdlBooksHelper
     manifestation = Manifestation.where(:nbn => nbn).first
     unless manifestation
       link_to '追加', ndl_books_path(:book => {:nbn => nbn}), :method => :post
+    else
+      '登録済み'
     end
   end
 end

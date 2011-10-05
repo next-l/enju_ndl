@@ -7,8 +7,6 @@
   <p>
     <%= text_field_tag 'query', h(@query), {:id => 'search_form_top', :class => 'search_form'} -%>
     <%= submit_tag '検索' -%>
-
-    <%= link_to 'すべてを表示', ndl_books_path if params[:query] %>
   </p>
 <%- end -%>
 
