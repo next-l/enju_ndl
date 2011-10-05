@@ -75,4 +75,3 @@ class Book
 
   attr_accessor :url
 end
-

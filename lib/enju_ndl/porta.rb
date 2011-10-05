@@ -154,5 +154,8 @@ module EnjuNdl
         return publishers
       end
     end
+
+    class AlreadyImported < StandardError
+    end
   end
 end
