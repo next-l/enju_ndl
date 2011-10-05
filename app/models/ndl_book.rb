@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-class Book
+class NdlBook
   def self.search(query, page = 1, per_page = self.per_page)
     if query
       cnt = self.per_page
