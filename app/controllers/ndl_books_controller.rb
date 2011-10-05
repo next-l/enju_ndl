@@ -22,7 +22,7 @@ class NdlBooksController < ApplicationController
         flash[:porta_import] == true
         redirect_to manifestation_items_url(@manifestation)
       else
-        flash[:notice] = t('page.resource_not_found')
+        flash[:notice] = t('page.record_not_found')
         redirect_to ndl_books_url
       end
     end

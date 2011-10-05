@@ -22,7 +22,9 @@
   </tr>
   <% @books.each do |book| %>
     <tr class="line<%= cycle("0", "1") -%>">
-      <td><%= link_to '追加', ndl_books_path(:book => {:nbn => book.at('./dc:identifier[@xsi:type="dcndl:JPNO"]').try(:content).to_s}), :method => :post %></td>
+      <td>
+        <%= link_to_import(book.at('./dc:identifier[@xsi:type="dcndl:JPNO"]').try(:content).to_s}) %>
+      </td>
       <td>
         <%= link_to book.at('./title').content, book.at('./link').content %>
         <br />

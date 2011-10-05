@@ -74,4 +74,7 @@ class NdlBook
   end
 
   attr_accessor :url
+
+  class AlreadyImported < StandardError
+  end
 end
