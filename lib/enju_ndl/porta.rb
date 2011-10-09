@@ -24,7 +24,7 @@ module EnjuNdl
         title = get_title(doc)
 
         # date of publication
-        pub_date = doc.at('//dcterms:issued').content.try(:tr, '０-９．', '0-9-')
+        pub_date = doc.at('//dcterms:issued').content.try(:tr, '０-９．', '0-9-').to_s.gsub(/（.*）/, '')
 
         language = get_language(doc)
         nbn = doc.at('//dc:identifier[@xsi:type="dcndl:JPNO"]').content
