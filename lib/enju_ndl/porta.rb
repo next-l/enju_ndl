@@ -42,9 +42,10 @@ module EnjuNdl
             :language_id => language_id,
             :isbn => isbn,
             :pub_date => pub_date,
-            :nbn => nbn
+            :nbn => nbn,
+            :ndc => ndc
           )
-          manifestation.ndc = ndc if manifestation.respond_to?(:ndc)
+          manifestation.ndc = ndc
           manifestation.publishers << publisher_patrons
         end
 
