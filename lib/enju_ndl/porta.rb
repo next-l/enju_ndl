@@ -24,7 +24,7 @@ module EnjuNdl
         title = get_title(doc)
 
         # date of publication
-        pub_date = doc.at('//dcterms:issued').content.try(:tr, '０-９．', '0-9-')
+        pub_date = doc.at('//dcterms:issued').content.try(:tr, '０-９．', '0-9-').to_s.gsub(/（.*）/, '')
 
         language = get_language(doc)
         nbn = doc.at('//dc:identifier[@xsi:type="dcndl:JPNO"]').content
@@ -42,9 +42,10 @@ module EnjuNdl
             :language_id => language_id,
             :isbn => isbn,
             :pub_date => pub_date,
-            :nbn => nbn
+            :nbn => nbn,
+            :ndc => ndc
           )
-          manifestation.ndc = ndc if manifestation.respond_to?(:ndc)
+          manifestation.ndc = ndc
           manifestation.publishers << publisher_patrons
         end
 
