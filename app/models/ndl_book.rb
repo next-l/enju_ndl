@@ -46,30 +46,32 @@ class NdlBook
       :original => doc.xpath('//dcterms:alternative').collect(&:content).join(' ').tr('ａ-ｚＡ-Ｚ０-９　', 'a-zA-Z0-9 ').squeeze(' ')
     }
     lang = doc.at('//dc:language[@xsi:type="dcterms:ISO639-2"]').try(:content)
-    language = Language.where(:iso_639_2 => lang.downcase).first if lang
-    manifestation = Manifestation.new(
-      :original_title => title[:manifestation],
-      :title_transcription => title[:title_transcription],
-      :title_alternative => title[:original],
-      :pub_date => doc.at('//dcterms:issued').content.try(:tr, '０-９．', '0-9-'),
-      :isbn => doc.at('//dc:identifier[@xsi:type="dcndl:ISBN"]').try(:content),
-      :nbn => doc.at('//dc:identifier[@xsi:type="dcndl:JPNO"]').content,
-      :ndc => doc.at('//dc:subject[@xsi:type="dcndl:NDC"]').try(:content)
-    )
-    manifestation.language = language if language
     creators = []
     doc.xpath('//dc:creator[@xsi:type="dcndl:NDLNH"]').each do |creator|
       creators << creator.content.tr('ａ-ｚＡ-Ｚ０-９　‖', 'a-zA-Z0-9 ')
     end
-    patron_creators = Patron.import_patrons(creators.zip([]).map{|f,t| {:full_name => f, :full_name_transcription => t}})
     publishers = []
     doc.xpath('//dc:publisher').each do |publisher|
       publishers << publisher.content.tr('ａ-ｚＡ-Ｚ０-９　‖', 'a-zA-Z0-9 ')
     end
-    patron_publishers = Patron.import_patrons(publishers.zip([]).map{|f,t| {:full_name => f, :full_name_transcription => t}})
-    manifestation.creators << patron_creators
-    manifestation.publishers << patron_publishers
-    manifestation.save!
+    Manifestation.transaction do
+      language = Language.where(:iso_639_2 => lang.downcase).first if lang
+      manifestation = Manifestation.new(
+        :original_title => title[:manifestation],
+        :title_transcription => title[:title_transcription],
+        :title_alternative => title[:original],
+        :pub_date => doc.at('//dcterms:issued').content.try(:tr, '０-９．', '0-9-'),
+        :isbn => doc.at('//dc:identifier[@xsi:type="dcndl:ISBN"]').try(:content),
+        :nbn => doc.at('//dc:identifier[@xsi:type="dcndl:JPNO"]').content,
+        :ndc => doc.at('//dc:subject[@xsi:type="dcndl:NDC"]').try(:content)
+      )
+      manifestation.language = language if language
+      patron_creators = Patron.import_patrons(creators.zip([]).map{|f,t| {:full_name => f, :full_name_transcription => t}})
+      patron_publishers = Patron.import_patrons(publishers.zip([]).map{|f,t| {:full_name => f, :full_name_transcription => t}})
+      manifestation.creators << patron_creators
+      manifestation.publishers << patron_publishers
+      manifestation.save!
+    end
     manifestation
   end
 
