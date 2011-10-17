@@ -54,13 +54,18 @@ class NdlBook
     doc.xpath('//dc:publisher').each do |publisher|
       publishers << publisher.content.tr('ａ-ｚＡ-Ｚ０-９　‖', 'a-zA-Z0-9 ')
     end
+    pub_date = doc.at('//dcterms:issued').content.try(:tr, '０-９．', '0-9-').to_s.gsub(/（.*）/, '')
+    unless pub_date =~  /^\d+(-\d{0,2}){0,2}$/
+      pub_date = nil
+    end
+
     Manifestation.transaction do
       language = Language.where(:iso_639_2 => lang.downcase).first if lang
       manifestation = Manifestation.new(
         :original_title => title[:manifestation],
         :title_transcription => title[:title_transcription],
         :title_alternative => title[:original],
-        :pub_date => doc.at('//dcterms:issued').content.try(:tr, '０-９．', '0-9-'),
+        :pub_date => pub_date,
         :isbn => doc.at('//dc:identifier[@xsi:type="dcndl:ISBN"]').try(:content),
         :nbn => doc.at('//dc:identifier[@xsi:type="dcndl:JPNO"]').content,
         :ndc => doc.at('//dc:subject[@xsi:type="dcndl:NDC"]').try(:content)
