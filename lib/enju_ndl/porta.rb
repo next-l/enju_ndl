@@ -25,6 +25,9 @@ module EnjuNdl
 
         # date of publication
         pub_date = doc.at('//dcterms:issued').content.try(:tr, '０-９．', '0-9-').to_s.gsub(/（.*）/, '')
+        unless pub_date =~  /^\d+(-\d{0,2}){0,2}$/
+          pub_date = nil
+        end
 
         language = get_language(doc)
         nbn = doc.at('//dc:identifier[@xsi:type="dcndl:JPNO"]').content
