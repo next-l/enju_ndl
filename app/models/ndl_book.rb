@@ -71,8 +71,8 @@ class NdlBook
         :ndc => doc.at('//dc:subject[@xsi:type="dcndl:NDC"]').try(:content)
       )
       manifestation.language = language if language
-      patron_creators = Patron.import_patrons(creators.zip([]).map{|f,t| {:full_name => f, :full_name_transcription => t}})
-      patron_publishers = Patron.import_patrons(publishers.zip([]).map{|f,t| {:full_name => f, :full_name_transcription => t}})
+      patron_creators = Patron.import_patrons(creators.zip([]).map{|f,t| {:full_name => f, :full_name_transcription => t}}).uniq
+      patron_publishers = Patron.import_patrons(publishers.zip([]).map{|f,t| {:full_name => f, :full_name_transcription => t}}).uniq
       manifestation.creators << patron_creators
       manifestation.publishers << patron_publishers
       manifestation.save!
