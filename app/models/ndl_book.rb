@@ -68,7 +68,7 @@ class NdlBook
         :pub_date => pub_date,
         :isbn => doc.at('//dc:identifier[@xsi:type="dcndl:ISBN"]').try(:content),
         :nbn => doc.at('//dc:identifier[@xsi:type="dcndl:JPNO"]').content,
-        :ndc => doc.at('//dc:subject[@xsi:type="dcndl:NDC"]').try(:content)
+        :ndc => doc.at('//dc:subject[@xsi:type="dcndl:NDC"]').try(:content).try(:tr, '０-９．', '0-9.').to_s.gsub(/（.*）/, '')
       )
       manifestation.language = language if language
       patron_creators = Patron.import_patrons(creators.zip([]).map{|f,t| {:full_name => f, :full_name_transcription => t}}).uniq

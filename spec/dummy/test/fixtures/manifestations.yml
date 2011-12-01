@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  original_title: MyText
+  title_transcription: MyText
+  title_alternative: MyText
+  pub_date: MyString
+  isbn: MyString
+  nbn: MyString
+  ndc: MyString
+
+two:
+  original_title: MyText
+  title_transcription: MyText
+  title_alternative: MyText
+  pub_date: MyString
+  isbn: MyString
+  nbn: MyString
+  ndc: MyString

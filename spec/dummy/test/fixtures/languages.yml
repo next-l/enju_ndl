@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  native_name: MyString
+  iso_639_1: MyString
+  iso_639_2: MyString
+  iso_639_3: MyString
+  note: MyText
+  position: 1
+
+two:
+  name: MyString
+  native_name: MyString
+  iso_639_1: MyString
+  iso_639_2: MyString
+  iso_639_3: MyString
+  note: MyText
+  position: 1

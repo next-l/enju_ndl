@@ -1,0 +1,185 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.porta.ndl.go.jp:80/servicedp/opensearch?dpid=zomoku&any=library&cnt=10&idx=1
+    body: ''
+    headers:
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Thu, 01 Dec 2011 12:55:53 GMT
+      content-type:
+      - text/xml;charset=utf-8
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n<rss
+      version=\"2.0\" xmlns:dc=\"http://purl.org/dc/elements/1.1/\"\r\n    xmlns:openSearch=\"http://a9.com/-/spec/opensearchrss/1.0/\"\r\n
+      \   xmlns:dcndl=\"http://ndl.go.jp/dcndl/terms/\" \r\n    xmlns:dcndl_porta=\"http://ndl.go.jp/dcndl/dcndl_porta/\"\r\n
+      \   xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\" \r\n    xmlns:dcterms=\"http://purl.org/dc/terms/\"
+      \r\n    xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" \r\n    xsi:schemaLocation=\"http://ndl.go.jp/dcndl/dcndl_porta/
+      http://porta.ndl.go.jp/schema/dcndl_porta.xsd\"\r\n    >\r\n    \r\n    \r\n
+      \   \r\n    \r\n    \r\n\t\t\r\n\t\t\r\n\t\t<channel>\r\n\t    \t<title>\r\n\t
+      \   \t\t\r\n\t    \t\t\r\n\t    \t\tPORTA - Search： &quot;dpid=zomoku any=library
+      cnt=10 idx=1&quot;\r\n\t    \t</title>\r\n\t    \t<link>\r\n\t    \t\thttp://porta.ndl.go.jp/\r\n\t
+      \   \t</link>\r\n\t    \t<description>\r\n\t    \t\tSearch results for &quot;dpid=zomoku
+      any=library cnt=10 idx=1&quot;\r\n\t    \t\t\r\n\t    \t</description>\r\n\t
+      \   \t\r\n\t    \t<language>ja</language>\r\n\t    \t\r\n\t    \t<openSearch:totalResults>\r\n\t
+      \   \t\t10124\r\n\t    \t</openSearch:totalResults>\r\n\t\t\t\r\n\t\t\t\r\n\t\t\t\r\n\t\t\t\r\n\t\t\t\r\n\t\t\t<openSearch:startIndex>\r\n\t\t\t\t1\r\n\t\t\t</openSearch:startIndex>\r\n\t\t\t\r\n\t\t\t\r\n\t
+      \   \t<openSearch:itemsPerPage>\r\n\t    \t\t10\r\n\t    \t</openSearch:itemsPerPage>\r\n\t
+      \   \t\r\n\t    \t\r\n\t   \t\t\r\n\t   \t\t<item>\n<title>あゝ無情</title>\n<author>Ｖｉｃｔｏｒ　Ｈｕｇｏ‖［著］</author>\n<author>坂本和男‖訳註</author>\n<link>http://api.porta.ndl.go.jp/ndlopac/cgi-bin/ndlopac/ndl-book?kywd=21081769</link>\n
+      \ <description>出版地 : 東京;形態 : １７１ｐ ; １９ｃｍ;シリーズ : Ｎａｎ’ｕｎ−ｄｏ’ｓ　ｐｈｏｅｎｉｘ　ｌｉｂｒａｒｙ;シリーズよみ
+      : Ｎａｎ’ｕｎ−ｄｏ’ｓ　ｐｈｏｅｎｉｘ　ｌｉｂｒａｒｙ</description>\n<dcndl:titleTranscription>アア　ムジョウ</dcndl:titleTranscription>\n<dc:creator>Ｖｉｃｔｏｒ　Ｈｕｇｏ‖［著］</dc:creator>\n<dc:creator>坂本和男‖訳註</dc:creator>\n<dc:creator
+      xsi:type=\"dcndl:NDLNH\">Ｈｕｇｏ，Ｖｉｃｔｏｒ　Ｍａｒｉｅ（１８０２−１８８５）</dc:creator>\n<dc:subject
+      xsi:type=\"dcndl:NDLC\">Ｙ４５</dc:subject>\n<dc:publisher>南雲堂</dc:publisher>\n<dcterms:issued>１９６０．３</dcterms:issued>\n<dcterms:issued
+      xsi:type=\"dcterms:W3CDTF\">1960</dcterms:issued>\n<dc:identifier xsi:type=\"dcterms:URI\">http://api.porta.ndl.go.jp/ndlopac/cgi-bin/ndlopac/ndl-book?kywd=21081769</dc:identifier>\n<dc:identifier
+      xsi:type=\"dcndl:JPNO\">21081769</dc:identifier>\n<dc:identifier xsi:type=\"dcndl_porta:NDLCN\">Ｙ４５−Ｈ１７０６</dc:identifier>\n<dc:language
+      xsi:type=\"dcterms:ISO639-2\">JPN</dc:language>\n<dc:type xsi:type=\"dcndl_porta:PORTAType\">Text</dc:type>\n<dc:type
+      xsi:type=\"dcndl_porta:Digitalize\">4</dc:type>\n<dc:type xsi:type=\"dcndl_porta:Web-get\">4</dc:type>\n<dc:type
+      xsi:type=\"dcndl_porta:Payment\">4</dc:type>\n\n  <dcndl_porta:dpid>zomoku</dcndl_porta:dpid>\n
+      \ <dcndl_porta:repository_no>R000000001</dcndl_porta:repository_no>\n  <dcndl_porta:item_no>I004614645</dcndl_porta:item_no></item>\n<item>\n<title>ＩＳＤＮをとことん使いこなす
+      : インターネットも「超」快適　上手な切り換え方からビジネス活用まで</title>\n<author>ユニゾン‖編</author>\n<link>http://api.porta.ndl.go.jp/ndlopac/cgi-bin/ndlopac/ndl-book?kywd=97015582</link>\n
+      \ <description>出版地 : 東京;形態 : １９８ｐ ; １８ｃｍ;シリーズ : ＰＨＰ　ｂｕｓｉｎｅｓｓ　ｌｉｂｒａｒｙ. ｂｕｓｉｎｅｓｓ;シリーズよみ
+      : ＰＨＰ　ｂｕｓｉｎｅｓｓ　ｌｉｂｒａｒｙ;シリーズよみ : ｂｕｓｉｎｅｓｓ;税込価格 : ８５０円</description>\n<dcndl:titleTranscription>アイエスディーエヌ　オ　トコトン　ツカイコナス</dcndl:titleTranscription>\n<dc:creator>ユニゾン‖編</dc:creator>\n<dc:creator
+      xsi:type=\"dcndl:NDLNH\">ユニゾン</dc:creator>\n<dcndl:creatorTranscription xsi:type=\"dcndl:NDLNH\">ユニゾン</dcndl:creatorTranscription>\n<dc:subject
+      xsi:type=\"dcndl:NDLSH\">データ伝送</dc:subject>\n<dc:subject xsi:type=\"dcndl:NDLSH\">通信網</dc:subject>\n<dc:subject
+      xsi:type=\"dcndl:NDC\">５４７．４８３３</dc:subject>\n<dc:subject xsi:type=\"dcndl:NDLC\">ＮＤ６３３</dc:subject>\n<dcndl:subjectTranscription
+      xsi:type=\"dcndl:NDLSH\">データデンソウ</dcndl:subjectTranscription>\n<dcndl:subjectTranscription
+      xsi:type=\"dcndl:NDLSH\">ツウシンモウ</dcndl:subjectTranscription>\n<dc:publisher>ＰＨＰ研究所</dc:publisher>\n<dcterms:issued>１９９６．８</dcterms:issued>\n<dcterms:issued
+      xsi:type=\"dcterms:W3CDTF\">1996</dcterms:issued>\n<dc:identifier xsi:type=\"dcterms:URI\">http://api.porta.ndl.go.jp/ndlopac/cgi-bin/ndlopac/ndl-book?kywd=97015582</dc:identifier>\n<dc:identifier
+      xsi:type=\"dcndl:ISBN\">4-569-55268-4</dc:identifier>\n<dc:identifier xsi:type=\"dcndl:JPNO\">97015582</dc:identifier>\n<dc:identifier
+      xsi:type=\"dcndl_porta:NDLCN\">ＮＤ６３３−Ｇ２７４</dc:identifier>\n<dc:language xsi:type=\"dcterms:ISO639-2\">JPN</dc:language>\n<dc:identifier
+      xsi:type=\"dcndl_porta:ISBN13\">978-4-569-55268-2</dc:identifier>\n<dc:type
+      xsi:type=\"dcndl_porta:PORTAType\">Text</dc:type>\n<dc:type xsi:type=\"dcndl_porta:Digitalize\">4</dc:type>\n<dc:type
+      xsi:type=\"dcndl_porta:Web-get\">4</dc:type>\n<dc:type xsi:type=\"dcndl_porta:Payment\">4</dc:type>\n\n
+      \ <dcndl_porta:dpid>zomoku</dcndl_porta:dpid>\n  <dcndl_porta:repository_no>R000000001</dcndl_porta:repository_no>\n
+      \ <dcndl_porta:item_no>I002955013</dcndl_porta:item_no></item>\n<item>\n<title>ＩＬＬ（Ｉｎｔｅｒ−ｌｉｂｒａｒｙ　Ｌｏａｎ）システムレポート
+      : 国立大学図書館協議会学術情報システム特別委員会報告</title>\n<link>http://api.porta.ndl.go.jp/ndlopac/cgi-bin/ndlopac/ndl-book?kywd=91005165</link>\n
+      \ <description>出版地 : 〔東京〕;形態 : ７８ｐ ; ２６ｃｍ</description>\n<dcndl:titleTranscription>アイエルエル　インター　ライブラリー　ローン　システム　レポート</dcndl:titleTranscription>\n<dc:creator
+      xsi:type=\"dcndl:NDLNH\">国立大学図書館協議会</dc:creator>\n<dcndl:creatorTranscription
+      xsi:type=\"dcndl:NDLNH\">コクリツ　ダイガク　トショカン　キョウギカイ</dcndl:creatorTranscription>\n<dc:subject
+      xsi:type=\"dcndl:NDLSH\">図書館間相互貸借</dc:subject>\n<dc:subject xsi:type=\"dcndl:NDLSH\">大学図書館</dc:subject>\n<dc:subject
+      xsi:type=\"dcndl:NDC\">０１５．３８</dc:subject>\n<dc:subject xsi:type=\"dcndl:NDLC\">ＵＬ７２４</dc:subject>\n<dcndl:subjectTranscription
+      xsi:type=\"dcndl:NDLSH\">トショカンカンソウゴタイシャク</dcndl:subjectTranscription>\n<dcndl:subjectTranscription
+      xsi:type=\"dcndl:NDLSH\">ダイガクトショカン</dcndl:subjectTranscription>\n<dc:publisher>国立大学図書館協議会</dc:publisher>\n<dcterms:issued>１９９０．２</dcterms:issued>\n<dcterms:issued
+      xsi:type=\"dcterms:W3CDTF\">1990</dcterms:issued>\n<dc:identifier xsi:type=\"dcterms:URI\">http://api.porta.ndl.go.jp/ndlopac/cgi-bin/ndlopac/ndl-book?kywd=91005165</dc:identifier>\n<dc:identifier
+      xsi:type=\"dcndl:JPNO\">91005165</dc:identifier>\n<dc:identifier xsi:type=\"dcndl_porta:NDLCN\">ＵＬ７２４−Ｅ４</dc:identifier>\n<dc:language
+      xsi:type=\"dcterms:ISO639-2\">JPN</dc:language>\n<dc:type xsi:type=\"dcndl_porta:PORTAType\">Text</dc:type>\n<dc:type
+      xsi:type=\"dcndl_porta:Digitalize\">4</dc:type>\n<dc:type xsi:type=\"dcndl_porta:Web-get\">4</dc:type>\n<dc:type
+      xsi:type=\"dcndl_porta:Payment\">4</dc:type>\n\n  <dcndl_porta:dpid>zomoku</dcndl_porta:dpid>\n
+      \ <dcndl_porta:repository_no>R000000001</dcndl_porta:repository_no>\n  <dcndl_porta:item_no>I002498425</dcndl_porta:item_no></item>\n<item>\n<title>愛を伝えたい
+      : 『古典の女』の恋はキラキラまぶしい</title>\n<author>清川妙‖著</author>\n<link>http://api.porta.ndl.go.jp/ndlopac/cgi-bin/ndlopac/ndl-book?kywd=89012248</link>\n
+      \ <description>出版地 : 東京;形態 : ２１７ｐ ; １９ｃｍ;シリーズ : Ｌａｄｙ’ｓ　ｌｉｂｒａｒｙ;シリーズよみ : Ｌａｄｙ’ｓ　ｌｉｂｒａｒｙ;税込価格
+      : １０００円</description>\n<dcndl:titleTranscription>アイ　オ　ツタエタイ</dcndl:titleTranscription>\n<dc:creator>清川妙‖著</dc:creator>\n<dc:creator
+      xsi:type=\"dcndl:NDLNH\">清川‖妙（１９２１−）</dc:creator>\n<dcndl:creatorTranscription
+      xsi:type=\"dcndl:NDLNH\">キヨカワ，タエ（１９２１−）</dcndl:creatorTranscription>\n<dc:subject
+      xsi:type=\"dcndl:NDLSH\">日本文学‖歴史‖古代</dc:subject>\n<dc:subject xsi:type=\"dcndl:NDLSH\">恋愛</dc:subject>\n<dc:subject
+      xsi:type=\"dcndl:NDC\">９１０．２３</dc:subject>\n<dc:subject xsi:type=\"dcndl:NDLC\">ＫＧ１６</dc:subject>\n<dcndl:subjectTranscription
+      xsi:type=\"dcndl:NDLSH\">ニホンブンガク‖レキシ‖コダイ</dcndl:subjectTranscription>\n<dcndl:subjectTranscription
+      xsi:type=\"dcndl:NDLSH\">レンアイ</dcndl:subjectTranscription>\n<dc:publisher>大和書房</dc:publisher>\n<dcterms:issued>１９８８．１２</dcterms:issued>\n<dcterms:issued
+      xsi:type=\"dcterms:W3CDTF\">1988</dcterms:issued>\n<dc:identifier xsi:type=\"dcterms:URI\">http://api.porta.ndl.go.jp/ndlopac/cgi-bin/ndlopac/ndl-book?kywd=89012248</dc:identifier>\n<dc:identifier
+      xsi:type=\"dcndl:ISBN\">4-479-05021-3</dc:identifier>\n<dc:identifier xsi:type=\"dcndl:JPNO\">89012248</dc:identifier>\n<dc:identifier
+      xsi:type=\"dcndl_porta:NDLCN\">ＫＧ１６−Ｅ８</dc:identifier>\n<dc:language xsi:type=\"dcterms:ISO639-2\">JPN</dc:language>\n<dc:identifier
+      xsi:type=\"dcndl_porta:ISBN13\">978-4-479-05021-6</dc:identifier>\n<dc:type
+      xsi:type=\"dcndl_porta:PORTAType\">Text</dc:type>\n<dc:type xsi:type=\"dcndl_porta:Digitalize\">4</dc:type>\n<dc:type
+      xsi:type=\"dcndl_porta:Web-get\">4</dc:type>\n<dc:type xsi:type=\"dcndl_porta:Payment\">4</dc:type>\n\n
+      \ <dcndl_porta:dpid>zomoku</dcndl_porta:dpid>\n  <dcndl_porta:repository_no>R000000001</dcndl_porta:repository_no>\n
+      \ <dcndl_porta:item_no>I002382614</dcndl_porta:item_no></item>\n<item>\n<title>愛がなければ、人生はない
+      : 『ブエナ・ビスタ・ソシアル・クラブ』のミュージシャン達が語る、キューバ式”愛の生き方”</title>\n<link>http://api.porta.ndl.go.jp/ndlopac/cgi-bin/ndlopac/ndl-book?kywd=20130169</link>\n
+      \ <description>出版地 : 東京;形態 : １２５ｐ ; ２２ｃｍ;シリーズ : Ｓｗｉｔｃｈ　ｌｉｂｒａｒｙ;シリーズよみ : Ｓｗｉｔｃｈ　ｌｉｂｒａｒｙ;本体価格
+      : １０００円;ＮＤＬ書誌ＩＤ : ０００００２９３９９１６</description>\n<dcndl:titleTranscription>アイ　ガ　ナケレバ　ジンセイ　ワ　ナイ</dcndl:titleTranscription>\n<dcndl:titleTranscription>ブエナ　ビスタ　ソシアル　クラブ　ノ　ミュージシャンタチ　ガ　カタル　キューバシキ　アイ　ノ　イキカタ</dcndl:titleTranscription>\n<dc:subject
+      xsi:type=\"dcndl:NDLSH\">音楽　ラテンアメリカ</dc:subject>\n<dc:subject xsi:type=\"dcndl:NDC\">７６４．７</dc:subject>\n<dc:subject
+      xsi:type=\"dcndl:NDLC\">ＫＤ２８６</dc:subject>\n<dcndl:subjectTranscription xsi:type=\"dcndl:NDLSH\">オンガク　ラテン　アメリカ</dcndl:subjectTranscription>\n<dc:publisher>スイッチ・パブリッシング</dc:publisher>\n<dcterms:issued>２０００．２</dcterms:issued>\n<dcterms:issued
+      xsi:type=\"dcterms:W3CDTF\">2000</dcterms:issued>\n<dc:identifier xsi:type=\"dcterms:URI\">http://api.porta.ndl.go.jp/ndlopac/cgi-bin/ndlopac/ndl-book?kywd=20130169</dc:identifier>\n<dc:identifier
+      xsi:type=\"dcndl:ISBN\">4-916017-75-7</dc:identifier>\n<dc:identifier xsi:type=\"dcndl:JPNO\">20130169</dc:identifier>\n<dc:identifier
+      xsi:type=\"dcndl_porta:NDLCN\">ＫＤ２８６−Ｇ２７６</dc:identifier>\n<dc:language xsi:type=\"dcterms:ISO639-2\">JPN</dc:language>\n<dc:identifier
+      xsi:type=\"dcndl_porta:ISBN13\">978-4-916017-75-8</dc:identifier>\n<dc:type
+      xsi:type=\"dcndl_porta:PORTAType\">Text</dc:type>\n<dc:type xsi:type=\"dcndl_porta:Digitalize\">4</dc:type>\n<dc:type
+      xsi:type=\"dcndl_porta:Web-get\">4</dc:type>\n<dc:type xsi:type=\"dcndl_porta:Payment\">4</dc:type>\n\n
+      \ <dcndl_porta:dpid>zomoku</dcndl_porta:dpid>\n  <dcndl_porta:repository_no>R000000001</dcndl_porta:repository_no>\n
+      \ <dcndl_porta:item_no>I000132908</dcndl_porta:item_no></item>\n<item>\n<title>愛されながら出世する法
+      : 人生のサクセス・ストーリーを約束する”押し上げ”のしくみ</title>\n<author>二挺木秀雄‖著</author>\n<link>http://api.porta.ndl.go.jp/ndlopac/cgi-bin/ndlopac/ndl-book?kywd=93010195</link>\n
+      \ <description>出版地 : 東京;形態 : ２３８ｐ ; １８ｃｍ;シリーズ : ＰＨＰ　ｂｕｓｉｎｅｓｓ　ｌｉｂｒａｒｙ;シリーズよみ
+      : ＰＨＰ　ｂｕｓｉｎｅｓｓ　ｌｉｂｒａｒｙ;税込価格 : ８８０円</description>\n<dcndl:titleTranscription>アイサレナガラ　シュッセスル　ホウ</dcndl:titleTranscription>\n<dc:creator>二挺木秀雄‖著</dc:creator>\n<dc:creator
+      xsi:type=\"dcndl:NDLNH\">二挺木‖秀雄（１９４１−）</dc:creator>\n<dcndl:creatorTranscription
+      xsi:type=\"dcndl:NDLNH\">ニチョウギ，ヒデオ（１９４１−）</dcndl:creatorTranscription>\n<dc:subject
+      xsi:type=\"dcndl:NDLSH\">成功法</dc:subject>\n<dc:subject xsi:type=\"dcndl:NDC\">１５９</dc:subject>\n<dc:subject
+      xsi:type=\"dcndl:NDLC\">ＵＳ５１</dc:subject>\n<dcndl:subjectTranscription xsi:type=\"dcndl:NDLSH\">セイコウホウ</dcndl:subjectTranscription>\n<dc:publisher>ＰＨＰ研究所</dc:publisher>\n<dcterms:issued>１９９２．１２</dcterms:issued>\n<dcterms:issued
+      xsi:type=\"dcterms:W3CDTF\">1992</dcterms:issued>\n<dc:identifier xsi:type=\"dcterms:URI\">http://api.porta.ndl.go.jp/ndlopac/cgi-bin/ndlopac/ndl-book?kywd=93010195</dc:identifier>\n<dc:identifier
+      xsi:type=\"dcndl:ISBN\">4-569-53794-4</dc:identifier>\n<dc:identifier xsi:type=\"dcndl:JPNO\">93010195</dc:identifier>\n<dc:identifier
+      xsi:type=\"dcndl_porta:NDLCN\">ＵＳ５１−Ｅ１１９８</dc:identifier>\n<dc:language xsi:type=\"dcterms:ISO639-2\">JPN</dc:language>\n<dc:identifier
+      xsi:type=\"dcndl_porta:ISBN13\">978-4-569-53794-8</dc:identifier>\n<dc:type
+      xsi:type=\"dcndl_porta:PORTAType\">Text</dc:type>\n<dc:type xsi:type=\"dcndl_porta:Digitalize\">4</dc:type>\n<dc:type
+      xsi:type=\"dcndl_porta:Web-get\">4</dc:type>\n<dc:type xsi:type=\"dcndl_porta:Payment\">4</dc:type>\n\n
+      \ <dcndl_porta:dpid>zomoku</dcndl_porta:dpid>\n  <dcndl_porta:repository_no>R000000001</dcndl_porta:repository_no>\n
+      \ <dcndl_porta:item_no>I002644594</dcndl_porta:item_no></item>\n<item>\n<title>愛車学
+      : 知らないと損するクルマの常識・非常識</title>\n<author>国沢光宏‖著</author>\n<link>http://api.porta.ndl.go.jp/ndlopac/cgi-bin/ndlopac/ndl-book?kywd=90025007</link>\n
+      \ <description>出版地 : 東京;形態 : ２２０ｐ ; １８ｃｍ;シリーズ : ＰＨＰ　ｂｕｓｉｎｅｓｓ　ｌｉｂｒａｒｙ;シリーズよみ
+      : ＰＨＰ　ｂｕｓｉｎｅｓｓ　ｌｉｂｒａｒｙ;税込価格 : ７８０円</description>\n<dcndl:titleTranscription>アイシャガク</dcndl:titleTranscription>\n<dc:creator>国沢光宏‖著</dc:creator>\n<dc:creator
+      xsi:type=\"dcndl:NDLNH\">国沢‖光宏（１９５８−）</dc:creator>\n<dcndl:creatorTranscription
+      xsi:type=\"dcndl:NDLNH\">クニサワ，ミツヒロ（１９５８−）</dcndl:creatorTranscription>\n<dc:subject
+      xsi:type=\"dcndl:NDLSH\">自動車</dc:subject>\n<dc:subject xsi:type=\"dcndl:NDC\">５３７．９２</dc:subject>\n<dc:subject
+      xsi:type=\"dcndl:NDLC\">ＮＣ２３</dc:subject>\n<dcndl:subjectTranscription xsi:type=\"dcndl:NDLSH\">ジドウシャ</dcndl:subjectTranscription>\n<dc:publisher>ＰＨＰ研究所</dc:publisher>\n<dcterms:issued>１９９０．３</dcterms:issued>\n<dcterms:issued
+      xsi:type=\"dcterms:W3CDTF\">1990</dcterms:issued>\n<dc:identifier xsi:type=\"dcterms:URI\">http://api.porta.ndl.go.jp/ndlopac/cgi-bin/ndlopac/ndl-book?kywd=90025007</dc:identifier>\n<dc:identifier
+      xsi:type=\"dcndl:ISBN\">4-569-52671-3</dc:identifier>\n<dc:identifier xsi:type=\"dcndl:JPNO\">90025007</dc:identifier>\n<dc:identifier
+      xsi:type=\"dcndl_porta:NDLCN\">ＮＣ２３−Ｅ２２５</dc:identifier>\n<dc:language xsi:type=\"dcterms:ISO639-2\">JPN</dc:language>\n<dc:identifier
+      xsi:type=\"dcndl_porta:ISBN13\">978-4-569-52671-3</dc:identifier>\n<dc:type
+      xsi:type=\"dcndl_porta:PORTAType\">Text</dc:type>\n<dc:type xsi:type=\"dcndl_porta:Digitalize\">4</dc:type>\n<dc:type
+      xsi:type=\"dcndl_porta:Web-get\">4</dc:type>\n<dc:type xsi:type=\"dcndl_porta:Payment\">4</dc:type>\n\n
+      \ <dcndl_porta:dpid>zomoku</dcndl_porta:dpid>\n  <dcndl_porta:repository_no>R000000001</dcndl_porta:repository_no>\n
+      \ <dcndl_porta:item_no>I002458570</dcndl_porta:item_no></item>\n<item>\n<title>愛車学.
+      ２</title>\n<author>国沢光宏‖著</author>\n<link>http://api.porta.ndl.go.jp/ndlopac/cgi-bin/ndlopac/ndl-book?kywd=92045156</link>\n
+      \ <description>出版地 : 東京;形態 : ２０３ｐ ; １８ｃｍ;シリーズ : ＰＨＰ　ｂｕｓｉｎｅｓｓ　ｌｉｂｒａｒｙ;シリーズよみ
+      : ＰＨＰ　ｂｕｓｉｎｅｓｓ　ｌｉｂｒａｒｙ;各巻タイトル : ドライビングテクニック実践編;注記 : 「２」の副書名：こんなときどうする？プロが教える７３の秘訣;税込価格
+      : ８００円</description>\n<dcndl:titleTranscription>アイシャガク. ２</dcndl:titleTranscription>\n<dc:creator>国沢光宏‖著</dc:creator>\n<dc:creator
+      xsi:type=\"dcndl:NDLNH\">国沢‖光宏（１９５８−）</dc:creator>\n<dcndl:creatorTranscription
+      xsi:type=\"dcndl:NDLNH\">クニサワ，ミツヒロ（１９５８−）</dcndl:creatorTranscription>\n<dc:subject
+      xsi:type=\"dcndl:NDLSH\">自動車</dc:subject>\n<dc:subject xsi:type=\"dcndl:NDC\">５３７．９２</dc:subject>\n<dc:subject
+      xsi:type=\"dcndl:NDLC\">ＮＣ２３</dc:subject>\n<dcndl:subjectTranscription xsi:type=\"dcndl:NDLSH\">ジドウシャ</dcndl:subjectTranscription>\n<dc:publisher>ＰＨＰ研究所</dc:publisher>\n<dcterms:issued>１９９２．６</dcterms:issued>\n<dcterms:issued
+      xsi:type=\"dcterms:W3CDTF\">1992</dcterms:issued>\n<dc:identifier xsi:type=\"dcterms:URI\">http://api.porta.ndl.go.jp/ndlopac/cgi-bin/ndlopac/ndl-book?kywd=92045156</dc:identifier>\n<dc:identifier
+      xsi:type=\"dcndl:ISBN\">4-569-53619-0</dc:identifier>\n<dc:identifier xsi:type=\"dcndl:JPNO\">92045156</dc:identifier>\n<dc:identifier
+      xsi:type=\"dcndl_porta:NDLCN\">ＮＣ２３−Ｅ２２５</dc:identifier>\n<dc:language xsi:type=\"dcterms:ISO639-2\">JPN</dc:language>\n<dc:identifier
+      xsi:type=\"dcndl_porta:ISBN13\">978-4-569-53619-4</dc:identifier>\n<dc:type
+      xsi:type=\"dcndl_porta:PORTAType\">Text</dc:type>\n<dc:type xsi:type=\"dcndl_porta:Digitalize\">4</dc:type>\n<dc:type
+      xsi:type=\"dcndl_porta:Web-get\">4</dc:type>\n<dc:type xsi:type=\"dcndl_porta:Payment\">4</dc:type>\n\n
+      \ <dcndl_porta:dpid>zomoku</dcndl_porta:dpid>\n  <dcndl_porta:repository_no>R000000001</dcndl_porta:repository_no>\n
+      \ <dcndl_porta:item_no>I002605070</dcndl_porta:item_no></item>\n<item>\n<title>愛車の維持費が３割安くなる本
+      : ワックスがけから車検まで、絶対得するメンテナンスの秘訣４６</title>\n<author>国沢光宏　著</author>\n<link>http://api.porta.ndl.go.jp/ndlopac/cgi-bin/ndlopac/ndl-book?kywd=96012977</link>\n
+      \ <description>出版地 : 東京;形態 : ２２２ｐ ; １８ｃｍ;シリーズ : ＰＨＰ　ｂｕｓｉｎｅｓｓ　ｌｉｂｒａｒｙ. Ｎｅｗ　ｌｉｆｅ;シリーズよみ
+      : ＰＨＰ　ｂｕｓｉｎｅｓｓ　ｌｉｂｒａｒｙ;シリーズよみ : Ｎｅｗ　ｌｉｆｅ;税込価格 : ８５０円;ＮＤＬ書誌ＩＤ : ０００００２４５０６０９</description>\n<dcndl:titleTranscription>アイシャ　ノ　イジヒ　ガ　サンワリ　ヤスクナル　ホン</dcndl:titleTranscription>\n<dc:creator>国沢光宏　著</dc:creator>\n<dc:creator
+      xsi:type=\"dcndl:NDLNH\">国沢　光宏（１９５８−）</dc:creator>\n<dcndl:creatorTranscription
+      xsi:type=\"dcndl:NDLNH\">クニサワ，ミツヒロ（１９５８−）</dcndl:creatorTranscription>\n<dc:subject
+      xsi:type=\"dcndl:NDLSH\">自動車整備</dc:subject>\n<dc:subject xsi:type=\"dcndl:NDC\">５３７．７</dc:subject>\n<dc:subject
+      xsi:type=\"dcndl:NDLC\">ＮＣ２３</dc:subject>\n<dcndl:subjectTranscription xsi:type=\"dcndl:NDLSH\">ジドウシャ　セイビ</dcndl:subjectTranscription>\n<dc:publisher>ＰＨＰ研究所</dc:publisher>\n<dcterms:issued>１９９５．１０</dcterms:issued>\n<dcterms:issued
+      xsi:type=\"dcterms:W3CDTF\">1995</dcterms:issued>\n<dc:identifier xsi:type=\"dcterms:URI\">http://api.porta.ndl.go.jp/ndlopac/cgi-bin/ndlopac/ndl-book?kywd=96012977</dc:identifier>\n<dc:identifier
+      xsi:type=\"dcndl:ISBN\">4-569-54876-8</dc:identifier>\n<dc:identifier xsi:type=\"dcndl:JPNO\">96012977</dc:identifier>\n<dc:identifier
+      xsi:type=\"dcndl_porta:NDLCN\">ＮＣ２３−Ｇ１６</dc:identifier>\n<dc:language xsi:type=\"dcterms:ISO639-2\">JPN</dc:language>\n<dc:identifier
+      xsi:type=\"dcndl_porta:ISBN13\">978-4-569-54876-0</dc:identifier>\n<dc:type
+      xsi:type=\"dcndl_porta:PORTAType\">Text</dc:type>\n<dc:type xsi:type=\"dcndl_porta:Digitalize\">4</dc:type>\n<dc:type
+      xsi:type=\"dcndl_porta:Web-get\">4</dc:type>\n<dc:type xsi:type=\"dcndl_porta:Payment\">4</dc:type>\n\n
+      \ <dcndl_porta:dpid>zomoku</dcndl_porta:dpid>\n  <dcndl_porta:repository_no>R000000001</dcndl_porta:repository_no>\n
+      \ <dcndl_porta:item_no>I002879375</dcndl_porta:item_no></item>\n<item>\n<title>愛知図書館産業資料情報</title>\n<author>愛知図書館　〔編〕</author>\n<link>http://api.porta.ndl.go.jp/ndlopac/cgi-bin/ndlopac/ndl-book?kywd=00000793</link>\n
+      \ <description>巻次・年月次 : 〔　　〕〜ｎｏ．１１９（１９８１年９月）;出版地 : 名古屋;形態 :  ; ２６ｃｍ;刊行頻度 : 月刊;注記
+      : 基本標題：Ｎｏ．４３（昭和４３年６月）〜ｎｏ．５６（１９７１年３月）　愛知県文化会館愛知図書館産業資料情報;ＮＤＬ書誌ＩＤ : ０００００００００７８５;刊行状態
+      : 刊行終了;所蔵事項 : Ｎｏ．１８（昭和４０年１１月）〜ｎｏ．１１９（１９８１年９月）;休廃刊 : 以後休刊</description>\n<dcndl:titleTranscription>アイチ　トショカン　サンギョウ　シリョウ　ジョウホウ</dcndl:titleTranscription>\n<dcterms:alternative>Ａｉｃｈｉ　Ｌｉｂｒａｒｙ　ｉｎｄｕｓｔｒｉａｌ　ｄｏｃｕｍｅｎｔｓ</dcterms:alternative>\n<dc:creator>愛知図書館　〔編〕</dc:creator>\n<dc:creator
+      xsi:type=\"dcndl:NDLNH\">愛知図書館</dc:creator>\n<dcndl:creatorTranscription xsi:type=\"dcndl:NDLNH\">アイチ　トショカン</dcndl:creatorTranscription>\n<dc:publisher>愛知図書館</dc:publisher>\n<dcterms:issued>［１９６−］−１９８１</dcterms:issued>\n<dcterms:issued
+      xsi:type=\"dcterms:W3CDTF\">196?</dcterms:issued>\n<dcterms:issued xsi:type=\"dcterms:W3CDTF\">1981</dcterms:issued>\n<dc:identifier
+      xsi:type=\"dcterms:URI\">http://api.porta.ndl.go.jp/ndlopac/cgi-bin/ndlopac/ndl-book?kywd=00000793</dc:identifier>\n<dc:identifier
+      xsi:type=\"dcndl:JPNO\">00000793</dc:identifier>\n<dc:identifier xsi:type=\"dcndl_porta:NDLCN\">Ｚ２１−５８６</dc:identifier>\n<dc:language
+      xsi:type=\"dcterms:ISO639-2\">JPN</dc:language>\n<dcndl:alternativeTranscription>Ａｉｃｈｉ　Ｌｉｂｒａｒｙ　ｉｎｄｕｓｔｒｉａｌ　ｄｏｃｕｍｅｎｔｓ</dcndl:alternativeTranscription>\n<dc:type
+      xsi:type=\"dcndl_porta:PORTAType\">Text</dc:type>\n<dc:type xsi:type=\"dcndl_porta:Digitalize\">4</dc:type>\n<dc:type
+      xsi:type=\"dcndl_porta:Web-get\">4</dc:type>\n<dc:type xsi:type=\"dcndl_porta:Payment\">4</dc:type>\n\n
+      \ <dcndl_porta:dpid>zomoku</dcndl_porta:dpid>\n  <dcndl_porta:repository_no>R000000001</dcndl_porta:repository_no>\n
+      \ <dcndl_porta:item_no>I004791802</dcndl_porta:item_no></item>\n\r\n\t\t</channel>\r\n\t\r\n</rss>"
+    http_version: '1.1'
+  recorded_at: Thu, 01 Dec 2011 12:55:53 GMT
+recorded_with: VCR 2.0.0.beta2
