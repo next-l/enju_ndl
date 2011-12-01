@@ -4,6 +4,8 @@ source "http://rubygems.org"
 # Bundler will treat runtime dependencies like base dependencies, and
 # development dependencies will be added by default to the :development group.
 gemspec
+gem 'devise'
+gem 'nokogiri'
 
 # jquery-rails is used by the dummy application
 gem "jquery-rails"
@@ -12,6 +14,10 @@ gem "jquery-rails"
 # your gemspec. These might include edge Rails or gems from your path or
 # Git. Remember to move these dependencies to your gemspec before releasing
 # your gem to rubygems.org.
+group :development, :test do
+  gem 'vcr', '~> 2.0.0.beta2'
+  gem 'fakeweb'
+end
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'

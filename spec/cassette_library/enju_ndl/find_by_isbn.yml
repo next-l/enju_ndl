@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.porta.ndl.go.jp:80/servicedp/opensearch?dpid=zomoku&isbn=9784839931995&cnt=1&idx=1
+    body: ''
+    headers:
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Thu, 01 Dec 2011 12:55:53 GMT
+      content-type:
+      - text/xml;charset=utf-8
+      content-length:
+      - '4456'
+      connection:
+      - close
+    body: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n<rss
+      version=\"2.0\" xmlns:dc=\"http://purl.org/dc/elements/1.1/\"\r\n    xmlns:openSearch=\"http://a9.com/-/spec/opensearchrss/1.0/\"\r\n
+      \   xmlns:dcndl=\"http://ndl.go.jp/dcndl/terms/\" \r\n    xmlns:dcndl_porta=\"http://ndl.go.jp/dcndl/dcndl_porta/\"\r\n
+      \   xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\" \r\n    xmlns:dcterms=\"http://purl.org/dc/terms/\"
+      \r\n    xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" \r\n    xsi:schemaLocation=\"http://ndl.go.jp/dcndl/dcndl_porta/
+      http://porta.ndl.go.jp/schema/dcndl_porta.xsd\"\r\n    >\r\n    \r\n    \r\n
+      \   \r\n    \r\n    \r\n\t\t\r\n\t\t\r\n\t\t<channel>\r\n\t    \t<title>\r\n\t
+      \   \t\t\r\n\t    \t\t\r\n\t    \t\tPORTA - Search： &quot;dpid=zomoku cnt=1
+      idx=1 isbn=9784839931995&quot;\r\n\t    \t</title>\r\n\t    \t<link>\r\n\t    \t\thttp://porta.ndl.go.jp/\r\n\t
+      \   \t</link>\r\n\t    \t<description>\r\n\t    \t\tSearch results for &quot;dpid=zomoku
+      cnt=1 idx=1 isbn=9784839931995&quot;\r\n\t    \t\t\r\n\t    \t</description>\r\n\t
+      \   \t\r\n\t    \t<language>ja</language>\r\n\t    \t\r\n\t    \t<openSearch:totalResults>\r\n\t
+      \   \t\t1\r\n\t    \t</openSearch:totalResults>\r\n\t\t\t\r\n\t\t\t\r\n\t\t\t\r\n\t\t\t\r\n\t\t\t\r\n\t\t\t<openSearch:startIndex>\r\n\t\t\t\t1\r\n\t\t\t</openSearch:startIndex>\r\n\t\t\t\r\n\t\t\t\r\n\t
+      \   \t<openSearch:itemsPerPage>\r\n\t    \t\t1\r\n\t    \t</openSearch:itemsPerPage>\r\n\t
+      \   \t\r\n\t    \t\r\n\t   \t\t\r\n\t   \t\t<item>\n<title>プログラミングコンテストチャレンジブック
+      : 問題解決のアルゴリズム活用力とコーディングテクニックを鍛える</title>\n<author>秋葉拓哉，岩田陽一，北川宜稔　著</author>\n<author>Ｕｓｕ−ｙａ　編</author>\n<link>http://api.porta.ndl.go.jp/ndlopac/cgi-bin/ndlopac/ndl-book?kywd=21816393</link>\n
+      \ <description>出版地 : 東京;形態 : ３１５ｐ ; ２４ｃｍ;本体価格 : ３２８０円;ＮＤＬ書誌ＩＤ : ００００１０９８０９０１</description>\n<dcndl:titleTranscription>プログラミング　コンテスト　チャレンジ　ブック</dcndl:titleTranscription>\n<dcndl:titleTranscription>モンダイ　カイケツ　ノ　アルゴリズム　カツヨウリョク　ト　コーディング　テクニック　オ　キタエル</dcndl:titleTranscription>\n<dc:creator>秋葉拓哉，岩田陽一，北川宜稔　著</dc:creator>\n<dc:creator>Ｕｓｕ−ｙａ　編</dc:creator>\n<dc:creator
+      xsi:type=\"dcndl:NDLNH\">秋葉　拓哉</dc:creator>\n<dc:creator xsi:type=\"dcndl:NDLNH\">岩田　陽一</dc:creator>\n<dc:creator
+      xsi:type=\"dcndl:NDLNH\">北川　宜稔</dc:creator>\n<dc:creator xsi:type=\"dcndl:NDLNH\">Ｕｓｕ−ｙａ</dc:creator>\n<dc:creator
+      xsi:type=\"dcndl:NDLNH\">Ｕｓｕ−ｙａ</dc:creator>\n<dcndl:creatorTranscription xsi:type=\"dcndl:NDLNH\">アキバ，タクヤ</dcndl:creatorTranscription>\n<dcndl:creatorTranscription
+      xsi:type=\"dcndl:NDLNH\">イワタ，ヨウイチ</dcndl:creatorTranscription>\n<dcndl:creatorTranscription
+      xsi:type=\"dcndl:NDLNH\">キタガワ，マサトシ</dcndl:creatorTranscription>\n<dcndl:creatorTranscription
+      xsi:type=\"dcndl:NDLNH\">Ｕｓｕ−ｙａ</dcndl:creatorTranscription>\n<dcndl:creatorTranscription
+      xsi:type=\"dcndl:NDLNH\">ウスヤ</dcndl:creatorTranscription>\n<dc:subject xsi:type=\"dcndl:NDLSH\">プログラミング（コンピュータ）</dc:subject>\n<dc:subject
+      xsi:type=\"dcndl:NDC\">００７．６４</dc:subject>\n<dc:subject xsi:type=\"dcndl:NDLC\">Ｍ１５９</dc:subject>\n<dcndl:subjectTranscription
+      xsi:type=\"dcndl:NDLSH\">プログラミング（コンピュータ）</dcndl:subjectTranscription>\n<dc:publisher>毎日コミュニケーションズ</dc:publisher>\n<dcterms:issued>２０１０．９</dcterms:issued>\n<dcterms:issued
+      xsi:type=\"dcterms:W3CDTF\">2010</dcterms:issued>\n<dc:identifier xsi:type=\"dcterms:URI\">http://api.porta.ndl.go.jp/ndlopac/cgi-bin/ndlopac/ndl-book?kywd=21816393</dc:identifier>\n<dc:identifier
+      xsi:type=\"dcndl:ISBN\">978-4-8399-3199-5</dc:identifier>\n<dc:identifier xsi:type=\"dcndl:JPNO\">21816393</dc:identifier>\n<dc:identifier
+      xsi:type=\"dcndl_porta:NDLCN\">Ｍ１５９−Ｊ１０５６</dc:identifier>\n<dc:language xsi:type=\"dcterms:ISO639-2\">JPN</dc:language>\n<dc:type
+      xsi:type=\"dcndl_porta:PORTAType\">Text</dc:type>\n<dc:type xsi:type=\"dcndl_porta:Digitalize\">4</dc:type>\n<dc:type
+      xsi:type=\"dcndl_porta:Web-get\">4</dc:type>\n<dc:type xsi:type=\"dcndl_porta:Payment\">4</dc:type>\n\n
+      \ <dcndl_porta:dpid>zomoku</dcndl_porta:dpid>\n  <dcndl_porta:repository_no>R000000001</dcndl_porta:repository_no>\n
+      \ <dcndl_porta:item_no>I005529855</dcndl_porta:item_no></item>\n\r\n\t\t</channel>\r\n\t\r\n</rss>"
+    http_version: '1.1'
+  recorded_at: Thu, 01 Dec 2011 12:55:54 GMT
+recorded_with: VCR 2.0.0.beta2

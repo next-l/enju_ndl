@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  work_id: 1
+  patron_id: 1
+
+two:
+  work_id: 1
+  patron_id: 1
