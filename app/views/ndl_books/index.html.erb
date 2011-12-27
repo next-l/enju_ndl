@@ -28,7 +28,8 @@
         <br />
         <%= book.xpath('./dc:creator').collect(&:content).join(' ') %>
       	<%= book.xpath('./dc:publisher').collect(&:content).join(' ') %>
-        ISBN: <%= book.at('./dc:identifier[@xsi:type="dcndl:ISBN"]').try(:content).to_s %>
+        (<%= Time.zone.parse(book.at('./pubDate').content).year %>,
+        ISBN: <%= book.at('./dc:identifier[@xsi:type="dcndl:ISBN"]').try(:content).to_s %>)
       </td>
     </tr>
   <% end %>
