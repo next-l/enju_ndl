@@ -3,7 +3,6 @@ require "enju_ndl/engine"
 require 'open-uri'
 require 'enju_ndl/ndl_search'
 require 'enju_ndl/crd'
-require 'enju_ndl/porta'
 
 module EnjuNdl
   module ActsAsMethods
@@ -18,10 +17,6 @@ module EnjuNdl
 
       def enju_ndl_crd
         include EnjuNdl::Crd
-      end
-
-      def enju_ndl_porta
-        include EnjuNdl::Porta
       end
     end
   end

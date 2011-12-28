@@ -1,5 +1,5 @@
 <div id="content_detail" class="ui-corner-all">
-<h1 class="title">PORTA検索によるインポート</h1>
+<h1 class="title">NDLサーチ検索によるインポート</h1>
 <div id="content_list">
   <p id="notice"><%= notice %></p>
 
@@ -26,9 +26,10 @@
       <td>
         <%= link_to book.at('./title').content, book.at('./link').content %>
         <br />
-        <%= book.xpath('./dc:creator[@xsi:type="dcndl:NDLNH"]').collect(&:content).join(' ') %>
+        <%= book.xpath('./dc:creator').collect(&:content).join(' ') %>
       	<%= book.xpath('./dc:publisher').collect(&:content).join(' ') %>
-        ISBN: <%= book.at('./dc:identifier[@xsi:type="dcndl:ISBN"]').try(:content).to_s %>
+        (<%= Time.zone.parse(book.at('./pubDate').content).year %>,
+        ISBN: <%= book.at('./dc:identifier[@xsi:type="dcndl:ISBN"]').try(:content).to_s %>)
       </td>
     </tr>
   <% end %>

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.porta.ndl.go.jp:80/servicedp/opensearch?dpid=zomoku&any=library&cnt=10&idx=1
+    uri: http://iss.ndl.go.jp/api/opensearch?dpid=iss-ndl-opac&any=library%20system&cnt=10&idx=1
     body: ''
     headers:
       accept:
@@ -15,171 +15,209 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Thu, 01 Dec 2011 12:55:53 GMT
+      - Mon, 26 Dec 2011 09:39:51 GMT
+      server:
+      - Apache
+      x-powered-by:
+      - Phusion Passenger (mod_rails/mod_rack) 2.2.15
+      etag:
+      - ! '"77866a4ce93cc4a7346dd4d9c2e9c7f5"'
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      x-runtime:
+      - '0.442756'
+      cache-control:
+      - max-age=0, private, must-revalidate
+      content-length:
+      - '17041'
+      status:
+      - '200'
       content-type:
-      - text/xml;charset=utf-8
+      - application/xml; charset=utf-8
+      set-cookie:
+      - _front_session_id=92fa15a52b36e4c0c2214d18e63f5735; domain=.iss.ndl.go.jp;
+        path=/; expires=Mon, 26-Dec-2011 10:39:51 GMT; HttpOnly
+      - serverid=1102; path=/
+      vary:
+      - Accept-Encoding,User-Agent
       connection:
       - close
-      transfer-encoding:
-      - chunked
-    body: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n<rss
-      version=\"2.0\" xmlns:dc=\"http://purl.org/dc/elements/1.1/\"\r\n    xmlns:openSearch=\"http://a9.com/-/spec/opensearchrss/1.0/\"\r\n
-      \   xmlns:dcndl=\"http://ndl.go.jp/dcndl/terms/\" \r\n    xmlns:dcndl_porta=\"http://ndl.go.jp/dcndl/dcndl_porta/\"\r\n
-      \   xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\" \r\n    xmlns:dcterms=\"http://purl.org/dc/terms/\"
-      \r\n    xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" \r\n    xsi:schemaLocation=\"http://ndl.go.jp/dcndl/dcndl_porta/
-      http://porta.ndl.go.jp/schema/dcndl_porta.xsd\"\r\n    >\r\n    \r\n    \r\n
-      \   \r\n    \r\n    \r\n\t\t\r\n\t\t\r\n\t\t<channel>\r\n\t    \t<title>\r\n\t
-      \   \t\t\r\n\t    \t\t\r\n\t    \t\tPORTA - Search： &quot;dpid=zomoku any=library
-      cnt=10 idx=1&quot;\r\n\t    \t</title>\r\n\t    \t<link>\r\n\t    \t\thttp://porta.ndl.go.jp/\r\n\t
-      \   \t</link>\r\n\t    \t<description>\r\n\t    \t\tSearch results for &quot;dpid=zomoku
-      any=library cnt=10 idx=1&quot;\r\n\t    \t\t\r\n\t    \t</description>\r\n\t
-      \   \t\r\n\t    \t<language>ja</language>\r\n\t    \t\r\n\t    \t<openSearch:totalResults>\r\n\t
-      \   \t\t10124\r\n\t    \t</openSearch:totalResults>\r\n\t\t\t\r\n\t\t\t\r\n\t\t\t\r\n\t\t\t\r\n\t\t\t\r\n\t\t\t<openSearch:startIndex>\r\n\t\t\t\t1\r\n\t\t\t</openSearch:startIndex>\r\n\t\t\t\r\n\t\t\t\r\n\t
-      \   \t<openSearch:itemsPerPage>\r\n\t    \t\t10\r\n\t    \t</openSearch:itemsPerPage>\r\n\t
-      \   \t\r\n\t    \t\r\n\t   \t\t\r\n\t   \t\t<item>\n<title>あゝ無情</title>\n<author>Ｖｉｃｔｏｒ　Ｈｕｇｏ‖［著］</author>\n<author>坂本和男‖訳註</author>\n<link>http://api.porta.ndl.go.jp/ndlopac/cgi-bin/ndlopac/ndl-book?kywd=21081769</link>\n
-      \ <description>出版地 : 東京;形態 : １７１ｐ ; １９ｃｍ;シリーズ : Ｎａｎ’ｕｎ−ｄｏ’ｓ　ｐｈｏｅｎｉｘ　ｌｉｂｒａｒｙ;シリーズよみ
-      : Ｎａｎ’ｕｎ−ｄｏ’ｓ　ｐｈｏｅｎｉｘ　ｌｉｂｒａｒｙ</description>\n<dcndl:titleTranscription>アア　ムジョウ</dcndl:titleTranscription>\n<dc:creator>Ｖｉｃｔｏｒ　Ｈｕｇｏ‖［著］</dc:creator>\n<dc:creator>坂本和男‖訳註</dc:creator>\n<dc:creator
-      xsi:type=\"dcndl:NDLNH\">Ｈｕｇｏ，Ｖｉｃｔｏｒ　Ｍａｒｉｅ（１８０２−１８８５）</dc:creator>\n<dc:subject
-      xsi:type=\"dcndl:NDLC\">Ｙ４５</dc:subject>\n<dc:publisher>南雲堂</dc:publisher>\n<dcterms:issued>１９６０．３</dcterms:issued>\n<dcterms:issued
-      xsi:type=\"dcterms:W3CDTF\">1960</dcterms:issued>\n<dc:identifier xsi:type=\"dcterms:URI\">http://api.porta.ndl.go.jp/ndlopac/cgi-bin/ndlopac/ndl-book?kywd=21081769</dc:identifier>\n<dc:identifier
-      xsi:type=\"dcndl:JPNO\">21081769</dc:identifier>\n<dc:identifier xsi:type=\"dcndl_porta:NDLCN\">Ｙ４５−Ｈ１７０６</dc:identifier>\n<dc:language
-      xsi:type=\"dcterms:ISO639-2\">JPN</dc:language>\n<dc:type xsi:type=\"dcndl_porta:PORTAType\">Text</dc:type>\n<dc:type
-      xsi:type=\"dcndl_porta:Digitalize\">4</dc:type>\n<dc:type xsi:type=\"dcndl_porta:Web-get\">4</dc:type>\n<dc:type
-      xsi:type=\"dcndl_porta:Payment\">4</dc:type>\n\n  <dcndl_porta:dpid>zomoku</dcndl_porta:dpid>\n
-      \ <dcndl_porta:repository_no>R000000001</dcndl_porta:repository_no>\n  <dcndl_porta:item_no>I004614645</dcndl_porta:item_no></item>\n<item>\n<title>ＩＳＤＮをとことん使いこなす
-      : インターネットも「超」快適　上手な切り換え方からビジネス活用まで</title>\n<author>ユニゾン‖編</author>\n<link>http://api.porta.ndl.go.jp/ndlopac/cgi-bin/ndlopac/ndl-book?kywd=97015582</link>\n
-      \ <description>出版地 : 東京;形態 : １９８ｐ ; １８ｃｍ;シリーズ : ＰＨＰ　ｂｕｓｉｎｅｓｓ　ｌｉｂｒａｒｙ. ｂｕｓｉｎｅｓｓ;シリーズよみ
-      : ＰＨＰ　ｂｕｓｉｎｅｓｓ　ｌｉｂｒａｒｙ;シリーズよみ : ｂｕｓｉｎｅｓｓ;税込価格 : ８５０円</description>\n<dcndl:titleTranscription>アイエスディーエヌ　オ　トコトン　ツカイコナス</dcndl:titleTranscription>\n<dc:creator>ユニゾン‖編</dc:creator>\n<dc:creator
-      xsi:type=\"dcndl:NDLNH\">ユニゾン</dc:creator>\n<dcndl:creatorTranscription xsi:type=\"dcndl:NDLNH\">ユニゾン</dcndl:creatorTranscription>\n<dc:subject
-      xsi:type=\"dcndl:NDLSH\">データ伝送</dc:subject>\n<dc:subject xsi:type=\"dcndl:NDLSH\">通信網</dc:subject>\n<dc:subject
-      xsi:type=\"dcndl:NDC\">５４７．４８３３</dc:subject>\n<dc:subject xsi:type=\"dcndl:NDLC\">ＮＤ６３３</dc:subject>\n<dcndl:subjectTranscription
-      xsi:type=\"dcndl:NDLSH\">データデンソウ</dcndl:subjectTranscription>\n<dcndl:subjectTranscription
-      xsi:type=\"dcndl:NDLSH\">ツウシンモウ</dcndl:subjectTranscription>\n<dc:publisher>ＰＨＰ研究所</dc:publisher>\n<dcterms:issued>１９９６．８</dcterms:issued>\n<dcterms:issued
-      xsi:type=\"dcterms:W3CDTF\">1996</dcterms:issued>\n<dc:identifier xsi:type=\"dcterms:URI\">http://api.porta.ndl.go.jp/ndlopac/cgi-bin/ndlopac/ndl-book?kywd=97015582</dc:identifier>\n<dc:identifier
-      xsi:type=\"dcndl:ISBN\">4-569-55268-4</dc:identifier>\n<dc:identifier xsi:type=\"dcndl:JPNO\">97015582</dc:identifier>\n<dc:identifier
-      xsi:type=\"dcndl_porta:NDLCN\">ＮＤ６３３−Ｇ２７４</dc:identifier>\n<dc:language xsi:type=\"dcterms:ISO639-2\">JPN</dc:language>\n<dc:identifier
-      xsi:type=\"dcndl_porta:ISBN13\">978-4-569-55268-2</dc:identifier>\n<dc:type
-      xsi:type=\"dcndl_porta:PORTAType\">Text</dc:type>\n<dc:type xsi:type=\"dcndl_porta:Digitalize\">4</dc:type>\n<dc:type
-      xsi:type=\"dcndl_porta:Web-get\">4</dc:type>\n<dc:type xsi:type=\"dcndl_porta:Payment\">4</dc:type>\n\n
-      \ <dcndl_porta:dpid>zomoku</dcndl_porta:dpid>\n  <dcndl_porta:repository_no>R000000001</dcndl_porta:repository_no>\n
-      \ <dcndl_porta:item_no>I002955013</dcndl_porta:item_no></item>\n<item>\n<title>ＩＬＬ（Ｉｎｔｅｒ−ｌｉｂｒａｒｙ　Ｌｏａｎ）システムレポート
-      : 国立大学図書館協議会学術情報システム特別委員会報告</title>\n<link>http://api.porta.ndl.go.jp/ndlopac/cgi-bin/ndlopac/ndl-book?kywd=91005165</link>\n
-      \ <description>出版地 : 〔東京〕;形態 : ７８ｐ ; ２６ｃｍ</description>\n<dcndl:titleTranscription>アイエルエル　インター　ライブラリー　ローン　システム　レポート</dcndl:titleTranscription>\n<dc:creator
-      xsi:type=\"dcndl:NDLNH\">国立大学図書館協議会</dc:creator>\n<dcndl:creatorTranscription
-      xsi:type=\"dcndl:NDLNH\">コクリツ　ダイガク　トショカン　キョウギカイ</dcndl:creatorTranscription>\n<dc:subject
-      xsi:type=\"dcndl:NDLSH\">図書館間相互貸借</dc:subject>\n<dc:subject xsi:type=\"dcndl:NDLSH\">大学図書館</dc:subject>\n<dc:subject
-      xsi:type=\"dcndl:NDC\">０１５．３８</dc:subject>\n<dc:subject xsi:type=\"dcndl:NDLC\">ＵＬ７２４</dc:subject>\n<dcndl:subjectTranscription
-      xsi:type=\"dcndl:NDLSH\">トショカンカンソウゴタイシャク</dcndl:subjectTranscription>\n<dcndl:subjectTranscription
-      xsi:type=\"dcndl:NDLSH\">ダイガクトショカン</dcndl:subjectTranscription>\n<dc:publisher>国立大学図書館協議会</dc:publisher>\n<dcterms:issued>１９９０．２</dcterms:issued>\n<dcterms:issued
-      xsi:type=\"dcterms:W3CDTF\">1990</dcterms:issued>\n<dc:identifier xsi:type=\"dcterms:URI\">http://api.porta.ndl.go.jp/ndlopac/cgi-bin/ndlopac/ndl-book?kywd=91005165</dc:identifier>\n<dc:identifier
-      xsi:type=\"dcndl:JPNO\">91005165</dc:identifier>\n<dc:identifier xsi:type=\"dcndl_porta:NDLCN\">ＵＬ７２４−Ｅ４</dc:identifier>\n<dc:language
-      xsi:type=\"dcterms:ISO639-2\">JPN</dc:language>\n<dc:type xsi:type=\"dcndl_porta:PORTAType\">Text</dc:type>\n<dc:type
-      xsi:type=\"dcndl_porta:Digitalize\">4</dc:type>\n<dc:type xsi:type=\"dcndl_porta:Web-get\">4</dc:type>\n<dc:type
-      xsi:type=\"dcndl_porta:Payment\">4</dc:type>\n\n  <dcndl_porta:dpid>zomoku</dcndl_porta:dpid>\n
-      \ <dcndl_porta:repository_no>R000000001</dcndl_porta:repository_no>\n  <dcndl_porta:item_no>I002498425</dcndl_porta:item_no></item>\n<item>\n<title>愛を伝えたい
-      : 『古典の女』の恋はキラキラまぶしい</title>\n<author>清川妙‖著</author>\n<link>http://api.porta.ndl.go.jp/ndlopac/cgi-bin/ndlopac/ndl-book?kywd=89012248</link>\n
-      \ <description>出版地 : 東京;形態 : ２１７ｐ ; １９ｃｍ;シリーズ : Ｌａｄｙ’ｓ　ｌｉｂｒａｒｙ;シリーズよみ : Ｌａｄｙ’ｓ　ｌｉｂｒａｒｙ;税込価格
-      : １０００円</description>\n<dcndl:titleTranscription>アイ　オ　ツタエタイ</dcndl:titleTranscription>\n<dc:creator>清川妙‖著</dc:creator>\n<dc:creator
-      xsi:type=\"dcndl:NDLNH\">清川‖妙（１９２１−）</dc:creator>\n<dcndl:creatorTranscription
-      xsi:type=\"dcndl:NDLNH\">キヨカワ，タエ（１９２１−）</dcndl:creatorTranscription>\n<dc:subject
-      xsi:type=\"dcndl:NDLSH\">日本文学‖歴史‖古代</dc:subject>\n<dc:subject xsi:type=\"dcndl:NDLSH\">恋愛</dc:subject>\n<dc:subject
-      xsi:type=\"dcndl:NDC\">９１０．２３</dc:subject>\n<dc:subject xsi:type=\"dcndl:NDLC\">ＫＧ１６</dc:subject>\n<dcndl:subjectTranscription
-      xsi:type=\"dcndl:NDLSH\">ニホンブンガク‖レキシ‖コダイ</dcndl:subjectTranscription>\n<dcndl:subjectTranscription
-      xsi:type=\"dcndl:NDLSH\">レンアイ</dcndl:subjectTranscription>\n<dc:publisher>大和書房</dc:publisher>\n<dcterms:issued>１９８８．１２</dcterms:issued>\n<dcterms:issued
-      xsi:type=\"dcterms:W3CDTF\">1988</dcterms:issued>\n<dc:identifier xsi:type=\"dcterms:URI\">http://api.porta.ndl.go.jp/ndlopac/cgi-bin/ndlopac/ndl-book?kywd=89012248</dc:identifier>\n<dc:identifier
-      xsi:type=\"dcndl:ISBN\">4-479-05021-3</dc:identifier>\n<dc:identifier xsi:type=\"dcndl:JPNO\">89012248</dc:identifier>\n<dc:identifier
-      xsi:type=\"dcndl_porta:NDLCN\">ＫＧ１６−Ｅ８</dc:identifier>\n<dc:language xsi:type=\"dcterms:ISO639-2\">JPN</dc:language>\n<dc:identifier
-      xsi:type=\"dcndl_porta:ISBN13\">978-4-479-05021-6</dc:identifier>\n<dc:type
-      xsi:type=\"dcndl_porta:PORTAType\">Text</dc:type>\n<dc:type xsi:type=\"dcndl_porta:Digitalize\">4</dc:type>\n<dc:type
-      xsi:type=\"dcndl_porta:Web-get\">4</dc:type>\n<dc:type xsi:type=\"dcndl_porta:Payment\">4</dc:type>\n\n
-      \ <dcndl_porta:dpid>zomoku</dcndl_porta:dpid>\n  <dcndl_porta:repository_no>R000000001</dcndl_porta:repository_no>\n
-      \ <dcndl_porta:item_no>I002382614</dcndl_porta:item_no></item>\n<item>\n<title>愛がなければ、人生はない
-      : 『ブエナ・ビスタ・ソシアル・クラブ』のミュージシャン達が語る、キューバ式”愛の生き方”</title>\n<link>http://api.porta.ndl.go.jp/ndlopac/cgi-bin/ndlopac/ndl-book?kywd=20130169</link>\n
-      \ <description>出版地 : 東京;形態 : １２５ｐ ; ２２ｃｍ;シリーズ : Ｓｗｉｔｃｈ　ｌｉｂｒａｒｙ;シリーズよみ : Ｓｗｉｔｃｈ　ｌｉｂｒａｒｙ;本体価格
-      : １０００円;ＮＤＬ書誌ＩＤ : ０００００２９３９９１６</description>\n<dcndl:titleTranscription>アイ　ガ　ナケレバ　ジンセイ　ワ　ナイ</dcndl:titleTranscription>\n<dcndl:titleTranscription>ブエナ　ビスタ　ソシアル　クラブ　ノ　ミュージシャンタチ　ガ　カタル　キューバシキ　アイ　ノ　イキカタ</dcndl:titleTranscription>\n<dc:subject
-      xsi:type=\"dcndl:NDLSH\">音楽　ラテンアメリカ</dc:subject>\n<dc:subject xsi:type=\"dcndl:NDC\">７６４．７</dc:subject>\n<dc:subject
-      xsi:type=\"dcndl:NDLC\">ＫＤ２８６</dc:subject>\n<dcndl:subjectTranscription xsi:type=\"dcndl:NDLSH\">オンガク　ラテン　アメリカ</dcndl:subjectTranscription>\n<dc:publisher>スイッチ・パブリッシング</dc:publisher>\n<dcterms:issued>２０００．２</dcterms:issued>\n<dcterms:issued
-      xsi:type=\"dcterms:W3CDTF\">2000</dcterms:issued>\n<dc:identifier xsi:type=\"dcterms:URI\">http://api.porta.ndl.go.jp/ndlopac/cgi-bin/ndlopac/ndl-book?kywd=20130169</dc:identifier>\n<dc:identifier
-      xsi:type=\"dcndl:ISBN\">4-916017-75-7</dc:identifier>\n<dc:identifier xsi:type=\"dcndl:JPNO\">20130169</dc:identifier>\n<dc:identifier
-      xsi:type=\"dcndl_porta:NDLCN\">ＫＤ２８６−Ｇ２７６</dc:identifier>\n<dc:language xsi:type=\"dcterms:ISO639-2\">JPN</dc:language>\n<dc:identifier
-      xsi:type=\"dcndl_porta:ISBN13\">978-4-916017-75-8</dc:identifier>\n<dc:type
-      xsi:type=\"dcndl_porta:PORTAType\">Text</dc:type>\n<dc:type xsi:type=\"dcndl_porta:Digitalize\">4</dc:type>\n<dc:type
-      xsi:type=\"dcndl_porta:Web-get\">4</dc:type>\n<dc:type xsi:type=\"dcndl_porta:Payment\">4</dc:type>\n\n
-      \ <dcndl_porta:dpid>zomoku</dcndl_porta:dpid>\n  <dcndl_porta:repository_no>R000000001</dcndl_porta:repository_no>\n
-      \ <dcndl_porta:item_no>I000132908</dcndl_porta:item_no></item>\n<item>\n<title>愛されながら出世する法
-      : 人生のサクセス・ストーリーを約束する”押し上げ”のしくみ</title>\n<author>二挺木秀雄‖著</author>\n<link>http://api.porta.ndl.go.jp/ndlopac/cgi-bin/ndlopac/ndl-book?kywd=93010195</link>\n
-      \ <description>出版地 : 東京;形態 : ２３８ｐ ; １８ｃｍ;シリーズ : ＰＨＰ　ｂｕｓｉｎｅｓｓ　ｌｉｂｒａｒｙ;シリーズよみ
-      : ＰＨＰ　ｂｕｓｉｎｅｓｓ　ｌｉｂｒａｒｙ;税込価格 : ８８０円</description>\n<dcndl:titleTranscription>アイサレナガラ　シュッセスル　ホウ</dcndl:titleTranscription>\n<dc:creator>二挺木秀雄‖著</dc:creator>\n<dc:creator
-      xsi:type=\"dcndl:NDLNH\">二挺木‖秀雄（１９４１−）</dc:creator>\n<dcndl:creatorTranscription
-      xsi:type=\"dcndl:NDLNH\">ニチョウギ，ヒデオ（１９４１−）</dcndl:creatorTranscription>\n<dc:subject
-      xsi:type=\"dcndl:NDLSH\">成功法</dc:subject>\n<dc:subject xsi:type=\"dcndl:NDC\">１５９</dc:subject>\n<dc:subject
-      xsi:type=\"dcndl:NDLC\">ＵＳ５１</dc:subject>\n<dcndl:subjectTranscription xsi:type=\"dcndl:NDLSH\">セイコウホウ</dcndl:subjectTranscription>\n<dc:publisher>ＰＨＰ研究所</dc:publisher>\n<dcterms:issued>１９９２．１２</dcterms:issued>\n<dcterms:issued
-      xsi:type=\"dcterms:W3CDTF\">1992</dcterms:issued>\n<dc:identifier xsi:type=\"dcterms:URI\">http://api.porta.ndl.go.jp/ndlopac/cgi-bin/ndlopac/ndl-book?kywd=93010195</dc:identifier>\n<dc:identifier
-      xsi:type=\"dcndl:ISBN\">4-569-53794-4</dc:identifier>\n<dc:identifier xsi:type=\"dcndl:JPNO\">93010195</dc:identifier>\n<dc:identifier
-      xsi:type=\"dcndl_porta:NDLCN\">ＵＳ５１−Ｅ１１９８</dc:identifier>\n<dc:language xsi:type=\"dcterms:ISO639-2\">JPN</dc:language>\n<dc:identifier
-      xsi:type=\"dcndl_porta:ISBN13\">978-4-569-53794-8</dc:identifier>\n<dc:type
-      xsi:type=\"dcndl_porta:PORTAType\">Text</dc:type>\n<dc:type xsi:type=\"dcndl_porta:Digitalize\">4</dc:type>\n<dc:type
-      xsi:type=\"dcndl_porta:Web-get\">4</dc:type>\n<dc:type xsi:type=\"dcndl_porta:Payment\">4</dc:type>\n\n
-      \ <dcndl_porta:dpid>zomoku</dcndl_porta:dpid>\n  <dcndl_porta:repository_no>R000000001</dcndl_porta:repository_no>\n
-      \ <dcndl_porta:item_no>I002644594</dcndl_porta:item_no></item>\n<item>\n<title>愛車学
-      : 知らないと損するクルマの常識・非常識</title>\n<author>国沢光宏‖著</author>\n<link>http://api.porta.ndl.go.jp/ndlopac/cgi-bin/ndlopac/ndl-book?kywd=90025007</link>\n
-      \ <description>出版地 : 東京;形態 : ２２０ｐ ; １８ｃｍ;シリーズ : ＰＨＰ　ｂｕｓｉｎｅｓｓ　ｌｉｂｒａｒｙ;シリーズよみ
-      : ＰＨＰ　ｂｕｓｉｎｅｓｓ　ｌｉｂｒａｒｙ;税込価格 : ７８０円</description>\n<dcndl:titleTranscription>アイシャガク</dcndl:titleTranscription>\n<dc:creator>国沢光宏‖著</dc:creator>\n<dc:creator
-      xsi:type=\"dcndl:NDLNH\">国沢‖光宏（１９５８−）</dc:creator>\n<dcndl:creatorTranscription
-      xsi:type=\"dcndl:NDLNH\">クニサワ，ミツヒロ（１９５８−）</dcndl:creatorTranscription>\n<dc:subject
-      xsi:type=\"dcndl:NDLSH\">自動車</dc:subject>\n<dc:subject xsi:type=\"dcndl:NDC\">５３７．９２</dc:subject>\n<dc:subject
-      xsi:type=\"dcndl:NDLC\">ＮＣ２３</dc:subject>\n<dcndl:subjectTranscription xsi:type=\"dcndl:NDLSH\">ジドウシャ</dcndl:subjectTranscription>\n<dc:publisher>ＰＨＰ研究所</dc:publisher>\n<dcterms:issued>１９９０．３</dcterms:issued>\n<dcterms:issued
-      xsi:type=\"dcterms:W3CDTF\">1990</dcterms:issued>\n<dc:identifier xsi:type=\"dcterms:URI\">http://api.porta.ndl.go.jp/ndlopac/cgi-bin/ndlopac/ndl-book?kywd=90025007</dc:identifier>\n<dc:identifier
-      xsi:type=\"dcndl:ISBN\">4-569-52671-3</dc:identifier>\n<dc:identifier xsi:type=\"dcndl:JPNO\">90025007</dc:identifier>\n<dc:identifier
-      xsi:type=\"dcndl_porta:NDLCN\">ＮＣ２３−Ｅ２２５</dc:identifier>\n<dc:language xsi:type=\"dcterms:ISO639-2\">JPN</dc:language>\n<dc:identifier
-      xsi:type=\"dcndl_porta:ISBN13\">978-4-569-52671-3</dc:identifier>\n<dc:type
-      xsi:type=\"dcndl_porta:PORTAType\">Text</dc:type>\n<dc:type xsi:type=\"dcndl_porta:Digitalize\">4</dc:type>\n<dc:type
-      xsi:type=\"dcndl_porta:Web-get\">4</dc:type>\n<dc:type xsi:type=\"dcndl_porta:Payment\">4</dc:type>\n\n
-      \ <dcndl_porta:dpid>zomoku</dcndl_porta:dpid>\n  <dcndl_porta:repository_no>R000000001</dcndl_porta:repository_no>\n
-      \ <dcndl_porta:item_no>I002458570</dcndl_porta:item_no></item>\n<item>\n<title>愛車学.
-      ２</title>\n<author>国沢光宏‖著</author>\n<link>http://api.porta.ndl.go.jp/ndlopac/cgi-bin/ndlopac/ndl-book?kywd=92045156</link>\n
-      \ <description>出版地 : 東京;形態 : ２０３ｐ ; １８ｃｍ;シリーズ : ＰＨＰ　ｂｕｓｉｎｅｓｓ　ｌｉｂｒａｒｙ;シリーズよみ
-      : ＰＨＰ　ｂｕｓｉｎｅｓｓ　ｌｉｂｒａｒｙ;各巻タイトル : ドライビングテクニック実践編;注記 : 「２」の副書名：こんなときどうする？プロが教える７３の秘訣;税込価格
-      : ８００円</description>\n<dcndl:titleTranscription>アイシャガク. ２</dcndl:titleTranscription>\n<dc:creator>国沢光宏‖著</dc:creator>\n<dc:creator
-      xsi:type=\"dcndl:NDLNH\">国沢‖光宏（１９５８−）</dc:creator>\n<dcndl:creatorTranscription
-      xsi:type=\"dcndl:NDLNH\">クニサワ，ミツヒロ（１９５８−）</dcndl:creatorTranscription>\n<dc:subject
-      xsi:type=\"dcndl:NDLSH\">自動車</dc:subject>\n<dc:subject xsi:type=\"dcndl:NDC\">５３７．９２</dc:subject>\n<dc:subject
-      xsi:type=\"dcndl:NDLC\">ＮＣ２３</dc:subject>\n<dcndl:subjectTranscription xsi:type=\"dcndl:NDLSH\">ジドウシャ</dcndl:subjectTranscription>\n<dc:publisher>ＰＨＰ研究所</dc:publisher>\n<dcterms:issued>１９９２．６</dcterms:issued>\n<dcterms:issued
-      xsi:type=\"dcterms:W3CDTF\">1992</dcterms:issued>\n<dc:identifier xsi:type=\"dcterms:URI\">http://api.porta.ndl.go.jp/ndlopac/cgi-bin/ndlopac/ndl-book?kywd=92045156</dc:identifier>\n<dc:identifier
-      xsi:type=\"dcndl:ISBN\">4-569-53619-0</dc:identifier>\n<dc:identifier xsi:type=\"dcndl:JPNO\">92045156</dc:identifier>\n<dc:identifier
-      xsi:type=\"dcndl_porta:NDLCN\">ＮＣ２３−Ｅ２２５</dc:identifier>\n<dc:language xsi:type=\"dcterms:ISO639-2\">JPN</dc:language>\n<dc:identifier
-      xsi:type=\"dcndl_porta:ISBN13\">978-4-569-53619-4</dc:identifier>\n<dc:type
-      xsi:type=\"dcndl_porta:PORTAType\">Text</dc:type>\n<dc:type xsi:type=\"dcndl_porta:Digitalize\">4</dc:type>\n<dc:type
-      xsi:type=\"dcndl_porta:Web-get\">4</dc:type>\n<dc:type xsi:type=\"dcndl_porta:Payment\">4</dc:type>\n\n
-      \ <dcndl_porta:dpid>zomoku</dcndl_porta:dpid>\n  <dcndl_porta:repository_no>R000000001</dcndl_porta:repository_no>\n
-      \ <dcndl_porta:item_no>I002605070</dcndl_porta:item_no></item>\n<item>\n<title>愛車の維持費が３割安くなる本
-      : ワックスがけから車検まで、絶対得するメンテナンスの秘訣４６</title>\n<author>国沢光宏　著</author>\n<link>http://api.porta.ndl.go.jp/ndlopac/cgi-bin/ndlopac/ndl-book?kywd=96012977</link>\n
-      \ <description>出版地 : 東京;形態 : ２２２ｐ ; １８ｃｍ;シリーズ : ＰＨＰ　ｂｕｓｉｎｅｓｓ　ｌｉｂｒａｒｙ. Ｎｅｗ　ｌｉｆｅ;シリーズよみ
-      : ＰＨＰ　ｂｕｓｉｎｅｓｓ　ｌｉｂｒａｒｙ;シリーズよみ : Ｎｅｗ　ｌｉｆｅ;税込価格 : ８５０円;ＮＤＬ書誌ＩＤ : ０００００２４５０６０９</description>\n<dcndl:titleTranscription>アイシャ　ノ　イジヒ　ガ　サンワリ　ヤスクナル　ホン</dcndl:titleTranscription>\n<dc:creator>国沢光宏　著</dc:creator>\n<dc:creator
-      xsi:type=\"dcndl:NDLNH\">国沢　光宏（１９５８−）</dc:creator>\n<dcndl:creatorTranscription
-      xsi:type=\"dcndl:NDLNH\">クニサワ，ミツヒロ（１９５８−）</dcndl:creatorTranscription>\n<dc:subject
-      xsi:type=\"dcndl:NDLSH\">自動車整備</dc:subject>\n<dc:subject xsi:type=\"dcndl:NDC\">５３７．７</dc:subject>\n<dc:subject
-      xsi:type=\"dcndl:NDLC\">ＮＣ２３</dc:subject>\n<dcndl:subjectTranscription xsi:type=\"dcndl:NDLSH\">ジドウシャ　セイビ</dcndl:subjectTranscription>\n<dc:publisher>ＰＨＰ研究所</dc:publisher>\n<dcterms:issued>１９９５．１０</dcterms:issued>\n<dcterms:issued
-      xsi:type=\"dcterms:W3CDTF\">1995</dcterms:issued>\n<dc:identifier xsi:type=\"dcterms:URI\">http://api.porta.ndl.go.jp/ndlopac/cgi-bin/ndlopac/ndl-book?kywd=96012977</dc:identifier>\n<dc:identifier
-      xsi:type=\"dcndl:ISBN\">4-569-54876-8</dc:identifier>\n<dc:identifier xsi:type=\"dcndl:JPNO\">96012977</dc:identifier>\n<dc:identifier
-      xsi:type=\"dcndl_porta:NDLCN\">ＮＣ２３−Ｇ１６</dc:identifier>\n<dc:language xsi:type=\"dcterms:ISO639-2\">JPN</dc:language>\n<dc:identifier
-      xsi:type=\"dcndl_porta:ISBN13\">978-4-569-54876-0</dc:identifier>\n<dc:type
-      xsi:type=\"dcndl_porta:PORTAType\">Text</dc:type>\n<dc:type xsi:type=\"dcndl_porta:Digitalize\">4</dc:type>\n<dc:type
-      xsi:type=\"dcndl_porta:Web-get\">4</dc:type>\n<dc:type xsi:type=\"dcndl_porta:Payment\">4</dc:type>\n\n
-      \ <dcndl_porta:dpid>zomoku</dcndl_porta:dpid>\n  <dcndl_porta:repository_no>R000000001</dcndl_porta:repository_no>\n
-      \ <dcndl_porta:item_no>I002879375</dcndl_porta:item_no></item>\n<item>\n<title>愛知図書館産業資料情報</title>\n<author>愛知図書館　〔編〕</author>\n<link>http://api.porta.ndl.go.jp/ndlopac/cgi-bin/ndlopac/ndl-book?kywd=00000793</link>\n
-      \ <description>巻次・年月次 : 〔　　〕〜ｎｏ．１１９（１９８１年９月）;出版地 : 名古屋;形態 :  ; ２６ｃｍ;刊行頻度 : 月刊;注記
-      : 基本標題：Ｎｏ．４３（昭和４３年６月）〜ｎｏ．５６（１９７１年３月）　愛知県文化会館愛知図書館産業資料情報;ＮＤＬ書誌ＩＤ : ０００００００００７８５;刊行状態
-      : 刊行終了;所蔵事項 : Ｎｏ．１８（昭和４０年１１月）〜ｎｏ．１１９（１９８１年９月）;休廃刊 : 以後休刊</description>\n<dcndl:titleTranscription>アイチ　トショカン　サンギョウ　シリョウ　ジョウホウ</dcndl:titleTranscription>\n<dcterms:alternative>Ａｉｃｈｉ　Ｌｉｂｒａｒｙ　ｉｎｄｕｓｔｒｉａｌ　ｄｏｃｕｍｅｎｔｓ</dcterms:alternative>\n<dc:creator>愛知図書館　〔編〕</dc:creator>\n<dc:creator
-      xsi:type=\"dcndl:NDLNH\">愛知図書館</dc:creator>\n<dcndl:creatorTranscription xsi:type=\"dcndl:NDLNH\">アイチ　トショカン</dcndl:creatorTranscription>\n<dc:publisher>愛知図書館</dc:publisher>\n<dcterms:issued>［１９６−］−１９８１</dcterms:issued>\n<dcterms:issued
-      xsi:type=\"dcterms:W3CDTF\">196?</dcterms:issued>\n<dcterms:issued xsi:type=\"dcterms:W3CDTF\">1981</dcterms:issued>\n<dc:identifier
-      xsi:type=\"dcterms:URI\">http://api.porta.ndl.go.jp/ndlopac/cgi-bin/ndlopac/ndl-book?kywd=00000793</dc:identifier>\n<dc:identifier
-      xsi:type=\"dcndl:JPNO\">00000793</dc:identifier>\n<dc:identifier xsi:type=\"dcndl_porta:NDLCN\">Ｚ２１−５８６</dc:identifier>\n<dc:language
-      xsi:type=\"dcterms:ISO639-2\">JPN</dc:language>\n<dcndl:alternativeTranscription>Ａｉｃｈｉ　Ｌｉｂｒａｒｙ　ｉｎｄｕｓｔｒｉａｌ　ｄｏｃｕｍｅｎｔｓ</dcndl:alternativeTranscription>\n<dc:type
-      xsi:type=\"dcndl_porta:PORTAType\">Text</dc:type>\n<dc:type xsi:type=\"dcndl_porta:Digitalize\">4</dc:type>\n<dc:type
-      xsi:type=\"dcndl_porta:Web-get\">4</dc:type>\n<dc:type xsi:type=\"dcndl_porta:Payment\">4</dc:type>\n\n
-      \ <dcndl_porta:dpid>zomoku</dcndl_porta:dpid>\n  <dcndl_porta:repository_no>R000000001</dcndl_porta:repository_no>\n
-      \ <dcndl_porta:item_no>I004791802</dcndl_porta:item_no></item>\n\r\n\t\t</channel>\r\n\t\r\n</rss>"
-    http_version: '1.1'
-  recorded_at: Thu, 01 Dec 2011 12:55:53 GMT
-recorded_with: VCR 2.0.0.beta2
+    body: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<rss xmlns:dcterms=\"http://purl.org/dc/terms/\"
+      xmlns:dcndl=\"http://ndl.go.jp/dcndl/terms/\" version=\"2.0\" xmlns:dc=\"http://purl.org/dc/elements/1.1/\"
+      xmlns:openSearch=\"http://a9.com/-/spec/opensearchrss/1.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"
+      xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\">\n  <channel>\n    <title>iss-ndl-opac
+      library system - 国立国会図書館サーチ OpenSearch</title>\n    <link>iss.ndl.go.jp</link>\n
+      \   <description>Search results for any=library system cnt=10 dpid=iss-ndl-opac
+      </description>\n    <language>ja</language>\n    <openSearch:totalResults>5159</openSearch:totalResults>\n
+      \   <openSearch:startIndex>1</openSearch:startIndex>\n    <openSearch:itemsPerPage>10</openSearch:itemsPerPage>\n
+      \   <item>\n      <title>Master plan report of electric distribution system
+      in Bangkok (1982-2001) : long range plan</title>\n      <link>http://iss.ndl.go.jp/books/R100000002-I000002040989-00</link>\n<description>\n<![CDATA[<p>Japan
+      International Cooperation Agency</p>\n<ul><li>タイトル： Master plan report of electric
+      distribution system in Bangkok (1982-2001) : long range plan</li>\n</ul>]]>\n</description>\n
+      \     <category>本・雑誌</category>\n      <guid isPermaLink=\"true\">http://iss.ndl.go.jp/books/R100000002-I000002040989-00</guid>\n
+      \     <pubDate>Fri, 22 Oct 2004 09:00:00 +0900</pubDate>\n      <dc:title>Master
+      plan report of electric distribution system in Bangkok (1982-2001) : long range
+      plan</dc:title>\n      <dc:publisher>Japan International Cooperation Agency</dc:publisher>\n
+      \     <dcterms:issued xsi:type=\"dcterms:W3CDTF\">1982</dcterms:issued>\n      <dc:identifier
+      xsi:type=\"dcndl:JPNO\">90034936</dc:identifier>\n      <dc:subject xsi:type=\"dcndl:NDLC\">DL177</dc:subject>\n
+      \     <dcterms:description>At head of title: Kingdom of Thailand.Library's copy
+      has binding error.\"MPN CR (3) 82-121 (2/3) .\"</dcterms:description>\n    </item>\n
+      \   <item>\n      <title>System7コレクション : 心携ユーティリティからナンセンスまで… 漢字Talk対応プログラム41</title>\n
+      \     <link>http://iss.ndl.go.jp/books/R100000002-I000002222623-00</link>\n<description>\n<![CDATA[<p>翔泳社,488135020X</p>\n<ul><li>タイトル：
+      System7コレクション : 心携ユーティリティからナンセンスまで… 漢字Talk対応プログラム41</li>\n<li>タイトル（読み）： システム
+      セブン コレクション</li>\n<li>責任表示： SE編集部 編,</li>\n<li>シリーズ名： Macの宝箱. Macintosh software
+      library ; 3</li>\n</ul>]]>\n</description>\n      <author>SE編集部 編,</author>\n
+      \     <category>本・雑誌</category>\n      <guid isPermaLink=\"true\">http://iss.ndl.go.jp/books/R100000002-I000002222623-00</guid>\n
+      \     <pubDate>Mon, 21 Apr 2003 09:00:00 +0900</pubDate>\n      <dc:title>System7コレクション
+      : 心携ユーティリティからナンセンスまで… 漢字Talk対応プログラム41</dc:title>\n      <dcndl:titleTranscription>システム
+      セブン コレクション</dcndl:titleTranscription>\n      <dc:creator>SE編集部 編</dc:creator>\n
+      \     <dcndl:seriesTitle>Macの宝箱. Macintosh software library ; 3</dcndl:seriesTitle>\n
+      \     <dc:publisher>翔泳社</dc:publisher>\n      <dcterms:issued xsi:type=\"dcterms:W3CDTF\">1992</dcterms:issued>\n
+      \     <dc:identifier xsi:type=\"dcndl:ISBN\">488135020X</dc:identifier>\n      <dc:identifier
+      xsi:type=\"dcndl:JPNO\">93015695</dc:identifier>\n      <dc:subject>プログラミング
+      (コンピュータ)</dc:subject>\n      <dc:subject xsi:type=\"dcndl:NDLC\">M159</dc:subject>\n
+      \     <dc:subject xsi:type=\"dcndl:NDC8\">007.63</dc:subject>\n      <dcterms:description>付属資料
+      (フロッピーディスク2枚 3.5インチ2HD ホルダー入)</dcterms:description>\n      <dcterms:description>外箱入</dcterms:description>\n
+      \   </item>\n    <item>\n      <title>AGLINET union list of serials / Library
+      and Documentation Systems Division, David Lubin Memorial Library</title>\n      <link>http://iss.ndl.go.jp/books/R100000002-I000003104713-00</link>\n<description>\n<![CDATA[<p>Food
+      and Agriculture Organization of the United Nations</p>\n<ul><li>タイトル： AGLINET
+      union list of serials / Library and Documentation Systems Division, David Lubin
+      Memorial Library</li>\n</ul>]]>\n</description>\n      <category>本・雑誌</category>\n
+      \     <guid isPermaLink=\"true\">http://iss.ndl.go.jp/books/R100000002-I000003104713-00</guid>\n
+      \     <pubDate>Fri, 15 Jun 1990 09:00:00 +0900</pubDate>\n      <dc:title>AGLINET
+      union list of serials / Library and Documentation Systems Division, David Lubin
+      Memorial Library</dc:title>\n      <dc:publisher>Food and Agriculture Organization
+      of the United Nations</dc:publisher>\n      <dcterms:issued xsi:type=\"dcterms:W3CDTF\">1979</dcterms:issued>\n
+      \     <dc:subject>農学</dc:subject>\n      <dc:subject>農業</dc:subject>\n      <dc:subject>逐次刊行物
+      (地理区分)</dc:subject>\n      <dc:subject>書目</dc:subject>\n      <dc:subject>総合目録</dc:subject>\n
+      \     <dc:subject xsi:type=\"dcndl:NDLC\">RB1</dc:subject>\n      <dc:subject
+      xsi:type=\"dcndl:NDLC\">RB21</dc:subject>\n    </item>\n    <item>\n      <title>Computerised
+      systems in library and information services : proceedings of a conference of
+      the Aslib Biological and Agricultural Sciences Group held at the Commonwealth
+      Institute, London, June 9, 1982 / editor, H.L. Williams</title>\n      <link>http://iss.ndl.go.jp/books/R100000002-I000003112941-00</link>\n<description>\n<![CDATA[<p>Aslib,0851421695</p>\n<ul><li>タイトル：
+      Computerised systems in library and information services : proceedings of a
+      conference of the Aslib Biological and Agricultural Sciences Group held at the
+      Commonwealth Institute, London, June 9, 1982 / editor, H.L. Williams</li>\n</ul>]]>\n</description>\n
+      \     <category>本・雑誌</category>\n      <guid isPermaLink=\"true\">http://iss.ndl.go.jp/books/R100000002-I000003112941-00</guid>\n
+      \     <pubDate>Sat, 30 Apr 1988 09:00:00 +0900</pubDate>\n      <dc:title>Computerised
+      systems in library and information services : proceedings of a conference of
+      the Aslib Biological and Agricultural Sciences Group held at the Commonwealth
+      Institute, London, June 9, 1982 / editor, H.L. Williams</dc:title>\n      <dc:publisher>Aslib</dc:publisher>\n
+      \     <dcterms:issued xsi:type=\"dcterms:W3CDTF\">1983</dcterms:issued>\n      <dc:identifier
+      xsi:type=\"dcndl:ISBN\">0851421695</dc:identifier>\n      <dc:subject>図書館∥オートメーション</dc:subject>\n
+      \     <dc:subject>情報サービス (地理区分)</dc:subject>\n      <dc:subject>Libraries --
+      Automation -- Congresses</dc:subject>\n      <dc:subject>Library science --
+      Data processing -- Congresses</dc:subject>\n      <dc:subject>Information storage
+      and retrieval systems -- Congresses</dc:subject>\n      <dc:subject>Information
+      services -- Congresses</dc:subject>\n      <dc:subject xsi:type=\"dcndl:NDLC\">UL11</dc:subject>\n
+      \     <dc:subject xsi:type=\"dcterms:LCC\">Z678.9</dc:subject>\n      <dc:subject
+      xsi:type=\"dcterms:DDC\">025.3/028/54</dc:subject>\n      <dcterms:description>Includes
+      bibliographies</dcterms:description>\n    </item>\n    <item>\n      <title>Library
+      Systems Seminar, The Hague : linking of automated library functions, April,
+      20-22, 1983 / editor, Anton Bossers</title>\n      <link>http://iss.ndl.go.jp/books/R100000002-I000003118837-00</link>\n<description>\n<![CDATA[<p>Pica-Bureau,9070311186</p>\n<ul><li>タイトル：
+      Library Systems Seminar, The Hague : linking of automated library functions,
+      April, 20-22, 1983 / editor, Anton Bossers</li>\n<li>シリーズ名： Intermarc software-subgroup
+      seminar ; 7</li>\n</ul>]]>\n</description>\n      <category>本・雑誌</category>\n
+      \     <guid isPermaLink=\"true\">http://iss.ndl.go.jp/books/R100000002-I000003118837-00</guid>\n
+      \     <pubDate>Fri, 11 Jul 1997 09:00:00 +0900</pubDate>\n      <dc:title>Library
+      Systems Seminar, The Hague : linking of automated library functions, April,
+      20-22, 1983 / editor, Anton Bossers</dc:title>\n      <dcndl:seriesTitle>Intermarc
+      software-subgroup seminar ; 7</dcndl:seriesTitle>\n      <dc:publisher>Pica-Bureau</dc:publisher>\n
+      \     <dcterms:issued xsi:type=\"dcterms:W3CDTF\">1983</dcterms:issued>\n      <dc:identifier
+      xsi:type=\"dcndl:ISBN\">9070311186</dc:identifier>\n      <dc:identifier xsi:type=\"dcndl:ISSN\">01063375</dc:identifier>\n
+      \     <dc:subject>図書館学</dc:subject>\n      <dc:subject>図書館∥オートメーション</dc:subject>\n
+      \     <dc:subject>情報サービス (地理区分)</dc:subject>\n      <dc:subject>ヨーロッパ</dc:subject>\n
+      \     <dc:subject xsi:type=\"dcndl:NDLC\">UL21</dc:subject>\n      <dcterms:description>Includes
+      bibliographical references</dcterms:description>\n    </item>\n    <item>\n
+      \     <title>The Foreign Service of the United States : first line of defense
+      / Andrew L. Steigman ; foreword by Carol C. Laise</title>\n      <link>http://iss.ndl.go.jp/books/R100000002-I000003153069-00</link>\n<description>\n<![CDATA[<p>Westview
+      Press,081330167X</p>\n<ul><li>タイトル： The Foreign Service of the United States
+      : first line of defense / Andrew L. Steigman ; foreword by Carol C. Laise</li>\n<li>シリーズ名：
+      Westview library of federal departments, agencies, and systems</li>\n</ul>]]>\n</description>\n
+      \     <category>本・雑誌</category>\n      <guid isPermaLink=\"true\">http://iss.ndl.go.jp/books/R100000002-I000003153069-00</guid>\n
+      \     <pubDate>Fri, 14 Oct 1988 09:00:00 +0900</pubDate>\n      <dc:title>The
+      Foreign Service of the United States : first line of defense / Andrew L. Steigman
+      ; foreword by Carol C. Laise</dc:title>\n      <dcndl:seriesTitle>Westview library
+      of federal departments, agencies, and systems</dcndl:seriesTitle>\n      <dc:publisher>Westview
+      Press</dc:publisher>\n      <dcterms:issued xsi:type=\"dcterms:W3CDTF\">1985</dcterms:issued>\n
+      \     <dc:identifier xsi:type=\"dcndl:ISBN\">081330167X</dc:identifier>\n      <dc:subject>United
+      States. Foreign Service</dc:subject>\n      <dc:subject>アメリカ合衆国</dc:subject>\n
+      \     <dc:subject>外務行政 (地理区分)</dc:subject>\n      <dc:subject>United States
+      -- Diplomatic and consular service</dc:subject>\n      <dc:subject xsi:type=\"dcndl:NDLC\">AU-631</dc:subject>\n
+      \     <dc:subject xsi:type=\"dcndl:NDLC\">A99-U</dc:subject>\n      <dc:subject
+      xsi:type=\"dcndl:NDLC\">A631</dc:subject>\n      <dc:subject xsi:type=\"dcterms:LCC\">JX1706.Z5</dc:subject>\n
+      \     <dc:subject xsi:type=\"dcterms:DDC\">353.0089/09</dc:subject>\n      <dcterms:description>Includes
+      index</dcterms:description>\n      <dcterms:description>Bibliography: p. 253-256</dcterms:description>\n
+      \   </item>\n    <item>\n      <title>Dictionaries, encyclopedias, and other
+      word-related books / Annie M. Brewer, editor</title>\n      <link>http://iss.ndl.go.jp/books/R100000002-I000003166621-00</link>\n<description>\n<![CDATA[<p>Gale
+      Research Co,0810304406</p>\n<ul><li>タイトル： Dictionaries, encyclopedias, and other
+      word-related books / Annie M. Brewer, editor</li>\n</ul>]]>\n</description>\n
+      \     <category>本・雑誌</category>\n      <guid isPermaLink=\"true\">http://iss.ndl.go.jp/books/R100000002-I000003166621-00</guid>\n
+      \     <pubDate>Mon, 02 Feb 2004 09:00:00 +0900</pubDate>\n      <dc:title>Dictionaries,
+      encyclopedias, and other word-related books / Annie M. Brewer, editor</dc:title>\n
+      \     <dcndl:edition>4th ed</dcndl:edition>\n      <dc:publisher>Gale Research
+      Co</dc:publisher>\n      <dcterms:issued xsi:type=\"dcterms:W3CDTF\">1988</dcterms:issued>\n
+      \     <dc:identifier xsi:type=\"dcndl:ISBN\">0810304406</dc:identifier>\n      <dc:subject>百科事典</dc:subject>\n
+      \     <dc:subject>辞書</dc:subject>\n      <dc:subject>書目</dc:subject>\n      <dc:subject>Encyclopedias
+      and dictionaries -- Bibliography</dc:subject>\n      <dc:subject xsi:type=\"dcndl:NDLC\">UP43</dc:subject>\n
+      \     <dc:subject xsi:type=\"dcterms:LCC\">Z5848</dc:subject>\n      <dc:subject
+      xsi:type=\"dcterms:LCC\">AE5</dc:subject>\n      <dc:subject xsi:type=\"dcterms:DDC\">016.03</dc:subject>\n
+      \     <dcterms:description>\"A classed guide to dictionaries, encyclopedias,
+      and similar works, based on Library of Congress MARC records, and arranged according
+      to the Library of Congress classification system. Including compilations of
+      acronyms, Americanisms, colloquialisms, etymologies, glossaries, idioms and
+      expressions, orthography, provincialisms, slang, terms and phrases, and vocabularies
+      in English and all other languages.\"</dcterms:description>\n      <dcterms:description>Includes
+      index</dcterms:description>\n    </item>\n    <item>\n      <title>The origin
+      of the solar system : the capture theory / John R. Dormand, Michael M. Woolfson</title>\n
+      \     <link>http://iss.ndl.go.jp/books/R100000002-I000003188632-00</link>\n<description>\n<![CDATA[<p>E.
+      Horwood Halsted Press,047021466X</p>\n<ul><li>タイトル： The origin of the solar
+      system : the capture theory / John R. Dormand, Michael M. Woolfson</li>\n<li>シリーズ名：
+      The Ellis Horwood library of space science and space technology. Series in astronomy</li>\n</ul>]]>\n</description>\n
+      \     <category>本・雑誌</category>\n      <guid isPermaLink=\"true\">http://iss.ndl.go.jp/books/R100000002-I000003188632-00</guid>\n
+      \     <pubDate>Fri, 26 Oct 1990 09:00:00 +0900</pubDate>\n      <dc:title>The
+      origin of the solar system : the capture theory / John R. Dormand, Michael M.
+      Woolfson</dc:title>\n      <dcndl:seriesTitle>The Ellis Horwood library of space
+      science and space technology. Series in astronomy</dcndl:seriesTitle>\n      <dc:publisher>E.
+      Horwood Halsted Press</dc:publisher>\n      <dcterms:issued xsi:type=\"dcterms:W3CDTF\">1989</dcterms:issued>\n
+      \     <dc:identifier xsi:type=\"dcndl:ISBN\">047021466X</dc:identifier>\n      <dc:identifier
+      xsi:type=\"dcndl:ErrorISBN\">0745806015</dc:identifier>\n      <dc:subject>太陽系</dc:subject>\n
+      \     <dc:subject>Solar system -- Origin</dc:subject>\n      <dc:subject xsi:type=\"dcndl:NDLC\">MB71</dc:subject>\n
+      \     <dc:subject xsi:type=\"dcterms:LCC\">QB501</dc:subject>\n      <dc:subject
+      xsi:type=\"dcterms:DDC\">523.2</dc:subject>\n      <dcterms:description>Includes
+      index</dcterms:description>\n      <dcterms:description>Bibliography: p. [217]-219</dcterms:description>\n
+      \   </item>\n    <item>\n      <title>An overview of image processing and image
+      management systems and their application / J. Howard Petrie</title>\n      <link>http://iss.ndl.go.jp/books/R100000002-I000003194495-00</link>\n<description>\n<![CDATA[<p>British
+      Library, Research and Development Dept,0712331603</p>\n<ul><li>タイトル： An overview
+      of image processing and image management systems and their application / J.
+      Howard Petrie</li>\n<li>シリーズ名： British Library research paper ; 40</li>\n</ul>]]>\n</description>\n
+      \     <category>本・雑誌</category>\n      <guid isPermaLink=\"true\">http://iss.ndl.go.jp/books/R100000002-I000003194495-00</guid>\n
+      \     <pubDate>Wed, 22 May 1991 09:00:00 +0900</pubDate>\n      <dc:title>An
+      overview of image processing and image management systems and their application
+      / J. Howard Petrie</dc:title>\n      <dcndl:seriesTitle>British Library research
+      paper ; 40</dcndl:seriesTitle>\n      <dc:publisher>British Library, Research
+      and Development Dept</dc:publisher>\n      <dcterms:issued xsi:type=\"dcterms:W3CDTF\">1988</dcterms:issued>\n
+      \     <dc:identifier xsi:type=\"dcndl:ISBN\">0712331603</dc:identifier>\n      <dc:identifier
+      xsi:type=\"dcndl:ISSN\">02699257</dc:identifier>\n      <dc:subject>画像処理</dc:subject>\n
+      \     <dc:subject xsi:type=\"dcndl:NDLC\">M154</dc:subject>\n      <dcterms:description>Bibliography:
+      p. 69-74</dcterms:description>\n    </item>\n    <item>\n      <title>Survey
+      of legislative activities of Federal Assembly in the period of the transformation
+      of legal order (from the Constitutive Act no. 135/1989 till the end of the 6th
+      election term)</title>\n      <link>http://iss.ndl.go.jp/books/R100000002-I000003210126-00</link>\n<description>\n<![CDATA[<p></p>\n<ul><li>タイトル：
+      Survey of legislative activities of Federal Assembly in the period of the transformation
+      of legal order (from the Constitutive Act no. 135/1989 till the end of the 6th
+      election term)</li>\n</ul>]]>\n</description>\n      <category>本・雑誌</category>\n
+      \     <guid isPermaLink=\"true\">http://iss.ndl.go.jp/books/R100000002-I000003210126-00</guid>\n
+      \     <pubDate>Fri, 19 Feb 1993 09:00:00 +0900</pubDate>\n      <dc:title>Survey
+      of legislative activities of Federal Assembly in the period of the transformation
+      of legal order (from the Constitutive Act no. 135/1989 till the end of the 6th
+      election term)</dc:title>\n      <dcterms:issued xsi:type=\"dcterms:W3CDTF\">1992</dcterms:issued>\n
+      \     <dc:subject>法令</dc:subject>\n      <dc:subject>索引</dc:subject>\n      <dc:subject>チェコスロバキア</dc:subject>\n
+      \     <dc:subject xsi:type=\"dcndl:NDLC\">CC17-1</dc:subject>\n      <dc:subject
+      xsi:type=\"dcndl:NDLC\">AC17-121</dc:subject>\n      <dc:subject xsi:type=\"dcndl:NDLC\">A121</dc:subject>\n
+      \     <dcterms:description>Cover title</dcterms:description>\n      <dcterms:description>\"Retrieved
+      from an automatized system of CS Legsys legal information.\"</dcterms:description>\n
+      \   </item>\n  </channel>\n</rss>\n"
+    http_version: '1.0'
+  recorded_at: Mon, 26 Dec 2011 09:39:59 GMT
+recorded_with: VCR 2.0.0.rc1

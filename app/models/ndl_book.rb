@@ -5,12 +5,11 @@ class NdlBook
       cnt = self.per_page
       page = 1 if page.to_i < 1
       idx = (page.to_i - 1) * cnt + 1
-      url = "http://api.porta.ndl.go.jp/servicedp/opensearch?dpid=zomoku&any=#{URI.encode(query.strip)}&cnt=#{cnt}&idx=#{idx}"
-      Rails.logger.debug url
-      xml = open(url).read
-      doc = Nokogiri::XML(xml)
+      doc = Nokogiri::XML(Manifestation.search_ndl(query, {:cnt => cnt, :page => page, :idx => idx, :raw => true}).to_s)
+#      raise doc.to_s
       items = doc.xpath('//channel/item')
       total_entries = doc.at('//channel/openSearch:totalResults').content.to_i
+
       {:items => items, :total_entries => total_entries}
     else
       {:items => [], :total_entries => 0}

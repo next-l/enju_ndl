@@ -9,7 +9,7 @@ describe NdlBook do
   context "search" do
     use_vcr_cassette "enju_ndl/search", :record => :new_episodes
     it "should search bibliographic record" do
-      NdlBook.search('library')[:total_entries].should eq 10124
+      NdlBook.search('library system')[:total_entries].should eq 5159
     end
   end
 
