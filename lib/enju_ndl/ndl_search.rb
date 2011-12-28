@@ -42,7 +42,7 @@ module EnjuNdl
           manifestation = Manifestation.new(
             :original_title => title[:manifestation],
             :title_transcription => title[:transcription],
-            # TODO: PORTAに入っている図書以外の資料を調べる
+            # TODO: NDLサーチに入っている図書以外の資料を調べる
             #:carrier_type_id => CarrierType.where(:name => 'print').first.id,
             :language_id => language_id,
             :isbn => isbn,
@@ -122,7 +122,7 @@ module EnjuNdl
         end
       end
 
-      #private
+      private
       def get_title(doc)
         title = {
           :manifestation => doc.xpath('//dc:title/rdf:Description/rdf:value').collect(&:content).join(' ').tr('ａ-ｚＡ-Ｚ０-９　', 'a-zA-Z0-9 ').squeeze(' '),
