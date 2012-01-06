@@ -115,7 +115,7 @@ module EnjuNdl
         rss = self.search_ndl(isbn, {:dpid => 'iss-ndl-opac', :item => 'isbn'})
         if rss.channel.totalResults.to_i == 0
           isbn = normalize_isbn(isbn)
-          rss = self.search_ndl(isbn, {:dpid => 'iss-ndl-opac', :item => 'isbn'}).to_s
+          rss = self.search_ndl(isbn, {:dpid => 'iss-ndl-opac', :item => 'isbn'})
         end
         if rss.items.first
           doc = Nokogiri::XML(open("#{rss.items.first.link}.rdf").read)
