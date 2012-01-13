@@ -15,29 +15,29 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Mon, 26 Dec 2011 09:39:51 GMT
+      - Fri, 13 Jan 2012 16:30:01 GMT
       server:
       - Apache
       x-powered-by:
       - Phusion Passenger (mod_rails/mod_rack) 2.2.15
       etag:
-      - ! '"77866a4ce93cc4a7346dd4d9c2e9c7f5"'
+      - ! '"0feb0b4c6c2c4ce2dff11b7b2b01b73b"'
       x-ua-compatible:
       - IE=Edge,chrome=1
       x-runtime:
-      - '0.442756'
+      - '0.837815'
       cache-control:
       - max-age=0, private, must-revalidate
       content-length:
-      - '17041'
+      - '16951'
       status:
       - '200'
       content-type:
       - application/xml; charset=utf-8
       set-cookie:
-      - _front_session_id=92fa15a52b36e4c0c2214d18e63f5735; domain=.iss.ndl.go.jp;
-        path=/; expires=Mon, 26-Dec-2011 10:39:51 GMT; HttpOnly
-      - serverid=1102; path=/
+      - _front_session_id=9b7aa1e3088101c66730c01c4eadc1c0; domain=.iss.ndl.go.jp;
+        path=/; expires=Fri, 13-Jan-2012 17:30:02 GMT; HttpOnly
+      - serverid=1105; path=/
       vary:
       - Accept-Encoding,User-Agent
       connection:
@@ -48,13 +48,13 @@ http_interactions:
       xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\">\n  <channel>\n    <title>iss-ndl-opac
       library system - 国立国会図書館サーチ OpenSearch</title>\n    <link>iss.ndl.go.jp</link>\n
       \   <description>Search results for any=library system cnt=10 dpid=iss-ndl-opac
-      </description>\n    <language>ja</language>\n    <openSearch:totalResults>5159</openSearch:totalResults>\n
+      </description>\n    <language>ja</language>\n    <openSearch:totalResults>5163</openSearch:totalResults>\n
       \   <openSearch:startIndex>1</openSearch:startIndex>\n    <openSearch:itemsPerPage>10</openSearch:itemsPerPage>\n
       \   <item>\n      <title>Master plan report of electric distribution system
       in Bangkok (1982-2001) : long range plan</title>\n      <link>http://iss.ndl.go.jp/books/R100000002-I000002040989-00</link>\n<description>\n<![CDATA[<p>Japan
       International Cooperation Agency</p>\n<ul><li>タイトル： Master plan report of electric
       distribution system in Bangkok (1982-2001) : long range plan</li>\n</ul>]]>\n</description>\n
-      \     <category>本・雑誌</category>\n      <guid isPermaLink=\"true\">http://iss.ndl.go.jp/books/R100000002-I000002040989-00</guid>\n
+      \     <category>本</category>\n      <guid isPermaLink=\"true\">http://iss.ndl.go.jp/books/R100000002-I000002040989-00</guid>\n
       \     <pubDate>Fri, 22 Oct 2004 09:00:00 +0900</pubDate>\n      <dc:title>Master
       plan report of electric distribution system in Bangkok (1982-2001) : long range
       plan</dc:title>\n      <dc:publisher>Japan International Cooperation Agency</dc:publisher>\n
@@ -67,7 +67,7 @@ http_interactions:
       System7コレクション : 心携ユーティリティからナンセンスまで… 漢字Talk対応プログラム41</li>\n<li>タイトル（読み）： システム
       セブン コレクション</li>\n<li>責任表示： SE編集部 編,</li>\n<li>シリーズ名： Macの宝箱. Macintosh software
       library ; 3</li>\n</ul>]]>\n</description>\n      <author>SE編集部 編,</author>\n
-      \     <category>本・雑誌</category>\n      <guid isPermaLink=\"true\">http://iss.ndl.go.jp/books/R100000002-I000002222623-00</guid>\n
+      \     <category>本</category>\n      <guid isPermaLink=\"true\">http://iss.ndl.go.jp/books/R100000002-I000002222623-00</guid>\n
       \     <pubDate>Mon, 21 Apr 2003 09:00:00 +0900</pubDate>\n      <dc:title>System7コレクション
       : 心携ユーティリティからナンセンスまで… 漢字Talk対応プログラム41</dc:title>\n      <dcndl:titleTranscription>システム
       セブン コレクション</dcndl:titleTranscription>\n      <dc:creator>SE編集部 編</dc:creator>\n
@@ -82,7 +82,7 @@ http_interactions:
       and Documentation Systems Division, David Lubin Memorial Library</title>\n      <link>http://iss.ndl.go.jp/books/R100000002-I000003104713-00</link>\n<description>\n<![CDATA[<p>Food
       and Agriculture Organization of the United Nations</p>\n<ul><li>タイトル： AGLINET
       union list of serials / Library and Documentation Systems Division, David Lubin
-      Memorial Library</li>\n</ul>]]>\n</description>\n      <category>本・雑誌</category>\n
+      Memorial Library</li>\n</ul>]]>\n</description>\n      <category>本</category>\n
       \     <guid isPermaLink=\"true\">http://iss.ndl.go.jp/books/R100000002-I000003104713-00</guid>\n
       \     <pubDate>Fri, 15 Jun 1990 09:00:00 +0900</pubDate>\n      <dc:title>AGLINET
       union list of serials / Library and Documentation Systems Division, David Lubin
@@ -98,7 +98,7 @@ http_interactions:
       Computerised systems in library and information services : proceedings of a
       conference of the Aslib Biological and Agricultural Sciences Group held at the
       Commonwealth Institute, London, June 9, 1982 / editor, H.L. Williams</li>\n</ul>]]>\n</description>\n
-      \     <category>本・雑誌</category>\n      <guid isPermaLink=\"true\">http://iss.ndl.go.jp/books/R100000002-I000003112941-00</guid>\n
+      \     <category>本</category>\n      <guid isPermaLink=\"true\">http://iss.ndl.go.jp/books/R100000002-I000003112941-00</guid>\n
       \     <pubDate>Sat, 30 Apr 1988 09:00:00 +0900</pubDate>\n      <dc:title>Computerised
       systems in library and information services : proceedings of a conference of
       the Aslib Biological and Agricultural Sciences Group held at the Commonwealth
@@ -117,8 +117,8 @@ http_interactions:
       20-22, 1983 / editor, Anton Bossers</title>\n      <link>http://iss.ndl.go.jp/books/R100000002-I000003118837-00</link>\n<description>\n<![CDATA[<p>Pica-Bureau,9070311186</p>\n<ul><li>タイトル：
       Library Systems Seminar, The Hague : linking of automated library functions,
       April, 20-22, 1983 / editor, Anton Bossers</li>\n<li>シリーズ名： Intermarc software-subgroup
-      seminar ; 7</li>\n</ul>]]>\n</description>\n      <category>本・雑誌</category>\n
-      \     <guid isPermaLink=\"true\">http://iss.ndl.go.jp/books/R100000002-I000003118837-00</guid>\n
+      seminar ; 7</li>\n</ul>]]>\n</description>\n      <category>本</category>\n      <guid
+      isPermaLink=\"true\">http://iss.ndl.go.jp/books/R100000002-I000003118837-00</guid>\n
       \     <pubDate>Fri, 11 Jul 1997 09:00:00 +0900</pubDate>\n      <dc:title>Library
       Systems Seminar, The Hague : linking of automated library functions, April,
       20-22, 1983 / editor, Anton Bossers</dc:title>\n      <dcndl:seriesTitle>Intermarc
@@ -134,7 +134,7 @@ http_interactions:
       Press,081330167X</p>\n<ul><li>タイトル： The Foreign Service of the United States
       : first line of defense / Andrew L. Steigman ; foreword by Carol C. Laise</li>\n<li>シリーズ名：
       Westview library of federal departments, agencies, and systems</li>\n</ul>]]>\n</description>\n
-      \     <category>本・雑誌</category>\n      <guid isPermaLink=\"true\">http://iss.ndl.go.jp/books/R100000002-I000003153069-00</guid>\n
+      \     <category>本</category>\n      <guid isPermaLink=\"true\">http://iss.ndl.go.jp/books/R100000002-I000003153069-00</guid>\n
       \     <pubDate>Fri, 14 Oct 1988 09:00:00 +0900</pubDate>\n      <dc:title>The
       Foreign Service of the United States : first line of defense / Andrew L. Steigman
       ; foreword by Carol C. Laise</dc:title>\n      <dcndl:seriesTitle>Westview library
@@ -152,7 +152,7 @@ http_interactions:
       word-related books / Annie M. Brewer, editor</title>\n      <link>http://iss.ndl.go.jp/books/R100000002-I000003166621-00</link>\n<description>\n<![CDATA[<p>Gale
       Research Co,0810304406</p>\n<ul><li>タイトル： Dictionaries, encyclopedias, and other
       word-related books / Annie M. Brewer, editor</li>\n</ul>]]>\n</description>\n
-      \     <category>本・雑誌</category>\n      <guid isPermaLink=\"true\">http://iss.ndl.go.jp/books/R100000002-I000003166621-00</guid>\n
+      \     <category>本</category>\n      <guid isPermaLink=\"true\">http://iss.ndl.go.jp/books/R100000002-I000003166621-00</guid>\n
       \     <pubDate>Mon, 02 Feb 2004 09:00:00 +0900</pubDate>\n      <dc:title>Dictionaries,
       encyclopedias, and other word-related books / Annie M. Brewer, editor</dc:title>\n
       \     <dcndl:edition>4th ed</dcndl:edition>\n      <dc:publisher>Gale Research
@@ -174,7 +174,7 @@ http_interactions:
       Horwood Halsted Press,047021466X</p>\n<ul><li>タイトル： The origin of the solar
       system : the capture theory / John R. Dormand, Michael M. Woolfson</li>\n<li>シリーズ名：
       The Ellis Horwood library of space science and space technology. Series in astronomy</li>\n</ul>]]>\n</description>\n
-      \     <category>本・雑誌</category>\n      <guid isPermaLink=\"true\">http://iss.ndl.go.jp/books/R100000002-I000003188632-00</guid>\n
+      \     <category>本</category>\n      <guid isPermaLink=\"true\">http://iss.ndl.go.jp/books/R100000002-I000003188632-00</guid>\n
       \     <pubDate>Fri, 26 Oct 1990 09:00:00 +0900</pubDate>\n      <dc:title>The
       origin of the solar system : the capture theory / John R. Dormand, Michael M.
       Woolfson</dc:title>\n      <dcndl:seriesTitle>The Ellis Horwood library of space
@@ -191,7 +191,7 @@ http_interactions:
       Library, Research and Development Dept,0712331603</p>\n<ul><li>タイトル： An overview
       of image processing and image management systems and their application / J.
       Howard Petrie</li>\n<li>シリーズ名： British Library research paper ; 40</li>\n</ul>]]>\n</description>\n
-      \     <category>本・雑誌</category>\n      <guid isPermaLink=\"true\">http://iss.ndl.go.jp/books/R100000002-I000003194495-00</guid>\n
+      \     <category>本</category>\n      <guid isPermaLink=\"true\">http://iss.ndl.go.jp/books/R100000002-I000003194495-00</guid>\n
       \     <pubDate>Wed, 22 May 1991 09:00:00 +0900</pubDate>\n      <dc:title>An
       overview of image processing and image management systems and their application
       / J. Howard Petrie</dc:title>\n      <dcndl:seriesTitle>British Library research
@@ -206,7 +206,7 @@ http_interactions:
       election term)</title>\n      <link>http://iss.ndl.go.jp/books/R100000002-I000003210126-00</link>\n<description>\n<![CDATA[<p></p>\n<ul><li>タイトル：
       Survey of legislative activities of Federal Assembly in the period of the transformation
       of legal order (from the Constitutive Act no. 135/1989 till the end of the 6th
-      election term)</li>\n</ul>]]>\n</description>\n      <category>本・雑誌</category>\n
+      election term)</li>\n</ul>]]>\n</description>\n      <category>本</category>\n
       \     <guid isPermaLink=\"true\">http://iss.ndl.go.jp/books/R100000002-I000003210126-00</guid>\n
       \     <pubDate>Fri, 19 Feb 1993 09:00:00 +0900</pubDate>\n      <dc:title>Survey
       of legislative activities of Federal Assembly in the period of the transformation
@@ -219,5 +219,5 @@ http_interactions:
       from an automatized system of CS Legsys legal information.\"</dcterms:description>\n
       \   </item>\n  </channel>\n</rss>\n"
     http_version: '1.0'
-  recorded_at: Mon, 26 Dec 2011 09:39:59 GMT
+  recorded_at: Fri, 13 Jan 2012 16:30:02 GMT
 recorded_with: VCR 2.0.0.rc1

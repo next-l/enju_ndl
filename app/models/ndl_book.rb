@@ -21,7 +21,7 @@ class NdlBook
   end
 
   def self.find_by_isbn(isbn)
-    url = "http://api.porta.ndl.go.jp/servicedp/opensearch?dpid=zomoku&isbn=#{isbn}&cnt=1&idx=1"
+    url = "http://iss.ndl.go.jp/api/opensearch?dpid=iss-ndl-opac&isbn=#{isbn}&cnt=1&idx=1"
     Rails.logger.debug url
     xml = open(url).read
     doc = Nokogiri::XML(xml).at('//channel/item')
@@ -36,47 +36,11 @@ class NdlBook
   def self.import_from_sru_response(jpno)
     manifestation = Manifestation.where(:nbn => jpno).first
     return if manifestation
-    response = Nokogiri::XML(open("http://api.porta.ndl.go.jp/servicedp/SRUDp?operation=searchRetrive&maximumRecords=10&recordSchema=dcndl_porta&query=%28jpno=#{jpno}%29")).at('//xmlns:recordData', 'xmlns' => "http://www.loc.gov/zing/srw/")
+    url = "http://iss.ndl.go.jp/api/sru?operation=searchRetrieve&recordSchema=dcndl&&maximumRecords=1&&query=%28jpno=#{jpno}%29"
+    response = Nokogiri::XML(open("http://iss.ndl.go.jp/api/sru?operation=searchRetrieve&recordSchema=dcndl&&maximumRecords=1&&query=%28jpno=#{jpno}%29")).at('//xmlns:recordData')
     return unless response.content
     doc = Nokogiri::XML(response.content)
-    title = {
-      :manifestation => doc.xpath('//dc:title').collect(&:content).join(' ').tr('ａ-ｚＡ-Ｚ０-９　', 'a-zA-Z0-9 ').squeeze(' '),
-      :transcription => doc.xpath('//dcndl:titleTranscription').collect(&:content).join(' ').tr('ａ-ｚＡ-Ｚ０-９　', 'a-zA-Z0-9 ').squeeze(' '),
-      :original => doc.xpath('//dcterms:alternative').collect(&:content).join(' ').tr('ａ-ｚＡ-Ｚ０-９　', 'a-zA-Z0-9 ').squeeze(' ')
-    }
-    lang = doc.at('//dc:language[@xsi:type="dcterms:ISO639-2"]').try(:content)
-    creators = []
-    doc.xpath('//dc:creator[@xsi:type="dcndl:NDLNH"]').each do |creator|
-      creators << creator.content.tr('ａ-ｚＡ-Ｚ０-９　‖', 'a-zA-Z0-9 ')
-    end
-    publishers = []
-    doc.xpath('//dc:publisher').each do |publisher|
-      publishers << publisher.content.tr('ａ-ｚＡ-Ｚ０-９　‖', 'a-zA-Z0-9 ')
-    end
-    pub_date = doc.at('//dcterms:issued').content.try(:tr, '０-９．', '0-9-').to_s.gsub(/（.*）/, '')
-    unless pub_date =~  /^\d+(-\d{0,2}){0,2}$/
-      pub_date = nil
-    end
-
-    Manifestation.transaction do
-      language = Language.where(:iso_639_2 => lang.downcase).first if lang
-      manifestation = Manifestation.new(
-        :original_title => title[:manifestation],
-        :title_transcription => title[:title_transcription],
-        :title_alternative => title[:original],
-        :pub_date => pub_date,
-        :isbn => doc.at('//dc:identifier[@xsi:type="dcndl:ISBN"]').try(:content),
-        :nbn => doc.at('//dc:identifier[@xsi:type="dcndl:JPNO"]').content,
-        :ndc => doc.at('//dc:subject[@xsi:type="dcndl:NDC"]').try(:content).try(:tr, '０-９．', '0-9.').to_s.gsub(/（.*）/, '')
-      )
-      manifestation.language = language if language
-      patron_creators = Patron.import_patrons(creators.zip([]).map{|f,t| {:full_name => f, :full_name_transcription => t}}).uniq
-      patron_publishers = Patron.import_patrons(publishers.zip([]).map{|f,t| {:full_name => f, :full_name_transcription => t}}).uniq
-      manifestation.creators << patron_creators
-      manifestation.publishers << patron_publishers
-      manifestation.save!
-    end
-    manifestation
+    Manifestation.import_record(doc)
   end
 
   attr_accessor :url

@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(:version => 20111201121844) do
     t.string   "nbn"
     t.string   "ndc"
     t.integer  "language_id"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

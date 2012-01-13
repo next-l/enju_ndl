@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.porta.ndl.go.jp:80/servicedp/opensearch?dpid=zomoku&isbn=9784839931995&cnt=1&idx=1
+    uri: http://api.porta.ndl.go.jp/servicedp/opensearch?dpid=zomoku&isbn=9784839931995&cnt=1&idx=1
     body: ''
     headers:
       accept:
@@ -15,7 +15,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Thu, 01 Dec 2011 12:55:53 GMT
+      - Fri, 13 Jan 2012 16:30:02 GMT
       content-type:
       - text/xml;charset=utf-8
       content-length:
@@ -56,5 +56,74 @@ http_interactions:
       \ <dcndl_porta:dpid>zomoku</dcndl_porta:dpid>\n  <dcndl_porta:repository_no>R000000001</dcndl_porta:repository_no>\n
       \ <dcndl_porta:item_no>I005529855</dcndl_porta:item_no></item>\n\r\n\t\t</channel>\r\n\t\r\n</rss>"
     http_version: '1.1'
-  recorded_at: Thu, 01 Dec 2011 12:55:54 GMT
-recorded_with: VCR 2.0.0.beta2
+  recorded_at: Fri, 13 Jan 2012 16:30:03 GMT
+- request:
+    method: get
+    uri: http://iss.ndl.go.jp/api/opensearch?dpid=iss-ndl-opac&isbn=9784839931995&cnt=1&idx=1
+    body: ''
+    headers:
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Fri, 13 Jan 2012 16:41:23 GMT
+      server:
+      - Apache
+      x-powered-by:
+      - Phusion Passenger (mod_rails/mod_rack) 2.2.15
+      etag:
+      - ! '"8111039a89159e80a5b34f1969f32cd4"'
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      x-runtime:
+      - '0.213936'
+      cache-control:
+      - max-age=0, private, must-revalidate
+      content-length:
+      - '2975'
+      status:
+      - '200'
+      content-type:
+      - application/xml; charset=utf-8
+      set-cookie:
+      - _front_session_id=58dc5f7effb8058fa3ce54d3bc2dc68f; domain=.iss.ndl.go.jp;
+        path=/; expires=Fri, 13-Jan-2012 17:41:23 GMT; HttpOnly
+      - serverid=1102; path=/
+      vary:
+      - Accept-Encoding,User-Agent
+      connection:
+      - close
+    body: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<rss xmlns:dcterms=\"http://purl.org/dc/terms/\"
+      xmlns:dcndl=\"http://ndl.go.jp/dcndl/terms/\" version=\"2.0\" xmlns:dc=\"http://purl.org/dc/elements/1.1/\"
+      xmlns:openSearch=\"http://a9.com/-/spec/opensearchrss/1.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"
+      xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\">\n  <channel>\n    <title>9784839931995
+      iss-ndl-opac - 国立国会図書館サーチ OpenSearch</title>\n    <link>iss.ndl.go.jp</link>\n
+      \   <description>Search results for isbn=9784839931995 cnt=1 dpid=iss-ndl-opac
+      </description>\n    <language>ja</language>\n    <openSearch:totalResults>1</openSearch:totalResults>\n
+      \   <openSearch:startIndex>1</openSearch:startIndex>\n    <openSearch:itemsPerPage>1</openSearch:itemsPerPage>\n
+      \   <item>\n      <title>プログラミングコンテストチャレンジブック : 問題解決のアルゴリズム活用力とコーディングテクニックを鍛える</title>\n
+      \     <link>http://iss.ndl.go.jp/books/R100000002-I000010980901-00</link>\n<description>\n<![CDATA[<p>毎日コミュニケーションズ,9784839931995</p>\n<ul><li>タイトル：
+      プログラミングコンテストチャレンジブック : 問題解決のアルゴリズム活用力とコーディングテクニックを鍛える</li>\n<li>タイトル（読み）： プログラミング
+      コンテスト チャレンジ ブック : モンダイ カイケツ ノ アルゴリズム カツヨウリョク ト コーディング テクニック オ キタエル</li>\n<li>責任表示：
+      秋葉拓哉, 岩田陽一, 北川宜稔 著,Usu-ya 編,</li>\n<li>NDC(9)： 007.64</li>\n</ul>]]>\n</description>\n
+      \     <author>秋葉拓哉, 岩田陽一, 北川宜稔 著,Usu-ya 編,</author>\n      <category>本</category>\n
+      \     <guid isPermaLink=\"true\">http://iss.ndl.go.jp/books/R100000002-I000010980901-00</guid>\n
+      \     <pubDate>Wed, 06 Oct 2010 09:00:00 +0900</pubDate>\n      <dc:title>プログラミングコンテストチャレンジブック
+      : 問題解決のアルゴリズム活用力とコーディングテクニックを鍛える</dc:title>\n      <dcndl:titleTranscription>プログラミング
+      コンテスト チャレンジ ブック : モンダイ カイケツ ノ アルゴリズム カツヨウリョク ト コーディング テクニック オ キタエル</dcndl:titleTranscription>\n
+      \     <dc:creator>秋葉拓哉, 岩田陽一, 北川宜稔 著</dc:creator>\n      <dc:creator>Usu-ya
+      編</dc:creator>\n      <dc:publisher>毎日コミュニケーションズ</dc:publisher>\n      <dcterms:issued
+      xsi:type=\"dcterms:W3CDTF\">2010</dcterms:issued>\n      <dc:identifier xsi:type=\"dcndl:ISBN\">9784839931995</dc:identifier>\n
+      \     <dc:identifier xsi:type=\"dcndl:JPNO\">21816393</dc:identifier>\n      <dc:subject>プログラミング
+      (コンピュータ)</dc:subject>\n      <dc:subject xsi:type=\"dcndl:NDLC\">M159</dc:subject>\n
+      \     <dc:subject xsi:type=\"dcndl:NDC9\">007.64</dc:subject>\n    </item>\n
+      \ </channel>\n</rss>\n"
+    http_version: '1.0'
+  recorded_at: Fri, 13 Jan 2012 16:41:23 GMT
+recorded_with: VCR 2.0.0.rc1

@@ -14,10 +14,13 @@ module EnjuNdl
         return manifestation if manifestation
 
         doc = return_xml(isbn)
-        #raise EnjuNdl::RecordNotFound if doc.at('//openSearch:totalResults').content.to_i == 0
         raise EnjuNdl::RecordNotFound unless doc
+        #raise EnjuNdl::RecordNotFound if doc.at('//openSearch:totalResults').content.to_i == 0
+        import_record(doc)
+      end
 
-        pub_date, language, nbn = nil, nil, nil
+      def import_record(doc)
+        pub_date, language, nbn, ndc, isbn = nil, nil, nil, nil, nil
 
         publishers = get_publishers(doc).zip([]).map{|f,t| {:full_name => f, :full_name_transcription => t}}
 
@@ -31,10 +34,18 @@ module EnjuNdl
         end
 
         language = get_language(doc)
+        isbn = doc.at('./dc:identifier[@xsi:type="dcndl:ISBN"]').try(:content).to_s
         nbn = doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/JPNO"]').content
         classification_urls = doc.xpath('//dcterms:subject[@rdf:resource]').map{|subject| subject.attributes['resource'].value}
-        ndc = classification_urls.map{|url| URI.parse(url)}.select{|url| url.path.split('/').reverse[1] == 'ndc9'}.first.path.split('/').last
+        if classification_urls
+          ndc9_url = classification_urls.map{|url| URI.parse(url)}.select{|u| u.path.split('/').reverse[1] == 'ndc9'}.first
+          if ndc9_url
+            ndc = ndc9_url.path.split('/').last
+          end
+        end
+        description = doc.at('//dcterms:abstract').try(:content)
 
+        manifestation = nil
         Patron.transaction do
           publisher_patrons = Patron.import_patrons(publishers)
           language_id = Language.where(:iso_639_2 => language).first.id rescue 1
@@ -47,15 +58,15 @@ module EnjuNdl
             :language_id => language_id,
             :isbn => isbn,
             :pub_date => pub_date,
+            :description => description,
             :nbn => nbn,
             :ndc => ndc
           )
-          manifestation.ndc = ndc
           manifestation.publishers << publisher_patrons
+          create_frbr_instance(doc, manifestation)
         end
 
         #manifestation.send_later(:create_frbr_instance, doc.to_s)
-        create_frbr_instance(doc, manifestation)
         return manifestation
       end
 

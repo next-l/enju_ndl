@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.porta.ndl.go.jp:80/servicedp/SRUDp?operation=searchRetrive&maximumRecords=10&recordSchema=dcndl_porta&query=%28jpno=21816393%29
+    uri: http://api.porta.ndl.go.jp/servicedp/SRUDp?operation=searchRetrive&maximumRecords=10&recordSchema=dcndl_porta&query=%28jpno=21816393%29
     body: ''
     headers:
       accept:
@@ -15,7 +15,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Thu, 01 Dec 2011 12:55:54 GMT
+      - Fri, 13 Jan 2012 16:30:03 GMT
       content-length:
       - '5699'
       connection:
@@ -69,5 +69,563 @@ http_interactions:
       \ &lt;dcndl_porta:dpid&gt;zomoku&lt;/dcndl_porta:dpid&gt;\n  &lt;dcndl_porta:repository_no&gt;R000000001&lt;/dcndl_porta:repository_no&gt;\n
       \ &lt;dcndl_porta:item_no&gt;I005529855&lt;/dcndl_porta:item_no&gt;\n&lt;/dcndl_porta:dc&gt;\n\n</recordData>\n<recordPosition>1</recordPosition>\n</record>\n</records>\n</searchRetrieveResponse>\r\n"
     http_version: '1.1'
-  recorded_at: Thu, 01 Dec 2011 12:55:54 GMT
-recorded_with: VCR 2.0.0.beta2
+  recorded_at: Fri, 13 Jan 2012 16:30:04 GMT
+- request:
+    method: get
+    uri: http://api.porta.ndl.go.jp/servicedp/SRUDp?operation=searchRetrive&maximumRecords=10&recordSchema=dcndl_porta&query=%28jpno=20286397%29
+    body: ''
+    headers:
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Fri, 13 Jan 2012 16:30:04 GMT
+      content-length:
+      - '5066'
+      connection:
+      - close
+      content-type:
+      - text/plain
+    body: ! "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<searchRetrieveResponse xmlns=\"http://www.loc.gov/zing/srw/\">\n<version>1.2</version>\n<numberOfRecords>1</numberOfRecords>\n<extraResponseData><facets
+      xmlns:dcndl_porta=\"http://www.dcndl_porta\"><lst name=\"REPOSITORY_NO\"><dcndl_porta:dpid
+      name=\"R000000001\">1</dcndl_porta:dpid></lst><lst name=\"PORTA_TYPE\"><dcndl_porta:PORTAType
+      name=\"Text\">1</dcndl_porta:PORTAType></lst><lst name=\"DIGITALIZE_TYPE\"><dcndl_porta:type.Digitalize
+      name=\"4\">1</dcndl_porta:type.Digitalize></lst><lst name=\"WEBGET_TYPE\"><dcndl_porta:type.Web-get
+      name=\"4\">1</dcndl_porta:type.Web-get></lst><lst name=\"PAYMENT_TYPE\"><dcndl_porta:type.Payment
+      name=\"4\">1</dcndl_porta:type.Payment></lst><lst name=\"ISSUED_DATE\"><int
+      name=\"2002\">1</int></lst></facets></extraResponseData><records>\n<record>\n<recordSchema>http://ndl.go.jp/dcndl/dcndl_porta/</recordSchema>\n<recordPacking>string</recordPacking>\n<recordData>&lt;dcndl_porta:dc
+      \ xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot;\n xmlns:dcndl_porta=&quot;http://ndl.go.jp/dcndl/dcndl_porta/&quot;\n
+      \   xmlns:dcmitype=&quot;http://purl.org/dc/dcmitype/&quot;\n    xmlns:dcterms=&quot;http://purl.org/dc/terms/&quot;\n
+      \   xmlns:dcndl=&quot;http://ndl.go.jp/dcndl/terms/&quot;\n    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;\n
+      \   xsi:schemaLocation=&quot;http://ndl.go.jp/dcndl/dcndl_porta/ http://porta.ndl.go.jp/schema/dcndl_porta.xsd&quot;&gt;\n
+      \         &lt;dc:title&gt;アンパンマンとどうぶつえん&lt;/dc:title&gt;\n          &lt;dcndl:titleTranscription&gt;アンパンマン　ト　ドウブツエン&lt;/dcndl:titleTranscription&gt;\n
+      \         &lt;dc:creator&gt;やなせたかし‖原作&lt;/dc:creator&gt;\n          &lt;dc:creator&gt;さとうあきら，岩合光昭‖写真&lt;/dc:creator&gt;\n
+      \         &lt;dc:creator&gt;東京ムービー‖作画&lt;/dc:creator&gt;\n          &lt;dc:creator
+      xsi:type=&quot;dcndl:NDLNH&quot;&gt;やなせ‖たかし（１９１９−）&lt;/dc:creator&gt;\n          &lt;dc:creator
+      xsi:type=&quot;dcndl:NDLNH&quot;&gt;佐藤‖彰（１９５４−）&lt;/dc:creator&gt;\n          &lt;dc:creator
+      xsi:type=&quot;dcndl:NDLNH&quot;&gt;岩合‖光昭（１９５０−）&lt;/dc:creator&gt;\n          &lt;dc:creator
+      xsi:type=&quot;dcndl:NDLNH&quot;&gt;トムスエンタテインメント株式会社&lt;/dc:creator&gt;\n          &lt;dcndl:creatorTranscription
+      xsi:type=&quot;dcndl:NDLNH&quot;&gt;ヤナセ，タカシ（１９１９−）&lt;/dcndl:creatorTranscription&gt;\n
+      \         &lt;dcndl:creatorTranscription xsi:type=&quot;dcndl:NDLNH&quot;&gt;サトウ，アキラ（１９５４−）&lt;/dcndl:creatorTranscription&gt;\n
+      \         &lt;dcndl:creatorTranscription xsi:type=&quot;dcndl:NDLNH&quot;&gt;イワゴウ，ミツアキ（１９５０−）&lt;/dcndl:creatorTranscription&gt;\n
+      \         &lt;dcndl:creatorTranscription xsi:type=&quot;dcndl:NDLNH&quot;&gt;トムス　エンタテインメント　カブシキ　ガイシャ&lt;/dcndl:creatorTranscription&gt;\n
+      \         &lt;dc:description&gt;出版地 : 東京&lt;/dc:description&gt;\n          &lt;dc:description&gt;形態
+      : １冊 ; １７×１７ｃｍ&lt;/dc:description&gt;\n          &lt;dc:description&gt;シリーズ
+      : おでかけアンパンマン ; １&lt;/dc:description&gt;\n          &lt;dc:description&gt;シリーズよみ
+      : オデカケ　アンパンマン ; １&lt;/dc:description&gt;\n          &lt;dc:description&gt;本体価格
+      : ５００円&lt;/dc:description&gt;\n          &lt;dc:publisher&gt;フレーベル館&lt;/dc:publisher&gt;\n
+      \         &lt;dcterms:issued&gt;２００２．５&lt;/dcterms:issued&gt;\n          &lt;dcterms:issued
+      xsi:type=&quot;dcterms:W3CDTF&quot;&gt;2002&lt;/dcterms:issued&gt;\n          &lt;dc:identifier
+      xsi:type=&quot;dcterms:URI&quot;&gt;http://api.porta.ndl.go.jp/ndlopac/cgi-bin/ndlopac/ndl-book?kywd=20286397&lt;/dc:identifier&gt;\n
+      \         &lt;dc:identifier xsi:type=&quot;dcndl:ISBN&quot;&gt;4-577-02432-2&lt;/dc:identifier&gt;\n
+      \         &lt;dc:identifier xsi:type=&quot;dcndl:JPNO&quot;&gt;20286397&lt;/dc:identifier&gt;\n
+      \         &lt;dc:identifier xsi:type=&quot;dcndl_porta:NDLCN&quot;&gt;Ｙ１７−Ｎ０２−６０４&lt;/dc:identifier&gt;\n
+      \         &lt;dc:language xsi:type=&quot;dcterms:ISO639-2&quot;&gt;JPN&lt;/dc:language&gt;\n
+      \         &lt;dc:identifier xsi:type=&quot;dcndl_porta:ISBN13&quot;&gt;978-4-577-02432-4&lt;/dc:identifier&gt;\n
+      \         &lt;dc:type xsi:type=&quot;dcndl_porta:PORTAType&quot;&gt;Text&lt;/dc:type&gt;\n
+      \         &lt;dc:type xsi:type=&quot;dcndl_porta:Digitalize&quot;&gt;4&lt;/dc:type&gt;\n
+      \         &lt;dc:type xsi:type=&quot;dcndl_porta:Web-get&quot;&gt;4&lt;/dc:type&gt;\n
+      \         &lt;dc:type xsi:type=&quot;dcndl_porta:Payment&quot;&gt;4&lt;/dc:type&gt;\n
+      \ &lt;dcndl_porta:dpid&gt;zomoku&lt;/dcndl_porta:dpid&gt;\n  &lt;dcndl_porta:repository_no&gt;R000000001&lt;/dcndl_porta:repository_no&gt;\n
+      \ &lt;dcndl_porta:item_no&gt;I000287760&lt;/dcndl_porta:item_no&gt;\n&lt;/dcndl_porta:dc&gt;\n\n</recordData>\n<recordPosition>1</recordPosition>\n</record>\n</records>\n</searchRetrieveResponse>\r\n"
+    http_version: '1.1'
+  recorded_at: Fri, 13 Jan 2012 16:30:05 GMT
+- request:
+    method: get
+    uri: http://iss.ndl.go.jp/api/sru?operation=searchRetrive&maximumRecords=1&&query=%28jpno=21816393%29
+    body: ''
+    headers:
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Fri, 13 Jan 2012 16:41:23 GMT
+      server:
+      - Apache
+      x-powered-by:
+      - Phusion Passenger (mod_rails/mod_rack) 2.2.15
+      etag:
+      - ! '"63925fac63d65be9231290b0a30d7216"'
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      x-runtime:
+      - '0.008026'
+      cache-control:
+      - max-age=0, private, must-revalidate
+      content-length:
+      - '384'
+      status:
+      - '200'
+      content-type:
+      - application/xml; charset=utf-8
+      set-cookie:
+      - _front_session_id=83130859591a192fa02eac968ab3fe85; domain=.iss.ndl.go.jp;
+        path=/; expires=Fri, 13-Jan-2012 17:41:23 GMT; HttpOnly
+      - serverid=1101; path=/
+      vary:
+      - Accept-Encoding,User-Agent
+      connection:
+      - close
+    body: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<searchRetrieveResponse xmlns=\"http://www.loc.gov/zing/srw/\">\n
+      \ <diagnostics>\n    <diagnostic xmlns=\"http://www.loc.gov/zing/srw/diagnostic/\">\n
+      \     <uri>info:srw/diagnostic/1/1</uri>\n      <details>An error occurred</details>\n
+      \     <message>operation is not searchRetrieve</message>\n    </diagnostic>\n
+      \ </diagnostics>\n</searchRetrieveResponse>\n"
+    http_version: '1.0'
+  recorded_at: Fri, 13 Jan 2012 16:41:23 GMT
+- request:
+    method: get
+    uri: http://iss.ndl.go.jp/api/sru?operation=searchRetrive&maximumRecords=1&&query=%28jpno=20286397%29
+    body: ''
+    headers:
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Fri, 13 Jan 2012 16:41:23 GMT
+      server:
+      - Apache
+      x-powered-by:
+      - Phusion Passenger (mod_rails/mod_rack) 2.2.15
+      etag:
+      - ! '"63925fac63d65be9231290b0a30d7216"'
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      x-runtime:
+      - '0.008749'
+      cache-control:
+      - max-age=0, private, must-revalidate
+      content-length:
+      - '384'
+      status:
+      - '200'
+      content-type:
+      - application/xml; charset=utf-8
+      set-cookie:
+      - _front_session_id=8a15e7f96750f8d139e898bca3815a35; domain=.iss.ndl.go.jp;
+        path=/; expires=Fri, 13-Jan-2012 17:41:23 GMT; HttpOnly
+      - serverid=1102; path=/
+      vary:
+      - Accept-Encoding,User-Agent
+      connection:
+      - close
+    body: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<searchRetrieveResponse xmlns=\"http://www.loc.gov/zing/srw/\">\n
+      \ <diagnostics>\n    <diagnostic xmlns=\"http://www.loc.gov/zing/srw/diagnostic/\">\n
+      \     <uri>info:srw/diagnostic/1/1</uri>\n      <details>An error occurred</details>\n
+      \     <message>operation is not searchRetrieve</message>\n    </diagnostic>\n
+      \ </diagnostics>\n</searchRetrieveResponse>\n"
+    http_version: '1.0'
+  recorded_at: Fri, 13 Jan 2012 16:41:23 GMT
+- request:
+    method: get
+    uri: http://iss.ndl.go.jp/api/sru?operation=searchRetrieve&maximumRecords=1&&query=%28jpno=21816393%29
+    body: ''
+    headers:
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Fri, 13 Jan 2012 16:43:22 GMT
+      server:
+      - Apache
+      x-powered-by:
+      - Phusion Passenger (mod_rails/mod_rack) 2.2.15
+      etag:
+      - ! '"f19a16a6a3591869a3dd07c9f5cc60d3"'
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      x-runtime:
+      - '0.160593'
+      cache-control:
+      - max-age=0, private, must-revalidate
+      content-length:
+      - '2137'
+      status:
+      - '200'
+      content-type:
+      - application/xml; charset=utf-8
+      set-cookie:
+      - _front_session_id=e8e3afb176e05503c35b2121a5db61bb; domain=.iss.ndl.go.jp;
+        path=/; expires=Fri, 13-Jan-2012 17:43:22 GMT; HttpOnly
+      - serverid=1102; path=/
+      vary:
+      - Accept-Encoding,User-Agent
+      connection:
+      - close
+    body: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<searchRetrieveResponse xmlns=\"http://www.loc.gov/zing/srw/\">\n
+      \ <version>1.2</version>\n  <numberOfRecords>1</numberOfRecords>\n  <nextRecordPosition>0</nextRecordPosition>\n
+      \ <extraResponseData>\n&lt;facets&gt;\n  &lt;lst name=&quot;REPOSITORY_NO&quot;&gt;\n
+      \   &lt;int name=&quot;R100000001&quot;&gt;1&lt;/int&gt;\n    &lt;int name=&quot;R100000002&quot;&gt;1&lt;/int&gt;\n
+      \ &lt;/lst&gt;\n  &lt;lst name=&quot;NDC&quot;&gt;\n    &lt;int name=&quot;0&quot;&gt;1&lt;/int&gt;\n
+      \ &lt;/lst&gt;\n  &lt;lst name=&quot;ISSUED_DATE&quot;&gt;\n    &lt;int name=&quot;2010&quot;&gt;1&lt;/int&gt;\n
+      \ &lt;/lst&gt;\n  &lt;lst name=&quot;LIBRARY&quot;&gt;\n    &lt;int name=&quot;国立国会図書館&quot;&gt;1&lt;/int&gt;\n
+      \   &lt;int name=&quot;大阪市立中央図書館&quot;&gt;1&lt;/int&gt;\n    &lt;int name=&quot;大阪府立中央図書館&quot;&gt;1&lt;/int&gt;\n
+      \   &lt;int name=&quot;岡山県立図書館&quot;&gt;1&lt;/int&gt;\n    &lt;int name=&quot;高知県立図書館&quot;&gt;1&lt;/int&gt;\n
+      \ &lt;/lst&gt;\n&lt;/facets&gt;\n  </extraResponseData>\n  <records>\n    <record>\n
+      \     <recordSchema>info:srw/schema/1/dc-v1.1</recordSchema>\n      <recordPacking>string</recordPacking>\n
+      \     <recordData>\n&lt;srw_dc:dc xsi:schemaLocation=&quot;info:srw/schema/1/dc-v1.1
+      http://www.loc.gov/standards/sru/dc-schema.xsd&quot; xmlns:srw_dc=&quot;info:srw/schema/1/dc-v1.1&quot;
+      xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;\n
+      \ &lt;dc:title&gt;プログラミングコンテストチャレンジブック : 問題解決のアルゴリズム活用力とコーディングテクニックを鍛える&lt;/dc:title&gt;\n
+      \ &lt;dc:creator&gt;秋葉拓哉, 岩田陽一, 北川宜稔 著,Usu-ya 編&lt;/dc:creator&gt;\n  &lt;dc:subject&gt;プログラミング
+      (コンピュータ)&lt;/dc:subject&gt;\n  &lt;dc:publisher&gt;毎日コミュニケーションズ&lt;/dc:publisher&gt;\n
+      \ &lt;dc:language&gt;jpn&lt;/dc:language&gt;\n&lt;/srw_dc:dc&gt;\n      </recordData>\n
+      \     <recordPosition>1</recordPosition>\n    </record>\n  </records>\n</searchRetrieveResponse>\n"
+    http_version: '1.0'
+  recorded_at: Fri, 13 Jan 2012 16:43:22 GMT
+- request:
+    method: get
+    uri: http://iss.ndl.go.jp/api/sru?operation=searchRetrieve&maximumRecords=1&&query=%28jpno=20286397%29
+    body: ''
+    headers:
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Fri, 13 Jan 2012 16:43:22 GMT
+      server:
+      - Apache
+      x-powered-by:
+      - Phusion Passenger (mod_rails/mod_rack) 2.2.15
+      etag:
+      - ! '"564720e189c3582707a9ef417b9150a8"'
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      x-runtime:
+      - '0.071979'
+      cache-control:
+      - max-age=0, private, must-revalidate
+      content-length:
+      - '1847'
+      status:
+      - '200'
+      content-type:
+      - application/xml; charset=utf-8
+      set-cookie:
+      - _front_session_id=3c1137b1ebd6485fe763c8bf4ba1dfdc; domain=.iss.ndl.go.jp;
+        path=/; expires=Fri, 13-Jan-2012 17:43:22 GMT; HttpOnly
+      - serverid=1105; path=/
+      vary:
+      - Accept-Encoding,User-Agent
+      connection:
+      - close
+    body: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<searchRetrieveResponse xmlns=\"http://www.loc.gov/zing/srw/\">\n
+      \ <version>1.2</version>\n  <numberOfRecords>1</numberOfRecords>\n  <nextRecordPosition>0</nextRecordPosition>\n
+      \ <extraResponseData>\n&lt;facets&gt;\n  &lt;lst name=&quot;REPOSITORY_NO&quot;&gt;\n
+      \   &lt;int name=&quot;R100000001&quot;&gt;1&lt;/int&gt;\n    &lt;int name=&quot;R100000002&quot;&gt;1&lt;/int&gt;\n
+      \   &lt;int name=&quot;R100000004&quot;&gt;1&lt;/int&gt;\n  &lt;/lst&gt;\n  &lt;lst
+      name=&quot;NDC&quot;&gt;\n  &lt;/lst&gt;\n  &lt;lst name=&quot;ISSUED_DATE&quot;&gt;\n
+      \   &lt;int name=&quot;2002&quot;&gt;1&lt;/int&gt;\n  &lt;/lst&gt;\n  &lt;lst
+      name=&quot;LIBRARY&quot;&gt;\n    &lt;int name=&quot;国立国会図書館&quot;&gt;1&lt;/int&gt;\n
+      \   &lt;int name=&quot;大阪府立中央図書館国際児童文学館&quot;&gt;1&lt;/int&gt;\n    &lt;int
+      name=&quot;滋賀県立図書館&quot;&gt;1&lt;/int&gt;\n  &lt;/lst&gt;\n&lt;/facets&gt;\n
+      \ </extraResponseData>\n  <records>\n    <record>\n      <recordSchema>info:srw/schema/1/dc-v1.1</recordSchema>\n
+      \     <recordPacking>string</recordPacking>\n      <recordData>\n&lt;srw_dc:dc
+      xsi:schemaLocation=&quot;info:srw/schema/1/dc-v1.1 http://www.loc.gov/standards/sru/dc-schema.xsd&quot;
+      xmlns:srw_dc=&quot;info:srw/schema/1/dc-v1.1&quot; xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot;
+      xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;\n  &lt;dc:title&gt;アンパンマンとどうぶつえん&lt;/dc:title&gt;\n
+      \ &lt;dc:creator&gt;やなせたかし 原作,さとうあきら, 岩合光昭 写真,東京ムービー 作画&lt;/dc:creator&gt;\n
+      \ &lt;dc:publisher&gt;フレーベル館&lt;/dc:publisher&gt;\n  &lt;dc:language&gt;jpn&lt;/dc:language&gt;\n&lt;/srw_dc:dc&gt;\n
+      \     </recordData>\n      <recordPosition>1</recordPosition>\n    </record>\n
+      \ </records>\n</searchRetrieveResponse>\n"
+    http_version: '1.0'
+  recorded_at: Fri, 13 Jan 2012 16:43:22 GMT
+- request:
+    method: get
+    uri: http://iss.ndl.go.jp/api/sru?operation=searchRetrieve&recordSchema=dcndl&&maximumRecords=1&&query=%28jpno=21816393%29
+    body: ''
+    headers:
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Fri, 13 Jan 2012 17:15:17 GMT
+      server:
+      - Apache
+      x-powered-by:
+      - Phusion Passenger (mod_rails/mod_rack) 2.2.15
+      etag:
+      - ! '"cb03dd856c6fe474c1f3e41eb18ede9f"'
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      x-runtime:
+      - '0.247541'
+      cache-control:
+      - max-age=0, private, must-revalidate
+      content-length:
+      - '11043'
+      status:
+      - '200'
+      content-type:
+      - application/xml; charset=utf-8
+      set-cookie:
+      - _front_session_id=86c1c5e2395b020585cb93494a24bf06; domain=.iss.ndl.go.jp;
+        path=/; expires=Fri, 13-Jan-2012 18:15:17 GMT; HttpOnly
+      - serverid=1101; path=/
+      vary:
+      - Accept-Encoding,User-Agent
+      connection:
+      - close
+    body: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<searchRetrieveResponse xmlns=\"http://www.loc.gov/zing/srw/\">\n
+      \ <version>1.2</version>\n  <numberOfRecords>1</numberOfRecords>\n  <nextRecordPosition>0</nextRecordPosition>\n
+      \ <extraResponseData>\n&lt;facets&gt;\n  &lt;lst name=&quot;REPOSITORY_NO&quot;&gt;\n
+      \   &lt;int name=&quot;R100000001&quot;&gt;1&lt;/int&gt;\n    &lt;int name=&quot;R100000002&quot;&gt;1&lt;/int&gt;\n
+      \ &lt;/lst&gt;\n  &lt;lst name=&quot;NDC&quot;&gt;\n    &lt;int name=&quot;0&quot;&gt;1&lt;/int&gt;\n
+      \ &lt;/lst&gt;\n  &lt;lst name=&quot;ISSUED_DATE&quot;&gt;\n    &lt;int name=&quot;2010&quot;&gt;1&lt;/int&gt;\n
+      \ &lt;/lst&gt;\n  &lt;lst name=&quot;LIBRARY&quot;&gt;\n    &lt;int name=&quot;国立国会図書館&quot;&gt;1&lt;/int&gt;\n
+      \   &lt;int name=&quot;大阪市立中央図書館&quot;&gt;1&lt;/int&gt;\n    &lt;int name=&quot;大阪府立中央図書館&quot;&gt;1&lt;/int&gt;\n
+      \   &lt;int name=&quot;岡山県立図書館&quot;&gt;1&lt;/int&gt;\n    &lt;int name=&quot;高知県立図書館&quot;&gt;1&lt;/int&gt;\n
+      \ &lt;/lst&gt;\n&lt;/facets&gt;\n  </extraResponseData>\n  <records>\n    <record>\n
+      \     <recordSchema>info:srw/schema/1/dc-v1.1</recordSchema>\n      <recordPacking>string</recordPacking>\n
+      \     <recordData>\n&lt;rdf:RDF xmlns:dcterms=&quot;http://purl.org/dc/terms/&quot;
+      xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot; xmlns:dcndl=&quot;http://ndl.go.jp/dcndl/terms/&quot;
+      xmlns:foaf=&quot;http://xmlns.com/foaf/0.1/&quot; xmlns:rdfs=&quot;http://www.w3.org/2000/01/rdf-schema#&quot;
+      xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot; xmlns:owl=&quot;http://www.w3.org/2002/07/owl#&quot;&gt;\n
+      \ &lt;dcndl:BibAdminResource rdf:about=&quot;http://iss.ndl.go.jp/books/R100000002-I000010980901-00&quot;&gt;\n
+      \   &lt;dcndl:catalogingStatus&gt;C7&lt;/dcndl:catalogingStatus&gt;\n    &lt;dcndl:bibRecordCategory&gt;R100000002&lt;/dcndl:bibRecordCategory&gt;\n
+      \   &lt;dcndl:record rdf:resource=&quot;http://iss.ndl.go.jp/books/R100000002-I000010980901-00#material&quot;/&gt;\n
+      \ &lt;/dcndl:BibAdminResource&gt;\n  &lt;dcndl:BibResource rdf:about=&quot;http://iss.ndl.go.jp/books/R100000002-I000010980901-00#material&quot;&gt;\n
+      \   &lt;dcterms:identifier rdf:datatype=&quot;http://ndl.go.jp/dcndl/terms/JPNO&quot;&gt;21816393&lt;/dcterms:identifier&gt;\n
+      \   &lt;dcterms:identifier rdf:datatype=&quot;http://ndl.go.jp/dcndl/terms/ISBN&quot;&gt;9784839931995&lt;/dcterms:identifier&gt;\n
+      \   &lt;rdfs:seeAlso rdf:resource=&quot;http://id.ndl.go.jp/jpno/21816393&quot;/&gt;\n
+      \   &lt;rdfs:seeAlso rdf:resource=&quot;http://iss.ndl.go.jp/isbn/9784839931995&quot;/&gt;\n
+      \   &lt;dcterms:title&gt;プログラミングコンテストチャレンジブック : 問題解決のアルゴリズム活用力とコーディングテクニックを鍛える&lt;/dcterms:title&gt;\n
+      \   &lt;dc:title&gt;\n      &lt;rdf:Description&gt;\n        &lt;rdf:value&gt;プログラミングコンテストチャレンジブック
+      : 問題解決のアルゴリズム活用力とコーディングテクニックを鍛える&lt;/rdf:value&gt;\n        &lt;dcndl:transcription&gt;プログラミング
+      コンテスト チャレンジ ブック : モンダイ カイケツ ノ アルゴリズム カツヨウリョク ト コーディング テクニック オ キタエル&lt;/dcndl:transcription&gt;\n
+      \     &lt;/rdf:Description&gt;\n    &lt;/dc:title&gt;\n    &lt;dcterms:creator&gt;\n
+      \     &lt;foaf:Agent rdf:about=&quot;http://id.ndl.go.jp/auth/entity/01208840&quot;&gt;\n
+      \       &lt;foaf:name&gt;秋葉, 拓哉&lt;/foaf:name&gt;\n        &lt;dcndl:transcription&gt;アキバ,
+      タクヤ&lt;/dcndl:transcription&gt;\n      &lt;/foaf:Agent&gt;\n    &lt;/dcterms:creator&gt;\n
+      \   &lt;dcterms:creator&gt;\n      &lt;foaf:Agent rdf:about=&quot;http://id.ndl.go.jp/auth/entity/01208841&quot;&gt;\n
+      \       &lt;foaf:name&gt;岩田, 陽一&lt;/foaf:name&gt;\n        &lt;dcndl:transcription&gt;イワタ,
+      ヨウイチ&lt;/dcndl:transcription&gt;\n      &lt;/foaf:Agent&gt;\n    &lt;/dcterms:creator&gt;\n
+      \   &lt;dcterms:creator&gt;\n      &lt;foaf:Agent rdf:about=&quot;http://id.ndl.go.jp/auth/entity/01208842&quot;&gt;\n
+      \       &lt;foaf:name&gt;北川, 宜稔&lt;/foaf:name&gt;\n        &lt;dcndl:transcription&gt;キタガワ,
+      マサトシ&lt;/dcndl:transcription&gt;\n      &lt;/foaf:Agent&gt;\n    &lt;/dcterms:creator&gt;\n
+      \   &lt;dcterms:creator&gt;\n      &lt;foaf:Agent rdf:about=&quot;http://id.ndl.go.jp/auth/entity/01040465&quot;&gt;\n
+      \       &lt;foaf:name&gt;Usu-ya&lt;/foaf:name&gt;\n      &lt;/foaf:Agent&gt;\n
+      \   &lt;/dcterms:creator&gt;\n    &lt;dc:creator&gt;秋葉拓哉, 岩田陽一, 北川宜稔 著&lt;/dc:creator&gt;\n
+      \   &lt;dc:creator&gt;Usu-ya 編&lt;/dc:creator&gt;\n    &lt;dcterms:publisher&gt;\n
+      \     &lt;foaf:Agent&gt;\n        &lt;foaf:name&gt;毎日コミュニケーションズ&lt;/foaf:name&gt;\n
+      \       &lt;dcndl:transcription&gt;マイニチ コミュニケーションズ&lt;/dcndl:transcription&gt;\n
+      \       &lt;dcndl:location&gt;東京&lt;/dcndl:location&gt;\n      &lt;/foaf:Agent&gt;\n
+      \   &lt;/dcterms:publisher&gt;\n    &lt;dcndl:publicationPlace rdf:datatype=&quot;http://purl.org/dc/terms/ISO3166&quot;&gt;JP&lt;/dcndl:publicationPlace&gt;\n
+      \   &lt;dcterms:date&gt;2010.9&lt;/dcterms:date&gt;\n    &lt;dcterms:issued
+      rdf:datatype=&quot;http://purl.org/dc/terms/W3CDTF&quot;&gt;2010&lt;/dcterms:issued&gt;\n
+      \   &lt;dcterms:subject&gt;\n      &lt;rdf:Description rdf:about=&quot;http://id.ndl.go.jp/auth/ndlsh/00569223&quot;&gt;\n
+      \       &lt;rdf:value&gt;プログラミング (コンピュータ)&lt;/rdf:value&gt;\n      &lt;/rdf:Description&gt;\n
+      \   &lt;/dcterms:subject&gt;\n    &lt;dcterms:subject rdf:resource=&quot;http://id.ndl.go.jp/class/ndlc/M159&quot;/&gt;\n
+      \   &lt;dcterms:subject rdf:resource=&quot;http://id.ndl.go.jp/class/ndc9/007.64&quot;/&gt;\n
+      \   &lt;dcterms:language rdf:datatype=&quot;http://purl.org/dc/terms/ISO639-2&quot;&gt;jpn&lt;/dcterms:language&gt;\n
+      \   &lt;dcterms:extent&gt;315p ; 24cm&lt;/dcterms:extent&gt;\n    &lt;dcndl:price&gt;3280円&lt;/dcndl:price&gt;\n
+      \   &lt;dcterms:audience&gt;一般&lt;/dcterms:audience&gt;\n    &lt;dcndl:materialType
+      rdf:resource=&quot;http://ndl.go.jp/ndltype/Book&quot; rdfs:label=&quot;図書&quot;/&gt;\n
+      \   &lt;dcndl:accessRight&gt;S01P99U99&lt;/dcndl:accessRight&gt;\n  &lt;/dcndl:BibResource&gt;\n
+      \ &lt;dcndl:BibResource rdf:about=&quot;http://iss.ndl.go.jp/books/R100000002-I000010980901-00#material&quot;&gt;\n
+      \   &lt;dcndl:record rdf:resource=&quot;http://iss.ndl.go.jp/books/R100000002-I000010980901-00#item&quot;/&gt;\n
+      \   &lt;dcndl:record rdf:resource=&quot;http://iss.ndl.go.jp/books/R100000001-I003195847-00#item&quot;/&gt;\n
+      \   &lt;dcndl:record rdf:resource=&quot;http://iss.ndl.go.jp/books/R100000001-I007816826-00#item&quot;/&gt;\n
+      \   &lt;dcndl:record rdf:resource=&quot;http://iss.ndl.go.jp/books/R100000001-I017798590-00#item&quot;/&gt;\n
+      \   &lt;dcndl:record rdf:resource=&quot;http://iss.ndl.go.jp/books/R100000001-I029273907-00#item&quot;/&gt;\n
+      \ &lt;/dcndl:BibResource&gt;\n  &lt;dcndl:Item rdf:about=&quot;http://iss.ndl.go.jp/books/R100000002-I000010980901-00#item&quot;&gt;\n
+      \   &lt;dcndl:holdingAgent&gt;\n      &lt;foaf:Agent&gt;\n        &lt;foaf:name&gt;国立国会図書館&lt;/foaf:name&gt;\n
+      \       &lt;dcterms:identifier rdf:datatype=&quot;http://ndl.go.jp/dcndl/terms/NDLLibCode&quot;&gt;0000&lt;/dcterms:identifier&gt;\n
+      \     &lt;/foaf:Agent&gt;\n    &lt;/dcndl:holdingAgent&gt;\n    &lt;rdfs:seeAlso
+      rdf:resource=&quot;http://id.ndl.go.jp/bib/000010980901&quot;/&gt;\n    &lt;dcterms:identifier
+      rdf:datatype=&quot;http://ndl.go.jp/dcndl/terms/NDLBibID&quot;&gt;000010980901&lt;/dcterms:identifier&gt;\n
+      \   &lt;dcndl:callNumber&gt;M159-J1056&lt;/dcndl:callNumber&gt;\n  &lt;/dcndl:Item&gt;\n
+      \ &lt;dcndl:Item rdf:about=&quot;http://iss.ndl.go.jp/books/R100000001-I003195847-00#item&quot;&gt;\n
+      \   &lt;dcndl:holdingAgent&gt;\n      &lt;foaf:Agent&gt;\n        &lt;foaf:name&gt;大阪市立中央図書館&lt;/foaf:name&gt;\n
+      \       &lt;dcterms:identifier rdf:datatype=&quot;http://ndl.go.jp/dcndl/terms/NDLLibCode&quot;&gt;2721&lt;/dcterms:identifier&gt;\n
+      \     &lt;/foaf:Agent&gt;\n    &lt;/dcndl:holdingAgent&gt;\n    &lt;dcterms:identifier
+      rdf:datatype=&quot;http://ndl.go.jp/dcndl/terms/somokuBibID&quot;&gt;0012148650&lt;/dcterms:identifier&gt;\n
+      \   &lt;dcterms:identifier rdf:datatype=&quot;http://ndl.go.jp/dcndl/terms/somokuSubID&quot;&gt;0012148650&lt;/dcterms:identifier&gt;\n
+      \ &lt;/dcndl:Item&gt;\n  &lt;dcndl:Item rdf:about=&quot;http://iss.ndl.go.jp/books/R100000001-I007816826-00#item&quot;&gt;\n
+      \   &lt;dcndl:holdingAgent&gt;\n      &lt;foaf:Agent&gt;\n        &lt;foaf:name&gt;高知県立図書館&lt;/foaf:name&gt;\n
+      \       &lt;dcterms:identifier rdf:datatype=&quot;http://ndl.go.jp/dcndl/terms/NDLLibCode&quot;&gt;3911&lt;/dcterms:identifier&gt;\n
+      \     &lt;/foaf:Agent&gt;\n    &lt;/dcndl:holdingAgent&gt;\n    &lt;dcterms:identifier
+      rdf:datatype=&quot;http://ndl.go.jp/dcndl/terms/somokuBibID&quot;&gt;001310793&lt;/dcterms:identifier&gt;\n
+      \   &lt;dcterms:identifier rdf:datatype=&quot;http://ndl.go.jp/dcndl/terms/somokuSubID&quot;&gt;1106063975&lt;/dcterms:identifier&gt;\n
+      \   &lt;dcndl:callNumber&gt;YK/007.6/フロ&lt;/dcndl:callNumber&gt;\n    &lt;dcndl:availability&gt;可能&lt;/dcndl:availability&gt;\n
+      \   &lt;dcterms:description&gt;配置場所 : ジョブ&lt;/dcterms:description&gt;\n  &lt;/dcndl:Item&gt;\n
+      \ &lt;dcndl:Item rdf:about=&quot;http://iss.ndl.go.jp/books/R100000001-I017798590-00#item&quot;&gt;\n
+      \   &lt;dcndl:holdingAgent&gt;\n      &lt;foaf:Agent&gt;\n        &lt;foaf:name&gt;岡山県立図書館&lt;/foaf:name&gt;\n
+      \       &lt;dcterms:identifier rdf:datatype=&quot;http://ndl.go.jp/dcndl/terms/NDLLibCode&quot;&gt;3311&lt;/dcterms:identifier&gt;\n
+      \     &lt;/foaf:Agent&gt;\n    &lt;/dcndl:holdingAgent&gt;\n    &lt;dcterms:identifier
+      rdf:datatype=&quot;http://ndl.go.jp/dcndl/terms/somokuBibID&quot;&gt;1009811338044&lt;/dcterms:identifier&gt;\n
+      \   &lt;dcterms:identifier rdf:datatype=&quot;http://ndl.go.jp/dcndl/terms/somokuSubID&quot;&gt;0010009124&lt;/dcterms:identifier&gt;\n
+      \   &lt;dcndl:callNumber&gt;００７．６４／アキ１０／&lt;/dcndl:callNumber&gt;\n    &lt;dcndl:availability&gt;貸出可&lt;/dcndl:availability&gt;\n
+      \   &lt;dcterms:description&gt;配置場所 : 自然科学・産業資料部門・（通常）&lt;/dcterms:description&gt;\n
+      \ &lt;/dcndl:Item&gt;\n  &lt;dcndl:Item rdf:about=&quot;http://iss.ndl.go.jp/books/R100000001-I029273907-00#item&quot;&gt;\n
+      \   &lt;dcndl:holdingAgent&gt;\n      &lt;foaf:Agent&gt;\n        &lt;foaf:name&gt;大阪府立中央図書館&lt;/foaf:name&gt;\n
+      \       &lt;dcterms:identifier rdf:datatype=&quot;http://ndl.go.jp/dcndl/terms/NDLLibCode&quot;&gt;2711&lt;/dcterms:identifier&gt;\n
+      \     &lt;/foaf:Agent&gt;\n    &lt;/dcndl:holdingAgent&gt;\n    &lt;dcterms:identifier
+      rdf:datatype=&quot;http://ndl.go.jp/dcndl/terms/somokuBibID&quot;&gt;10021001765762&lt;/dcterms:identifier&gt;\n
+      \   &lt;dcndl:callNumber&gt;００７．６／５５９３Ｎ&lt;/dcndl:callNumber&gt;\n  &lt;/dcndl:Item&gt;\n&lt;/rdf:RDF&gt;\n
+      \     </recordData>\n      <recordPosition>1</recordPosition>\n    </record>\n
+      \ </records>\n</searchRetrieveResponse>\n"
+    http_version: '1.0'
+  recorded_at: Fri, 13 Jan 2012 17:15:17 GMT
+- request:
+    method: get
+    uri: http://iss.ndl.go.jp/api/sru?operation=searchRetrieve&recordSchema=dcndl&&maximumRecords=1&&query=%28jpno=20286397%29
+    body: ''
+    headers:
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Fri, 13 Jan 2012 17:15:18 GMT
+      server:
+      - Apache
+      x-powered-by:
+      - Phusion Passenger (mod_rails/mod_rack) 2.2.15
+      etag:
+      - ! '"1962968d067d7d784798fa6f4cc45f08"'
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      x-runtime:
+      - '0.243423'
+      cache-control:
+      - max-age=0, private, must-revalidate
+      content-length:
+      - '8616'
+      status:
+      - '200'
+      content-type:
+      - application/xml; charset=utf-8
+      set-cookie:
+      - _front_session_id=1a9f60a62983bfea6b5a4e3a7568f09d; domain=.iss.ndl.go.jp;
+        path=/; expires=Fri, 13-Jan-2012 18:15:18 GMT; HttpOnly
+      - serverid=1102; path=/
+      vary:
+      - Accept-Encoding,User-Agent
+      connection:
+      - close
+    body: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<searchRetrieveResponse xmlns=\"http://www.loc.gov/zing/srw/\">\n
+      \ <version>1.2</version>\n  <numberOfRecords>1</numberOfRecords>\n  <nextRecordPosition>0</nextRecordPosition>\n
+      \ <extraResponseData>\n&lt;facets&gt;\n  &lt;lst name=&quot;REPOSITORY_NO&quot;&gt;\n
+      \   &lt;int name=&quot;R100000001&quot;&gt;1&lt;/int&gt;\n    &lt;int name=&quot;R100000002&quot;&gt;1&lt;/int&gt;\n
+      \   &lt;int name=&quot;R100000004&quot;&gt;1&lt;/int&gt;\n  &lt;/lst&gt;\n  &lt;lst
+      name=&quot;NDC&quot;&gt;\n  &lt;/lst&gt;\n  &lt;lst name=&quot;ISSUED_DATE&quot;&gt;\n
+      \   &lt;int name=&quot;2002&quot;&gt;1&lt;/int&gt;\n  &lt;/lst&gt;\n  &lt;lst
+      name=&quot;LIBRARY&quot;&gt;\n    &lt;int name=&quot;国立国会図書館&quot;&gt;1&lt;/int&gt;\n
+      \   &lt;int name=&quot;大阪府立中央図書館国際児童文学館&quot;&gt;1&lt;/int&gt;\n    &lt;int
+      name=&quot;滋賀県立図書館&quot;&gt;1&lt;/int&gt;\n  &lt;/lst&gt;\n&lt;/facets&gt;\n
+      \ </extraResponseData>\n  <records>\n    <record>\n      <recordSchema>info:srw/schema/1/dc-v1.1</recordSchema>\n
+      \     <recordPacking>string</recordPacking>\n      <recordData>\n&lt;rdf:RDF
+      xmlns:dcterms=&quot;http://purl.org/dc/terms/&quot; xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;
+      xmlns:dcndl=&quot;http://ndl.go.jp/dcndl/terms/&quot; xmlns:foaf=&quot;http://xmlns.com/foaf/0.1/&quot;
+      xmlns:rdfs=&quot;http://www.w3.org/2000/01/rdf-schema#&quot; xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot;
+      xmlns:owl=&quot;http://www.w3.org/2002/07/owl#&quot;&gt;\n  &lt;dcndl:BibAdminResource
+      rdf:about=&quot;http://iss.ndl.go.jp/books/R100000002-I000003641700-00&quot;&gt;\n
+      \   &lt;dcndl:catalogingStatus&gt;C7&lt;/dcndl:catalogingStatus&gt;\n    &lt;dcndl:bibRecordCategory&gt;R100000002&lt;/dcndl:bibRecordCategory&gt;\n
+      \   &lt;dcndl:record rdf:resource=&quot;http://iss.ndl.go.jp/books/R100000002-I000003641700-00#material&quot;/&gt;\n
+      \ &lt;/dcndl:BibAdminResource&gt;\n  &lt;dcndl:BibResource rdf:about=&quot;http://iss.ndl.go.jp/books/R100000002-I000003641700-00#material&quot;&gt;\n
+      \   &lt;dcterms:identifier rdf:datatype=&quot;http://ndl.go.jp/dcndl/terms/JPNO&quot;&gt;20286397&lt;/dcterms:identifier&gt;\n
+      \   &lt;dcterms:identifier rdf:datatype=&quot;http://ndl.go.jp/dcndl/terms/ISBN&quot;&gt;4577024322&lt;/dcterms:identifier&gt;\n
+      \   &lt;rdfs:seeAlso rdf:resource=&quot;http://id.ndl.go.jp/jpno/20286397&quot;/&gt;\n
+      \   &lt;rdfs:seeAlso rdf:resource=&quot;http://iss.ndl.go.jp/isbn/4577024322&quot;/&gt;\n
+      \   &lt;dcterms:title&gt;アンパンマンとどうぶつえん&lt;/dcterms:title&gt;\n    &lt;dc:title&gt;\n
+      \     &lt;rdf:Description&gt;\n        &lt;rdf:value&gt;アンパンマンとどうぶつえん&lt;/rdf:value&gt;\n
+      \       &lt;dcndl:transcription&gt;アンパンマン ト ドウブツエン&lt;/dcndl:transcription&gt;\n
+      \     &lt;/rdf:Description&gt;\n    &lt;/dc:title&gt;\n    &lt;dcndl:seriesTitle&gt;\n
+      \     &lt;rdf:Description&gt;\n        &lt;rdf:value&gt;おでかけアンパンマン ; 1&lt;/rdf:value&gt;\n
+      \     &lt;/rdf:Description&gt;\n    &lt;/dcndl:seriesTitle&gt;\n    &lt;dcterms:creator&gt;\n
+      \     &lt;foaf:Agent rdf:about=&quot;http://id.ndl.go.jp/auth/entity/00095211&quot;&gt;\n
+      \       &lt;foaf:name&gt;やなせ, たかし, 1919-&lt;/foaf:name&gt;\n        &lt;dcndl:transcription&gt;ヤナセ,
+      タカシ&lt;/dcndl:transcription&gt;\n      &lt;/foaf:Agent&gt;\n    &lt;/dcterms:creator&gt;\n
+      \   &lt;dcterms:creator&gt;\n      &lt;foaf:Agent rdf:about=&quot;http://id.ndl.go.jp/auth/entity/00197421&quot;&gt;\n
+      \       &lt;foaf:name&gt;佐藤, 彰, 1954-&lt;/foaf:name&gt;\n        &lt;dcndl:transcription&gt;サトウ,
+      アキラ&lt;/dcndl:transcription&gt;\n      &lt;/foaf:Agent&gt;\n    &lt;/dcterms:creator&gt;\n
+      \   &lt;dcterms:creator&gt;\n      &lt;foaf:Agent rdf:about=&quot;http://id.ndl.go.jp/auth/entity/00101365&quot;&gt;\n
+      \       &lt;foaf:name&gt;岩合, 光昭, 1950-&lt;/foaf:name&gt;\n        &lt;dcndl:transcription&gt;イワゴウ,
+      ミツアキ&lt;/dcndl:transcription&gt;\n      &lt;/foaf:Agent&gt;\n    &lt;/dcterms:creator&gt;\n
+      \   &lt;dcterms:creator&gt;\n      &lt;foaf:Agent rdf:about=&quot;http://id.ndl.go.jp/auth/entity/00800257&quot;&gt;\n
+      \       &lt;foaf:name&gt;トムスエンタテインメント株式会社&lt;/foaf:name&gt;\n      &lt;/foaf:Agent&gt;\n
+      \   &lt;/dcterms:creator&gt;\n    &lt;dc:creator&gt;やなせたかし 原作&lt;/dc:creator&gt;\n
+      \   &lt;dc:creator&gt;さとうあきら, 岩合光昭 写真&lt;/dc:creator&gt;\n    &lt;dc:creator&gt;東京ムービー
+      作画&lt;/dc:creator&gt;\n    &lt;dcterms:publisher&gt;\n      &lt;foaf:Agent&gt;\n
+      \       &lt;foaf:name&gt;フレーベル館&lt;/foaf:name&gt;\n        &lt;dcndl:location&gt;東京&lt;/dcndl:location&gt;\n
+      \     &lt;/foaf:Agent&gt;\n    &lt;/dcterms:publisher&gt;\n    &lt;dcndl:publicationPlace
+      rdf:datatype=&quot;http://purl.org/dc/terms/ISO3166&quot;&gt;JP&lt;/dcndl:publicationPlace&gt;\n
+      \   &lt;dcterms:date&gt;2002.5&lt;/dcterms:date&gt;\n    &lt;dcterms:issued
+      rdf:datatype=&quot;http://purl.org/dc/terms/W3CDTF&quot;&gt;2002&lt;/dcterms:issued&gt;\n
+      \   &lt;dcterms:language rdf:datatype=&quot;http://purl.org/dc/terms/ISO639-2&quot;&gt;jpn&lt;/dcterms:language&gt;\n
+      \   &lt;dcterms:abstract&gt;アンパンマンと楽しむ写真絵本。アンパンマンやその仲間たちが動物園を案内。パンダやコアラなど動物園の人気者たちも勢ぞろい。
+      (日本児童図書出版協会)&lt;/dcterms:abstract&gt;\n    &lt;dcterms:extent&gt;1冊 ; 17×17cm&lt;/dcterms:extent&gt;\n
+      \   &lt;dcndl:price&gt;500円&lt;/dcndl:price&gt;\n    &lt;dcterms:audience&gt;児童&lt;/dcterms:audience&gt;\n
+      \   &lt;dcndl:materialType rdf:resource=&quot;http://ndl.go.jp/ndltype/Book&quot;
+      rdfs:label=&quot;図書&quot;/&gt;\n    &lt;dcndl:accessRight&gt;S01P99U99&lt;/dcndl:accessRight&gt;\n
+      \ &lt;/dcndl:BibResource&gt;\n  &lt;dcndl:BibResource rdf:about=&quot;http://iss.ndl.go.jp/books/R100000002-I000003641700-00#material&quot;&gt;\n
+      \   &lt;dcndl:record rdf:resource=&quot;http://iss.ndl.go.jp/books/R100000002-I000003641700-00#item&quot;/&gt;\n
+      \   &lt;dcndl:record rdf:resource=&quot;http://iss.ndl.go.jp/books/R100000001-I030126443-00#item&quot;/&gt;\n
+      \   &lt;dcndl:record rdf:resource=&quot;http://iss.ndl.go.jp/books/R100000004-I000139412-00#item&quot;/&gt;\n
+      \ &lt;/dcndl:BibResource&gt;\n  &lt;dcndl:Item rdf:about=&quot;http://iss.ndl.go.jp/books/R100000002-I000003641700-00#item&quot;&gt;\n
+      \   &lt;dcndl:holdingAgent&gt;\n      &lt;foaf:Agent&gt;\n        &lt;foaf:name&gt;国立国会図書館&lt;/foaf:name&gt;\n
+      \       &lt;dcterms:identifier rdf:datatype=&quot;http://ndl.go.jp/dcndl/terms/NDLLibCode&quot;&gt;0000&lt;/dcterms:identifier&gt;\n
+      \     &lt;/foaf:Agent&gt;\n    &lt;/dcndl:holdingAgent&gt;\n    &lt;rdfs:seeAlso
+      rdf:resource=&quot;http://id.ndl.go.jp/bib/000003641700&quot;/&gt;\n    &lt;dcterms:identifier
+      rdf:datatype=&quot;http://ndl.go.jp/dcndl/terms/NDLBibID&quot;&gt;000003641700&lt;/dcterms:identifier&gt;\n
+      \   &lt;dcndl:callNumber&gt;Y17-N02-604&lt;/dcndl:callNumber&gt;\n  &lt;/dcndl:Item&gt;\n
+      \ &lt;dcndl:Item rdf:about=&quot;http://iss.ndl.go.jp/books/R100000001-I030126443-00#item&quot;&gt;\n
+      \   &lt;dcndl:holdingAgent&gt;\n      &lt;foaf:Agent&gt;\n        &lt;foaf:name&gt;滋賀県立図書館&lt;/foaf:name&gt;\n
+      \       &lt;dcterms:identifier rdf:datatype=&quot;http://ndl.go.jp/dcndl/terms/NDLLibCode&quot;&gt;2511&lt;/dcterms:identifier&gt;\n
+      \     &lt;/foaf:Agent&gt;\n    &lt;/dcndl:holdingAgent&gt;\n    &lt;dcterms:identifier
+      rdf:datatype=&quot;http://ndl.go.jp/dcndl/terms/somokuBibID&quot;&gt;1561817&lt;/dcterms:identifier&gt;\n
+      \   &lt;dcterms:identifier rdf:datatype=&quot;http://ndl.go.jp/dcndl/terms/somokuSubID&quot;&gt;112137070&lt;/dcterms:identifier&gt;\n
+      \   &lt;dcndl:callNumber&gt;７−２００２−５&lt;/dcndl:callNumber&gt;\n    &lt;dcndl:availability&gt;貸出可&lt;/dcndl:availability&gt;\n
+      \   &lt;dcterms:description&gt;配置場所 : 児童書庫&lt;/dcterms:description&gt;\n  &lt;/dcndl:Item&gt;\n
+      \ &lt;dcndl:Item rdf:about=&quot;http://iss.ndl.go.jp/books/R100000004-I000139412-00#item&quot;&gt;\n
+      \   &lt;dcndl:holdingAgent&gt;\n      &lt;foaf:Agent&gt;\n        &lt;foaf:name&gt;大阪府立中央図書館国際児童文学館&lt;/foaf:name&gt;\n
+      \       &lt;dcterms:identifier rdf:datatype=&quot;http://ndl.go.jp/dcndl/terms/NDLLibCode&quot;&gt;2741&lt;/dcterms:identifier&gt;\n
+      \     &lt;/foaf:Agent&gt;\n    &lt;/dcndl:holdingAgent&gt;\n    &lt;dcterms:identifier
+      rdf:datatype=&quot;http://ndl.go.jp/dcndl/terms/somokuBibID&quot;&gt;99328&lt;/dcterms:identifier&gt;\n
+      \ &lt;/dcndl:Item&gt;\n&lt;/rdf:RDF&gt;\n      </recordData>\n      <recordPosition>1</recordPosition>\n
+      \   </record>\n  </records>\n</searchRetrieveResponse>\n"
+    http_version: '1.0'
+  recorded_at: Fri, 13 Jan 2012 17:15:18 GMT
+recorded_with: VCR 2.0.0.rc1

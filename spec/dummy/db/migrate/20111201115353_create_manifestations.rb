@@ -9,6 +9,7 @@ class CreateManifestations < ActiveRecord::Migration
       t.string :nbn
       t.string :ndc
       t.integer :language_id
+      t.text :description
 
       t.timestamps
     end
