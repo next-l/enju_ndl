@@ -26,6 +26,8 @@ describe NdlBook do
       manifestation = NdlBook.import_from_sru_response('21816393')
       manifestation.ndc.should eq "007.64"
       manifestation.nbn.should eq "21816393"
+      manifestation.creators.first.full_name.should eq '秋葉, 拓哉'
+      manifestation.creators.first.full_name_transcription.should eq 'アキバ, タクヤ'
     end
 
     it "should import bibliographic record that does not have any classifications" do

@@ -78,7 +78,7 @@ module EnjuNdl
 
       def create_frbr_instance(doc, manifestation)
         title = get_title(doc)
-        creators = get_creators(doc).zip([]).map{|f,t| {:full_name => f, :full_name_transcription => t}}
+        creators = get_creators(doc)
         language = get_language(doc)
         subjects = get_subjects(doc)
 
@@ -144,8 +144,11 @@ module EnjuNdl
 
       def get_creators(doc)
         creators = []
-        doc.xpath('//dcterms:creator/foaf:Agent/foaf:name').each do |creator|
-          creators << creator.content.gsub('‖', '').tr('ａ-ｚＡ-Ｚ０-９　', 'a-zA-Z0-9 ')
+        doc.xpath('//dcterms:creator/foaf:Agent').each do |creator|
+          creators << {
+            :full_name => creator.at('./foaf:name').content,
+            :full_name_transcription => creator.at('./dcndl:transcription').try(:content)
+          }
         end
         creators
       end
