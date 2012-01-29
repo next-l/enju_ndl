@@ -24,6 +24,7 @@ describe NdlBook do
     use_vcr_cassette "enju_ndl/import", :record => :new_episodes
     it "should import bibliographic record" do
       manifestation = NdlBook.import_from_sru_response('21816393')
+      manifestation.isbn.should eq  '9784839931995'
       manifestation.ndc.should eq "007.64"
       manifestation.nbn.should eq "21816393"
       manifestation.creators.first.full_name.should eq '秋葉, 拓哉'
