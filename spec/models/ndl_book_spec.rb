@@ -36,5 +36,16 @@ describe NdlBook do
       manifestation.original_title.should eq "アンパンマンとどうぶつえん"
       manifestation.ndc.should be_nil
     end
+
+    it "should import volume_number_string" do
+      manifestation = NdlBook.import_from_sru_response('21847424')
+      manifestation.volume_number_string.should eq '上'
+    end
+
+    it "should import title_alternative" do
+      manifestation = NdlBook.import_from_sru_response('21859930')
+      manifestation.title_alternative.should eq 'PLATINADATA'
+      manifestation.title_alternative_transcription.should eq 'PLATINA DATA'
+    end
   end
 end

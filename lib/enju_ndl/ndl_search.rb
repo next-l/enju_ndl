@@ -44,6 +44,7 @@ module EnjuNdl
           end
         end
         description = doc.at('//dcterms:abstract').try(:content)
+        volume_number_string = doc.at('//dcndl:volume/rdf:Description/rdf:value').try(:content)
 
         manifestation = nil
         Patron.transaction do
@@ -53,12 +54,15 @@ module EnjuNdl
           manifestation = Manifestation.new(
             :original_title => title[:manifestation],
             :title_transcription => title[:transcription],
+            :title_alternative => title[:alternative],
+            :title_alternative_transcription => title[:alternative_transcription],
             # TODO: NDLサーチに入っている図書以外の資料を調べる
             #:carrier_type_id => CarrierType.where(:name => 'print').first.id,
             :language_id => language_id,
             :isbn => isbn,
             :pub_date => pub_date,
             :description => description,
+            :volume_number_string => volume_number_string,
             :nbn => nbn,
             :ndc => ndc
           )
@@ -138,7 +142,8 @@ module EnjuNdl
         title = {
           :manifestation => doc.xpath('//dc:title/rdf:Description/rdf:value').collect(&:content).join(' ').tr('ａ-ｚＡ-Ｚ０-９　', 'a-zA-Z0-9 ').squeeze(' '),
           :transcription => doc.xpath('//dc:title/dcndl:transcription').collect(&:content).join(' ').tr('ａ-ｚＡ-Ｚ０-９　', 'a-zA-Z0-9 ').squeeze(' '),
-          :original => doc.xpath('//dcterms:alternative/rdf:Rescription/rdf:value').collect(&:content).join(' ').tr('ａ-ｚＡ-Ｚ０-９　', 'a-zA-Z0-9 ').squeeze(' ')
+          :alternative => doc.at('//dcndl:alternative/rdf:Description/rdf:value').try(:content),
+          :alternative_transcription => doc.at('//dcndl:alternative/rdf:Description/dcndl:transcription').try(:content)
         }
       end
 
