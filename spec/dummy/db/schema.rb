@@ -22,14 +22,15 @@ ActiveRecord::Schema.define(:version => 20111201121844) do
 
   create_table "languages", :force => true do |t|
     t.string   "name"
+    t.text     "display_name"
     t.string   "native_name"
     t.string   "iso_639_1"
     t.string   "iso_639_2"
     t.string   "iso_639_3"
     t.text     "note"
     t.integer  "position"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "manifestations", :force => true do |t|

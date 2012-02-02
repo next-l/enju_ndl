@@ -2,6 +2,7 @@ class CreateLanguages < ActiveRecord::Migration
   def change
     create_table :languages do |t|
       t.string :name
+      t.text :display_name
       t.string :native_name
       t.string :iso_639_1
       t.string :iso_639_2

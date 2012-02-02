@@ -2,6 +2,8 @@
 require 'spec_helper'
 
 describe NdlBook do
+  fixtures :languages
+
   it "should respond to per_page" do
     NdlBook.per_page.should eq 10
   end
@@ -27,6 +29,7 @@ describe NdlBook do
       manifestation.isbn.should eq  '9784839931995'
       manifestation.ndc.should eq "007.64"
       manifestation.nbn.should eq "21816393"
+      manifestation.language.name.should eq "Japanese"
       manifestation.creators.first.full_name.should eq '秋葉, 拓哉'
       manifestation.creators.first.full_name_transcription.should eq 'アキバ, タクヤ'
     end
@@ -34,6 +37,7 @@ describe NdlBook do
     it "should import bibliographic record that does not have any classifications" do
       manifestation = NdlBook.import_from_sru_response('20286397')
       manifestation.original_title.should eq "アンパンマンとどうぶつえん"
+      manifestation.title_transcription.should eq "アンパンマン ト ドウブツエン"
       manifestation.ndc.should be_nil
     end
 

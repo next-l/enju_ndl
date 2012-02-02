@@ -20,7 +20,7 @@ module EnjuNdl
       end
 
       def import_record(doc)
-        pub_date, language, nbn, ndc, isbn = nil, nil, nil, nil, nil
+        pub_date, langugage, nbn, ndc, isbn = nil, nil, nil, nil, nil
 
         publishers = get_publishers(doc).zip([]).map{|f,t| {:full_name => f, :full_name_transcription => t}}
 
@@ -33,7 +33,13 @@ module EnjuNdl
           pub_date = nil
         end
 
-        language = get_language(doc)
+        language = Language.where(:iso_639_2 => get_language(doc)).first
+        if language
+          language_id = language.id
+        else
+          language_id = 1
+        end
+
         isbn = doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/ISBN"]').try(:content).to_s
         nbn = doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/JPNO"]').try(:content)
         classification_urls = doc.xpath('//dcterms:subject[@rdf:resource]').map{|subject| subject.attributes['resource'].value}
@@ -49,7 +55,6 @@ module EnjuNdl
         manifestation = nil
         Patron.transaction do
           publisher_patrons = Patron.import_patrons(publishers)
-          language_id = Language.where(:iso_639_2 => language).first.id rescue 1
 
           manifestation = Manifestation.new(
             :original_title => title[:manifestation],
@@ -141,7 +146,7 @@ module EnjuNdl
       def get_title(doc)
         title = {
           :manifestation => doc.xpath('//dc:title/rdf:Description/rdf:value').collect(&:content).join(' ').tr('ａ-ｚＡ-Ｚ０-９　', 'a-zA-Z0-9 ').squeeze(' '),
-          :transcription => doc.xpath('//dc:title/dcndl:transcription').collect(&:content).join(' ').tr('ａ-ｚＡ-Ｚ０-９　', 'a-zA-Z0-9 ').squeeze(' '),
+          :transcription => doc.xpath('//dc:title/rdf:Description/dcndl:transcription').collect(&:content).join(' ').tr('ａ-ｚＡ-Ｚ０-９　', 'a-zA-Z0-9 ').squeeze(' '),
           :alternative => doc.at('//dcndl:alternative/rdf:Description/rdf:value').try(:content),
           :alternative_transcription => doc.at('//dcndl:alternative/rdf:Description/dcndl:transcription').try(:content)
         }
@@ -168,7 +173,10 @@ module EnjuNdl
 
       def get_language(doc)
         # TODO: 言語が複数ある場合
-        language = doc.xpath('//dcterms:language').first.content.downcase
+        language = doc.at('//dcterms:language[@rdf:datatype="http://purl.org/dc/terms/ISO639-2"]').content
+        if language
+          language.downcase
+        end
       end
 
       def get_publishers(doc)
