@@ -76,6 +76,7 @@ module EnjuNdl
         end
 
         #manifestation.send_later(:create_frbr_instance, doc.to_s)
+        manifestation.save!
         return manifestation
       end
 
