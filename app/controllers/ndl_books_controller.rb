@@ -18,7 +18,7 @@ class NdlBooksController < ApplicationController
   def create
     if params[:book]
       @manifestation = NdlBook.import_from_sru_response(params[:book][:nbn])
-      if @manifestation
+      if @manifestation.save
         flash[:notice] = t('controller.successfully_created', :model => t('activerecord.models.manifestation'))
         flash[:porta_import] == true
         redirect_to manifestation_items_url(@manifestation)
