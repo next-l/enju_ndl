@@ -38,7 +38,7 @@ class NdlBook
     return if manifestation
     url = "http://iss.ndl.go.jp/api/sru?operation=searchRetrieve&recordSchema=dcndl&&maximumRecords=1&&query=%28jpno=#{jpno}%29"
     response = Nokogiri::XML(open("http://iss.ndl.go.jp/api/sru?operation=searchRetrieve&recordSchema=dcndl&&maximumRecords=1&&query=%28jpno=#{jpno}%29")).at('//xmlns:recordData')
-    return unless response.content
+    return unless response.try(:content)
     doc = Nokogiri::XML(response.content)
     Manifestation.import_record(doc)
   end
