@@ -53,6 +53,7 @@ module EnjuNdl
           end
         end
         description = doc.at('//dcterms:abstract').try(:content)
+        price = doc.at('//dcndl:price').try(:content)
         volume_number_string = doc.at('//dcndl:volume/rdf:Description/rdf:value').try(:content)
 
         manifestation = nil
@@ -71,6 +72,7 @@ module EnjuNdl
             :pub_date => pub_date,
             :description => description,
             :volume_number_string => volume_number_string,
+            :price => price,
             :nbn => nbn,
             :ndc => ndc
           )
