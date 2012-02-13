@@ -22,6 +22,10 @@ module EnjuNdl
       def import_record(doc)
         pub_date, langugage, nbn, ndc, isbn = nil, nil, nil, nil, nil
 
+        nbn = doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/JPNO"]').try(:content)
+        manifestation = Manifestation.where(:nbn => nbn).first
+        return manifestation if manifestation
+
         publishers = get_publishers(doc).zip([]).map{|f,t| {:full_name => f, :full_name_transcription => t}}
 
         # title
@@ -41,7 +45,6 @@ module EnjuNdl
         end
 
         isbn = doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/ISBN"]').try(:content).to_s
-        nbn = doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/JPNO"]').try(:content)
         classification_urls = doc.xpath('//dcterms:subject[@rdf:resource]').map{|subject| subject.attributes['resource'].value}
         if classification_urls
           ndc9_url = classification_urls.map{|url| URI.parse(url)}.select{|u| u.path.split('/').reverse[1] == 'ndc9'}.first

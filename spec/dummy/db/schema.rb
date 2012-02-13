@@ -13,11 +13,26 @@
 
 ActiveRecord::Schema.define(:version => 20111201121844) do
 
+  create_table "countries", :force => true do |t|
+    t.string  "name",         :null => false
+    t.text    "display_name"
+    t.string  "alpha_2"
+    t.string  "alpha_3"
+    t.string  "numeric_3"
+    t.text    "note"
+    t.integer "position"
+  end
+
+  add_index "countries", ["alpha_2"], :name => "index_countries_on_alpha_2"
+  add_index "countries", ["alpha_3"], :name => "index_countries_on_alpha_3"
+  add_index "countries", ["name"], :name => "index_countries_on_name"
+  add_index "countries", ["numeric_3"], :name => "index_countries_on_numeric_3"
+
   create_table "creates", :force => true do |t|
     t.integer  "work_id"
     t.integer  "patron_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "languages", :force => true do |t|
@@ -29,8 +44,8 @@ ActiveRecord::Schema.define(:version => 20111201121844) do
     t.string   "iso_639_3"
     t.text     "note"
     t.integer  "position"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "manifestations", :force => true do |t|
@@ -45,8 +60,8 @@ ActiveRecord::Schema.define(:version => 20111201121844) do
     t.integer  "language_id"
     t.text     "description"
     t.string   "volume_number_string"
-    t.datetime "created_at",                      :null => false
-    t.datetime "updated_at",                      :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "patrons", :force => true do |t|
@@ -54,15 +69,15 @@ ActiveRecord::Schema.define(:version => 20111201121844) do
     t.text     "full_name_transcription"
     t.integer  "language_id"
     t.integer  "required_role_id"
-    t.datetime "created_at",              :null => false
-    t.datetime "updated_at",              :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "produces", :force => true do |t|
     t.integer  "manifestation_id"
     t.integer  "patron_id"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "roles", :force => true do |t|
@@ -70,13 +85,13 @@ ActiveRecord::Schema.define(:version => 20111201121844) do
     t.text     "display_name"
     t.text     "note"
     t.integer  "position"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|
-    t.datetime "created_at",                                            :null => false
-    t.datetime "updated_at",                                            :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "email",                                 :default => "", :null => false
     t.string   "encrypted_password",     :limit => 128, :default => "", :null => false
     t.string   "reset_password_token"
