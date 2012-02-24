@@ -23,7 +23,7 @@ module EnjuNdl
         pub_date, langugage, nbn, ndc, isbn = nil, nil, nil, nil, nil
 
         nbn = doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/JPNO"]').try(:content)
-        manifestation = Manifestation.where(:nbn => nbn).first
+        manifestation = Manifestation.where(:nbn => nbn).first if nbn
         return manifestation if manifestation
 
         publishers = get_publishers(doc).zip([]).map{|f,t| {:full_name => f, :full_name_transcription => t}}
