@@ -32,6 +32,7 @@ describe NdlBook do
       manifestation.language.name.should eq "Japanese"
       manifestation.creators.first.full_name.should eq '秋葉, 拓哉'
       manifestation.creators.first.full_name_transcription.should eq 'アキバ, タクヤ'
+      manifestation.price.should eq 3280
     end
 
     it "should import bibliographic record that does not have any classifications" do

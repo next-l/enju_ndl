@@ -1,4 +1,4 @@
-source "http://rubygems.org"
+source "https://rubygems.org"
 
 # Declare your gem's dependencies in enju_ndl.gemspec.
 # Bundler will treat runtime dependencies like base dependencies, and
@@ -14,7 +14,7 @@ gem "jquery-rails"
 # Git. Remember to move these dependencies to your gemspec before releasing
 # your gem to rubygems.org.
 group :development, :test do
-  gem 'vcr', '~> 2.0.0.rc1'
+  gem 'vcr', '~> 2.0.0.rc2'
   gem 'fakeweb'
 end
 

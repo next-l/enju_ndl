@@ -10,6 +10,7 @@ class CreateManifestations < ActiveRecord::Migration
       t.string :nbn
       t.string :ndc
       t.integer :language_id
+      t.integer :price
       t.text :description
       t.string :volume_number_string
 
