@@ -2,65 +2,10 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.porta.ndl.go.jp/servicedp/opensearch?dpid=zomoku&isbn=9784839931995&cnt=1&idx=1
-    body: ''
-    headers:
-      accept:
-      - ! '*/*'
-      user-agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      date:
-      - Fri, 13 Jan 2012 16:30:02 GMT
-      content-type:
-      - text/xml;charset=utf-8
-      content-length:
-      - '4456'
-      connection:
-      - close
-    body: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n<rss
-      version=\"2.0\" xmlns:dc=\"http://purl.org/dc/elements/1.1/\"\r\n    xmlns:openSearch=\"http://a9.com/-/spec/opensearchrss/1.0/\"\r\n
-      \   xmlns:dcndl=\"http://ndl.go.jp/dcndl/terms/\" \r\n    xmlns:dcndl_porta=\"http://ndl.go.jp/dcndl/dcndl_porta/\"\r\n
-      \   xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\" \r\n    xmlns:dcterms=\"http://purl.org/dc/terms/\"
-      \r\n    xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" \r\n    xsi:schemaLocation=\"http://ndl.go.jp/dcndl/dcndl_porta/
-      http://porta.ndl.go.jp/schema/dcndl_porta.xsd\"\r\n    >\r\n    \r\n    \r\n
-      \   \r\n    \r\n    \r\n\t\t\r\n\t\t\r\n\t\t<channel>\r\n\t    \t<title>\r\n\t
-      \   \t\t\r\n\t    \t\t\r\n\t    \t\tPORTA - Search： &quot;dpid=zomoku cnt=1
-      idx=1 isbn=9784839931995&quot;\r\n\t    \t</title>\r\n\t    \t<link>\r\n\t    \t\thttp://porta.ndl.go.jp/\r\n\t
-      \   \t</link>\r\n\t    \t<description>\r\n\t    \t\tSearch results for &quot;dpid=zomoku
-      cnt=1 idx=1 isbn=9784839931995&quot;\r\n\t    \t\t\r\n\t    \t</description>\r\n\t
-      \   \t\r\n\t    \t<language>ja</language>\r\n\t    \t\r\n\t    \t<openSearch:totalResults>\r\n\t
-      \   \t\t1\r\n\t    \t</openSearch:totalResults>\r\n\t\t\t\r\n\t\t\t\r\n\t\t\t\r\n\t\t\t\r\n\t\t\t\r\n\t\t\t<openSearch:startIndex>\r\n\t\t\t\t1\r\n\t\t\t</openSearch:startIndex>\r\n\t\t\t\r\n\t\t\t\r\n\t
-      \   \t<openSearch:itemsPerPage>\r\n\t    \t\t1\r\n\t    \t</openSearch:itemsPerPage>\r\n\t
-      \   \t\r\n\t    \t\r\n\t   \t\t\r\n\t   \t\t<item>\n<title>プログラミングコンテストチャレンジブック
-      : 問題解決のアルゴリズム活用力とコーディングテクニックを鍛える</title>\n<author>秋葉拓哉，岩田陽一，北川宜稔　著</author>\n<author>Ｕｓｕ−ｙａ　編</author>\n<link>http://api.porta.ndl.go.jp/ndlopac/cgi-bin/ndlopac/ndl-book?kywd=21816393</link>\n
-      \ <description>出版地 : 東京;形態 : ３１５ｐ ; ２４ｃｍ;本体価格 : ３２８０円;ＮＤＬ書誌ＩＤ : ００００１０９８０９０１</description>\n<dcndl:titleTranscription>プログラミング　コンテスト　チャレンジ　ブック</dcndl:titleTranscription>\n<dcndl:titleTranscription>モンダイ　カイケツ　ノ　アルゴリズム　カツヨウリョク　ト　コーディング　テクニック　オ　キタエル</dcndl:titleTranscription>\n<dc:creator>秋葉拓哉，岩田陽一，北川宜稔　著</dc:creator>\n<dc:creator>Ｕｓｕ−ｙａ　編</dc:creator>\n<dc:creator
-      xsi:type=\"dcndl:NDLNH\">秋葉　拓哉</dc:creator>\n<dc:creator xsi:type=\"dcndl:NDLNH\">岩田　陽一</dc:creator>\n<dc:creator
-      xsi:type=\"dcndl:NDLNH\">北川　宜稔</dc:creator>\n<dc:creator xsi:type=\"dcndl:NDLNH\">Ｕｓｕ−ｙａ</dc:creator>\n<dc:creator
-      xsi:type=\"dcndl:NDLNH\">Ｕｓｕ−ｙａ</dc:creator>\n<dcndl:creatorTranscription xsi:type=\"dcndl:NDLNH\">アキバ，タクヤ</dcndl:creatorTranscription>\n<dcndl:creatorTranscription
-      xsi:type=\"dcndl:NDLNH\">イワタ，ヨウイチ</dcndl:creatorTranscription>\n<dcndl:creatorTranscription
-      xsi:type=\"dcndl:NDLNH\">キタガワ，マサトシ</dcndl:creatorTranscription>\n<dcndl:creatorTranscription
-      xsi:type=\"dcndl:NDLNH\">Ｕｓｕ−ｙａ</dcndl:creatorTranscription>\n<dcndl:creatorTranscription
-      xsi:type=\"dcndl:NDLNH\">ウスヤ</dcndl:creatorTranscription>\n<dc:subject xsi:type=\"dcndl:NDLSH\">プログラミング（コンピュータ）</dc:subject>\n<dc:subject
-      xsi:type=\"dcndl:NDC\">００７．６４</dc:subject>\n<dc:subject xsi:type=\"dcndl:NDLC\">Ｍ１５９</dc:subject>\n<dcndl:subjectTranscription
-      xsi:type=\"dcndl:NDLSH\">プログラミング（コンピュータ）</dcndl:subjectTranscription>\n<dc:publisher>毎日コミュニケーションズ</dc:publisher>\n<dcterms:issued>２０１０．９</dcterms:issued>\n<dcterms:issued
-      xsi:type=\"dcterms:W3CDTF\">2010</dcterms:issued>\n<dc:identifier xsi:type=\"dcterms:URI\">http://api.porta.ndl.go.jp/ndlopac/cgi-bin/ndlopac/ndl-book?kywd=21816393</dc:identifier>\n<dc:identifier
-      xsi:type=\"dcndl:ISBN\">978-4-8399-3199-5</dc:identifier>\n<dc:identifier xsi:type=\"dcndl:JPNO\">21816393</dc:identifier>\n<dc:identifier
-      xsi:type=\"dcndl_porta:NDLCN\">Ｍ１５９−Ｊ１０５６</dc:identifier>\n<dc:language xsi:type=\"dcterms:ISO639-2\">JPN</dc:language>\n<dc:type
-      xsi:type=\"dcndl_porta:PORTAType\">Text</dc:type>\n<dc:type xsi:type=\"dcndl_porta:Digitalize\">4</dc:type>\n<dc:type
-      xsi:type=\"dcndl_porta:Web-get\">4</dc:type>\n<dc:type xsi:type=\"dcndl_porta:Payment\">4</dc:type>\n\n
-      \ <dcndl_porta:dpid>zomoku</dcndl_porta:dpid>\n  <dcndl_porta:repository_no>R000000001</dcndl_porta:repository_no>\n
-      \ <dcndl_porta:item_no>I005529855</dcndl_porta:item_no></item>\n\r\n\t\t</channel>\r\n\t\r\n</rss>"
-    http_version: '1.1'
-  recorded_at: Fri, 13 Jan 2012 16:30:03 GMT
-- request:
-    method: get
     uri: http://iss.ndl.go.jp/api/opensearch?dpid=iss-ndl-opac&isbn=9784839931995&cnt=1&idx=1
-    body: ''
+    body:
+      encoding: US-ASCII
+      string: ''
     headers:
       accept:
       - ! '*/*'
@@ -69,61 +14,123 @@ http_interactions:
   response:
     status:
       code: 200
-      message: OK
+      message: !binary |-
+        T0s=
     headers:
-      date:
-      - Fri, 13 Jan 2012 16:41:23 GMT
-      server:
-      - Apache
-      x-powered-by:
-      - Phusion Passenger (mod_rails/mod_rack) 2.2.15
-      etag:
-      - ! '"8111039a89159e80a5b34f1969f32cd4"'
-      x-ua-compatible:
-      - IE=Edge,chrome=1
-      x-runtime:
-      - '0.213936'
-      cache-control:
-      - max-age=0, private, must-revalidate
-      content-length:
-      - '2975'
-      status:
-      - '200'
-      content-type:
-      - application/xml; charset=utf-8
-      set-cookie:
-      - _front_session_id=58dc5f7effb8058fa3ce54d3bc2dc68f; domain=.iss.ndl.go.jp;
-        path=/; expires=Fri, 13-Jan-2012 17:41:23 GMT; HttpOnly
-      - serverid=1102; path=/
-      vary:
-      - Accept-Encoding,User-Agent
-      connection:
-      - close
-    body: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<rss xmlns:dcterms=\"http://purl.org/dc/terms/\"
-      xmlns:dcndl=\"http://ndl.go.jp/dcndl/terms/\" version=\"2.0\" xmlns:dc=\"http://purl.org/dc/elements/1.1/\"
-      xmlns:openSearch=\"http://a9.com/-/spec/opensearchrss/1.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"
-      xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\">\n  <channel>\n    <title>9784839931995
-      iss-ndl-opac - 国立国会図書館サーチ OpenSearch</title>\n    <link>iss.ndl.go.jp</link>\n
-      \   <description>Search results for isbn=9784839931995 cnt=1 dpid=iss-ndl-opac
-      </description>\n    <language>ja</language>\n    <openSearch:totalResults>1</openSearch:totalResults>\n
-      \   <openSearch:startIndex>1</openSearch:startIndex>\n    <openSearch:itemsPerPage>1</openSearch:itemsPerPage>\n
-      \   <item>\n      <title>プログラミングコンテストチャレンジブック : 問題解決のアルゴリズム活用力とコーディングテクニックを鍛える</title>\n
-      \     <link>http://iss.ndl.go.jp/books/R100000002-I000010980901-00</link>\n<description>\n<![CDATA[<p>毎日コミュニケーションズ,9784839931995</p>\n<ul><li>タイトル：
-      プログラミングコンテストチャレンジブック : 問題解決のアルゴリズム活用力とコーディングテクニックを鍛える</li>\n<li>タイトル（読み）： プログラミング
-      コンテスト チャレンジ ブック : モンダイ カイケツ ノ アルゴリズム カツヨウリョク ト コーディング テクニック オ キタエル</li>\n<li>責任表示：
-      秋葉拓哉, 岩田陽一, 北川宜稔 著,Usu-ya 編,</li>\n<li>NDC(9)： 007.64</li>\n</ul>]]>\n</description>\n
-      \     <author>秋葉拓哉, 岩田陽一, 北川宜稔 著,Usu-ya 編,</author>\n      <category>本</category>\n
-      \     <guid isPermaLink=\"true\">http://iss.ndl.go.jp/books/R100000002-I000010980901-00</guid>\n
-      \     <pubDate>Wed, 06 Oct 2010 09:00:00 +0900</pubDate>\n      <dc:title>プログラミングコンテストチャレンジブック
-      : 問題解決のアルゴリズム活用力とコーディングテクニックを鍛える</dc:title>\n      <dcndl:titleTranscription>プログラミング
-      コンテスト チャレンジ ブック : モンダイ カイケツ ノ アルゴリズム カツヨウリョク ト コーディング テクニック オ キタエル</dcndl:titleTranscription>\n
-      \     <dc:creator>秋葉拓哉, 岩田陽一, 北川宜稔 著</dc:creator>\n      <dc:creator>Usu-ya
-      編</dc:creator>\n      <dc:publisher>毎日コミュニケーションズ</dc:publisher>\n      <dcterms:issued
-      xsi:type=\"dcterms:W3CDTF\">2010</dcterms:issued>\n      <dc:identifier xsi:type=\"dcndl:ISBN\">9784839931995</dc:identifier>\n
-      \     <dc:identifier xsi:type=\"dcndl:JPNO\">21816393</dc:identifier>\n      <dc:subject>プログラミング
-      (コンピュータ)</dc:subject>\n      <dc:subject xsi:type=\"dcndl:NDLC\">M159</dc:subject>\n
-      \     <dc:subject xsi:type=\"dcndl:NDC9\">007.64</dc:subject>\n    </item>\n
-      \ </channel>\n</rss>\n"
-    http_version: '1.0'
-  recorded_at: Fri, 13 Jan 2012 16:41:23 GMT
-recorded_with: VCR 2.0.0.rc1
+      !binary "ZGF0ZQ==":
+      - !binary |-
+        U2F0LCAwMyBNYXIgMjAxMiAxNDoxNjozOCBHTVQ=
+      !binary "c2VydmVy":
+      - !binary |-
+        QXBhY2hl
+      !binary "eC1wb3dlcmVkLWJ5":
+      - !binary |-
+        UGh1c2lvbiBQYXNzZW5nZXIgKG1vZF9yYWlscy9tb2RfcmFjaykgMi4yLjE1
+      !binary "ZXRhZw==":
+      - !binary |-
+        IjgxMTEwMzlhODkxNTllODBhNWIzNGYxOTY5ZjMyY2Q0Ig==
+      !binary "eC11YS1jb21wYXRpYmxl":
+      - !binary |-
+        SUU9RWRnZSxjaHJvbWU9MQ==
+      !binary "eC1ydW50aW1l":
+      - !binary |-
+        MC4wNjQ0NjE=
+      !binary "Y2FjaGUtY29udHJvbA==":
+      - !binary |-
+        bWF4LWFnZT0wLCBwcml2YXRlLCBtdXN0LXJldmFsaWRhdGU=
+      !binary "Y29udGVudC1sZW5ndGg=":
+      - !binary |-
+        Mjk3NQ==
+      !binary "c3RhdHVz":
+      - !binary |-
+        MjAw
+      !binary "Y29udGVudC10eXBl":
+      - !binary |-
+        YXBwbGljYXRpb24veG1sOyBjaGFyc2V0PXV0Zi04
+      !binary "c2V0LWNvb2tpZQ==":
+      - !binary |-
+        X2Zyb250X3Nlc3Npb25faWQ9MjI3YzVjM2E0NjUyZWExN2M5MzU5MzExY2I3
+        MWI5NWU7IGRvbWFpbj0uaXNzLm5kbC5nby5qcDsgcGF0aD0vOyBleHBpcmVz
+        PVNhdCwgMDMtTWFyLTIwMTIgMTU6MTY6MzggR01UOyBIdHRwT25seQ==
+      - !binary |-
+        c2VydmVyaWQ9MTEwMjsgcGF0aD0v
+      !binary "dmFyeQ==":
+      - !binary |-
+        QWNjZXB0LUVuY29kaW5nLFVzZXItQWdlbnQ=
+      !binary "Y29ubmVjdGlvbg==":
+      - !binary |-
+        Y2xvc2U=
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHJzcyB4
+        bWxuczpkY3Rlcm1zPSJodHRwOi8vcHVybC5vcmcvZGMvdGVybXMvIiB4bWxu
+        czpkY25kbD0iaHR0cDovL25kbC5nby5qcC9kY25kbC90ZXJtcy8iIHZlcnNp
+        b249IjIuMCIgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50
+        cy8xLjEvIiB4bWxuczpvcGVuU2VhcmNoPSJodHRwOi8vYTkuY29tLy0vc3Bl
+        Yy9vcGVuc2VhcmNocnNzLzEuMC8iIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53
+        My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOmRjbWl0eXBl
+        PSJodHRwOi8vcHVybC5vcmcvZGMvZGNtaXR5cGUvIj4KICA8Y2hhbm5lbD4K
+        ICAgIDx0aXRsZT45Nzg0ODM5OTMxOTk1IGlzcy1uZGwtb3BhYyAtIOWbveer
+        i+WbveS8muWbs+abuOmkqOOCteODvOODgSBPcGVuU2VhcmNoPC90aXRsZT4K
+        ICAgIDxsaW5rPmlzcy5uZGwuZ28uanA8L2xpbms+CiAgICA8ZGVzY3JpcHRp
+        b24+U2VhcmNoIHJlc3VsdHMgZm9yIGlzYm49OTc4NDgzOTkzMTk5NSBjbnQ9
+        MSBkcGlkPWlzcy1uZGwtb3BhYyA8L2Rlc2NyaXB0aW9uPgogICAgPGxhbmd1
+        YWdlPmphPC9sYW5ndWFnZT4KICAgIDxvcGVuU2VhcmNoOnRvdGFsUmVzdWx0
+        cz4xPC9vcGVuU2VhcmNoOnRvdGFsUmVzdWx0cz4KICAgIDxvcGVuU2VhcmNo
+        OnN0YXJ0SW5kZXg+MTwvb3BlblNlYXJjaDpzdGFydEluZGV4PgogICAgPG9w
+        ZW5TZWFyY2g6aXRlbXNQZXJQYWdlPjE8L29wZW5TZWFyY2g6aXRlbXNQZXJQ
+        YWdlPgogICAgPGl0ZW0+CiAgICAgIDx0aXRsZT7jg5fjg63jgrDjg6njg5/j
+        g7PjgrDjgrPjg7Pjg4bjgrnjg4jjg4Hjg6Pjg6zjg7Pjgrjjg5bjg4Pjgq8g
+        OiDllY/poYzop6Pmsbrjga7jgqLjg6vjgrTjg6rjgrrjg6DmtLvnlKjlipvj
+        gajjgrPjg7zjg4fjgqPjg7PjgrDjg4bjgq/jg4vjg4Pjgq/jgpLpjZvjgYjj
+        gos8L3RpdGxlPgogICAgICA8bGluaz5odHRwOi8vaXNzLm5kbC5nby5qcC9i
+        b29rcy9SMTAwMDAwMDAyLUkwMDAwMTA5ODA5MDEtMDA8L2xpbms+CjxkZXNj
+        cmlwdGlvbj4KPCFbQ0RBVEFbPHA+5q+O5pel44Kz44Of44Ol44OL44Kx44O8
+        44K344On44Oz44K6LDk3ODQ4Mzk5MzE5OTU8L3A+Cjx1bD48bGk+44K/44Kk
+        44OI44Or77yaIOODl+ODreOCsOODqeODn+ODs+OCsOOCs+ODs+ODhuOCueOD
+        iOODgeODo+ODrOODs+OCuOODluODg+OCryA6IOWVj+mhjOino+axuuOBruOC
+        ouODq+OCtOODquOCuuODoOa0u+eUqOWKm+OBqOOCs+ODvOODh+OCo+ODs+OC
+        sOODhuOCr+ODi+ODg+OCr+OCkumNm+OBiOOCizwvbGk+CjxsaT7jgr/jgqTj
+        g4jjg6vvvIjoqq3jgb/vvInvvJog44OX44Ot44Kw44Op44Of44Oz44KwIOOC
+        s+ODs+ODhuOCueODiCDjg4Hjg6Pjg6zjg7Pjgrgg44OW44OD44KvIDog44Oi
+        44Oz44OA44KkIOOCq+OCpOOCseODhCDjg44g44Ki44Or44K044Oq44K644Og
+        IOOCq+ODhOODqOOCpuODquODp+OCryDjg4gg44Kz44O844OH44Kj44Oz44Kw
+        IOODhuOCr+ODi+ODg+OCryDjgqog44Kt44K/44Ko44OrPC9saT4KPGxpPuiy
+        rOS7u+ihqOekuu+8miDnp4vokYnmi5Plk4ksIOWyqeeUsOmZveS4gCwg5YyX
+        5bed5a6c56iUIOiRlyxVc3UteWEg57eoLDwvbGk+CjxsaT5OREMoOSnvvJog
+        MDA3LjY0PC9saT4KPC91bD5dXT4KPC9kZXNjcmlwdGlvbj4KICAgICAgPGF1
+        dGhvcj7np4vokYnmi5Plk4ksIOWyqeeUsOmZveS4gCwg5YyX5bed5a6c56iU
+        IOiRlyxVc3UteWEg57eoLDwvYXV0aG9yPgogICAgICA8Y2F0ZWdvcnk+5pys
+        PC9jYXRlZ29yeT4KICAgICAgPGd1aWQgaXNQZXJtYUxpbms9InRydWUiPmh0
+        dHA6Ly9pc3MubmRsLmdvLmpwL2Jvb2tzL1IxMDAwMDAwMDItSTAwMDAxMDk4
+        MDkwMS0wMDwvZ3VpZD4KICAgICAgPHB1YkRhdGU+V2VkLCAwNiBPY3QgMjAx
+        MCAwOTowMDowMCArMDkwMDwvcHViRGF0ZT4KICAgICAgPGRjOnRpdGxlPuOD
+        l+ODreOCsOODqeODn+ODs+OCsOOCs+ODs+ODhuOCueODiOODgeODo+ODrOOD
+        s+OCuOODluODg+OCryA6IOWVj+mhjOino+axuuOBruOCouODq+OCtOODquOC
+        uuODoOa0u+eUqOWKm+OBqOOCs+ODvOODh+OCo+ODs+OCsOODhuOCr+ODi+OD
+        g+OCr+OCkumNm+OBiOOCizwvZGM6dGl0bGU+CiAgICAgIDxkY25kbDp0aXRs
+        ZVRyYW5zY3JpcHRpb24+44OX44Ot44Kw44Op44Of44Oz44KwIOOCs+ODs+OD
+        huOCueODiCDjg4Hjg6Pjg6zjg7Pjgrgg44OW44OD44KvIDog44Oi44Oz44OA
+        44KkIOOCq+OCpOOCseODhCDjg44g44Ki44Or44K044Oq44K644OgIOOCq+OD
+        hOODqOOCpuODquODp+OCryDjg4gg44Kz44O844OH44Kj44Oz44KwIOODhuOC
+        r+ODi+ODg+OCryDjgqog44Kt44K/44Ko44OrPC9kY25kbDp0aXRsZVRyYW5z
+        Y3JpcHRpb24+CiAgICAgIDxkYzpjcmVhdG9yPueni+iRieaLk+WTiSwg5bKp
+        55Sw6Zm95LiALCDljJflt53lrpznqJQg6JGXPC9kYzpjcmVhdG9yPgogICAg
+        ICA8ZGM6Y3JlYXRvcj5Vc3UteWEg57eoPC9kYzpjcmVhdG9yPgogICAgICA8
+        ZGM6cHVibGlzaGVyPuavjuaXpeOCs+ODn+ODpeODi+OCseODvOOCt+ODp+OD
+        s+OCujwvZGM6cHVibGlzaGVyPgogICAgICA8ZGN0ZXJtczppc3N1ZWQgeHNp
+        OnR5cGU9ImRjdGVybXM6VzNDRFRGIj4yMDEwPC9kY3Rlcm1zOmlzc3VlZD4K
+        ICAgICAgPGRjOmlkZW50aWZpZXIgeHNpOnR5cGU9ImRjbmRsOklTQk4iPjk3
+        ODQ4Mzk5MzE5OTU8L2RjOmlkZW50aWZpZXI+CiAgICAgIDxkYzppZGVudGlm
+        aWVyIHhzaTp0eXBlPSJkY25kbDpKUE5PIj4yMTgxNjM5MzwvZGM6aWRlbnRp
+        Zmllcj4KICAgICAgPGRjOnN1YmplY3Q+44OX44Ot44Kw44Op44Of44Oz44Kw
+        ICjjgrPjg7Pjg5Tjg6Xjg7zjgr8pPC9kYzpzdWJqZWN0PgogICAgICA8ZGM6
+        c3ViamVjdCB4c2k6dHlwZT0iZGNuZGw6TkRMQyI+TTE1OTwvZGM6c3ViamVj
+        dD4KICAgICAgPGRjOnN1YmplY3QgeHNpOnR5cGU9ImRjbmRsOk5EQzkiPjAw
+        Ny42NDwvZGM6c3ViamVjdD4KICAgIDwvaXRlbT4KICA8L2NoYW5uZWw+Cjwv
+        cnNzPgo=
+    http_version: !binary |-
+      MS4w
+  recorded_at: Sat, 03 Mar 2012 14:16:38 GMT
+recorded_with: VCR 2.0.0

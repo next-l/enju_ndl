@@ -5,7 +5,7 @@
 
 <%= form_for :books, :url => ndl_books_path, :html => {:method => 'get'} do -%>
   <p>
-    <%= text_field_tag 'query', h(@query), {:id => 'search_form_top', :class => 'search_form'} -%>
+    <%= search_field_tag 'query', h(@query), {:id => 'search_form_top', :class => 'search_form'} -%>
     <%= submit_tag '検索' -%>
   </p>
 <%- end -%>
