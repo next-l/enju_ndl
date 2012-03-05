@@ -14,7 +14,7 @@ gem "jquery-rails"
 # Git. Remember to move these dependencies to your gemspec before releasing
 # your gem to rubygems.org.
 group :development, :test do
-  gem 'vcr', '~> 2.0.0.rc2'
+  gem 'vcr', '~> 2.0'
   gem 'fakeweb'
 end
 

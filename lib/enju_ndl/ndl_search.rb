@@ -20,8 +20,6 @@ module EnjuNdl
       end
 
       def import_record(doc)
-        pub_date, langugage, nbn, ndc, isbn = nil, nil, nil, nil, nil
-
         nbn = doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/JPNO"]').try(:content)
         manifestation = Manifestation.where(:nbn => nbn).first if nbn
         return manifestation if manifestation
@@ -44,7 +42,9 @@ module EnjuNdl
           language_id = 1
         end
 
-        isbn = doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/ISBN"]').try(:content).to_s
+        isbn = ISBN_Tools.cleanup(doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/ISBN"]').try(:content))
+        issn = ISBN_Tools.cleanup(doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/ISSN"]').try(:content))
+        issn_l = ISBN_Tools.cleanup(doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/ISSNL"]').try(:content))
         classification_urls = doc.xpath('//dcterms:subject[@rdf:resource]').map{|subject| subject.attributes['resource'].value}
         if classification_urls
           ndc9_url = classification_urls.map{|url| URI.parse(url)}.select{|u| u.path.split('/').reverse[1] == 'ndc9'}.first
@@ -55,6 +55,7 @@ module EnjuNdl
         description = doc.at('//dcterms:abstract').try(:content)
         price = doc.at('//dcndl:price').try(:content)
         volume_number_string = doc.at('//dcndl:volume/rdf:Description/rdf:value').try(:content)
+        publication_periodicity = doc.at('//dcndl:publicationPeriodicity').try(:content)
 
         manifestation = nil
         Patron.transaction do
@@ -78,6 +79,20 @@ module EnjuNdl
           )
           manifestation.publishers << publisher_patrons
           create_frbr_instance(doc, manifestation)
+        end
+
+        if publication_periodicity
+          series_statement = SeriesStatement.where(:issn => issn).first
+          unless series_statement
+            series_statement = SeriesStatement.new(
+              :original_title => manifestation.original_title,
+              :title_transcription => manifestation.title_transcription,
+              :issn => issn,
+              :periodical => true
+            )
+            manifestation.series_statement = series_statement
+            manifestation.save
+          end
         end
 
         #manifestation.send_later(:create_frbr_instance, doc.to_s)
