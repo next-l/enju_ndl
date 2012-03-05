@@ -1,3 +1,5 @@
 ja:
   enju_ndl:
     import_from_ndl_search: NDLサーチ検索によるインポート
+    record_not_found: 資料が見つかりません。
+    not_available: 利用不可

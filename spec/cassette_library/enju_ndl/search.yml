@@ -3,7 +3,9 @@ http_interactions:
 - request:
     method: get
     uri: http://iss.ndl.go.jp/api/opensearch?dpid=iss-ndl-opac&any=library%20system&cnt=10&idx=1
-    body: ''
+    body:
+      encoding: US-ASCII
+      string: ''
     headers:
       accept:
       - ! '*/*'
@@ -12,212 +14,433 @@ http_interactions:
   response:
     status:
       code: 200
-      message: OK
+      message: !binary |-
+        T0s=
     headers:
-      date:
-      - Fri, 13 Jan 2012 16:30:01 GMT
-      server:
-      - Apache
-      x-powered-by:
-      - Phusion Passenger (mod_rails/mod_rack) 2.2.15
-      etag:
-      - ! '"0feb0b4c6c2c4ce2dff11b7b2b01b73b"'
-      x-ua-compatible:
-      - IE=Edge,chrome=1
-      x-runtime:
-      - '0.837815'
-      cache-control:
-      - max-age=0, private, must-revalidate
-      content-length:
-      - '16951'
-      status:
-      - '200'
-      content-type:
-      - application/xml; charset=utf-8
-      set-cookie:
-      - _front_session_id=9b7aa1e3088101c66730c01c4eadc1c0; domain=.iss.ndl.go.jp;
-        path=/; expires=Fri, 13-Jan-2012 17:30:02 GMT; HttpOnly
-      - serverid=1105; path=/
-      vary:
-      - Accept-Encoding,User-Agent
-      connection:
-      - close
-    body: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<rss xmlns:dcterms=\"http://purl.org/dc/terms/\"
-      xmlns:dcndl=\"http://ndl.go.jp/dcndl/terms/\" version=\"2.0\" xmlns:dc=\"http://purl.org/dc/elements/1.1/\"
-      xmlns:openSearch=\"http://a9.com/-/spec/opensearchrss/1.0/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"
-      xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\">\n  <channel>\n    <title>iss-ndl-opac
-      library system - 国立国会図書館サーチ OpenSearch</title>\n    <link>iss.ndl.go.jp</link>\n
-      \   <description>Search results for any=library system cnt=10 dpid=iss-ndl-opac
-      </description>\n    <language>ja</language>\n    <openSearch:totalResults>5163</openSearch:totalResults>\n
-      \   <openSearch:startIndex>1</openSearch:startIndex>\n    <openSearch:itemsPerPage>10</openSearch:itemsPerPage>\n
-      \   <item>\n      <title>Master plan report of electric distribution system
-      in Bangkok (1982-2001) : long range plan</title>\n      <link>http://iss.ndl.go.jp/books/R100000002-I000002040989-00</link>\n<description>\n<![CDATA[<p>Japan
-      International Cooperation Agency</p>\n<ul><li>タイトル： Master plan report of electric
-      distribution system in Bangkok (1982-2001) : long range plan</li>\n</ul>]]>\n</description>\n
-      \     <category>本</category>\n      <guid isPermaLink=\"true\">http://iss.ndl.go.jp/books/R100000002-I000002040989-00</guid>\n
-      \     <pubDate>Fri, 22 Oct 2004 09:00:00 +0900</pubDate>\n      <dc:title>Master
-      plan report of electric distribution system in Bangkok (1982-2001) : long range
-      plan</dc:title>\n      <dc:publisher>Japan International Cooperation Agency</dc:publisher>\n
-      \     <dcterms:issued xsi:type=\"dcterms:W3CDTF\">1982</dcterms:issued>\n      <dc:identifier
-      xsi:type=\"dcndl:JPNO\">90034936</dc:identifier>\n      <dc:subject xsi:type=\"dcndl:NDLC\">DL177</dc:subject>\n
-      \     <dcterms:description>At head of title: Kingdom of Thailand.Library's copy
-      has binding error.\"MPN CR (3) 82-121 (2/3) .\"</dcterms:description>\n    </item>\n
-      \   <item>\n      <title>System7コレクション : 心携ユーティリティからナンセンスまで… 漢字Talk対応プログラム41</title>\n
-      \     <link>http://iss.ndl.go.jp/books/R100000002-I000002222623-00</link>\n<description>\n<![CDATA[<p>翔泳社,488135020X</p>\n<ul><li>タイトル：
-      System7コレクション : 心携ユーティリティからナンセンスまで… 漢字Talk対応プログラム41</li>\n<li>タイトル（読み）： システム
-      セブン コレクション</li>\n<li>責任表示： SE編集部 編,</li>\n<li>シリーズ名： Macの宝箱. Macintosh software
-      library ; 3</li>\n</ul>]]>\n</description>\n      <author>SE編集部 編,</author>\n
-      \     <category>本</category>\n      <guid isPermaLink=\"true\">http://iss.ndl.go.jp/books/R100000002-I000002222623-00</guid>\n
-      \     <pubDate>Mon, 21 Apr 2003 09:00:00 +0900</pubDate>\n      <dc:title>System7コレクション
-      : 心携ユーティリティからナンセンスまで… 漢字Talk対応プログラム41</dc:title>\n      <dcndl:titleTranscription>システム
-      セブン コレクション</dcndl:titleTranscription>\n      <dc:creator>SE編集部 編</dc:creator>\n
-      \     <dcndl:seriesTitle>Macの宝箱. Macintosh software library ; 3</dcndl:seriesTitle>\n
-      \     <dc:publisher>翔泳社</dc:publisher>\n      <dcterms:issued xsi:type=\"dcterms:W3CDTF\">1992</dcterms:issued>\n
-      \     <dc:identifier xsi:type=\"dcndl:ISBN\">488135020X</dc:identifier>\n      <dc:identifier
-      xsi:type=\"dcndl:JPNO\">93015695</dc:identifier>\n      <dc:subject>プログラミング
-      (コンピュータ)</dc:subject>\n      <dc:subject xsi:type=\"dcndl:NDLC\">M159</dc:subject>\n
-      \     <dc:subject xsi:type=\"dcndl:NDC8\">007.63</dc:subject>\n      <dcterms:description>付属資料
-      (フロッピーディスク2枚 3.5インチ2HD ホルダー入)</dcterms:description>\n      <dcterms:description>外箱入</dcterms:description>\n
-      \   </item>\n    <item>\n      <title>AGLINET union list of serials / Library
-      and Documentation Systems Division, David Lubin Memorial Library</title>\n      <link>http://iss.ndl.go.jp/books/R100000002-I000003104713-00</link>\n<description>\n<![CDATA[<p>Food
-      and Agriculture Organization of the United Nations</p>\n<ul><li>タイトル： AGLINET
-      union list of serials / Library and Documentation Systems Division, David Lubin
-      Memorial Library</li>\n</ul>]]>\n</description>\n      <category>本</category>\n
-      \     <guid isPermaLink=\"true\">http://iss.ndl.go.jp/books/R100000002-I000003104713-00</guid>\n
-      \     <pubDate>Fri, 15 Jun 1990 09:00:00 +0900</pubDate>\n      <dc:title>AGLINET
-      union list of serials / Library and Documentation Systems Division, David Lubin
-      Memorial Library</dc:title>\n      <dc:publisher>Food and Agriculture Organization
-      of the United Nations</dc:publisher>\n      <dcterms:issued xsi:type=\"dcterms:W3CDTF\">1979</dcterms:issued>\n
-      \     <dc:subject>農学</dc:subject>\n      <dc:subject>農業</dc:subject>\n      <dc:subject>逐次刊行物
-      (地理区分)</dc:subject>\n      <dc:subject>書目</dc:subject>\n      <dc:subject>総合目録</dc:subject>\n
-      \     <dc:subject xsi:type=\"dcndl:NDLC\">RB1</dc:subject>\n      <dc:subject
-      xsi:type=\"dcndl:NDLC\">RB21</dc:subject>\n    </item>\n    <item>\n      <title>Computerised
-      systems in library and information services : proceedings of a conference of
-      the Aslib Biological and Agricultural Sciences Group held at the Commonwealth
-      Institute, London, June 9, 1982 / editor, H.L. Williams</title>\n      <link>http://iss.ndl.go.jp/books/R100000002-I000003112941-00</link>\n<description>\n<![CDATA[<p>Aslib,0851421695</p>\n<ul><li>タイトル：
-      Computerised systems in library and information services : proceedings of a
-      conference of the Aslib Biological and Agricultural Sciences Group held at the
-      Commonwealth Institute, London, June 9, 1982 / editor, H.L. Williams</li>\n</ul>]]>\n</description>\n
-      \     <category>本</category>\n      <guid isPermaLink=\"true\">http://iss.ndl.go.jp/books/R100000002-I000003112941-00</guid>\n
-      \     <pubDate>Sat, 30 Apr 1988 09:00:00 +0900</pubDate>\n      <dc:title>Computerised
-      systems in library and information services : proceedings of a conference of
-      the Aslib Biological and Agricultural Sciences Group held at the Commonwealth
-      Institute, London, June 9, 1982 / editor, H.L. Williams</dc:title>\n      <dc:publisher>Aslib</dc:publisher>\n
-      \     <dcterms:issued xsi:type=\"dcterms:W3CDTF\">1983</dcterms:issued>\n      <dc:identifier
-      xsi:type=\"dcndl:ISBN\">0851421695</dc:identifier>\n      <dc:subject>図書館∥オートメーション</dc:subject>\n
-      \     <dc:subject>情報サービス (地理区分)</dc:subject>\n      <dc:subject>Libraries --
-      Automation -- Congresses</dc:subject>\n      <dc:subject>Library science --
-      Data processing -- Congresses</dc:subject>\n      <dc:subject>Information storage
-      and retrieval systems -- Congresses</dc:subject>\n      <dc:subject>Information
-      services -- Congresses</dc:subject>\n      <dc:subject xsi:type=\"dcndl:NDLC\">UL11</dc:subject>\n
-      \     <dc:subject xsi:type=\"dcterms:LCC\">Z678.9</dc:subject>\n      <dc:subject
-      xsi:type=\"dcterms:DDC\">025.3/028/54</dc:subject>\n      <dcterms:description>Includes
-      bibliographies</dcterms:description>\n    </item>\n    <item>\n      <title>Library
-      Systems Seminar, The Hague : linking of automated library functions, April,
-      20-22, 1983 / editor, Anton Bossers</title>\n      <link>http://iss.ndl.go.jp/books/R100000002-I000003118837-00</link>\n<description>\n<![CDATA[<p>Pica-Bureau,9070311186</p>\n<ul><li>タイトル：
-      Library Systems Seminar, The Hague : linking of automated library functions,
-      April, 20-22, 1983 / editor, Anton Bossers</li>\n<li>シリーズ名： Intermarc software-subgroup
-      seminar ; 7</li>\n</ul>]]>\n</description>\n      <category>本</category>\n      <guid
-      isPermaLink=\"true\">http://iss.ndl.go.jp/books/R100000002-I000003118837-00</guid>\n
-      \     <pubDate>Fri, 11 Jul 1997 09:00:00 +0900</pubDate>\n      <dc:title>Library
-      Systems Seminar, The Hague : linking of automated library functions, April,
-      20-22, 1983 / editor, Anton Bossers</dc:title>\n      <dcndl:seriesTitle>Intermarc
-      software-subgroup seminar ; 7</dcndl:seriesTitle>\n      <dc:publisher>Pica-Bureau</dc:publisher>\n
-      \     <dcterms:issued xsi:type=\"dcterms:W3CDTF\">1983</dcterms:issued>\n      <dc:identifier
-      xsi:type=\"dcndl:ISBN\">9070311186</dc:identifier>\n      <dc:identifier xsi:type=\"dcndl:ISSN\">01063375</dc:identifier>\n
-      \     <dc:subject>図書館学</dc:subject>\n      <dc:subject>図書館∥オートメーション</dc:subject>\n
-      \     <dc:subject>情報サービス (地理区分)</dc:subject>\n      <dc:subject>ヨーロッパ</dc:subject>\n
-      \     <dc:subject xsi:type=\"dcndl:NDLC\">UL21</dc:subject>\n      <dcterms:description>Includes
-      bibliographical references</dcterms:description>\n    </item>\n    <item>\n
-      \     <title>The Foreign Service of the United States : first line of defense
-      / Andrew L. Steigman ; foreword by Carol C. Laise</title>\n      <link>http://iss.ndl.go.jp/books/R100000002-I000003153069-00</link>\n<description>\n<![CDATA[<p>Westview
-      Press,081330167X</p>\n<ul><li>タイトル： The Foreign Service of the United States
-      : first line of defense / Andrew L. Steigman ; foreword by Carol C. Laise</li>\n<li>シリーズ名：
-      Westview library of federal departments, agencies, and systems</li>\n</ul>]]>\n</description>\n
-      \     <category>本</category>\n      <guid isPermaLink=\"true\">http://iss.ndl.go.jp/books/R100000002-I000003153069-00</guid>\n
-      \     <pubDate>Fri, 14 Oct 1988 09:00:00 +0900</pubDate>\n      <dc:title>The
-      Foreign Service of the United States : first line of defense / Andrew L. Steigman
-      ; foreword by Carol C. Laise</dc:title>\n      <dcndl:seriesTitle>Westview library
-      of federal departments, agencies, and systems</dcndl:seriesTitle>\n      <dc:publisher>Westview
-      Press</dc:publisher>\n      <dcterms:issued xsi:type=\"dcterms:W3CDTF\">1985</dcterms:issued>\n
-      \     <dc:identifier xsi:type=\"dcndl:ISBN\">081330167X</dc:identifier>\n      <dc:subject>United
-      States. Foreign Service</dc:subject>\n      <dc:subject>アメリカ合衆国</dc:subject>\n
-      \     <dc:subject>外務行政 (地理区分)</dc:subject>\n      <dc:subject>United States
-      -- Diplomatic and consular service</dc:subject>\n      <dc:subject xsi:type=\"dcndl:NDLC\">AU-631</dc:subject>\n
-      \     <dc:subject xsi:type=\"dcndl:NDLC\">A99-U</dc:subject>\n      <dc:subject
-      xsi:type=\"dcndl:NDLC\">A631</dc:subject>\n      <dc:subject xsi:type=\"dcterms:LCC\">JX1706.Z5</dc:subject>\n
-      \     <dc:subject xsi:type=\"dcterms:DDC\">353.0089/09</dc:subject>\n      <dcterms:description>Includes
-      index</dcterms:description>\n      <dcterms:description>Bibliography: p. 253-256</dcterms:description>\n
-      \   </item>\n    <item>\n      <title>Dictionaries, encyclopedias, and other
-      word-related books / Annie M. Brewer, editor</title>\n      <link>http://iss.ndl.go.jp/books/R100000002-I000003166621-00</link>\n<description>\n<![CDATA[<p>Gale
-      Research Co,0810304406</p>\n<ul><li>タイトル： Dictionaries, encyclopedias, and other
-      word-related books / Annie M. Brewer, editor</li>\n</ul>]]>\n</description>\n
-      \     <category>本</category>\n      <guid isPermaLink=\"true\">http://iss.ndl.go.jp/books/R100000002-I000003166621-00</guid>\n
-      \     <pubDate>Mon, 02 Feb 2004 09:00:00 +0900</pubDate>\n      <dc:title>Dictionaries,
-      encyclopedias, and other word-related books / Annie M. Brewer, editor</dc:title>\n
-      \     <dcndl:edition>4th ed</dcndl:edition>\n      <dc:publisher>Gale Research
-      Co</dc:publisher>\n      <dcterms:issued xsi:type=\"dcterms:W3CDTF\">1988</dcterms:issued>\n
-      \     <dc:identifier xsi:type=\"dcndl:ISBN\">0810304406</dc:identifier>\n      <dc:subject>百科事典</dc:subject>\n
-      \     <dc:subject>辞書</dc:subject>\n      <dc:subject>書目</dc:subject>\n      <dc:subject>Encyclopedias
-      and dictionaries -- Bibliography</dc:subject>\n      <dc:subject xsi:type=\"dcndl:NDLC\">UP43</dc:subject>\n
-      \     <dc:subject xsi:type=\"dcterms:LCC\">Z5848</dc:subject>\n      <dc:subject
-      xsi:type=\"dcterms:LCC\">AE5</dc:subject>\n      <dc:subject xsi:type=\"dcterms:DDC\">016.03</dc:subject>\n
-      \     <dcterms:description>\"A classed guide to dictionaries, encyclopedias,
-      and similar works, based on Library of Congress MARC records, and arranged according
-      to the Library of Congress classification system. Including compilations of
-      acronyms, Americanisms, colloquialisms, etymologies, glossaries, idioms and
-      expressions, orthography, provincialisms, slang, terms and phrases, and vocabularies
-      in English and all other languages.\"</dcterms:description>\n      <dcterms:description>Includes
-      index</dcterms:description>\n    </item>\n    <item>\n      <title>The origin
-      of the solar system : the capture theory / John R. Dormand, Michael M. Woolfson</title>\n
-      \     <link>http://iss.ndl.go.jp/books/R100000002-I000003188632-00</link>\n<description>\n<![CDATA[<p>E.
-      Horwood Halsted Press,047021466X</p>\n<ul><li>タイトル： The origin of the solar
-      system : the capture theory / John R. Dormand, Michael M. Woolfson</li>\n<li>シリーズ名：
-      The Ellis Horwood library of space science and space technology. Series in astronomy</li>\n</ul>]]>\n</description>\n
-      \     <category>本</category>\n      <guid isPermaLink=\"true\">http://iss.ndl.go.jp/books/R100000002-I000003188632-00</guid>\n
-      \     <pubDate>Fri, 26 Oct 1990 09:00:00 +0900</pubDate>\n      <dc:title>The
-      origin of the solar system : the capture theory / John R. Dormand, Michael M.
-      Woolfson</dc:title>\n      <dcndl:seriesTitle>The Ellis Horwood library of space
-      science and space technology. Series in astronomy</dcndl:seriesTitle>\n      <dc:publisher>E.
-      Horwood Halsted Press</dc:publisher>\n      <dcterms:issued xsi:type=\"dcterms:W3CDTF\">1989</dcterms:issued>\n
-      \     <dc:identifier xsi:type=\"dcndl:ISBN\">047021466X</dc:identifier>\n      <dc:identifier
-      xsi:type=\"dcndl:ErrorISBN\">0745806015</dc:identifier>\n      <dc:subject>太陽系</dc:subject>\n
-      \     <dc:subject>Solar system -- Origin</dc:subject>\n      <dc:subject xsi:type=\"dcndl:NDLC\">MB71</dc:subject>\n
-      \     <dc:subject xsi:type=\"dcterms:LCC\">QB501</dc:subject>\n      <dc:subject
-      xsi:type=\"dcterms:DDC\">523.2</dc:subject>\n      <dcterms:description>Includes
-      index</dcterms:description>\n      <dcterms:description>Bibliography: p. [217]-219</dcterms:description>\n
-      \   </item>\n    <item>\n      <title>An overview of image processing and image
-      management systems and their application / J. Howard Petrie</title>\n      <link>http://iss.ndl.go.jp/books/R100000002-I000003194495-00</link>\n<description>\n<![CDATA[<p>British
-      Library, Research and Development Dept,0712331603</p>\n<ul><li>タイトル： An overview
-      of image processing and image management systems and their application / J.
-      Howard Petrie</li>\n<li>シリーズ名： British Library research paper ; 40</li>\n</ul>]]>\n</description>\n
-      \     <category>本</category>\n      <guid isPermaLink=\"true\">http://iss.ndl.go.jp/books/R100000002-I000003194495-00</guid>\n
-      \     <pubDate>Wed, 22 May 1991 09:00:00 +0900</pubDate>\n      <dc:title>An
-      overview of image processing and image management systems and their application
-      / J. Howard Petrie</dc:title>\n      <dcndl:seriesTitle>British Library research
-      paper ; 40</dcndl:seriesTitle>\n      <dc:publisher>British Library, Research
-      and Development Dept</dc:publisher>\n      <dcterms:issued xsi:type=\"dcterms:W3CDTF\">1988</dcterms:issued>\n
-      \     <dc:identifier xsi:type=\"dcndl:ISBN\">0712331603</dc:identifier>\n      <dc:identifier
-      xsi:type=\"dcndl:ISSN\">02699257</dc:identifier>\n      <dc:subject>画像処理</dc:subject>\n
-      \     <dc:subject xsi:type=\"dcndl:NDLC\">M154</dc:subject>\n      <dcterms:description>Bibliography:
-      p. 69-74</dcterms:description>\n    </item>\n    <item>\n      <title>Survey
-      of legislative activities of Federal Assembly in the period of the transformation
-      of legal order (from the Constitutive Act no. 135/1989 till the end of the 6th
-      election term)</title>\n      <link>http://iss.ndl.go.jp/books/R100000002-I000003210126-00</link>\n<description>\n<![CDATA[<p></p>\n<ul><li>タイトル：
-      Survey of legislative activities of Federal Assembly in the period of the transformation
-      of legal order (from the Constitutive Act no. 135/1989 till the end of the 6th
-      election term)</li>\n</ul>]]>\n</description>\n      <category>本</category>\n
-      \     <guid isPermaLink=\"true\">http://iss.ndl.go.jp/books/R100000002-I000003210126-00</guid>\n
-      \     <pubDate>Fri, 19 Feb 1993 09:00:00 +0900</pubDate>\n      <dc:title>Survey
-      of legislative activities of Federal Assembly in the period of the transformation
-      of legal order (from the Constitutive Act no. 135/1989 till the end of the 6th
-      election term)</dc:title>\n      <dcterms:issued xsi:type=\"dcterms:W3CDTF\">1992</dcterms:issued>\n
-      \     <dc:subject>法令</dc:subject>\n      <dc:subject>索引</dc:subject>\n      <dc:subject>チェコスロバキア</dc:subject>\n
-      \     <dc:subject xsi:type=\"dcndl:NDLC\">CC17-1</dc:subject>\n      <dc:subject
-      xsi:type=\"dcndl:NDLC\">AC17-121</dc:subject>\n      <dc:subject xsi:type=\"dcndl:NDLC\">A121</dc:subject>\n
-      \     <dcterms:description>Cover title</dcterms:description>\n      <dcterms:description>\"Retrieved
-      from an automatized system of CS Legsys legal information.\"</dcterms:description>\n
-      \   </item>\n  </channel>\n</rss>\n"
-    http_version: '1.0'
-  recorded_at: Fri, 13 Jan 2012 16:30:02 GMT
-recorded_with: VCR 2.0.0.rc1
+      !binary "ZGF0ZQ==":
+      - !binary |-
+        U2F0LCAwMyBNYXIgMjAxMiAxNDoxNjozNyBHTVQ=
+      !binary "c2VydmVy":
+      - !binary |-
+        QXBhY2hl
+      !binary "eC1wb3dlcmVkLWJ5":
+      - !binary |-
+        UGh1c2lvbiBQYXNzZW5nZXIgKG1vZF9yYWlscy9tb2RfcmFjaykgMi4yLjE1
+      !binary "ZXRhZw==":
+      - !binary |-
+        IjBmZWIwYjRjNmMyYzRjZTJkZmYxMWI3YjJiMDFiNzNiIg==
+      !binary "eC11YS1jb21wYXRpYmxl":
+      - !binary |-
+        SUU9RWRnZSxjaHJvbWU9MQ==
+      !binary "eC1ydW50aW1l":
+      - !binary |-
+        MS4xOTY2Njc=
+      !binary "Y2FjaGUtY29udHJvbA==":
+      - !binary |-
+        bWF4LWFnZT0wLCBwcml2YXRlLCBtdXN0LXJldmFsaWRhdGU=
+      !binary "Y29udGVudC1sZW5ndGg=":
+      - !binary |-
+        MTY5NTE=
+      !binary "c3RhdHVz":
+      - !binary |-
+        MjAw
+      !binary "Y29udGVudC10eXBl":
+      - !binary |-
+        YXBwbGljYXRpb24veG1sOyBjaGFyc2V0PXV0Zi04
+      !binary "c2V0LWNvb2tpZQ==":
+      - !binary |-
+        X2Zyb250X3Nlc3Npb25faWQ9MWRmMzk3MGFiZWJmZTBhZjE0NGE2OTk1N2Q3
+        Yjc3ZWQ7IGRvbWFpbj0uaXNzLm5kbC5nby5qcDsgcGF0aD0vOyBleHBpcmVz
+        PVNhdCwgMDMtTWFyLTIwMTIgMTU6MTY6MzggR01UOyBIdHRwT25seQ==
+      - !binary |-
+        c2VydmVyaWQ9MTEwMTsgcGF0aD0v
+      !binary "dmFyeQ==":
+      - !binary |-
+        QWNjZXB0LUVuY29kaW5nLFVzZXItQWdlbnQ=
+      !binary "Y29ubmVjdGlvbg==":
+      - !binary |-
+        Y2xvc2U=
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHJzcyB4
+        bWxuczpkY3Rlcm1zPSJodHRwOi8vcHVybC5vcmcvZGMvdGVybXMvIiB4bWxu
+        czpkY25kbD0iaHR0cDovL25kbC5nby5qcC9kY25kbC90ZXJtcy8iIHZlcnNp
+        b249IjIuMCIgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50
+        cy8xLjEvIiB4bWxuczpvcGVuU2VhcmNoPSJodHRwOi8vYTkuY29tLy0vc3Bl
+        Yy9vcGVuc2VhcmNocnNzLzEuMC8iIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53
+        My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOmRjbWl0eXBl
+        PSJodHRwOi8vcHVybC5vcmcvZGMvZGNtaXR5cGUvIj4KICA8Y2hhbm5lbD4K
+        ICAgIDx0aXRsZT5pc3MtbmRsLW9wYWMgbGlicmFyeSBzeXN0ZW0gLSDlm73n
+        q4vlm73kvJrlm7Pmm7jppKjjgrXjg7zjg4EgT3BlblNlYXJjaDwvdGl0bGU+
+        CiAgICA8bGluaz5pc3MubmRsLmdvLmpwPC9saW5rPgogICAgPGRlc2NyaXB0
+        aW9uPlNlYXJjaCByZXN1bHRzIGZvciBhbnk9bGlicmFyeSBzeXN0ZW0gY250
+        PTEwIGRwaWQ9aXNzLW5kbC1vcGFjIDwvZGVzY3JpcHRpb24+CiAgICA8bGFu
+        Z3VhZ2U+amE8L2xhbmd1YWdlPgogICAgPG9wZW5TZWFyY2g6dG90YWxSZXN1
+        bHRzPjUxNjM8L29wZW5TZWFyY2g6dG90YWxSZXN1bHRzPgogICAgPG9wZW5T
+        ZWFyY2g6c3RhcnRJbmRleD4xPC9vcGVuU2VhcmNoOnN0YXJ0SW5kZXg+CiAg
+        ICA8b3BlblNlYXJjaDppdGVtc1BlclBhZ2U+MTA8L29wZW5TZWFyY2g6aXRl
+        bXNQZXJQYWdlPgogICAgPGl0ZW0+CiAgICAgIDx0aXRsZT5NYXN0ZXIgcGxh
+        biByZXBvcnQgb2YgZWxlY3RyaWMgZGlzdHJpYnV0aW9uIHN5c3RlbSBpbiBC
+        YW5na29rICgxOTgyLTIwMDEpIDogbG9uZyByYW5nZSBwbGFuPC90aXRsZT4K
+        ICAgICAgPGxpbms+aHR0cDovL2lzcy5uZGwuZ28uanAvYm9va3MvUjEwMDAw
+        MDAwMi1JMDAwMDAyMDQwOTg5LTAwPC9saW5rPgo8ZGVzY3JpcHRpb24+Cjwh
+        W0NEQVRBWzxwPkphcGFuIEludGVybmF0aW9uYWwgQ29vcGVyYXRpb24gQWdl
+        bmN5PC9wPgo8dWw+PGxpPuOCv+OCpOODiOODq++8miBNYXN0ZXIgcGxhbiBy
+        ZXBvcnQgb2YgZWxlY3RyaWMgZGlzdHJpYnV0aW9uIHN5c3RlbSBpbiBCYW5n
+        a29rICgxOTgyLTIwMDEpIDogbG9uZyByYW5nZSBwbGFuPC9saT4KPC91bD5d
+        XT4KPC9kZXNjcmlwdGlvbj4KICAgICAgPGNhdGVnb3J5PuacrDwvY2F0ZWdv
+        cnk+CiAgICAgIDxndWlkIGlzUGVybWFMaW5rPSJ0cnVlIj5odHRwOi8vaXNz
+        Lm5kbC5nby5qcC9ib29rcy9SMTAwMDAwMDAyLUkwMDAwMDIwNDA5ODktMDA8
+        L2d1aWQ+CiAgICAgIDxwdWJEYXRlPkZyaSwgMjIgT2N0IDIwMDQgMDk6MDA6
+        MDAgKzA5MDA8L3B1YkRhdGU+CiAgICAgIDxkYzp0aXRsZT5NYXN0ZXIgcGxh
+        biByZXBvcnQgb2YgZWxlY3RyaWMgZGlzdHJpYnV0aW9uIHN5c3RlbSBpbiBC
+        YW5na29rICgxOTgyLTIwMDEpIDogbG9uZyByYW5nZSBwbGFuPC9kYzp0aXRs
+        ZT4KICAgICAgPGRjOnB1Ymxpc2hlcj5KYXBhbiBJbnRlcm5hdGlvbmFsIENv
+        b3BlcmF0aW9uIEFnZW5jeTwvZGM6cHVibGlzaGVyPgogICAgICA8ZGN0ZXJt
+        czppc3N1ZWQgeHNpOnR5cGU9ImRjdGVybXM6VzNDRFRGIj4xOTgyPC9kY3Rl
+        cm1zOmlzc3VlZD4KICAgICAgPGRjOmlkZW50aWZpZXIgeHNpOnR5cGU9ImRj
+        bmRsOkpQTk8iPjkwMDM0OTM2PC9kYzppZGVudGlmaWVyPgogICAgICA8ZGM6
+        c3ViamVjdCB4c2k6dHlwZT0iZGNuZGw6TkRMQyI+REwxNzc8L2RjOnN1Ympl
+        Y3Q+CiAgICAgIDxkY3Rlcm1zOmRlc2NyaXB0aW9uPkF0IGhlYWQgb2YgdGl0
+        bGU6IEtpbmdkb20gb2YgVGhhaWxhbmQuTGlicmFyeSdzIGNvcHkgaGFzIGJp
+        bmRpbmcgZXJyb3IuIk1QTiBDUiAoMykgODItMTIxICgyLzMpIC4iPC9kY3Rl
+        cm1zOmRlc2NyaXB0aW9uPgogICAgPC9pdGVtPgogICAgPGl0ZW0+CiAgICAg
+        IDx0aXRsZT5TeXN0ZW0344Kz44Os44Kv44K344On44OzIDog5b+D5pC644Om
+        44O844OG44Kj44Oq44OG44Kj44GL44KJ44OK44Oz44K744Oz44K544G+44Gn
+        4oCmIOa8ouWtl1RhbGvlr77lv5zjg5fjg63jgrDjg6njg6A0MTwvdGl0bGU+
+        CiAgICAgIDxsaW5rPmh0dHA6Ly9pc3MubmRsLmdvLmpwL2Jvb2tzL1IxMDAw
+        MDAwMDItSTAwMDAwMjIyMjYyMy0wMDwvbGluaz4KPGRlc2NyaXB0aW9uPgo8
+        IVtDREFUQVs8cD7nv5Tms7PnpL4sNDg4MTM1MDIwWDwvcD4KPHVsPjxsaT7j
+        gr/jgqTjg4jjg6vvvJogU3lzdGVtN+OCs+ODrOOCr+OCt+ODp+ODsyA6IOW/
+        g+aQuuODpuODvOODhuOCo+ODquODhuOCo+OBi+OCieODiuODs+OCu+ODs+OC
+        ueOBvuOBp+KApiDmvKLlrZdUYWxr5a++5b+c44OX44Ot44Kw44Op44OgNDE8
+        L2xpPgo8bGk+44K/44Kk44OI44Or77yI6Kqt44G/77yJ77yaIOOCt+OCueOD
+        huODoCDjgrvjg5bjg7Mg44Kz44Os44Kv44K344On44OzPC9saT4KPGxpPuiy
+        rOS7u+ihqOekuu+8miBTRee3qOmbhumDqCDnt6gsPC9saT4KPGxpPuOCt+OD
+        quODvOOCuuWQje+8miBNYWPjga7lrp3nrrEuIE1hY2ludG9zaCBzb2Z0d2Fy
+        ZSBsaWJyYXJ5IDsgMzwvbGk+CjwvdWw+XV0+CjwvZGVzY3JpcHRpb24+CiAg
+        ICAgIDxhdXRob3I+U0Xnt6jpm4bpg6gg57eoLDwvYXV0aG9yPgogICAgICA8
+        Y2F0ZWdvcnk+5pysPC9jYXRlZ29yeT4KICAgICAgPGd1aWQgaXNQZXJtYUxp
+        bms9InRydWUiPmh0dHA6Ly9pc3MubmRsLmdvLmpwL2Jvb2tzL1IxMDAwMDAw
+        MDItSTAwMDAwMjIyMjYyMy0wMDwvZ3VpZD4KICAgICAgPHB1YkRhdGU+TW9u
+        LCAyMSBBcHIgMjAwMyAwOTowMDowMCArMDkwMDwvcHViRGF0ZT4KICAgICAg
+        PGRjOnRpdGxlPlN5c3RlbTfjgrPjg6zjgq/jgrfjg6fjg7MgOiDlv4PmkLrj
+        g6bjg7zjg4bjgqPjg6rjg4bjgqPjgYvjgonjg4rjg7Pjgrvjg7Pjgrnjgb7j
+        gafigKYg5ryi5a2XVGFsa+WvvuW/nOODl+ODreOCsOODqeODoDQxPC9kYzp0
+        aXRsZT4KICAgICAgPGRjbmRsOnRpdGxlVHJhbnNjcmlwdGlvbj7jgrfjgrnj
+        g4bjg6Ag44K744OW44OzIOOCs+ODrOOCr+OCt+ODp+ODszwvZGNuZGw6dGl0
+        bGVUcmFuc2NyaXB0aW9uPgogICAgICA8ZGM6Y3JlYXRvcj5TRee3qOmbhumD
+        qCDnt6g8L2RjOmNyZWF0b3I+CiAgICAgIDxkY25kbDpzZXJpZXNUaXRsZT5N
+        YWPjga7lrp3nrrEuIE1hY2ludG9zaCBzb2Z0d2FyZSBsaWJyYXJ5IDsgMzwv
+        ZGNuZGw6c2VyaWVzVGl0bGU+CiAgICAgIDxkYzpwdWJsaXNoZXI+57+U5rOz
+        56S+PC9kYzpwdWJsaXNoZXI+CiAgICAgIDxkY3Rlcm1zOmlzc3VlZCB4c2k6
+        dHlwZT0iZGN0ZXJtczpXM0NEVEYiPjE5OTI8L2RjdGVybXM6aXNzdWVkPgog
+        ICAgICA8ZGM6aWRlbnRpZmllciB4c2k6dHlwZT0iZGNuZGw6SVNCTiI+NDg4
+        MTM1MDIwWDwvZGM6aWRlbnRpZmllcj4KICAgICAgPGRjOmlkZW50aWZpZXIg
+        eHNpOnR5cGU9ImRjbmRsOkpQTk8iPjkzMDE1Njk1PC9kYzppZGVudGlmaWVy
+        PgogICAgICA8ZGM6c3ViamVjdD7jg5fjg63jgrDjg6njg5/jg7PjgrAgKOOC
+        s+ODs+ODlOODpeODvOOCvyk8L2RjOnN1YmplY3Q+CiAgICAgIDxkYzpzdWJq
+        ZWN0IHhzaTp0eXBlPSJkY25kbDpORExDIj5NMTU5PC9kYzpzdWJqZWN0Pgog
+        ICAgICA8ZGM6c3ViamVjdCB4c2k6dHlwZT0iZGNuZGw6TkRDOCI+MDA3LjYz
+        PC9kYzpzdWJqZWN0PgogICAgICA8ZGN0ZXJtczpkZXNjcmlwdGlvbj7ku5jl
+        sZ7os4fmlpkgKOODleODreODg+ODlOODvOODh+OCo+OCueOCrzLmnpogMy41
+        44Kk44Oz44OBMkhEIOODm+ODq+ODgOODvOWFpSk8L2RjdGVybXM6ZGVzY3Jp
+        cHRpb24+CiAgICAgIDxkY3Rlcm1zOmRlc2NyaXB0aW9uPuWklueuseWFpTwv
+        ZGN0ZXJtczpkZXNjcmlwdGlvbj4KICAgIDwvaXRlbT4KICAgIDxpdGVtPgog
+        ICAgICA8dGl0bGU+QUdMSU5FVCB1bmlvbiBsaXN0IG9mIHNlcmlhbHMgLyBM
+        aWJyYXJ5IGFuZCBEb2N1bWVudGF0aW9uIFN5c3RlbXMgRGl2aXNpb24sIERh
+        dmlkIEx1YmluIE1lbW9yaWFsIExpYnJhcnk8L3RpdGxlPgogICAgICA8bGlu
+        az5odHRwOi8vaXNzLm5kbC5nby5qcC9ib29rcy9SMTAwMDAwMDAyLUkwMDAw
+        MDMxMDQ3MTMtMDA8L2xpbms+CjxkZXNjcmlwdGlvbj4KPCFbQ0RBVEFbPHA+
+        Rm9vZCBhbmQgQWdyaWN1bHR1cmUgT3JnYW5pemF0aW9uIG9mIHRoZSBVbml0
+        ZWQgTmF0aW9uczwvcD4KPHVsPjxsaT7jgr/jgqTjg4jjg6vvvJogQUdMSU5F
+        VCB1bmlvbiBsaXN0IG9mIHNlcmlhbHMgLyBMaWJyYXJ5IGFuZCBEb2N1bWVu
+        dGF0aW9uIFN5c3RlbXMgRGl2aXNpb24sIERhdmlkIEx1YmluIE1lbW9yaWFs
+        IExpYnJhcnk8L2xpPgo8L3VsPl1dPgo8L2Rlc2NyaXB0aW9uPgogICAgICA8
+        Y2F0ZWdvcnk+5pysPC9jYXRlZ29yeT4KICAgICAgPGd1aWQgaXNQZXJtYUxp
+        bms9InRydWUiPmh0dHA6Ly9pc3MubmRsLmdvLmpwL2Jvb2tzL1IxMDAwMDAw
+        MDItSTAwMDAwMzEwNDcxMy0wMDwvZ3VpZD4KICAgICAgPHB1YkRhdGU+RnJp
+        LCAxNSBKdW4gMTk5MCAwOTowMDowMCArMDkwMDwvcHViRGF0ZT4KICAgICAg
+        PGRjOnRpdGxlPkFHTElORVQgdW5pb24gbGlzdCBvZiBzZXJpYWxzIC8gTGli
+        cmFyeSBhbmQgRG9jdW1lbnRhdGlvbiBTeXN0ZW1zIERpdmlzaW9uLCBEYXZp
+        ZCBMdWJpbiBNZW1vcmlhbCBMaWJyYXJ5PC9kYzp0aXRsZT4KICAgICAgPGRj
+        OnB1Ymxpc2hlcj5Gb29kIGFuZCBBZ3JpY3VsdHVyZSBPcmdhbml6YXRpb24g
+        b2YgdGhlIFVuaXRlZCBOYXRpb25zPC9kYzpwdWJsaXNoZXI+CiAgICAgIDxk
+        Y3Rlcm1zOmlzc3VlZCB4c2k6dHlwZT0iZGN0ZXJtczpXM0NEVEYiPjE5Nzk8
+        L2RjdGVybXM6aXNzdWVkPgogICAgICA8ZGM6c3ViamVjdD7ovrLlraY8L2Rj
+        OnN1YmplY3Q+CiAgICAgIDxkYzpzdWJqZWN0Pui+sualrTwvZGM6c3ViamVj
+        dD4KICAgICAgPGRjOnN1YmplY3Q+6YCQ5qyh5YiK6KGM54mpICjlnLDnkIbl
+        jLrliIYpPC9kYzpzdWJqZWN0PgogICAgICA8ZGM6c3ViamVjdD7mm7jnm648
+        L2RjOnN1YmplY3Q+CiAgICAgIDxkYzpzdWJqZWN0Pue3j+WQiOebrumMsjwv
+        ZGM6c3ViamVjdD4KICAgICAgPGRjOnN1YmplY3QgeHNpOnR5cGU9ImRjbmRs
+        Ok5ETEMiPlJCMTwvZGM6c3ViamVjdD4KICAgICAgPGRjOnN1YmplY3QgeHNp
+        OnR5cGU9ImRjbmRsOk5ETEMiPlJCMjE8L2RjOnN1YmplY3Q+CiAgICA8L2l0
+        ZW0+CiAgICA8aXRlbT4KICAgICAgPHRpdGxlPkNvbXB1dGVyaXNlZCBzeXN0
+        ZW1zIGluIGxpYnJhcnkgYW5kIGluZm9ybWF0aW9uIHNlcnZpY2VzIDogcHJv
+        Y2VlZGluZ3Mgb2YgYSBjb25mZXJlbmNlIG9mIHRoZSBBc2xpYiBCaW9sb2dp
+        Y2FsIGFuZCBBZ3JpY3VsdHVyYWwgU2NpZW5jZXMgR3JvdXAgaGVsZCBhdCB0
+        aGUgQ29tbW9ud2VhbHRoIEluc3RpdHV0ZSwgTG9uZG9uLCBKdW5lIDksIDE5
+        ODIgLyBlZGl0b3IsIEguTC4gV2lsbGlhbXM8L3RpdGxlPgogICAgICA8bGlu
+        az5odHRwOi8vaXNzLm5kbC5nby5qcC9ib29rcy9SMTAwMDAwMDAyLUkwMDAw
+        MDMxMTI5NDEtMDA8L2xpbms+CjxkZXNjcmlwdGlvbj4KPCFbQ0RBVEFbPHA+
+        QXNsaWIsMDg1MTQyMTY5NTwvcD4KPHVsPjxsaT7jgr/jgqTjg4jjg6vvvJog
+        Q29tcHV0ZXJpc2VkIHN5c3RlbXMgaW4gbGlicmFyeSBhbmQgaW5mb3JtYXRp
+        b24gc2VydmljZXMgOiBwcm9jZWVkaW5ncyBvZiBhIGNvbmZlcmVuY2Ugb2Yg
+        dGhlIEFzbGliIEJpb2xvZ2ljYWwgYW5kIEFncmljdWx0dXJhbCBTY2llbmNl
+        cyBHcm91cCBoZWxkIGF0IHRoZSBDb21tb253ZWFsdGggSW5zdGl0dXRlLCBM
+        b25kb24sIEp1bmUgOSwgMTk4MiAvIGVkaXRvciwgSC5MLiBXaWxsaWFtczwv
+        bGk+CjwvdWw+XV0+CjwvZGVzY3JpcHRpb24+CiAgICAgIDxjYXRlZ29yeT7m
+        nKw8L2NhdGVnb3J5PgogICAgICA8Z3VpZCBpc1Blcm1hTGluaz0idHJ1ZSI+
+        aHR0cDovL2lzcy5uZGwuZ28uanAvYm9va3MvUjEwMDAwMDAwMi1JMDAwMDAz
+        MTEyOTQxLTAwPC9ndWlkPgogICAgICA8cHViRGF0ZT5TYXQsIDMwIEFwciAx
+        OTg4IDA5OjAwOjAwICswOTAwPC9wdWJEYXRlPgogICAgICA8ZGM6dGl0bGU+
+        Q29tcHV0ZXJpc2VkIHN5c3RlbXMgaW4gbGlicmFyeSBhbmQgaW5mb3JtYXRp
+        b24gc2VydmljZXMgOiBwcm9jZWVkaW5ncyBvZiBhIGNvbmZlcmVuY2Ugb2Yg
+        dGhlIEFzbGliIEJpb2xvZ2ljYWwgYW5kIEFncmljdWx0dXJhbCBTY2llbmNl
+        cyBHcm91cCBoZWxkIGF0IHRoZSBDb21tb253ZWFsdGggSW5zdGl0dXRlLCBM
+        b25kb24sIEp1bmUgOSwgMTk4MiAvIGVkaXRvciwgSC5MLiBXaWxsaWFtczwv
+        ZGM6dGl0bGU+CiAgICAgIDxkYzpwdWJsaXNoZXI+QXNsaWI8L2RjOnB1Ymxp
+        c2hlcj4KICAgICAgPGRjdGVybXM6aXNzdWVkIHhzaTp0eXBlPSJkY3Rlcm1z
+        OlczQ0RURiI+MTk4MzwvZGN0ZXJtczppc3N1ZWQ+CiAgICAgIDxkYzppZGVu
+        dGlmaWVyIHhzaTp0eXBlPSJkY25kbDpJU0JOIj4wODUxNDIxNjk1PC9kYzpp
+        ZGVudGlmaWVyPgogICAgICA8ZGM6c3ViamVjdD7lm7Pmm7jppKjiiKXjgqrj
+        g7zjg4jjg6Hjg7zjgrfjg6fjg7M8L2RjOnN1YmplY3Q+CiAgICAgIDxkYzpz
+        dWJqZWN0PuaDheWgseOCteODvOODk+OCuSAo5Zyw55CG5Yy65YiGKTwvZGM6
+        c3ViamVjdD4KICAgICAgPGRjOnN1YmplY3Q+TGlicmFyaWVzIC0tIEF1dG9t
+        YXRpb24gLS0gQ29uZ3Jlc3NlczwvZGM6c3ViamVjdD4KICAgICAgPGRjOnN1
+        YmplY3Q+TGlicmFyeSBzY2llbmNlIC0tIERhdGEgcHJvY2Vzc2luZyAtLSBD
+        b25ncmVzc2VzPC9kYzpzdWJqZWN0PgogICAgICA8ZGM6c3ViamVjdD5JbmZv
+        cm1hdGlvbiBzdG9yYWdlIGFuZCByZXRyaWV2YWwgc3lzdGVtcyAtLSBDb25n
+        cmVzc2VzPC9kYzpzdWJqZWN0PgogICAgICA8ZGM6c3ViamVjdD5JbmZvcm1h
+        dGlvbiBzZXJ2aWNlcyAtLSBDb25ncmVzc2VzPC9kYzpzdWJqZWN0PgogICAg
+        ICA8ZGM6c3ViamVjdCB4c2k6dHlwZT0iZGNuZGw6TkRMQyI+VUwxMTwvZGM6
+        c3ViamVjdD4KICAgICAgPGRjOnN1YmplY3QgeHNpOnR5cGU9ImRjdGVybXM6
+        TENDIj5aNjc4Ljk8L2RjOnN1YmplY3Q+CiAgICAgIDxkYzpzdWJqZWN0IHhz
+        aTp0eXBlPSJkY3Rlcm1zOkREQyI+MDI1LjMvMDI4LzU0PC9kYzpzdWJqZWN0
+        PgogICAgICA8ZGN0ZXJtczpkZXNjcmlwdGlvbj5JbmNsdWRlcyBiaWJsaW9n
+        cmFwaGllczwvZGN0ZXJtczpkZXNjcmlwdGlvbj4KICAgIDwvaXRlbT4KICAg
+        IDxpdGVtPgogICAgICA8dGl0bGU+TGlicmFyeSBTeXN0ZW1zIFNlbWluYXIs
+        IFRoZSBIYWd1ZSA6IGxpbmtpbmcgb2YgYXV0b21hdGVkIGxpYnJhcnkgZnVu
+        Y3Rpb25zLCBBcHJpbCwgMjAtMjIsIDE5ODMgLyBlZGl0b3IsIEFudG9uIEJv
+        c3NlcnM8L3RpdGxlPgogICAgICA8bGluaz5odHRwOi8vaXNzLm5kbC5nby5q
+        cC9ib29rcy9SMTAwMDAwMDAyLUkwMDAwMDMxMTg4MzctMDA8L2xpbms+Cjxk
+        ZXNjcmlwdGlvbj4KPCFbQ0RBVEFbPHA+UGljYS1CdXJlYXUsOTA3MDMxMTE4
+        NjwvcD4KPHVsPjxsaT7jgr/jgqTjg4jjg6vvvJogTGlicmFyeSBTeXN0ZW1z
+        IFNlbWluYXIsIFRoZSBIYWd1ZSA6IGxpbmtpbmcgb2YgYXV0b21hdGVkIGxp
+        YnJhcnkgZnVuY3Rpb25zLCBBcHJpbCwgMjAtMjIsIDE5ODMgLyBlZGl0b3Is
+        IEFudG9uIEJvc3NlcnM8L2xpPgo8bGk+44K344Oq44O844K65ZCN77yaIElu
+        dGVybWFyYyBzb2Z0d2FyZS1zdWJncm91cCBzZW1pbmFyIDsgNzwvbGk+Cjwv
+        dWw+XV0+CjwvZGVzY3JpcHRpb24+CiAgICAgIDxjYXRlZ29yeT7mnKw8L2Nh
+        dGVnb3J5PgogICAgICA8Z3VpZCBpc1Blcm1hTGluaz0idHJ1ZSI+aHR0cDov
+        L2lzcy5uZGwuZ28uanAvYm9va3MvUjEwMDAwMDAwMi1JMDAwMDAzMTE4ODM3
+        LTAwPC9ndWlkPgogICAgICA8cHViRGF0ZT5GcmksIDExIEp1bCAxOTk3IDA5
+        OjAwOjAwICswOTAwPC9wdWJEYXRlPgogICAgICA8ZGM6dGl0bGU+TGlicmFy
+        eSBTeXN0ZW1zIFNlbWluYXIsIFRoZSBIYWd1ZSA6IGxpbmtpbmcgb2YgYXV0
+        b21hdGVkIGxpYnJhcnkgZnVuY3Rpb25zLCBBcHJpbCwgMjAtMjIsIDE5ODMg
+        LyBlZGl0b3IsIEFudG9uIEJvc3NlcnM8L2RjOnRpdGxlPgogICAgICA8ZGNu
+        ZGw6c2VyaWVzVGl0bGU+SW50ZXJtYXJjIHNvZnR3YXJlLXN1Ymdyb3VwIHNl
+        bWluYXIgOyA3PC9kY25kbDpzZXJpZXNUaXRsZT4KICAgICAgPGRjOnB1Ymxp
+        c2hlcj5QaWNhLUJ1cmVhdTwvZGM6cHVibGlzaGVyPgogICAgICA8ZGN0ZXJt
+        czppc3N1ZWQgeHNpOnR5cGU9ImRjdGVybXM6VzNDRFRGIj4xOTgzPC9kY3Rl
+        cm1zOmlzc3VlZD4KICAgICAgPGRjOmlkZW50aWZpZXIgeHNpOnR5cGU9ImRj
+        bmRsOklTQk4iPjkwNzAzMTExODY8L2RjOmlkZW50aWZpZXI+CiAgICAgIDxk
+        YzppZGVudGlmaWVyIHhzaTp0eXBlPSJkY25kbDpJU1NOIj4wMTA2MzM3NTwv
+        ZGM6aWRlbnRpZmllcj4KICAgICAgPGRjOnN1YmplY3Q+5Zuz5pu46aSo5a2m
+        PC9kYzpzdWJqZWN0PgogICAgICA8ZGM6c3ViamVjdD7lm7Pmm7jppKjiiKXj
+        gqrjg7zjg4jjg6Hjg7zjgrfjg6fjg7M8L2RjOnN1YmplY3Q+CiAgICAgIDxk
+        YzpzdWJqZWN0PuaDheWgseOCteODvOODk+OCuSAo5Zyw55CG5Yy65YiGKTwv
+        ZGM6c3ViamVjdD4KICAgICAgPGRjOnN1YmplY3Q+44Oo44O844Ot44OD44OR
+        PC9kYzpzdWJqZWN0PgogICAgICA8ZGM6c3ViamVjdCB4c2k6dHlwZT0iZGNu
+        ZGw6TkRMQyI+VUwyMTwvZGM6c3ViamVjdD4KICAgICAgPGRjdGVybXM6ZGVz
+        Y3JpcHRpb24+SW5jbHVkZXMgYmlibGlvZ3JhcGhpY2FsIHJlZmVyZW5jZXM8
+        L2RjdGVybXM6ZGVzY3JpcHRpb24+CiAgICA8L2l0ZW0+CiAgICA8aXRlbT4K
+        ICAgICAgPHRpdGxlPlRoZSBGb3JlaWduIFNlcnZpY2Ugb2YgdGhlIFVuaXRl
+        ZCBTdGF0ZXMgOiBmaXJzdCBsaW5lIG9mIGRlZmVuc2UgLyBBbmRyZXcgTC4g
+        U3RlaWdtYW4gOyBmb3Jld29yZCBieSBDYXJvbCBDLiBMYWlzZTwvdGl0bGU+
+        CiAgICAgIDxsaW5rPmh0dHA6Ly9pc3MubmRsLmdvLmpwL2Jvb2tzL1IxMDAw
+        MDAwMDItSTAwMDAwMzE1MzA2OS0wMDwvbGluaz4KPGRlc2NyaXB0aW9uPgo8
+        IVtDREFUQVs8cD5XZXN0dmlldyBQcmVzcywwODEzMzAxNjdYPC9wPgo8dWw+
+        PGxpPuOCv+OCpOODiOODq++8miBUaGUgRm9yZWlnbiBTZXJ2aWNlIG9mIHRo
+        ZSBVbml0ZWQgU3RhdGVzIDogZmlyc3QgbGluZSBvZiBkZWZlbnNlIC8gQW5k
+        cmV3IEwuIFN0ZWlnbWFuIDsgZm9yZXdvcmQgYnkgQ2Fyb2wgQy4gTGFpc2U8
+        L2xpPgo8bGk+44K344Oq44O844K65ZCN77yaIFdlc3R2aWV3IGxpYnJhcnkg
+        b2YgZmVkZXJhbCBkZXBhcnRtZW50cywgYWdlbmNpZXMsIGFuZCBzeXN0ZW1z
+        PC9saT4KPC91bD5dXT4KPC9kZXNjcmlwdGlvbj4KICAgICAgPGNhdGVnb3J5
+        PuacrDwvY2F0ZWdvcnk+CiAgICAgIDxndWlkIGlzUGVybWFMaW5rPSJ0cnVl
+        Ij5odHRwOi8vaXNzLm5kbC5nby5qcC9ib29rcy9SMTAwMDAwMDAyLUkwMDAw
+        MDMxNTMwNjktMDA8L2d1aWQ+CiAgICAgIDxwdWJEYXRlPkZyaSwgMTQgT2N0
+        IDE5ODggMDk6MDA6MDAgKzA5MDA8L3B1YkRhdGU+CiAgICAgIDxkYzp0aXRs
+        ZT5UaGUgRm9yZWlnbiBTZXJ2aWNlIG9mIHRoZSBVbml0ZWQgU3RhdGVzIDog
+        Zmlyc3QgbGluZSBvZiBkZWZlbnNlIC8gQW5kcmV3IEwuIFN0ZWlnbWFuIDsg
+        Zm9yZXdvcmQgYnkgQ2Fyb2wgQy4gTGFpc2U8L2RjOnRpdGxlPgogICAgICA8
+        ZGNuZGw6c2VyaWVzVGl0bGU+V2VzdHZpZXcgbGlicmFyeSBvZiBmZWRlcmFs
+        IGRlcGFydG1lbnRzLCBhZ2VuY2llcywgYW5kIHN5c3RlbXM8L2RjbmRsOnNl
+        cmllc1RpdGxlPgogICAgICA8ZGM6cHVibGlzaGVyPldlc3R2aWV3IFByZXNz
+        PC9kYzpwdWJsaXNoZXI+CiAgICAgIDxkY3Rlcm1zOmlzc3VlZCB4c2k6dHlw
+        ZT0iZGN0ZXJtczpXM0NEVEYiPjE5ODU8L2RjdGVybXM6aXNzdWVkPgogICAg
+        ICA8ZGM6aWRlbnRpZmllciB4c2k6dHlwZT0iZGNuZGw6SVNCTiI+MDgxMzMw
+        MTY3WDwvZGM6aWRlbnRpZmllcj4KICAgICAgPGRjOnN1YmplY3Q+VW5pdGVk
+        IFN0YXRlcy4gRm9yZWlnbiBTZXJ2aWNlPC9kYzpzdWJqZWN0PgogICAgICA8
+        ZGM6c3ViamVjdD7jgqLjg6Hjg6rjgqvlkIjooYblm708L2RjOnN1YmplY3Q+
+        CiAgICAgIDxkYzpzdWJqZWN0PuWkluWLmeihjOaUvyAo5Zyw55CG5Yy65YiG
+        KTwvZGM6c3ViamVjdD4KICAgICAgPGRjOnN1YmplY3Q+VW5pdGVkIFN0YXRl
+        cyAtLSBEaXBsb21hdGljIGFuZCBjb25zdWxhciBzZXJ2aWNlPC9kYzpzdWJq
+        ZWN0PgogICAgICA8ZGM6c3ViamVjdCB4c2k6dHlwZT0iZGNuZGw6TkRMQyI+
+        QVUtNjMxPC9kYzpzdWJqZWN0PgogICAgICA8ZGM6c3ViamVjdCB4c2k6dHlw
+        ZT0iZGNuZGw6TkRMQyI+QTk5LVU8L2RjOnN1YmplY3Q+CiAgICAgIDxkYzpz
+        dWJqZWN0IHhzaTp0eXBlPSJkY25kbDpORExDIj5BNjMxPC9kYzpzdWJqZWN0
+        PgogICAgICA8ZGM6c3ViamVjdCB4c2k6dHlwZT0iZGN0ZXJtczpMQ0MiPkpY
+        MTcwNi5aNTwvZGM6c3ViamVjdD4KICAgICAgPGRjOnN1YmplY3QgeHNpOnR5
+        cGU9ImRjdGVybXM6RERDIj4zNTMuMDA4OS8wOTwvZGM6c3ViamVjdD4KICAg
+        ICAgPGRjdGVybXM6ZGVzY3JpcHRpb24+SW5jbHVkZXMgaW5kZXg8L2RjdGVy
+        bXM6ZGVzY3JpcHRpb24+CiAgICAgIDxkY3Rlcm1zOmRlc2NyaXB0aW9uPkJp
+        Ymxpb2dyYXBoeTogcC4gMjUzLTI1NjwvZGN0ZXJtczpkZXNjcmlwdGlvbj4K
+        ICAgIDwvaXRlbT4KICAgIDxpdGVtPgogICAgICA8dGl0bGU+RGljdGlvbmFy
+        aWVzLCBlbmN5Y2xvcGVkaWFzLCBhbmQgb3RoZXIgd29yZC1yZWxhdGVkIGJv
+        b2tzIC8gQW5uaWUgTS4gQnJld2VyLCBlZGl0b3I8L3RpdGxlPgogICAgICA8
+        bGluaz5odHRwOi8vaXNzLm5kbC5nby5qcC9ib29rcy9SMTAwMDAwMDAyLUkw
+        MDAwMDMxNjY2MjEtMDA8L2xpbms+CjxkZXNjcmlwdGlvbj4KPCFbQ0RBVEFb
+        PHA+R2FsZSBSZXNlYXJjaCBDbywwODEwMzA0NDA2PC9wPgo8dWw+PGxpPuOC
+        v+OCpOODiOODq++8miBEaWN0aW9uYXJpZXMsIGVuY3ljbG9wZWRpYXMsIGFu
+        ZCBvdGhlciB3b3JkLXJlbGF0ZWQgYm9va3MgLyBBbm5pZSBNLiBCcmV3ZXIs
+        IGVkaXRvcjwvbGk+CjwvdWw+XV0+CjwvZGVzY3JpcHRpb24+CiAgICAgIDxj
+        YXRlZ29yeT7mnKw8L2NhdGVnb3J5PgogICAgICA8Z3VpZCBpc1Blcm1hTGlu
+        az0idHJ1ZSI+aHR0cDovL2lzcy5uZGwuZ28uanAvYm9va3MvUjEwMDAwMDAw
+        Mi1JMDAwMDAzMTY2NjIxLTAwPC9ndWlkPgogICAgICA8cHViRGF0ZT5Nb24s
+        IDAyIEZlYiAyMDA0IDA5OjAwOjAwICswOTAwPC9wdWJEYXRlPgogICAgICA8
+        ZGM6dGl0bGU+RGljdGlvbmFyaWVzLCBlbmN5Y2xvcGVkaWFzLCBhbmQgb3Ro
+        ZXIgd29yZC1yZWxhdGVkIGJvb2tzIC8gQW5uaWUgTS4gQnJld2VyLCBlZGl0
+        b3I8L2RjOnRpdGxlPgogICAgICA8ZGNuZGw6ZWRpdGlvbj40dGggZWQ8L2Rj
+        bmRsOmVkaXRpb24+CiAgICAgIDxkYzpwdWJsaXNoZXI+R2FsZSBSZXNlYXJj
+        aCBDbzwvZGM6cHVibGlzaGVyPgogICAgICA8ZGN0ZXJtczppc3N1ZWQgeHNp
+        OnR5cGU9ImRjdGVybXM6VzNDRFRGIj4xOTg4PC9kY3Rlcm1zOmlzc3VlZD4K
+        ICAgICAgPGRjOmlkZW50aWZpZXIgeHNpOnR5cGU9ImRjbmRsOklTQk4iPjA4
+        MTAzMDQ0MDY8L2RjOmlkZW50aWZpZXI+CiAgICAgIDxkYzpzdWJqZWN0PueZ
+        vuenkeS6i+WFuDwvZGM6c3ViamVjdD4KICAgICAgPGRjOnN1YmplY3Q+6L6e
+        5pu4PC9kYzpzdWJqZWN0PgogICAgICA8ZGM6c3ViamVjdD7mm7jnm648L2Rj
+        OnN1YmplY3Q+CiAgICAgIDxkYzpzdWJqZWN0PkVuY3ljbG9wZWRpYXMgYW5k
+        IGRpY3Rpb25hcmllcyAtLSBCaWJsaW9ncmFwaHk8L2RjOnN1YmplY3Q+CiAg
+        ICAgIDxkYzpzdWJqZWN0IHhzaTp0eXBlPSJkY25kbDpORExDIj5VUDQzPC9k
+        YzpzdWJqZWN0PgogICAgICA8ZGM6c3ViamVjdCB4c2k6dHlwZT0iZGN0ZXJt
+        czpMQ0MiPlo1ODQ4PC9kYzpzdWJqZWN0PgogICAgICA8ZGM6c3ViamVjdCB4
+        c2k6dHlwZT0iZGN0ZXJtczpMQ0MiPkFFNTwvZGM6c3ViamVjdD4KICAgICAg
+        PGRjOnN1YmplY3QgeHNpOnR5cGU9ImRjdGVybXM6RERDIj4wMTYuMDM8L2Rj
+        OnN1YmplY3Q+CiAgICAgIDxkY3Rlcm1zOmRlc2NyaXB0aW9uPiJBIGNsYXNz
+        ZWQgZ3VpZGUgdG8gZGljdGlvbmFyaWVzLCBlbmN5Y2xvcGVkaWFzLCBhbmQg
+        c2ltaWxhciB3b3JrcywgYmFzZWQgb24gTGlicmFyeSBvZiBDb25ncmVzcyBN
+        QVJDIHJlY29yZHMsIGFuZCBhcnJhbmdlZCBhY2NvcmRpbmcgdG8gdGhlIExp
+        YnJhcnkgb2YgQ29uZ3Jlc3MgY2xhc3NpZmljYXRpb24gc3lzdGVtLiBJbmNs
+        dWRpbmcgY29tcGlsYXRpb25zIG9mIGFjcm9ueW1zLCBBbWVyaWNhbmlzbXMs
+        IGNvbGxvcXVpYWxpc21zLCBldHltb2xvZ2llcywgZ2xvc3NhcmllcywgaWRp
+        b21zIGFuZCBleHByZXNzaW9ucywgb3J0aG9ncmFwaHksIHByb3ZpbmNpYWxp
+        c21zLCBzbGFuZywgdGVybXMgYW5kIHBocmFzZXMsIGFuZCB2b2NhYnVsYXJp
+        ZXMgaW4gRW5nbGlzaCBhbmQgYWxsIG90aGVyIGxhbmd1YWdlcy4iPC9kY3Rl
+        cm1zOmRlc2NyaXB0aW9uPgogICAgICA8ZGN0ZXJtczpkZXNjcmlwdGlvbj5J
+        bmNsdWRlcyBpbmRleDwvZGN0ZXJtczpkZXNjcmlwdGlvbj4KICAgIDwvaXRl
+        bT4KICAgIDxpdGVtPgogICAgICA8dGl0bGU+VGhlIG9yaWdpbiBvZiB0aGUg
+        c29sYXIgc3lzdGVtIDogdGhlIGNhcHR1cmUgdGhlb3J5IC8gSm9obiBSLiBE
+        b3JtYW5kLCBNaWNoYWVsIE0uIFdvb2xmc29uPC90aXRsZT4KICAgICAgPGxp
+        bms+aHR0cDovL2lzcy5uZGwuZ28uanAvYm9va3MvUjEwMDAwMDAwMi1JMDAw
+        MDAzMTg4NjMyLTAwPC9saW5rPgo8ZGVzY3JpcHRpb24+CjwhW0NEQVRBWzxw
+        PkUuIEhvcndvb2QgSGFsc3RlZCBQcmVzcywwNDcwMjE0NjZYPC9wPgo8dWw+
+        PGxpPuOCv+OCpOODiOODq++8miBUaGUgb3JpZ2luIG9mIHRoZSBzb2xhciBz
+        eXN0ZW0gOiB0aGUgY2FwdHVyZSB0aGVvcnkgLyBKb2huIFIuIERvcm1hbmQs
+        IE1pY2hhZWwgTS4gV29vbGZzb248L2xpPgo8bGk+44K344Oq44O844K65ZCN
+        77yaIFRoZSBFbGxpcyBIb3J3b29kIGxpYnJhcnkgb2Ygc3BhY2Ugc2NpZW5j
+        ZSBhbmQgc3BhY2UgdGVjaG5vbG9neS4gU2VyaWVzIGluIGFzdHJvbm9teTwv
+        bGk+CjwvdWw+XV0+CjwvZGVzY3JpcHRpb24+CiAgICAgIDxjYXRlZ29yeT7m
+        nKw8L2NhdGVnb3J5PgogICAgICA8Z3VpZCBpc1Blcm1hTGluaz0idHJ1ZSI+
+        aHR0cDovL2lzcy5uZGwuZ28uanAvYm9va3MvUjEwMDAwMDAwMi1JMDAwMDAz
+        MTg4NjMyLTAwPC9ndWlkPgogICAgICA8cHViRGF0ZT5GcmksIDI2IE9jdCAx
+        OTkwIDA5OjAwOjAwICswOTAwPC9wdWJEYXRlPgogICAgICA8ZGM6dGl0bGU+
+        VGhlIG9yaWdpbiBvZiB0aGUgc29sYXIgc3lzdGVtIDogdGhlIGNhcHR1cmUg
+        dGhlb3J5IC8gSm9obiBSLiBEb3JtYW5kLCBNaWNoYWVsIE0uIFdvb2xmc29u
+        PC9kYzp0aXRsZT4KICAgICAgPGRjbmRsOnNlcmllc1RpdGxlPlRoZSBFbGxp
+        cyBIb3J3b29kIGxpYnJhcnkgb2Ygc3BhY2Ugc2NpZW5jZSBhbmQgc3BhY2Ug
+        dGVjaG5vbG9neS4gU2VyaWVzIGluIGFzdHJvbm9teTwvZGNuZGw6c2VyaWVz
+        VGl0bGU+CiAgICAgIDxkYzpwdWJsaXNoZXI+RS4gSG9yd29vZCBIYWxzdGVk
+        IFByZXNzPC9kYzpwdWJsaXNoZXI+CiAgICAgIDxkY3Rlcm1zOmlzc3VlZCB4
+        c2k6dHlwZT0iZGN0ZXJtczpXM0NEVEYiPjE5ODk8L2RjdGVybXM6aXNzdWVk
+        PgogICAgICA8ZGM6aWRlbnRpZmllciB4c2k6dHlwZT0iZGNuZGw6SVNCTiI+
+        MDQ3MDIxNDY2WDwvZGM6aWRlbnRpZmllcj4KICAgICAgPGRjOmlkZW50aWZp
+        ZXIgeHNpOnR5cGU9ImRjbmRsOkVycm9ySVNCTiI+MDc0NTgwNjAxNTwvZGM6
+        aWRlbnRpZmllcj4KICAgICAgPGRjOnN1YmplY3Q+5aSq6Zm957O7PC9kYzpz
+        dWJqZWN0PgogICAgICA8ZGM6c3ViamVjdD5Tb2xhciBzeXN0ZW0gLS0gT3Jp
+        Z2luPC9kYzpzdWJqZWN0PgogICAgICA8ZGM6c3ViamVjdCB4c2k6dHlwZT0i
+        ZGNuZGw6TkRMQyI+TUI3MTwvZGM6c3ViamVjdD4KICAgICAgPGRjOnN1Ympl
+        Y3QgeHNpOnR5cGU9ImRjdGVybXM6TENDIj5RQjUwMTwvZGM6c3ViamVjdD4K
+        ICAgICAgPGRjOnN1YmplY3QgeHNpOnR5cGU9ImRjdGVybXM6RERDIj41MjMu
+        MjwvZGM6c3ViamVjdD4KICAgICAgPGRjdGVybXM6ZGVzY3JpcHRpb24+SW5j
+        bHVkZXMgaW5kZXg8L2RjdGVybXM6ZGVzY3JpcHRpb24+CiAgICAgIDxkY3Rl
+        cm1zOmRlc2NyaXB0aW9uPkJpYmxpb2dyYXBoeTogcC4gWzIxN10tMjE5PC9k
+        Y3Rlcm1zOmRlc2NyaXB0aW9uPgogICAgPC9pdGVtPgogICAgPGl0ZW0+CiAg
+        ICAgIDx0aXRsZT5BbiBvdmVydmlldyBvZiBpbWFnZSBwcm9jZXNzaW5nIGFu
+        ZCBpbWFnZSBtYW5hZ2VtZW50IHN5c3RlbXMgYW5kIHRoZWlyIGFwcGxpY2F0
+        aW9uIC8gSi4gSG93YXJkIFBldHJpZTwvdGl0bGU+CiAgICAgIDxsaW5rPmh0
+        dHA6Ly9pc3MubmRsLmdvLmpwL2Jvb2tzL1IxMDAwMDAwMDItSTAwMDAwMzE5
+        NDQ5NS0wMDwvbGluaz4KPGRlc2NyaXB0aW9uPgo8IVtDREFUQVs8cD5Ccml0
+        aXNoIExpYnJhcnksIFJlc2VhcmNoIGFuZCBEZXZlbG9wbWVudCBEZXB0LDA3
+        MTIzMzE2MDM8L3A+Cjx1bD48bGk+44K/44Kk44OI44Or77yaIEFuIG92ZXJ2
+        aWV3IG9mIGltYWdlIHByb2Nlc3NpbmcgYW5kIGltYWdlIG1hbmFnZW1lbnQg
+        c3lzdGVtcyBhbmQgdGhlaXIgYXBwbGljYXRpb24gLyBKLiBIb3dhcmQgUGV0
+        cmllPC9saT4KPGxpPuOCt+ODquODvOOCuuWQje+8miBCcml0aXNoIExpYnJh
+        cnkgcmVzZWFyY2ggcGFwZXIgOyA0MDwvbGk+CjwvdWw+XV0+CjwvZGVzY3Jp
+        cHRpb24+CiAgICAgIDxjYXRlZ29yeT7mnKw8L2NhdGVnb3J5PgogICAgICA8
+        Z3VpZCBpc1Blcm1hTGluaz0idHJ1ZSI+aHR0cDovL2lzcy5uZGwuZ28uanAv
+        Ym9va3MvUjEwMDAwMDAwMi1JMDAwMDAzMTk0NDk1LTAwPC9ndWlkPgogICAg
+        ICA8cHViRGF0ZT5XZWQsIDIyIE1heSAxOTkxIDA5OjAwOjAwICswOTAwPC9w
+        dWJEYXRlPgogICAgICA8ZGM6dGl0bGU+QW4gb3ZlcnZpZXcgb2YgaW1hZ2Ug
+        cHJvY2Vzc2luZyBhbmQgaW1hZ2UgbWFuYWdlbWVudCBzeXN0ZW1zIGFuZCB0
+        aGVpciBhcHBsaWNhdGlvbiAvIEouIEhvd2FyZCBQZXRyaWU8L2RjOnRpdGxl
+        PgogICAgICA8ZGNuZGw6c2VyaWVzVGl0bGU+QnJpdGlzaCBMaWJyYXJ5IHJl
+        c2VhcmNoIHBhcGVyIDsgNDA8L2RjbmRsOnNlcmllc1RpdGxlPgogICAgICA8
+        ZGM6cHVibGlzaGVyPkJyaXRpc2ggTGlicmFyeSwgUmVzZWFyY2ggYW5kIERl
+        dmVsb3BtZW50IERlcHQ8L2RjOnB1Ymxpc2hlcj4KICAgICAgPGRjdGVybXM6
+        aXNzdWVkIHhzaTp0eXBlPSJkY3Rlcm1zOlczQ0RURiI+MTk4ODwvZGN0ZXJt
+        czppc3N1ZWQ+CiAgICAgIDxkYzppZGVudGlmaWVyIHhzaTp0eXBlPSJkY25k
+        bDpJU0JOIj4wNzEyMzMxNjAzPC9kYzppZGVudGlmaWVyPgogICAgICA8ZGM6
+        aWRlbnRpZmllciB4c2k6dHlwZT0iZGNuZGw6SVNTTiI+MDI2OTkyNTc8L2Rj
+        OmlkZW50aWZpZXI+CiAgICAgIDxkYzpzdWJqZWN0PueUu+WDj+WHpueQhjwv
+        ZGM6c3ViamVjdD4KICAgICAgPGRjOnN1YmplY3QgeHNpOnR5cGU9ImRjbmRs
+        Ok5ETEMiPk0xNTQ8L2RjOnN1YmplY3Q+CiAgICAgIDxkY3Rlcm1zOmRlc2Ny
+        aXB0aW9uPkJpYmxpb2dyYXBoeTogcC4gNjktNzQ8L2RjdGVybXM6ZGVzY3Jp
+        cHRpb24+CiAgICA8L2l0ZW0+CiAgICA8aXRlbT4KICAgICAgPHRpdGxlPlN1
+        cnZleSBvZiBsZWdpc2xhdGl2ZSBhY3Rpdml0aWVzIG9mIEZlZGVyYWwgQXNz
+        ZW1ibHkgaW4gdGhlIHBlcmlvZCBvZiB0aGUgdHJhbnNmb3JtYXRpb24gb2Yg
+        bGVnYWwgb3JkZXIgKGZyb20gdGhlIENvbnN0aXR1dGl2ZSBBY3Qgbm8uIDEz
+        NS8xOTg5IHRpbGwgdGhlIGVuZCBvZiB0aGUgNnRoIGVsZWN0aW9uIHRlcm0p
+        PC90aXRsZT4KICAgICAgPGxpbms+aHR0cDovL2lzcy5uZGwuZ28uanAvYm9v
+        a3MvUjEwMDAwMDAwMi1JMDAwMDAzMjEwMTI2LTAwPC9saW5rPgo8ZGVzY3Jp
+        cHRpb24+CjwhW0NEQVRBWzxwPjwvcD4KPHVsPjxsaT7jgr/jgqTjg4jjg6vv
+        vJogU3VydmV5IG9mIGxlZ2lzbGF0aXZlIGFjdGl2aXRpZXMgb2YgRmVkZXJh
+        bCBBc3NlbWJseSBpbiB0aGUgcGVyaW9kIG9mIHRoZSB0cmFuc2Zvcm1hdGlv
+        biBvZiBsZWdhbCBvcmRlciAoZnJvbSB0aGUgQ29uc3RpdHV0aXZlIEFjdCBu
+        by4gMTM1LzE5ODkgdGlsbCB0aGUgZW5kIG9mIHRoZSA2dGggZWxlY3Rpb24g
+        dGVybSk8L2xpPgo8L3VsPl1dPgo8L2Rlc2NyaXB0aW9uPgogICAgICA8Y2F0
+        ZWdvcnk+5pysPC9jYXRlZ29yeT4KICAgICAgPGd1aWQgaXNQZXJtYUxpbms9
+        InRydWUiPmh0dHA6Ly9pc3MubmRsLmdvLmpwL2Jvb2tzL1IxMDAwMDAwMDIt
+        STAwMDAwMzIxMDEyNi0wMDwvZ3VpZD4KICAgICAgPHB1YkRhdGU+RnJpLCAx
+        OSBGZWIgMTk5MyAwOTowMDowMCArMDkwMDwvcHViRGF0ZT4KICAgICAgPGRj
+        OnRpdGxlPlN1cnZleSBvZiBsZWdpc2xhdGl2ZSBhY3Rpdml0aWVzIG9mIEZl
+        ZGVyYWwgQXNzZW1ibHkgaW4gdGhlIHBlcmlvZCBvZiB0aGUgdHJhbnNmb3Jt
+        YXRpb24gb2YgbGVnYWwgb3JkZXIgKGZyb20gdGhlIENvbnN0aXR1dGl2ZSBB
+        Y3Qgbm8uIDEzNS8xOTg5IHRpbGwgdGhlIGVuZCBvZiB0aGUgNnRoIGVsZWN0
+        aW9uIHRlcm0pPC9kYzp0aXRsZT4KICAgICAgPGRjdGVybXM6aXNzdWVkIHhz
+        aTp0eXBlPSJkY3Rlcm1zOlczQ0RURiI+MTk5MjwvZGN0ZXJtczppc3N1ZWQ+
+        CiAgICAgIDxkYzpzdWJqZWN0PuazleS7pDwvZGM6c3ViamVjdD4KICAgICAg
+        PGRjOnN1YmplY3Q+57Si5byVPC9kYzpzdWJqZWN0PgogICAgICA8ZGM6c3Vi
+        amVjdD7jg4HjgqfjgrPjgrnjg63jg5Djgq3jgqI8L2RjOnN1YmplY3Q+CiAg
+        ICAgIDxkYzpzdWJqZWN0IHhzaTp0eXBlPSJkY25kbDpORExDIj5DQzE3LTE8
+        L2RjOnN1YmplY3Q+CiAgICAgIDxkYzpzdWJqZWN0IHhzaTp0eXBlPSJkY25k
+        bDpORExDIj5BQzE3LTEyMTwvZGM6c3ViamVjdD4KICAgICAgPGRjOnN1Ympl
+        Y3QgeHNpOnR5cGU9ImRjbmRsOk5ETEMiPkExMjE8L2RjOnN1YmplY3Q+CiAg
+        ICAgIDxkY3Rlcm1zOmRlc2NyaXB0aW9uPkNvdmVyIHRpdGxlPC9kY3Rlcm1z
+        OmRlc2NyaXB0aW9uPgogICAgICA8ZGN0ZXJtczpkZXNjcmlwdGlvbj4iUmV0
+        cmlldmVkIGZyb20gYW4gYXV0b21hdGl6ZWQgc3lzdGVtIG9mIENTIExlZ3N5
+        cyBsZWdhbCBpbmZvcm1hdGlvbi4iPC9kY3Rlcm1zOmRlc2NyaXB0aW9uPgog
+        ICAgPC9pdGVtPgogIDwvY2hhbm5lbD4KPC9yc3M+Cg==
+    http_version: !binary |-
+      MS4w
+  recorded_at: Sat, 03 Mar 2012 14:16:38 GMT
+recorded_with: VCR 2.0.0
