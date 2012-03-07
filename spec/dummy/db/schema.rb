@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111201121844) do
+ActiveRecord::Schema.define(:version => 20120305121726) do
 
   create_table "countries", :force => true do |t|
     t.string  "name",         :null => false
@@ -89,6 +89,54 @@ ActiveRecord::Schema.define(:version => 20111201121844) do
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end
+
+  create_table "series_has_manifestations", :force => true do |t|
+    t.integer  "series_statement_id"
+    t.integer  "manifestation_id"
+    t.integer  "position"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+  end
+
+  add_index "series_has_manifestations", ["manifestation_id"], :name => "index_series_has_manifestations_on_manifestation_id"
+  add_index "series_has_manifestations", ["series_statement_id"], :name => "index_series_has_manifestations_on_series_statement_id"
+
+  create_table "series_statement_merge_lists", :force => true do |t|
+    t.string   "title"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "series_statement_merges", :force => true do |t|
+    t.integer  "series_statement_id",            :null => false
+    t.integer  "series_statement_merge_list_id", :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+  end
+
+  add_index "series_statement_merges", ["series_statement_id"], :name => "index_series_statement_merges_on_series_statement_id"
+  add_index "series_statement_merges", ["series_statement_merge_list_id"], :name => "index_series_statement_merges_on_series_statement_merge_list_id"
+
+  create_table "series_statements", :force => true do |t|
+    t.text     "original_title"
+    t.text     "title_transcription"
+    t.text     "numbering"
+    t.text     "title_subseries"
+    t.text     "title_subseries_transcriptiom"
+    t.text     "numbering_subseries"
+    t.integer  "root_manifestation_id"
+    t.string   "series_statement_identifier"
+    t.text     "note"
+    t.integer  "position"
+    t.boolean  "periodical"
+    t.string   "issn"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+  end
+
+  add_index "series_statements", ["issn"], :name => "index_series_statements_on_issn"
+  add_index "series_statements", ["root_manifestation_id"], :name => "index_series_statements_on_root_manifestation_id"
+  add_index "series_statements", ["series_statement_identifier"], :name => "index_series_statements_on_series_statement_identifier"
 
   create_table "users", :force => true do |t|
     t.datetime "created_at",                                            :null => false

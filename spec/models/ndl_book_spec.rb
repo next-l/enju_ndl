@@ -52,5 +52,12 @@ describe NdlBook do
       manifestation.title_alternative.should eq 'PLATINADATA'
       manifestation.title_alternative_transcription.should eq 'PLATINA DATA'
     end
+
+    it "should import series_statement if the resource is periodical" do
+      manifestation = NdlBook.import_from_sru_response('00010852')
+      manifestation.original_title.should eq "週刊新潮"
+      manifestation.series_statement.original_title.should eq "週刊新潮"
+      manifestation.series_statement.periodical.should be_true
+    end
   end
 end

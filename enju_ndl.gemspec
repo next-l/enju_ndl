@@ -20,6 +20,9 @@ Gem::Specification.new do |s|
   s.add_dependency "devise"
   s.add_dependency "nokogiri"
   s.add_dependency "will_paginate", "~> 3.0"
+  s.add_dependency "acts_as_list"
+  s.add_dependency "attribute_normalizer"
+  s.add_dependency "library_stdnums"
 
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "rspec-rails"
