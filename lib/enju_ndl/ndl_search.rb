@@ -193,7 +193,7 @@ module EnjuNdl
 
       def get_language(doc)
         # TODO: 言語が複数ある場合
-        language = doc.at('//dcterms:language[@rdf:datatype="http://purl.org/dc/terms/ISO639-2"]').content
+        language = doc.at('//dcterms:language[@rdf:datatype="http://purl.org/dc/terms/ISO639-2"]').try(:content)
         if language
           language.downcase
         end
