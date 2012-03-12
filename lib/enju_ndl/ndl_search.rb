@@ -30,7 +30,7 @@ module EnjuNdl
         title = get_title(doc)
 
         # date of publication
-        pub_date = doc.at('//dcterms:date').content.to_s.gsub(/\./, '-')
+        pub_date = doc.at('//dcterms:date').try(:content).to_s.gsub(/\./, '-')
         unless pub_date =~  /^\d+(-\d{0,2}){0,2}$/
           pub_date = nil
         end
@@ -47,7 +47,7 @@ module EnjuNdl
         issn_l = ISBN_Tools.cleanup(doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/ISSNL"]').try(:content))
         classification_urls = doc.xpath('//dcterms:subject[@rdf:resource]').map{|subject| subject.attributes['resource'].value}
         if classification_urls
-          ndc9_url = classification_urls.map{|url| URI.parse(url)}.select{|u| u.path.split('/').reverse[1] == 'ndc9'}.first
+          ndc9_url = classification_urls.map{|url| URI.parse(URI.escape(url))}.select{|u| u.path.split('/').reverse[1] == 'ndc9'}.first
           if ndc9_url
             ndc = ndc9_url.path.split('/').last
           end
@@ -193,7 +193,7 @@ module EnjuNdl
 
       def get_language(doc)
         # TODO: 言語が複数ある場合
-        language = doc.at('//dcterms:language[@rdf:datatype="http://purl.org/dc/terms/ISO639-2"]').content
+        language = doc.at('//dcterms:language[@rdf:datatype="http://purl.org/dc/terms/ISO639-2"]').try(:content)
         if language
           language.downcase
         end
