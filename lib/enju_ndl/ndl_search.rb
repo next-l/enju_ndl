@@ -43,7 +43,6 @@ module EnjuNdl
         end
 
         isbn = ISBN_Tools.cleanup(doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/ISBN"]').try(:content))
-        issn = ISBN_Tools.cleanup(doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/ISSN"]').try(:content))
         issn_l = ISBN_Tools.cleanup(doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/ISSNL"]').try(:content))
         classification_urls = doc.xpath('//dcterms:subject[@rdf:resource]').map{|subject| subject.attributes['resource'].value}
         if classification_urls
@@ -55,8 +54,6 @@ module EnjuNdl
         description = doc.at('//dcterms:abstract').try(:content)
         price = doc.at('//dcndl:price').try(:content)
         volume_number_string = doc.at('//dcndl:volume/rdf:Description/rdf:value').try(:content)
-        publication_periodicity = doc.at('//dcndl:publicationPeriodicity').try(:content)
-
         manifestation = nil
         Patron.transaction do
           publisher_patrons = Patron.import_patrons(publishers)
@@ -81,19 +78,7 @@ module EnjuNdl
           create_frbr_instance(doc, manifestation)
         end
 
-        if publication_periodicity
-          series_statement = SeriesStatement.where(:issn => issn).first
-          unless series_statement
-            series_statement = SeriesStatement.new(
-              :original_title => manifestation.original_title,
-              :title_transcription => manifestation.title_transcription,
-              :issn => issn,
-              :periodical => true
-            )
-            manifestation.series_statement = series_statement
-            manifestation.save
-          end
-        end
+        create_series_statement(doc, manifestation)
 
         #manifestation.send_later(:create_frbr_instance, doc.to_s)
         return manifestation
@@ -205,6 +190,42 @@ module EnjuNdl
           publishers << publisher.content.tr('ａ-ｚＡ-Ｚ０-９　‖', 'a-zA-Z0-9 ')
         end
         return publishers
+      end
+
+      def create_series_statement(doc, manifestation)
+        series = doc.at('//dcndl:seriesTitle/rdf:Description/rdf:value').try(:content)
+        if series
+          series_title = series.split(';')[0].strip
+        end
+
+        publication_periodicity = doc.at('//dcndl:publicationPeriodicity').try(:content)
+
+        if series_title
+          series_statement = SeriesStatement.where(:original_title => series_title).first
+          unless series_statement
+            series_statement = SeriesStatement.new(
+              :original_title => series_title,
+              :periodical => false
+            )
+          end
+        elsif publication_periodicity
+          issn = ISBN_Tools.cleanup(doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/ISSN"]').try(:content))
+          series_statement = SeriesStatement.where(:issn => issn).first
+          unless series_statement
+            series_statement = SeriesStatement.new(
+              :original_title => manifestation.original_title,
+              :title_transcription => manifestation.title_transcription,
+              :issn => issn,
+              :periodical => true
+            )
+          end
+        end
+
+        if series_statement
+          manifestation.series_statement = series_statement
+          manifestation.save
+        end
+        manifestation
       end
     end
 

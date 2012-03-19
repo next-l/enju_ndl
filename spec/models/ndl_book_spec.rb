@@ -15,13 +15,6 @@ describe NdlBook do
     end
   end
 
-  context "find_by_isbn" do
-    use_vcr_cassette "enju_ndl/find_by_isbn", :record => :new_episodes
-    it "should find bibliographic record by isbn" do
-      NdlBook.find_by_isbn('9784839931995')[:title].should eq "プログラミングコンテストチャレンジブック : 問題解決のアルゴリズム活用力とコーディングテクニックを鍛える"
-    end
-  end
-
   context "import" do
     use_vcr_cassette "enju_ndl/import", :record => :new_episodes
     it "should import bibliographic record" do
@@ -51,6 +44,13 @@ describe NdlBook do
       manifestation = NdlBook.import_from_sru_response('21859930')
       manifestation.title_alternative.should eq 'PLATINADATA'
       manifestation.title_alternative_transcription.should eq 'PLATINA DATA'
+    end
+
+    it "should import series_statement" do
+      manifestation = NdlBook.import_from_sru_response('20408556')
+      manifestation.original_title.should eq "ズッコケ三人組のダイエット講座"
+      manifestation.series_statement.original_title.should eq "ポプラ社文庫. ズッコケ文庫"
+      manifestation.series_statement.periodical.should be_false
     end
 
     it "should import series_statement if the resource is periodical" do
