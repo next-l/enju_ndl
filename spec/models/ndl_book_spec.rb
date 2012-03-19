@@ -59,5 +59,18 @@ describe NdlBook do
       manifestation.series_statement.original_title.should eq "週刊新潮"
       manifestation.series_statement.periodical.should be_true
     end
+
+    it "should import pud_date is nil" do
+      manifestation = NdlBook.import_from_sru_response('00018082')
+      manifestation.original_title.should eq "西日本哲学会会報"
+      manifestation.pub_date.should be_nil
+    end
+
+    it "should import url contain whitespace" do
+      manifestation = NdlBook.import_from_sru_response('91044453')
+      manifestation.original_title.should eq "ザ・スコット・フィッツジェラルド・ブック"
+      manifestation.pub_date.should eq "1991-4"
+    end
+
   end
 end
