@@ -5,6 +5,7 @@ class CreateRoles < ActiveRecord::Migration
       t.text :display_name
       t.text :note
       t.integer :position
+      t.integer :score
 
       t.timestamps
     end

@@ -51,6 +51,22 @@ module EnjuNdl
             ndc = ndc9_url.path.split('/').last
           end
         end
+
+        carrier_type = content_type = nil
+        doc.xpath('//dcndl:materialType[@rdf:resource]').each do |d|
+          case d.attributes['resource'].try(:content)
+          when 'http://ndl.go.jp/ndltype/Book'
+            carrier_type = CarrierType.where(:name => 'print').first
+            content_type = ContentType.where(:name => 'text').first
+          when 'http://purl.org/dc/dcmitype/Sound'
+            content_type = ContentType.where(:name => 'audio').first
+          when 'http://purl.org/dc/dcmitype/MovingImage'
+            content_type = ContentType.where(:name => 'video').first
+          when 'http://ndl.go.jp/ndltype/ElectronicResource'
+            carrier_type = CarrierType.where(:name => 'file').first
+          end
+        end
+
         description = doc.at('//dcterms:abstract').try(:content)
         price = doc.at('//dcndl:price').try(:content)
         volume_number_string = doc.at('//dcndl:volume/rdf:Description/rdf:value').try(:content)
@@ -74,6 +90,8 @@ module EnjuNdl
             :nbn => nbn,
             :ndc => ndc
           )
+          manifestation.carrier_type = carrier_type if carrier_type
+          manifestation.content_type = content_type if content_type
           manifestation.publishers << publisher_patrons
           create_frbr_instance(doc, manifestation)
         end
@@ -193,18 +211,22 @@ module EnjuNdl
       end
 
       def create_series_statement(doc, manifestation)
-        series = doc.at('//dcndl:seriesTitle/rdf:Description/rdf:value').try(:content)
-        if series
-          series_title = series.split(';')[0].strip
+        series = series_title = {}
+        series[:title] = doc.at('//dcndl:seriesTitle/rdf:Description/rdf:value').try(:content)
+        series[:title_transcription] = doc.at('//dcndl:seriesTitle/rdf:Description/dcndl:seriesTitleTranscription').try(:content)
+        if series[:title]
+          series_title[:title] = series[:title].split(';')[0].strip
+          series_title[:title_transcription] = series[:title_transcription]
         end
 
         publication_periodicity = doc.at('//dcndl:publicationPeriodicity').try(:content)
 
-        if series_title
-          series_statement = SeriesStatement.where(:original_title => series_title).first
+        if series_title[:title]
+          series_statement = SeriesStatement.where(:original_title => series_title[:title]).first
           unless series_statement
             series_statement = SeriesStatement.new(
-              :original_title => series_title,
+              :original_title => series_title[:title],
+              :title_transcription => series_title[:title_transcription],
               :periodical => false
             )
           end

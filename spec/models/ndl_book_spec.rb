@@ -2,7 +2,7 @@
 require 'spec_helper'
 
 describe NdlBook do
-  fixtures :languages
+  fixtures :all
 
   it "should respond to per_page" do
     NdlBook.per_page.should eq 10
@@ -70,6 +70,18 @@ describe NdlBook do
       manifestation = NdlBook.import_from_sru_response('91044453')
       manifestation.original_title.should eq "ザ・スコット・フィッツジェラルド・ブック"
       manifestation.pub_date.should eq "1991-4"
+    end
+
+    it "should import audio cd" do
+      manifestation = NdlBook.import_from_sru_response('21620217')
+      manifestation.original_title.should eq "劇場版天元突破グレンラガン螺巌篇サウンドトラック・プラス"
+      manifestation.content_type.name.should eq 'audio'
+    end
+
+    it "should import video dvd" do
+      manifestation = NdlBook.import_from_sru_response('21374190')
+      manifestation.original_title.should eq "天元突破グレンラガン"
+      manifestation.content_type.name.should eq 'video'
     end
 
   end

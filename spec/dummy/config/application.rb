@@ -43,3 +43,4 @@ module Dummy
   end
 end
 
+require 'master_model'

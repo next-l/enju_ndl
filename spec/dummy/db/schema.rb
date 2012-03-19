@@ -13,6 +13,24 @@
 
 ActiveRecord::Schema.define(:version => 20120305121726) do
 
+  create_table "carrier_types", :force => true do |t|
+    t.string   "name",         :null => false
+    t.text     "display_name"
+    t.text     "note"
+    t.integer  "position"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "content_types", :force => true do |t|
+    t.string   "name",         :null => false
+    t.text     "display_name"
+    t.text     "note"
+    t.integer  "position"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
   create_table "countries", :force => true do |t|
     t.string  "name",         :null => false
     t.text    "display_name"
@@ -61,6 +79,8 @@ ActiveRecord::Schema.define(:version => 20120305121726) do
     t.integer  "price"
     t.text     "description"
     t.string   "volume_number_string"
+    t.integer  "carrier_type_id"
+    t.integer  "content_type_id"
     t.datetime "created_at",                      :null => false
     t.datetime "updated_at",                      :null => false
   end
@@ -86,6 +106,7 @@ ActiveRecord::Schema.define(:version => 20120305121726) do
     t.text     "display_name"
     t.text     "note"
     t.integer  "position"
+    t.integer  "score"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end
