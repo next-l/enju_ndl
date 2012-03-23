@@ -24,7 +24,7 @@ module EnjuNdl
         manifestation = Manifestation.where(:nbn => nbn).first if nbn
         return manifestation if manifestation
 
-        publishers = get_publishers(doc).zip([]).map{|f,t| {:full_name => f, :full_name_transcription => t}}
+        publishers = get_publishers(doc).zip([]).map{|f,t| {:full_name => f, :full_name_transcription => t}}.uniq
 
         # title
         title = get_title(doc)
@@ -94,9 +94,8 @@ module EnjuNdl
           manifestation.content_type = content_type if content_type
           manifestation.publishers << publisher_patrons
           create_frbr_instance(doc, manifestation)
+         create_series_statement(doc, manifestation)
         end
-
-        create_series_statement(doc, manifestation)
 
         #manifestation.send_later(:create_frbr_instance, doc.to_s)
         return manifestation
@@ -110,9 +109,9 @@ module EnjuNdl
 
       def create_frbr_instance(doc, manifestation)
         title = get_title(doc)
-        creators = get_creators(doc)
+        creators = get_creators(doc).uniq
         language = get_language(doc)
-        subjects = get_subjects(doc)
+        subjects = get_subjects(doc).uniq
 
         Patron.transaction do
           creator_patrons = Patron.import_patrons(creators)
@@ -244,8 +243,10 @@ module EnjuNdl
         end
 
         if series_statement
-          manifestation.series_statement = series_statement
-          manifestation.save
+          if series_statement.save
+            series_statement.manifestations << manifestation
+          end
+          #manifestation.save
         end
         manifestation
       end
