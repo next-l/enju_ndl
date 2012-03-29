@@ -75,13 +75,13 @@ describe NdlBook do
     it "should import audio cd" do
       manifestation = NdlBook.import_from_sru_response('21620217')
       manifestation.original_title.should eq "劇場版天元突破グレンラガン螺巌篇サウンドトラック・プラス"
-      manifestation.content_type.name.should eq 'audio'
+      manifestation.manifestation_content_type.name.should eq 'audio'
     end
 
     it "should import video dvd" do
       manifestation = NdlBook.import_from_sru_response('21374190')
       manifestation.original_title.should eq "天元突破グレンラガン"
-      manifestation.content_type.name.should eq 'video'
+      manifestation.manifestation_content_type.name.should eq 'video'
     end
 
   end

@@ -91,7 +91,7 @@ module EnjuNdl
             :ndc => ndc
           )
           manifestation.carrier_type = carrier_type if carrier_type
-          manifestation.content_type = content_type if content_type
+          manifestation.manifestation_content_type = content_type if content_type
           manifestation.publishers << publisher_patrons
           create_frbr_instance(doc, manifestation)
          create_series_statement(doc, manifestation)
