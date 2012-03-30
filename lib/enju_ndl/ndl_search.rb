@@ -128,10 +128,10 @@ module EnjuNdl
       end
 
       def search_ndl(query, options = {})
-        options = {:dpid => 'iss-ndl-opac', :item => 'any', :startrecord => 1, :per_page => 10, :raw => false}.merge(options)
+        options = {:dpid => 'iss-ndl-opac', :item => 'any', :idx => 1, :per_page => 10, :raw => false}.merge(options)
         doc = nil
         results = {}
-        startrecord = options[:startrecord].to_i
+        startrecord = options[:idx].to_i
         if startrecord == 0
           startrecord = 1
         end
