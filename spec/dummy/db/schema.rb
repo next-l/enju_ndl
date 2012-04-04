@@ -81,6 +81,9 @@ ActiveRecord::Schema.define(:version => 20120305121726) do
     t.string   "volume_number_string"
     t.integer  "carrier_type_id"
     t.integer  "content_type_id"
+    t.integer  "start_page"
+    t.integer  "end_page"
+    t.float    "height"
     t.datetime "created_at",                      :null => false
     t.datetime "updated_at",                      :null => false
   end

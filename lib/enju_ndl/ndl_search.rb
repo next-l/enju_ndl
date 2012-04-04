@@ -24,7 +24,7 @@ module EnjuNdl
         manifestation = Manifestation.where(:nbn => nbn).first if nbn
         return manifestation if manifestation
 
-        publishers = get_publishers(doc).zip([]).map{|f,t| {:full_name => f, :full_name_transcription => t}}.uniq
+        publishers = get_publishers(doc)
 
         # title
         title = get_title(doc)
@@ -70,6 +70,8 @@ module EnjuNdl
         description = doc.at('//dcterms:abstract').try(:content)
         price = doc.at('//dcndl:price').try(:content)
         volume_number_string = doc.at('//dcndl:volume/rdf:Description/rdf:value').try(:content)
+        extent = get_extent(doc)
+
         manifestation = nil
         Patron.transaction do
           publisher_patrons = Patron.import_patrons(publishers)
@@ -88,6 +90,9 @@ module EnjuNdl
             :volume_number_string => volume_number_string,
             :price => price,
             :nbn => nbn,
+            :start_page => extent[:start_page],
+            :end_page => extent[:end_page],
+            :height => extent[:height],
             :ndc => ndc
           )
           manifestation.carrier_type = carrier_type if carrier_type
@@ -203,10 +208,31 @@ module EnjuNdl
 
       def get_publishers(doc)
         publishers = []
-        doc.xpath('//dcterms:publisher/foaf:Agent/foaf:name').each do |publisher|
-          publishers << publisher.content.tr('ａ-ｚＡ-Ｚ０-９　‖', 'a-zA-Z0-9 ')
+        doc.xpath('//dcterms:publisher/foaf:Agent').each do |publisher|
+          publishers << {
+            :full_name => publisher.at('./foaf:name').content,
+            :full_name_transcription => publisher.at('./dcndl:transcription').try(:content)
+          }
         end
         return publishers
+      end
+
+      def get_extent(doc)
+        extent = doc.at('//dcterms:extent').try(:content)
+        value = {:start_page => nil, :end_page => nil, :height => nil}
+        if extent
+          extent = extent.split(';')
+          page = extent[0].try(:strip)
+          if page =~ /\d+p/
+            value[:start_page] = 1
+            value[:end_page] = page.to_i
+          end
+          height = extent[1].try(:strip)
+          if height =~ /\d+cm/
+            value[:height] = height.to_i
+          end
+        end
+        value
       end
 
       def create_series_statement(doc, manifestation)

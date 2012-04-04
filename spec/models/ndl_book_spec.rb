@@ -26,6 +26,9 @@ describe NdlBook do
       manifestation.creators.first.full_name.should eq '秋葉, 拓哉'
       manifestation.creators.first.full_name_transcription.should eq 'アキバ, タクヤ'
       manifestation.price.should eq 3280
+      manifestation.start_page.should eq 1
+      manifestation.end_page.should eq 315
+      manifestation.height.should eq 24.0
     end
 
     it "should import bibliographic record that does not have any classifications" do
