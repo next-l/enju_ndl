@@ -13,6 +13,11 @@ class CreateManifestations < ActiveRecord::Migration
       t.integer :price
       t.text :description
       t.string :volume_number_string
+      t.integer :carrier_type_id
+      t.integer :content_type_id
+      t.integer :start_page
+      t.integer :end_page
+      t.float :height
 
       t.timestamps
     end

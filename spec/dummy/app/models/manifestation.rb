@@ -6,6 +6,8 @@ class Manifestation < ActiveRecord::Base
   has_one :series_has_manifestation, :dependent => :destroy
   has_one :series_statement, :through => :series_has_manifestation
   belongs_to :language
+  belongs_to :carrier_type
+  belongs_to :manifestation_content_type, :class_name => 'ContentType', :foreign_key => 'content_type_id'
 
   enju_ndl_search
 end

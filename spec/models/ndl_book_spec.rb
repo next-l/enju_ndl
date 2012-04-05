@@ -2,7 +2,7 @@
 require 'spec_helper'
 
 describe NdlBook do
-  fixtures :languages
+  fixtures :all
 
   it "should respond to per_page" do
     NdlBook.per_page.should eq 10
@@ -12,13 +12,6 @@ describe NdlBook do
     use_vcr_cassette "enju_ndl/search", :record => :new_episodes
     it "should search bibliographic record" do
       NdlBook.search('library system')[:total_entries].should eq 5163
-    end
-  end
-
-  context "find_by_isbn" do
-    use_vcr_cassette "enju_ndl/find_by_isbn", :record => :new_episodes
-    it "should find bibliographic record by isbn" do
-      NdlBook.find_by_isbn('9784839931995')[:title].should eq "プログラミングコンテストチャレンジブック : 問題解決のアルゴリズム活用力とコーディングテクニックを鍛える"
     end
   end
 
@@ -33,6 +26,9 @@ describe NdlBook do
       manifestation.creators.first.full_name.should eq '秋葉, 拓哉'
       manifestation.creators.first.full_name_transcription.should eq 'アキバ, タクヤ'
       manifestation.price.should eq 3280
+      manifestation.start_page.should eq 1
+      manifestation.end_page.should eq 315
+      manifestation.height.should eq 24.0
     end
 
     it "should import bibliographic record that does not have any classifications" do
@@ -53,6 +49,13 @@ describe NdlBook do
       manifestation.title_alternative_transcription.should eq 'PLATINA DATA'
     end
 
+    it "should import series_statement" do
+      manifestation = NdlBook.import_from_sru_response('20408556')
+      manifestation.original_title.should eq "ズッコケ三人組のダイエット講座"
+      manifestation.series_statement.original_title.should eq "ポプラ社文庫. ズッコケ文庫"
+      manifestation.series_statement.periodical.should be_false
+    end
+
     it "should import series_statement if the resource is periodical" do
       manifestation = NdlBook.import_from_sru_response('00010852')
       manifestation.original_title.should eq "週刊新潮"
@@ -70,6 +73,18 @@ describe NdlBook do
       manifestation = NdlBook.import_from_sru_response('91044453')
       manifestation.original_title.should eq "ザ・スコット・フィッツジェラルド・ブック"
       manifestation.pub_date.should eq "1991-4"
+    end
+
+    it "should import audio cd" do
+      manifestation = NdlBook.import_from_sru_response('21620217')
+      manifestation.original_title.should eq "劇場版天元突破グレンラガン螺巌篇サウンドトラック・プラス"
+      manifestation.manifestation_content_type.name.should eq 'audio'
+    end
+
+    it "should import video dvd" do
+      manifestation = NdlBook.import_from_sru_response('21374190')
+      manifestation.original_title.should eq "天元突破グレンラガン"
+      manifestation.manifestation_content_type.name.should eq 'video'
     end
 
   end

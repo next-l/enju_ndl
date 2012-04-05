@@ -1,6 +1,6 @@
 class Patron < ActiveRecord::Base
   belongs_to :language
-  belongs_to :required_role
+  belongs_to :required_role, :class_name => 'Role', :foreign_key => 'required_role_id', :validate => true
 
   def self.import_patrons(patron_lists)
     list = []

@@ -24,7 +24,7 @@ module EnjuNdl
         manifestation = Manifestation.where(:nbn => nbn).first if nbn
         return manifestation if manifestation
 
-        publishers = get_publishers(doc).zip([]).map{|f,t| {:full_name => f, :full_name_transcription => t}}
+        publishers = get_publishers(doc)
 
         # title
         title = get_title(doc)
@@ -43,7 +43,6 @@ module EnjuNdl
         end
 
         isbn = ISBN_Tools.cleanup(doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/ISBN"]').try(:content))
-        issn = ISBN_Tools.cleanup(doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/ISSN"]').try(:content))
         issn_l = ISBN_Tools.cleanup(doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/ISSNL"]').try(:content))
         classification_urls = doc.xpath('//dcterms:subject[@rdf:resource]').map{|subject| subject.attributes['resource'].value}
         if classification_urls
@@ -52,10 +51,26 @@ module EnjuNdl
             ndc = ndc9_url.path.split('/').last
           end
         end
+
+        carrier_type = content_type = nil
+        doc.xpath('//dcndl:materialType[@rdf:resource]').each do |d|
+          case d.attributes['resource'].try(:content)
+          when 'http://ndl.go.jp/ndltype/Book'
+            carrier_type = CarrierType.where(:name => 'print').first
+            content_type = ContentType.where(:name => 'text').first
+          when 'http://purl.org/dc/dcmitype/Sound'
+            content_type = ContentType.where(:name => 'audio').first
+          when 'http://purl.org/dc/dcmitype/MovingImage'
+            content_type = ContentType.where(:name => 'video').first
+          when 'http://ndl.go.jp/ndltype/ElectronicResource'
+            carrier_type = CarrierType.where(:name => 'file').first
+          end
+        end
+
         description = doc.at('//dcterms:abstract').try(:content)
         price = doc.at('//dcndl:price').try(:content)
         volume_number_string = doc.at('//dcndl:volume/rdf:Description/rdf:value').try(:content)
-        publication_periodicity = doc.at('//dcndl:publicationPeriodicity').try(:content)
+        extent = get_extent(doc)
 
         manifestation = nil
         Patron.transaction do
@@ -75,24 +90,16 @@ module EnjuNdl
             :volume_number_string => volume_number_string,
             :price => price,
             :nbn => nbn,
+            :start_page => extent[:start_page],
+            :end_page => extent[:end_page],
+            :height => extent[:height],
             :ndc => ndc
           )
+          manifestation.carrier_type = carrier_type if carrier_type
+          manifestation.manifestation_content_type = content_type if content_type
           manifestation.publishers << publisher_patrons
           create_frbr_instance(doc, manifestation)
-        end
-
-        if publication_periodicity
-          series_statement = SeriesStatement.where(:issn => issn).first
-          unless series_statement
-            series_statement = SeriesStatement.new(
-              :original_title => manifestation.original_title,
-              :title_transcription => manifestation.title_transcription,
-              :issn => issn,
-              :periodical => true
-            )
-            manifestation.series_statement = series_statement
-            manifestation.save
-          end
+         create_series_statement(doc, manifestation)
         end
 
         #manifestation.send_later(:create_frbr_instance, doc.to_s)
@@ -107,9 +114,9 @@ module EnjuNdl
 
       def create_frbr_instance(doc, manifestation)
         title = get_title(doc)
-        creators = get_creators(doc)
+        creators = get_creators(doc).uniq
         language = get_language(doc)
-        subjects = get_subjects(doc)
+        subjects = get_subjects(doc).uniq
 
         Patron.transaction do
           creator_patrons = Patron.import_patrons(creators)
@@ -126,10 +133,10 @@ module EnjuNdl
       end
 
       def search_ndl(query, options = {})
-        options = {:dpid => 'iss-ndl-opac', :item => 'any', :startrecord => 1, :per_page => 10, :raw => false}.merge(options)
+        options = {:dpid => 'iss-ndl-opac', :item => 'any', :idx => 1, :per_page => 10, :raw => false}.merge(options)
         doc = nil
         results = {}
-        startrecord = options[:startrecord].to_i
+        startrecord = options[:idx].to_i
         if startrecord == 0
           startrecord = 1
         end
@@ -201,10 +208,73 @@ module EnjuNdl
 
       def get_publishers(doc)
         publishers = []
-        doc.xpath('//dcterms:publisher/foaf:Agent/foaf:name').each do |publisher|
-          publishers << publisher.content.tr('ａ-ｚＡ-Ｚ０-９　‖', 'a-zA-Z0-9 ')
+        doc.xpath('//dcterms:publisher/foaf:Agent').each do |publisher|
+          publishers << {
+            :full_name => publisher.at('./foaf:name').content,
+            :full_name_transcription => publisher.at('./dcndl:transcription').try(:content)
+          }
         end
         return publishers
+      end
+
+      def get_extent(doc)
+        extent = doc.at('//dcterms:extent').try(:content)
+        value = {:start_page => nil, :end_page => nil, :height => nil}
+        if extent
+          extent = extent.split(';')
+          page = extent[0].try(:strip)
+          if page =~ /\d+p/
+            value[:start_page] = 1
+            value[:end_page] = page.to_i
+          end
+          height = extent[1].try(:strip)
+          if height =~ /\d+cm/
+            value[:height] = height.to_i
+          end
+        end
+        value
+      end
+
+      def create_series_statement(doc, manifestation)
+        series = series_title = {}
+        series[:title] = doc.at('//dcndl:seriesTitle/rdf:Description/rdf:value').try(:content)
+        series[:title_transcription] = doc.at('//dcndl:seriesTitle/rdf:Description/dcndl:seriesTitleTranscription').try(:content)
+        if series[:title]
+          series_title[:title] = series[:title].split(';')[0].strip
+          series_title[:title_transcription] = series[:title_transcription]
+        end
+
+        publication_periodicity = doc.at('//dcndl:publicationPeriodicity').try(:content)
+
+        if series_title[:title]
+          series_statement = SeriesStatement.where(:original_title => series_title[:title]).first
+          unless series_statement
+            series_statement = SeriesStatement.new(
+              :original_title => series_title[:title],
+              :title_transcription => series_title[:title_transcription],
+              :periodical => false
+            )
+          end
+        elsif publication_periodicity
+          issn = ISBN_Tools.cleanup(doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/ISSN"]').try(:content))
+          series_statement = SeriesStatement.where(:issn => issn).first
+          unless series_statement
+            series_statement = SeriesStatement.new(
+              :original_title => manifestation.original_title,
+              :title_transcription => manifestation.title_transcription,
+              :issn => issn,
+              :periodical => true
+            )
+          end
+        end
+
+        if series_statement
+          if series_statement.save
+            series_statement.manifestations << manifestation
+          end
+          #manifestation.save
+        end
+        manifestation
       end
     end
 

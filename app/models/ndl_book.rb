@@ -20,19 +20,6 @@ class NdlBook
     10
   end
 
-  def self.find_by_isbn(isbn)
-    url = "http://iss.ndl.go.jp/api/opensearch?dpid=iss-ndl-opac&isbn=#{isbn}&cnt=1&idx=1"
-    Rails.logger.debug url
-    xml = open(url).read
-    doc = Nokogiri::XML(xml).at('//channel/item')
-    {
-      :title => doc.at('./title').content,
-      :publisher => doc.xpath('./dc:publisher').collect(&:content).join(' '),
-      :creator => doc.xpath('./dc:creator[@xsi:type="dcndl:NDLNH"]').collect(&:content).join(' '),
-      :isbn => doc.at('./dc:identifier[@xsi:type="dcndl:ISBN"]').try(:content).to_s
-    }
-  end
-
   def self.import_from_sru_response(jpno)
     manifestation = Manifestation.where(:nbn => jpno).first
     return if manifestation
