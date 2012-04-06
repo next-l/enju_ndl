@@ -124,9 +124,24 @@ module EnjuNdl
           content_type_id = ContentType.where(:name => 'text').first.id rescue 1
           manifestation.creators << creator_patrons
           if defined?(Subject)
+            subject_heading_type = SubjectHeadingType.where(:name => 'ndlsh').first
+            unless subject_heading_type
+              subject_heading_type = SubjectHeadingType.create!(:name => 'ndlsh')
+            end
             subjects.each do |term|
-              subject = Subject.where(:term => term).first
-              manifestation.subjects << subject if subject
+              subject = Subject.where(:term => term[:term]).first
+              unless subject
+                subject = Subject.new(term)
+                subject.subject_type = SubjectType.find(1)
+                subject.save!
+              end
+              if subject.valid?
+                manifestation.subjects << subject
+                SubjectHeadingTypeHasSubject.create(
+                  :subject => subject,
+                  :subject_heading_type => subject_heading_type
+                )
+              end
             end
           end
         end
@@ -192,8 +207,11 @@ module EnjuNdl
 
       def get_subjects(doc)
         subjects = []
-        doc.xpath('//dcterms:subject/rdf:Description/rdf:value').each do |subject|
-          subjects << subject.content.tr('ａ-ｚＡ-Ｚ０-９　‖', 'a-zA-Z0-9 ')
+        doc.xpath('//dcterms:subject/rdf:Description').each do |subject|
+          subjects << {
+            :term => subject.at('./rdf:value').content.tr('ａ-ｚＡ-Ｚ０-９　‖', 'a-zA-Z0-9 '),
+            #:url => subject.attribute('about').try(:content)
+          }
         end
         return subjects
       end

@@ -8,6 +8,8 @@ require 'vcr'
 # in spec/support/ and its subdirectories.
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |f| require f }
 
+$original_sunspot_session = Sunspot.session
+
 RSpec.configure do |config|
   # == Mock Framework
   #
@@ -26,4 +28,8 @@ RSpec.configure do |config|
   # instead of true.
   config.use_transactional_fixtures = true
   config.extend VCR::RSpec::Macros
+
+  config.before do
+    Sunspot.session = Sunspot::Rails::StubSessionProxy.new($original_sunspot_session)
+  end
 end

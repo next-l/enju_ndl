@@ -6,7 +6,6 @@ class NdlBook
       page = 1 if page.to_i < 1
       idx = (page.to_i - 1) * cnt + 1
       doc = Nokogiri::XML(Manifestation.search_ndl(query, {:cnt => cnt, :page => page, :idx => idx, :raw => true}).to_s)
-#      raise doc.to_s
       items = doc.xpath('//channel/item')
       total_entries = doc.at('//channel/openSearch:totalResults').content.to_i
 

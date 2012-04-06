@@ -8,6 +8,12 @@ class Manifestation < ActiveRecord::Base
   belongs_to :language
   belongs_to :carrier_type
   belongs_to :manifestation_content_type, :class_name => 'ContentType', :foreign_key => 'content_type_id'
+  has_many :work_has_subjects, :foreign_key => 'work_id', :dependent => :destroy
+  has_many :subjects, :through => :work_has_subjects
 
   enju_ndl_search
+
+  searchable do
+    text :original_title
+  end
 end

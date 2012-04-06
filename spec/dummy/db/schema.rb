@@ -162,6 +162,55 @@ ActiveRecord::Schema.define(:version => 20120305121726) do
   add_index "series_statements", ["root_manifestation_id"], :name => "index_series_statements_on_root_manifestation_id"
   add_index "series_statements", ["series_statement_identifier"], :name => "index_series_statements_on_series_statement_identifier"
 
+  create_table "subject_heading_type_has_subjects", :force => true do |t|
+    t.integer  "subject_id",              :null => false
+    t.string   "subject_type"
+    t.integer  "subject_heading_type_id", :null => false
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+  end
+
+  add_index "subject_heading_type_has_subjects", ["subject_id"], :name => "index_subject_heading_type_has_subjects_on_subject_id"
+
+  create_table "subject_heading_types", :force => true do |t|
+    t.string   "name",         :null => false
+    t.text     "display_name"
+    t.text     "note"
+    t.integer  "position"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "subject_types", :force => true do |t|
+    t.string   "name",         :null => false
+    t.text     "display_name"
+    t.text     "note"
+    t.integer  "position"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "subjects", :force => true do |t|
+    t.integer  "parent_id"
+    t.integer  "use_term_id"
+    t.string   "term"
+    t.text     "term_transcription"
+    t.integer  "subject_type_id",                   :null => false
+    t.text     "scope_note"
+    t.text     "note"
+    t.integer  "required_role_id",   :default => 1, :null => false
+    t.integer  "lock_version",       :default => 0, :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.datetime "deleted_at"
+  end
+
+  add_index "subjects", ["parent_id"], :name => "index_subjects_on_parent_id"
+  add_index "subjects", ["required_role_id"], :name => "index_subjects_on_required_role_id"
+  add_index "subjects", ["subject_type_id"], :name => "index_subjects_on_subject_type_id"
+  add_index "subjects", ["term"], :name => "index_subjects_on_term"
+  add_index "subjects", ["use_term_id"], :name => "index_subjects_on_use_term_id"
+
   create_table "users", :force => true do |t|
     t.datetime "created_at",                                            :null => false
     t.datetime "updated_at",                                            :null => false
@@ -179,5 +228,17 @@ ActiveRecord::Schema.define(:version => 20120305121726) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "work_has_subjects", :force => true do |t|
+    t.integer  "subject_id"
+    t.string   "subject_type"
+    t.integer  "work_id"
+    t.integer  "position"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "work_has_subjects", ["subject_id"], :name => "index_work_has_subjects_on_subject_id"
+  add_index "work_has_subjects", ["work_id"], :name => "index_work_has_subjects_on_work_id"
 
 end
