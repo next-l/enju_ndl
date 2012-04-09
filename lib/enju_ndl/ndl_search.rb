@@ -34,6 +34,10 @@ module EnjuNdl
         unless pub_date =~  /^\d+(-\d{0,2}){0,2}$/
           pub_date = nil
         end
+        if pub_date
+          date = pub_date.split('-')
+          date = sprintf("%04d-%02d", date[0], date[1]) if date[0] and date[1]
+        end
 
         language = Language.where(:iso_639_2 => get_language(doc)).first
         if language
@@ -85,7 +89,7 @@ module EnjuNdl
             #:carrier_type_id => CarrierType.where(:name => 'print').first.id,
             :language_id => language_id,
             :isbn => isbn,
-            :pub_date => pub_date,
+            :pub_date => date,
             :description => description,
             :volume_number_string => volume_number_string,
             :price => price,

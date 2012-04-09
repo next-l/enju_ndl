@@ -75,7 +75,7 @@ describe NdlBook do
     it "should import url contain whitespace" do
       manifestation = NdlBook.import_from_sru_response('91044453')
       manifestation.original_title.should eq "ザ・スコット・フィッツジェラルド・ブック"
-      manifestation.pub_date.should eq "1991-4"
+      manifestation.pub_date.should eq "1991-04"
     end
 
     it "should import audio cd" do
