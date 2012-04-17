@@ -18,14 +18,20 @@ class NdlBooksController < ApplicationController
   def create
     if params[:book]
       @manifestation = NdlBook.import_from_sru_response(params[:book][:nbn])
-      if @manifestation.try(:save)
-        flash[:notice] = t('controller.successfully_created', :model => t('activerecord.models.manifestation'))
-        flash[:porta_import] == true
-        redirect_to manifestation_items_url(@manifestation)
-      else
-        flash[:notice] = t('enju_ndl.record_not_found')
-        redirect_to ndl_books_url
+      respond_to do |format|
+        if @manifestation.try(:save)
+          flash[:notice] = t('controller.successfully_created', :model => t('activerecord.models.manifestation'))
+          format.html { redirect_to manifestation_items_url(@manifestation) }
+        else
+          flash[:notice] = t('enju_ndl.record_not_found')
+          format.html { redirect_to ndl_books_url }
+        end
       end
+    end
+  rescue ActiveRecord::RecordInvalid => e
+    respond_to do |format|
+      flash[:notice] = e.message
+      format.html { render :action => "index" }
     end
   end
 
