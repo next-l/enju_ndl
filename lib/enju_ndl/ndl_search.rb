@@ -31,12 +31,16 @@ module EnjuNdl
 
         # date of publication
         pub_date = doc.at('//dcterms:date').try(:content).to_s.gsub(/\./, '-')
-        unless pub_date =~  /^\d+(-\d{0,2}){0,2}$/
+        unless pub_date =~ /^\d+(-\d{0,2}){0,2}$/
           pub_date = nil
         end
         if pub_date
           date = pub_date.split('-')
-          date = sprintf("%04d-%02d", date[0], date[1]) if date[0] and date[1]
+          if date[0] and date[1]
+            date = sprintf("%04d-%02d", date[0], date[1])
+          else
+            date = pub_date
+          end
         end
 
         language = Language.where(:iso_639_2 => get_language(doc)).first
