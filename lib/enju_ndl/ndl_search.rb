@@ -265,7 +265,6 @@ module EnjuNdl
         series = series_title = {}
         series[:title] = doc.at('//dcndl:seriesTitle/rdf:Description/rdf:value').try(:content)
         series[:title_transcription] = doc.at('//dcndl:seriesTitle/rdf:Description/dcndl:seriesTitleTranscription').try(:content)
-        raise series[:title].to_s
         if series[:title]
           series_title[:title] = series[:title].split(';')[0].strip
           series_title[:title_transcription] = series[:title_transcription]
