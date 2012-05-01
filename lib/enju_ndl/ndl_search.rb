@@ -107,7 +107,7 @@ module EnjuNdl
           manifestation.manifestation_content_type = content_type if content_type
           manifestation.publishers << publisher_patrons
           create_frbr_instance(doc, manifestation)
-         create_series_statement(doc, manifestation)
+          create_series_statement(doc, manifestation)
         end
 
         #manifestation.send_later(:create_frbr_instance, doc.to_s)
@@ -195,8 +195,8 @@ module EnjuNdl
       private
       def get_title(doc)
         title = {
-          :manifestation => doc.xpath('//dc:title/rdf:Description/rdf:value').collect(&:content).join(' ').tr('ａ-ｚＡ-Ｚ０-９　', 'a-zA-Z0-9 ').squeeze(' '),
-          :transcription => doc.xpath('//dc:title/rdf:Description/dcndl:transcription').collect(&:content).join(' ').tr('ａ-ｚＡ-Ｚ０-９　', 'a-zA-Z0-9 ').squeeze(' '),
+          :manifestation => doc.xpath('//dc:title/rdf:Description/rdf:value').collect(&:content).join(' '),
+          :transcription => doc.xpath('//dc:title/rdf:Description/dcndl:transcription').collect(&:content).join(' '),
           :alternative => doc.at('//dcndl:alternative/rdf:Description/rdf:value').try(:content),
           :alternative_transcription => doc.at('//dcndl:alternative/rdf:Description/dcndl:transcription').try(:content)
         }
@@ -217,7 +217,7 @@ module EnjuNdl
         subjects = []
         doc.xpath('//dcterms:subject/rdf:Description').each do |subject|
           subjects << {
-            :term => subject.at('./rdf:value').content.tr('ａ-ｚＡ-Ｚ０-９　‖', 'a-zA-Z0-9 '),
+            :term => subject.at('./rdf:value').content,
             #:url => subject.attribute('about').try(:content)
           }
         end
@@ -265,6 +265,7 @@ module EnjuNdl
         series = series_title = {}
         series[:title] = doc.at('//dcndl:seriesTitle/rdf:Description/rdf:value').try(:content)
         series[:title_transcription] = doc.at('//dcndl:seriesTitle/rdf:Description/dcndl:seriesTitleTranscription').try(:content)
+        raise series[:title].to_s
         if series[:title]
           series_title[:title] = series[:title].split(';')[0].strip
           series_title[:title_transcription] = series[:title_transcription]
