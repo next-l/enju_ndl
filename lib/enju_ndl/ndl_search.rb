@@ -145,10 +145,7 @@ module EnjuNdl
               end
               if subject.valid?
                 manifestation.subjects << subject
-                SubjectHeadingTypeHasSubject.create(
-                  :subject => subject,
-                  :subject_heading_type => subject_heading_type
-                )
+                subject.subject_heading_types << subject_heading_type
               end
             end
           end
