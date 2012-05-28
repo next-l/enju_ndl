@@ -8,6 +8,6 @@ require 'library_stdnums'
 require 'enju_subject'
 
 module EnjuNdl
-  class Engine < Rails::Engine
+  class Engine < ::Rails::Engine
   end
 end
