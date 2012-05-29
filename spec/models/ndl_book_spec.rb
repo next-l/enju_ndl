@@ -29,9 +29,9 @@ describe NdlBook do
       manifestation.start_page.should eq 1
       manifestation.end_page.should eq 315
       manifestation.height.should eq 24.0
-      #manifestation.subjects.size.should eq 1
-      #manifestation.subjects.first.subject_heading_types.first.name.should eq 'ndlsh'
-      #manifestation.subjects.first.term.should eq 'プログラミング (コンピュータ)'
+      manifestation.subjects.size.should eq 1
+      manifestation.subjects.first.subject_heading_types.first.name.should eq 'ndlsh'
+      manifestation.subjects.first.term.should eq 'プログラミング (コンピュータ)'
     end
 
     it "should import bibliographic record that does not have any classifications" do
