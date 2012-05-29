@@ -131,7 +131,7 @@ module EnjuNdl
           language_id = Language.where(:iso_639_2 => language).first.id rescue 1
           content_type_id = ContentType.where(:name => 'text').first.id rescue 1
           manifestation.creators << creator_patrons
-          if defined?(Subject)
+          if defined?(EnjuSubject)
             subject_heading_type = SubjectHeadingType.where(:name => 'ndlsh').first
             unless subject_heading_type
               subject_heading_type = SubjectHeadingType.create!(:name => 'ndlsh')
