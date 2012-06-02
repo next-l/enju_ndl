@@ -279,7 +279,7 @@ module EnjuNdl
             )
           end
         elsif publication_periodicity
-          issn = ISBN_Tools.cleanup(doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/ISSN"]').try(:content))
+          issn = StdNum::ISSN.normalize(doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/ISSN"]').try(:content))
           series_statement = SeriesStatement.where(:issn => issn).first
           unless series_statement
             series_statement = SeriesStatement.new(

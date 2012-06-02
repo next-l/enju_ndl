@@ -1,9 +1,9 @@
 require 'devise'
 require 'nokogiri'
 require 'rss'
-require 'isbn/tools'
 require 'acts_as_list'
 require 'attribute_normalizer'
+require 'lisbn'
 require 'library_stdnums'
 require 'sunspot_rails'
 
