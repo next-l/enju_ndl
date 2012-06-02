@@ -7,6 +7,7 @@ module EnjuNdl
 
     module ClassMethods
       def import_isbn(isbn)
+        return nil unless isbn
         lisbn = Lisbn.new(isbn)
         raise EnjuNdl::InvalidIsbn unless lisbn.valid?
 
