@@ -172,9 +172,9 @@ module EnjuNdl
 
       def normalize_isbn(isbn)
         if isbn.length == 10
-          ISBN_Tools.isbn10_to_isbn13(isbn)
+          Lisbn.new(isbn).isbn13
         else
-          ISBN_Tools.isbn13_to_isbn10(isbn)
+          Lisbn.new(isbn).isbn10
         end
       end
 
