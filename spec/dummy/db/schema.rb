@@ -53,6 +53,19 @@ ActiveRecord::Schema.define(:version => 20120305121726) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "import_requests", :force => true do |t|
+    t.string   "isbn"
+    t.string   "state"
+    t.integer  "manifestation_id"
+    t.integer  "user_id"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  add_index "import_requests", ["isbn"], :name => "index_import_requests_on_isbn"
+  add_index "import_requests", ["manifestation_id"], :name => "index_import_requests_on_manifestation_id"
+  add_index "import_requests", ["user_id"], :name => "index_import_requests_on_user_id"
+
   create_table "languages", :force => true do |t|
     t.string   "name"
     t.text     "display_name"

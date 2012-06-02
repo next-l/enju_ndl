@@ -25,6 +25,8 @@ Gem::Specification.new do |s|
   s.add_dependency "library_stdnums"
   s.add_dependency "sunspot_rails"
   s.add_dependency "sunspot_solr"
+  s.add_dependency "lisbn"
+  s.add_dependency "library_stdnums"
 
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "rspec-rails"

@@ -7,13 +7,13 @@ module EnjuNdl
 
     module ClassMethods
       def import_isbn(isbn)
-        isbn = ISBN_Tools.cleanup(isbn)
-        raise EnjuNdl::InvalidIsbn unless ISBN_Tools.is_valid?(isbn)
+        lisbn = Lisbn.new(isbn)
+        raise EnjuNdl::InvalidIsbn unless lisbn.valid?
 
-        manifestation = Manifestation.find_by_isbn(isbn)
+        manifestation = Manifestation.find_by_isbn(lisbn.isbn)
         return manifestation if manifestation
 
-        doc = return_xml(isbn)
+        doc = return_xml(lisbn.isbn)
         raise EnjuNdl::RecordNotFound unless doc
         #raise EnjuNdl::RecordNotFound if doc.at('//openSearch:totalResults').content.to_i == 0
         import_record(doc)
@@ -50,8 +50,8 @@ module EnjuNdl
           language_id = 1
         end
 
-        isbn = ISBN_Tools.cleanup(doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/ISBN"]').try(:content))
-        issn_l = ISBN_Tools.cleanup(doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/ISSNL"]').try(:content))
+        isbn = Lisbn.new(doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/ISBN"]').try(:content).to_s).try(:isbn)
+        issn_l = StdNum::ISSN.normalize(doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/ISSNL"]').try(:content))
         classification_urls = doc.xpath('//dcterms:subject[@rdf:resource]').map{|subject| subject.attributes['resource'].value}
         if classification_urls
           ndc9_url = classification_urls.map{|url| URI.parse(URI.escape(url))}.select{|u| u.path.split('/').reverse[1] == 'ndc9'}.first

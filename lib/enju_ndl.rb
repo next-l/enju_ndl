@@ -3,6 +3,8 @@ require "enju_ndl/engine"
 require 'open-uri'
 require 'enju_ndl/ndl_search'
 require 'enju_ndl/crd'
+require 'lisbn'
+require 'library_stdnums'
 
 module EnjuNdl
   module ActsAsMethods
