@@ -146,7 +146,7 @@ module EnjuNdl
               end
               if subject.valid?
                 manifestation.subjects << subject
-                subject.subject_heading_types << subject_heading_type
+                subject.subject_heading_types << subject_heading_type if subject.subject_heading_types.where(:id => subject_heading_type.id).empty?
               end
             end
           end
