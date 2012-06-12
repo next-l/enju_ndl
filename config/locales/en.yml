@@ -3,4 +3,5 @@ en:
     import_from_ndl_search: Import from NDL Search
     record_not_found: Record not found.
     not_available: Not available
-
+    add: Add
+    already_exists: Already exists
