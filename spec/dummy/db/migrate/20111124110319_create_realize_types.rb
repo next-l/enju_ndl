@@ -1,6 +1,6 @@
-class CreateRoles < ActiveRecord::Migration
+class CreateRealizeTypes < ActiveRecord::Migration
   def change
-    create_table :roles do |t|
+    create_table :realize_types do |t|
       t.string :name
       t.text :display_name
       t.text :note

@@ -205,7 +205,8 @@ module EnjuNdl
         doc.xpath('//dcterms:creator/foaf:Agent').each do |creator|
           creators << {
             :full_name => creator.at('./foaf:name').content,
-            :full_name_transcription => creator.at('./dcndl:transcription').try(:content)
+            :full_name_transcription => creator.at('./dcndl:transcription').try(:content),
+            :patron_identifier => creator.attributes["about"].try(:content)
           }
         end
         creators
@@ -235,7 +236,8 @@ module EnjuNdl
         doc.xpath('//dcterms:publisher/foaf:Agent').each do |publisher|
           publishers << {
             :full_name => publisher.at('./foaf:name').content,
-            :full_name_transcription => publisher.at('./dcndl:transcription').try(:content)
+            :full_name_transcription => publisher.at('./dcndl:transcription').try(:content),
+            :patron_identifier => publisher.attributes["about"].try(:content)
           }
         end
         return publishers

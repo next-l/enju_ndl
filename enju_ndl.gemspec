@@ -32,5 +32,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "rspec-rails"
   s.add_development_dependency "vcr"
   s.add_development_dependency "fakeweb"
+  s.add_development_dependency "enju_biblio"
   s.add_development_dependency "enju_subject"
+  s.add_development_dependency "enju_manifestation_viewer"
 end
