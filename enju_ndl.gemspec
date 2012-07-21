@@ -17,14 +17,7 @@ Gem::Specification.new do |s|
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails", "~> 3.2"
-  s.add_dependency "devise"
   s.add_dependency "nokogiri"
-  s.add_dependency "will_paginate", "~> 3.0"
-  s.add_dependency "acts_as_list"
-  s.add_dependency "attribute_normalizer"
-  s.add_dependency "library_stdnums"
-  s.add_dependency "sunspot_rails"
-  s.add_dependency "sunspot_solr"
   s.add_dependency "lisbn"
   s.add_dependency "library_stdnums"
 
@@ -35,4 +28,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency "enju_biblio"
   s.add_development_dependency "enju_subject"
   s.add_development_dependency "enju_manifestation_viewer"
+  s.add_development_dependency "sunspot_solr", "~> 2.0.0.pre.120720"
 end
