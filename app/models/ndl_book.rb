@@ -1,5 +1,9 @@
 # -*- encoding: utf-8 -*-
 class NdlBook
+  def self.per_page
+    10
+  end
+
   def self.search(query, page = 1, per_page = self.per_page)
     if query
       cnt = self.per_page
@@ -13,10 +17,6 @@ class NdlBook
     else
       {:items => [], :total_entries => 0}
     end
-  end
-
-  def self.per_page
-    10
   end
 
   def self.import_from_sru_response(jpno)

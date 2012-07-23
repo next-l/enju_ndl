@@ -10,8 +10,12 @@ class NdlBooksController < ApplicationController
     end
     @query = params[:query].to_s.strip
     books = NdlBook.search(params[:query], page)
-    @books = WillPaginate::Collection.create(page, NdlBook.per_page, books[:total_entries]) do |pager|
-      pager.replace books[:items]
+    @books = Kaminari.paginate_array(
+      books[:items], :total_count => books[:total_entries]
+    )
+
+    respond_to do |format|
+      format.html
     end
   end
 
