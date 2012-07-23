@@ -60,7 +60,7 @@ module EnjuNdl
         end
 
         resources = response[:results]
-        crd_results = WillPaginate::Collection.create(crd_page, Question.crd_per_page, crd_total_count) do |pager| pager.replace(resources) end
+        crd_results = Kaminari::paginate_array(resources, :max_count => crd_total_count)
       end
     end
   end
