@@ -11,8 +11,8 @@ class NdlBooksController < ApplicationController
     @query = params[:query].to_s.strip
     books = NdlBook.search(params[:query], page)
     @books = Kaminari.paginate_array(
-      books[:items], :total_count => books[:total_entries]
-    )
+      books[:items], :total_count => books[:total_entries], :page => page
+    ).page(page)
 
     respond_to do |format|
       format.html
