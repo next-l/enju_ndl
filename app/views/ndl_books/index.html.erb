@@ -37,7 +37,7 @@
 
 <br />
 
-<%= will_paginate(@books) %>
+<%= paginate(@books) %>
 <% else %>
   <%= javascript_tag("$('#search_form_top').focus()") -%>
 <% end %>
