@@ -15,7 +15,7 @@ class NdlBook
   end
 
   def title
-    "#{@node.at('./title').content} #{@node.at('./dcndl:volume').content}"
+    "#{@node.at('./title').content} #{@node.at('./dcndl:volume').try(:content)}".strip
   end
 
   def creator
