@@ -1,5 +1,39 @@
 # -*- encoding: utf-8 -*-
 class NdlBook
+  attr_reader :jpno, :permalink, :title, :creator, :publisher, :issued, :isbn
+
+  def initialize(node)
+    @node = node
+  end
+
+  def jpno
+    @node.at('./dc:identifier[@xsi:type="dcndl:JPNO"]').try(:content).to_s
+  end
+
+  def permalink
+    @node.at('./link').content
+  end
+
+  def title
+    "#{@node.at('./title').content} #{@node.at('./dcndl:volume').content}"
+  end
+
+  def creator
+    @node.xpath('./dc:creator').collect(&:content).join(' ')
+  end
+
+  def publisher
+    @node.xpath('./dc:publisher').collect(&:content).join(' ')
+  end
+
+  def issued
+    @node.at('./dcterms:issued[@xsi:type="dcterms:W3CDTF"]').try(:content)
+  end
+
+  def isbn
+    @node.at('./dc:identifier[@xsi:type="dcndl:ISBN"]').try(:content).to_s
+  end
+
   def self.per_page
     10
   end
@@ -10,7 +44,7 @@ class NdlBook
       page = 1 if page.to_i < 1
       idx = (page.to_i - 1) * cnt + 1
       doc = Nokogiri::XML(Manifestation.search_ndl(query, {:cnt => cnt, :page => page, :idx => idx, :raw => true}).to_s)
-      items = doc.xpath('//channel/item')
+      items = doc.xpath('//channel/item').collect{|node| self.new node }
       total_entries = doc.at('//channel/openSearch:totalResults').content.to_i
 
       {:items => items, :total_entries => total_entries}
