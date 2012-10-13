@@ -11,11 +11,19 @@ class NdlBook
   end
 
   def permalink
-    @node.at('./link').content
+    @node.at('./link').try(:content).to_s
   end
 
   def title
-    "#{@node.at('./title').content} #{@node.at('./dcndl:volume').try(:content)}".strip
+    @node.at('./title').try(:content).to_s
+  end
+
+  def volume
+    @node.at('./dcndl:volume').try(:content).to_s
+  end
+
+  def series_title
+    @node.at('./dcndl:seriesTitle').try(:content).to_s
   end
 
   def creator
@@ -27,7 +35,7 @@ class NdlBook
   end
 
   def issued
-    @node.at('./dcterms:issued[@xsi:type="dcterms:W3CDTF"]').try(:content)
+    @node.at('./dcterms:issued[@xsi:type="dcterms:W3CDTF"]').try(:content).to_s
   end
 
   def isbn

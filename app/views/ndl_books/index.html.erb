@@ -24,7 +24,7 @@
         <%= link_to_import(book.jpno) %>
       </td>
       <td>
-        <%= link_to book.title , book.permalink %>
+        <%= link_to "#{book.title} #{book.volume}".strip , book.permalink %>
         <br />
         <%= book.creator %>
       	<%= book.publisher %>
