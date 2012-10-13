@@ -5114,4 +5114,118 @@ http_interactions:
     http_version: !binary |-
       MS4w
   recorded_at: Sat, 13 Oct 2012 06:36:07 GMT
+- request:
+    method: get
+    uri: http://iss.ndl.go.jp/api/opensearch?dpid=iss-ndl-opac&any=978-4-04-874013-5&cnt=10&idx=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: !binary |-
+        T0s=
+    headers:
+      !binary "ZGF0ZQ==":
+      - !binary |-
+        U2F0LCAxMyBPY3QgMjAxMiAwNzo1MDo1MyBHTVQ=
+      !binary "c2VydmVy":
+      - !binary |-
+        QXBhY2hl
+      !binary "eC1wb3dlcmVkLWJ5":
+      - !binary |-
+        UGh1c2lvbiBQYXNzZW5nZXIgKG1vZF9yYWlscy9tb2RfcmFjaykgMi4yLjE1
+      !binary "ZXRhZw==":
+      - !binary |-
+        IjdlNTBmZTIxYTc4N2NiNGQ2MjkzNzA1OTU4ODVhYTUzIg==
+      !binary "eC11YS1jb21wYXRpYmxl":
+      - !binary |-
+        SUU9RWRnZSxjaHJvbWU9MQ==
+      !binary "eC1ydW50aW1l":
+      - !binary |-
+        MC4yNjE3MzU=
+      !binary "Y2FjaGUtY29udHJvbA==":
+      - !binary |-
+        bWF4LWFnZT0wLCBwcml2YXRlLCBtdXN0LXJldmFsaWRhdGU=
+      !binary "Y29udGVudC1sZW5ndGg=":
+      - !binary |-
+        MjE1MQ==
+      !binary "c3RhdHVz":
+      - !binary |-
+        MjAw
+      !binary "Y29udGVudC10eXBl":
+      - !binary |-
+        YXBwbGljYXRpb24veG1sOyBjaGFyc2V0PXV0Zi04
+      !binary "c2V0LWNvb2tpZQ==":
+      - !binary |-
+        X2Zyb250X3Nlc3Npb25faWQ9MDQ0NmRlMTM3Y2MxMDczNzE0YWNmZmM3NmY2
+        MDk1ZmU7IGRvbWFpbj0uaXNzLm5kbC5nby5qcDsgcGF0aD0vOyBleHBpcmVz
+        PVNhdCwgMTMtT2N0LTIwMTIgMDg6NTA6NTMgR01UOyBIdHRwT25seQ==
+      - !binary |-
+        c2VydmVyaWQ9MTEwNTsgcGF0aD0v
+      !binary "dmFyeQ==":
+      - !binary |-
+        QWNjZXB0LUVuY29kaW5nLFVzZXItQWdlbnQ=
+      !binary "Y29ubmVjdGlvbg==":
+      - !binary |-
+        Y2xvc2U=
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHJzcyB4
+        bWxuczpkY3Rlcm1zPSJodHRwOi8vcHVybC5vcmcvZGMvdGVybXMvIiB4bWxu
+        czpkY25kbD0iaHR0cDovL25kbC5nby5qcC9kY25kbC90ZXJtcy8iIHZlcnNp
+        b249IjIuMCIgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50
+        cy8xLjEvIiB4bWxuczpvcGVuU2VhcmNoPSJodHRwOi8vYTkuY29tLy0vc3Bl
+        Yy9vcGVuc2VhcmNocnNzLzEuMC8iIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53
+        My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOmRjbWl0eXBl
+        PSJodHRwOi8vcHVybC5vcmcvZGMvZGNtaXR5cGUvIj4KICA8Y2hhbm5lbD4K
+        ICAgIDx0aXRsZT45NzgtNC0wNC04NzQwMTMtNSBpc3MtbmRsLW9wYWMgLSDl
+        m73nq4vlm73kvJrlm7Pmm7jppKjjgrXjg7zjg4EgT3BlblNlYXJjaDwvdGl0
+        bGU+CiAgICA8bGluaz5pc3MubmRsLmdvLmpwPC9saW5rPgogICAgPGRlc2Ny
+        aXB0aW9uPlNlYXJjaCByZXN1bHRzIGZvciBhbnk9OTc4LTQtMDQtODc0MDEz
+        LTUgY250PTEwIGRwaWQ9aXNzLW5kbC1vcGFjIDwvZGVzY3JpcHRpb24+CiAg
+        ICA8bGFuZ3VhZ2U+amE8L2xhbmd1YWdlPgogICAgPG9wZW5TZWFyY2g6dG90
+        YWxSZXN1bHRzPjE8L29wZW5TZWFyY2g6dG90YWxSZXN1bHRzPgogICAgPG9w
+        ZW5TZWFyY2g6c3RhcnRJbmRleD4xPC9vcGVuU2VhcmNoOnN0YXJ0SW5kZXg+
+        CiAgICA8b3BlblNlYXJjaDppdGVtc1BlclBhZ2U+MTA8L29wZW5TZWFyY2g6
+        aXRlbXNQZXJQYWdlPgogICAgPGl0ZW0+CiAgICAgIDx0aXRsZT7lpKnlnLDm
+        mI7lr588L3RpdGxlPgogICAgICA8bGluaz5odHRwOi8vaXNzLm5kbC5nby5q
+        cC9ib29rcy9SMTAwMDAwMDAyLUkwMDAwMTA2MzYwMTUtMDA8L2xpbms+Cjxk
+        ZXNjcmlwdGlvbj4KPCFbQ0RBVEFbPHA+6KeS5bed5pu45bqXLDk3ODQwNDg3
+        NDAxMzU8L3A+Cjx1bD48bGk+44K/44Kk44OI44Or77yaIOWkqeWcsOaYjuWv
+        nzwvbGk+CjxsaT7jgr/jgqTjg4jjg6vvvIjoqq3jgb/vvInvvJog44OG44Oz
+        44OBIOODoeOCpOOCteODhDwvbGk+CjxsaT7osqzku7vooajnpLrvvJog5Yay
+        5pa55LiBIOiRlyw8L2xpPgo8bGk+TkRDKDkp77yaIDkxMy42PC9saT4KPC91
+        bD5dXT4KPC9kZXNjcmlwdGlvbj4KICAgICAgPGF1dGhvcj7lhrLmlrnkuIEg
+        6JGXLDwvYXV0aG9yPgogICAgICA8Y2F0ZWdvcnk+5pysPC9jYXRlZ29yeT4K
+        ICAgICAgPGd1aWQgaXNQZXJtYUxpbms9InRydWUiPmh0dHA6Ly9pc3MubmRs
+        LmdvLmpwL2Jvb2tzL1IxMDAwMDAwMDItSTAwMDAxMDYzNjAxNS0wMDwvZ3Vp
+        ZD4KICAgICAgPHB1YkRhdGU+VGh1LCAwNyBKYW4gMjAxMCAwOTowMDowMCAr
+        MDkwMDwvcHViRGF0ZT4KICAgICAgPGRjOnRpdGxlPuWkqeWcsOaYjuWvnzwv
+        ZGM6dGl0bGU+CiAgICAgIDxkY25kbDp0aXRsZVRyYW5zY3JpcHRpb24+44OG
+        44Oz44OBIOODoeOCpOOCteODhDwvZGNuZGw6dGl0bGVUcmFuc2NyaXB0aW9u
+        PgogICAgICA8ZGM6Y3JlYXRvcj7lhrLmlrnkuIEg6JGXPC9kYzpjcmVhdG9y
+        PgogICAgICA8ZGM6cHVibGlzaGVyPuinkuW3neabuOW6lzwvZGM6cHVibGlz
+        aGVyPgogICAgICA8ZGM6cHVibGlzaGVyPuinkuW3neOCsOODq+ODvOODl+OD
+        keODluODquODg+OCt+ODs+OCsDwvZGM6cHVibGlzaGVyPgogICAgICA8ZGN0
+        ZXJtczppc3N1ZWQgeHNpOnR5cGU9ImRjdGVybXM6VzNDRFRGIj4yMDA5PC9k
+        Y3Rlcm1zOmlzc3VlZD4KICAgICAgPGRjOmlkZW50aWZpZXIgeHNpOnR5cGU9
+        ImRjbmRsOklTQk4iPjk3ODQwNDg3NDAxMzU8L2RjOmlkZW50aWZpZXI+CiAg
+        ICAgIDxkYzppZGVudGlmaWVyIHhzaTp0eXBlPSJkY25kbDpKUE5PIj4yMTY4
+        OTY3MzwvZGM6aWRlbnRpZmllcj4KICAgICAgPGRjOmlkZW50aWZpZXIgeHNp
+        OnR5cGU9ImRjbmRsOk5TTUFSQ05PIj4xMDQzMjQ4MDA8L2RjOmlkZW50aWZp
+        ZXI+CiAgICAgIDxkYzpzdWJqZWN0IHhzaTp0eXBlPSJkY25kbDpORExDIj5L
+        SDY0NDwvZGM6c3ViamVjdD4KICAgICAgPGRjOnN1YmplY3QgeHNpOnR5cGU9
+        ImRjbmRsOk5EQzkiPjkxMy42PC9kYzpzdWJqZWN0PgogICAgICA8ZGN0ZXJt
+        czpkZXNjcmlwdGlvbj7mlofnjK7jgYLjgoo8L2RjdGVybXM6ZGVzY3JpcHRp
+        b24+CiAgICA8L2l0ZW0+CiAgPC9jaGFubmVsPgo8L3Jzcz4K
+    http_version: !binary |-
+      MS4w
+  recorded_at: Sat, 13 Oct 2012 07:50:53 GMT
 recorded_with: VCR 2.2.5
