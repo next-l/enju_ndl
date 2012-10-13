@@ -91,6 +91,10 @@ describe NdlBook do
       manifestation.manifestation_content_type.name.should eq 'video'
     end
 
+    it "should not get volume number if book has not volume" do
+      NdlBook.search('978-4-04-874013-5')[:items].first.title.should eq "天地明察"
+    end
+
     it "should get volume number" do
       NdlBook.search('978-4-04-100292-6')[:items].first.title.should eq "天地明察 下"
     end
