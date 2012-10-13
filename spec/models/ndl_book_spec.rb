@@ -92,7 +92,23 @@ describe NdlBook do
     end
 
     it "should get volume number" do
-      NdlBook.search('978-4-04-100292-6')[:items].first.title.should eq "天地明察 下"
+      NdlBook.search('978-4-04-100292-6')[:items].first.volume.should eq "下"
     end
+
+    it "should not get volume number if book has not volume" do
+      NdlBook.search('978-4-04-874013-5')[:items].first.volume.should eq ""
+    end
+
+    it "should get series title" do
+      book = NdlBook.search("4840114404")[:items].first
+      book.series_title.should eq "マジック・ツリーハウス ; 15"
+    end
+
+    it "should not get series title if book has not series title" do
+      book = NdlBook.search("4788509105")[:items].first
+      book.series_title.should eq ""
+    end
+   
+
   end
 end
