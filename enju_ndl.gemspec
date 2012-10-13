@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.description = "NDL WebAPI wrapper for Next-L Enju"
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
-  s.test_files = Dir["test/**/*"]
+  s.test_files = Dir["spec/**/*"]
 
   s.add_dependency "rails", "~> 3.2"
   s.add_dependency "nokogiri"
@@ -28,5 +28,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency "enju_biblio", "~> 0.1.0.pre6"
   s.add_development_dependency "enju_subject", "~> 0.1.0.pre2"
   s.add_development_dependency "enju_manifestation_viewer", "~> 0.1.0.pre2"
-  s.add_development_dependency "sunspot_solr", "~> 2.0.0.pre.120720"
+  s.add_development_dependency "sunspot_solr", "~> 2.0.0.pre.120925"
 end
