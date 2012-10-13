@@ -21,15 +21,15 @@
   <% @books.each do |book| %>
     <tr class="line<%= cycle("0", "1") -%>">
       <td>
-        <%= link_to_import(book.at('./dc:identifier[@xsi:type="dcndl:JPNO"]').try(:content).to_s) %>
+        <%= link_to_import(book.jpno) %>
       </td>
       <td>
-        <%= link_to book.at('./title').content, book.at('./link').content %>
+        <%= link_to book.title , book.permalink %>
         <br />
-        <%= book.xpath('./dc:creator').collect(&:content).join(' ') %>
-      	<%= book.xpath('./dc:publisher').collect(&:content).join(' ') %>
-        (<%= book.at('./dcterms:issued[@xsi:type="dcterms:W3CDTF"]').try(:content) %>,
-        ISBN: <%= book.at('./dc:identifier[@xsi:type="dcndl:ISBN"]').try(:content).to_s %>)
+        <%= book.creator %>
+      	<%= book.publisher %>
+        (<%= book.issued %>,
+        ISBN: <%= book.isbn %>)
       </td>
     </tr>
   <% end %>
