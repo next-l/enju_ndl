@@ -163,7 +163,7 @@ module EnjuNdl
         if startrecord == 0
           startrecord = 1
         end
-        url = "http://iss.ndl.go.jp/api/opensearch?dpid=#{options[:dpid]}&#{options[:item]}=#{URI.escape(query)}&cnt=#{options[:per_page]}&idx=#{startrecord}"
+        url = "http://iss.ndl.go.jp/api/opensearch?dpid=#{options[:dpid]}&#{options[:item]}=#{format_query(query)}&cnt=#{options[:per_page]}&idx=#{startrecord}"
         if options[:raw] == true
           open(url).read
         else
@@ -303,6 +303,10 @@ module EnjuNdl
           #manifestation.save
         end
         manifestation
+      end
+
+      def format_query(query)
+        URI.escape(query.to_s.gsub('　',' '))
       end
     end
 

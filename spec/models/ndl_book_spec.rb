@@ -13,6 +13,10 @@ describe NdlBook do
     it "should search bibliographic record" do
       NdlBook.search('library system')[:total_entries].should eq 5163
     end
+
+    it "should not distinguish double byte space from one-byte space in a query" do
+      NdlBook.search("カミュ ペスト")[:total_entries].should eq NdlBook.search("カミュ　ペスト")[:total_entries]
+    end   
   end
 
   context "import" do
@@ -112,7 +116,5 @@ describe NdlBook do
       book = NdlBook.search("4788509105")[:items].first
       book.series_title.should eq ""
     end
-   
-
   end
 end
