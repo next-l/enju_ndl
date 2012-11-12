@@ -106,9 +106,11 @@ module EnjuNdl
           )
           manifestation.carrier_type = carrier_type if carrier_type
           manifestation.manifestation_content_type = content_type if content_type
-          manifestation.publishers << publisher_patrons
-          create_frbr_instance(doc, manifestation)
-          create_series_statement(doc, manifestation)
+          if manifestation.save
+            manifestation.publishers << publisher_patrons
+            create_frbr_instance(doc, manifestation)
+            create_series_statement(doc, manifestation)
+          end
         end
 
         #manifestation.send_later(:create_frbr_instance, doc.to_s)
