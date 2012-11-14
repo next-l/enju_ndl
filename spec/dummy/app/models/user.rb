@@ -12,6 +12,8 @@ class User < ActiveRecord::Base
   belongs_to :required_role, :class_name => 'Role', :foreign_key => 'required_role_id'
   has_many :purchase_requests
   has_many :order_lists
+  extend FriendlyId
+  friendly_id :username
 
   def has_role?(role_in_question)
     return false unless role

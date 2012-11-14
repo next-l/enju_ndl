@@ -28,6 +28,7 @@ RSpec.configure do |config|
   # instead of true.
   config.use_transactional_fixtures = true
   config.extend VCR::RSpec::Macros
+  config.extend ControllerMacros, :type => :controller
 
   config.before do
     Sunspot.session = Sunspot::Rails::StubSessionProxy.new($original_sunspot_session)
