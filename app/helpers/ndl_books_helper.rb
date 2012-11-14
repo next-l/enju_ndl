@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 module NdlBooksHelper
-  def link_to_import(nbn)
+  def link_to_import_from_ndl(nbn)
     if nbn.blank?
       t('enju_ndl.not_available')
     else
