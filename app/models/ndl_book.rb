@@ -64,7 +64,7 @@ class NdlBook
   def self.import_from_sru_response(jpno)
     manifestation = Manifestation.where(:nbn => jpno).first
     return if manifestation
-    url = "http://iss.ndl.go.jp/api/sru?operation=searchRetrieve&recordSchema=dcndl&&maximumRecords=1&&query=%28jpno=#{jpno}%29"
+    url = "http://iss.ndl.go.jp/api/sru?operation=searchRetrieve&recordSchema=dcndl&&maximumRecords=1&&query=%28jpno=#{jpno}%29&onlyBib=true"
     xml = open(url).read
     response = Nokogiri::XML(xml).at('//xmlns:recordData')
     return unless response.try(:content)
