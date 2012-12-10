@@ -5,3 +5,4 @@ ja:
     not_available: 利用不可
     add: 追加
     already_exists: 登録済み
+    number_of_search_results: "%{count} 件の資料が見つかりました。"

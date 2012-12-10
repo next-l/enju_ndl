@@ -5,3 +5,6 @@ en:
     not_available: Not available
     add: Add
     already_exists: Already exists
+    number_of_search_results:
+      one: "1 record found."
+      other: "%{count} records found."

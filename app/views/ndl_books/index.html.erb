@@ -7,17 +7,17 @@
   <p>
     <%= label_tag :search_form_top, t('page.search_term') -%>:
     <%= search_field_tag 'query', h(@query), {:id => 'search_form_top', :class => 'search_form'} -%>
-    <%= submit_tag '検索' -%>
+    <%= submit_tag t('page.search') -%>
   </p>
 <%- end -%>
 
 <% if @query.present? %>
-<p><%= @books.total_count %> 件が見つかりました。</p>
+  <p><%= t('enju_ndl.number_of_search_results', :count => @books.total_count %></p>
 
 <table class="table table-striped index">
   <tr>
     <th></th>
-    <th>書名</th>
+    <th><%= t('activerecord.attributes.manifestation.original_title') %></th>
   </tr>
   <% @books.each do |book| %>
     <tr class="line<%= cycle("0", "1") -%>">
