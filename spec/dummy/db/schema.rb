@@ -290,7 +290,6 @@ ActiveRecord::Schema.define(:version => 20121116033446) do
     t.integer  "year_of_publication"
     t.text     "attachment_meta"
     t.integer  "month_of_publication"
-    t.string   "online_isbn"
     t.string   "doi"
   end
 
