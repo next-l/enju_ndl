@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = EnjuNdl::VERSION
   s.authors     = ["Kosuke Tanabe"]
   s.email       = ["tanabe@mwr.mediacom.keio.ac.jp"]
-  s.homepage    = "https://github.com/nabeta/enju_ndl"
+  s.homepage    = "https://github.com/next-l/enju_ndl"
   s.summary     = "enju_ndl plugin"
   s.description = "NDL WebAPI wrapper for Next-L Enju"
 
