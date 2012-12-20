@@ -1,7 +1,5 @@
 require 'simplecov'
-SimpleCov.start do
-  add_filter "/spec/dummy/"
-end
+SimpleCov.start 'rails'
 
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 ENV["RAILS_ENV"] ||= 'test'
