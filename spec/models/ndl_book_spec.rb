@@ -11,7 +11,7 @@ describe NdlBook do
   context "search" do
     use_vcr_cassette "enju_ndl/search", :record => :new_episodes
     it "should search bibliographic record" do
-      NdlBook.search('library system')[:total_entries].should eq 5185
+      NdlBook.search('library system')[:total_entries].should eq 5188
     end
 
     it "should not distinguish double byte space from one-byte space in a query" do

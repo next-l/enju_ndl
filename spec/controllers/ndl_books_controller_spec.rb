@@ -21,4 +21,21 @@ describe NdlBooksController do
       assigns(:books).should be_empty
     end
   end
+
+  describe "POST create" do
+    login_fixture_admin
+    use_vcr_cassette "enju_ndl/search", :record => :new_episodes
+
+    it "should create a bibliographic record if nbn is set" do
+      post :create, :book => {:nbn => '97024234'}
+      assigns(:manifestation).nbn.should eq '97024234'
+      response.should redirect_to manifestation_items_url(assigns(:manifestation))
+    end
+
+    it "should not create a bibliographic record if nbn is not set" do
+      post :create, :book => {:nbn => nil}
+      assigns(:manifestation).should be_nil
+      response.should redirect_to ndl_books_url
+    end
+  end
 end

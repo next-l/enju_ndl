@@ -4,6 +4,7 @@ require 'rails/all'
 
 Bundler.require
 require "enju_ndl"
+require "enju_question"
 require "enju_subject"
 
 module Dummy
