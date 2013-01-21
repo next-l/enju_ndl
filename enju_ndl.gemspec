@@ -19,7 +19,6 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 3.2"
   s.add_dependency "nokogiri"
   s.add_dependency "lisbn"
-  s.add_dependency "nori", "~> 1.1"
   s.add_dependency "library_stdnums"
 
   s.add_development_dependency "sqlite3"
@@ -30,6 +29,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency "enju_subject", "~> 0.1.0.pre4"
   s.add_development_dependency "enju_question", "~> 0.1.0.pre4"
   s.add_development_dependency "enju_manifestation_viewer", "~> 0.1.0.pre2"
-  s.add_development_dependency "sunspot_solr", "~> 2.0.0.pre.120925"
+  s.add_development_dependency "sunspot_solr", "~> 2.0.0.pre.130115"
   s.add_development_dependency "simplecov"
 end
