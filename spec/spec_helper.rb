@@ -38,6 +38,5 @@ RSpec.configure do |config|
 end
 
 VCR.configure do |c|
-  c.hook_into :fakeweb
   c.allow_http_connections_when_no_cassette = true
 end
