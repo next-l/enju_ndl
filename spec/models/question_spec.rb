@@ -3,9 +3,10 @@ require 'spec_helper'
 
 describe Question do
   fixtures :all
-  use_vcr_cassette "enju_ndl/crd", :record => :new_episodes
+  VCR.use_cassette "enju_ndl/crd", :record => :new_episodes do
 
-  it "should respond to search_crd" do
-    Question.search_crd(:query_01 => 'library')
+    it "should respond to search_crd" do
+      Question.search_crd(:query_01 => 'library')
+    end
   end
 end
