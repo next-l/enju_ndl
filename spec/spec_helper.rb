@@ -38,5 +38,8 @@ RSpec.configure do |config|
 end
 
 VCR.configure do |c|
+  c.cassette_library_dir = 'spec/cassette_library'
+  c.hook_into :fakeweb
+  c.configure_rspec_metadata!
   c.allow_http_connections_when_no_cassette = true
 end
