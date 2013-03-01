@@ -128,12 +128,14 @@ module EnjuNdl
         creators = get_creators(doc).uniq
         language = get_language(doc)
         subjects = get_subjects(doc).uniq
+        classifications = get_classifications(doc).uniq
 
         Patron.transaction do
           creator_patrons = Patron.import_patrons(creators)
           language_id = Language.where(:iso_639_2 => language).first.id rescue 1
           content_type_id = ContentType.where(:name => 'text').first.id rescue 1
           manifestation.creators << creator_patrons
+
           if defined?(EnjuSubject)
             subject_heading_type = SubjectHeadingType.where(:name => 'ndlsh').first
             unless subject_heading_type
@@ -222,7 +224,17 @@ module EnjuNdl
             #:url => subject.attribute('about').try(:content)
           }
         end
-        return subjects
+        subjects
+      end
+
+      def get_classifications(doc)
+        classifications = []
+        doc.xpath('//dcterms:subject[@rdf:resource]').each do |classification|
+          classifications << {
+            :url => classification.attributes["resource"].content
+          }
+        end
+        classifications
       end
 
       def get_language(doc)
