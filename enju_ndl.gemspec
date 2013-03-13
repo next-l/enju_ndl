@@ -27,7 +27,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "fakeweb"
   s.add_development_dependency "enju_biblio", "~> 0.1.0.pre23"
   s.add_development_dependency "enju_subject", "~> 0.1.0.pre6"
-  s.add_development_dependency "enju_question", "~> 0.1.0.pre4"
+  s.add_development_dependency "enju_question", "~> 0.1.0.pre6"
   s.add_development_dependency "sunspot_solr", "~> 2.0.0"
   s.add_development_dependency "simplecov"
 end
