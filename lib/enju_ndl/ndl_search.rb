@@ -76,6 +76,7 @@ module EnjuNdl
           end
         end
 
+        identifier = doc.at('//dcndl:BibAdminResource[@rdf:about]').attributes["about"].value
         description = doc.at('//dcterms:abstract').try(:content)
         price = doc.at('//dcndl:price').try(:content)
         volume_number_string = doc.at('//dcndl:volume/rdf:Description/rdf:value').try(:content)
@@ -86,6 +87,7 @@ module EnjuNdl
           publisher_patrons = Patron.import_patrons(publishers)
 
           manifestation = Manifestation.new(
+            :manifestation_identifier => identifier,
             :original_title => title[:manifestation],
             :title_transcription => title[:transcription],
             :title_alternative => title[:alternative],
