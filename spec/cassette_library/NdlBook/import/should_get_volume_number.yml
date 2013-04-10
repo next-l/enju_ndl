@@ -19,17 +19,17 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Mon, 25 Feb 2013 06:47:18 GMT
+      - Wed, 10 Apr 2013 02:43:51 GMT
       server:
       - Apache
       x-powered-by:
       - Phusion Passenger (mod_rails/mod_rack) 2.2.15
       etag:
-      - '"a8cc1dda7552728fef69d063d262e21b"'
+      - '"867921384dfb763ce72815f16b2b5dc1"'
       x-ua-compatible:
       - IE=Edge,chrome=1
       x-runtime:
-      - '0.196298'
+      - '0.259952'
       cache-control:
       - max-age=0, private, must-revalidate
       status:
@@ -37,15 +37,15 @@ http_interactions:
       content-type:
       - application/xml; charset=utf-8
       set-cookie:
-      - _front_session_id=d49bab14d134c6ce1eae8da808b2fe07; domain=.iss.ndl.go.jp;
-        path=/; expires=Mon, 25-Feb-2013 07:47:18 GMT; HttpOnly
+      - _front_session_id=c0a313bb37c8a017568b09ab18c626cd; domain=.iss.ndl.go.jp;
+        path=/; expires=Wed, 10-Apr-2013 03:43:51 GMT; HttpOnly
       - serverid=1101; path=/
       vary:
       - Accept-Encoding,User-Agent
       content-encoding:
       - gzip
       content-length:
-      - '1173'
+      - '1174'
       connection:
       - close
     body:
@@ -85,7 +85,7 @@ http_interactions:
         5Yay5pa55LiBIFvokZddLDwvYXV0aG9yPgogICAgICA8Y2F0ZWdvcnk+5pys
         PC9jYXRlZ29yeT4KICAgICAgPGd1aWQgaXNQZXJtYUxpbms9InRydWUiPmh0
         dHA6Ly9pc3MubmRsLmdvLmpwL2Jvb2tzL1IxMDAwMDAwMDItSTAyMzU5MTUy
-        My0wMDwvZ3VpZD4KICAgICAgPHB1YkRhdGU+RnJpLCAwMyBBdWcgMjAxMiAw
+        My0wMDwvZ3VpZD4KICAgICAgPHB1YkRhdGU+RnJpLCAyOSBNYXIgMjAxMyAw
         OTowMDowMCArMDkwMDwvcHViRGF0ZT4KICAgICAgPGRjOnRpdGxlPuWkqeWc
         sOaYjuWvnzwvZGM6dGl0bGU+CiAgICAgIDxkY25kbDp0aXRsZVRyYW5zY3Jp
         cHRpb24+44OG44Oz44OBIOODoeOCpOOCteODhDwvZGNuZGw6dGl0bGVUcmFu
@@ -112,5 +112,5 @@ http_interactions:
         OnJlc291cmNlPSJodHRwOi8vaWQubmRsLmdvLmpwL2JpYi8wMjM1OTE1MjMi
         Lz4KICAgIDwvaXRlbT4KICA8L2NoYW5uZWw+CjwvcnNzPgo=
     http_version: '1.0'
-  recorded_at: Mon, 25 Feb 2013 06:47:16 GMT
+  recorded_at: Wed, 10 Apr 2013 02:43:51 GMT
 recorded_with: VCR 2.4.0

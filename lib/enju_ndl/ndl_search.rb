@@ -6,10 +6,11 @@ module EnjuNdl
     end
 
     module ClassMethods
-      def import_isbn(isbn)
-        return nil unless isbn
-        lisbn = Lisbn.new(isbn)
-        raise EnjuNdl::InvalidIsbn unless lisbn.valid?
+      def import_from_ndl_search(options)
+        #if options[:isbn]
+          lisbn = Lisbn.new(options[:isbn])
+          raise EnjuNdl::InvalidIsbn unless lisbn.valid?
+        #end
 
         manifestation = Manifestation.find_by_isbn(lisbn.isbn)
         return manifestation if manifestation
@@ -110,7 +111,7 @@ module EnjuNdl
           manifestation.manifestation_content_type = content_type if content_type
           if manifestation.save
             manifestation.publishers << publisher_patrons
-            create_frbr_instance(doc, manifestation)
+            create_additional_attributes(doc, manifestation)
             create_series_statement(doc, manifestation)
           end
         end
@@ -119,13 +120,7 @@ module EnjuNdl
         return manifestation
       end
 
-      def import_isbn!(isbn)
-        manifestation = import_isbn(isbn)
-        manifestation.save!
-        manifestation
-      end
-
-      def create_frbr_instance(doc, manifestation)
+      def create_additional_attributes(doc, manifestation)
         title = get_title(doc)
         creators = get_creators(doc).uniq
         language = get_language(doc)

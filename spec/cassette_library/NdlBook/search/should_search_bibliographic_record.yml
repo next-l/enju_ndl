@@ -19,17 +19,17 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Mon, 25 Feb 2013 06:46:44 GMT
+      - Wed, 10 Apr 2013 02:43:44 GMT
       server:
       - Apache
       x-powered-by:
       - Phusion Passenger (mod_rails/mod_rack) 2.2.15
       etag:
-      - '"14e99c66e84a3ba86de5c39701e1ac1d"'
+      - '"d53b6ad330ad27c89f41d4a5d7bea04b"'
       x-ua-compatible:
       - IE=Edge,chrome=1
       x-runtime:
-      - '0.714332'
+      - '0.767853'
       cache-control:
       - max-age=0, private, must-revalidate
       status:
@@ -37,9 +37,9 @@ http_interactions:
       content-type:
       - application/xml; charset=utf-8
       set-cookie:
-      - _front_session_id=2c5a6e1b43f982764ff08c9a5d0e989e; domain=.iss.ndl.go.jp;
-        path=/; expires=Mon, 25-Feb-2013 07:46:45 GMT; HttpOnly
-      - serverid=1101; path=/
+      - _front_session_id=e94c9d400cf58e5a8e27e149a1bc1d9a; domain=.iss.ndl.go.jp;
+        path=/; expires=Wed, 10-Apr-2013 03:43:45 GMT; HttpOnly
+      - serverid=1102; path=/
       vary:
       - Accept-Encoding,User-Agent
       content-encoding:
@@ -65,7 +65,7 @@ http_interactions:
         bms+CiAgICA8ZGVzY3JpcHRpb24+U2VhcmNoIHJlc3VsdHMgZm9yIGFueT1s
         aWJyYXJ5IHN5c3RlbSBjbnQ9MTAgZHBpZD1pc3MtbmRsLW9wYWMgPC9kZXNj
         cmlwdGlvbj4KICAgIDxsYW5ndWFnZT5qYTwvbGFuZ3VhZ2U+CiAgICA8b3Bl
-        blNlYXJjaDp0b3RhbFJlc3VsdHM+NTE5Mzwvb3BlblNlYXJjaDp0b3RhbFJl
+        blNlYXJjaDp0b3RhbFJlc3VsdHM+NTI1NTwvb3BlblNlYXJjaDp0b3RhbFJl
         c3VsdHM+CiAgICA8b3BlblNlYXJjaDpzdGFydEluZGV4PjE8L29wZW5TZWFy
         Y2g6c3RhcnRJbmRleD4KICAgIDxvcGVuU2VhcmNoOml0ZW1zUGVyUGFnZT4x
         MDwvb3BlblNlYXJjaDppdGVtc1BlclBhZ2U+CiAgICA8aXRlbT4KICAgICAg
@@ -369,7 +369,7 @@ http_interactions:
         aHR0cDovL2lkLm5kbC5nby5qcC9iaWIvMDAwMDA2MTU3Mjk4Ii8+CiAgICA8
         L2l0ZW0+CiAgICA8aXRlbT4KICAgICAgPHRpdGxlPlRoZSBTb3ZpZXQgc3lz
         dGVtIG9mIGdvdmVybm1lbnQ8L3RpdGxlPgogICAgICA8bGluaz5odHRwOi8v
-        aXNzLm5kbC5nby5qcC9ib29rcy9SMTAwMDAwMDAyLUkwMDAwMDYyMTIyNTQt
+        aXNzLm5kbC5nby5qcC9ib29rcy9SMTAwMDAwMDAyLUkwMDAwMDYyMTIyNTMt
         MDA8L2xpbms+CjxkZXNjcmlwdGlvbj4KPCFbQ0RBVEFbPHA+VW5pdmVyc2l0
         eSBvZiBDaGljYWdvIFByZXNzPC9wPgo8dWw+PGxpPuOCv+OCpOODiOODq++8
         miBUaGUgU292aWV0IHN5c3RlbSBvZiBnb3Zlcm5tZW50PC9saT4KPGxpPuOC
@@ -377,35 +377,33 @@ http_interactions:
         cmF0aXZlIHBvbGl0aWNzPC9saT4KPC91bD5dXT4KPC9kZXNjcmlwdGlvbj4K
         ICAgICAgPGNhdGVnb3J5PuacrDwvY2F0ZWdvcnk+CiAgICAgIDxndWlkIGlz
         UGVybWFMaW5rPSJ0cnVlIj5odHRwOi8vaXNzLm5kbC5nby5qcC9ib29rcy9S
-        MTAwMDAwMDAyLUkwMDAwMDYyMTIyNTQtMDA8L2d1aWQ+CiAgICAgIDxwdWJE
+        MTAwMDAwMDAyLUkwMDAwMDYyMTIyNTMtMDA8L2d1aWQ+CiAgICAgIDxwdWJE
         YXRlPlN1biwgMjEgTWFyIDIwMDQgMDk6MDA6MDAgKzA5MDA8L3B1YkRhdGU+
         CiAgICAgIDxkYzp0aXRsZT5UaGUgU292aWV0IHN5c3RlbSBvZiBnb3Zlcm5t
-        ZW50PC9kYzp0aXRsZT4KICAgICAgPGRjbmRsOmVkaXRpb24+M2QgZWQuLCBy
-        ZXYuIGFuZCBlbmw8L2RjbmRsOmVkaXRpb24+CiAgICAgIDxkY25kbDpzZXJp
-        ZXNUaXRsZT5UaGUgQ2hpY2FnbyBsaWJyYXJ5IG9mIGNvbXBhcmF0aXZlIHBv
-        bGl0aWNzPC9kY25kbDpzZXJpZXNUaXRsZT4KICAgICAgPGRjOnB1Ymxpc2hl
-        cj5Vbml2ZXJzaXR5IG9mIENoaWNhZ28gUHJlc3M8L2RjOnB1Ymxpc2hlcj4K
-        ICAgICAgPGRjdGVybXM6aXNzdWVkIHhzaTp0eXBlPSJkY3Rlcm1zOlczQ0RU
-        RiI+MTk2NDwvZGN0ZXJtczppc3N1ZWQ+CiAgICAgIDxkYzpzdWJqZWN0PkNv
-        bnN0aXR1dGlvbnMgLS0gU292aWV0IFVuaW9uPC9kYzpzdWJqZWN0PgogICAg
-        ICA8ZGM6c3ViamVjdD5DaWVuY2lhIFBvbGl0aWNhPC9kYzpzdWJqZWN0Pgog
-        ICAgICA8ZGM6c3ViamVjdD5Tb3ZpZXQgVW5pb24gLS0gUG9saXRpY3MgYW5k
-        IGdvdmVybm1lbnQ8L2RjOnN1YmplY3Q+CiAgICAgIDxkYzpzdWJqZWN0IHhz
-        aTp0eXBlPSJkY25kbDpORExDIj5BNTEtUjU8L2RjOnN1YmplY3Q+CiAgICAg
-        IDxkYzpzdWJqZWN0IHhzaTp0eXBlPSJkY3Rlcm1zOkxDQyI+Sk42NTE4PC9k
-        YzpzdWJqZWN0PgogICAgICA8ZGM6c3ViamVjdCB4c2k6dHlwZT0iZGN0ZXJt
-        czpEREMiPjM0Mi40NzwvZGM6c3ViamVjdD4KICAgICAgPGRjdGVybXM6ZGVz
-        Y3JpcHRpb24+QXBwZW5kaWNlcyAocC4gMjIxLTI2MikgOiBDb25zdGl0dXRp
-        b24gKGZ1bmRhbWVudGFsIGxhdykgb2YgdGhlIFVuaW9uIG9mIFNvdmlldCBT
-        b2NpYWxpc3RpYyBSZXB1YmxpY3MgYXMgYW1lbmRlZCB0byBKYW51YXJ5IDEs
-        IDE5NjQuLS1SdWxlcyBvZiB0aGUgQ29tbXVuaXN0IFBhcnR5IG9mIHRoZSBT
-        b3ZpZXQgVW5pb24gYWRvcHRlZCBieSB0aGUgVHdlbnR5LXNlY29uZCBQYXJ0
-        eSBDb25ncmVzcyBPY3RvYmVyIDMxLCAxOTYxPC9kY3Rlcm1zOmRlc2NyaXB0
-        aW9uPgogICAgICA8ZGN0ZXJtczpkZXNjcmlwdGlvbj5CaWJsaW9ncmFwaHk6
-        IHAuIDI2My0yNzQ8L2RjdGVybXM6ZGVzY3JpcHRpb24+CiAgICAgIDxyZGZz
-        OnNlZUFsc28gcmRmOnJlc291cmNlPSJodHRwOi8vaWQubmRsLmdvLmpwL2Jp
-        Yi8wMDAwMDYyMTIyNTQiLz4KICAgIDwvaXRlbT4KICA8L2NoYW5uZWw+Cjwv
-        cnNzPgo=
+        ZW50PC9kYzp0aXRsZT4KICAgICAgPGRjbmRsOnNlcmllc1RpdGxlPlRoZSBD
+        aGljYWdvIGxpYnJhcnkgb2YgY29tcGFyYXRpdmUgcG9saXRpY3M8L2RjbmRs
+        OnNlcmllc1RpdGxlPgogICAgICA8ZGM6cHVibGlzaGVyPlVuaXZlcnNpdHkg
+        b2YgQ2hpY2FnbyBQcmVzczwvZGM6cHVibGlzaGVyPgogICAgICA8ZGN0ZXJt
+        czppc3N1ZWQgeHNpOnR5cGU9ImRjdGVybXM6VzNDRFRGIj4xOTU3PC9kY3Rl
+        cm1zOmlzc3VlZD4KICAgICAgPGRjOnN1YmplY3Q+U292aWV0IFVuaW9uIC0t
+        IFBvbGl0aWNzIGFuZCBnb3Zlcm5tZW50IC0tIDE5MTctMTkzNjwvZGM6c3Vi
+        amVjdD4KICAgICAgPGRjOnN1YmplY3QgeHNpOnR5cGU9ImRjdGVybXM6TEND
+        Ij5KTjY1MTg8L2RjOnN1YmplY3Q+CiAgICAgIDxkYzpzdWJqZWN0IHhzaTp0
+        eXBlPSJkY3Rlcm1zOkREQyI+MzQyLjQ3PC9kYzpzdWJqZWN0PgogICAgICA8
+        ZGM6c3ViamVjdCB4c2k6dHlwZT0iZGN0ZXJtczpEREMiPjMyMC45NDcqPC9k
+        YzpzdWJqZWN0PgogICAgICA8ZGN0ZXJtczpkZXNjcmlwdGlvbj4iQ29uc3Rp
+        dHV0aW9uIChmdW5kYW1lbnRhbCBsYXcpIG9mIHRoZSBVbmlvbiBvZiBTb3Zp
+        ZXQgU29jaWFsaXN0aWMgUmVwdWJsaWNzIGFzIGFtZW5kZWQgdG8gSnVseSAx
+        NiwgMTk1NiI6IHAuIDIwMS0yMjQ8L2RjdGVybXM6ZGVzY3JpcHRpb24+CiAg
+        ICAgIDxkY3Rlcm1zOmRlc2NyaXB0aW9uPiJSdWxlcyBvZiB0aGUgQ29tbXVu
+        aXN0IFBhcnR5IG9mIHRoZSBTb3ZpZXQgVW5pb24gYWRvcHRlZCBieSB0aGUg
+        TmluZXRlZW50aCBQYXJ0eSBDb25ncmVzcyBhbmQgYXMgYW1lbmRlZCBieSB0
+        aGUgVHdlbnRpZXRoIFBhcnR5IENvbmdyZXNzIjogcC4gMjI0LTI0MDwvZGN0
+        ZXJtczpkZXNjcmlwdGlvbj4KICAgICAgPGRjdGVybXM6ZGVzY3JpcHRpb24+
+        QmlibGlvZ3JhcGh5OiBwLiAyNDEtMjQ4PC9kY3Rlcm1zOmRlc2NyaXB0aW9u
+        PgogICAgICA8cmRmczpzZWVBbHNvIHJkZjpyZXNvdXJjZT0iaHR0cDovL2lk
+        Lm5kbC5nby5qcC9iaWIvMDAwMDA2MjEyMjUzIi8+CiAgICA8L2l0ZW0+CiAg
+        PC9jaGFubmVsPgo8L3Jzcz4K
     http_version: '1.0'
-  recorded_at: Mon, 25 Feb 2013 06:46:44 GMT
+  recorded_at: Wed, 10 Apr 2013 02:43:45 GMT
 recorded_with: VCR 2.4.0
