@@ -25,7 +25,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "rspec-rails"
   s.add_development_dependency "vcr"
   s.add_development_dependency "fakeweb"
-  s.add_development_dependency "enju_biblio", "~> 0.1.0.pre28"
+  s.add_development_dependency "enju_biblio", "~> 0.1.0.pre29"
   s.add_development_dependency "enju_subject", "~> 0.1.0.pre10"
   s.add_development_dependency "enju_question", "~> 0.1.0.pre7"
   s.add_development_dependency "sunspot_solr", "~> 2.0.0"

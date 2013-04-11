@@ -11,7 +11,7 @@ module EnjuNdl
     end
 
     module ClassMethods
-      def enju_ndl_search
+      def enju_ndl_ndl_search
         include EnjuNdl::NdlSearch
       end
 
