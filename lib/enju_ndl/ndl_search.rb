@@ -305,11 +305,8 @@ module EnjuNdl
           end
         end
 
-        if series_statement
-          if series_statement.save
-            series_statement.manifestations << manifestation
-          end
-          #manifestation.save
+        if series_statement.try(:save)
+          manifestation.series_statements << series_statement
         end
         manifestation
       end

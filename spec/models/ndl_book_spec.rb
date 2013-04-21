@@ -59,15 +59,15 @@ describe NdlBook do
     it "should import series_statement", :vcr => true do
       manifestation = NdlBook.import_from_sru_response('20408556')
       manifestation.original_title.should eq "ズッコケ三人組のダイエット講座"
-      manifestation.series_statement.original_title.should eq "ポプラ社文庫. ズッコケ文庫"
-      manifestation.series_statement.periodical.should be_false
+      manifestation.series_statements.first.original_title.should eq "ポプラ社文庫. ズッコケ文庫"
+      manifestation.periodical.should be_false
     end
 
     it "should import series_statement if the resource is periodical", :vcr => true do
       manifestation = NdlBook.import_from_sru_response('00010852')
       manifestation.original_title.should eq "週刊新潮"
-      manifestation.series_statement.original_title.should eq "週刊新潮"
-      manifestation.series_statement.periodical.should be_true
+      manifestation.series_statements.first.original_title.should eq "週刊新潮"
+      manifestation.periodical.should be_false
       end
 
     it "should import pud_date is nil", :vcr => true do
