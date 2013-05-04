@@ -21,7 +21,10 @@ class NdlBooksController < ApplicationController
 
   def create
     if params[:book]
-      @manifestation = NdlBook.import_from_sru_response(params[:book][:nbn])
+      begin
+        @manifestation = NdlBook.import_from_sru_response(params[:book][:nbn])
+      rescue EnjuNdl::RecordNotFound
+      end
       respond_to do |format|
         if @manifestation.try(:save)
           flash[:notice] = t('controller.successfully_created', :model => t('activerecord.models.manifestation'))
