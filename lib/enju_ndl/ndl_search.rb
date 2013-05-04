@@ -54,19 +54,6 @@ module EnjuNdl
 
         isbn = Lisbn.new(doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/ISBN"]').try(:content).to_s).try(:isbn)
         issn_l = StdNum::ISSN.normalize(doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/ISSNL"]').try(:content))
-        classification_urls = doc.xpath('//dcterms:subject[@rdf:resource]').map{|subject| subject.attributes['resource'].value}
-        if classification_urls
-          ndc9_url = classification_urls.map{|url| URI.parse(URI.escape(url))}.select{|u| u.path.split('/').reverse[1] == 'ndc9'}.first
-          if ndc9_url
-            ndc = ndc9_url.path.split('/').last
-            classification_type = ClassificationType.where(:name => 'ndc9').first
-            unless classification_type
-              classification_type = ClassificationType.create!(:name => 'ndc9', :display_name => 'NDC9')
-            end
-            classification = Classification.new(:category => ndc)
-            classification.classification_type = classification_type
-          end
-        end
 
         carrier_type = content_type = nil
         doc.xpath('//dcndl:materialType[@rdf:resource]').each do |d|
@@ -118,7 +105,6 @@ module EnjuNdl
             manifestation.publishers << publisher_patrons
             create_additional_attributes(doc, manifestation)
             create_series_statement(doc, manifestation)
-            manifestation.classifications << classification if classification
           end
         end
 
@@ -132,6 +118,7 @@ module EnjuNdl
         language = get_language(doc)
         subjects = get_subjects(doc).uniq
         classifications = get_classifications(doc).uniq
+        classification_urls = doc.xpath('//dcterms:subject[@rdf:resource]').map{|subject| subject.attributes['resource'].value}
 
         Patron.transaction do
           creator_patrons = Patron.import_patrons(creators)
@@ -154,6 +141,19 @@ module EnjuNdl
               if subject.valid?
                 manifestation.subjects << subject
                 subject.subject_heading_types << subject_heading_type if subject.subject_heading_types.where(:id => subject_heading_type.id).empty?
+              end
+            end
+            if classification_urls
+              ndc9_url = classification_urls.map{|url| URI.parse(URI.escape(url))}.select{|u| u.path.split('/').reverse[1] == 'ndc9'}.first
+              if ndc9_url
+                ndc = ndc9_url.path.split('/').last
+                classification_type = ClassificationType.where(:name => 'ndc9').first
+                unless classification_type
+                  classification_type = ClassificationType.create!(:name => 'ndc9', :display_name => 'NDC9')
+                end
+                classification = Classification.new(:category => ndc)
+                classification.classification_type = classification_type
+                manifestation.classifications << classification if classification
               end
             end
           end
