@@ -59,6 +59,12 @@ module EnjuNdl
           ndc9_url = classification_urls.map{|url| URI.parse(URI.escape(url))}.select{|u| u.path.split('/').reverse[1] == 'ndc9'}.first
           if ndc9_url
             ndc = ndc9_url.path.split('/').last
+            classification_type = ClassificationType.where(:name => 'ndc9').first
+            unless classification_type
+              classification_type = ClassificationType.create!(:name => 'ndc9', :display_name => 'NDC9')
+            end
+            classification = Classification.new(:category => ndc)
+            classification.classification_type = classification_type
           end
         end
 
@@ -104,8 +110,7 @@ module EnjuNdl
             :nbn => nbn,
             :start_page => extent[:start_page],
             :end_page => extent[:end_page],
-            :height => extent[:height],
-            :ndc => ndc
+            :height => extent[:height]
           )
           manifestation.carrier_type = carrier_type if carrier_type
           manifestation.manifestation_content_type = content_type if content_type
@@ -113,6 +118,7 @@ module EnjuNdl
             manifestation.publishers << publisher_patrons
             create_additional_attributes(doc, manifestation)
             create_series_statement(doc, manifestation)
+            manifestation.classifications << classification if classification
           end
         end
 
@@ -288,8 +294,7 @@ module EnjuNdl
           unless series_statement
             series_statement = SeriesStatement.new(
               :original_title => series_title[:title],
-              :title_transcription => series_title[:title_transcription],
-              :periodical => false
+              :title_transcription => series_title[:title_transcription]
             )
           end
         elsif publication_periodicity

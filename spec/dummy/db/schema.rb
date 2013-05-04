@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130421164124) do
+ActiveRecord::Schema.define(:version => 20130504143515) do
 
   create_table "carrier_types", :force => true do |t|
     t.string   "name",         :null => false
@@ -40,10 +40,12 @@ ActiveRecord::Schema.define(:version => 20130421164124) do
     t.datetime "updated_at",             :null => false
     t.integer  "lft"
     t.integer  "rgt"
+    t.integer  "manifestation_id"
   end
 
   add_index "classifications", ["category"], :name => "index_classifications_on_category"
   add_index "classifications", ["classification_type_id"], :name => "index_classifications_on_classification_type_id"
+  add_index "classifications", ["manifestation_id"], :name => "index_classifications_on_manifestation_id"
   add_index "classifications", ["parent_id"], :name => "index_classifications_on_parent_id"
 
   create_table "content_types", :force => true do |t|
@@ -653,8 +655,10 @@ ActiveRecord::Schema.define(:version => 20130421164124) do
     t.datetime "updated_at"
     t.datetime "deleted_at"
     t.string   "url"
+    t.integer  "manifestation_id"
   end
 
+  add_index "subjects", ["manifestation_id"], :name => "index_subjects_on_manifestation_id"
   add_index "subjects", ["parent_id"], :name => "index_subjects_on_parent_id"
   add_index "subjects", ["required_role_id"], :name => "index_subjects_on_required_role_id"
   add_index "subjects", ["subject_type_id"], :name => "index_subjects_on_subject_type_id"

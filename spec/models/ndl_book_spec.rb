@@ -23,7 +23,7 @@ describe NdlBook do
       manifestation = NdlBook.import_from_sru_response('21816393')
       manifestation.manifestation_identifier.should eq 'http://iss.ndl.go.jp/books/R100000002-I000010980901-00'
       manifestation.isbn.should eq  '9784839931995'
-      manifestation.ndc.should eq "007.64"
+      manifestation.classifications.pluck(:category).should eq ["007.64"]
       manifestation.nbn.should eq "21816393"
       manifestation.language.name.should eq "Japanese"
       manifestation.creators.first.full_name.should eq '秋葉, 拓哉'
