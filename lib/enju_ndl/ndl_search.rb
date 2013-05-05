@@ -139,7 +139,7 @@ module EnjuNdl
                 subject.save!
               end
               if subject.valid?
-                subject.subject_heading_type = subject_heding_type
+                subject.subject_heading_type = subject_heading_type
                 manifestation.subjects << subject
               end
             end
