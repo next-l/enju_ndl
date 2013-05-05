@@ -139,8 +139,8 @@ module EnjuNdl
                 subject.save!
               end
               if subject.valid?
+                subject.subject_heading_type = subject_heding_type
                 manifestation.subjects << subject
-                subject.subject_heading_types << subject_heading_type if subject.subject_heading_types.where(:id => subject_heading_type.id).empty?
               end
             end
             if classification_urls

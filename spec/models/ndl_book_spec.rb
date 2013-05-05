@@ -34,7 +34,7 @@ describe NdlBook do
       manifestation.end_page.should eq 315
       manifestation.height.should eq 24.0
       manifestation.subjects.size.should eq 1
-      manifestation.subjects.first.subject_heading_types.first.name.should eq 'ndlsh'
+      manifestation.subjects.first.subject_heading_type.name.should eq 'ndlsh'
       manifestation.subjects.first.term.should eq 'プログラミング (コンピュータ)'
     end
 

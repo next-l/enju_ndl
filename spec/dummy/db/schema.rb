@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130504143515) do
+ActiveRecord::Schema.define(:version => 20130504195916) do
 
   create_table "carrier_types", :force => true do |t|
     t.string   "name",         :null => false
@@ -646,16 +646,17 @@ ActiveRecord::Schema.define(:version => 20130504143515) do
     t.integer  "use_term_id"
     t.string   "term"
     t.text     "term_transcription"
-    t.integer  "subject_type_id",                   :null => false
+    t.integer  "subject_type_id",                        :null => false
     t.text     "scope_note"
     t.text     "note"
-    t.integer  "required_role_id",   :default => 1, :null => false
-    t.integer  "lock_version",       :default => 0, :null => false
+    t.integer  "required_role_id",        :default => 1, :null => false
+    t.integer  "lock_version",            :default => 0, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "deleted_at"
     t.string   "url"
     t.integer  "manifestation_id"
+    t.integer  "subject_heading_type_id"
   end
 
   add_index "subjects", ["manifestation_id"], :name => "index_subjects_on_manifestation_id"
