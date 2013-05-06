@@ -135,10 +135,10 @@ module EnjuNdl
               subject = Subject.where(:term => term[:term]).first
               unless subject
                 subject = Subject.new(term)
+                subject.subject_heading_type = subject_heading_type
                 subject.subject_type = SubjectType.find(1)
               end
               if subject.valid?
-                subject.subject_heading_type = subject_heading_type
                 manifestation.subjects << subject
               end
               subject.save!
