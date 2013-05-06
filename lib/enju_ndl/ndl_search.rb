@@ -136,12 +136,12 @@ module EnjuNdl
               unless subject
                 subject = Subject.new(term)
                 subject.subject_type = SubjectType.find(1)
-                subject.save!
               end
               if subject.valid?
                 subject.subject_heading_type = subject_heading_type
                 manifestation.subjects << subject
               end
+              subject.save!
             end
             if classification_urls
               ndc9_url = classification_urls.map{|url| URI.parse(URI.escape(url))}.select{|u| u.path.split('/').reverse[1] == 'ndc9'}.first
