@@ -18,7 +18,7 @@ module EnjuNdl
         #end
 
         manifestation = Manifestation.find_by_isbn(lisbn.isbn)
-        return manifestation if manifestation.present?
+        return manifestation.first if manifestation.present?
 
         doc = return_xml(lisbn.isbn)
         raise EnjuNdl::RecordNotFound unless doc
