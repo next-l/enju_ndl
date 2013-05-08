@@ -26,7 +26,7 @@ describe NdlBooksController do
 
     it "should create a bibliographic record if nbn is set", :vcr => true do
       post :create, :book => {:nbn => '97024234'}
-      assigns(:manifestation).nbn.should eq '97024234'
+      assigns(:manifestation).identifier_contents(:nbn).should eq ['97024234']
       response.should redirect_to manifestation_items_url(assigns(:manifestation))
     end
 

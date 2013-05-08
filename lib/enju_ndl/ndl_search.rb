@@ -6,6 +6,11 @@ module EnjuNdl
     end
 
     module ClassMethods
+      def import_isbn(isbn)
+        manifestation = Manifestation.import_from_ndl_search(:isbn => isbn)
+        manifestation
+      end
+
       def import_from_ndl_search(options)
         #if options[:isbn]
           lisbn = Lisbn.new(options[:isbn])
@@ -13,7 +18,7 @@ module EnjuNdl
         #end
 
         manifestation = Manifestation.find_by_isbn(lisbn.isbn)
-        return manifestation if manifestation
+        return manifestation if manifestation.present?
 
         doc = return_xml(lisbn.isbn)
         raise EnjuNdl::RecordNotFound unless doc
@@ -23,8 +28,8 @@ module EnjuNdl
 
       def import_record(doc)
         nbn = doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/JPNO"]').try(:content)
-        manifestation = Manifestation.where(:nbn => nbn).first if nbn
-        return manifestation if manifestation
+        identifier = Identifier.where(:body => nbn, :identifier_type_id => IdentifierType.where(:name => 'nbn').first_or_create.id).first
+        return identifier.manifestation if identifier
 
         publishers = get_publishers(doc)
 
@@ -53,6 +58,7 @@ module EnjuNdl
         end
 
         isbn = Lisbn.new(doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/ISBN"]').try(:content).to_s).try(:isbn)
+        issn = StdNum::ISSN.normalize(doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/ISSN"]').try(:content))
         issn_l = StdNum::ISSN.normalize(doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/ISSNL"]').try(:content))
 
         carrier_type = content_type = nil
@@ -75,6 +81,7 @@ module EnjuNdl
         price = doc.at('//dcndl:price').try(:content)
         volume_number_string = doc.at('//dcndl:volume/rdf:Description/rdf:value').try(:content)
         extent = get_extent(doc)
+        publication_periodicity = doc.at('//dcndl:publicationPeriodicity').try(:content)
 
         manifestation = nil
         Patron.transaction do
@@ -89,19 +96,38 @@ module EnjuNdl
             # TODO: NDLサーチに入っている図書以外の資料を調べる
             #:carrier_type_id => CarrierType.where(:name => 'print').first.id,
             :language_id => language_id,
-            :isbn => isbn,
             :pub_date => date,
             :description => description,
             :volume_number_string => volume_number_string,
             :price => price,
-            :nbn => nbn,
             :start_page => extent[:start_page],
             :end_page => extent[:end_page],
             :height => extent[:height]
           )
+          identifier = {}
+          if isbn
+            identifier[:isbn] = Identifier.new(:body => isbn)
+            identifier[:isbn].identifier_type = IdentifierType.where(:name => 'isbn').first_or_create
+          end
+          if nbn
+            identifier[:nbn] = Identifier.new(:body => nbn)
+            identifier[:nbn].identifier_type = IdentifierType.where(:name => 'nbn').first_or_create
+          end
+          if issn
+            identifier[:issn] = Identifier.new(:body => issn)
+            identifier[:issn].identifier_type = IdentifierType.where(:name => 'issn').first_or_create
+          end
+          if issn_l
+            identifier[:issn] = Identifier.new(:body => issn_l)
+            identifier[:issn].identifier_type = IdentifierType.where(:name => 'issn_l').first_or_create
+          end
           manifestation.carrier_type = carrier_type if carrier_type
           manifestation.manifestation_content_type = content_type if content_type
+          manifestation.periodical = true if publication_periodicity
           if manifestation.save
+            identifier.each do |k, v|
+              manifestation.identifiers << v
+            end
             manifestation.publishers << publisher_patrons
             create_additional_attributes(doc, manifestation)
             create_series_statement(doc, manifestation)
@@ -127,21 +153,18 @@ module EnjuNdl
           manifestation.creators << creator_patrons
 
           if defined?(EnjuSubject)
-            subject_heading_type = SubjectHeadingType.where(:name => 'ndlsh').first
-            unless subject_heading_type
-              subject_heading_type = SubjectHeadingType.create!(:name => 'ndlsh')
-            end
+            subject_heading_type = SubjectHeadingType.where(:name => 'ndlsh').first_or_create
             subjects.each do |term|
               subject = Subject.where(:term => term[:term]).first
               unless subject
                 subject = Subject.new(term)
                 subject.subject_heading_type = subject_heading_type
-                subject.subject_type = SubjectType.find(1)
+                subject.subject_type = SubjectType.where(:name => 'concept').first_or_create
               end
-              if subject.valid?
+              #if subject.valid?
                 manifestation.subjects << subject
-              end
-              subject.save!
+              #end
+              #subject.save!
             end
             if classification_urls
               ndc9_url = classification_urls.map{|url| URI.parse(URI.escape(url))}.select{|u| u.path.split('/').reverse[1] == 'ndc9'}.first
@@ -287,25 +310,12 @@ module EnjuNdl
           series_title[:title_transcription] = series[:title_transcription]
         end
 
-        publication_periodicity = doc.at('//dcndl:publicationPeriodicity').try(:content)
-
         if series_title[:title]
           series_statement = SeriesStatement.where(:original_title => series_title[:title]).first
           unless series_statement
             series_statement = SeriesStatement.new(
               :original_title => series_title[:title],
               :title_transcription => series_title[:title_transcription]
-            )
-          end
-        elsif publication_periodicity
-          issn = StdNum::ISSN.normalize(doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/ISSN"]').try(:content))
-          series_statement = SeriesStatement.where(:issn => issn).first
-          unless series_statement
-            series_statement = SeriesStatement.new(
-              :original_title => manifestation.original_title,
-              :title_transcription => manifestation.title_transcription,
-              :issn => issn,
-              :periodical => true
             )
           end
         end

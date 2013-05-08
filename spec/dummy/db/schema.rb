@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130504195916) do
+ActiveRecord::Schema.define(:version => 20130506175834) do
 
   create_table "carrier_types", :force => true do |t|
     t.string   "name",         :null => false
@@ -141,6 +141,27 @@ ActiveRecord::Schema.define(:version => 20130504195916) do
     t.datetime "updated_at",   :null => false
   end
 
+  create_table "identifier_types", :force => true do |t|
+    t.string   "name"
+    t.text     "display_name"
+    t.text     "note"
+    t.integer  "position"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "identifiers", :force => true do |t|
+    t.string   "body",               :null => false
+    t.integer  "identifier_type_id", :null => false
+    t.integer  "manifestation_id"
+    t.boolean  "primary"
+    t.integer  "position"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
+  add_index "identifiers", ["body", "identifier_type_id"], :name => "index_identifiers_on_body_and_identifier_type_id"
+
   create_table "import_requests", :force => true do |t|
     t.string   "isbn"
     t.string   "state"
@@ -245,13 +266,6 @@ ActiveRecord::Schema.define(:version => 20130504195916) do
     t.integer  "height"
     t.integer  "width"
     t.integer  "depth"
-    t.string   "isbn"
-    t.string   "isbn10"
-    t.string   "wrong_isbn"
-    t.string   "nbn"
-    t.string   "lccn"
-    t.string   "oclc_number"
-    t.string   "issn"
     t.integer  "price"
     t.text     "fulltext"
     t.string   "volume_number_string"
@@ -296,12 +310,7 @@ ActiveRecord::Schema.define(:version => 20130504195916) do
   add_index "manifestations", ["carrier_type_id"], :name => "index_manifestations_on_carrier_type_id"
   add_index "manifestations", ["doi"], :name => "index_manifestations_on_doi"
   add_index "manifestations", ["frequency_id"], :name => "index_manifestations_on_frequency_id"
-  add_index "manifestations", ["isbn"], :name => "index_manifestations_on_isbn"
-  add_index "manifestations", ["issn"], :name => "index_manifestations_on_issn"
-  add_index "manifestations", ["lccn"], :name => "index_manifestations_on_lccn"
   add_index "manifestations", ["manifestation_identifier"], :name => "index_manifestations_on_manifestation_identifier"
-  add_index "manifestations", ["nbn"], :name => "index_manifestations_on_nbn"
-  add_index "manifestations", ["oclc_number"], :name => "index_manifestations_on_oclc_number"
   add_index "manifestations", ["required_role_id"], :name => "index_manifestations_on_required_role_id"
   add_index "manifestations", ["updated_at"], :name => "index_manifestations_on_updated_at"
 
