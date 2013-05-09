@@ -4,7 +4,10 @@ module NdlBooksHelper
     if nbn.blank?
       t('enju_ndl.not_available')
     else
-      manifestation = Manifestation.where(:nbn => nbn).first
+      identifier_type = IdentifierType.where(:name => 'nbn').first
+      if identifier_type
+        manifestation = Identifier.where(:body => nbn, :identifier_type_id => identifier_type.id).first.try(:manifestation)
+      end
       unless manifestation
         link_to t('enju_ndl.add'), ndl_books_path(:book => {:nbn => nbn}), :method => :post
       else
