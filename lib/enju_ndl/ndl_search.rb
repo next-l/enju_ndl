@@ -76,7 +76,7 @@ module EnjuNdl
           end
         end
 
-        identifier = doc.at('//dcndl:BibAdminResource[@rdf:about]').attributes["about"].value
+        admin_identifier = doc.at('//dcndl:BibAdminResource[@rdf:about]').attributes["about"].value
         description = doc.at('//dcterms:abstract').try(:content)
         price = doc.at('//dcndl:price').try(:content)
         volume_number_string = doc.at('//dcndl:volume/rdf:Description/rdf:value').try(:content)
@@ -88,7 +88,7 @@ module EnjuNdl
           publisher_patrons = Patron.import_patrons(publishers)
 
           manifestation = Manifestation.new(
-            :manifestation_identifier => identifier,
+            :manifestation_identifier => admin_identifier,
             :original_title => title[:manifestation],
             :title_transcription => title[:transcription],
             :title_alternative => title[:alternative],
@@ -126,7 +126,7 @@ module EnjuNdl
           manifestation.periodical = true if publication_periodicity
           if manifestation.save
             identifier.each do |k, v|
-              manifestation.identifiers << v
+              manifestation.identifiers << v if v.valid?
             end
             manifestation.publishers << publisher_patrons
             create_additional_attributes(doc, manifestation)
