@@ -24,14 +24,14 @@ describe NdlBooksController do
   describe "POST create" do
     login_fixture_admin
 
-    it "should create a bibliographic record if nbn is set", :vcr => true do
-      post :create, :book => {:nbn => '97024234'}
-      assigns(:manifestation).identifier_contents(:nbn).should eq ['97024234']
+    it "should create a bibliographic record if jpno is set", :vcr => true do
+      post :create, :book => {:jpno => '97024234'}
+      assigns(:manifestation).identifier_contents(:jpno).should eq ['97024234']
       response.should redirect_to manifestation_items_url(assigns(:manifestation))
     end
 
-    it "should not create a bibliographic record if nbn is not set", :vcr => true do
-      post :create, :book => {:nbn => nil}
+    it "should not create a bibliographic record if jpno is not set", :vcr => true do
+      post :create, :book => {:jpno => nil}
       assigns(:manifestation).should be_nil
       response.should redirect_to ndl_books_url
     end

@@ -27,8 +27,8 @@ module EnjuNdl
       end
 
       def import_record(doc)
-        nbn = doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/JPNO"]').try(:content)
-        identifier = Identifier.where(:body => nbn, :identifier_type_id => IdentifierType.where(:name => 'nbn').first_or_create.id).first
+        jpno = doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/JPNO"]').try(:content)
+        identifier = Identifier.where(:body => jpno, :identifier_type_id => IdentifierType.where(:name => 'jpno').first_or_create.id).first
         return identifier.manifestation if identifier
 
         publishers = get_publishers(doc)
@@ -109,17 +109,17 @@ module EnjuNdl
             identifier[:isbn] = Identifier.new(:body => isbn)
             identifier[:isbn].identifier_type = IdentifierType.where(:name => 'isbn').first_or_create
           end
-          if nbn
-            identifier[:nbn] = Identifier.new(:body => nbn)
-            identifier[:nbn].identifier_type = IdentifierType.where(:name => 'nbn').first_or_create
+          if jpno
+            identifier[:jpno] = Identifier.new(:body => jpno)
+            identifier[:jpno].identifier_type = IdentifierType.where(:name => 'jpno').first_or_create
           end
           if issn
             identifier[:issn] = Identifier.new(:body => issn)
             identifier[:issn].identifier_type = IdentifierType.where(:name => 'issn').first_or_create
           end
           if issn_l
-            identifier[:issn] = Identifier.new(:body => issn_l)
-            identifier[:issn].identifier_type = IdentifierType.where(:name => 'issn_l').first_or_create
+            identifier[:issn_l] = Identifier.new(:body => issn_l)
+            identifier[:issn_l].identifier_type = IdentifierType.where(:name => 'issn_l').first_or_create
           end
           manifestation.carrier_type = carrier_type if carrier_type
           manifestation.manifestation_content_type = content_type if content_type
@@ -170,13 +170,10 @@ module EnjuNdl
               ndc9_url = classification_urls.map{|url| URI.parse(URI.escape(url))}.select{|u| u.path.split('/').reverse[1] == 'ndc9'}.first
               if ndc9_url
                 ndc = ndc9_url.path.split('/').last
-                classification_type = ClassificationType.where(:name => 'ndc9').first
-                unless classification_type
-                  classification_type = ClassificationType.create!(:name => 'ndc9', :display_name => 'NDC9')
-                end
+                classification_type = ClassificationType.where(:name => 'ndc9').first_or_create
                 classification = Classification.new(:category => ndc)
                 classification.classification_type = classification_type
-                manifestation.classifications << classification if classification
+                manifestation.classifications << classification if classification.valid?
               end
             end
           end

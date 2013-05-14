@@ -22,7 +22,7 @@ class NdlBooksController < ApplicationController
   def create
     if params[:book]
       begin
-        @manifestation = NdlBook.import_from_sru_response(params[:book][:nbn])
+        @manifestation = NdlBook.import_from_sru_response(params[:book][:jpno])
       rescue EnjuNdl::RecordNotFound
       end
       respond_to do |format|
