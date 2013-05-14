@@ -82,6 +82,7 @@ module EnjuNdl
         volume_number_string = doc.at('//dcndl:volume/rdf:Description/rdf:value').try(:content)
         extent = get_extent(doc)
         publication_periodicity = doc.at('//dcndl:publicationPeriodicity').try(:content)
+        statement_of_responsibility = doc.xpath('//dc:creator').map{|e| e.content}.join("; ")
 
         manifestation = nil
         Patron.transaction do
@@ -100,6 +101,7 @@ module EnjuNdl
             :description => description,
             :volume_number_string => volume_number_string,
             :price => price,
+            :statement_of_responsibility => statement_of_responsibility,
             :start_page => extent[:start_page],
             :end_page => extent[:end_page],
             :height => extent[:height]

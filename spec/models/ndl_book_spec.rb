@@ -36,6 +36,7 @@ describe NdlBook do
       manifestation.subjects.size.should eq 1
       manifestation.subjects.first.subject_heading_type.name.should eq 'ndlsh'
       manifestation.subjects.first.term.should eq 'プログラミング (コンピュータ)'
+      manifestation.statement_of_responsibility.should eq '秋葉拓哉, 岩田陽一, 北川宜稔 著; Usu-ya 編'
     end
 
     it "should import bibliographic record that does not have any classifications", :vcr => true do

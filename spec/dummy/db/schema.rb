@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130506175834) do
+ActiveRecord::Schema.define(:version => 20130509185724) do
 
   create_table "carrier_types", :force => true do |t|
     t.string   "name",         :null => false
@@ -304,6 +304,7 @@ ActiveRecord::Schema.define(:version => 20130506175834) do
     t.integer  "month_of_publication"
     t.string   "doi"
     t.boolean  "periodical"
+    t.text     "statement_of_responsibility"
   end
 
   add_index "manifestations", ["access_address"], :name => "index_manifestations_on_access_address"
