@@ -161,6 +161,7 @@ ActiveRecord::Schema.define(:version => 20130509185724) do
   end
 
   add_index "identifiers", ["body", "identifier_type_id"], :name => "index_identifiers_on_body_and_identifier_type_id"
+  add_index "identifiers", ["manifestation_id"], :name => "index_identifiers_on_manifestation_id"
 
   create_table "import_requests", :force => true do |t|
     t.string   "isbn"
