@@ -82,7 +82,7 @@ module EnjuNdl
         volume_number_string = doc.at('//dcndl:volume/rdf:Description/rdf:value').try(:content)
         extent = get_extent(doc)
         publication_periodicity = doc.at('//dcndl:publicationPeriodicity').try(:content)
-        statement_of_responsibility = doc.xpath('//dc:creator').map{|e| e.content}.join("; ")
+        statement_of_responsibility = doc.xpath('//dcndl:BibResource/dc:creator').map{|e| e.content}.join("; ")
 
         manifestation = nil
         Patron.transaction do
