@@ -25,7 +25,7 @@
         <%= link_to_import_from_ndl(book.jpno) %>
       </td>
       <td>
-        <%= link_to "#{book.title} #{book.volume}".strip , book.permalink %>
+        <strong><%= link_to "#{book.title} #{book.volume}".strip , book.permalink %></strong>
         <br />
         <%= book.creator %>
       	<%= book.publisher %>
