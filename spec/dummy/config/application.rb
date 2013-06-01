@@ -4,8 +4,6 @@ require 'rails/all'
 
 Bundler.require
 require "enju_ndl"
-require "enju_question"
-require "enju_subject"
 
 module Dummy
   class Application < Rails::Application
@@ -45,5 +43,6 @@ module Dummy
   end
 end
 
-require 'enju_biblio'
-require 'enju_subject'
+require 'enju_leaf'
+require "enju_question"
+require "enju_subject"
