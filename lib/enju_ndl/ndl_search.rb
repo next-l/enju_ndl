@@ -85,8 +85,8 @@ module EnjuNdl
         statement_of_responsibility = doc.xpath('//dcndl:BibResource/dc:creator').map{|e| e.content}.join("; ")
 
         manifestation = nil
-        Patron.transaction do
-          publisher_patrons = Patron.import_patrons(publishers)
+        Agent.transaction do
+          publisher_agents = Agent.import_agents(publishers)
 
           manifestation = Manifestation.new(
             :manifestation_identifier => admin_identifier,
@@ -130,7 +130,7 @@ module EnjuNdl
             identifier.each do |k, v|
               manifestation.identifiers << v if v.valid?
             end
-            manifestation.publishers << publisher_patrons
+            manifestation.publishers << publisher_agents
             create_additional_attributes(doc, manifestation)
             create_series_statement(doc, manifestation)
           end
@@ -148,11 +148,11 @@ module EnjuNdl
         classifications = get_classifications(doc).uniq
         classification_urls = doc.xpath('//dcterms:subject[@rdf:resource]').map{|subject| subject.attributes['resource'].value}
 
-        Patron.transaction do
-          creator_patrons = Patron.import_patrons(creators)
+        Agent.transaction do
+          creator_agents = Agent.import_agents(creators)
           language_id = Language.where(:iso_639_2 => language).first.id rescue 1
           content_type_id = ContentType.where(:name => 'text').first.id rescue 1
-          manifestation.creators << creator_patrons
+          manifestation.creators << creator_agents
 
           if defined?(EnjuSubject)
             subject_heading_type = SubjectHeadingType.where(:name => 'ndlsh').first_or_create
@@ -235,7 +235,7 @@ module EnjuNdl
           creators << {
             :full_name => creator.at('./foaf:name').content,
             :full_name_transcription => creator.at('./dcndl:transcription').try(:content),
-            :patron_identifier => creator.attributes["about"].try(:content)
+            :agent_identifier => creator.attributes["about"].try(:content)
           }
         end
         creators
@@ -276,7 +276,7 @@ module EnjuNdl
           publishers << {
             :full_name => publisher.at('./foaf:name').content,
             :full_name_transcription => publisher.at('./dcndl:transcription').try(:content),
-            :patron_identifier => publisher.attributes["about"].try(:content)
+            :agent_identifier => publisher.attributes["about"].try(:content)
           }
         end
         return publishers

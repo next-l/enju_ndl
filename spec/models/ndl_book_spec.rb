@@ -28,7 +28,7 @@ describe NdlBook do
       manifestation.language.name.should eq "Japanese"
       manifestation.creators.first.full_name.should eq '秋葉, 拓哉'
       manifestation.creators.first.full_name_transcription.should eq 'アキバ, タクヤ'
-      manifestation.creators.first.patron_identifier.should eq 'http://id.ndl.go.jp/auth/entity/01208840'
+      manifestation.creators.first.agent_identifier.should eq 'http://id.ndl.go.jp/auth/entity/01208840'
       manifestation.price.should eq 3280
       manifestation.start_page.should eq 1
       manifestation.end_page.should eq 315
