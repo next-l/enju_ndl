@@ -20,7 +20,6 @@ gem "enju_subject", github: "next-l/enju_subject", branch: "rails4"
 gem "enju_question", github: "next-l/enju_question", branch: "rails4"
 gem "enju_manifestation_viewer", github: "next-l/enju_manifestation_viewer", branch: "rails4"
 gem "paper_trail", github: "airblade/paper_trail", branch: "rails4"
-gem "acts_as_list", github: "swanandp/acts_as_list"
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
