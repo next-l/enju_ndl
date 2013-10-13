@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://iss.ndl.go.jp/api/sru?operation=searchRetrieve&recordSchema=dcndl&&maximumRecords=1&&query=%28jpno=97024234%29&onlyBib=true
+    uri: http://iss.ndl.go.jp/api/sru?operation=searchRetrieve&recordSchema=dcndl&maximumRecords=1&query=%28itemno=R100000002-I000002539673-00%29&onlyBib=true
     body:
       encoding: US-ASCII
       string: ''
@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Tue, 14 May 2013 04:32:11 GMT
+      - Sun, 13 Oct 2013 19:14:06 GMT
       server:
       - Apache
       etag:
@@ -27,7 +27,7 @@ http_interactions:
       x-ua-compatible:
       - IE=Edge,chrome=1
       x-runtime:
-      - '0.512229'
+      - '0.366407'
       cache-control:
       - max-age=0, private, must-revalidate
       status:
@@ -35,9 +35,9 @@ http_interactions:
       content-type:
       - application/xml; charset=utf-8
       set-cookie:
-      - _front_session_id=46a7b0f6800dcf962b0c16aa59008c70; domain=.iss.ndl.go.jp;
-        path=/; expires=Tue, 14-May-2013 05:32:11 GMT; HttpOnly
-      - serverid=1102; path=/
+      - _front_session_id=db59e5028c5d5fbf8c0fc4a9875d7282; domain=.iss.ndl.go.jp;
+        path=/; expires=Sun, 13-Oct-2013 20:14:07 GMT; HttpOnly
+      - serverid=1105; path=/
       vary:
       - Accept-Encoding,User-Agent
       content-encoding:
@@ -249,5 +249,5 @@ http_interactions:
         ZWNvcmQ+CiAgPC9yZWNvcmRzPgo8L3NlYXJjaFJldHJpZXZlUmVzcG9uc2U+
         Cg==
     http_version: '1.0'
-  recorded_at: Tue, 14 May 2013 04:32:11 GMT
-recorded_with: VCR 2.4.0
+  recorded_at: Sun, 13 Oct 2013 19:14:06 GMT
+recorded_with: VCR 2.5.0

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://iss.ndl.go.jp/api/sru?operation=searchRetrieve&recordSchema=dcndl&&maximumRecords=1&&query=%28jpno=00018082%29&onlyBib=true
+    uri: http://iss.ndl.go.jp/api/sru?operation=searchRetrieve&recordSchema=dcndl&maximumRecords=1&query=%28itemno=R100000002-I000000017951-00%29&onlyBib=true
     body:
       encoding: US-ASCII
       string: ''
@@ -19,15 +19,15 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Tue, 14 May 2013 04:32:27 GMT
+      - Sun, 13 Oct 2013 19:14:20 GMT
       server:
       - Apache
       etag:
-      - '"fb711444cf034b78f89c1e825b0a5c1e"'
+      - '"cdf37ee53d22dfdbc118accc6ac64af0"'
       x-ua-compatible:
       - IE=Edge,chrome=1
       x-runtime:
-      - '0.160966'
+      - '0.142726'
       cache-control:
       - max-age=0, private, must-revalidate
       status:
@@ -35,15 +35,15 @@ http_interactions:
       content-type:
       - application/xml; charset=utf-8
       set-cookie:
-      - _front_session_id=ccb8634b0edc9e212e72f7ecaa466bc9; domain=.iss.ndl.go.jp;
-        path=/; expires=Tue, 14-May-2013 05:32:27 GMT; HttpOnly
+      - _front_session_id=c5b36708cd874591747cd1c0bb71bd9c; domain=.iss.ndl.go.jp;
+        path=/; expires=Sun, 13-Oct-2013 20:14:20 GMT; HttpOnly
       - serverid=1102; path=/
       vary:
       - Accept-Encoding,User-Agent
       content-encoding:
       - gzip
       content-length:
-      - '1234'
+      - '1237'
       connection:
       - close
     body:
@@ -91,52 +91,52 @@ http_interactions:
         dHA6Ly9uZGwuZ28uanAvZGNuZGwvdGVybXMvSlBOTyZxdW90OyZndDswMDAx
         ODA4MiZsdDsvZGN0ZXJtczppZGVudGlmaWVyJmd0OwogICAgJmx0O2RjdGVy
         bXM6aWRlbnRpZmllciByZGY6ZGF0YXR5cGU9JnF1b3Q7aHR0cDovL25kbC5n
-        by5qcC9kY25kbC90ZXJtcy9JU1NOJnF1b3Q7Jmd0OzAyODc3NzgzJmx0Oy9k
-        Y3Rlcm1zOmlkZW50aWZpZXImZ3Q7CiAgICAmbHQ7ZGN0ZXJtczppZGVudGlm
-        aWVyIHJkZjpkYXRhdHlwZT0mcXVvdDtodHRwOi8vbmRsLmdvLmpwL2RjbmRs
-        L3Rlcm1zL0lTU05MJnF1b3Q7Jmd0OzAyODc3NzgzJmx0Oy9kY3Rlcm1zOmlk
-        ZW50aWZpZXImZ3Q7CiAgICAmbHQ7cmRmczpzZWVBbHNvIHJkZjpyZXNvdXJj
-        ZT0mcXVvdDtodHRwOi8vaWQubmRsLmdvLmpwL2pwbm8vMDAwMTgwODImcXVv
-        dDsvJmd0OwogICAgJmx0O3JkZnM6c2VlQWxzbyByZGY6cmVzb3VyY2U9JnF1
-        b3Q7aHR0cDovL2lzcy5uZGwuZ28uanAvaXNzbi8wMjg3Nzc4MyZxdW90Oy8m
-        Z3Q7CiAgICAmbHQ7cmRmczpzZWVBbHNvIHJkZjpyZXNvdXJjZT0mcXVvdDto
-        dHRwOi8vaXNzLm5kbC5nby5qcC9pc3NubC8wMjg3Nzc4MyZxdW90Oy8mZ3Q7
-        CiAgICAmbHQ7ZGN0ZXJtczp0aXRsZSZndDvopb/ml6XmnKzlk7LlrabkvJrk
-        vJrloLEmbHQ7L2RjdGVybXM6dGl0bGUmZ3Q7CiAgICAmbHQ7ZGM6dGl0bGUm
-        Z3Q7CiAgICAgICZsdDtyZGY6RGVzY3JpcHRpb24mZ3Q7CiAgICAgICAgJmx0
-        O3JkZjp2YWx1ZSZndDvopb/ml6XmnKzlk7LlrabkvJrkvJrloLEmbHQ7L3Jk
-        Zjp2YWx1ZSZndDsKICAgICAgICAmbHQ7ZGNuZGw6dHJhbnNjcmlwdGlvbiZn
-        dDvjg4vjgrfjg4vjg5vjg7Mg44OG44OE44Ks44OD44Kr44KkIOOCq+OCpOOD
-        m+OCpiZsdDsvZGNuZGw6dHJhbnNjcmlwdGlvbiZndDsKICAgICAgJmx0Oy9y
-        ZGY6RGVzY3JpcHRpb24mZ3Q7CiAgICAmbHQ7L2RjOnRpdGxlJmd0OwogICAg
-        Jmx0O2RjdGVybXM6cHVibGlzaGVyJmd0OwogICAgICAmbHQ7Zm9hZjpBZ2Vu
-        dCZndDsKICAgICAgICAmbHQ7Zm9hZjpuYW1lJmd0O+ilv+aXpeacrOWTsuWt
-        puS8miZsdDsvZm9hZjpuYW1lJmd0OwogICAgICAgICZsdDtkY25kbDpsb2Nh
-        dGlvbiZndDvnpo/lsqEmbHQ7L2RjbmRsOmxvY2F0aW9uJmd0OwogICAgICAm
-        bHQ7L2ZvYWY6QWdlbnQmZ3Q7CiAgICAmbHQ7L2RjdGVybXM6cHVibGlzaGVy
-        Jmd0OwogICAgJmx0O2RjbmRsOnB1YmxpY2F0aW9uUGxhY2UgcmRmOmRhdGF0
-        eXBlPSZxdW90O2h0dHA6Ly9wdXJsLm9yZy9kYy90ZXJtcy9JU08zMTY2JnF1
-        b3Q7Jmd0O0pQJmx0Oy9kY25kbDpwdWJsaWNhdGlvblBsYWNlJmd0OwogICAg
-        Jmx0O2RjdGVybXM6ZGVzY3JpcHRpb24mZ3Q75pys44K/44Kk44OI44Or562J
-        44Gv5pyA5paw5Y+344Gr44KI44KLJmx0Oy9kY3Rlcm1zOmRlc2NyaXB0aW9u
-        Jmd0OwogICAgJmx0O2RjdGVybXM6c3ViamVjdCByZGY6cmVzb3VyY2U9JnF1
-        b3Q7aHR0cDovL2lkLm5kbC5nby5qcC9jbGFzcy9uZGxjL1pIMiZxdW90Oy8m
-        Z3Q7CiAgICAmbHQ7ZGN0ZXJtczpsYW5ndWFnZSByZGY6ZGF0YXR5cGU9JnF1
-        b3Q7aHR0cDovL3B1cmwub3JnL2RjL3Rlcm1zL0lTTzYzOS0yJnF1b3Q7Jmd0
-        O2pwbiZsdDsvZGN0ZXJtczpsYW5ndWFnZSZndDsKICAgICZsdDtkY3Rlcm1z
-        OmV4dGVudCZndDvlhoogOyAyMmNtJmx0Oy9kY3Rlcm1zOmV4dGVudCZndDsK
-        ICAgICZsdDtkY25kbDptYXRlcmlhbFR5cGUgcmRmOnJlc291cmNlPSZxdW90
-        O2h0dHA6Ly9uZGwuZ28uanAvbmRsdHlwZS9Kb3VybmFsJnF1b3Q7IHJkZnM6
-        bGFiZWw9JnF1b3Q76ZuR6KqMJnF1b3Q7LyZndDsKICAgICZsdDtkY25kbDpw
-        dWJsaWNhdGlvblBlcmlvZGljaXR5Jmd0O+W5tOWIiiZsdDsvZGNuZGw6cHVi
-        bGljYXRpb25QZXJpb2RpY2l0eSZndDsKICAgICZsdDtkY25kbDpwdWJsaWNh
-        dGlvblN0YXR1cyZndDvkuI3mmI4mbHQ7L2RjbmRsOnB1YmxpY2F0aW9uU3Rh
-        dHVzJmd0OwogICAgJmx0O2RjdGVybXM6YWNjZXNzUmlnaHRzJmd0O1MwMVA5
-        OVU5OSZsdDsvZGN0ZXJtczphY2Nlc3NSaWdodHMmZ3Q7CiAgJmx0Oy9kY25k
-        bDpCaWJSZXNvdXJjZSZndDsKJmx0Oy9yZGY6UkRGJmd0OwogICAgICA8L3Jl
-        Y29yZERhdGE+CiAgICAgIDxyZWNvcmRQb3NpdGlvbj4xPC9yZWNvcmRQb3Np
-        dGlvbj4KICAgIDwvcmVjb3JkPgogIDwvcmVjb3Jkcz4KPC9zZWFyY2hSZXRy
-        aWV2ZVJlc3BvbnNlPgo=
+        by5qcC9kY25kbC90ZXJtcy9JU1NOJnF1b3Q7Jmd0OzAyODctNzc4MyZsdDsv
+        ZGN0ZXJtczppZGVudGlmaWVyJmd0OwogICAgJmx0O2RjdGVybXM6aWRlbnRp
+        ZmllciByZGY6ZGF0YXR5cGU9JnF1b3Q7aHR0cDovL25kbC5nby5qcC9kY25k
+        bC90ZXJtcy9JU1NOTCZxdW90OyZndDswMjg3LTc3ODMmbHQ7L2RjdGVybXM6
+        aWRlbnRpZmllciZndDsKICAgICZsdDtyZGZzOnNlZUFsc28gcmRmOnJlc291
+        cmNlPSZxdW90O2h0dHA6Ly9pZC5uZGwuZ28uanAvanBuby8wMDAxODA4MiZx
+        dW90Oy8mZ3Q7CiAgICAmbHQ7cmRmczpzZWVBbHNvIHJkZjpyZXNvdXJjZT0m
+        cXVvdDtodHRwOi8vaXNzLm5kbC5nby5qcC9pc3NuLzAyODc3NzgzJnF1b3Q7
+        LyZndDsKICAgICZsdDtyZGZzOnNlZUFsc28gcmRmOnJlc291cmNlPSZxdW90
+        O2h0dHA6Ly9pc3MubmRsLmdvLmpwL2lzc25sLzAyODc3NzgzJnF1b3Q7LyZn
+        dDsKICAgICZsdDtkY3Rlcm1zOnRpdGxlJmd0O+ilv+aXpeacrOWTsuWtpuS8
+        muS8muWgsSZsdDsvZGN0ZXJtczp0aXRsZSZndDsKICAgICZsdDtkYzp0aXRs
+        ZSZndDsKICAgICAgJmx0O3JkZjpEZXNjcmlwdGlvbiZndDsKICAgICAgICAm
+        bHQ7cmRmOnZhbHVlJmd0O+ilv+aXpeacrOWTsuWtpuS8muS8muWgsSZsdDsv
+        cmRmOnZhbHVlJmd0OwogICAgICAgICZsdDtkY25kbDp0cmFuc2NyaXB0aW9u
+        Jmd0O+ODi+OCt+ODi+ODm+ODsyDjg4bjg4Tjgqzjg4PjgqvjgqQg44Kr44Kk
+        44Ob44KmJmx0Oy9kY25kbDp0cmFuc2NyaXB0aW9uJmd0OwogICAgICAmbHQ7
+        L3JkZjpEZXNjcmlwdGlvbiZndDsKICAgICZsdDsvZGM6dGl0bGUmZ3Q7CiAg
+        ICAmbHQ7ZGN0ZXJtczpwdWJsaXNoZXImZ3Q7CiAgICAgICZsdDtmb2FmOkFn
+        ZW50Jmd0OwogICAgICAgICZsdDtmb2FmOm5hbWUmZ3Q76KW/5pel5pys5ZOy
+        5a2m5LyaJmx0Oy9mb2FmOm5hbWUmZ3Q7CiAgICAgICAgJmx0O2RjbmRsOmxv
+        Y2F0aW9uJmd0O+emj+WyoSZsdDsvZGNuZGw6bG9jYXRpb24mZ3Q7CiAgICAg
+        ICZsdDsvZm9hZjpBZ2VudCZndDsKICAgICZsdDsvZGN0ZXJtczpwdWJsaXNo
+        ZXImZ3Q7CiAgICAmbHQ7ZGNuZGw6cHVibGljYXRpb25QbGFjZSByZGY6ZGF0
+        YXR5cGU9JnF1b3Q7aHR0cDovL3B1cmwub3JnL2RjL3Rlcm1zL0lTTzMxNjYm
+        cXVvdDsmZ3Q7SlAmbHQ7L2RjbmRsOnB1YmxpY2F0aW9uUGxhY2UmZ3Q7CiAg
+        ICAmbHQ7ZGN0ZXJtczpkZXNjcmlwdGlvbiZndDvmnKzjgr/jgqTjg4jjg6vn
+        rYnjga/mnIDmlrDlj7fjgavjgojjgosmbHQ7L2RjdGVybXM6ZGVzY3JpcHRp
+        b24mZ3Q7CiAgICAmbHQ7ZGN0ZXJtczpzdWJqZWN0IHJkZjpyZXNvdXJjZT0m
+        cXVvdDtodHRwOi8vaWQubmRsLmdvLmpwL2NsYXNzL25kbGMvWkgyJnF1b3Q7
+        LyZndDsKICAgICZsdDtkY3Rlcm1zOmxhbmd1YWdlIHJkZjpkYXRhdHlwZT0m
+        cXVvdDtodHRwOi8vcHVybC5vcmcvZGMvdGVybXMvSVNPNjM5LTImcXVvdDsm
+        Z3Q7anBuJmx0Oy9kY3Rlcm1zOmxhbmd1YWdlJmd0OwogICAgJmx0O2RjdGVy
+        bXM6ZXh0ZW50Jmd0O+WGiiA7IDIyY20mbHQ7L2RjdGVybXM6ZXh0ZW50Jmd0
+        OwogICAgJmx0O2RjbmRsOm1hdGVyaWFsVHlwZSByZGY6cmVzb3VyY2U9JnF1
+        b3Q7aHR0cDovL25kbC5nby5qcC9uZGx0eXBlL0pvdXJuYWwmcXVvdDsgcmRm
+        czpsYWJlbD0mcXVvdDvpm5HoqowmcXVvdDsvJmd0OwogICAgJmx0O2RjbmRs
+        OnB1YmxpY2F0aW9uUGVyaW9kaWNpdHkmZ3Q75bm05YiKJmx0Oy9kY25kbDpw
+        dWJsaWNhdGlvblBlcmlvZGljaXR5Jmd0OwogICAgJmx0O2RjbmRsOnB1Ymxp
+        Y2F0aW9uU3RhdHVzJmd0O+S4jeaYjiZsdDsvZGNuZGw6cHVibGljYXRpb25T
+        dGF0dXMmZ3Q7CiAgICAmbHQ7ZGN0ZXJtczphY2Nlc3NSaWdodHMmZ3Q7UzAx
+        UDk5VTk5Jmx0Oy9kY3Rlcm1zOmFjY2Vzc1JpZ2h0cyZndDsKICAmbHQ7L2Rj
+        bmRsOkJpYlJlc291cmNlJmd0OwombHQ7L3JkZjpSREYmZ3Q7CiAgICAgIDwv
+        cmVjb3JkRGF0YT4KICAgICAgPHJlY29yZFBvc2l0aW9uPjE8L3JlY29yZFBv
+        c2l0aW9uPgogICAgPC9yZWNvcmQ+CiAgPC9yZWNvcmRzPgo8L3NlYXJjaFJl
+        dHJpZXZlUmVzcG9uc2U+Cg==
     http_version: '1.0'
-  recorded_at: Tue, 14 May 2013 04:32:27 GMT
-recorded_with: VCR 2.4.0
+  recorded_at: Sun, 13 Oct 2013 19:14:19 GMT
+recorded_with: VCR 2.5.0

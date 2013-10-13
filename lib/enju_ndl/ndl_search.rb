@@ -27,9 +27,11 @@ module EnjuNdl
       end
 
       def import_record(doc)
-        jpno = doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/JPNO"]').try(:content)
-        identifier = Identifier.where(:body => jpno, :identifier_type_id => IdentifierType.where(:name => 'jpno').first_or_create.id).first
+        iss_itemno = URI.parse(doc.at('//dcndl:BibAdminResource[@rdf:about]').values.first).path.split('/').last
+        identifier = Identifier.where(:body => iss_itemno, :identifier_type_id => IdentifierType.where(:name => 'iss_itemno').first_or_create.id).first
         return identifier.manifestation if identifier
+
+        jpno = doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/JPNO"]').try(:content)
 
         publishers = get_publishers(doc)
 
@@ -110,6 +112,10 @@ module EnjuNdl
           if isbn
             identifier[:isbn] = Identifier.new(:body => isbn)
             identifier[:isbn].identifier_type = IdentifierType.where(:name => 'isbn').first_or_create
+          end
+          if iss_itemno
+            identifier[:iss_itemno] = Identifier.new(:body => iss_itemno)
+            identifier[:iss_itemno].identifier_type = IdentifierType.where(:name => 'iss_itemno').first_or_create
           end
           if jpno
             identifier[:jpno] = Identifier.new(:body => jpno)
