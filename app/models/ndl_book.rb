@@ -1,6 +1,7 @@
 # -*- encoding: utf-8 -*-
 class NdlBook
-  attr_reader :jpno, :permalink, :title, :creator, :publisher, :issued, :isbn
+  attr_reader :jpno, :permalink, :title, :creator, :publisher, :issued, :isbn,
+    :itemno
 
   def initialize(node)
     @node = node
@@ -12,6 +13,10 @@ class NdlBook
 
   def permalink
     @node.at('./link').try(:content).to_s
+  end
+
+  def itemno
+    URI.parse(permalink).path.split('/').last
   end
 
   def title
@@ -61,15 +66,14 @@ class NdlBook
     end
   end
 
-  def self.import_from_sru_response(jpno)
-    identifier = Identifier.where(:body => jpno, :identifier_type_id => IdentifierType.where(:name => 'jpno').first_or_create.id).first
+  def self.import_from_sru_response(itemno)
+    identifier = Identifier.where(:body => itemno, :identifier_type_id => IdentifierType.where(:name => 'iss_itemno').first_or_create.id).first
     return if identifier
-    url = "http://iss.ndl.go.jp/api/sru?operation=searchRetrieve&recordSchema=dcndl&&maximumRecords=1&&query=%28jpno=#{jpno}%29&onlyBib=true"
+    url = "http://iss.ndl.go.jp/api/sru?operation=searchRetrieve&recordSchema=dcndl&maximumRecords=1&query=%28itemno=#{itemno}%29&onlyBib=true"
     xml = open(url).read
     response = Nokogiri::XML(xml).at('//xmlns:recordData')
     return unless response.try(:content)
-    doc = Nokogiri::XML(response.content)
-    Manifestation.import_record(doc)
+    Manifestation.import_record(Nokogiri::XML(response.content))
   end
 
   attr_accessor :url

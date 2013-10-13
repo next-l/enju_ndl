@@ -25,7 +25,7 @@ describe NdlBooksController do
     login_fixture_admin
 
     it "should create a bibliographic record if jpno is set", :vcr => true do
-      post :create, :book => {:jpno => '97024234'}
+      post :create, :book => {:iss_itemno => 'R100000002-I000002539673-00'}
       assigns(:manifestation).identifier_contents(:jpno).should eq ['97024234']
       response.should redirect_to manifestation_items_url(assigns(:manifestation))
     end
