@@ -22,7 +22,7 @@
   <% @books.each do |book| %>
     <tr class="line<%= cycle("0", "1") -%>">
       <td>
-        <%= link_to_import_from_ndl(book.jpno) %>
+        <%= link_to_import_from_ndl(book.itemno) %>
       </td>
       <td>
         <strong><%= link_to "#{book.title} #{book.volume}".strip , book.permalink %></strong>
