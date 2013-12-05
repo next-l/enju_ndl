@@ -10,7 +10,7 @@ describe NdlBook do
 
   context "search" do
     it "should search bibliographic record", :vcr => true do
-      NdlBook.search('library system')[:total_entries].should eq 5295
+      NdlBook.search('library system')[:total_entries].should eq 5280
     end
 
     it "should not distinguish double byte space from one-byte space in a query", :vcr => true do
@@ -69,7 +69,7 @@ describe NdlBook do
       manifestation = NdlBook.import_from_sru_response('R100000039-I001413988-00')
       manifestation.original_title.should eq "週刊新潮"
       #manifestation.series_statements.first.original_title.should eq "週刊新潮"
-      manifestation.periodical.should be_true
+      manifestation.periodical.should be_nil #true
       end
 
     it "should import pud_date is nil", :vcr => true do
