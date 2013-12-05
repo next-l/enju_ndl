@@ -131,7 +131,7 @@ module EnjuNdl
           end
           manifestation.carrier_type = carrier_type if carrier_type
           manifestation.manifestation_content_type = content_type if content_type
-          manifestation.periodical = true if publication_periodicity
+          #manifestation.periodical = true if publication_periodicity
           if manifestation.save
             identifier.each do |k, v|
               manifestation.identifiers << v if v.valid?
@@ -189,14 +189,14 @@ module EnjuNdl
       end
 
       def search_ndl(query, options = {})
-        options = {:dpid => 'iss-ndl-opac', :item => 'any', :idx => 1, :per_page => 10, :raw => false}.merge(options)
+        options = {:dpid => 'iss-ndl-opac', :item => 'any', :idx => 1, :per_page => 10, :raw => false, :mediatype => 1}.merge(options)
         doc = nil
         results = {}
         startrecord = options[:idx].to_i
         if startrecord == 0
           startrecord = 1
         end
-        url = "http://iss.ndl.go.jp/api/opensearch?dpid=#{options[:dpid]}&#{options[:item]}=#{format_query(query)}&cnt=#{options[:per_page]}&idx=#{startrecord}"
+        url = "http://iss.ndl.go.jp/api/opensearch?dpid=#{options[:dpid]}&#{options[:item]}=#{format_query(query)}&cnt=#{options[:per_page]}&idx=#{startrecord}&mediatype=#{options[:mediatype]}"
         if options[:raw] == true
           open(url).read
         else
