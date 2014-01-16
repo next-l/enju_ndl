@@ -1,4 +1,4 @@
-require 'enju_core'
+require 'enju_seed'
 require 'nokogiri'
 require 'rss'
 require 'lisbn'
