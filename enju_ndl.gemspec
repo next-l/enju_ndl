@@ -26,8 +26,8 @@ Gem::Specification.new do |s|
   s.add_development_dependency "vcr"
   s.add_development_dependency "fakeweb"
   s.add_development_dependency "enju_leaf", "~> 1.1.0.rc7"
-  s.add_development_dependency "enju_question", "~> 0.1.0.pre8"
+  s.add_development_dependency "enju_question", "~> 0.1.0.pre9"
   s.add_development_dependency "sunspot_solr", "~> 2.0"
   s.add_development_dependency "simplecov"
-  s.add_development_dependency "enju_subject", "~> 0.1.0.pre21"
+  s.add_development_dependency "enju_subject", "~> 0.1.0.pre22"
 end
