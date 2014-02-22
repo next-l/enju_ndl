@@ -18,6 +18,8 @@ gem "enju_library", github: "next-l/enju_library", branch: "rails4"
 gem "enju_subject", github: "next-l/enju_subject", branch: "rails4"
 gem "enju_question", github: "next-l/enju_question", branch: "rails4"
 gem "enju_manifestation_viewer", github: "next-l/enju_manifestation_viewer", branch: "rails4"
+gem "protected_attributes", github: "rails/protected_attributes"
+gem "state_machine", github: "seuros/state_machine"
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
