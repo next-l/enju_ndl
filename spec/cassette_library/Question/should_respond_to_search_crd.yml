@@ -19,13 +19,13 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Thu, 05 Dec 2013 11:09:33 GMT
+      - Thu, 05 Dec 2013 11:04:18 GMT
       server:
       - Apache
       x-powered-by:
       - PHP/5.4.8
       set-cookie:
-      - ndl_crd_session=4qqirkhj1a1h8qrseoe2h0v9v1; path=/reference/
+      - ndl_crd_session=3rpicfpn52obhhevru98p6uql7; path=/reference/
       expires:
       - Thu, 19 Nov 1981 08:52:00 GMT
       cache-control:
@@ -308,5 +308,5 @@ http_interactions:
         CQk8cG9zaXRpb24+NDwvcG9zaXRpb24+Cgk8L3Jlc3VsdD4KCTwvcmVzdWx0
         X3NldD4=
     http_version: '1.0'
-  recorded_at: Thu, 05 Dec 2013 11:09:33 GMT
+  recorded_at: Thu, 05 Dec 2013 11:04:18 GMT
 recorded_with: VCR 2.8.0
