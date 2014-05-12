@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.name        = "enju_ndl"
   s.version     = EnjuNdl::VERSION
   s.authors     = ["Kosuke Tanabe"]
-  s.email       = ["kosuke@e23.jp"]
+  s.email       = ["nabeta@fastmail.fm"]
   s.homepage    = "https://github.com/next-l/enju_ndl"
   s.summary     = "enju_ndl plugin"
   s.description = "NDL WebAPI wrapper for Next-L Enju"
@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["spec/**/*"] - Dir["spec/dummy/log/*"] - Dir["spec/dummy/solr/{data,pids}/*"]
 
-  s.add_dependency "enju_seed", "~> 0.1.1.pre8"
+  s.add_dependency "enju_seed", "~> 0.1.1.pre9"
   s.add_dependency "nokogiri"
   s.add_dependency "lisbn"
   s.add_dependency "library_stdnums"
@@ -27,7 +27,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "fakeweb"
   s.add_development_dependency "enju_leaf", "~> 1.1.0.rc8"
   s.add_development_dependency "enju_question", "~> 0.1.0.pre10"
-  s.add_development_dependency "sunspot_solr", "~> 2.0"
+  s.add_development_dependency "sunspot_solr", "~> 2.1"
   s.add_development_dependency "simplecov"
   s.add_development_dependency "enju_subject", "~> 0.1.0.pre23"
 end
