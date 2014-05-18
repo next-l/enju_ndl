@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.name        = "enju_ndl"
   s.version     = EnjuNdl::VERSION
   s.authors     = ["Kosuke Tanabe"]
-  s.email       = ["kosuke@e23.jp"]
+  s.email       = ["nabeta@fastmail.fm"]
   s.homepage    = "https://github.com/next-l/enju_ndl"
   s.summary     = "enju_ndl plugin"
   s.description = "NDL WebAPI wrapper for Next-L Enju"
@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["spec/**/*"] - Dir["spec/dummy/log/*"] - Dir["spec/dummy/solr/{data,pids}/*"]
 
-  s.add_dependency "rails", "~> 4.0"
+  s.add_dependency "rails", "~> 4.1"
   s.add_dependency "nokogiri"
   s.add_dependency "lisbn"
   s.add_dependency "library_stdnums"
