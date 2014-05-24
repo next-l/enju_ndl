@@ -5,9 +5,6 @@ source "https://rubygems.org"
 # development dependencies will be added by default to the :development group.
 gemspec
 
-# jquery-rails is used by the dummy application
-gem "jquery-rails"
-
 # Declare any dependencies that are still in development here instead of in
 # your gemspec. These might include edge Rails or gems from your path or
 # Git. Remember to move these dependencies to your gemspec before releasing
@@ -18,7 +15,6 @@ gem "enju_library", github: "next-l/enju_library"
 gem "enju_subject", github: "next-l/enju_subject"
 gem "enju_question", github: "next-l/enju_question"
 gem "enju_manifestation_viewer", github: "next-l/enju_manifestation_viewer"
-gem "state_machine", github: "seuros/state_machine"
 
 # To use debugger
 # gem 'debugger'
