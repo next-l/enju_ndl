@@ -27,7 +27,7 @@ describe NdlBooksController do
     it "should create a bibliographic record if jpno is set", :vcr => true do
       post :create, :book => {:iss_itemno => 'R100000002-I000002539673-00'}
       assigns(:manifestation).identifier_contents(:jpno).should eq ['97024234']
-      response.should redirect_to manifestation_items_url(assigns(:manifestation))
+      response.should redirect_to manifestation_url(assigns(:manifestation))
     end
 
     it "should not create a bibliographic record if jpno is not set", :vcr => true do
