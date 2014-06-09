@@ -38,7 +38,7 @@
 
 <br />
 
-<%= paginate(@books, :theme => 'enju_leaf') %>
+<%= paginate(@books) %>
 <% else %>
   <%= javascript_tag("$(function(){$('#search_form_top').focus()})") %>
 <% end %>
