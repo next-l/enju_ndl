@@ -35,6 +35,8 @@ RSpec.configure do |config|
   config.before do
     Sunspot.session = Sunspot::Rails::StubSessionProxy.new($original_sunspot_session)
   end
+
+  config.infer_spec_type_from_file_location!
 end
 
 VCR.configure do |c|
