@@ -44,7 +44,6 @@ describe NdlBook do
       manifestation = NdlBook.import_from_sru_response('R100000002-I000003641700-00')
       manifestation.original_title.should eq "アンパンマンとどうぶつえん"
       manifestation.title_transcription.should eq "アンパンマン ト ドウブツエン"
-      manifestation.ndc.should be_nil
     end
 
     it "should import volume_number_string", :vcr => true do

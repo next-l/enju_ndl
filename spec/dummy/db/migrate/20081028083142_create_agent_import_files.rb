@@ -7,7 +7,6 @@ class CreateAgentImportFiles < ActiveRecord::Migration
       t.integer :user_id
       t.text :note
       t.datetime :executed_at
-      t.string :state
       t.string :agent_import_file_name
       t.string :agent_import_content_type
       t.integer :agent_import_file_size
@@ -17,6 +16,5 @@ class CreateAgentImportFiles < ActiveRecord::Migration
     end
     add_index :agent_import_files, :parent_id
     add_index :agent_import_files, :user_id
-    add_index :agent_import_files, :state
   end
 end
