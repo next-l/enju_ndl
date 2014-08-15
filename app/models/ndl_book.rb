@@ -67,7 +67,7 @@ class NdlBook
   end
 
   def self.import_from_sru_response(itemno)
-    identifier = Identifier.where(:body => itemno, :identifier_type_id => IdentifierType.where(:name => 'iss_itemno').first_or_create.id).first
+    identifier = Identifier.where(body: itemno, :identifier_type_id => IdentifierType.where(name: 'iss_itemno').first_or_create.id).first
     return if identifier
     url = "http://iss.ndl.go.jp/api/sru?operation=searchRetrieve&recordSchema=dcndl&maximumRecords=1&query=%28itemno=#{itemno}%29&onlyBib=true"
     xml = open(url).read

@@ -27,18 +27,16 @@ class NdlBooksController < ApplicationController
       end
       respond_to do |format|
         if @manifestation.try(:save)
-          flash[:notice] = t('controller.successfully_created', :model => t('activerecord.models.manifestation'))
-          format.html { redirect_to items_url(manifestation_id: @manifestation.id) }
+          format.html { redirect_to @manifestation, notice: t('controller.successfully_created', model: t('activerecord.models.manifestation')) }
         else
-          flash[:notice] = t('enju_ndl.record_not_found')
-          format.html { redirect_to ndl_books_url }
+          format.html { redirect_to ndl_books_url , notice: t('enju_ndl.record_not_found') }
         end
       end
     end
   #rescue ActiveRecord::RecordInvalid => e
   #  respond_to do |format|
   #    flash[:notice] = e.message
-  #    format.html { render :action => "index" }
+  #    format.html { render action: "index" }
   #  end
   end
 
