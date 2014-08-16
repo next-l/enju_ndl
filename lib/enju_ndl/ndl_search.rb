@@ -85,6 +85,7 @@ module EnjuNdl
         extent = get_extent(doc)
         publication_periodicity = doc.at('//dcndl:publicationPeriodicity').try(:content)
         statement_of_responsibility = doc.xpath('//dcndl:BibResource/dc:creator').map{|e| e.content}.join("; ")
+	publication_place = doc.at('//dcterms:publisher/foaf:Agent/dcndl:location').try(:content)
 
         manifestation = nil
         Agent.transaction do
@@ -106,7 +107,8 @@ module EnjuNdl
             :statement_of_responsibility => statement_of_responsibility,
             :start_page => extent[:start_page],
             :end_page => extent[:end_page],
-            :height => extent[:height]
+            :height => extent[:height],
+	    :publication_place => publication_place,
           )
           identifier = {}
           if isbn
