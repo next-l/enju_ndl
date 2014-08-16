@@ -116,5 +116,10 @@ describe NdlBook do
       book = NdlBook.search("4788509105")[:items].first
       book.series_title.should eq ""
     end
+
+    it "should import publication_place", :vcr => true do
+      manifestation = NdlBook.import_from_sru_response('R100000002-I000007725666-00')
+      manifestation.publication_place.should eq "つくば"
+    end
   end
 end
