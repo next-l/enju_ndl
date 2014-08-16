@@ -10,7 +10,7 @@ http_interactions:
       accept-encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       accept:
-      - '*/*'
+      - "*/*"
       user-agent:
       - Ruby
   response:
@@ -19,15 +19,15 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Thu, 05 Dec 2013 11:09:28 GMT
+      - Sat, 16 Aug 2014 15:01:21 GMT
       server:
       - Apache
       etag:
-      - '"79f973c3ee65ea7c4ed61996fd20fb27"'
+      - '"12b95508e57cf061f69bf279f065f143"'
       x-ua-compatible:
       - IE=Edge,chrome=1
       x-runtime:
-      - '0.195665'
+      - '2.853219'
       cache-control:
       - max-age=0, private, must-revalidate
       status:
@@ -35,8 +35,8 @@ http_interactions:
       content-type:
       - application/xml; charset=utf-8
       set-cookie:
-      - _front_session_id=af0ae8be10254f852ff0cdfa894fccfd; domain=.iss.ndl.go.jp;
-        path=/; expires=Thu, 05-Dec-2013 12:09:29 GMT; HttpOnly
+      - _front_session_id=7868bac33c5291185bdb7b5c4ba48dd6; domain=.iss.ndl.go.jp;
+        path=/; expires=Sat, 16-Aug-2014 16:01:24 GMT; HttpOnly
       - serverid=1105; path=/
       vary:
       - Accept-Encoding,User-Agent
@@ -47,7 +47,7 @@ http_interactions:
       x-frame-options:
       - SAMEORIGIN
       content-length:
-      - '1138'
+      - '1228'
       connection:
       - close
     body:
@@ -67,8 +67,8 @@ http_interactions:
         LTUgaXNzLW5kbC1vcGFjIC0g5Zu956uL5Zu95Lya5Zuz5pu46aSo44K144O8
         44OBIE9wZW5TZWFyY2g8L3RpdGxlPgogICAgPGxpbms+aHR0cDovL2lzcy5u
         ZGwuZ28uanAvYXBpL29wZW5zZWFyY2g/YW55PTk3OC00LTA0LTg3NDAxMy01
-        JmFtcDtkcGlkPWlzcy1uZGwtb3BhYyZhbXA7Y250PTEwJmFtcDttZWRpYXR5
-        cGU9MSZhbXA7aWR4PTE8L2xpbms+CiAgICA8ZGVzY3JpcHRpb24+U2VhcmNo
+        JmFtcDttZWRpYXR5cGU9MSZhbXA7aWR4PTEmYW1wO2RwaWQ9aXNzLW5kbC1v
+        cGFjJmFtcDtjbnQ9MTA8L2xpbms+CiAgICA8ZGVzY3JpcHRpb24+U2VhcmNo
         IHJlc3VsdHMgZm9yIGFueT05NzgtNC0wNC04NzQwMTMtNSBtZWRpYXR5cGU9
         MSBjbnQ9MTAgZHBpZD1pc3MtbmRsLW9wYWMgPC9kZXNjcmlwdGlvbj4KICAg
         IDxsYW5ndWFnZT5qYTwvbGFuZ3VhZ2U+CiAgICA8b3BlblNlYXJjaDp0b3Rh
@@ -109,7 +109,15 @@ http_interactions:
         ZC5uZGwuZ28uanAvYmliLzAwMDAxMDYzNjAxNSIvPgogICAgICA8cmRmczpz
         ZWVBbHNvIHJkZjpyZXNvdXJjZT0iaHR0cDovL29wYWNzdnIwMS5saWJyYXJ5
         LnByZWYubmFyYS5qcC9teWxpbWVkaW8vc2VhcmNoL2Jvb2suZG8/YmliaWQ9
-        NDIxNzY4Ii8+CiAgICA8L2l0ZW0+CiAgPC9jaGFubmVsPgo8L3Jzcz4K
+        NDIxNzY4Ii8+CiAgICAgIDxyZGZzOnNlZUFsc28gcmRmOnJlc291cmNlPSJo
+        dHRwOi8vd3d3LmxpYnJhcnkucHJlZi5mdWt1aS5qcC93aW5qL29wYWMvc3dp
+        dGNoLWRldGFpbC1pY2NhcC5kbz9iaWJpZD0xMTA0ODg4MDY4Ii8+CiAgICAg
+        IDxyZGZzOnNlZUFsc28gcmRmOnJlc291cmNlPSJodHRwOi8vd2ViLm9tbC5j
+        aXR5Lm9zYWthLmxnLmpwL3dlYm9wYWNfaV9qYS8wMDExOTc4NzI3Ii8+CiAg
+        ICAgIDxyZGZzOnNlZUFsc28gcmRmOnJlc291cmNlPSJodHRwOi8vd3d3Lmxp
+        Yi5wcmVmLmZ1a3Vva2EuanAvd2luai9vcGFjL3N3aXRjaC1kZXRhaWwtaWNj
+        YXAuZG8/YmliaWQ9MTEwOTA5NDk1MiIvPgogICAgPC9pdGVtPgogIDwvY2hh
+        bm5lbD4KPC9yc3M+Cg==
     http_version: '1.0'
-  recorded_at: Thu, 05 Dec 2013 11:09:29 GMT
-recorded_with: VCR 2.8.0
+  recorded_at: Sat, 16 Aug 2014 15:01:27 GMT
+recorded_with: VCR 2.9.2
