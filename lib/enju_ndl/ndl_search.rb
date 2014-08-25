@@ -7,7 +7,7 @@ module EnjuNdl
 
     module ClassMethods
       def import_isbn(isbn)
-        manifestation = Manifestation.import_from_ndl_search(:isbn => isbn)
+        manifestation = Manifestation.import_from_ndl_search(isbn: isbn)
         manifestation
       end
 
@@ -28,7 +28,7 @@ module EnjuNdl
 
       def import_record(doc)
         iss_itemno = URI.parse(doc.at('//dcndl:BibAdminResource[@rdf:about]').values.first).path.split('/').last
-        identifier = Identifier.where(:body => iss_itemno, :identifier_type_id => IdentifierType.where(:name => 'iss_itemno').first_or_create.id).first
+        identifier = Identifier.where(body: iss_itemno, :identifier_type_id => IdentifierType.where(name: 'iss_itemno').first_or_create.id).first
         return identifier.manifestation if identifier
 
         jpno = doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/JPNO"]').try(:content)
@@ -52,7 +52,7 @@ module EnjuNdl
           end
         end
 
-        language = Language.where(:iso_639_2 => get_language(doc)).first
+        language = Language.where(iso_639_2: get_language(doc)).first
         if language
           language_id = language.id
         else
@@ -67,14 +67,14 @@ module EnjuNdl
         doc.xpath('//dcndl:materialType[@rdf:resource]').each do |d|
           case d.attributes['resource'].try(:content)
           when 'http://ndl.go.jp/ndltype/Book'
-            carrier_type = CarrierType.where(:name => 'print').first
-            content_type = ContentType.where(:name => 'text').first
+            carrier_type = CarrierType.where(name: 'print').first
+            content_type = ContentType.where(name: 'text').first
           when 'http://purl.org/dc/dcmitype/Sound'
-            content_type = ContentType.where(:name => 'audio').first
+            content_type = ContentType.where(name: 'audio').first
           when 'http://purl.org/dc/dcmitype/MovingImage'
-            content_type = ContentType.where(:name => 'video').first
+            content_type = ContentType.where(name: 'video').first
           when 'http://ndl.go.jp/ndltype/ElectronicResource'
-            carrier_type = CarrierType.where(:name => 'file').first
+            carrier_type = CarrierType.where(name: 'file').first
           end
         end
 
@@ -98,7 +98,7 @@ module EnjuNdl
             :title_alternative => title[:alternative],
             :title_alternative_transcription => title[:alternative_transcription],
             # TODO: NDLサーチに入っている図書以外の資料を調べる
-            #:carrier_type_id => CarrierType.where(:name => 'print').first.id,
+            #:carrier_type_id => CarrierType.where(name: 'print').first.id,
             :language_id => language_id,
             :pub_date => date,
             :description => description,
@@ -112,24 +112,24 @@ module EnjuNdl
           )
           identifier = {}
           if isbn
-            identifier[:isbn] = Identifier.new(:body => isbn)
-            identifier[:isbn].identifier_type = IdentifierType.where(:name => 'isbn').first_or_create
+            identifier[:isbn] = Identifier.new(body: isbn)
+            identifier[:isbn].identifier_type = IdentifierType.where(name: 'isbn').first_or_create
           end
           if iss_itemno
-            identifier[:iss_itemno] = Identifier.new(:body => iss_itemno)
-            identifier[:iss_itemno].identifier_type = IdentifierType.where(:name => 'iss_itemno').first_or_create
+            identifier[:iss_itemno] = Identifier.new(body: iss_itemno)
+            identifier[:iss_itemno].identifier_type = IdentifierType.where(name: 'iss_itemno').first_or_create
           end
           if jpno
-            identifier[:jpno] = Identifier.new(:body => jpno)
-            identifier[:jpno].identifier_type = IdentifierType.where(:name => 'jpno').first_or_create
+            identifier[:jpno] = Identifier.new(body: jpno)
+            identifier[:jpno].identifier_type = IdentifierType.where(name: 'jpno').first_or_create
           end
           if issn
-            identifier[:issn] = Identifier.new(:body => issn)
-            identifier[:issn].identifier_type = IdentifierType.where(:name => 'issn').first_or_create
+            identifier[:issn] = Identifier.new(body: issn)
+            identifier[:issn].identifier_type = IdentifierType.where(name: 'issn').first_or_create
           end
           if issn_l
-            identifier[:issn_l] = Identifier.new(:body => issn_l)
-            identifier[:issn_l].identifier_type = IdentifierType.where(:name => 'issn_l').first_or_create
+            identifier[:issn_l] = Identifier.new(body: issn_l)
+            identifier[:issn_l].identifier_type = IdentifierType.where(name: 'issn_l').first_or_create
           end
           manifestation.carrier_type = carrier_type if carrier_type
           manifestation.manifestation_content_type = content_type if content_type
@@ -158,18 +158,18 @@ module EnjuNdl
 
         Agent.transaction do
           creator_agents = Agent.import_agents(creators)
-          language_id = Language.where(:iso_639_2 => language).first.id rescue 1
-          content_type_id = ContentType.where(:name => 'text').first.id rescue 1
+          language_id = Language.where(iso_639_2: language).first.id rescue 1
+          content_type_id = ContentType.where(name: 'text').first.id rescue 1
           manifestation.creators << creator_agents
 
           if defined?(EnjuSubject)
-            subject_heading_type = SubjectHeadingType.where(:name => 'ndlsh').first_or_create
+            subject_heading_type = SubjectHeadingType.where(name: 'ndlsh').first_or_create
             subjects.each do |term|
-              subject = Subject.where(:term => term[:term]).first
+              subject = Subject.where(term: term[:term]).first
               unless subject
                 subject = Subject.new(term)
                 subject.subject_heading_type = subject_heading_type
-                subject.subject_type = SubjectType.where(:name => 'concept').first_or_create
+                subject.subject_type = SubjectType.where(name: 'concept').first_or_create
               end
               #if subject.valid?
                 manifestation.subjects << subject
@@ -180,8 +180,8 @@ module EnjuNdl
               ndc9_url = classification_urls.map{|url| URI.parse(URI.escape(url))}.select{|u| u.path.split('/').reverse[1] == 'ndc9'}.first
               if ndc9_url
                 ndc = ndc9_url.path.split('/').last
-                classification_type = ClassificationType.where(:name => 'ndc9').first_or_create
-                classification = Classification.new(:category => ndc)
+                classification_type = ClassificationType.where(name: 'ndc9').first_or_create
+                classification = Classification.new(category: ndc)
                 classification.classification_type = classification_type
                 manifestation.classifications << classification if classification.valid?
               end
@@ -191,7 +191,7 @@ module EnjuNdl
       end
 
       def search_ndl(query, options = {})
-        options = {:dpid => 'iss-ndl-opac', :item => 'any', :idx => 1, :per_page => 10, :raw => false, :mediatype => 1}.merge(options)
+        options = {dpid: 'iss-ndl-opac', item: 'any', :idx => 1, :per_page => 10, :raw => false, :mediatype => 1}.merge(options)
         doc = nil
         results = {}
         startrecord = options[:idx].to_i
@@ -217,10 +217,10 @@ module EnjuNdl
       end
 
       def return_xml(isbn)
-        rss = self.search_ndl(isbn, {:dpid => 'iss-ndl-opac', :item => 'isbn'})
+        rss = self.search_ndl(isbn, {dpid: 'iss-ndl-opac', item: 'isbn'})
         if rss.channel.totalResults.to_i == 0
           isbn = normalize_isbn(isbn)
-          rss = self.search_ndl(isbn, {:dpid => 'iss-ndl-opac', :item => 'isbn'})
+          rss = self.search_ndl(isbn, {dpid: 'iss-ndl-opac', item: 'isbn'})
         end
         if rss.items.first
           doc = Nokogiri::XML(open("#{rss.items.first.link}.rdf").read)

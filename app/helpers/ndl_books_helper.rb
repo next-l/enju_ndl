@@ -11,7 +11,7 @@ module NdlBooksHelper
       if manifestation
         link_to t('enju_ndl.already_exists'), manifestation
       else
-        link_to t('enju_ndl.add'), ndl_books_path(book: {iss_itemno: iss_itemno}), method: :post
+        button_to t('enju_ndl.add'), ndl_books_path(book: {iss_itemno: iss_itemno}), method: :post, data: {disable_with: t('page.saving')}
       end
     end
   end
