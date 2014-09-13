@@ -138,5 +138,21 @@ describe NdlBook do
       manifestation = NdlBook.import_from_sru_response('R100000002-I025516419-00')
       manifestation.manifestation_content_type.name.should eq 'notated_music'
     end
+    it "should import photograph", :vcr => true do
+      manifestation = NdlBook.import_from_sru_response('R100000002-I000010677225-00')
+      manifestation.manifestation_content_type.name.should eq 'still_image'
+    end
+    it "should import painting", :vcr => true do
+      manifestation = NdlBook.import_from_sru_response('R100000002-I000009199930-00')
+      manifestation.manifestation_content_type.name.should eq 'still_image'
+    end
+    it "should import picture postcard", :vcr => true do
+      manifestation = NdlBook.import_from_sru_response('R100000002-I024847245-00')
+      manifestation.manifestation_content_type.name.should eq 'still_image'
+    end
+    it "should import still_image", :vcr => true do
+      manifestation = NdlBook.import_from_sru_response('R100000002-I024016497-00')
+      manifestation.manifestation_content_type.name.should eq 'still_image'
+    end
   end
 end
