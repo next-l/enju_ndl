@@ -126,5 +126,13 @@ describe NdlBook do
       manifestation = NdlBook.import_from_sru_response('R100000002-I000002368034-00')
       manifestation.manifestation_content_type.name.should eq 'tactile_text'
     end
+    #it "should import computer_program", :vcr => true do
+    #  manifestation = NdlBook.import_from_sru_response('R100000002-I000003048761-00')
+    #  manifestation.manifestation_content_type.name.should eq 'computer_program'
+    #end
+    it "should import map", :vcr => true do
+      manifestation = NdlBook.import_from_sru_response('R100000002-I025478296-00')
+      manifestation.manifestation_content_type.name.should eq 'cartographic_image'
+    end
   end
 end

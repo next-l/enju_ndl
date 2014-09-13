@@ -69,10 +69,14 @@ module EnjuNdl
           when 'http://ndl.go.jp/ndltype/Book'
             carrier_type = CarrierType.where(name: 'print').first
             content_type = ContentType.where(name: 'text').first
-          when 'http://ndl.go.jp/ndltype/Music'
-            content_type = ContentType.where(name: 'performed_music').first
           when 'http://ndl.go.jp/ndltype/Braille'
             content_type = ContentType.where(name: 'tactile_text').first
+          #when 'http://ndl.go.jp/ndltype/ComputerProgram'
+          #  content_type = ContentType.where(name: 'computer_program').first
+          when 'http://ndl.go.jp/ndltype/Map'
+            content_type = ContentType.where(name: 'cartographic_image').first
+          when 'http://ndl.go.jp/ndltype/Music'
+            content_type = ContentType.where(name: 'performed_music').first
           when 'http://purl.org/dc/dcmitype/Sound'
             content_type = ContentType.where(name: 'sounds').first
           when 'http://purl.org/dc/dcmitype/MovingImage'
