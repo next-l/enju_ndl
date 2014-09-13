@@ -77,6 +77,8 @@ module EnjuNdl
             content_type = ContentType.where(name: 'cartographic_image').first
           when 'http://ndl.go.jp/ndltype/Music'
             content_type = ContentType.where(name: 'performed_music').first
+          when 'http://ndl.go.jp/ndltype/MusicScore'
+            content_type = ContentType.where(name: 'notated_music').first
           when 'http://purl.org/dc/dcmitype/Sound'
             content_type = ContentType.where(name: 'sounds').first
           when 'http://purl.org/dc/dcmitype/MovingImage'

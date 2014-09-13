@@ -134,5 +134,9 @@ describe NdlBook do
       manifestation = NdlBook.import_from_sru_response('R100000002-I025478296-00')
       manifestation.manifestation_content_type.name.should eq 'cartographic_image'
     end
+    it "should import notated_music", :vcr => true do
+      manifestation = NdlBook.import_from_sru_response('R100000002-I025516419-00')
+      manifestation.manifestation_content_type.name.should eq 'notated_music'
+    end
   end
 end
