@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
   s.add_dependency "library_stdnums"
 
   s.add_development_dependency "sqlite3"
-  s.add_development_dependency "rspec-rails", "~> 3.0"
+  s.add_development_dependency "rspec-rails", "~> 3.0.2"
   s.add_development_dependency "vcr"
   s.add_development_dependency "fakeweb"
   s.add_development_dependency "enju_leaf", "~> 1.1.0.rc14"
