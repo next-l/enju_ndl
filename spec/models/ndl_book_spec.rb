@@ -86,13 +86,13 @@ describe NdlBook do
     it "should import audio cd", :vcr => true do
       manifestation = NdlBook.import_from_sru_response('R100000002-I000010273695-00')
       manifestation.original_title.should eq "劇場版天元突破グレンラガン螺巌篇サウンドトラック・プラス"
-      manifestation.manifestation_content_type.name.should eq 'audio'
+      manifestation.manifestation_content_type.name.should eq 'performed_music'
     end
 
     it "should import video dvd", :vcr => true do
       manifestation = NdlBook.import_from_sru_response('R100000002-I000009149656-00')
       manifestation.original_title.should eq "天元突破グレンラガン"
-      manifestation.manifestation_content_type.name.should eq 'video'
+      manifestation.manifestation_content_type.name.should eq 'two_dimensional_moving_image'
     end
 
     it "should not get volume number if book has not volume", :vcr => true do
@@ -120,6 +120,11 @@ describe NdlBook do
     it "should import publication_place", :vcr => true do
       manifestation = NdlBook.import_from_sru_response('R100000002-I000007725666-00')
       manifestation.publication_place.should eq "つくば"
+    end
+
+    it "should import tactile_text", :vcr => true do
+      manifestation = NdlBook.import_from_sru_response('R100000002-I000002368034-00')
+      manifestation.manifestation_content_type.name.should eq 'tactile_text'
     end
   end
 end
