@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140813182425) do
+ActiveRecord::Schema.define(:version => 20140823095740) do
 
   create_table "agent_import_file_transitions", :force => true do |t|
     t.string   "to_state"
@@ -693,7 +693,7 @@ ActiveRecord::Schema.define(:version => 20140813182425) do
     t.integer  "month_of_publication"
     t.boolean  "fulltext_content"
     t.string   "doi"
-    t.boolean  "periodical"
+    t.boolean  "serial"
     t.text     "statement_of_responsibility"
     t.text     "publication_place"
   end
