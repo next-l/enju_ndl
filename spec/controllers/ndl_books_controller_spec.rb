@@ -35,5 +35,11 @@ describe NdlBooksController do
       assigns(:manifestation).should be_nil
       response.should redirect_to ndl_books_url
     end
+
+    it "should create a serial record", :vcr => true do
+      post :create, :book => {:iss_itemno => 'R100000002-I000000029371-00'}
+      assigns(:manifestation).identifier_contents(:jpno).should eq ['00029793']
+      response.should redirect_to manifestation_url(assigns(:manifestation))
+    end
   end
 end

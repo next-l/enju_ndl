@@ -113,6 +113,7 @@ module EnjuNdl
             :height => extent[:height],
 	    :publication_place => publication_place,
           )
+          manifestation.serial = true if is_serial
           identifier = {}
           if isbn
             identifier[:isbn] = Identifier.new(body: isbn)
@@ -142,9 +143,7 @@ module EnjuNdl
             end
             manifestation.publishers << publisher_agents
             create_additional_attributes(doc, manifestation)
-            create_series_statement(doc, manifestation)
 	    if is_serial
-              manifestation.serial = true
 	      series_statement = SeriesStatement.new(
 	  	:original_title => title[:manifestation],
 	  	:title_alternative => title[:alternative],
@@ -154,6 +153,8 @@ module EnjuNdl
 	      if series_statement.try(:save)
 	  	manifestation.series_statements << series_statement
 	      end
+	    else
+              create_series_statement(doc, manifestation)
 	    end
           end
         end
@@ -165,14 +166,12 @@ module EnjuNdl
       def create_additional_attributes(doc, manifestation)
         title = get_title(doc)
         creators = get_creators(doc).uniq
-        language = get_language(doc)
         subjects = get_subjects(doc).uniq
         classifications = get_classifications(doc).uniq
         classification_urls = doc.xpath('//dcterms:subject[@rdf:resource]').map{|subject| subject.attributes['resource'].value}
 
         Agent.transaction do
           creator_agents = Agent.import_agents(creators)
-          language_id = Language.where(iso_639_2: language).first.id rescue 1
           content_type_id = ContentType.where(name: 'text').first.id rescue 1
           manifestation.creators << creator_agents
 
