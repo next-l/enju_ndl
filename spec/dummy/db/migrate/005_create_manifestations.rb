@@ -13,7 +13,6 @@ class CreateManifestations < ActiveRecord::Migration
       t.string :access_address
       t.integer :language_id, :default => 1, :null => false
       t.integer :carrier_type_id, :default => 1, :null => false
-      t.integer :extent_id, :default => 1, :null => false
       t.integer :start_page
       t.integer :end_page
       t.integer :height
