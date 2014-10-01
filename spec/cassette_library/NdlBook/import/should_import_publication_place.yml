@@ -2,67 +2,52 @@
 http_interactions:
 - request:
     method: get
-    uri: http://iss.ndl.go.jp/api/sru?operation=searchRetrieve&recordSchema=dcndl&maximumRecords=1&query=%28itemno=R100000002-I000007725666-00%29&onlyBib=true
+    uri: http://iss.ndl.go.jp/api/sru?maximumRecords=1&onlyBib=true&operation=searchRetrieve&query=%28itemno%3DR100000002-I000007725666-00%29&recordSchema=dcndl
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      accept:
-      - ! '*/*'
       user-agent:
-      - Ruby
+      - Faraday v0.9.0
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept:
+      - "*/*"
   response:
     status:
       code: 200
-      message: !binary |-
-        T0s=
+      message: OK
     headers:
-      !binary "ZGF0ZQ==":
-      - !binary |-
-        U2F0LCAxNiBBdWcgMjAxNCAwNzozNjowMiBHTVQ=
-      !binary "c2VydmVy":
-      - !binary |-
-        QXBhY2hl
-      !binary "ZXRhZw==":
-      - !binary |-
-        Ijc0ZDZmN2ZiMzQ2ZDBjN2Q4MmM4MTMxNjIwOWNjZGIxIg==
-      !binary "eC11YS1jb21wYXRpYmxl":
-      - !binary |-
-        SUU9RWRnZSxjaHJvbWU9MQ==
-      !binary "eC1ydW50aW1l":
-      - !binary |-
-        MC4yNzUyMTQ=
-      !binary "Y2FjaGUtY29udHJvbA==":
-      - !binary |-
-        bWF4LWFnZT0wLCBwcml2YXRlLCBtdXN0LXJldmFsaWRhdGU=
-      !binary "Y29udGVudC1sZW5ndGg=":
-      - !binary |-
-        NzUwMg==
-      !binary "c3RhdHVz":
-      - !binary |-
-        MjAw
-      !binary "Y29udGVudC10eXBl":
-      - !binary |-
-        YXBwbGljYXRpb24veG1sOyBjaGFyc2V0PXV0Zi04
-      !binary "c2V0LWNvb2tpZQ==":
-      - !binary |-
-        X2Zyb250X3Nlc3Npb25faWQ9ZjY5YzM2ZmVmNjRlYmFhODY3ZGM0OTA1ZDE1
-        MmI1NTA7IGRvbWFpbj0uaXNzLm5kbC5nby5qcDsgcGF0aD0vOyBleHBpcmVz
-        PVNhdCwgMTYtQXVnLTIwMTQgMDg6MzY6MDIgR01UOyBIdHRwT25seQ==
-      - !binary |-
-        c2VydmVyaWQ9MTEwNTsgcGF0aD0v
-      !binary "dmFyeQ==":
-      - !binary |-
-        QWNjZXB0LUVuY29kaW5nLFVzZXItQWdlbnQ=
-      !binary "eC1jb250ZW50LXR5cGUtb3B0aW9ucw==":
-      - !binary |-
-        bm9zbmlmZg==
-      !binary "eC1mcmFtZS1vcHRpb25z":
-      - !binary |-
-        U0FNRU9SSUdJTg==
-      !binary "Y29ubmVjdGlvbg==":
-      - !binary |-
-        Y2xvc2U=
+      date:
+      - Wed, 01 Oct 2014 06:38:55 GMT
+      server:
+      - Apache
+      etag:
+      - '"74d6f7fb346d0c7d82c81316209ccdb1"'
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      x-runtime:
+      - '0.284405'
+      cache-control:
+      - max-age=0, private, must-revalidate
+      status:
+      - '200'
+      content-type:
+      - application/xml; charset=utf-8
+      set-cookie:
+      - _front_session_id=d7c6674265f6c8adb9177d4f72209c47; domain=.iss.ndl.go.jp;
+        path=/; expires=Wed, 01-Oct-2014 07:39:08 GMT; HttpOnly
+      - serverid=1105; path=/
+      vary:
+      - Accept-Encoding,User-Agent
+      content-encoding:
+      - gzip
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      connection:
+      - close
     body:
       encoding: ASCII-8BIT
       string: !binary |-
@@ -233,7 +218,6 @@ http_interactions:
         UkRGJmd0OwogICAgICA8L3JlY29yZERhdGE+CiAgICAgIDxyZWNvcmRQb3Np
         dGlvbj4xPC9yZWNvcmRQb3NpdGlvbj4KICAgIDwvcmVjb3JkPgogIDwvcmVj
         b3Jkcz4KPC9zZWFyY2hSZXRyaWV2ZVJlc3BvbnNlPgo=
-    http_version: !binary |-
-      MS4w
-  recorded_at: Sat, 16 Aug 2014 01:00:55 GMT
-recorded_with: VCR 2.9.2
+    http_version: '1.0'
+  recorded_at: Wed, 01 Oct 2014 06:39:08 GMT
+recorded_with: VCR 2.9.3

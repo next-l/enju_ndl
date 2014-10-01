@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
   s.add_dependency "nokogiri"
   s.add_dependency "lisbn"
   s.add_dependency "library_stdnums"
+  s.add_dependency "faraday"
 
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "rspec-rails", "~> 3.0.2"

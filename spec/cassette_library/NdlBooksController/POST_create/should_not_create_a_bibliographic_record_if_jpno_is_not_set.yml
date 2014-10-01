@@ -2,24 +2,24 @@
 http_interactions:
 - request:
     method: get
-    uri: http://iss.ndl.go.jp/api/sru?operation=searchRetrieve&recordSchema=dcndl&maximumRecords=1&query=%28itemno=%29&onlyBib=true
+    uri: http://iss.ndl.go.jp/api/sru?maximumRecords=1&onlyBib=true&operation=searchRetrieve&query=%28itemno%3D%29&recordSchema=dcndl
     body:
       encoding: US-ASCII
       string: ''
     headers:
+      user-agent:
+      - Faraday v0.9.0
       accept-encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       accept:
       - "*/*"
-      user-agent:
-      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       date:
-      - Sat, 16 Aug 2014 15:00:52 GMT
+      - Wed, 01 Oct 2014 06:38:26 GMT
       server:
       - Apache
       etag:
@@ -27,7 +27,7 @@ http_interactions:
       x-ua-compatible:
       - IE=Edge,chrome=1
       x-runtime:
-      - '0.006183'
+      - '0.011448'
       cache-control:
       - max-age=0, private, must-revalidate
       status:
@@ -35,9 +35,9 @@ http_interactions:
       content-type:
       - application/xml; charset=utf-8
       set-cookie:
-      - _front_session_id=1e1e97443b8c798b634d36cccaaf1c8f; domain=.iss.ndl.go.jp;
-        path=/; expires=Sat, 16-Aug-2014 16:00:52 GMT; HttpOnly
-      - serverid=1105; path=/
+      - _front_session_id=699e84734e9ee4f11d4afb4cca1b5636; domain=.iss.ndl.go.jp;
+        path=/; expires=Wed, 01-Oct-2014 07:38:26 GMT; HttpOnly
+      - serverid=1102; path=/
       vary:
       - Accept-Encoding,User-Agent
       content-encoding:
@@ -64,5 +64,5 @@ http_interactions:
           </diagnostics>
         </searchRetrieveResponse>
     http_version: '1.0'
-  recorded_at: Sat, 16 Aug 2014 15:00:54 GMT
-recorded_with: VCR 2.9.2
+  recorded_at: Wed, 01 Oct 2014 06:38:26 GMT
+recorded_with: VCR 2.9.3

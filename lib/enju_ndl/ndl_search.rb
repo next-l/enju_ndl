@@ -200,7 +200,7 @@ module EnjuNdl
         end
         url = "http://iss.ndl.go.jp/api/opensearch?dpid=#{options[:dpid]}&#{options[:item]}=#{format_query(query)}&cnt=#{options[:per_page]}&idx=#{startrecord}&mediatype=#{options[:mediatype]}"
         if options[:raw] == true
-          open(url).read
+          Faraday.get(url).body
         else
           RSS::Rss::Channel.install_text_element("openSearch:totalResults", "http://a9.com/-/spec/opensearchrss/1.0/", "?", "totalResults", :text, "openSearch:totalResults")
           RSS::BaseListener.install_get_text_element "http://a9.com/-/spec/opensearchrss/1.0/", "totalResults", "totalResults="
@@ -223,7 +223,7 @@ module EnjuNdl
           rss = self.search_ndl(isbn, {dpid: 'iss-ndl-opac', item: 'isbn'})
         end
         if rss.items.first
-          doc = Nokogiri::XML(open("#{rss.items.first.link}.rdf").read)
+          doc = Nokogiri::XML(Faraday.get("#{rss.items.first.link}.rdf").body)
         end
       end
 
