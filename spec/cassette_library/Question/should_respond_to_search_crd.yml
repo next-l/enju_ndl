@@ -7,34 +7,34 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
-      accept-encoding:
+      Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      accept:
+      Accept:
       - "*/*"
-      user-agent:
+      User-Agent:
       - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
-      date:
-      - Wed, 01 Oct 2014 06:39:09 GMT
-      server:
+      Date:
+      - Wed, 01 Oct 2014 07:53:31 GMT
+      Server:
       - Apache
-      x-powered-by:
+      X-Powered-By:
       - PHP/5.4.8
-      set-cookie:
-      - ndl_crd_session=qi7fo0f65oq4pthbo3ca0qrhe1; path=/reference/
-      expires:
+      Set-Cookie:
+      - ndl_crd_session=tqh082bu88ncndqtc5hvcqk9p7; path=/reference/
+      Expires:
       - Thu, 19 Nov 1981 08:52:00 GMT
-      cache-control:
+      Cache-Control:
       - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
-      pragma:
+      Pragma:
       - no-cache
-      connection:
+      Connection:
       - close
-      content-type:
+      Content-Type:
       - text/xml; charset=utf-8
     body:
       encoding: ASCII-8BIT
@@ -344,6 +344,6 @@ http_interactions:
         bD9wYWdlPXJlZl92aWV3JmFtcDtpZD0xMDAwMTQ5NTMwPC9VUkw+CQk8SU1B
         R0U+54ShPC9JTUFHRT4JCTxwb3NpdGlvbj40PC9wb3NpdGlvbj4KCTwvcmVz
         dWx0PgoJPC9yZXN1bHRfc2V0Pg==
-    http_version: '1.0'
-  recorded_at: Wed, 01 Oct 2014 06:39:09 GMT
+    http_version: 
+  recorded_at: Wed, 01 Oct 2014 07:53:32 GMT
 recorded_with: VCR 2.9.3

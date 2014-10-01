@@ -2,51 +2,49 @@
 http_interactions:
 - request:
     method: get
-    uri: http://iss.ndl.go.jp/api/sru?maximumRecords=1&onlyBib=true&operation=searchRetrieve&query=%28itemno%3DR100000002-I000011037191-00%29&recordSchema=dcndl
+    uri: http://iss.ndl.go.jp/api/sru?maximumRecords=1&onlyBib=true&operation=searchRetrieve&query=(itemno=R100000002-I000011037191-00)&recordSchema=dcndl
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      user-agent:
+      User-Agent:
       - Faraday v0.9.0
-      accept-encoding:
+      Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      accept:
+      Accept:
       - "*/*"
   response:
     status:
       code: 200
       message: OK
     headers:
-      date:
-      - Wed, 01 Oct 2014 06:38:45 GMT
-      server:
+      Date:
+      - Wed, 01 Oct 2014 07:53:23 GMT
+      Server:
       - Apache
-      etag:
+      Etag:
       - '"156582f0d29a36a5e852c6e45b472a89"'
-      x-ua-compatible:
+      X-Ua-Compatible:
       - IE=Edge,chrome=1
-      x-runtime:
-      - '0.103224'
-      cache-control:
+      X-Runtime:
+      - '0.365811'
+      Cache-Control:
       - max-age=0, private, must-revalidate
-      status:
+      Status:
       - '200'
-      content-type:
+      Content-Type:
       - application/xml; charset=utf-8
-      set-cookie:
-      - _front_session_id=d952a8f689cc167c612a4458fc8820de; domain=.iss.ndl.go.jp;
-        path=/; expires=Wed, 01-Oct-2014 07:38:46 GMT; HttpOnly
-      - serverid=1102; path=/
-      vary:
+      Set-Cookie:
+      - _front_session_id=757e882d656bd1b7b60fbb78c111c02d; domain=.iss.ndl.go.jp;
+        path=/; expires=Wed, 01-Oct-2014 08:53:23 GMT; HttpOnly
+      - serverid=1105; path=/
+      Vary:
       - Accept-Encoding,User-Agent
-      content-encoding:
-      - gzip
-      x-content-type-options:
+      X-Content-Type-Options:
       - nosniff
-      x-frame-options:
+      X-Frame-Options:
       - SAMEORIGIN
-      connection:
+      Connection:
       - close
     body:
       encoding: ASCII-8BIT
@@ -226,6 +224,6 @@ http_interactions:
         ICAgPC9yZWNvcmREYXRhPgogICAgICA8cmVjb3JkUG9zaXRpb24+MTwvcmVj
         b3JkUG9zaXRpb24+CiAgICA8L3JlY29yZD4KICA8L3JlY29yZHM+Cjwvc2Vh
         cmNoUmV0cmlldmVSZXNwb25zZT4K
-    http_version: '1.0'
-  recorded_at: Wed, 01 Oct 2014 06:38:45 GMT
+    http_version: 
+  recorded_at: Wed, 01 Oct 2014 07:53:24 GMT
 recorded_with: VCR 2.9.3

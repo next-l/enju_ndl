@@ -7,48 +7,46 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
-      user-agent:
+      User-Agent:
       - Faraday v0.9.0
-      accept-encoding:
+      Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      accept:
+      Accept:
       - "*/*"
   response:
     status:
       code: 200
       message: OK
     headers:
-      date:
-      - Wed, 01 Oct 2014 06:38:54 GMT
-      server:
+      Date:
+      - Wed, 01 Oct 2014 07:53:28 GMT
+      Server:
       - Apache
-      etag:
-      - '"cb42dea21e737affb29e89202d847503"'
-      x-ua-compatible:
+      Etag:
+      - '"a489ab8a7754715093ad344481eb7b3e"'
+      X-Ua-Compatible:
       - IE=Edge,chrome=1
-      x-runtime:
-      - '0.207029'
-      cache-control:
+      X-Runtime:
+      - '0.277687'
+      Cache-Control:
       - max-age=0, private, must-revalidate
-      status:
+      Status:
       - '200'
-      content-type:
+      Content-Type:
       - application/xml; charset=utf-8
-      set-cookie:
-      - _front_session_id=aa2575a45595b27da007ac26345dd80f; domain=.iss.ndl.go.jp;
-        path=/; expires=Wed, 01-Oct-2014 07:38:54 GMT; HttpOnly
+      Set-Cookie:
+      - _front_session_id=6e1617cd8195ca2d057e06becc9fff7b; domain=.iss.ndl.go.jp;
+        path=/; expires=Wed, 01-Oct-2014 08:53:28 GMT; HttpOnly
       - serverid=1101; path=/
-      vary:
+      Vary:
       - Accept-Encoding,User-Agent
-      content-encoding:
-      - gzip
-      x-content-type-options:
+      X-Content-Type-Options:
       - nosniff
-      x-frame-options:
+      X-Frame-Options:
       - SAMEORIGIN
-      content-length:
-      - '1231'
-      connection:
+      Content-Length:
+      - '1228'
+      Connection:
       - close
     body:
       encoding: ASCII-8BIT
@@ -66,9 +64,9 @@ http_interactions:
         ZS8iPgogIDxjaGFubmVsPgogICAgPHRpdGxlPjEgOTc4LTQtMDQtODc0MDEz
         LTUgaXNzLW5kbC1vcGFjIC0g5Zu956uL5Zu95Lya5Zuz5pu46aSo44K144O8
         44OBIE9wZW5TZWFyY2g8L3RpdGxlPgogICAgPGxpbms+aHR0cDovL2lzcy5u
-        ZGwuZ28uanAvYXBpL29wZW5zZWFyY2g/ZHBpZD1pc3MtbmRsLW9wYWMmYW1w
-        O2NudD0xMCZhbXA7aWR4PTEmYW1wO2FueT05NzgtNC0wNC04NzQwMTMtNSZh
-        bXA7bWVkaWF0eXBlPTE8L2xpbms+CiAgICA8ZGVzY3JpcHRpb24+U2VhcmNo
+        ZGwuZ28uanAvYXBpL29wZW5zZWFyY2g/YW55PTk3OC00LTA0LTg3NDAxMy01
+        JmFtcDttZWRpYXR5cGU9MSZhbXA7aWR4PTEmYW1wO2RwaWQ9aXNzLW5kbC1v
+        cGFjJmFtcDtjbnQ9MTA8L2xpbms+CiAgICA8ZGVzY3JpcHRpb24+U2VhcmNo
         IHJlc3VsdHMgZm9yIGFueT05NzgtNC0wNC04NzQwMTMtNSBtZWRpYXR5cGU9
         MSBkcGlkPWlzcy1uZGwtb3BhYyBjbnQ9MTAgPC9kZXNjcmlwdGlvbj4KICAg
         IDxsYW5ndWFnZT5qYTwvbGFuZ3VhZ2U+CiAgICA8b3BlblNlYXJjaDp0b3Rh
@@ -118,6 +116,6 @@ http_interactions:
         Yi5wcmVmLmZ1a3Vva2EuanAvd2luai9vcGFjL3N3aXRjaC1kZXRhaWwtaWNj
         YXAuZG8/YmliaWQ9MTEwOTA5NDk1MiIvPgogICAgPC9pdGVtPgogIDwvY2hh
         bm5lbD4KPC9yc3M+Cg==
-    http_version: '1.0'
-  recorded_at: Wed, 01 Oct 2014 06:38:54 GMT
+    http_version: 
+  recorded_at: Wed, 01 Oct 2014 07:53:29 GMT
 recorded_with: VCR 2.9.3
