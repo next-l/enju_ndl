@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.description = "NDL WebAPI wrapper for Next-L Enju"
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
-  s.test_files = Dir["spec/**/*"] - Dir["spec/dummy/log/*"] - Dir["spec/dummy/solr/{data,pids}/*"]
+  s.test_files = Dir["spec/**/*"] - Dir["spec/dummy/log/*"] - Dir["spec/dummy/solr/{data,pids,default,development,test}/*"] - Dir["spec/dummy/tmp/*"]
 
   s.add_dependency "enju_seed", "~> 0.1.1.pre11"
   s.add_dependency "nokogiri"
@@ -23,12 +23,12 @@ Gem::Specification.new do |s|
   s.add_dependency "faraday"
 
   s.add_development_dependency "sqlite3"
-  s.add_development_dependency "rspec-rails", "~> 3.0.2"
+  s.add_development_dependency "rspec-rails", "~> 3.1"
   s.add_development_dependency "vcr"
   s.add_development_dependency "webmock"
-  s.add_development_dependency "enju_leaf", "~> 1.1.0.rc14"
+  s.add_development_dependency "enju_leaf", "~> 1.1.0.rc15"
   s.add_development_dependency "enju_question", "~> 0.1.0.pre12"
   s.add_development_dependency "sunspot_solr", "~> 2.1"
   s.add_development_dependency "simplecov"
-  s.add_development_dependency "enju_subject", "~> 0.1.0.pre27"
+  s.add_development_dependency "enju_subject", "~> 0.1.0.pre28"
 end
