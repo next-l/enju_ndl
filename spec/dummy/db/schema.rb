@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140823095740) do
+ActiveRecord::Schema.define(version: 20141003182825) do
 
   create_table "agent_import_file_transitions", force: true do |t|
     t.string   "to_state"
@@ -873,6 +873,8 @@ ActiveRecord::Schema.define(version: 20140823095740) do
     t.string   "checkout_icalendar_token"
     t.boolean  "save_checkout_history",    default: false, null: false
     t.datetime "expired_at"
+    t.text     "full_name_transcription"
+    t.datetime "date_of_birth"
   end
 
   add_index "profiles", ["checkout_icalendar_token"], name: "index_profiles_on_checkout_icalendar_token", unique: true
