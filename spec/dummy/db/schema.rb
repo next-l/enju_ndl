@@ -355,6 +355,29 @@ ActiveRecord::Schema.define(version: 20141014065831) do
     t.datetime "updated_at"
   end
 
+  create_table "event_export_file_transitions", force: true do |t|
+    t.string   "to_state"
+    t.text     "metadata",             default: "{}"
+    t.integer  "sort_key"
+    t.integer  "event_export_file_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "event_export_file_transitions", ["event_export_file_id"], name: "index_event_export_file_transitions_on_file_id"
+  add_index "event_export_file_transitions", ["sort_key", "event_export_file_id"], name: "index_event_export_file_transitions_on_sort_key_and_file_id", unique: true
+
+  create_table "event_export_files", force: true do |t|
+    t.integer  "user_id"
+    t.string   "event_export_file_name"
+    t.string   "event_export_content_type"
+    t.integer  "event_export_file_size"
+    t.datetime "event_export_updated_at"
+    t.datetime "executed_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "event_import_file_transitions", force: true do |t|
     t.string   "to_state"
     t.text     "metadata",             default: "{}"
@@ -385,6 +408,7 @@ ActiveRecord::Schema.define(version: 20141014065831) do
     t.text     "error_message"
     t.string   "user_encoding"
     t.integer  "default_library_id"
+    t.integer  "default_event_category_id"
   end
 
   add_index "event_import_files", ["parent_id"], name: "index_event_import_files_on_parent_id"
@@ -399,8 +423,8 @@ ActiveRecord::Schema.define(version: 20141014065831) do
   end
 
   create_table "events", force: true do |t|
-    t.integer  "library_id",        default: 1,     null: false
-    t.integer  "event_category_id", default: 1,     null: false
+    t.integer  "library_id",                        null: false
+    t.integer  "event_category_id",                 null: false
     t.string   "name"
     t.text     "note"
     t.datetime "start_at"
