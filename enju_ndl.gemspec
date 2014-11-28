@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.test_files = Dir["spec/**/*"] - Dir["spec/dummy/log/*"] - Dir["spec/dummy/solr/{data,pids,default,development,test}/*"] - Dir["spec/dummy/tmp/*"]
 
   s.add_dependency "enju_seed", "~> 0.1.1.pre11"
-  s.add_dependency "nokogiri", "~> 1.6.3"
+  s.add_dependency "nokogiri", "~> 1.6.5"
   s.add_dependency "lisbn"
   s.add_dependency "library_stdnums"
   s.add_dependency "faraday"
@@ -28,7 +28,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "rspec-rails", "~> 3.1"
   s.add_development_dependency "vcr"
   s.add_development_dependency "webmock"
-  s.add_development_dependency "enju_leaf", "~> 1.1.0.rc15"
+  s.add_development_dependency "enju_leaf", "~> 1.1.0.rc16"
   s.add_development_dependency "enju_question", "~> 0.1.0.pre12"
   s.add_development_dependency "sunspot_solr", "~> 2.1"
   s.add_development_dependency "simplecov"
