@@ -1,7 +1,9 @@
 source "https://rubygems.org"
 
-gem "rails", "~> 3.2.19"
+gem "rails", "~> 3.2.21"
 gem "jquery-rails"
+gem "strong_parameters"
+gem "statesman", "~> 1.0.0"
 gem "coveralls", require: false
 gem "enju_leaf", github: "next-l/enju_leaf", branch: "1.1"
 gem "enju_biblio", github: "next-l/enju_biblio", branch: "1.1"
