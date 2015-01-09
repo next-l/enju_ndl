@@ -1,3 +1,3 @@
 module EnjuNdl
-  VERSION = "0.1.0.pre34"
+  VERSION = "0.2.0.pre1"
 end
