@@ -2,53 +2,51 @@
 http_interactions:
 - request:
     method: get
-    uri: http://iss.ndl.go.jp/api/opensearch?dpid=iss-ndl-opac&any=978-4-04-100292-6&cnt=10&idx=1&mediatype=1
+    uri: http://iss.ndl.go.jp/api/opensearch?any=978-4-04-100292-6&cnt=10&dpid=iss-ndl-opac&idx=1&mediatype=1
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      accept-encoding:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      accept:
-      - '*/*'
-      user-agent:
-      - Ruby
+      Accept:
+      - "*/*"
   response:
     status:
       code: 200
       message: OK
     headers:
-      date:
-      - Thu, 05 Dec 2013 11:04:16 GMT
-      server:
+      Date:
+      - Wed, 01 Oct 2014 07:53:29 GMT
+      Server:
       - Apache
-      etag:
-      - '"e32eaf2ce27a1025092c4e7dfdd8fa27"'
-      x-ua-compatible:
+      Etag:
+      - '"b34d25b0ec171be1cb0efb8dc490929c"'
+      X-Ua-Compatible:
       - IE=Edge,chrome=1
-      x-runtime:
-      - '0.236146'
-      cache-control:
+      X-Runtime:
+      - '0.246990'
+      Cache-Control:
       - max-age=0, private, must-revalidate
-      status:
+      Status:
       - '200'
-      content-type:
+      Content-Type:
       - application/xml; charset=utf-8
-      set-cookie:
-      - _front_session_id=40b8996a1210ff5f2122c319fe22b1d4; domain=.iss.ndl.go.jp;
-        path=/; expires=Thu, 05-Dec-2013 12:04:17 GMT; HttpOnly
-      - serverid=1105; path=/
-      vary:
+      Set-Cookie:
+      - _front_session_id=26e3597963b0f30539381e3dc1f9aa58; domain=.iss.ndl.go.jp;
+        path=/; expires=Wed, 01-Oct-2014 08:53:29 GMT; HttpOnly
+      - serverid=1101; path=/
+      Vary:
       - Accept-Encoding,User-Agent
-      content-encoding:
-      - gzip
-      x-content-type-options:
+      X-Content-Type-Options:
       - nosniff
-      x-frame-options:
+      X-Frame-Options:
       - SAMEORIGIN
-      content-length:
-      - '1210'
-      connection:
+      Content-Length:
+      - '1306'
+      Connection:
       - close
     body:
       encoding: ASCII-8BIT
@@ -66,11 +64,11 @@ http_interactions:
         ZS8iPgogIDxjaGFubmVsPgogICAgPHRpdGxlPjEgOTc4LTQtMDQtMTAwMjky
         LTYgaXNzLW5kbC1vcGFjIC0g5Zu956uL5Zu95Lya5Zuz5pu46aSo44K144O8
         44OBIE9wZW5TZWFyY2g8L3RpdGxlPgogICAgPGxpbms+aHR0cDovL2lzcy5u
-        ZGwuZ28uanAvYXBpL29wZW5zZWFyY2g/aWR4PTEmYW1wO2FueT05NzgtNC0w
-        NC0xMDAyOTItNiZhbXA7ZHBpZD1pc3MtbmRsLW9wYWMmYW1wO2NudD0xMCZh
+        ZGwuZ28uanAvYXBpL29wZW5zZWFyY2g/ZHBpZD1pc3MtbmRsLW9wYWMmYW1w
+        O2NudD0xMCZhbXA7aWR4PTEmYW1wO2FueT05NzgtNC0wNC0xMDAyOTItNiZh
         bXA7bWVkaWF0eXBlPTE8L2xpbms+CiAgICA8ZGVzY3JpcHRpb24+U2VhcmNo
         IHJlc3VsdHMgZm9yIGFueT05NzgtNC0wNC0xMDAyOTItNiBtZWRpYXR5cGU9
-        MSBjbnQ9MTAgZHBpZD1pc3MtbmRsLW9wYWMgPC9kZXNjcmlwdGlvbj4KICAg
+        MSBkcGlkPWlzcy1uZGwtb3BhYyBjbnQ9MTAgPC9kZXNjcmlwdGlvbj4KICAg
         IDxsYW5ndWFnZT5qYTwvbGFuZ3VhZ2U+CiAgICA8b3BlblNlYXJjaDp0b3Rh
         bFJlc3VsdHM+MTwvb3BlblNlYXJjaDp0b3RhbFJlc3VsdHM+CiAgICA8b3Bl
         blNlYXJjaDpzdGFydEluZGV4PjE8L29wZW5TZWFyY2g6c3RhcnRJbmRleD4K
@@ -114,8 +112,13 @@ http_interactions:
         562G5L+u5q2jPC9kY3Rlcm1zOmRlc2NyaXB0aW9uPgogICAgICA8ZGN0ZXJt
         czpkZXNjcmlwdGlvbj7mlofnjK7jgYLjgoo8L2RjdGVybXM6ZGVzY3JpcHRp
         b24+CiAgICAgIDxyZGZzOnNlZUFsc28gcmRmOnJlc291cmNlPSJodHRwOi8v
-        aWQubmRsLmdvLmpwL2JpYi8wMjM1OTE1MjMiLz4KICAgIDwvaXRlbT4KICA8
-        L2NoYW5uZWw+CjwvcnNzPgo=
-    http_version: '1.0'
-  recorded_at: Thu, 05 Dec 2013 11:04:17 GMT
-recorded_with: VCR 2.8.0
+        aWQubmRsLmdvLmpwL2JpYi8wMjM1OTE1MjMiLz4KICAgICAgPHJkZnM6c2Vl
+        QWxzbyByZGY6cmVzb3VyY2U9Imh0dHA6Ly93ZWIub21sLmNpdHkub3Nha2Eu
+        bGcuanAvd2Vib3BhY19pX2phLzAwMTI1MTkxOTUiLz4KICAgICAgPHJkZnM6
+        c2VlQWxzbyByZGY6cmVzb3VyY2U9Imh0dHA6Ly93d3cubGliLnByZWYuZnVr
+        dW9rYS5qcC93aW5qL29wYWMvc3dpdGNoLWRldGFpbC1pY2NhcC5kbz9iaWJp
+        ZD0xMTA5MzQ3MjQ3Ii8+CiAgICA8L2l0ZW0+CiAgPC9jaGFubmVsPgo8L3Jz
+        cz4K
+    http_version: 
+  recorded_at: Wed, 01 Oct 2014 07:53:30 GMT
+recorded_with: VCR 2.9.3

@@ -2,53 +2,51 @@
 http_interactions:
 - request:
     method: get
-    uri: http://iss.ndl.go.jp/api/opensearch?dpid=iss-ndl-opac&any=4788509105&cnt=10&idx=1&mediatype=1
+    uri: http://iss.ndl.go.jp/api/opensearch?any=4788509105&cnt=10&dpid=iss-ndl-opac&idx=1&mediatype=1
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      accept-encoding:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      accept:
-      - '*/*'
-      user-agent:
-      - Ruby
+      Accept:
+      - "*/*"
   response:
     status:
       code: 200
       message: OK
     headers:
-      date:
-      - Thu, 05 Dec 2013 11:04:17 GMT
-      server:
+      Date:
+      - Wed, 01 Oct 2014 07:53:30 GMT
+      Server:
       - Apache
-      etag:
-      - '"f6d8e5cac70665c782c086d97b39c68f"'
-      x-ua-compatible:
+      Etag:
+      - '"cfd43ae86eefe8b43cc1d1623b5edf98"'
+      X-Ua-Compatible:
       - IE=Edge,chrome=1
-      x-runtime:
-      - '0.295205'
-      cache-control:
+      X-Runtime:
+      - '0.291639'
+      Cache-Control:
       - max-age=0, private, must-revalidate
-      status:
+      Status:
       - '200'
-      content-type:
+      Content-Type:
       - application/xml; charset=utf-8
-      set-cookie:
-      - _front_session_id=bee94527fc2bee51fbd9496f15a69b79; domain=.iss.ndl.go.jp;
-        path=/; expires=Thu, 05-Dec-2013 12:04:17 GMT; HttpOnly
-      - serverid=1105; path=/
-      vary:
+      Set-Cookie:
+      - _front_session_id=9abf565ea02816ad5fa64559a1a0dc4f; domain=.iss.ndl.go.jp;
+        path=/; expires=Wed, 01-Oct-2014 08:53:30 GMT; HttpOnly
+      - serverid=1101; path=/
+      Vary:
       - Accept-Encoding,User-Agent
-      content-encoding:
-      - gzip
-      x-content-type-options:
+      X-Content-Type-Options:
       - nosniff
-      x-frame-options:
+      X-Frame-Options:
       - SAMEORIGIN
-      content-length:
-      - '1274'
-      connection:
+      Content-Length:
+      - '1392'
+      Connection:
       - close
     body:
       encoding: ASCII-8BIT
@@ -66,11 +64,11 @@ http_interactions:
         ZS8iPgogIDxjaGFubmVsPgogICAgPHRpdGxlPjEgNDc4ODUwOTEwNSBpc3Mt
         bmRsLW9wYWMgLSDlm73nq4vlm73kvJrlm7Pmm7jppKjjgrXjg7zjg4EgT3Bl
         blNlYXJjaDwvdGl0bGU+CiAgICA8bGluaz5odHRwOi8vaXNzLm5kbC5nby5q
-        cC9hcGkvb3BlbnNlYXJjaD9hbnk9NDc4ODUwOTEwNSZhbXA7ZHBpZD1pc3Mt
-        bmRsLW9wYWMmYW1wO2NudD0xMCZhbXA7bWVkaWF0eXBlPTEmYW1wO2lkeD0x
+        cC9hcGkvb3BlbnNlYXJjaD9hbnk9NDc4ODUwOTEwNSZhbXA7bWVkaWF0eXBl
+        PTEmYW1wO2lkeD0xJmFtcDtkcGlkPWlzcy1uZGwtb3BhYyZhbXA7Y250PTEw
         PC9saW5rPgogICAgPGRlc2NyaXB0aW9uPlNlYXJjaCByZXN1bHRzIGZvciBh
-        bnk9NDc4ODUwOTEwNSBtZWRpYXR5cGU9MSBjbnQ9MTAgZHBpZD1pc3MtbmRs
-        LW9wYWMgPC9kZXNjcmlwdGlvbj4KICAgIDxsYW5ndWFnZT5qYTwvbGFuZ3Vh
+        bnk9NDc4ODUwOTEwNSBtZWRpYXR5cGU9MSBkcGlkPWlzcy1uZGwtb3BhYyBj
+        bnQ9MTAgPC9kZXNjcmlwdGlvbj4KICAgIDxsYW5ndWFnZT5qYTwvbGFuZ3Vh
         Z2U+CiAgICA8b3BlblNlYXJjaDp0b3RhbFJlc3VsdHM+MTwvb3BlblNlYXJj
         aDp0b3RhbFJlc3VsdHM+CiAgICA8b3BlblNlYXJjaDpzdGFydEluZGV4PjE8
         L29wZW5TZWFyY2g6c3RhcnRJbmRleD4KICAgIDxvcGVuU2VhcmNoOml0ZW1z
@@ -120,8 +118,18 @@ http_interactions:
         dHA6Ly9pZC5uZGwuZ28uanAvYmliLzAwMDAwNzQ1NjU4NCIvPgogICAgICA8
         cmRmczpzZWVBbHNvIHJkZjpyZXNvdXJjZT0iaHR0cDovL29wYWNzdnIwMS5s
         aWJyYXJ5LnByZWYubmFyYS5qcC9teWxpbWVkaW8vc2VhcmNoL2Jvb2suZG8/
-        YmliaWQ9MzMwMjAwIi8+CiAgICA8L2l0ZW0+CiAgPC9jaGFubmVsPgo8L3Jz
-        cz4K
-    http_version: '1.0'
-  recorded_at: Thu, 05 Dec 2013 11:04:17 GMT
-recorded_with: VCR 2.8.0
+        YmliaWQ9MzMwMjAwIi8+CiAgICAgIDxyZGZzOnNlZUFsc28gcmRmOnJlc291
+        cmNlPSJodHRwOi8vd3d3LmxpYnJhcnkucHJlZi5mdWt1aS5qcC93aW5qL29w
+        YWMvc3dpdGNoLWRldGFpbC1pY2NhcC5kbz9iaWJpZD0xMTA0NDUzMTY3Ii8+
+        CiAgICAgIDxyZGZzOnNlZUFsc28gcmRmOnJlc291cmNlPSJodHRwOi8vd2Vi
+        c3YuYWljaGktcHJlZi1saWJyYXJ5LmpwL3dpbmovb3BhYy9zd2l0Y2gtZGV0
+        YWlsLWljY2FwLmRvP2JpYmlkPTExNjA1MzA3MjgiLz4KICAgICAgPHJkZnM6
+        c2VlQWxzbyByZGY6cmVzb3VyY2U9Imh0dHA6Ly93ZWIub21sLmNpdHkub3Nh
+        a2EubGcuanAvd2Vib3BhY19pX2phLzAwMTA4MTY1MzYiLz4KICAgICAgPHJk
+        ZnM6c2VlQWxzbyByZGY6cmVzb3VyY2U9Imh0dHA6Ly93d3cubGliLnByZWYu
+        ZnVrdW9rYS5qcC93aW5qL29wYWMvc3dpdGNoLWRldGFpbC1pY2NhcC5kbz9i
+        aWJpZD0xMTA2MTEzNjM5Ii8+CiAgICA8L2l0ZW0+CiAgPC9jaGFubmVsPgo8
+        L3Jzcz4K
+    http_version: 
+  recorded_at: Wed, 01 Oct 2014 07:53:31 GMT
+recorded_with: VCR 2.9.3

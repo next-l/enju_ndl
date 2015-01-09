@@ -2,53 +2,51 @@
 http_interactions:
 - request:
     method: get
-    uri: http://iss.ndl.go.jp/api/sru?operation=searchRetrieve&recordSchema=dcndl&maximumRecords=1&query=%28itemno=R100000002-I000010273695-00%29&onlyBib=true
+    uri: http://iss.ndl.go.jp/api/sru?maximumRecords=1&onlyBib=true&operation=searchRetrieve&query=(itemno=R100000002-I000010273695-00)&recordSchema=dcndl
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      accept-encoding:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      accept:
-      - '*/*'
-      user-agent:
-      - Ruby
+      Accept:
+      - "*/*"
   response:
     status:
       code: 200
       message: OK
     headers:
-      date:
-      - Thu, 05 Dec 2013 11:04:16 GMT
-      server:
+      Date:
+      - Wed, 01 Oct 2014 07:53:27 GMT
+      Server:
       - Apache
-      etag:
+      Etag:
       - '"e7a15123a0111d146ca1e13b19293c5e"'
-      x-ua-compatible:
+      X-Ua-Compatible:
       - IE=Edge,chrome=1
-      x-runtime:
-      - '0.185691'
-      cache-control:
+      X-Runtime:
+      - '0.353263'
+      Cache-Control:
       - max-age=0, private, must-revalidate
-      status:
+      Status:
       - '200'
-      content-type:
+      Content-Type:
       - application/xml; charset=utf-8
-      set-cookie:
-      - _front_session_id=0732e1378cc37ac2a6f3dd9407c74175; domain=.iss.ndl.go.jp;
-        path=/; expires=Thu, 05-Dec-2013 12:04:16 GMT; HttpOnly
-      - serverid=1105; path=/
-      vary:
+      Set-Cookie:
+      - _front_session_id=5998b308d3a74a9095fbe9facb11aba7; domain=.iss.ndl.go.jp;
+        path=/; expires=Wed, 01-Oct-2014 08:53:27 GMT; HttpOnly
+      - serverid=1102; path=/
+      Vary:
       - Accept-Encoding,User-Agent
-      content-encoding:
-      - gzip
-      x-content-type-options:
+      X-Content-Type-Options:
       - nosniff
-      x-frame-options:
+      X-Frame-Options:
       - SAMEORIGIN
-      content-length:
+      Content-Length:
       - '1610'
-      connection:
+      Connection:
       - close
     body:
       encoding: ASCII-8BIT
@@ -159,6 +157,6 @@ http_interactions:
         Z3Q7CiAgICAgIDwvcmVjb3JkRGF0YT4KICAgICAgPHJlY29yZFBvc2l0aW9u
         PjE8L3JlY29yZFBvc2l0aW9uPgogICAgPC9yZWNvcmQ+CiAgPC9yZWNvcmRz
         Pgo8L3NlYXJjaFJldHJpZXZlUmVzcG9uc2U+Cg==
-    http_version: '1.0'
-  recorded_at: Thu, 05 Dec 2013 11:04:16 GMT
-recorded_with: VCR 2.8.0
+    http_version: 
+  recorded_at: Wed, 01 Oct 2014 07:53:28 GMT
+recorded_with: VCR 2.9.3

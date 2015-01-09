@@ -2,53 +2,51 @@
 http_interactions:
 - request:
     method: get
-    uri: http://iss.ndl.go.jp/api/opensearch?dpid=iss-ndl-opac&any=4840114404&cnt=10&idx=1&mediatype=1
+    uri: http://iss.ndl.go.jp/api/opensearch?any=4840114404&cnt=10&dpid=iss-ndl-opac&idx=1&mediatype=1
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      accept-encoding:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      accept:
-      - '*/*'
-      user-agent:
-      - Ruby
+      Accept:
+      - "*/*"
   response:
     status:
       code: 200
       message: OK
     headers:
-      date:
-      - Thu, 05 Dec 2013 11:04:17 GMT
-      server:
+      Date:
+      - Wed, 01 Oct 2014 07:53:29 GMT
+      Server:
       - Apache
-      etag:
-      - '"df17da71cb4c0c6742f2da7b4f7d5eac"'
-      x-ua-compatible:
+      Etag:
+      - '"8e1f57786aebb2efad85db481dccb4a7"'
+      X-Ua-Compatible:
       - IE=Edge,chrome=1
-      x-runtime:
-      - '0.315817'
-      cache-control:
+      X-Runtime:
+      - '0.262773'
+      Cache-Control:
       - max-age=0, private, must-revalidate
-      status:
+      Status:
       - '200'
-      content-type:
+      Content-Type:
       - application/xml; charset=utf-8
-      set-cookie:
-      - _front_session_id=d29bb3be339b43e1d387a436c06ffd8a; domain=.iss.ndl.go.jp;
-        path=/; expires=Thu, 05-Dec-2013 12:04:17 GMT; HttpOnly
-      - serverid=1101; path=/
-      vary:
+      Set-Cookie:
+      - _front_session_id=1e8e2557f9755bdc126bce5e4a87403f; domain=.iss.ndl.go.jp;
+        path=/; expires=Wed, 01-Oct-2014 08:53:30 GMT; HttpOnly
+      - serverid=1102; path=/
+      Vary:
       - Accept-Encoding,User-Agent
-      content-encoding:
-      - gzip
-      x-content-type-options:
+      X-Content-Type-Options:
       - nosniff
-      x-frame-options:
+      X-Frame-Options:
       - SAMEORIGIN
-      content-length:
-      - '1183'
-      connection:
+      Content-Length:
+      - '1273'
+      Connection:
       - close
     body:
       encoding: ASCII-8BIT
@@ -66,11 +64,11 @@ http_interactions:
         ZS8iPgogIDxjaGFubmVsPgogICAgPHRpdGxlPjEgNDg0MDExNDQwNCBpc3Mt
         bmRsLW9wYWMgLSDlm73nq4vlm73kvJrlm7Pmm7jppKjjgrXjg7zjg4EgT3Bl
         blNlYXJjaDwvdGl0bGU+CiAgICA8bGluaz5odHRwOi8vaXNzLm5kbC5nby5q
-        cC9hcGkvb3BlbnNlYXJjaD9hbnk9NDg0MDExNDQwNCZhbXA7ZHBpZD1pc3Mt
-        bmRsLW9wYWMmYW1wO2NudD0xMCZhbXA7bWVkaWF0eXBlPTEmYW1wO2lkeD0x
+        cC9hcGkvb3BlbnNlYXJjaD9hbnk9NDg0MDExNDQwNCZhbXA7bWVkaWF0eXBl
+        PTEmYW1wO2lkeD0xJmFtcDtkcGlkPWlzcy1uZGwtb3BhYyZhbXA7Y250PTEw
         PC9saW5rPgogICAgPGRlc2NyaXB0aW9uPlNlYXJjaCByZXN1bHRzIGZvciBh
-        bnk9NDg0MDExNDQwNCBtZWRpYXR5cGU9MSBjbnQ9MTAgZHBpZD1pc3MtbmRs
-        LW9wYWMgPC9kZXNjcmlwdGlvbj4KICAgIDxsYW5ndWFnZT5qYTwvbGFuZ3Vh
+        bnk9NDg0MDExNDQwNCBtZWRpYXR5cGU9MSBkcGlkPWlzcy1uZGwtb3BhYyBj
+        bnQ9MTAgPC9kZXNjcmlwdGlvbj4KICAgIDxsYW5ndWFnZT5qYTwvbGFuZ3Vh
         Z2U+CiAgICA8b3BlblNlYXJjaDp0b3RhbFJlc3VsdHM+MTwvb3BlblNlYXJj
         aDp0b3RhbFJlc3VsdHM+CiAgICA8b3BlblNlYXJjaDpzdGFydEluZGV4PjE8
         L29wZW5TZWFyY2g6c3RhcnRJbmRleD4KICAgIDxvcGVuU2VhcmNoOml0ZW1z
@@ -117,7 +115,12 @@ http_interactions:
         ZXNjcmlwdGlvbj7ljp/jgr/jgqTjg4jjg6s6IENocmlzdG1hcyBpbiBDYW1l
         bG90PC9kY3Rlcm1zOmRlc2NyaXB0aW9uPgogICAgICA8cmRmczpzZWVBbHNv
         IHJkZjpyZXNvdXJjZT0iaHR0cDovL2lkLm5kbC5nby5qcC9iaWIvMDAwMDA4
-        MTgwMDAzIi8+CiAgICA8L2l0ZW0+CiAgPC9jaGFubmVsPgo8L3Jzcz4K
-    http_version: '1.0'
-  recorded_at: Thu, 05 Dec 2013 11:04:17 GMT
-recorded_with: VCR 2.8.0
+        MTgwMDAzIi8+CiAgICAgIDxyZGZzOnNlZUFsc28gcmRmOnJlc291cmNlPSJo
+        dHRwOi8vd3d3LmxpYnJhcnkucHJlZi5mdWt1aS5qcC93aW5qL29wYWMvc3dp
+        dGNoLWRldGFpbC1pY2NhcC5kbz9iaWJpZD0xMTA0NTU0NDUwIi8+CiAgICAg
+        IDxyZGZzOnNlZUFsc28gcmRmOnJlc291cmNlPSJodHRwOi8vd2ViLm9tbC5j
+        aXR5Lm9zYWthLmxnLmpwL3dlYm9wYWNfaV9qYS8wMDExMDk0ODgxIi8+CiAg
+        ICA8L2l0ZW0+CiAgPC9jaGFubmVsPgo8L3Jzcz4K
+    http_version: 
+  recorded_at: Wed, 01 Oct 2014 07:53:30 GMT
+recorded_with: VCR 2.9.3

@@ -7,7 +7,7 @@ module EnjuNdl
 
     module ClassMethods
       def get_crd_response(options)
-        params = {:query_logic => 1, :results_num => 1, :results_num => 200, :sort => 10}.merge(options)
+        params = {:query_logic => 1, :results_get_position => 1, :results_num => 200, :sort => 10}.merge(options)
         query = []
         query << "01_#{params[:query_01].to_s.gsub('　', ' ')}" if params[:query_01]
         query << "02_#{params[:query_02].to_s.gsub('　', ' ')}" if params[:query_02]

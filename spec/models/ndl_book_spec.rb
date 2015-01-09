@@ -10,7 +10,7 @@ describe NdlBook do
 
   context "search" do
     it "should search bibliographic record", :vcr => true do
-      NdlBook.search('library system')[:total_entries].should eq 5280
+      NdlBook.search('library system')[:total_entries].should eq 5313
     end
 
     it "should not distinguish double byte space from one-byte space in a query", :vcr => true do
@@ -44,7 +44,6 @@ describe NdlBook do
       manifestation = NdlBook.import_from_sru_response('R100000002-I000003641700-00')
       manifestation.original_title.should eq "アンパンマンとどうぶつえん"
       manifestation.title_transcription.should eq "アンパンマン ト ドウブツエン"
-      manifestation.ndc.should be_nil
     end
 
     it "should import volume_number_string", :vcr => true do
@@ -62,14 +61,14 @@ describe NdlBook do
       manifestation = NdlBook.import_from_sru_response('R100000002-I000004152429-00')
       manifestation.original_title.should eq "ズッコケ三人組のダイエット講座"
       manifestation.series_statements.first.original_title.should eq "ポプラ社文庫. ズッコケ文庫"
-      manifestation.periodical.should be_false
+      manifestation.serial.should be_falsy
     end
 
-    it "should import series_statement if the resource is periodical", :vcr => true do
+    it "should import series_statement if the resource is serial", :vcr => true do
       manifestation = NdlBook.import_from_sru_response('R100000039-I001413988-00')
       manifestation.original_title.should eq "週刊新潮"
       #manifestation.series_statements.first.original_title.should eq "週刊新潮"
-      manifestation.periodical.should be_nil #true
+      manifestation.serial.should be_nil #true
       end
 
     it "should import pud_date is nil", :vcr => true do
@@ -116,6 +115,11 @@ describe NdlBook do
     it "should not get series title if book has not series title", :vcr => true do
       book = NdlBook.search("4788509105")[:items].first
       book.series_title.should eq ""
+    end
+
+    it "should import publication_place", :vcr => true do
+      manifestation = NdlBook.import_from_sru_response('R100000002-I000007725666-00')
+      manifestation.publication_place.should eq "つくば"
     end
   end
 end

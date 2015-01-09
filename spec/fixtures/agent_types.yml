@@ -1,21 +1,21 @@
 --- 
 agent_type_00001:
   id: 1
-  name: Person
+  name: person
   display_name: Person
   note: 
   position: 1
 
 agent_type_00002:
   id: 2
-  name: CorporateBody
+  name: corporate_body
   display_name: CorporateBody
   note: 
   position: 2
 
 agent_type_00003:
   id: 3
-  name: Conference
+  name: conference
   display_name: Conference
   note: 
   position: 3

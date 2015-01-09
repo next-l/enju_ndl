@@ -1,7 +1,6 @@
 class CreateAgents < ActiveRecord::Migration
   def change
     create_table :agents do |t|
-      t.integer :user_id
       t.string :last_name
       t.string :middle_name
       t.string :first_name
@@ -40,11 +39,9 @@ class CreateAgents < ActiveRecord::Migration
       t.text :note
       t.integer :required_role_id, :default => 1, :null => false
       t.integer :required_score, :default => 0, :null => false
-      t.string :state
       t.text :email
       t.text :url
     end
-    add_index :agents, :user_id, :unique => true
     add_index :agents, :language_id
     add_index :agents, :country_id
     add_index :agents, :required_role_id

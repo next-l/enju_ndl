@@ -2,51 +2,49 @@
 http_interactions:
 - request:
     method: get
-    uri: http://iss.ndl.go.jp/api/opensearch?dpid=iss-ndl-opac&any=library%20system&cnt=10&idx=1&mediatype=1
+    uri: http://iss.ndl.go.jp/api/opensearch?any=library%20system&cnt=10&dpid=iss-ndl-opac&idx=1&mediatype=1
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      accept-encoding:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      accept:
-      - '*/*'
-      user-agent:
-      - Ruby
+      Accept:
+      - "*/*"
   response:
     status:
       code: 200
       message: OK
     headers:
-      date:
-      - Thu, 05 Dec 2013 11:04:09 GMT
-      server:
+      Date:
+      - Wed, 01 Oct 2014 07:53:18 GMT
+      Server:
       - Apache
-      etag:
-      - '"0033b5ffadad660d6c245bbb14a197b3"'
-      x-ua-compatible:
+      Etag:
+      - '"a17133bbc930fe6fe8cf0f2b162d2bd6"'
+      X-Ua-Compatible:
       - IE=Edge,chrome=1
-      x-runtime:
-      - '0.835185'
-      cache-control:
+      X-Runtime:
+      - '0.538207'
+      Cache-Control:
       - max-age=0, private, must-revalidate
-      status:
+      Status:
       - '200'
-      content-type:
+      Content-Type:
       - application/xml; charset=utf-8
-      set-cookie:
-      - _front_session_id=b6eb6bc004e1a85a0ad9959f2e6e7280; domain=.iss.ndl.go.jp;
-        path=/; expires=Thu, 05-Dec-2013 12:04:10 GMT; HttpOnly
-      - serverid=1102; path=/
-      vary:
+      Set-Cookie:
+      - _front_session_id=53be31ae1609d4471d843626ea6a018d; domain=.iss.ndl.go.jp;
+        path=/; expires=Wed, 01-Oct-2014 08:53:19 GMT; HttpOnly
+      - serverid=1101; path=/
+      Vary:
       - Accept-Encoding,User-Agent
-      content-encoding:
-      - gzip
-      x-content-type-options:
+      X-Content-Type-Options:
       - nosniff
-      x-frame-options:
+      X-Frame-Options:
       - SAMEORIGIN
-      connection:
+      Connection:
       - close
     body:
       encoding: ASCII-8BIT
@@ -64,13 +62,13 @@ http_interactions:
         ZS8iPgogIDxjaGFubmVsPgogICAgPHRpdGxlPjEgaXNzLW5kbC1vcGFjIGxp
         YnJhcnkgc3lzdGVtIC0g5Zu956uL5Zu95Lya5Zuz5pu46aSo44K144O844OB
         IE9wZW5TZWFyY2g8L3RpdGxlPgogICAgPGxpbms+aHR0cDovL2lzcy5uZGwu
-        Z28uanAvYXBpL29wZW5zZWFyY2g/YW55PWxpYnJhcnkrc3lzdGVtJmFtcDtk
-        cGlkPWlzcy1uZGwtb3BhYyZhbXA7Y250PTEwJmFtcDttZWRpYXR5cGU9MSZh
-        bXA7aWR4PTE8L2xpbms+CiAgICA8ZGVzY3JpcHRpb24+U2VhcmNoIHJlc3Vs
-        dHMgZm9yIGFueT1saWJyYXJ5IHN5c3RlbSBtZWRpYXR5cGU9MSBjbnQ9MTAg
-        ZHBpZD1pc3MtbmRsLW9wYWMgPC9kZXNjcmlwdGlvbj4KICAgIDxsYW5ndWFn
+        Z28uanAvYXBpL29wZW5zZWFyY2g/YW55PWxpYnJhcnkrc3lzdGVtJmFtcDtt
+        ZWRpYXR5cGU9MSZhbXA7aWR4PTEmYW1wO2RwaWQ9aXNzLW5kbC1vcGFjJmFt
+        cDtjbnQ9MTA8L2xpbms+CiAgICA8ZGVzY3JpcHRpb24+U2VhcmNoIHJlc3Vs
+        dHMgZm9yIGFueT1saWJyYXJ5IHN5c3RlbSBtZWRpYXR5cGU9MSBkcGlkPWlz
+        cy1uZGwtb3BhYyBjbnQ9MTAgPC9kZXNjcmlwdGlvbj4KICAgIDxsYW5ndWFn
         ZT5qYTwvbGFuZ3VhZ2U+CiAgICA8b3BlblNlYXJjaDp0b3RhbFJlc3VsdHM+
-        NTI4MDwvb3BlblNlYXJjaDp0b3RhbFJlc3VsdHM+CiAgICA8b3BlblNlYXJj
+        NTMxMzwvb3BlblNlYXJjaDp0b3RhbFJlc3VsdHM+CiAgICA8b3BlblNlYXJj
         aDpzdGFydEluZGV4PjE8L29wZW5TZWFyY2g6c3RhcnRJbmRleD4KICAgIDxv
         cGVuU2VhcmNoOml0ZW1zUGVyUGFnZT4xMDwvb3BlblNlYXJjaDppdGVtc1Bl
         clBhZ2U+CiAgICA8aXRlbT4KICAgICAgPHRpdGxlPlN1cnZleSBvZiBsZWdp
@@ -192,7 +190,7 @@ http_interactions:
         PC91bD5dXT4KPC9kZXNjcmlwdGlvbj4KICAgICAgPGNhdGVnb3J5PuacrDwv
         Y2F0ZWdvcnk+CiAgICAgIDxndWlkIGlzUGVybWFMaW5rPSJ0cnVlIj5odHRw
         Oi8vaXNzLm5kbC5nby5qcC9ib29rcy9SMTAwMDAwMDAyLUkwMDAwMDM2OTU2
-        MTUtMDA8L2d1aWQ+CiAgICAgIDxwdWJEYXRlPlNhdCwgMDYgT2N0IDIwMDEg
+        MTUtMDA8L2d1aWQ+CiAgICAgIDxwdWJEYXRlPlR1ZSwgMTggTWFyIDIwMTQg
         MDk6MDA6MDAgKzA5MDA8L3B1YkRhdGU+CiAgICAgIDxkYzp0aXRsZT5KYXBh
         bmVzZSB1cmJhbiBzeXN0ZW0gLyBieSBZdWppIE11cmF5YW1hIDsgd2l0aCBj
         b2xsYWJvcmF0aW9ucyBieSBUYWthc2hpIElub3VlIGFuZCBZdWljaGkgSGFz
@@ -415,6 +413,6 @@ http_interactions:
         cmlwdGlvbj4KICAgICAgPHJkZnM6c2VlQWxzbyByZGY6cmVzb3VyY2U9Imh0
         dHA6Ly9pZC5uZGwuZ28uanAvYmliLzAwMDAwNjIxMjI1MyIvPgogICAgPC9p
         dGVtPgogIDwvY2hhbm5lbD4KPC9yc3M+Cg==
-    http_version: '1.0'
-  recorded_at: Thu, 05 Dec 2013 11:04:10 GMT
-recorded_with: VCR 2.8.0
+    http_version: 
+  recorded_at: Wed, 01 Oct 2014 07:53:19 GMT
+recorded_with: VCR 2.9.3
