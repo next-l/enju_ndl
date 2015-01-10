@@ -1,8 +1,8 @@
 = EnjuNdl
 
-{<img src="https://travis-ci.org/next-l/enju_ndl.png?branch=1.1" alt="Build Status" />}[https://travis-ci.org/next-l/enju_ndl]
-{<img src="https://coveralls.io/repos/next-l/enju_ndl/badge.png?branch=1.1" alt="Coverage Status" />}[https://coveralls.io/r/next-l/enju_ndl?branch=1.1]
-{<img src="https://hakiri.io/github/next-l/enju_ndl/1.1.svg" alt="security" />}[https://hakiri.io/github/next-l/enju_ndl/1.1]
+{<img src="https://travis-ci.org/next-l/enju_ndl.png?branch=master" alt="Build Status" />}[https://travis-ci.org/next-l/enju_ndl]
+{<img src="https://img.shields.io/coveralls/next-l/enju_ndl.svg" alt="Coverage Status" />}[https://coveralls.io/r/next-l/enju_ndl?branch=master]
+{<img src="https://hakiri.io/github/next-l/enju_ndl/master.svg" alt="security" />}[https://hakiri.io/github/next-l/enju_ndl/master]
 
 This project rocks and uses MIT-LICENSE.
 
