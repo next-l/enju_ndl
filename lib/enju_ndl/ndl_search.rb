@@ -66,6 +66,7 @@ module EnjuNdl
         issn_l = StdNum::ISSN.normalize(doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/ISSNL"]').try(:content))
 
         carrier_type = content_type = nil
+	is_serial = nil
         doc.xpath('//dcndl:materialType[@rdf:resource]').each do |d|
           case d.attributes['resource'].try(:content)
           when 'http://ndl.go.jp/ndltype/Book'
@@ -77,6 +78,8 @@ module EnjuNdl
             content_type = ContentType.where(name: 'video').first
           when 'http://ndl.go.jp/ndltype/ElectronicResource'
             carrier_type = CarrierType.where(name: 'file').first
+          when 'http://ndl.go.jp/ndltype/Journal'
+	    is_serial = true
           end
         end
 
@@ -112,6 +115,7 @@ module EnjuNdl
             :height => extent[:height],
 	    :publication_place => publication_place,
           )
+          manifestation.serial = true if is_serial
           identifier = {}
           if isbn
             identifier[:isbn] = Identifier.new(body: isbn)
@@ -135,14 +139,25 @@ module EnjuNdl
           end
           manifestation.carrier_type = carrier_type if carrier_type
           manifestation.manifestation_content_type = content_type if content_type
-          #manifestation.periodical = true if publication_periodicity
           if manifestation.save
             identifier.each do |k, v|
               manifestation.identifiers << v if v.valid?
             end
             manifestation.publishers << publisher_agents
             create_additional_attributes(doc, manifestation)
-            create_series_statement(doc, manifestation)
+	    if is_serial
+	      series_statement = SeriesStatement.new(
+	  	:original_title => title[:manifestation],
+	  	:title_alternative => title[:alternative],
+	  	:title_transcription => title[:transcription],
+	  	:series_master => true,
+              )
+	      if series_statement.try(:save)
+	  	manifestation.series_statements << series_statement
+	      end
+	    else
+              create_series_statement(doc, manifestation)
+	    end
           end
         end
 
@@ -153,14 +168,12 @@ module EnjuNdl
       def create_additional_attributes(doc, manifestation)
         title = get_title(doc)
         creators = get_creators(doc).uniq
-        language = get_language(doc)
         subjects = get_subjects(doc).uniq
         classifications = get_classifications(doc).uniq
         classification_urls = doc.xpath('//dcterms:subject[@rdf:resource]').map{|subject| subject.attributes['resource'].value}
 
         Agent.transaction do
           creator_agents = Agent.import_agents(creators)
-          language_id = Language.where(iso_639_2: language).first.id rescue 1
           content_type_id = ContentType.where(name: 'text').first.id rescue 1
           manifestation.creators << creator_agents
 
