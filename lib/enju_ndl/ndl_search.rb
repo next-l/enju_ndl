@@ -66,7 +66,7 @@ module EnjuNdl
         issn_l = StdNum::ISSN.normalize(doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/ISSNL"]').try(:content))
 
         carrier_type = content_type = nil
-	is_serial = nil
+        is_serial = nil
         doc.xpath('//dcndl:materialType[@rdf:resource]').each do |d|
           case d.attributes['resource'].try(:content)
           when 'http://ndl.go.jp/ndltype/Book'
@@ -79,7 +79,7 @@ module EnjuNdl
           when 'http://ndl.go.jp/ndltype/ElectronicResource'
             carrier_type = CarrierType.where(name: 'file').first
           when 'http://ndl.go.jp/ndltype/Journal'
-	    is_serial = true
+            is_serial = true
           end
         end
 
@@ -145,19 +145,19 @@ module EnjuNdl
             end
             manifestation.publishers << publisher_agents
             create_additional_attributes(doc, manifestation)
-	    if is_serial
-	      series_statement = SeriesStatement.new(
-	  	:original_title => title[:manifestation],
-	  	:title_alternative => title[:alternative],
-	  	:title_transcription => title[:transcription],
-	  	:series_master => true,
+            if is_serial
+              series_statement = SeriesStatement.new(
+                :original_title => title[:manifestation],
+                :title_alternative => title[:alternative],
+                :title_transcription => title[:transcription],
+                :series_master => true,
               )
-	      if series_statement.try(:save)
-	  	manifestation.series_statements << series_statement
-	      end
-	    else
+              if series_statement.try(:save)
+                manifestation.series_statements << series_statement
+              end
+            else
               create_series_statement(doc, manifestation)
-	    end
+            end
           end
         end
 
