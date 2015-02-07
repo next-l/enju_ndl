@@ -67,9 +67,10 @@ describe NdlBook do
     it "should import series_statement if the resource is serial", :vcr => true do
       manifestation = NdlBook.import_from_sru_response('R100000039-I001413988-00')
       manifestation.original_title.should eq "週刊新潮"
-      #manifestation.series_statements.first.original_title.should eq "週刊新潮"
-      manifestation.serial.should be_nil #true
-      end
+      manifestation.series_statements.first.original_title.should eq "週刊新潮"
+      manifestation.series_statements.first.series_master.should be_truthy
+      manifestation.serial.should be_truthy
+    end
 
     it "should import pud_date is nil", :vcr => true do
       manifestation = NdlBook.import_from_sru_response('R100000002-I000000017951-00')
