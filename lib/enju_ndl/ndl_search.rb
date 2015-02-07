@@ -72,14 +72,32 @@ module EnjuNdl
           when 'http://ndl.go.jp/ndltype/Book'
             carrier_type = CarrierType.where(name: 'print').first
             content_type = ContentType.where(name: 'text').first
-          when 'http://purl.org/dc/dcmitype/Sound'
-            content_type = ContentType.where(name: 'audio').first
-          when 'http://purl.org/dc/dcmitype/MovingImage'
-            content_type = ContentType.where(name: 'video').first
+          when 'http://ndl.go.jp/ndltype/Braille'
+            content_type = ContentType.where(name: 'tactile_text').first
+          #when 'http://ndl.go.jp/ndltype/ComputerProgram'
+          #  content_type = ContentType.where(name: 'computer_program').first
           when 'http://ndl.go.jp/ndltype/ElectronicResource'
             carrier_type = CarrierType.where(name: 'file').first
           when 'http://ndl.go.jp/ndltype/Journal'
             is_serial = true
+          when 'http://ndl.go.jp/ndltype/Map'
+            content_type = ContentType.where(name: 'cartographic_image').first
+          when 'http://ndl.go.jp/ndltype/Music'
+            content_type = ContentType.where(name: 'performed_music').first
+          when 'http://ndl.go.jp/ndltype/MusicScore'
+            content_type = ContentType.where(name: 'notated_music').first
+          when 'http://ndl.go.jp/ndltype/Painting'
+            content_type = ContentType.where(name: 'still_image').first
+          when 'http://ndl.go.jp/ndltype/Photograph'
+            content_type = ContentType.where(name: 'still_image').first
+          when 'http://ndl.go.jp/ndltype/PicturePostcard'
+            content_type = ContentType.where(name: 'still_image').first
+          when 'http://purl.org/dc/dcmitype/MovingImage'
+            content_type = ContentType.where(name: 'two_dimensional_moving_image').first
+          when 'http://purl.org/dc/dcmitype/Sound'
+            content_type = ContentType.where(name: 'sounds').first
+          when 'http://purl.org/dc/dcmitype/StillImage'
+            content_type = ContentType.where(name: 'still_image').first
           end
         end
 
