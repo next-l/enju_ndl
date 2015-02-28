@@ -345,6 +345,7 @@ module EnjuNdl
         series = series_title = {}
         series[:title] = doc.at('//dcndl:seriesTitle/rdf:Description/rdf:value').try(:content)
         series[:title_transcription] = doc.at('//dcndl:seriesTitle/rdf:Description/dcndl:seriesTitleTranscription').try(:content)
+	series[:creator] = doc.at('//dcndl:seriesCreator').try(:content)
         if series[:title]
           series_title[:title] = series[:title].split(';')[0].strip
           series_title[:title_transcription] = series[:title_transcription]
@@ -355,7 +356,8 @@ module EnjuNdl
           unless series_statement
             series_statement = SeriesStatement.new(
               :original_title => series_title[:title],
-              :title_transcription => series_title[:title_transcription]
+              :title_transcription => series_title[:title_transcription],
+	      :creator_string => series[:creator],
             )
           end
         end

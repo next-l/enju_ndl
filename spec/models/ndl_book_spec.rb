@@ -64,6 +64,12 @@ describe NdlBook do
       manifestation.serial.should be_falsy
     end
 
+    it "should import series_statement's creator", :vcr => true do
+      manifestation = NdlBook.import_from_sru_response('R100000002-I000008369884-00')
+      manifestation.series_statements.first.original_title.should eq "新・図書館学シリーズ"
+      manifestation.series_statements.first.creator_string.should eq "高山正也, 植松貞夫 監修"
+    end
+
     it "should import series_statement if the resource is serial", :vcr => true do
       manifestation = NdlBook.import_from_sru_response('R100000039-I001413988-00')
       manifestation.original_title.should eq "週刊新潮"
