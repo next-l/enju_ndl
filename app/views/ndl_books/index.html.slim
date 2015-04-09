@@ -1,15 +1,15 @@
 .row
-  #content_list.col-md-9.col-md-9
+  #content_list.col-md-9
     h1.title
       = t('enju_ndl.import_from_ndl_search')
     p#notice
       = notice
-    = form_for :books, url: ndl_books_path, :html => {method: 'get'} do
-      p
+    = form_for :books, url: ndl_books_path, :html => {method: 'get', class: 'form-inline'} do
+      .form-group
         = label_tag :search_form_top, t('page.search_term')
         | : 
-        = search_field_tag 'query', h(@query), {:id => 'search_form_top', class: 'search_form'}
-        = submit_tag t('page.search')
+        => search_field_tag 'query', h(@query), {:id => 'search_form_top', class: 'form-control'}
+        => submit_tag t('page.search'), class: 'form-control'
       - if @query.present?
         p
           = t('enju_ndl.number_of_search_results', :count => @books.total_count)
