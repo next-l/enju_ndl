@@ -210,14 +210,24 @@ module EnjuNdl
               #subject.save!
             end
             if classification_urls
-              ndc9_url = classification_urls.map{|url| URI.parse(URI.escape(url))}.select{|u| u.path.split('/').reverse[1] == 'ndc9'}.first
-              if ndc9_url
-                ndc = ndc9_url.path.split('/').last
-                classification_type = ClassificationType.where(name: 'ndc9').first || ClassificationType.create!(name: 'ndc9')
-                classification = Classification.new(category: ndc)
-                classification.classification_type = classification_type
-                manifestation.classifications << classification if classification.valid?
+              classification_urls.each do |url|
+	        ndc_url = URI.parse(URI.escape(url))
+		if ndc_url.path.split('/').reverse[1] == "ndc9"
+		  ndc_type = "ndc9"
+                  ndc = ndc_url.path.split('/').last
+                  classification_type = ClassificationType.where(name: ndc_type).first || ClassificationType.create!(name: ndc_type)
+                  classification = Classification.new(category: ndc)
+                  classification.classification_type = classification_type
+                  manifestation.classifications << classification if classification.valid?
+		end
               end
+            end
+            ndc8 = doc.xpath('//dc:subject[@rdf:datatype="http://ndl.go.jp/dcndl/terms/NDC8"]').first
+	    if ndc8
+              classification_type = ClassificationType.where(name: "ndc8").first || ClassificationType.create!(name: "ndc8")
+              classification = Classification.new(category: ndc8.content)
+              classification.classification_type = classification_type
+              manifestation.classifications << classification if classification.valid?
             end
           end
         end

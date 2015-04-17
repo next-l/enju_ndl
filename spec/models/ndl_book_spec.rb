@@ -161,5 +161,12 @@ describe NdlBook do
       manifestation = NdlBook.import_from_sru_response('R100000002-I024016497-00')
       manifestation.manifestation_content_type.name.should eq 'still_image'
     end
+
+    it "should import ndc8 classification", :vcr => true do
+      manifestation = NdlBook.import_from_sru_response( "R100000002-I000002467093-00" )
+      manifestation.classifications.should_not be_empty
+      manifestation.classifications.first.classification_type.name.should eq "ndc8"
+      manifestation.classifications.first.category.should eq "547.48"
+    end
   end
 end
