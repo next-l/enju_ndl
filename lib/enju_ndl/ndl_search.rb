@@ -354,11 +354,13 @@ module EnjuNdl
       def create_series_statement(doc, manifestation)
         series = series_title = {}
         series[:title] = doc.at('//dcndl:seriesTitle/rdf:Description/rdf:value').try(:content)
-        series[:title_transcription] = doc.at('//dcndl:seriesTitle/rdf:Description/dcndl:seriesTitleTranscription').try(:content)
+        series[:title_transcription] = doc.at('//dcndl:seriesTitle/rdf:Description/dcndl:transcription').try(:content)
 	series[:creator] = doc.at('//dcndl:seriesCreator').try(:content)
         if series[:title]
           series_title[:title] = series[:title].split(';')[0].strip
-          series_title[:title_transcription] = series[:title_transcription]
+         if series[:title_transcription]
+            series_title[:title_transcription] = series[:title_transcription].split(';')[0].strip
+          end
         end
 
         if series_title[:title]

@@ -70,6 +70,12 @@ describe NdlBook do
       manifestation.series_statements.first.creator_string.should eq "高山正也, 植松貞夫 監修"
     end
 
+    it "should import series_statement transctiption", :vcr => true do
+      manifestation = NdlBook.import_from_sru_response('R100000002-I000011242276-00')
+      manifestation.series_statements.first.original_title.should eq "講談社現代新書"
+      manifestation.series_statements.first.title_transcription.should eq "コウダンシャ ゲンダイ シンショ"
+    end
+
     it "should import series_statement if the resource is serial", :vcr => true do
       manifestation = NdlBook.import_from_sru_response('R100000039-I001413988-00')
       manifestation.original_title.should eq "週刊新潮"
