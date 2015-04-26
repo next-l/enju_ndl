@@ -1,0 +1,42 @@
+.row
+  #content_list.col-md-9
+    h1.title
+      = t('enju_ndl.import_from_ndl_search')
+    p#notice
+      = notice
+    = form_for :books, url: ndl_books_path, :html => {method: 'get', class: 'form-inline'} do
+      .form-group
+        = label_tag :search_form_top, t('page.search_term')
+        | : 
+        => search_field_tag 'query', h(@query), {:id => 'search_form_top', class: 'form-control'}
+        => submit_tag t('page.search'), class: 'form-control'
+      - if @query.present?
+        p
+          = t('enju_ndl.number_of_search_results', :count => @books.total_count)
+        table.table.table-striped.index
+          tr
+            th
+            th
+              = t('activerecord.attributes.manifestation.original_title')
+          - @books.each do |book|
+            |  <tr class="line
+            = cycle("0", "1")
+            | "> 
+            td
+              = link_to_import_from_ndl(book.itemno)
+            td
+              strong
+                = link_to "#{book.title} #{book.volume}".strip , book.permalink
+              br
+              = book.creator
+              = book.publisher
+              |  (
+              = book.issued
+              | , ISBN: 
+              = book.isbn
+              | ) 
+        br
+        = paginate(@books)
+      - else
+        = javascript_tag("$(function(){$('#search_form_top').focus()})")
+  #submenu.col-md-3

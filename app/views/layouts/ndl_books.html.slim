@@ -1,0 +1,13 @@
+doctype html
+html lang="#{@locale.to_s}"
+  head
+    meta[charset="UTF-8"]
+    title
+      = t('enju_ndl.import_from_ndl_search')
+    = render 'page/include'
+  body[itemscope itemtype="http://schema.org/WebPage"]
+    .container
+      = render 'page/header'
+      = render 'page/menu'
+      = yield
+      = render 'page/footer'
