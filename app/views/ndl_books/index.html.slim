@@ -1,4 +1,5 @@
 .row
+  #submenu.col-md-3
   #content_list.col-md-9
     h1.title
       = t('enju_ndl.import_from_ndl_search')
@@ -39,4 +40,3 @@
         = paginate(@books)
       - else
         = javascript_tag("$(function(){$('#search_form_top').focus()})")
-  #submenu.col-md-3
