@@ -72,14 +72,32 @@ module EnjuNdl
           when 'http://ndl.go.jp/ndltype/Book'
             carrier_type = CarrierType.where(name: 'print').first
             content_type = ContentType.where(name: 'text').first
-          when 'http://purl.org/dc/dcmitype/Sound'
-            content_type = ContentType.where(name: 'audio').first
-          when 'http://purl.org/dc/dcmitype/MovingImage'
-            content_type = ContentType.where(name: 'video').first
+          when 'http://ndl.go.jp/ndltype/Braille'
+            content_type = ContentType.where(name: 'tactile_text').first
+          #when 'http://ndl.go.jp/ndltype/ComputerProgram'
+          #  content_type = ContentType.where(name: 'computer_program').first
           when 'http://ndl.go.jp/ndltype/ElectronicResource'
             carrier_type = CarrierType.where(name: 'file').first
           when 'http://ndl.go.jp/ndltype/Journal'
             is_serial = true
+          when 'http://ndl.go.jp/ndltype/Map'
+            content_type = ContentType.where(name: 'cartographic_image').first
+          when 'http://ndl.go.jp/ndltype/Music'
+            content_type = ContentType.where(name: 'performed_music').first
+          when 'http://ndl.go.jp/ndltype/MusicScore'
+            content_type = ContentType.where(name: 'notated_music').first
+          when 'http://ndl.go.jp/ndltype/Painting'
+            content_type = ContentType.where(name: 'still_image').first
+          when 'http://ndl.go.jp/ndltype/Photograph'
+            content_type = ContentType.where(name: 'still_image').first
+          when 'http://ndl.go.jp/ndltype/PicturePostcard'
+            content_type = ContentType.where(name: 'still_image').first
+          when 'http://purl.org/dc/dcmitype/MovingImage'
+            content_type = ContentType.where(name: 'two_dimensional_moving_image').first
+          when 'http://purl.org/dc/dcmitype/Sound'
+            content_type = ContentType.where(name: 'sounds').first
+          when 'http://purl.org/dc/dcmitype/StillImage'
+            content_type = ContentType.where(name: 'still_image').first
           end
         end
 
@@ -192,14 +210,24 @@ module EnjuNdl
               #subject.save!
             end
             if classification_urls
-              ndc9_url = classification_urls.map{|url| URI.parse(URI.escape(url))}.select{|u| u.path.split('/').reverse[1] == 'ndc9'}.first
-              if ndc9_url
-                ndc = ndc9_url.path.split('/').last
-                classification_type = ClassificationType.where(name: 'ndc9').first || ClassificationType.create!(name: 'ndc9')
-                classification = Classification.new(category: ndc)
-                classification.classification_type = classification_type
-                manifestation.classifications << classification if classification.valid?
+              classification_urls.each do |url|
+	        ndc_url = URI.parse(URI.escape(url))
+		if ndc_url.path.split('/').reverse[1] == "ndc9"
+		  ndc_type = "ndc9"
+                  ndc = ndc_url.path.split('/').last
+                  classification_type = ClassificationType.where(name: ndc_type).first || ClassificationType.create!(name: ndc_type)
+                  classification = Classification.new(category: ndc)
+                  classification.classification_type = classification_type
+                  manifestation.classifications << classification if classification.valid?
+		end
               end
+            end
+            ndc8 = doc.xpath('//dc:subject[@rdf:datatype="http://ndl.go.jp/dcndl/terms/NDC8"]').first
+	    if ndc8
+              classification_type = ClassificationType.where(name: "ndc8").first || ClassificationType.create!(name: "ndc8")
+              classification = Classification.new(category: ndc8.content)
+              classification.classification_type = classification_type
+              manifestation.classifications << classification if classification.valid?
             end
           end
         end
@@ -326,10 +354,13 @@ module EnjuNdl
       def create_series_statement(doc, manifestation)
         series = series_title = {}
         series[:title] = doc.at('//dcndl:seriesTitle/rdf:Description/rdf:value').try(:content)
-        series[:title_transcription] = doc.at('//dcndl:seriesTitle/rdf:Description/dcndl:seriesTitleTranscription').try(:content)
+        series[:title_transcription] = doc.at('//dcndl:seriesTitle/rdf:Description/dcndl:transcription').try(:content)
+	series[:creator] = doc.at('//dcndl:seriesCreator').try(:content)
         if series[:title]
           series_title[:title] = series[:title].split(';')[0].strip
-          series_title[:title_transcription] = series[:title_transcription]
+         if series[:title_transcription]
+            series_title[:title_transcription] = series[:title_transcription].split(';')[0].strip
+          end
         end
 
         if series_title[:title]
@@ -337,7 +368,8 @@ module EnjuNdl
           unless series_statement
             series_statement = SeriesStatement.new(
               :original_title => series_title[:title],
-              :title_transcription => series_title[:title_transcription]
+              :title_transcription => series_title[:title_transcription],
+	      :creator_string => series[:creator],
             )
           end
         end
