@@ -35,6 +35,10 @@ RSpec.configure do |config|
   config.extend ControllerMacros, :type => :controller
 
   config.before do
+    OmniAuth.config.test_mode = true
+  end
+
+  config.before do
     Sunspot.session = Sunspot::Rails::StubSessionProxy.new($original_sunspot_session)
   end
 
