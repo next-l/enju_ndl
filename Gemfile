@@ -16,7 +16,6 @@ gem "enju_library", github: "next-l/enju_library", branch: "master"
 gem "enju_subject", github: "next-l/enju_subject", branch: "master"
 gem "enju_question", github: "next-l/enju_question", branch: "master"
 gem "enju_manifestation_viewer", github: "next-l/enju_manifestation_viewer", branch: "master"
-gem 'omniauth-identity', github: 'intridea/omniauth-identity'
 gem "coveralls", require: false, group: :test
 
 # To use a debugger
