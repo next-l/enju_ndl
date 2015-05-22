@@ -12,4 +12,10 @@ describe Manifestation do
   it "should import isbn", :vcr => true do
     Manifestation.import_isbn('4797327030').should be_valid
   end
+
+  it "should import series statement", :vcr => true do
+    manifestation = Manifestation.import_isbn('4106101491')
+    manifestation.series_statements.count.should eq  1
+    manifestation.series_statements.first.original_title.should eq '新潮新書'
+  end
 end
