@@ -27,10 +27,10 @@ Gem::Specification.new do |s|
   s.add_development_dependency "rspec-rails", "~> 3.3"
   s.add_development_dependency "vcr"
   s.add_development_dependency "webmock"
-  s.add_development_dependency "enju_leaf", "~> 1.1.0.rc19"
+  s.add_development_dependency "enju_leaf", "~> 1.1.0.rc20"
   s.add_development_dependency "enju_question", "~> 0.1.0.pre14"
   s.add_development_dependency "sunspot_solr", "~> 2.2"
   s.add_development_dependency "simplecov"
-  s.add_development_dependency "enju_subject", "~> 0.1.0.pre31"
+  s.add_development_dependency "enju_subject", "~> 0.1.0.pre33"
   s.add_development_dependency "appraisal"
 end
