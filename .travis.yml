@@ -38,10 +38,10 @@ matrix:
   - rvm: 2.2.3
     gemfile: gemfiles/rails_3.2.gemfile
   include:
-  - rvm: 2.2.2
+  - rvm: 2.2.3
     gemfile: gemfiles/rails_4.2_nii.gemfile
     env: DB=postgresql
-  - rvm: 2.2.2
+  - rvm: 2.2.3
     gemfile: gemfiles/rails_4.2_loc.gemfile
     env: DB=postgresql
 notifications:
