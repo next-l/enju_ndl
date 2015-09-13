@@ -22,9 +22,9 @@ Gem::Specification.new do |s|
   s.add_dependency "faraday"
 
   s.add_development_dependency "sqlite3"
-  s.add_development_dependency "mysql2"
+  s.add_development_dependency "mysql2", "~> 0.3.20"
   s.add_development_dependency "pg"
-  s.add_development_dependency "rspec-rails", "~> 3.2"
+  s.add_development_dependency "rspec-rails", "~> 3.3"
   s.add_development_dependency "vcr"
   s.add_development_dependency "webmock"
   #s.add_development_dependency "enju_leaf", "~> 1.2.0.beta.1"
