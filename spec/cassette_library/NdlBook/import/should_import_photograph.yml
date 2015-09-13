@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 07 Feb 2015 22:23:15 GMT
+      - Sun, 13 Sep 2015 23:51:28 GMT
       Server:
       - Apache
       Etag:
@@ -27,7 +27,7 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       X-Runtime:
-      - '0.157492'
+      - '0.167558'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Status:
@@ -35,9 +35,9 @@ http_interactions:
       Content-Type:
       - application/xml; charset=utf-8
       Set-Cookie:
-      - _front_session_id=fadfd0a70dfaf0f302c986ff1eff4da3; domain=.iss.ndl.go.jp;
-        path=/; expires=Sat, 07-Feb-2015 23:23:15 GMT; HttpOnly
-      - serverid=1102; path=/
+      - _front_session_id=fdeb3fdf07915a4f05eb2eab4ed7568a; domain=.iss.ndl.go.jp;
+        path=/; expires=Mon, 14-Sep-2015 00:51:28 GMT; HttpOnly
+      - serverid=1101; path=/
       Vary:
       - Accept-Encoding,User-Agent
       X-Content-Type-Options:
@@ -148,5 +148,5 @@ http_interactions:
         cmVjb3JkPgogIDwvcmVjb3Jkcz4KPC9zZWFyY2hSZXRyaWV2ZVJlc3BvbnNl
         Pgo=
     http_version: 
-  recorded_at: Sat, 07 Feb 2015 17:27:25 GMT
+  recorded_at: Sun, 13 Sep 2015 23:51:28 GMT
 recorded_with: VCR 2.9.3

@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.9.0
+      - Faraday v0.9.1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 01 Oct 2014 07:53:12 GMT
+      - Sun, 13 Sep 2015 23:50:20 GMT
       Server:
       - Apache
       Etag:
@@ -27,7 +27,7 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       X-Runtime:
-      - '0.007443'
+      - '0.007365'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Status:
@@ -35,9 +35,9 @@ http_interactions:
       Content-Type:
       - application/xml; charset=utf-8
       Set-Cookie:
-      - _front_session_id=b30e95aaa8c462ef13411ab6f12e7bfe; domain=.iss.ndl.go.jp;
-        path=/; expires=Wed, 01-Oct-2014 08:53:12 GMT; HttpOnly
-      - serverid=1101; path=/
+      - _front_session_id=9668d5e7deb43ab90d72c6bb8d0a81f3; domain=.iss.ndl.go.jp;
+        path=/; expires=Mon, 14-Sep-2015 00:50:20 GMT; HttpOnly
+      - serverid=1105; path=/
       Vary:
       - Accept-Encoding,User-Agent
       X-Content-Type-Options:
@@ -49,7 +49,7 @@ http_interactions:
       Connection:
       - close
     body:
-      encoding: UTF-8
+      encoding: ASCII-8BIT
       string: |
         <?xml version="1.0" encoding="UTF-8"?>
         <searchRetrieveResponse xmlns="http://www.loc.gov/zing/srw/">
@@ -62,5 +62,5 @@ http_interactions:
           </diagnostics>
         </searchRetrieveResponse>
     http_version: 
-  recorded_at: Wed, 01 Oct 2014 07:53:12 GMT
+  recorded_at: Sun, 13 Sep 2015 23:51:02 GMT
 recorded_with: VCR 2.9.3

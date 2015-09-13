@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.9.0
+      - Faraday v0.9.1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 01 Oct 2014 07:53:27 GMT
+      - Sun, 13 Sep 2015 23:51:50 GMT
       Server:
       - Apache
       Etag:
@@ -27,7 +27,7 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       X-Runtime:
-      - '0.359008'
+      - '0.102577'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Status:
@@ -35,9 +35,9 @@ http_interactions:
       Content-Type:
       - application/xml; charset=utf-8
       Set-Cookie:
-      - _front_session_id=f05c980d64ea1e846e859c8cb2b3daae; domain=.iss.ndl.go.jp;
-        path=/; expires=Wed, 01-Oct-2014 08:53:28 GMT; HttpOnly
-      - serverid=1102; path=/
+      - _front_session_id=bd27be268a82418b4573edf88f1f336e; domain=.iss.ndl.go.jp;
+        path=/; expires=Mon, 14-Sep-2015 00:51:50 GMT; HttpOnly
+      - serverid=1105; path=/
       Vary:
       - Accept-Encoding,User-Agent
       X-Content-Type-Options:
@@ -144,5 +144,5 @@ http_interactions:
         cmRQb3NpdGlvbj4xPC9yZWNvcmRQb3NpdGlvbj4KICAgIDwvcmVjb3JkPgog
         IDwvcmVjb3Jkcz4KPC9zZWFyY2hSZXRyaWV2ZVJlc3BvbnNlPgo=
     http_version: 
-  recorded_at: Wed, 01 Oct 2014 07:53:28 GMT
+  recorded_at: Sun, 13 Sep 2015 23:51:23 GMT
 recorded_with: VCR 2.9.3

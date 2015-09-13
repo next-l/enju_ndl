@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.9.0
+      - Faraday v0.9.1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -19,15 +19,15 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 01 Oct 2014 07:53:29 GMT
+      - Sun, 13 Sep 2015 23:51:49 GMT
       Server:
       - Apache
       Etag:
-      - '"8e1f57786aebb2efad85db481dccb4a7"'
+      - '"adcb93972a1115ea7f8df8a7d3078635"'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       X-Runtime:
-      - '0.262773'
+      - '0.254548'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Status:
@@ -35,9 +35,9 @@ http_interactions:
       Content-Type:
       - application/xml; charset=utf-8
       Set-Cookie:
-      - _front_session_id=1e8e2557f9755bdc126bce5e4a87403f; domain=.iss.ndl.go.jp;
-        path=/; expires=Wed, 01-Oct-2014 08:53:30 GMT; HttpOnly
-      - serverid=1102; path=/
+      - _front_session_id=23f7c43db8829e6b00746048e7805617; domain=.iss.ndl.go.jp;
+        path=/; expires=Mon, 14-Sep-2015 00:51:49 GMT; HttpOnly
+      - serverid=1105; path=/
       Vary:
       - Accept-Encoding,User-Agent
       X-Content-Type-Options:
@@ -45,7 +45,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Content-Length:
-      - '1273'
+      - '1490'
       Connection:
       - close
     body:
@@ -64,8 +64,8 @@ http_interactions:
         ZS8iPgogIDxjaGFubmVsPgogICAgPHRpdGxlPjEgNDg0MDExNDQwNCBpc3Mt
         bmRsLW9wYWMgLSDlm73nq4vlm73kvJrlm7Pmm7jppKjjgrXjg7zjg4EgT3Bl
         blNlYXJjaDwvdGl0bGU+CiAgICA8bGluaz5odHRwOi8vaXNzLm5kbC5nby5q
-        cC9hcGkvb3BlbnNlYXJjaD9hbnk9NDg0MDExNDQwNCZhbXA7bWVkaWF0eXBl
-        PTEmYW1wO2lkeD0xJmFtcDtkcGlkPWlzcy1uZGwtb3BhYyZhbXA7Y250PTEw
+        cC9hcGkvb3BlbnNlYXJjaD9jbnQ9MTAmYW1wO2lkeD0xJmFtcDttZWRpYXR5
+        cGU9MSZhbXA7YW55PTQ4NDAxMTQ0MDQmYW1wO2RwaWQ9aXNzLW5kbC1vcGFj
         PC9saW5rPgogICAgPGRlc2NyaXB0aW9uPlNlYXJjaCByZXN1bHRzIGZvciBh
         bnk9NDg0MDExNDQwNCBtZWRpYXR5cGU9MSBkcGlkPWlzcy1uZGwtb3BhYyBj
         bnQ9MTAgPC9kZXNjcmlwdGlvbj4KICAgIDxsYW5ndWFnZT5qYTwvbGFuZ3Vh
@@ -120,7 +120,30 @@ http_interactions:
         dGNoLWRldGFpbC1pY2NhcC5kbz9iaWJpZD0xMTA0NTU0NDUwIi8+CiAgICAg
         IDxyZGZzOnNlZUFsc28gcmRmOnJlc291cmNlPSJodHRwOi8vd2ViLm9tbC5j
         aXR5Lm9zYWthLmxnLmpwL3dlYm9wYWNfaV9qYS8wMDExMDk0ODgxIi8+CiAg
-        ICA8L2l0ZW0+CiAgPC9jaGFubmVsPgo8L3Jzcz4K
+        ICAgIDxyZGZzOnNlZUFsc28gcmRmOnJlc291cmNlPSJodHRwczovL3d3dy5s
+        aWJyYXJ5LnByZWYub3Nha2EuanAvbGljc3hwLW9wYWMvV09wYWNNc2dOZXdM
+        aXN0VG9UaWZUaWxEZXRhaWxBY3Rpb24uZG8/dGlsY29kPTEwMDIwNTAwODcw
+        MDM2Ii8+CiAgICAgIDxyZGZzOnNlZUFsc28gcmRmOnJlc291cmNlPSJodHRw
+        Oi8vd3d3LmxpYnJhcnkucHJlZi5taXlhZ2kuanAvd28vb3BjX3NyaC9zcmhf
+        ZGV0YWlsLzEwMDA0OTIwODQvIi8+CiAgICAgIDxyZGZzOnNlZUFsc28gcmRm
+        OnJlc291cmNlPSJodHRwczovL3d3dy5saWJyYXJ5LnByZWYubmFnYW5vLmpw
+        L2xpY3N4cC1vcGFjL1dPcGFjTXNnTmV3TGlzdFRvVGlmVGlsRGV0YWlsQWN0
+        aW9uLmRvP3RpbGNvZD0xMDAxMTAwMjk0OTg0Ii8+CiAgICAgIDxyZGZzOnNl
+        ZUFsc28gcmRmOnJlc291cmNlPSJodHRwOi8vd2Vic3YuYWljaGktcHJlZi1s
+        aWJyYXJ5LmpwL3dpbmovb3BhYy9zd2l0Y2gtZGV0YWlsLWljY2FwLmRvP2Jp
+        YmlkPTExNjA2NjQwNzYiLz4KICAgICAgPHJkZnM6c2VlQWxzbyByZGY6cmVz
+        b3VyY2U9Imh0dHA6Ly9vcGFjMS5saWJyYXJ5LnByZWYubWllLmxnLmpwL3dp
+        bmovb3BhYy9zd2l0Y2gtZGV0YWlsLWljY2FwLmRvP2JpYmlkPTExMDIzNjk0
+        NDMiLz4KICAgICAgPHJkZnM6c2VlQWxzbyByZGY6cmVzb3VyY2U9Imh0dHA6
+        Ly9saWJyYXJ5LnByZWYueWFtYWd1Y2hpLmxnLmpwL3dvL29wYy9zcmhfZGV0
+        YWlsLzEwMDAyNzcwNTEvIi8+CiAgICAgIDxyZGZzOnNlZUFsc28gcmRmOnJl
+        c291cmNlPSJodHRwczovL3d3dy5saWIucHJlZi5pYmFyYWtpLmpwLy9saWNz
+        eHAtb3BhYy9XT3BhY01zZ05ld0xpc3RUb1RpZlRpbERldGFpbEFjdGlvbi5k
+        bz90aWxjb2Q9MTAwMTAwMTI3NDk5OSIvPgogICAgICA8cmRmczpzZWVBbHNv
+        IHJkZjpyZXNvdXJjZT0iaHR0cHM6Ly93d3cubGliLnByZWYubWl5YXpha2ku
+        bGcuanAvd2luai9vcGFjL3N3aXRjaC1kZXRhaWwtaWNjYXAuZG8/YmliaWQ9
+        MTEwMDM0MjAyNyIvPgogICAgPC9pdGVtPgogIDwvY2hhbm5lbD4KPC9yc3M+
+        Cg==
     http_version: 
-  recorded_at: Wed, 01 Oct 2014 07:53:30 GMT
+  recorded_at: Sun, 13 Sep 2015 23:51:25 GMT
 recorded_with: VCR 2.9.3
