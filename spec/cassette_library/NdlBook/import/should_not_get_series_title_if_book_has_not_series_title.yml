@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.9.1
+      - Faraday v0.9.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -19,15 +19,15 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 13 Sep 2015 23:51:25 GMT
+      - Fri, 06 Nov 2015 15:57:01 GMT
       Server:
       - Apache
       Etag:
-      - '"9dec3f60b25deb9c569c1e0cba173768"'
+      - '"0e9a3eae9567259a040a407ebfac77aa"'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       X-Runtime:
-      - '0.394859'
+      - '0.256570'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Status:
@@ -35,17 +35,17 @@ http_interactions:
       Content-Type:
       - application/xml; charset=utf-8
       Set-Cookie:
-      - _front_session_id=c59e2de723120c1aaaa9ad7ee47de4ca; domain=.iss.ndl.go.jp;
-        path=/; expires=Mon, 14-Sep-2015 00:51:26 GMT; HttpOnly
+      - _front_session_id=935b392498f73c1385b6d0f9a3239e8e; domain=.iss.ndl.go.jp;
+        path=/; expires=Fri, 06-Nov-2015 16:57:01 GMT; HttpOnly
       - serverid=1105; path=/
-      Vary:
-      - Accept-Encoding,User-Agent
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - SAMEORIGIN
       Content-Length:
-      - '1604'
+      - '1602'
+      Accept-Ranges:
+      - none
       Connection:
       - close
     body:
@@ -64,8 +64,8 @@ http_interactions:
         ZS8iPgogIDxjaGFubmVsPgogICAgPHRpdGxlPjEgNDc4ODUwOTEwNSBpc3Mt
         bmRsLW9wYWMgLSDlm73nq4vlm73kvJrlm7Pmm7jppKjjgrXjg7zjg4EgT3Bl
         blNlYXJjaDwvdGl0bGU+CiAgICA8bGluaz5odHRwOi8vaXNzLm5kbC5nby5q
-        cC9hcGkvb3BlbnNlYXJjaD9jbnQ9MTAmYW1wO2lkeD0xJmFtcDttZWRpYXR5
-        cGU9MSZhbXA7YW55PTQ3ODg1MDkxMDUmYW1wO2RwaWQ9aXNzLW5kbC1vcGFj
+        cC9hcGkvb3BlbnNlYXJjaD9kcGlkPWlzcy1uZGwtb3BhYyZhbXA7Y250PTEw
+        JmFtcDtpZHg9MSZhbXA7YW55PTQ3ODg1MDkxMDUmYW1wO21lZGlhdHlwZT0x
         PC9saW5rPgogICAgPGRlc2NyaXB0aW9uPlNlYXJjaCByZXN1bHRzIGZvciBh
         bnk9NDc4ODUwOTEwNSBtZWRpYXR5cGU9MSBkcGlkPWlzcy1uZGwtb3BhYyBj
         bnQ9MTAgPC9kZXNjcmlwdGlvbj4KICAgIDxsYW5ndWFnZT5qYTwvbGFuZ3Vh
@@ -156,5 +156,5 @@ http_interactions:
         ZD0xMTAwMTQyNTEwIi8+CiAgICA8L2l0ZW0+CiAgPC9jaGFubmVsPgo8L3Jz
         cz4K
     http_version: 
-  recorded_at: Sun, 13 Sep 2015 23:51:26 GMT
-recorded_with: VCR 2.9.3
+  recorded_at: Fri, 06 Nov 2015 15:57:02 GMT
+recorded_with: VCR 3.0.0

@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.9.1
+      - Faraday v0.9.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -19,15 +19,15 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 13 Sep 2015 23:51:13 GMT
+      - Fri, 06 Nov 2015 15:56:43 GMT
       Server:
       - Apache
       Etag:
-      - '"635f2362828e79dd0ecb1369402cce76"'
+      - '"69d374cfbdd19f0f9aef9e2260a2d832"'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       X-Runtime:
-      - '1.348952'
+      - '0.981347'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Status:
@@ -35,15 +35,17 @@ http_interactions:
       Content-Type:
       - application/xml; charset=utf-8
       Set-Cookie:
-      - _front_session_id=6298898743c2af9623f22e223b6e99d6; domain=.iss.ndl.go.jp;
-        path=/; expires=Mon, 14-Sep-2015 00:51:14 GMT; HttpOnly
+      - _front_session_id=22c47528b2559ca11edeeac3b2cd11f5; domain=.iss.ndl.go.jp;
+        path=/; expires=Fri, 06-Nov-2015 16:56:44 GMT; HttpOnly
       - serverid=1105; path=/
-      Vary:
-      - Accept-Encoding,User-Agent
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - SAMEORIGIN
+      Content-Length:
+      - '3442'
+      Accept-Ranges:
+      - none
       Connection:
       - close
     body:
@@ -62,9 +64,9 @@ http_interactions:
         ZS8iPgogIDxjaGFubmVsPgogICAgPHRpdGxlPjEgaXNzLW5kbC1vcGFjIOOC
         q+ODn+ODpSDjg5rjgrnjg4ggLSDlm73nq4vlm73kvJrlm7Pmm7jppKjjgrXj
         g7zjg4EgT3BlblNlYXJjaDwvdGl0bGU+CiAgICA8bGluaz5odHRwOi8vaXNz
-        Lm5kbC5nby5qcC9hcGkvb3BlbnNlYXJjaD9tZWRpYXR5cGU9MSZhbXA7YW55
-        PSVFMyU4MiVBQiVFMyU4MyU5RiVFMyU4MyVBNSslRTMlODMlOUElRTMlODIl
-        QjklRTMlODMlODgmYW1wO2lkeD0xJmFtcDtkcGlkPWlzcy1uZGwtb3BhYyZh
+        Lm5kbC5nby5qcC9hcGkvb3BlbnNlYXJjaD9hbnk9JUUzJTgyJUFCJUUzJTgz
+        JTlGJUUzJTgzJUE1KyVFMyU4MyU5QSVFMyU4MiVCOSVFMyU4MyU4OCZhbXA7
+        bWVkaWF0eXBlPTEmYW1wO2RwaWQ9aXNzLW5kbC1vcGFjJmFtcDtpZHg9MSZh
         bXA7Y250PTEwPC9saW5rPgogICAgPGRlc2NyaXB0aW9uPlNlYXJjaCByZXN1
         bHRzIGZvciBhbnk944Kr44Of44OlIOODmuOCueODiCBtZWRpYXR5cGU9MSBk
         cGlkPWlzcy1uZGwtb3BhYyBjbnQ9MTAgPC9kZXNjcmlwdGlvbj4KICAgIDxs
@@ -422,7 +424,7 @@ http_interactions:
         ZjpyZXNvdXJjZT0iaHR0cDovL2lkLm5kbC5nby5qcC9iaWIvMDAwMDA4MTU5
         NTUzIi8+CiAgICA8L2l0ZW0+CiAgPC9jaGFubmVsPgo8L3Jzcz4K
     http_version: 
-  recorded_at: Sun, 13 Sep 2015 23:51:15 GMT
+  recorded_at: Fri, 06 Nov 2015 15:56:45 GMT
 - request:
     method: get
     uri: http://iss.ndl.go.jp/api/opensearch?any=%E3%82%AB%E3%83%9F%E3%83%A5%20%E3%83%9A%E3%82%B9%E3%83%88&cnt=10&dpid=iss-ndl-opac&idx=1&mediatype=1
@@ -431,7 +433,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.9.1
+      - Faraday v0.9.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -442,15 +444,15 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 13 Sep 2015 23:51:15 GMT
+      - Fri, 06 Nov 2015 15:56:45 GMT
       Server:
       - Apache
       Etag:
-      - '"2018ca2dc706eef9f95b5cfa06a398c1"'
+      - '"69d374cfbdd19f0f9aef9e2260a2d832"'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       X-Runtime:
-      - '1.075385'
+      - '0.943196'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Status:
@@ -458,15 +460,17 @@ http_interactions:
       Content-Type:
       - application/xml; charset=utf-8
       Set-Cookie:
-      - _front_session_id=16ad1bd64cf528e8629a2a367bcdf6b7; domain=.iss.ndl.go.jp;
-        path=/; expires=Mon, 14-Sep-2015 00:51:16 GMT; HttpOnly
-      - serverid=1101; path=/
-      Vary:
-      - Accept-Encoding,User-Agent
+      - _front_session_id=e4d7c378f99e2e35f0c30c5df01d10ec; domain=.iss.ndl.go.jp;
+        path=/; expires=Fri, 06-Nov-2015 16:56:46 GMT; HttpOnly
+      - serverid=1105; path=/
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - SAMEORIGIN
+      Content-Length:
+      - '3467'
+      Accept-Ranges:
+      - none
       Connection:
       - close
     body:
@@ -485,10 +489,10 @@ http_interactions:
         ZS8iPgogIDxjaGFubmVsPgogICAgPHRpdGxlPjEgaXNzLW5kbC1vcGFjIOOC
         q+ODn+ODpSDjg5rjgrnjg4ggLSDlm73nq4vlm73kvJrlm7Pmm7jppKjjgrXj
         g7zjg4EgT3BlblNlYXJjaDwvdGl0bGU+CiAgICA8bGluaz5odHRwOi8vaXNz
-        Lm5kbC5nby5qcC9hcGkvb3BlbnNlYXJjaD9jbnQ9MTAmYW1wO2lkeD0xJmFt
-        cDttZWRpYXR5cGU9MSZhbXA7YW55PSVFMyU4MiVBQiVFMyU4MyU5RiVFMyU4
-        MyVBNSslRTMlODMlOUElRTMlODIlQjklRTMlODMlODgmYW1wO2RwaWQ9aXNz
-        LW5kbC1vcGFjPC9saW5rPgogICAgPGRlc2NyaXB0aW9uPlNlYXJjaCByZXN1
+        Lm5kbC5nby5qcC9hcGkvb3BlbnNlYXJjaD9hbnk9JUUzJTgyJUFCJUUzJTgz
+        JTlGJUUzJTgzJUE1KyVFMyU4MyU5QSVFMyU4MiVCOSVFMyU4MyU4OCZhbXA7
+        bWVkaWF0eXBlPTEmYW1wO2RwaWQ9aXNzLW5kbC1vcGFjJmFtcDtpZHg9MSZh
+        bXA7Y250PTEwPC9saW5rPgogICAgPGRlc2NyaXB0aW9uPlNlYXJjaCByZXN1
         bHRzIGZvciBhbnk944Kr44Of44OlIOODmuOCueODiCBtZWRpYXR5cGU9MSBk
         cGlkPWlzcy1uZGwtb3BhYyBjbnQ9MTAgPC9kZXNjcmlwdGlvbj4KICAgIDxs
         YW5ndWFnZT5qYTwvbGFuZ3VhZ2U+CiAgICA8b3BlblNlYXJjaDp0b3RhbFJl
@@ -845,5 +849,5 @@ http_interactions:
         ZjpyZXNvdXJjZT0iaHR0cDovL2lkLm5kbC5nby5qcC9iaWIvMDAwMDA4MTU5
         NTUzIi8+CiAgICA8L2l0ZW0+CiAgPC9jaGFubmVsPgo8L3Jzcz4K
     http_version: 
-  recorded_at: Sun, 13 Sep 2015 23:51:16 GMT
-recorded_with: VCR 2.9.3
+  recorded_at: Fri, 06 Nov 2015 15:56:46 GMT
+recorded_with: VCR 3.0.0

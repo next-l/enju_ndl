@@ -19,23 +19,27 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 13 Sep 2015 23:51:32 GMT
+      - Fri, 06 Nov 2015 15:57:12 GMT
       Server:
       - Apache
       X-Powered-By:
       - PHP/5.4.8
       Set-Cookie:
-      - ndl_crd_session=hceb3atjhm0hpcbh6rn6bf58p3; path=/reference/
+      - ndl_crd_session=e5plb8i3vag72vg8fs0bmeofv3; path=/reference/
       Expires:
       - Thu, 19 Nov 1981 08:52:00 GMT
       Cache-Control:
       - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
       Pragma:
       - no-cache
-      Connection:
-      - close
       Content-Type:
       - text/xml; charset=utf-8
+      Content-Length:
+      - '9283'
+      Accept-Ranges:
+      - none
+      Connection:
+      - close
     body:
       encoding: ASCII-8BIT
       string: !binary |-
@@ -247,5 +251,5 @@ http_interactions:
         PC9JTUFHRT4JCTxwb3NpdGlvbj40PC9wb3NpdGlvbj4KCTwvcmVzdWx0PgoJ
         PC9yZXN1bHRfc2V0Pg==
     http_version: 
-  recorded_at: Sun, 13 Sep 2015 23:51:32 GMT
-recorded_with: VCR 2.9.3
+  recorded_at: Fri, 06 Nov 2015 15:57:13 GMT
+recorded_with: VCR 3.0.0

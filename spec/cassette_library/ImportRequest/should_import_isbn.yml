@@ -19,15 +19,15 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 13 Sep 2015 23:51:02 GMT
+      - Fri, 06 Nov 2015 15:56:28 GMT
       Server:
       - Apache
       Etag:
-      - '"ef63390ea4d24d11abd2ad93baed4a1f"'
+      - '"aaab17e8ed167066df5cbb80d960619d"'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       X-Runtime:
-      - '0.231226'
+      - '0.106373'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Status:
@@ -35,17 +35,17 @@ http_interactions:
       Content-Type:
       - application/xml; charset=utf-8
       Set-Cookie:
-      - _front_session_id=a53c12570ad961fa86e049c2c8eeb335; domain=.iss.ndl.go.jp;
-        path=/; expires=Mon, 14-Sep-2015 00:51:02 GMT; HttpOnly
+      - _front_session_id=dcdb283325bda7332115a18ef3141af8; domain=.iss.ndl.go.jp;
+        path=/; expires=Fri, 06-Nov-2015 16:56:28 GMT; HttpOnly
       - serverid=1105; path=/
-      Vary:
-      - Accept-Encoding,User-Agent
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - SAMEORIGIN
       Content-Length:
-      - '1337'
+      - '1334'
+      Accept-Ranges:
+      - none
       Connection:
       - close
     body:
@@ -64,9 +64,9 @@ http_interactions:
         ZS8iPgogIDxjaGFubmVsPgogICAgPHRpdGxlPjEgNDc5NzMyNzAzMCBpc3Mt
         bmRsLW9wYWMgLSDlm73nq4vlm73kvJrlm7Pmm7jppKjjgrXjg7zjg4EgT3Bl
         blNlYXJjaDwvdGl0bGU+CiAgICA8bGluaz5odHRwOi8vaXNzLm5kbC5nby5q
-        cC9hcGkvb3BlbnNlYXJjaD9jbnQ9MTAmYW1wO2lzYm49NDc5NzMyNzAzMCZh
-        bXA7aWR4PTEmYW1wO21lZGlhdHlwZT0xJmFtcDtkcGlkPWlzcy1uZGwtb3Bh
-        YzwvbGluaz4KICAgIDxkZXNjcmlwdGlvbj5TZWFyY2ggcmVzdWx0cyBmb3Ig
+        cC9hcGkvb3BlbnNlYXJjaD9tZWRpYXR5cGU9MSZhbXA7ZHBpZD1pc3MtbmRs
+        LW9wYWMmYW1wO2lkeD0xJmFtcDtjbnQ9MTAmYW1wO2lzYm49NDc5NzMyNzAz
+        MDwvbGluaz4KICAgIDxkZXNjcmlwdGlvbj5TZWFyY2ggcmVzdWx0cyBmb3Ig
         aXNibj00Nzk3MzI3MDMwIG1lZGlhdHlwZT0xIGNudD0xMCBkcGlkPWlzcy1u
         ZGwtb3BhYyA8L2Rlc2NyaXB0aW9uPgogICAgPGxhbmd1YWdlPmphPC9sYW5n
         dWFnZT4KICAgIDxvcGVuU2VhcmNoOnRvdGFsUmVzdWx0cz4xPC9vcGVuU2Vh
@@ -126,7 +126,7 @@ http_interactions:
         L3dpbmovb3BhYy9zd2l0Y2gtZGV0YWlsLWljY2FwLmRvP2JpYmlkPTExMDg3
         MjAxOTgiLz4KICAgIDwvaXRlbT4KICA8L2NoYW5uZWw+CjwvcnNzPgo=
     http_version: 
-  recorded_at: Sun, 13 Sep 2015 23:51:03 GMT
+  recorded_at: Fri, 06 Nov 2015 15:56:28 GMT
 - request:
     method: get
     uri: http://iss.ndl.go.jp/books/R100000002-I000007602726-00.rdf
@@ -135,7 +135,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.9.1
+      - Faraday v0.9.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -146,7 +146,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 13 Sep 2015 23:51:03 GMT
+      - Fri, 06 Nov 2015 15:56:31 GMT
       Server:
       - Apache
       Etag:
@@ -154,7 +154,7 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       X-Runtime:
-      - '0.848193'
+      - '0.791189'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Status:
@@ -162,15 +162,17 @@ http_interactions:
       Content-Type:
       - application/rdf+xml; charset=utf-8
       Set-Cookie:
-      - _front_session_id=0ec77ab22b683b6085e8bc17edab3b8d; domain=.iss.ndl.go.jp;
-        path=/; expires=Mon, 14-Sep-2015 00:51:04 GMT; HttpOnly
-      - serverid=1105; path=/
-      Vary:
-      - Accept-Encoding,User-Agent
+      - _front_session_id=7977c8c5e0790d1fc90c176bba63cf81; domain=.iss.ndl.go.jp;
+        path=/; expires=Fri, 06-Nov-2015 16:56:32 GMT; HttpOnly
+      - serverid=1101; path=/
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - SAMEORIGIN
+      Content-Length:
+      - '2782'
+      Accept-Ranges:
+      - none
       Connection:
       - close
     body:
@@ -558,5 +560,5 @@ http_interactions:
         q++8iOiHqueEtuenkeWtpuS4reWkru+8iTwvZGN0ZXJtczpkZXNjcmlwdGlv
         bj4KICA8L2RjbmRsOkl0ZW0+CjwvcmRmOlJERj4=
     http_version: 
-  recorded_at: Sun, 13 Sep 2015 23:51:04 GMT
-recorded_with: VCR 2.9.3
+  recorded_at: Fri, 06 Nov 2015 15:56:29 GMT
+recorded_with: VCR 3.0.0
