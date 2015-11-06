@@ -108,7 +108,7 @@ module EnjuNdl
         extent = get_extent(doc)
         publication_periodicity = doc.at('//dcndl:publicationPeriodicity').try(:content)
         statement_of_responsibility = doc.xpath('//dcndl:BibResource/dc:creator').map{|e| e.content}.join("; ")
-	publication_place = doc.at('//dcterms:publisher/foaf:Agent/dcndl:location').try(:content)
+        publication_place = doc.at('//dcterms:publisher/foaf:Agent/dcndl:location').try(:content)
 
         manifestation = nil
         Agent.transaction do
@@ -131,7 +131,7 @@ module EnjuNdl
             :start_page => extent[:start_page],
             :end_page => extent[:end_page],
             :height => extent[:height],
-	    :publication_place => publication_place,
+            :publication_place => publication_place,
           )
           manifestation.serial = true if is_serial
           identifier = {}
@@ -180,7 +180,7 @@ module EnjuNdl
         end
 
         #manifestation.send_later(:create_frbr_instance, doc.to_s)
-        return manifestation
+        manifestation
       end
 
       def create_additional_attributes(doc, manifestation)
@@ -211,19 +211,19 @@ module EnjuNdl
             end
             if classification_urls
               classification_urls.each do |url|
-	        ndc_url = URI.parse(URI.escape(url))
-		if ndc_url.path.split('/').reverse[1] == "ndc9"
-		  ndc_type = "ndc9"
+                ndc_url = URI.parse(URI.escape(url))
+                if ndc_url.path.split('/').reverse[1] == "ndc9"
+                  ndc_type = "ndc9"
                   ndc = ndc_url.path.split('/').last
                   classification_type = ClassificationType.where(name: ndc_type).first || ClassificationType.create!(name: ndc_type)
                   classification = Classification.new(category: ndc)
                   classification.classification_type = classification_type
                   manifestation.classifications << classification if classification.valid?
-		end
+                end
               end
             end
             ndc8 = doc.xpath('//dc:subject[@rdf:datatype="http://ndl.go.jp/dcndl/terms/NDC8"]').first
-	    if ndc8
+            if ndc8
               classification_type = ClassificationType.where(name: "ndc8").first || ClassificationType.create!(name: "ndc8")
               classification = Classification.new(category: ndc8.content)
               classification.classification_type = classification_type
@@ -355,7 +355,7 @@ module EnjuNdl
         series = series_title = {}
         series[:title] = doc.at('//dcndl:seriesTitle/rdf:Description/rdf:value').try(:content)
         series[:title_transcription] = doc.at('//dcndl:seriesTitle/rdf:Description/dcndl:transcription').try(:content)
-	series[:creator] = doc.at('//dcndl:seriesCreator').try(:content)
+        series[:creator] = doc.at('//dcndl:seriesCreator').try(:content)
         if series[:title]
           series_title[:title] = series[:title].split(';')[0].strip
          if series[:title_transcription]
@@ -369,7 +369,7 @@ module EnjuNdl
             series_statement = SeriesStatement.new(
               :original_title => series_title[:title],
               :title_transcription => series_title[:title_transcription],
-	      :creator_string => series[:creator],
+              :creator_string => series[:creator],
             )
           end
         end

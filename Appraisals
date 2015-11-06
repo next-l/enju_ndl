@@ -37,5 +37,5 @@ appraise "rails-4.2-loc" do
   gem "jquery-rails"
   gem "statesman", "~> 1.3"
   gem "coveralls", require: false
-  gem "enju_loc", "~> 0.1.0.pre4"
+  gem "enju_loc", "~> 0.1.0.pre5"
 end

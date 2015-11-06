@@ -31,6 +31,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency "enju_question", "~> 0.1.0.pre14"
   s.add_development_dependency "sunspot_solr", "~> 2.2"
   s.add_development_dependency "simplecov"
-  s.add_development_dependency "enju_subject", "~> 0.1.0.pre33"
+  s.add_development_dependency "enju_subject", "~> 0.1.0.pre34"
   s.add_development_dependency "appraisal"
 end
