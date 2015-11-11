@@ -22,6 +22,8 @@ env:
   - DB=mysql
   - DB=postgresql
 matrix:
+  allow_failures:
+  - rvm: 1.9.3
   exclude:
   - gemfile: gemfiles/rails_4.2_nii.gemfile
   - gemfile: gemfiles/rails_4.2_loc.gemfile

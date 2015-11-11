@@ -358,7 +358,7 @@ module EnjuNdl
         series[:creator] = doc.at('//dcndl:seriesCreator').try(:content)
         if series[:title]
           series_title[:title] = series[:title].split(';')[0].strip
-         if series[:title_transcription]
+          if series[:title_transcription]
             series_title[:title_transcription] = series[:title_transcription].split(';')[0].strip
           end
         end
