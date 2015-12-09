@@ -7,6 +7,7 @@ appraise "rails-4.2" do
   gem 'enju_library', github: 'next-l/enju_library', branch: '1.2'
   gem 'enju_subject', github: 'next-l/enju_subject', branch: '1.2'
   gem 'enju_nii', github: 'next-l/enju_nii', branch: '1.2'
+  gem 'enju_question', github: 'next-l/enju_question', branch: '1.2'
   gem 'enju_manifestation_viewer', github: 'next-l/enju_manifestation_viewer', branch: '1.2'
 end
 
@@ -20,6 +21,7 @@ appraise "rails-4.2-nii" do
   gem 'enju_library', github: 'next-l/enju_library', branch: '1.2'
   gem 'enju_subject', github: 'next-l/enju_subject', branch: '1.2'
   gem 'enju_nii', github: 'next-l/enju_nii', branch: '1.2'
+  gem 'enju_question', github: 'next-l/enju_question', branch: '1.2'
   gem 'enju_manifestation_viewer', github: 'next-l/enju_manifestation_viewer', branch: '1.2'
 end
 
@@ -33,5 +35,6 @@ appraise "rails-4.2-loc" do
   gem 'enju_library', github: 'next-l/enju_library', branch: '1.2'
   gem 'enju_subject', github: 'next-l/enju_subject', branch: '1.2'
   gem 'enju_nii', github: 'next-l/enju_nii', branch: '1.2'
+  gem 'enju_question', github: 'next-l/enju_question', branch: '1.2'
   gem 'enju_manifestation_viewer', github: 'next-l/enju_manifestation_viewer', branch: '1.2'
 end
