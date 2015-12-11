@@ -1,6 +1,5 @@
 class NdlBooksController < ApplicationController
-  before_filter :authenticate_user!
-  before_filter :check_librarian
+  before_action :check_policy, only: [:index, :create]
 
   def index
     if params[:page].to_i == 0
@@ -36,9 +35,7 @@ class NdlBooksController < ApplicationController
   end
 
   private
-  def check_librarian
-    unless current_user.try(:has_role?, 'Librarian')
-      access_denied
-    end
+  def check_policy
+    authorize NdlBook
   end
 end

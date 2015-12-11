@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150425073705) do
+ActiveRecord::Schema.define(version: 20150924115059) do
+
+  create_table "accepts", force: :cascade do |t|
+    t.integer  "basket_id"
+    t.integer  "item_id"
+    t.integer  "librarian_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "accepts", ["basket_id"], name: "index_accepts_on_basket_id"
+  add_index "accepts", ["item_id"], name: "index_accepts_on_item_id"
 
   create_table "agent_import_file_transitions", force: :cascade do |t|
     t.string   "to_state"
@@ -156,6 +167,39 @@ ActiveRecord::Schema.define(version: 20150425073705) do
   add_index "agents", ["full_name"], name: "index_agents_on_full_name"
   add_index "agents", ["language_id"], name: "index_agents_on_language_id"
   add_index "agents", ["required_role_id"], name: "index_agents_on_required_role_id"
+
+  create_table "baskets", force: :cascade do |t|
+    t.integer  "user_id"
+    t.text     "note"
+    t.integer  "lock_version", default: 0, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "baskets", ["user_id"], name: "index_baskets_on_user_id"
+
+  create_table "bookstores", force: :cascade do |t|
+    t.text     "name",             null: false
+    t.string   "zip_code"
+    t.text     "address"
+    t.text     "note"
+    t.string   "telephone_number"
+    t.string   "fax_number"
+    t.string   "url"
+    t.integer  "position"
+    t.datetime "deleted_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "budget_types", force: :cascade do |t|
+    t.string   "name"
+    t.text     "display_name"
+    t.text     "note"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "carrier_type_has_checkout_types", force: :cascade do |t|
     t.integer  "carrier_type_id",  null: false
@@ -604,6 +648,54 @@ ActiveRecord::Schema.define(version: 20150425073705) do
 
   add_index "lending_policies", ["item_id", "user_group_id"], name: "index_lending_policies_on_item_id_and_user_group_id", unique: true
 
+  create_table "libraries", force: :cascade do |t|
+    t.string   "name",                                null: false
+    t.text     "display_name"
+    t.string   "short_display_name",                  null: false
+    t.string   "zip_code"
+    t.text     "street"
+    t.text     "locality"
+    t.text     "region"
+    t.string   "telephone_number_1"
+    t.string   "telephone_number_2"
+    t.string   "fax_number"
+    t.text     "note"
+    t.integer  "call_number_rows",      default: 1,   null: false
+    t.string   "call_number_delimiter", default: "|", null: false
+    t.integer  "library_group_id",      default: 1,   null: false
+    t.integer  "users_count",           default: 0,   null: false
+    t.integer  "position"
+    t.integer  "country_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.datetime "deleted_at"
+    t.text     "opening_hour"
+    t.string   "isil"
+    t.float    "latitude"
+    t.float    "longitude"
+  end
+
+  add_index "libraries", ["library_group_id"], name: "index_libraries_on_library_group_id"
+  add_index "libraries", ["name"], name: "index_libraries_on_name", unique: true
+
+  create_table "library_groups", force: :cascade do |t|
+    t.string   "name",                                              null: false
+    t.text     "display_name"
+    t.string   "short_name",                                        null: false
+    t.text     "my_networks"
+    t.text     "login_banner"
+    t.text     "note"
+    t.integer  "country_id"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "admin_networks"
+    t.string   "url",            default: "http://localhost:3000/"
+    t.text     "settings"
+  end
+
+  add_index "library_groups", ["short_name"], name: "index_library_groups_on_short_name"
+
   create_table "licenses", force: :cascade do |t|
     t.string   "name",         null: false
     t.string   "display_name"
@@ -939,6 +1031,24 @@ ActiveRecord::Schema.define(version: 20150425073705) do
   add_index "realizes", ["agent_id"], name: "index_realizes_on_agent_id"
   add_index "realizes", ["expression_id"], name: "index_realizes_on_expression_id"
 
+  create_table "request_status_types", force: :cascade do |t|
+    t.string   "name",         null: false
+    t.text     "display_name"
+    t.text     "note"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "request_types", force: :cascade do |t|
+    t.string   "name",         null: false
+    t.text     "display_name"
+    t.text     "note"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "reserve_stat_has_manifestations", force: :cascade do |t|
     t.integer  "manifestation_reserve_stat_id", null: false
     t.integer  "manifestation_id",              null: false
@@ -1081,6 +1191,20 @@ ActiveRecord::Schema.define(version: 20150425073705) do
     t.integer  "position"
   end
 
+  create_table "search_engines", force: :cascade do |t|
+    t.string   "name",             null: false
+    t.text     "display_name"
+    t.string   "url",              null: false
+    t.text     "base_url",         null: false
+    t.text     "http_method",      null: false
+    t.text     "query_param",      null: false
+    t.text     "additional_param"
+    t.text     "note"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "series_statement_merge_lists", force: :cascade do |t|
     t.string   "title"
     t.datetime "created_at"
@@ -1121,6 +1245,21 @@ ActiveRecord::Schema.define(version: 20150425073705) do
   add_index "series_statements", ["manifestation_id"], name: "index_series_statements_on_manifestation_id"
   add_index "series_statements", ["root_manifestation_id"], name: "index_series_statements_on_root_manifestation_id"
   add_index "series_statements", ["series_statement_identifier"], name: "index_series_statements_on_series_statement_identifier"
+
+  create_table "shelves", force: :cascade do |t|
+    t.string   "name",                         null: false
+    t.text     "display_name"
+    t.text     "note"
+    t.integer  "library_id",   default: 1,     null: false
+    t.integer  "items_count",  default: 0,     null: false
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.datetime "deleted_at"
+    t.boolean  "closed",       default: false, null: false
+  end
+
+  add_index "shelves", ["library_id"], name: "index_shelves_on_library_id"
 
   create_table "subject_heading_types", force: :cascade do |t|
     t.string   "name",         null: false
@@ -1164,6 +1303,32 @@ ActiveRecord::Schema.define(version: 20150425073705) do
   add_index "subjects", ["subject_type_id"], name: "index_subjects_on_subject_type_id"
   add_index "subjects", ["term"], name: "index_subjects_on_term"
   add_index "subjects", ["use_term_id"], name: "index_subjects_on_use_term_id"
+
+  create_table "subscribes", force: :cascade do |t|
+    t.integer  "subscription_id", null: false
+    t.integer  "work_id",         null: false
+    t.datetime "start_at",        null: false
+    t.datetime "end_at",          null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "subscribes", ["subscription_id"], name: "index_subscribes_on_subscription_id"
+  add_index "subscribes", ["work_id"], name: "index_subscribes_on_work_id"
+
+  create_table "subscriptions", force: :cascade do |t|
+    t.text     "title",                        null: false
+    t.text     "note"
+    t.integer  "user_id"
+    t.integer  "order_list_id"
+    t.datetime "deleted_at"
+    t.integer  "subscribes_count", default: 0, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "subscriptions", ["order_list_id"], name: "index_subscriptions_on_order_list_id"
+  add_index "subscriptions", ["user_id"], name: "index_subscriptions_on_user_id"
 
   create_table "use_restrictions", force: :cascade do |t|
     t.string   "name",         null: false
@@ -1366,5 +1531,16 @@ ActiveRecord::Schema.define(version: 20150425073705) do
   end
 
   add_index "versions", ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id"
+
+  create_table "withdraws", force: :cascade do |t|
+    t.integer  "basket_id"
+    t.integer  "item_id"
+    t.integer  "librarian_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "withdraws", ["basket_id"], name: "index_withdraws_on_basket_id"
+  add_index "withdraws", ["item_id"], name: "index_withdraws_on_item_id"
 
 end

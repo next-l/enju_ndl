@@ -1,0 +1,35 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+one:
+  id: 1
+  name: unknown
+  display_name: unknown
+  short_name: unknown
+  note: 
+  my_networks: "0.0.0.0/0\r\n\
+    ::/0"
+  url: "http://localhost:3000/"
+  position: 1
+  login_banner: "*Next-L Enju*"
+  admin_networks: "0.0.0.0/0\r\n\
+    ::/0"
+  settings: "{\"max_number_of_results\":200,\"family_name_first\":true}"
+
+# == Schema Information
+#
+# Table name: library_groups
+#
+#  id             :integer          not null, primary key
+#  name           :string           not null
+#  display_name   :text
+#  short_name     :string           not null
+#  my_networks    :text
+#  login_banner   :text
+#  note           :text
+#  country_id     :integer
+#  position       :integer
+#  created_at     :datetime
+#  updated_at     :datetime
+#  admin_networks :text
+#  url            :string           default("http://localhost:3000/")
+#  settings       :text
+#
