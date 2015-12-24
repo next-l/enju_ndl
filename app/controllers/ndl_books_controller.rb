@@ -27,7 +27,6 @@ class NdlBooksController < ApplicationController
       end
       respond_to do |format|
         if @manifestation.try(:save)
-          @manifestation.index!
           format.html { redirect_to manifestation_url(@manifestation), notice: t('controller.successfully_created', model: t('activerecord.models.manifestation')) }
         else
           format.html { redirect_to ndl_books_url, notice: t('enju_ndl.record_not_found') }
