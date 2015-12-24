@@ -170,7 +170,7 @@ module EnjuNdl
                 :title_transcription => title[:transcription],
                 :series_master => true,
               )
-              if series_statement.try(:save)
+              if series_statement.valid?
                 manifestation.series_statements << series_statement
               end
             else
