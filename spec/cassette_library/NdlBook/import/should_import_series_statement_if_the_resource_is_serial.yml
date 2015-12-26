@@ -19,15 +19,13 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 06 Nov 2015 15:56:54 GMT
-      Server:
-      - Apache
-      Etag:
-      - '"2de4940479db434962d6cd4fa12809fe"'
+      - Sat, 26 Dec 2015 08:36:55 GMT
       X-Ua-Compatible:
       - IE=Edge,chrome=1
+      Etag:
+      - '"f7b9544f50704563f60cf61ed9c32fa2"'
       X-Runtime:
-      - '0.344878'
+      - '0.275564'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Status:
@@ -35,17 +33,23 @@ http_interactions:
       Content-Type:
       - application/xml; charset=utf-8
       Set-Cookie:
-      - _front_session_id=63fece82db89991d74a4b849c181dca3; domain=.iss.ndl.go.jp;
-        path=/; expires=Fri, 06-Nov-2015 16:56:54 GMT; HttpOnly
-      - serverid=1105; path=/
+      - ROUTEID=.ps06; path=/
+      - TS01cb7804=011338590a0c248aa5a8d0bf79711c8d45599e81477c3c50f5649c535226cdbfac63025d8769cf03c9ea4ac97b4782c10789f0d4b6;
+        path=/; domain=.iss.ndl.go.jp
+      - TS01f3cfdf=011338590aa593226a49f06ba592dc9c2c86f9369d74e70409d3f73a471350187bba86b583273571b733666930af13d46d4ca1008792c8aa3fd924379bccf7e82b676b6b542a4232f969103db7e3c5d027de0f797b;
+        Path=/
+      - _front_session_id=80900a0aa0495beb4daa42013b4a0a10; domain=.iss.ndl.go.jp;
+        path=/; expires=Sat, 26-Dec-2015 09:36:56 GMT; HttpOnly
+      - ndl.go.jp=rd2o00000000000000000000ffff0a024f68o80; path=/
+      - serverid=1101; path=/
+      Vary:
+      - Accept-Encoding,User-Agent
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - SAMEORIGIN
       Content-Length:
-      - '2660'
-      Accept-Ranges:
-      - none
+      - '2654'
       Connection:
       - close
     body:
@@ -68,15 +72,15 @@ http_interactions:
         ICA8cmVjb3JkPgogICAgICA8cmVjb3JkU2NoZW1hPmluZm86c3J3L3NjaGVt
         YS8xL2RjLXYxLjE8L3JlY29yZFNjaGVtYT4KICAgICAgPHJlY29yZFBhY2tp
         bmc+c3RyaW5nPC9yZWNvcmRQYWNraW5nPgogICAgICA8cmVjb3JkRGF0YT4K
-        Jmx0O3JkZjpSREYgeG1sbnM6ZGN0ZXJtcz0mcXVvdDtodHRwOi8vcHVybC5v
-        cmcvZGMvdGVybXMvJnF1b3Q7IHhtbG5zOnJkZj0mcXVvdDtodHRwOi8vd3d3
-        LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjJnF1b3Q7IHhtbG5z
-        OmRjbmRsPSZxdW90O2h0dHA6Ly9uZGwuZ28uanAvZGNuZGwvdGVybXMvJnF1
-        b3Q7IHhtbG5zOmZvYWY9JnF1b3Q7aHR0cDovL3htbG5zLmNvbS9mb2FmLzAu
-        MS8mcXVvdDsgeG1sbnM6cmRmcz0mcXVvdDtodHRwOi8vd3d3LnczLm9yZy8y
-        MDAwLzAxL3JkZi1zY2hlbWEjJnF1b3Q7IHhtbG5zOmRjPSZxdW90O2h0dHA6
-        Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvJnF1b3Q7IHhtbG5zOm93bD0m
-        cXVvdDtodHRwOi8vd3d3LnczLm9yZy8yMDAyLzA3L293bCMmcXVvdDsmZ3Q7
+        Jmx0O3JkZjpSREYgeG1sbnM6ZGM9JnF1b3Q7aHR0cDovL3B1cmwub3JnL2Rj
+        L2VsZW1lbnRzLzEuMS8mcXVvdDsgeG1sbnM6ZGNuZGw9JnF1b3Q7aHR0cDov
+        L25kbC5nby5qcC9kY25kbC90ZXJtcy8mcXVvdDsgeG1sbnM6ZGN0ZXJtcz0m
+        cXVvdDtodHRwOi8vcHVybC5vcmcvZGMvdGVybXMvJnF1b3Q7IHhtbG5zOnJk
+        Zj0mcXVvdDtodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50
+        YXgtbnMjJnF1b3Q7IHhtbG5zOmZvYWY9JnF1b3Q7aHR0cDovL3htbG5zLmNv
+        bS9mb2FmLzAuMS8mcXVvdDsgeG1sbnM6b3dsPSZxdW90O2h0dHA6Ly93d3cu
+        dzMub3JnLzIwMDIvMDcvb3dsIyZxdW90OyB4bWxuczpyZGZzPSZxdW90O2h0
+        dHA6Ly93d3cudzMub3JnLzIwMDAvMDEvcmRmLXNjaGVtYSMmcXVvdDsmZ3Q7
         CiAgJmx0O2RjbmRsOkJpYkFkbWluUmVzb3VyY2UgcmRmOmFib3V0PSZxdW90
         O2h0dHA6Ly9pc3MubmRsLmdvLmpwL2Jvb2tzL1IxMDAwMDAwMzktSTAwMTQx
         Mzk4OC0wMCZxdW90OyZndDsKICAgICZsdDtkY25kbDpiaWJSZWNvcmRDYXRl
@@ -246,5 +250,1178 @@ http_interactions:
         aW9uPjE8L3JlY29yZFBvc2l0aW9uPgogICAgPC9yZWNvcmQ+CiAgPC9yZWNv
         cmRzPgo8L3NlYXJjaFJldHJpZXZlUmVzcG9uc2U+Cg==
     http_version: 
-  recorded_at: Fri, 06 Nov 2015 15:56:55 GMT
-recorded_with: VCR 3.0.0
+  recorded_at: Sat, 26 Dec 2015 08:36:56 GMT
+- request:
+    method: post
+    uri: http://localhost:8981/solr/default/update?wt=ruby
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><commit softCommit="false"/>
+    headers:
+      Content-Type:
+      - text/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {'responseHeader'=>{'status'=>0,'QTime'=>11}}
+    http_version: 
+  recorded_at: Sat, 26 Dec 2015 08:36:56 GMT
+- request:
+    method: post
+    uri: http://localhost:8981/solr/default/update?wt=ruby
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><add><doc><field name="id">Agent
+        1</field><field name="type">Agent</field><field name="type">ActiveRecord::Base</field><field
+        name="class_name">Agent</field><field name="created_at_d">2015-12-26T08:36:56Z</field><field
+        name="updated_at_d">2015-12-26T08:36:56Z</field><field name="required_role_id_i">1</field><field
+        name="agent_type_id_i">1</field><field name="name_text">新潮社</field><field
+        name="name_text"/><field name="name_text"/><field name="name_text">新潮社</field></doc></add>
+    headers:
+      Content-Type:
+      - text/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {'responseHeader'=>{'status'=>0,'QTime'=>57}}
+    http_version: 
+  recorded_at: Sat, 26 Dec 2015 08:36:56 GMT
+- request:
+    method: post
+    uri: http://localhost:8981/solr/default/update?wt=ruby
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><commit softCommit="false"/>
+    headers:
+      Content-Type:
+      - text/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {'responseHeader'=>{'status'=>0,'QTime'=>102}}
+    http_version: 
+  recorded_at: Sat, 26 Dec 2015 08:36:56 GMT
+- request:
+    method: post
+    uri: http://localhost:8981/solr/default/update?wt=ruby
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><add><doc><field name="id">Manifestation
+        1</field><field name="type">Manifestation</field><field name="type">ActiveRecord::Base</field><field
+        name="class_name">Manifestation</field><field name="title_sm">週刊新潮</field><field
+        name="title_sm">シュウカン シンチョウ</field><field name="title_sm"/><field name="title_sm">14(45)(714)</field><field
+        name="title_sm"/><field name="title_sm"/><field name="title_sm"/><field name="connect_title_s">週刊新潮シュウカンシンチョウ14(45)(714)</field><field
+        name="connect_creator_s"/><field name="connect_publisher_s"/><field name="carrier_type_s">print</field><field
+        name="language_s">Japanese</field><field name="created_at_d">2015-12-26T08:36:56Z</field><field
+        name="updated_at_d">2015-12-26T08:36:56Z</field><field name="pub_date_dm">1969-11-01T00:00:00Z</field><field
+        name="date_of_publication_d">1969-11-01T00:00:00Z</field><field name="pub_year_i">1969</field><field
+        name="required_role_id_i">1</field><field name="height_i">26</field><field
+        name="volume_number_i">14</field><field name="repository_content_b">false</field><field
+        name="sort_title_s">シュウカン シンチョウ</field><field name="serial_b">true</field><field
+        name="series_master_b">false</field><field name="resource_master_b">false</field><field
+        name="title_text">週刊新潮</field><field name="title_text">シュウカン シンチョウ</field><field
+        name="title_text"/><field name="title_text">14(45)(714)</field><field name="title_text"/><field
+        name="title_text"/><field name="title_text"/><field name="statement_of_responsibility_text">新潮社
+        [編]</field><field name="atitle_text">週刊新潮</field><field name="atitle_text">シュウカン
+        シンチョウ</field><field name="atitle_text"/><field name="atitle_text">14(45)(714)</field><field
+        name="atitle_text"/><field name="atitle_text"/><field name="atitle_text"/><field
+        name="jtitle_text">週刊新潮</field><field name="jtitle_text">シュウカン シンチョウ</field><field
+        name="jtitle_text"/><field name="jtitle_text">14(45)(714)</field><field name="jtitle_text"/><field
+        name="jtitle_text"/><field name="jtitle_text"/></doc></add>
+    headers:
+      Content-Type:
+      - text/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {'responseHeader'=>{'status'=>0,'QTime'=>17}}
+    http_version: 
+  recorded_at: Sat, 26 Dec 2015 08:36:56 GMT
+- request:
+    method: post
+    uri: http://localhost:8981/solr/default/update?wt=ruby
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><add><doc><field name="id">Manifestation
+        1</field><field name="type">Manifestation</field><field name="type">ActiveRecord::Base</field><field
+        name="class_name">Manifestation</field><field name="title_sm">週刊新潮</field><field
+        name="title_sm">シュウカン シンチョウ</field><field name="title_sm"/><field name="title_sm">14(45)(714)</field><field
+        name="title_sm"/><field name="title_sm"/><field name="title_sm"/><field name="connect_title_s">週刊新潮シュウカンシンチョウ14(45)(714)</field><field
+        name="connect_creator_s"/><field name="connect_publisher_s"/><field name="carrier_type_s">print</field><field
+        name="language_s">Japanese</field><field name="created_at_d">2015-12-26T08:36:56Z</field><field
+        name="updated_at_d">2015-12-26T08:36:56Z</field><field name="pub_date_dm">1969-11-01T00:00:00Z</field><field
+        name="date_of_publication_d">1969-11-01T00:00:00Z</field><field name="pub_year_i">1969</field><field
+        name="required_role_id_i">1</field><field name="height_i">26</field><field
+        name="volume_number_i">14</field><field name="repository_content_b">false</field><field
+        name="sort_title_s">シュウカン シンチョウ</field><field name="serial_b">true</field><field
+        name="series_master_b">false</field><field name="resource_master_b">false</field><field
+        name="title_text">週刊新潮</field><field name="title_text">シュウカン シンチョウ</field><field
+        name="title_text"/><field name="title_text">14(45)(714)</field><field name="title_text"/><field
+        name="title_text"/><field name="title_text"/><field name="statement_of_responsibility_text">新潮社
+        [編]</field><field name="atitle_text">週刊新潮</field><field name="atitle_text">シュウカン
+        シンチョウ</field><field name="atitle_text"/><field name="atitle_text">14(45)(714)</field><field
+        name="atitle_text"/><field name="atitle_text"/><field name="atitle_text"/><field
+        name="jtitle_text">週刊新潮</field><field name="jtitle_text">シュウカン シンチョウ</field><field
+        name="jtitle_text"/><field name="jtitle_text">14(45)(714)</field><field name="jtitle_text"/><field
+        name="jtitle_text"/><field name="jtitle_text"/></doc></add>
+    headers:
+      Content-Type:
+      - text/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {'responseHeader'=>{'status'=>0,'QTime'=>11}}
+    http_version: 
+  recorded_at: Sat, 26 Dec 2015 08:36:56 GMT
+- request:
+    method: post
+    uri: http://localhost:8981/solr/default/update?wt=ruby
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><commit softCommit="false"/>
+    headers:
+      Content-Type:
+      - text/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {'responseHeader'=>{'status'=>0,'QTime'=>101}}
+    http_version: 
+  recorded_at: Sat, 26 Dec 2015 08:36:56 GMT
+- request:
+    method: post
+    uri: http://localhost:8981/solr/default/update?wt=ruby
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><add><doc><field name="id">Manifestation
+        1</field><field name="type">Manifestation</field><field name="type">ActiveRecord::Base</field><field
+        name="class_name">Manifestation</field><field name="title_sm">週刊新潮</field><field
+        name="title_sm">シュウカン シンチョウ</field><field name="title_sm"/><field name="title_sm">14(45)(714)</field><field
+        name="title_sm"/><field name="title_sm"/><field name="title_sm"/><field name="connect_title_s">週刊新潮シュウカンシンチョウ14(45)(714)</field><field
+        name="connect_creator_s"/><field name="connect_publisher_s"/><field name="carrier_type_s">print</field><field
+        name="language_s">Japanese</field><field name="created_at_d">2015-12-26T08:36:56Z</field><field
+        name="updated_at_d">2015-12-26T08:36:56Z</field><field name="pub_date_dm">1969-11-01T00:00:00Z</field><field
+        name="date_of_publication_d">1969-11-01T00:00:00Z</field><field name="pub_year_i">1969</field><field
+        name="required_role_id_i">1</field><field name="height_i">26</field><field
+        name="volume_number_i">14</field><field name="repository_content_b">false</field><field
+        name="sort_title_s">シュウカン シンチョウ</field><field name="serial_b">true</field><field
+        name="series_master_b">false</field><field name="resource_master_b">false</field><field
+        name="title_text">週刊新潮</field><field name="title_text">シュウカン シンチョウ</field><field
+        name="title_text"/><field name="title_text">14(45)(714)</field><field name="title_text"/><field
+        name="title_text"/><field name="title_text"/><field name="statement_of_responsibility_text">新潮社
+        [編]</field><field name="atitle_text">週刊新潮</field><field name="atitle_text">シュウカン
+        シンチョウ</field><field name="atitle_text"/><field name="atitle_text">14(45)(714)</field><field
+        name="atitle_text"/><field name="atitle_text"/><field name="atitle_text"/><field
+        name="jtitle_text">週刊新潮</field><field name="jtitle_text">シュウカン シンチョウ</field><field
+        name="jtitle_text"/><field name="jtitle_text">14(45)(714)</field><field name="jtitle_text"/><field
+        name="jtitle_text"/><field name="jtitle_text"/></doc></add>
+    headers:
+      Content-Type:
+      - text/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {'responseHeader'=>{'status'=>0,'QTime'=>9}}
+    http_version: 
+  recorded_at: Sat, 26 Dec 2015 08:36:56 GMT
+- request:
+    method: post
+    uri: http://localhost:8981/solr/default/update?wt=ruby
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><commit softCommit="false"/>
+    headers:
+      Content-Type:
+      - text/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {'responseHeader'=>{'status'=>0,'QTime'=>54}}
+    http_version: 
+  recorded_at: Sat, 26 Dec 2015 08:36:56 GMT
+- request:
+    method: post
+    uri: http://localhost:8981/solr/default/update?wt=ruby
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><add><doc><field name="id">Manifestation
+        1</field><field name="type">Manifestation</field><field name="type">ActiveRecord::Base</field><field
+        name="class_name">Manifestation</field><field name="title_sm">週刊新潮</field><field
+        name="title_sm">シュウカン シンチョウ</field><field name="title_sm"/><field name="title_sm">14(45)(714)</field><field
+        name="title_sm"/><field name="title_sm"/><field name="title_sm"/><field name="connect_title_s">週刊新潮シュウカンシンチョウ14(45)(714)</field><field
+        name="connect_creator_s"/><field name="connect_publisher_s"/><field name="issn_sm">04887484</field><field
+        name="carrier_type_s">print</field><field name="language_s">Japanese</field><field
+        name="created_at_d">2015-12-26T08:36:56Z</field><field name="updated_at_d">2015-12-26T08:36:56Z</field><field
+        name="pub_date_dm">1969-11-01T00:00:00Z</field><field name="date_of_publication_d">1969-11-01T00:00:00Z</field><field
+        name="pub_year_i">1969</field><field name="required_role_id_i">1</field><field
+        name="height_i">26</field><field name="volume_number_i">14</field><field name="repository_content_b">false</field><field
+        name="sort_title_s">シュウカン シンチョウ</field><field name="serial_b">true</field><field
+        name="series_master_b">false</field><field name="resource_master_b">false</field><field
+        name="title_text">週刊新潮</field><field name="title_text">シュウカン シンチョウ</field><field
+        name="title_text"/><field name="title_text">14(45)(714)</field><field name="title_text"/><field
+        name="title_text"/><field name="title_text"/><field name="statement_of_responsibility_text">新潮社
+        [編]</field><field name="atitle_text">週刊新潮</field><field name="atitle_text">シュウカン
+        シンチョウ</field><field name="atitle_text"/><field name="atitle_text">14(45)(714)</field><field
+        name="atitle_text"/><field name="atitle_text"/><field name="atitle_text"/><field
+        name="jtitle_text">週刊新潮</field><field name="jtitle_text">シュウカン シンチョウ</field><field
+        name="jtitle_text"/><field name="jtitle_text">14(45)(714)</field><field name="jtitle_text"/><field
+        name="jtitle_text"/><field name="jtitle_text"/><field name="issn_text">04887484</field></doc></add>
+    headers:
+      Content-Type:
+      - text/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {'responseHeader'=>{'status'=>0,'QTime'=>12}}
+    http_version: 
+  recorded_at: Sat, 26 Dec 2015 08:36:56 GMT
+- request:
+    method: post
+    uri: http://localhost:8981/solr/default/update?wt=ruby
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><commit softCommit="false"/>
+    headers:
+      Content-Type:
+      - text/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {'responseHeader'=>{'status'=>0,'QTime'=>95}}
+    http_version: 
+  recorded_at: Sat, 26 Dec 2015 08:36:56 GMT
+- request:
+    method: post
+    uri: http://localhost:8981/solr/default/update?wt=ruby
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><add><doc><field name="id">Manifestation
+        1</field><field name="type">Manifestation</field><field name="type">ActiveRecord::Base</field><field
+        name="class_name">Manifestation</field><field name="title_sm">週刊新潮</field><field
+        name="title_sm">シュウカン シンチョウ</field><field name="title_sm"/><field name="title_sm">14(45)(714)</field><field
+        name="title_sm"/><field name="title_sm"/><field name="title_sm"/><field name="connect_title_s">週刊新潮シュウカンシンチョウ14(45)(714)</field><field
+        name="connect_creator_s"/><field name="connect_publisher_s"/><field name="issn_sm">04887484</field><field
+        name="carrier_type_s">print</field><field name="language_s">Japanese</field><field
+        name="created_at_d">2015-12-26T08:36:56Z</field><field name="updated_at_d">2015-12-26T08:36:56Z</field><field
+        name="pub_date_dm">1969-11-01T00:00:00Z</field><field name="date_of_publication_d">1969-11-01T00:00:00Z</field><field
+        name="pub_year_i">1969</field><field name="required_role_id_i">1</field><field
+        name="height_i">26</field><field name="volume_number_i">14</field><field name="repository_content_b">false</field><field
+        name="sort_title_s">シュウカン シンチョウ</field><field name="serial_b">true</field><field
+        name="series_master_b">false</field><field name="resource_master_b">false</field><field
+        name="title_text">週刊新潮</field><field name="title_text">シュウカン シンチョウ</field><field
+        name="title_text"/><field name="title_text">14(45)(714)</field><field name="title_text"/><field
+        name="title_text"/><field name="title_text"/><field name="statement_of_responsibility_text">新潮社
+        [編]</field><field name="atitle_text">週刊新潮</field><field name="atitle_text">シュウカン
+        シンチョウ</field><field name="atitle_text"/><field name="atitle_text">14(45)(714)</field><field
+        name="atitle_text"/><field name="atitle_text"/><field name="atitle_text"/><field
+        name="jtitle_text">週刊新潮</field><field name="jtitle_text">シュウカン シンチョウ</field><field
+        name="jtitle_text"/><field name="jtitle_text">14(45)(714)</field><field name="jtitle_text"/><field
+        name="jtitle_text"/><field name="jtitle_text"/><field name="issn_text">04887484</field></doc></add>
+    headers:
+      Content-Type:
+      - text/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {'responseHeader'=>{'status'=>0,'QTime'=>9}}
+    http_version: 
+  recorded_at: Sat, 26 Dec 2015 08:36:56 GMT
+- request:
+    method: post
+    uri: http://localhost:8981/solr/default/update?wt=ruby
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><commit softCommit="false"/>
+    headers:
+      Content-Type:
+      - text/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {'responseHeader'=>{'status'=>0,'QTime'=>57}}
+    http_version: 
+  recorded_at: Sat, 26 Dec 2015 08:36:57 GMT
+- request:
+    method: post
+    uri: http://localhost:8981/solr/default/update?wt=ruby
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><add><doc><field name="id">Manifestation
+        1</field><field name="type">Manifestation</field><field name="type">ActiveRecord::Base</field><field
+        name="class_name">Manifestation</field><field name="title_sm">週刊新潮</field><field
+        name="title_sm">シュウカン シンチョウ</field><field name="title_sm"/><field name="title_sm">14(45)(714)</field><field
+        name="title_sm"/><field name="title_sm"/><field name="title_sm"/><field name="connect_title_s">週刊新潮シュウカンシンチョウ14(45)(714)</field><field
+        name="connect_creator_s"/><field name="connect_publisher_s">新潮社新潮社</field><field
+        name="issn_sm">04887484</field><field name="carrier_type_s">print</field><field
+        name="language_s">Japanese</field><field name="created_at_d">2015-12-26T08:36:56Z</field><field
+        name="updated_at_d">2015-12-26T08:36:57Z</field><field name="pub_date_dm">1969-11-01T00:00:00Z</field><field
+        name="date_of_publication_d">1969-11-01T00:00:00Z</field><field name="pub_year_i">1969</field><field
+        name="publisher_ids_im">1</field><field name="required_role_id_i">1</field><field
+        name="height_i">26</field><field name="volume_number_i">14</field><field name="repository_content_b">false</field><field
+        name="sort_title_s">シュウカン シンチョウ</field><field name="serial_b">true</field><field
+        name="series_master_b">false</field><field name="resource_master_b">false</field><field
+        name="title_text">週刊新潮</field><field name="title_text">シュウカン シンチョウ</field><field
+        name="title_text"/><field name="title_text">14(45)(714)</field><field name="title_text"/><field
+        name="title_text"/><field name="title_text"/><field name="publisher_text">新潮社</field><field
+        name="publisher_text"/><field name="publisher_text"/><field name="publisher_text">新潮社</field><field
+        name="statement_of_responsibility_text">新潮社 [編]</field><field name="atitle_text">週刊新潮</field><field
+        name="atitle_text">シュウカン シンチョウ</field><field name="atitle_text"/><field name="atitle_text">14(45)(714)</field><field
+        name="atitle_text"/><field name="atitle_text"/><field name="atitle_text"/><field
+        name="jtitle_text">週刊新潮</field><field name="jtitle_text">シュウカン シンチョウ</field><field
+        name="jtitle_text"/><field name="jtitle_text">14(45)(714)</field><field name="jtitle_text"/><field
+        name="jtitle_text"/><field name="jtitle_text"/><field name="issn_text">04887484</field></doc></add>
+    headers:
+      Content-Type:
+      - text/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {'responseHeader'=>{'status'=>0,'QTime'=>11}}
+    http_version: 
+  recorded_at: Sat, 26 Dec 2015 08:36:57 GMT
+- request:
+    method: post
+    uri: http://localhost:8981/solr/default/update?wt=ruby
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><commit softCommit="false"/>
+    headers:
+      Content-Type:
+      - text/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {'responseHeader'=>{'status'=>0,'QTime'=>50}}
+    http_version: 
+  recorded_at: Sat, 26 Dec 2015 08:36:57 GMT
+- request:
+    method: post
+    uri: http://localhost:8981/solr/default/update?wt=ruby
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><add><doc><field name="id">Agent
+        1</field><field name="type">Agent</field><field name="type">ActiveRecord::Base</field><field
+        name="class_name">Agent</field><field name="created_at_d">2015-12-26T08:36:56Z</field><field
+        name="updated_at_d">2015-12-26T08:36:56Z</field><field name="required_role_id_i">1</field><field
+        name="agent_type_id_i">1</field><field name="name_text">新潮社</field><field
+        name="name_text"/><field name="name_text"/><field name="name_text">新潮社</field></doc></add>
+    headers:
+      Content-Type:
+      - text/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {'responseHeader'=>{'status'=>0,'QTime'=>3}}
+    http_version: 
+  recorded_at: Sat, 26 Dec 2015 08:36:57 GMT
+- request:
+    method: post
+    uri: http://localhost:8981/solr/default/update?wt=ruby
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><add><doc><field name="id">Manifestation
+        1</field><field name="type">Manifestation</field><field name="type">ActiveRecord::Base</field><field
+        name="class_name">Manifestation</field><field name="title_sm">週刊新潮</field><field
+        name="title_sm">シュウカン シンチョウ</field><field name="title_sm"/><field name="title_sm">14(45)(714)</field><field
+        name="title_sm"/><field name="title_sm"/><field name="title_sm"/><field name="connect_title_s">週刊新潮シュウカンシンチョウ14(45)(714)</field><field
+        name="connect_creator_s"/><field name="connect_publisher_s">新潮社新潮社</field><field
+        name="issn_sm">04887484</field><field name="carrier_type_s">print</field><field
+        name="language_s">Japanese</field><field name="created_at_d">2015-12-26T08:36:56Z</field><field
+        name="updated_at_d">2015-12-26T08:36:57Z</field><field name="pub_date_dm">1969-11-01T00:00:00Z</field><field
+        name="date_of_publication_d">1969-11-01T00:00:00Z</field><field name="pub_year_i">1969</field><field
+        name="publisher_ids_im">1</field><field name="required_role_id_i">1</field><field
+        name="height_i">26</field><field name="volume_number_i">14</field><field name="repository_content_b">false</field><field
+        name="sort_title_s">シュウカン シンチョウ</field><field name="serial_b">true</field><field
+        name="series_master_b">false</field><field name="resource_master_b">false</field><field
+        name="title_text">週刊新潮</field><field name="title_text">シュウカン シンチョウ</field><field
+        name="title_text"/><field name="title_text">14(45)(714)</field><field name="title_text"/><field
+        name="title_text"/><field name="title_text"/><field name="publisher_text">新潮社</field><field
+        name="publisher_text"/><field name="publisher_text"/><field name="publisher_text">新潮社</field><field
+        name="statement_of_responsibility_text">新潮社 [編]</field><field name="atitle_text">週刊新潮</field><field
+        name="atitle_text">シュウカン シンチョウ</field><field name="atitle_text"/><field name="atitle_text">14(45)(714)</field><field
+        name="atitle_text"/><field name="atitle_text"/><field name="atitle_text"/><field
+        name="jtitle_text">週刊新潮</field><field name="jtitle_text">シュウカン シンチョウ</field><field
+        name="jtitle_text"/><field name="jtitle_text">14(45)(714)</field><field name="jtitle_text"/><field
+        name="jtitle_text"/><field name="jtitle_text"/><field name="issn_text">04887484</field></doc></add>
+    headers:
+      Content-Type:
+      - text/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {'responseHeader'=>{'status'=>0,'QTime'=>14}}
+    http_version: 
+  recorded_at: Sat, 26 Dec 2015 08:36:57 GMT
+- request:
+    method: post
+    uri: http://localhost:8981/solr/default/update?wt=ruby
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><add><doc><field name="id">Manifestation
+        1</field><field name="type">Manifestation</field><field name="type">ActiveRecord::Base</field><field
+        name="class_name">Manifestation</field><field name="title_sm">週刊新潮</field><field
+        name="title_sm">シュウカン シンチョウ</field><field name="title_sm"/><field name="title_sm">14(45)(714)</field><field
+        name="title_sm"/><field name="title_sm"/><field name="title_sm"/><field name="connect_title_s">週刊新潮シュウカンシンチョウ14(45)(714)</field><field
+        name="connect_creator_s">新潮社新潮社</field><field name="connect_publisher_s">新潮社新潮社</field><field
+        name="issn_sm">04887484</field><field name="carrier_type_s">print</field><field
+        name="language_s">Japanese</field><field name="created_at_d">2015-12-26T08:36:56Z</field><field
+        name="updated_at_d">2015-12-26T08:36:57Z</field><field name="pub_date_dm">1969-11-01T00:00:00Z</field><field
+        name="date_of_publication_d">1969-11-01T00:00:00Z</field><field name="pub_year_i">1969</field><field
+        name="creator_ids_im">1</field><field name="publisher_ids_im">1</field><field
+        name="required_role_id_i">1</field><field name="height_i">26</field><field
+        name="volume_number_i">14</field><field name="repository_content_b">false</field><field
+        name="creator_sm">新潮社</field><field name="creator_sm"/><field name="creator_sm"/><field
+        name="creator_sm">新潮社</field><field name="sort_title_s">シュウカン シンチョウ</field><field
+        name="serial_b">true</field><field name="series_master_b">false</field><field
+        name="resource_master_b">false</field><field name="title_text">週刊新潮</field><field
+        name="title_text">シュウカン シンチョウ</field><field name="title_text"/><field name="title_text">14(45)(714)</field><field
+        name="title_text"/><field name="title_text"/><field name="title_text"/><field
+        name="creator_text">新潮社</field><field name="creator_text"/><field name="creator_text"/><field
+        name="creator_text">新潮社</field><field name="publisher_text">新潮社</field><field
+        name="publisher_text"/><field name="publisher_text"/><field name="publisher_text">新潮社</field><field
+        name="statement_of_responsibility_text">新潮社 [編]</field><field name="aulast_text"/><field
+        name="aufirst_text"/><field name="au_text">新潮社</field><field name="au_text"/><field
+        name="au_text"/><field name="au_text">新潮社</field><field name="atitle_text">週刊新潮</field><field
+        name="atitle_text">シュウカン シンチョウ</field><field name="atitle_text"/><field name="atitle_text">14(45)(714)</field><field
+        name="atitle_text"/><field name="atitle_text"/><field name="atitle_text"/><field
+        name="jtitle_text">週刊新潮</field><field name="jtitle_text">シュウカン シンチョウ</field><field
+        name="jtitle_text"/><field name="jtitle_text">14(45)(714)</field><field name="jtitle_text"/><field
+        name="jtitle_text"/><field name="jtitle_text"/><field name="issn_text">04887484</field></doc></add>
+    headers:
+      Content-Type:
+      - text/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {'responseHeader'=>{'status'=>0,'QTime'=>13}}
+    http_version: 
+  recorded_at: Sat, 26 Dec 2015 08:36:57 GMT
+- request:
+    method: post
+    uri: http://localhost:8981/solr/default/update?wt=ruby
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><commit softCommit="false"/>
+    headers:
+      Content-Type:
+      - text/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {'responseHeader'=>{'status'=>0,'QTime'=>70}}
+    http_version: 
+  recorded_at: Sat, 26 Dec 2015 08:36:57 GMT
+- request:
+    method: post
+    uri: http://localhost:8981/solr/default/update?wt=ruby
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><add><doc><field name="id">Agent
+        1</field><field name="type">Agent</field><field name="type">ActiveRecord::Base</field><field
+        name="class_name">Agent</field><field name="created_at_d">2015-12-26T08:36:56Z</field><field
+        name="updated_at_d">2015-12-26T08:36:56Z</field><field name="work_ids_im">1</field><field
+        name="manifestation_ids_im">1</field><field name="required_role_id_i">1</field><field
+        name="agent_type_id_i">1</field><field name="name_text">新潮社</field><field
+        name="name_text"/><field name="name_text"/><field name="name_text">新潮社</field></doc></add>
+    headers:
+      Content-Type:
+      - text/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {'responseHeader'=>{'status'=>0,'QTime'=>3}}
+    http_version: 
+  recorded_at: Sat, 26 Dec 2015 08:36:57 GMT
+- request:
+    method: post
+    uri: http://localhost:8981/solr/default/update?wt=ruby
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><add><doc><field name="id">Manifestation
+        1</field><field name="type">Manifestation</field><field name="type">ActiveRecord::Base</field><field
+        name="class_name">Manifestation</field><field name="title_sm">週刊新潮</field><field
+        name="title_sm">シュウカン シンチョウ</field><field name="title_sm"/><field name="title_sm">14(45)(714)</field><field
+        name="title_sm"/><field name="title_sm"/><field name="title_sm"/><field name="connect_title_s">週刊新潮シュウカンシンチョウ14(45)(714)</field><field
+        name="connect_creator_s">新潮社新潮社</field><field name="connect_publisher_s">新潮社新潮社</field><field
+        name="issn_sm">04887484</field><field name="carrier_type_s">print</field><field
+        name="language_s">Japanese</field><field name="created_at_d">2015-12-26T08:36:56Z</field><field
+        name="updated_at_d">2015-12-26T08:36:57Z</field><field name="pub_date_dm">1969-11-01T00:00:00Z</field><field
+        name="date_of_publication_d">1969-11-01T00:00:00Z</field><field name="pub_year_i">1969</field><field
+        name="creator_ids_im">1</field><field name="publisher_ids_im">1</field><field
+        name="required_role_id_i">1</field><field name="height_i">26</field><field
+        name="volume_number_i">14</field><field name="repository_content_b">false</field><field
+        name="creator_sm">新潮社</field><field name="creator_sm"/><field name="creator_sm"/><field
+        name="creator_sm">新潮社</field><field name="sort_title_s">シュウカン シンチョウ</field><field
+        name="serial_b">true</field><field name="series_master_b">false</field><field
+        name="resource_master_b">false</field><field name="title_text">週刊新潮</field><field
+        name="title_text">シュウカン シンチョウ</field><field name="title_text"/><field name="title_text">14(45)(714)</field><field
+        name="title_text"/><field name="title_text"/><field name="title_text"/><field
+        name="creator_text">新潮社</field><field name="creator_text"/><field name="creator_text"/><field
+        name="creator_text">新潮社</field><field name="publisher_text">新潮社</field><field
+        name="publisher_text"/><field name="publisher_text"/><field name="publisher_text">新潮社</field><field
+        name="statement_of_responsibility_text">新潮社 [編]</field><field name="aulast_text"/><field
+        name="aufirst_text"/><field name="au_text">新潮社</field><field name="au_text"/><field
+        name="au_text"/><field name="au_text">新潮社</field><field name="atitle_text">週刊新潮</field><field
+        name="atitle_text">シュウカン シンチョウ</field><field name="atitle_text"/><field name="atitle_text">14(45)(714)</field><field
+        name="atitle_text"/><field name="atitle_text"/><field name="atitle_text"/><field
+        name="jtitle_text">週刊新潮</field><field name="jtitle_text">シュウカン シンチョウ</field><field
+        name="jtitle_text"/><field name="jtitle_text">14(45)(714)</field><field name="jtitle_text"/><field
+        name="jtitle_text"/><field name="jtitle_text"/><field name="issn_text">04887484</field></doc></add>
+    headers:
+      Content-Type:
+      - text/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {'responseHeader'=>{'status'=>0,'QTime'=>15}}
+    http_version: 
+  recorded_at: Sat, 26 Dec 2015 08:36:57 GMT
+- request:
+    method: post
+    uri: http://localhost:8981/solr/default/update?wt=ruby
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><add><doc><field name="id">Manifestation
+        1</field><field name="type">Manifestation</field><field name="type">ActiveRecord::Base</field><field
+        name="class_name">Manifestation</field><field name="title_sm">週刊新潮</field><field
+        name="title_sm">シュウカン シンチョウ</field><field name="title_sm"/><field name="title_sm">14(45)(714)</field><field
+        name="title_sm"/><field name="title_sm"/><field name="title_sm"/><field name="title_sm">週刊新潮</field><field
+        name="title_sm">シュウカン シンチョウ</field><field name="connect_title_s">週刊新潮シュウカンシンチョウ14(45)(714)週刊新潮シュウカンシンチョウ</field><field
+        name="connect_creator_s">新潮社新潮社</field><field name="connect_publisher_s">新潮社新潮社</field><field
+        name="issn_sm">04887484</field><field name="carrier_type_s">print</field><field
+        name="language_s">Japanese</field><field name="created_at_d">2015-12-26T08:36:56Z</field><field
+        name="updated_at_d">2015-12-26T08:36:57Z</field><field name="pub_date_dm">1969-11-01T00:00:00Z</field><field
+        name="date_of_publication_d">1969-11-01T00:00:00Z</field><field name="pub_year_i">1969</field><field
+        name="creator_ids_im">1</field><field name="publisher_ids_im">1</field><field
+        name="required_role_id_i">1</field><field name="height_i">26</field><field
+        name="volume_number_i">14</field><field name="series_statement_ids_im">1</field><field
+        name="repository_content_b">false</field><field name="creator_sm">新潮社</field><field
+        name="creator_sm"/><field name="creator_sm"/><field name="creator_sm">新潮社</field><field
+        name="sort_title_s">シュウカン シンチョウ</field><field name="serial_b">true</field><field
+        name="series_master_b">true</field><field name="resource_master_b">true</field><field
+        name="title_text">週刊新潮</field><field name="title_text">シュウカン シンチョウ</field><field
+        name="title_text"/><field name="title_text">14(45)(714)</field><field name="title_text"/><field
+        name="title_text"/><field name="title_text"/><field name="title_text">週刊新潮</field><field
+        name="title_text">シュウカン シンチョウ</field><field name="creator_text">新潮社</field><field
+        name="creator_text"/><field name="creator_text"/><field name="creator_text">新潮社</field><field
+        name="publisher_text">新潮社</field><field name="publisher_text"/><field name="publisher_text"/><field
+        name="publisher_text">新潮社</field><field name="statement_of_responsibility_text">新潮社
+        [編]</field><field name="aulast_text"/><field name="aufirst_text"/><field name="au_text">新潮社</field><field
+        name="au_text"/><field name="au_text"/><field name="au_text">新潮社</field><field
+        name="jtitle_text">週刊新潮</field><field name="jtitle_text">シュウカン シンチョウ</field><field
+        name="issn_text">04887484</field></doc></add>
+    headers:
+      Content-Type:
+      - text/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {'responseHeader'=>{'status'=>0,'QTime'=>8}}
+    http_version: 
+  recorded_at: Sat, 26 Dec 2015 08:36:57 GMT
+- request:
+    method: post
+    uri: http://localhost:8981/solr/default/update?wt=ruby
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><add><doc><field name="id">SeriesStatement
+        1</field><field name="type">SeriesStatement</field><field name="type">ActiveRecord::Base</field><field
+        name="class_name">SeriesStatement</field><field name="manifestation_id_i">1</field><field
+        name="position_i">1</field><field name="title_text">週刊新潮</field><field name="title_text">シュウカン
+        シンチョウ</field></doc></add>
+    headers:
+      Content-Type:
+      - text/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {'responseHeader'=>{'status'=>0,'QTime'=>1}}
+    http_version: 
+  recorded_at: Sat, 26 Dec 2015 08:36:57 GMT
+- request:
+    method: post
+    uri: http://localhost:8981/solr/default/update?wt=ruby
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><add><doc><field name="id">Manifestation
+        1</field><field name="type">Manifestation</field><field name="type">ActiveRecord::Base</field><field
+        name="class_name">Manifestation</field><field name="title_sm">週刊新潮</field><field
+        name="title_sm">シュウカン シンチョウ</field><field name="title_sm"/><field name="title_sm">14(45)(714)</field><field
+        name="title_sm"/><field name="title_sm"/><field name="title_sm"/><field name="title_sm">週刊新潮</field><field
+        name="title_sm">シュウカン シンチョウ</field><field name="connect_title_s">週刊新潮シュウカンシンチョウ14(45)(714)週刊新潮シュウカンシンチョウ</field><field
+        name="connect_creator_s">新潮社新潮社</field><field name="connect_publisher_s">新潮社新潮社</field><field
+        name="issn_sm">04887484</field><field name="carrier_type_s">print</field><field
+        name="language_s">Japanese</field><field name="created_at_d">2015-12-26T08:36:56Z</field><field
+        name="updated_at_d">2015-12-26T08:36:57Z</field><field name="pub_date_dm">1969-11-01T00:00:00Z</field><field
+        name="date_of_publication_d">1969-11-01T00:00:00Z</field><field name="pub_year_i">1969</field><field
+        name="creator_ids_im">1</field><field name="publisher_ids_im">1</field><field
+        name="required_role_id_i">1</field><field name="height_i">26</field><field
+        name="volume_number_i">14</field><field name="series_statement_ids_im">1</field><field
+        name="repository_content_b">false</field><field name="creator_sm">新潮社</field><field
+        name="creator_sm"/><field name="creator_sm"/><field name="creator_sm">新潮社</field><field
+        name="sort_title_s">シュウカン シンチョウ</field><field name="serial_b">true</field><field
+        name="series_master_b">true</field><field name="resource_master_b">true</field><field
+        name="title_text">週刊新潮</field><field name="title_text">シュウカン シンチョウ</field><field
+        name="title_text"/><field name="title_text">14(45)(714)</field><field name="title_text"/><field
+        name="title_text"/><field name="title_text"/><field name="title_text">週刊新潮</field><field
+        name="title_text">シュウカン シンチョウ</field><field name="creator_text">新潮社</field><field
+        name="creator_text"/><field name="creator_text"/><field name="creator_text">新潮社</field><field
+        name="publisher_text">新潮社</field><field name="publisher_text"/><field name="publisher_text"/><field
+        name="publisher_text">新潮社</field><field name="statement_of_responsibility_text">新潮社
+        [編]</field><field name="aulast_text"/><field name="aufirst_text"/><field name="au_text">新潮社</field><field
+        name="au_text"/><field name="au_text"/><field name="au_text">新潮社</field><field
+        name="jtitle_text">週刊新潮</field><field name="jtitle_text">シュウカン シンチョウ</field><field
+        name="issn_text">04887484</field></doc></add>
+    headers:
+      Content-Type:
+      - text/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {'responseHeader'=>{'status'=>0,'QTime'=>111}}
+    http_version: 
+  recorded_at: Sat, 26 Dec 2015 08:36:57 GMT
+- request:
+    method: post
+    uri: http://localhost:8981/solr/default/update?wt=ruby
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><commit softCommit="false"/>
+    headers:
+      Content-Type:
+      - text/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {'responseHeader'=>{'status'=>0,'QTime'=>83}}
+    http_version: 
+  recorded_at: Sat, 26 Dec 2015 08:36:57 GMT
+- request:
+    method: post
+    uri: http://localhost:8981/solr/default/update?wt=ruby
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><add><doc><field name="id">Manifestation
+        1</field><field name="type">Manifestation</field><field name="type">ActiveRecord::Base</field><field
+        name="class_name">Manifestation</field><field name="title_sm">週刊新潮</field><field
+        name="title_sm">シュウカン シンチョウ</field><field name="title_sm"/><field name="title_sm">14(45)(714)</field><field
+        name="title_sm"/><field name="title_sm"/><field name="title_sm"/><field name="title_sm">週刊新潮</field><field
+        name="title_sm">シュウカン シンチョウ</field><field name="connect_title_s">週刊新潮シュウカンシンチョウ14(45)(714)週刊新潮シュウカンシンチョウ</field><field
+        name="connect_creator_s">新潮社新潮社</field><field name="connect_publisher_s">新潮社新潮社</field><field
+        name="issn_sm">04887484</field><field name="carrier_type_s">print</field><field
+        name="language_s">Japanese</field><field name="created_at_d">2015-12-26T08:36:56Z</field><field
+        name="updated_at_d">2015-12-26T08:36:57Z</field><field name="pub_date_dm">1969-11-01T00:00:00Z</field><field
+        name="date_of_publication_d">1969-11-01T00:00:00Z</field><field name="pub_year_i">1969</field><field
+        name="creator_ids_im">1</field><field name="publisher_ids_im">1</field><field
+        name="required_role_id_i">1</field><field name="height_i">26</field><field
+        name="volume_number_i">14</field><field name="series_statement_ids_im">1</field><field
+        name="repository_content_b">false</field><field name="creator_sm">新潮社</field><field
+        name="creator_sm"/><field name="creator_sm"/><field name="creator_sm">新潮社</field><field
+        name="sort_title_s">シュウカン シンチョウ</field><field name="serial_b">true</field><field
+        name="series_master_b">true</field><field name="resource_master_b">true</field><field
+        name="title_text">週刊新潮</field><field name="title_text">シュウカン シンチョウ</field><field
+        name="title_text"/><field name="title_text">14(45)(714)</field><field name="title_text"/><field
+        name="title_text"/><field name="title_text"/><field name="title_text">週刊新潮</field><field
+        name="title_text">シュウカン シンチョウ</field><field name="creator_text">新潮社</field><field
+        name="creator_text"/><field name="creator_text"/><field name="creator_text">新潮社</field><field
+        name="publisher_text">新潮社</field><field name="publisher_text"/><field name="publisher_text"/><field
+        name="publisher_text">新潮社</field><field name="statement_of_responsibility_text">新潮社
+        [編]</field><field name="aulast_text"/><field name="aufirst_text"/><field name="au_text">新潮社</field><field
+        name="au_text"/><field name="au_text"/><field name="au_text">新潮社</field><field
+        name="jtitle_text">週刊新潮</field><field name="jtitle_text">シュウカン シンチョウ</field><field
+        name="issn_text">04887484</field></doc></add>
+    headers:
+      Content-Type:
+      - text/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {'responseHeader'=>{'status'=>0,'QTime'=>17}}
+    http_version: 
+  recorded_at: Sat, 26 Dec 2015 08:36:57 GMT
+- request:
+    method: post
+    uri: http://localhost:8981/solr/default/update?wt=ruby
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><add><doc><field name="id">SeriesStatement
+        1</field><field name="type">SeriesStatement</field><field name="type">ActiveRecord::Base</field><field
+        name="class_name">SeriesStatement</field><field name="manifestation_id_i">1</field><field
+        name="position_i">1</field><field name="title_text">週刊新潮</field><field name="title_text">シュウカン
+        シンチョウ</field></doc></add>
+    headers:
+      Content-Type:
+      - text/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {'responseHeader'=>{'status'=>0,'QTime'=>11}}
+    http_version: 
+  recorded_at: Sat, 26 Dec 2015 08:36:57 GMT
+- request:
+    method: post
+    uri: http://localhost:8981/solr/default/update?wt=ruby
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><add><doc><field name="id">Manifestation
+        1</field><field name="type">Manifestation</field><field name="type">ActiveRecord::Base</field><field
+        name="class_name">Manifestation</field><field name="title_sm">週刊新潮</field><field
+        name="title_sm">シュウカン シンチョウ</field><field name="title_sm"/><field name="title_sm">14(45)(714)</field><field
+        name="title_sm"/><field name="title_sm"/><field name="title_sm"/><field name="title_sm">週刊新潮</field><field
+        name="title_sm">シュウカン シンチョウ</field><field name="connect_title_s">週刊新潮シュウカンシンチョウ14(45)(714)週刊新潮シュウカンシンチョウ</field><field
+        name="connect_creator_s">新潮社新潮社</field><field name="connect_publisher_s">新潮社新潮社</field><field
+        name="issn_sm">04887484</field><field name="carrier_type_s">print</field><field
+        name="language_s">Japanese</field><field name="created_at_d">2015-12-26T08:36:56Z</field><field
+        name="updated_at_d">2015-12-26T08:36:57Z</field><field name="pub_date_dm">1969-11-01T00:00:00Z</field><field
+        name="date_of_publication_d">1969-11-01T00:00:00Z</field><field name="pub_year_i">1969</field><field
+        name="creator_ids_im">1</field><field name="publisher_ids_im">1</field><field
+        name="required_role_id_i">1</field><field name="height_i">26</field><field
+        name="volume_number_i">14</field><field name="series_statement_ids_im">1</field><field
+        name="repository_content_b">false</field><field name="creator_sm">新潮社</field><field
+        name="creator_sm"/><field name="creator_sm"/><field name="creator_sm">新潮社</field><field
+        name="sort_title_s">シュウカン シンチョウ</field><field name="serial_b">true</field><field
+        name="series_master_b">true</field><field name="resource_master_b">true</field><field
+        name="title_text">週刊新潮</field><field name="title_text">シュウカン シンチョウ</field><field
+        name="title_text"/><field name="title_text">14(45)(714)</field><field name="title_text"/><field
+        name="title_text"/><field name="title_text"/><field name="title_text">週刊新潮</field><field
+        name="title_text">シュウカン シンチョウ</field><field name="creator_text">新潮社</field><field
+        name="creator_text"/><field name="creator_text"/><field name="creator_text">新潮社</field><field
+        name="publisher_text">新潮社</field><field name="publisher_text"/><field name="publisher_text"/><field
+        name="publisher_text">新潮社</field><field name="statement_of_responsibility_text">新潮社
+        [編]</field><field name="aulast_text"/><field name="aufirst_text"/><field name="au_text">新潮社</field><field
+        name="au_text"/><field name="au_text"/><field name="au_text">新潮社</field><field
+        name="jtitle_text">週刊新潮</field><field name="jtitle_text">シュウカン シンチョウ</field><field
+        name="issn_text">04887484</field></doc></add>
+    headers:
+      Content-Type:
+      - text/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {'responseHeader'=>{'status'=>0,'QTime'=>15}}
+    http_version: 
+  recorded_at: Sat, 26 Dec 2015 08:36:57 GMT
+- request:
+    method: post
+    uri: http://localhost:8981/solr/default/update?wt=ruby
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><commit softCommit="false"/>
+    headers:
+      Content-Type:
+      - text/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {'responseHeader'=>{'status'=>0,'QTime'=>52}}
+    http_version: 
+  recorded_at: Sat, 26 Dec 2015 08:36:58 GMT
+- request:
+    method: post
+    uri: http://localhost:8981/solr/default/update?wt=ruby
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><add><doc><field name="id">Manifestation
+        1</field><field name="type">Manifestation</field><field name="type">ActiveRecord::Base</field><field
+        name="class_name">Manifestation</field><field name="title_sm">週刊新潮</field><field
+        name="title_sm">シュウカン シンチョウ</field><field name="title_sm"/><field name="title_sm">14(45)(714)</field><field
+        name="title_sm"/><field name="title_sm"/><field name="title_sm"/><field name="title_sm">週刊新潮</field><field
+        name="title_sm">シュウカン シンチョウ</field><field name="connect_title_s">週刊新潮シュウカンシンチョウ14(45)(714)週刊新潮シュウカンシンチョウ</field><field
+        name="connect_creator_s">新潮社新潮社</field><field name="connect_publisher_s">新潮社新潮社</field><field
+        name="issn_sm">04887484</field><field name="carrier_type_s">print</field><field
+        name="language_s">Japanese</field><field name="created_at_d">2015-12-26T08:36:56Z</field><field
+        name="updated_at_d">2015-12-26T08:36:57Z</field><field name="pub_date_dm">1969-11-01T00:00:00Z</field><field
+        name="date_of_publication_d">1969-11-01T00:00:00Z</field><field name="pub_year_i">1969</field><field
+        name="creator_ids_im">1</field><field name="publisher_ids_im">1</field><field
+        name="required_role_id_i">1</field><field name="height_i">26</field><field
+        name="volume_number_i">14</field><field name="series_statement_ids_im">1</field><field
+        name="repository_content_b">false</field><field name="creator_sm">新潮社</field><field
+        name="creator_sm"/><field name="creator_sm"/><field name="creator_sm">新潮社</field><field
+        name="sort_title_s">シュウカン シンチョウ</field><field name="serial_b">true</field><field
+        name="series_master_b">true</field><field name="resource_master_b">true</field><field
+        name="title_text">週刊新潮</field><field name="title_text">シュウカン シンチョウ</field><field
+        name="title_text"/><field name="title_text">14(45)(714)</field><field name="title_text"/><field
+        name="title_text"/><field name="title_text"/><field name="title_text">週刊新潮</field><field
+        name="title_text">シュウカン シンチョウ</field><field name="creator_text">新潮社</field><field
+        name="creator_text"/><field name="creator_text"/><field name="creator_text">新潮社</field><field
+        name="publisher_text">新潮社</field><field name="publisher_text"/><field name="publisher_text"/><field
+        name="publisher_text">新潮社</field><field name="statement_of_responsibility_text">新潮社
+        [編]</field><field name="aulast_text"/><field name="aufirst_text"/><field name="au_text">新潮社</field><field
+        name="au_text"/><field name="au_text"/><field name="au_text">新潮社</field><field
+        name="jtitle_text">週刊新潮</field><field name="jtitle_text">シュウカン シンチョウ</field><field
+        name="issn_text">04887484</field></doc></add>
+    headers:
+      Content-Type:
+      - text/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {'responseHeader'=>{'status'=>0,'QTime'=>10}}
+    http_version: 
+  recorded_at: Sat, 26 Dec 2015 08:36:58 GMT
+- request:
+    method: post
+    uri: http://localhost:8981/solr/default/update?wt=ruby
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><add><doc><field name="id">Manifestation
+        1</field><field name="type">Manifestation</field><field name="type">ActiveRecord::Base</field><field
+        name="class_name">Manifestation</field><field name="title_sm">週刊新潮</field><field
+        name="title_sm">シュウカン シンチョウ</field><field name="title_sm"/><field name="title_sm">14(45)(714)</field><field
+        name="title_sm"/><field name="title_sm"/><field name="title_sm"/><field name="title_sm">週刊新潮</field><field
+        name="title_sm">シュウカン シンチョウ</field><field name="connect_title_s">週刊新潮シュウカンシンチョウ14(45)(714)週刊新潮シュウカンシンチョウ</field><field
+        name="connect_creator_s">新潮社新潮社</field><field name="connect_publisher_s">新潮社新潮社</field><field
+        name="issn_sm">04887484</field><field name="carrier_type_s">print</field><field
+        name="language_s">Japanese</field><field name="created_at_d">2015-12-26T08:36:56Z</field><field
+        name="updated_at_d">2015-12-26T08:36:57Z</field><field name="pub_date_dm">1969-11-01T00:00:00Z</field><field
+        name="date_of_publication_d">1969-11-01T00:00:00Z</field><field name="pub_year_i">1969</field><field
+        name="creator_ids_im">1</field><field name="publisher_ids_im">1</field><field
+        name="required_role_id_i">1</field><field name="height_i">26</field><field
+        name="volume_number_i">14</field><field name="series_statement_ids_im">1</field><field
+        name="repository_content_b">false</field><field name="creator_sm">新潮社</field><field
+        name="creator_sm"/><field name="creator_sm"/><field name="creator_sm">新潮社</field><field
+        name="sort_title_s">シュウカン シンチョウ</field><field name="serial_b">true</field><field
+        name="series_master_b">true</field><field name="resource_master_b">true</field><field
+        name="title_text">週刊新潮</field><field name="title_text">シュウカン シンチョウ</field><field
+        name="title_text"/><field name="title_text">14(45)(714)</field><field name="title_text"/><field
+        name="title_text"/><field name="title_text"/><field name="title_text">週刊新潮</field><field
+        name="title_text">シュウカン シンチョウ</field><field name="creator_text">新潮社</field><field
+        name="creator_text"/><field name="creator_text"/><field name="creator_text">新潮社</field><field
+        name="publisher_text">新潮社</field><field name="publisher_text"/><field name="publisher_text"/><field
+        name="publisher_text">新潮社</field><field name="statement_of_responsibility_text">新潮社
+        [編]</field><field name="aulast_text"/><field name="aufirst_text"/><field name="au_text">新潮社</field><field
+        name="au_text"/><field name="au_text"/><field name="au_text">新潮社</field><field
+        name="jtitle_text">週刊新潮</field><field name="jtitle_text">シュウカン シンチョウ</field><field
+        name="issn_text">04887484</field></doc></add>
+    headers:
+      Content-Type:
+      - text/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {'responseHeader'=>{'status'=>0,'QTime'=>11}}
+    http_version: 
+  recorded_at: Sat, 26 Dec 2015 08:36:58 GMT
+- request:
+    method: post
+    uri: http://localhost:8981/solr/default/update?wt=ruby
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><add><doc><field name="id">SeriesStatement
+        1</field><field name="type">SeriesStatement</field><field name="type">ActiveRecord::Base</field><field
+        name="class_name">SeriesStatement</field><field name="manifestation_id_i">1</field><field
+        name="position_i">1</field><field name="title_text">週刊新潮</field><field name="title_text">シュウカン
+        シンチョウ</field></doc></add>
+    headers:
+      Content-Type:
+      - text/xml
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {'responseHeader'=>{'status'=>0,'QTime'=>2}}
+    http_version: 
+  recorded_at: Sat, 26 Dec 2015 08:36:58 GMT
+- request:
+    method: post
+    uri: http://localhost:8981/solr/default/select?wt=ruby
+    body:
+      encoding: US-ASCII
+      string: fq=type%3AManifestation&start=0&rows=30&q=*%3A*
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded; charset=UTF-8
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {'responseHeader'=>{'status'=>0,'QTime'=>20},'response'=>{'numFound'=>1,'start'=>0,'docs'=>[{'id'=>'Manifestation 1','_version_'=>'1521608575403687936'}]}}
+    http_version: 
+  recorded_at: Sat, 26 Dec 2015 08:36:58 GMT
+recorded_with: VCR 3.0.1
