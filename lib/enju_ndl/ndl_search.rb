@@ -109,6 +109,7 @@ module EnjuNdl
         publication_periodicity = doc.at('//dcndl:publicationPeriodicity').try(:content)
         statement_of_responsibility = doc.xpath('//dcndl:BibResource/dc:creator').map{|e| e.content}.join("; ")
         publication_place = doc.at('//dcterms:publisher/foaf:Agent/dcndl:location').try(:content)
+        edition_string = doc.at('//dcndl:edition').try(:content)
 
         manifestation = nil
         Agent.transaction do
@@ -132,6 +133,7 @@ module EnjuNdl
             :end_page => extent[:end_page],
             :height => extent[:height],
             :publication_place => publication_place,
+            :edition_string => edition_string,
           )
           manifestation.serial = true if is_serial
           identifier = {}

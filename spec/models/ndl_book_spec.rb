@@ -182,5 +182,10 @@ describe NdlBook do
       manifestation.classifications.first.classification_type.name.should eq "ndc8"
       manifestation.classifications.first.category.should eq "547.48"
     end
+
+    it "should import edition", :vcr => true do
+      manifestation = NdlBook.import_from_sru_response( "R100000002-I025107686-00" )
+      manifestation.edition_string.should eq "改訂第2版"
+    end
   end
 end
