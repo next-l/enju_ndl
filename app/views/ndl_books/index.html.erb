@@ -46,5 +46,10 @@
 </div>
 </div>
 
+<% if @query.present? %>
 <div id="submenu" class="ui-corner-all ui-widget-content">
+  <ul>
+    <li><%= link_to t('enju_ndl.same_query_in_ndl_search'), "http://iss.ndl.go.jp/books?any=#{u(@query)}" -%></li>
+  </ul>
 </div>
+<% end %>
