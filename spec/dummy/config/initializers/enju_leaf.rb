@@ -1,0 +1,1 @@
+Manifestation.include(EnjuSubject::EnjuManifestation)

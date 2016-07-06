@@ -19,15 +19,13 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 03 Nov 2015 18:05:11 GMT
-      Server:
-      - Apache
-      Etag:
-      - '"79f8f250e63181b33a2145c0edfd1141"'
+      - Wed, 06 Jul 2016 16:13:52 GMT
       X-Ua-Compatible:
       - IE=Edge,chrome=1
+      Etag:
+      - '"79f8f250e63181b33a2145c0edfd1141"'
       X-Runtime:
-      - '0.009268'
+      - '0.006232'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Status:
@@ -35,9 +33,15 @@ http_interactions:
       Content-Type:
       - application/xml; charset=utf-8
       Set-Cookie:
-      - _front_session_id=804c7b99e9db94c8cad767dfd1bb4744; domain=.iss.ndl.go.jp;
-        path=/; expires=Tue, 03-Nov-2015 19:05:11 GMT; HttpOnly
-      - serverid=1105; path=/
+      - ROUTEID=.ps24; path=/
+      - TS01cb7804=011338590a265546626cf48c5ab3e8ee5a2334f5fa29fd929e15e0af62b771366eeac1c0f5f7b3285af9152c26eb49228573f15502;
+        path=/; domain=.iss.ndl.go.jp
+      - TS01f3cfdf=011338590a9e7833a6cf9b78852dc9448d37e76d31fdf9609b8f3afe584c9e1a09deda85e00a96582cd24cc3ffb475b440332db88dd851bcfa233a01e4f68fa0cfc9c264e761a23ce029e23681cfeeee3ad7778feb;
+        Path=/
+      - _front_session_id=382a2fd8c1fb6be51aedb7f98c2b7f7e; domain=.iss.ndl.go.jp;
+        path=/; expires=Wed, 06-Jul-2016 17:13:52 GMT; HttpOnly
+      - ndl.go.jp=rd2o00000000000000000000ffff0a024f6co80; path=/
+      - serverid=1101; path=/
       Vary:
       - Accept-Encoding,User-Agent
       X-Content-Type-Options:
@@ -62,5 +66,5 @@ http_interactions:
           </diagnostics>
         </searchRetrieveResponse>
     http_version: 
-  recorded_at: Tue, 03 Nov 2015 18:04:25 GMT
-recorded_with: VCR 3.0.0
+  recorded_at: Wed, 06 Jul 2016 16:13:52 GMT
+recorded_with: VCR 3.0.3

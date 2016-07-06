@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-require 'spec_helper'
+require 'rails_helper'
 
 describe NdlBook do
   fixtures :all
@@ -10,7 +10,7 @@ describe NdlBook do
 
   context "search" do
     it "should search bibliographic record", :vcr => true do
-      NdlBook.search('library system')[:total_entries].should eq 5345
+      NdlBook.search('library system')[:total_entries].should eq 5351
     end
 
     it "should not distinguish double byte space from one-byte space in a query", :vcr => true do

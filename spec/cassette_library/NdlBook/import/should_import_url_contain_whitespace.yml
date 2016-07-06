@@ -19,31 +19,37 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 03 Nov 2015 18:05:09 GMT
-      Server:
-      - Apache
+      - Wed, 06 Jul 2016 16:15:00 GMT
       Etag:
-      - '"ce82f0f45ab64447bf0291461f8d3bad"'
+      - '"19a79cf4edfb748d10f2a6b76fbfa73a"'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
-      X-Runtime:
-      - '0.197090'
       Cache-Control:
       - max-age=0, private, must-revalidate
+      X-Runtime:
+      - '0.183244'
       Status:
       - '200'
       Content-Type:
       - application/xml; charset=utf-8
       Set-Cookie:
-      - _front_session_id=a6db9ed274c66b909869f467670afaf7; domain=.iss.ndl.go.jp;
-        path=/; expires=Tue, 03-Nov-2015 19:05:09 GMT; HttpOnly
-      - serverid=1105; path=/
+      - ROUTEID=.ps22; path=/
+      - TS01cb7804=011338590a21cc77b22b8a25dcf9943428b5ebe146c18f044f6611acc2f0dbb2240668e05f6594ac10582f5a9ef8b5d3143125829a;
+        path=/; domain=.iss.ndl.go.jp
+      - TS01f3cfdf=011338590a19b946fb450c0c35a58c7b04573edcd51b7d8955fca24c7402d35876c5e9c8e02166ef12150f1213a82e931dd741af06b96a3dcd61c8cfac19cef5f146fc68f78f9f553c1a7ebcaa92627d5f8c8e9097;
+        Path=/
+      - _front_session_id=9633f9f6fbecb941037d353298aba9e0; domain=.iss.ndl.go.jp;
+        path=/; expires=Wed, 06-Jul-2016 17:15:00 GMT; HttpOnly
+      - ndl.go.jp=rd2o00000000000000000000ffff0a024f69o80; path=/
+      - serverid=1101; path=/
       Vary:
       - Accept-Encoding,User-Agent
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - SAMEORIGIN
+      Content-Length:
+      - '2101'
       Connection:
       - close
     body:
@@ -94,15 +100,15 @@ http_interactions:
         cG9uc2VEYXRhPgogIDxyZWNvcmRzPgogICAgPHJlY29yZD4KICAgICAgPHJl
         Y29yZFNjaGVtYT5pbmZvOnNydy9zY2hlbWEvMS9kYy12MS4xPC9yZWNvcmRT
         Y2hlbWE+CiAgICAgIDxyZWNvcmRQYWNraW5nPnN0cmluZzwvcmVjb3JkUGFj
-        a2luZz4KICAgICAgPHJlY29yZERhdGE+CiZsdDtyZGY6UkRGIHhtbG5zOmRj
-        dGVybXM9JnF1b3Q7aHR0cDovL3B1cmwub3JnL2RjL3Rlcm1zLyZxdW90OyB4
-        bWxuczpyZGY9JnF1b3Q7aHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1y
-        ZGYtc3ludGF4LW5zIyZxdW90OyB4bWxuczpkY25kbD0mcXVvdDtodHRwOi8v
-        bmRsLmdvLmpwL2RjbmRsL3Rlcm1zLyZxdW90OyB4bWxuczpmb2FmPSZxdW90
-        O2h0dHA6Ly94bWxucy5jb20vZm9hZi8wLjEvJnF1b3Q7IHhtbG5zOnJkZnM9
+        a2luZz4KICAgICAgPHJlY29yZERhdGE+CiZsdDtyZGY6UkRGIHhtbG5zOmZv
+        YWY9JnF1b3Q7aHR0cDovL3htbG5zLmNvbS9mb2FmLzAuMS8mcXVvdDsgeG1s
+        bnM6cmRmPSZxdW90O2h0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRm
+        LXN5bnRheC1ucyMmcXVvdDsgeG1sbnM6ZGM9JnF1b3Q7aHR0cDovL3B1cmwu
+        b3JnL2RjL2VsZW1lbnRzLzEuMS8mcXVvdDsgeG1sbnM6ZGN0ZXJtcz0mcXVv
+        dDtodHRwOi8vcHVybC5vcmcvZGMvdGVybXMvJnF1b3Q7IHhtbG5zOnJkZnM9
         JnF1b3Q7aHR0cDovL3d3dy53My5vcmcvMjAwMC8wMS9yZGYtc2NoZW1hIyZx
-        dW90OyB4bWxuczpkYz0mcXVvdDtodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVu
-        dHMvMS4xLyZxdW90OyB4bWxuczpvd2w9JnF1b3Q7aHR0cDovL3d3dy53My5v
+        dW90OyB4bWxuczpkY25kbD0mcXVvdDtodHRwOi8vbmRsLmdvLmpwL2RjbmRs
+        L3Rlcm1zLyZxdW90OyB4bWxuczpvd2w9JnF1b3Q7aHR0cDovL3d3dy53My5v
         cmcvMjAwMi8wNy9vd2wjJnF1b3Q7Jmd0OwogICZsdDtkY25kbDpCaWJBZG1p
         blJlc291cmNlIHJkZjphYm91dD0mcXVvdDtodHRwOi8vaXNzLm5kbC5nby5q
         cC9ib29rcy9SMTAwMDAwMDAyLUkwMDAwMDIxMDk4MTgtMDAmcXVvdDsmZ3Q7
@@ -200,8 +206,8 @@ http_interactions:
         ICAgICZsdDtkY25kbDpwcmljZSZndDs1NDDlhoYgKOeojui+vCkmbHQ7L2Rj
         bmRsOnByaWNlJmd0OwogICAgJmx0O2RjdGVybXM6YXVkaWVuY2UmZ3Q75LiA
         6IisJmx0Oy9kY3Rlcm1zOmF1ZGllbmNlJmd0OwogICAgJmx0O2RjbmRsOm1h
-        dGVyaWFsVHlwZSByZGY6cmVzb3VyY2U9JnF1b3Q7aHR0cDovL25kbC5nby5q
-        cC9uZGx0eXBlL0Jvb2smcXVvdDsgcmRmczpsYWJlbD0mcXVvdDvlm7Pmm7gm
+        dGVyaWFsVHlwZSByZGZzOmxhYmVsPSZxdW90O+Wbs+abuCZxdW90OyByZGY6
+        cmVzb3VyY2U9JnF1b3Q7aHR0cDovL25kbC5nby5qcC9uZGx0eXBlL0Jvb2sm
         cXVvdDsvJmd0OwogICAgJmx0O2RjdGVybXM6YWNjZXNzUmlnaHRzJmd0O1Mw
         MVA5OVU5OSZsdDsvZGN0ZXJtczphY2Nlc3NSaWdodHMmZ3Q7CiAgJmx0Oy9k
         Y25kbDpCaWJSZXNvdXJjZSZndDsKJmx0Oy9yZGY6UkRGJmd0OwogICAgICA8
@@ -209,5 +215,5 @@ http_interactions:
         b3NpdGlvbj4KICAgIDwvcmVjb3JkPgogIDwvcmVjb3Jkcz4KPC9zZWFyY2hS
         ZXRyaWV2ZVJlc3BvbnNlPgo=
     http_version: 
-  recorded_at: Tue, 03 Nov 2015 18:05:09 GMT
-recorded_with: VCR 3.0.0
+  recorded_at: Wed, 06 Jul 2016 16:15:00 GMT
+recorded_with: VCR 3.0.3
