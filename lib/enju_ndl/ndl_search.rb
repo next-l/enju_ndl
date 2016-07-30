@@ -280,6 +280,11 @@ module EnjuNdl
           :alternative => doc.at('//dcndl:alternative/rdf:Description/rdf:value').try(:content),
           :alternative_transcription => doc.at('//dcndl:alternative/rdf:Description/dcndl:transcription').try(:content)
         }
+        volumeTitle = doc.at('//dcndl:volumeTitle/rdf:Description/rdf:value').try(:content)
+        volumeTitle_transcription = doc.at('//dcndl:volumeTitle/rdf:Description/dcndl:transcription').try(:content)
+        title[:manifestation] << " #{ volumeTitle }" if volumeTitle
+        title[:transcription] << " #{ volumeTitle_transcription }" if volumeTitle_transcription
+        title
       end
 
       def get_creators(doc)

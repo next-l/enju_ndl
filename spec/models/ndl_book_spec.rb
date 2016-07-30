@@ -187,5 +187,11 @@ describe NdlBook do
       manifestation = NdlBook.import_from_sru_response( "R100000002-I025107686-00" )
       manifestation.edition_string.should eq "改訂第2版"
     end
+
+    it "should import volume title", :vcr => true do
+      manifestation = NdlBook.import_from_sru_response( "R100000002-I000011225479-00" )
+      manifestation.original_title.should eq "じゃらん 関東・東北"
+      manifestation.title_transcription.should eq "ジャラン カントウ トウホク"
+    end
   end
 end
