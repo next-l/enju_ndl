@@ -3,10 +3,8 @@
 source "https://rubygems.org"
 
 gem "enju_leaf", :github => "next-l/enju_leaf", :branch => "1.2"
-gem "rails", "~> 4.2.7"
 gem "jquery-rails"
-gem "coveralls", :require => false
-gem "enju_biblio", :github => "next-l/enju_biblio", :branch => "1.2"
-gem "enju_nii", :github => "next-l/enju_nii", :branch => "1.2"
+gem "rails", "~> 4.2.7"
+gem "enju_nii", "~> 0.2.0.beta.1"
 
 gemspec :path => "../"
