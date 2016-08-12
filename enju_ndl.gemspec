@@ -28,7 +28,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "vcr", "~> 3.0"
   s.add_development_dependency "webmock"
   s.add_development_dependency "enju_library", "~> 0.2.0.beta.3"
-  s.add_development_dependency "enju_question", "~> 0.2.0.beta.1"
+  s.add_development_dependency "enju_question", "~> 0.2.0.beta.2"
   s.add_development_dependency "sunspot_solr", "2.2.0"
   s.add_development_dependency "simplecov"
   s.add_development_dependency "appraisal"
