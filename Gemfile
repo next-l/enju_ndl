@@ -10,6 +10,7 @@ gemspec
 # Git. Remember to move these dependencies to your gemspec before releasing
 # your gem to rubygems.org.
 gem 'enju_leaf', github: 'next-l/enju_leaf', branch: '1.2'
+gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
