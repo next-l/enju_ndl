@@ -18,14 +18,14 @@ Gem::Specification.new do |s|
 
   s.add_dependency "enju_subject", "~> 0.2.0.beta.2"
 
+  s.add_development_dependency "enju_leaf", "~> 1.2.0.beta.2"
+  s.add_development_dependency "enju_question", "~> 0.2.0.beta.2"
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "mysql2"
   s.add_development_dependency "pg"
   s.add_development_dependency "rspec-rails", "~> 3.4"
   s.add_development_dependency "vcr", "~> 3.0"
   s.add_development_dependency "webmock"
-  s.add_development_dependency "enju_library", "~> 0.2.0.beta.3"
-  s.add_development_dependency "enju_question", "~> 0.2.0.beta.2"
   s.add_development_dependency "sunspot_solr", "2.2.0"
   s.add_development_dependency "simplecov"
   s.add_development_dependency "appraisal"
