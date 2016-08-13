@@ -7,6 +7,8 @@ require 'enju_ndl'
 require 'enju_leaf'
 require 'enju_question'
 require 'enju_subject'
+require 'globalize'
+require 'globalize-accessors'
 
 module Dummy
   class Application < Rails::Application
