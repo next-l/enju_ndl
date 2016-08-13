@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141014065831) do
+ActiveRecord::Schema.define(version: 20160813130535) do
 
   create_table "accepts", force: :cascade do |t|
     t.integer  "basket_id"
@@ -175,6 +175,54 @@ ActiveRecord::Schema.define(version: 20141014065831) do
   end
 
   add_index "baskets", ["user_id"], name: "index_baskets_on_user_id"
+
+  create_table "bookmark_stat_has_manifestations", force: :cascade do |t|
+    t.integer  "bookmark_stat_id", null: false
+    t.integer  "manifestation_id", null: false
+    t.integer  "bookmarks_count"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "bookmark_stat_has_manifestations", ["bookmark_stat_id"], name: "index_bookmark_stat_has_manifestations_on_bookmark_stat_id"
+  add_index "bookmark_stat_has_manifestations", ["manifestation_id"], name: "index_bookmark_stat_has_manifestations_on_manifestation_id"
+
+  create_table "bookmark_stat_transitions", force: :cascade do |t|
+    t.string   "to_state"
+    t.text     "metadata",         default: "{}"
+    t.integer  "sort_key"
+    t.integer  "bookmark_stat_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "bookmark_stat_transitions", ["bookmark_stat_id"], name: "index_bookmark_stat_transitions_on_bookmark_stat_id"
+  add_index "bookmark_stat_transitions", ["sort_key", "bookmark_stat_id"], name: "index_bookmark_stat_transitions_on_sort_key_and_stat_id", unique: true
+
+  create_table "bookmark_stats", force: :cascade do |t|
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.datetime "started_at"
+    t.datetime "completed_at"
+    t.text     "note"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "bookmarks", force: :cascade do |t|
+    t.integer  "user_id",          null: false
+    t.integer  "manifestation_id"
+    t.text     "title"
+    t.string   "url"
+    t.text     "note"
+    t.boolean  "shared"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "bookmarks", ["manifestation_id"], name: "index_bookmarks_on_manifestation_id"
+  add_index "bookmarks", ["url"], name: "index_bookmarks_on_url"
+  add_index "bookmarks", ["user_id"], name: "index_bookmarks_on_user_id"
 
   create_table "bookstores", force: :cascade do |t|
     t.text     "name",             null: false
@@ -683,10 +731,22 @@ ActiveRecord::Schema.define(version: 20141014065831) do
   add_index "libraries", ["library_group_id"], name: "index_libraries_on_library_group_id"
   add_index "libraries", ["name"], name: "index_libraries_on_name", unique: true
 
+  create_table "library_group_translations", force: :cascade do |t|
+    t.integer  "library_group_id", null: false
+    t.string   "locale",           null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.text     "login_banner"
+    t.text     "footer_banner"
+  end
+
+  add_index "library_group_translations", ["library_group_id"], name: "index_library_group_translations_on_library_group_id"
+  add_index "library_group_translations", ["locale"], name: "index_library_group_translations_on_locale"
+
   create_table "library_groups", force: :cascade do |t|
-    t.string   "name",                                              null: false
+    t.string   "name",                                                           null: false
     t.text     "display_name"
-    t.string   "short_name",                                        null: false
+    t.string   "short_name",                                                     null: false
     t.text     "my_networks"
     t.text     "login_banner"
     t.text     "note"
@@ -695,7 +755,11 @@ ActiveRecord::Schema.define(version: 20141014065831) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "admin_networks"
-    t.string   "url",            default: "http://localhost:3000/"
+    t.boolean  "allow_bookmark_external_url", default: false,                    null: false
+    t.string   "url",                         default: "http://localhost:3000/"
+    t.text     "settings"
+    t.text     "html_snippet"
+    t.string   "email"
   end
 
   add_index "library_groups", ["short_name"], name: "index_library_groups_on_short_name"
@@ -1001,6 +1065,7 @@ ActiveRecord::Schema.define(version: 20141014065831) do
     t.string   "checkout_icalendar_token"
     t.boolean  "save_checkout_history",    default: false, null: false
     t.datetime "expired_at"
+    t.boolean  "share_bookmarks"
     t.text     "full_name_transcription"
     t.datetime "date_of_birth"
   end
@@ -1326,6 +1391,26 @@ ActiveRecord::Schema.define(version: 20141014065831) do
   add_index "subscriptions", ["order_list_id"], name: "index_subscriptions_on_order_list_id"
   add_index "subscriptions", ["user_id"], name: "index_subscriptions_on_user_id"
 
+  create_table "taggings", force: :cascade do |t|
+    t.integer  "tag_id"
+    t.integer  "taggable_id"
+    t.string   "taggable_type"
+    t.integer  "tagger_id"
+    t.string   "tagger_type"
+    t.string   "context"
+    t.datetime "created_at"
+  end
+
+  add_index "taggings", ["tag_id"], name: "index_taggings_on_tag_id"
+  add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context"
+
+  create_table "tags", force: :cascade do |t|
+    t.string   "name"
+    t.string   "name_transcription"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "use_restrictions", force: :cascade do |t|
     t.string   "name",         null: false
     t.text     "display_name"
@@ -1367,6 +1452,7 @@ ActiveRecord::Schema.define(version: 20141014065831) do
     t.integer  "user_export_file_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "most_recent"
   end
 
   add_index "user_export_file_transitions", ["sort_key", "user_export_file_id"], name: "index_user_export_file_transitions_on_sort_key_and_file_id", unique: true
@@ -1435,6 +1521,7 @@ ActiveRecord::Schema.define(version: 20141014065831) do
     t.integer  "user_import_file_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "most_recent"
   end
 
   add_index "user_import_file_transitions", ["sort_key", "user_import_file_id"], name: "index_user_import_file_transitions_on_sort_key_and_file_id", unique: true
@@ -1446,7 +1533,7 @@ ActiveRecord::Schema.define(version: 20141014065831) do
     t.datetime "executed_at"
     t.string   "user_import_file_name"
     t.string   "user_import_content_type"
-    t.string   "user_import_file_size"
+    t.integer  "user_import_file_size"
     t.datetime "user_import_updated_at"
     t.string   "user_import_fingerprint"
     t.string   "edit_mode"
@@ -1464,6 +1551,7 @@ ActiveRecord::Schema.define(version: 20141014065831) do
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "error_message"
   end
 
   create_table "user_reserve_stat_transitions", force: :cascade do |t|
@@ -1531,5 +1619,16 @@ ActiveRecord::Schema.define(version: 20141014065831) do
   end
 
   add_index "versions", ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id"
+
+  create_table "withdraws", force: :cascade do |t|
+    t.integer  "basket_id"
+    t.integer  "item_id"
+    t.integer  "librarian_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "withdraws", ["basket_id"], name: "index_withdraws_on_basket_id"
+  add_index "withdraws", ["item_id"], name: "index_withdraws_on_item_id"
 
 end
