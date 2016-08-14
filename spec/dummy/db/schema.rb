@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160813203039) do
+ActiveRecord::Schema.define(version: 20160814165332) do
 
   create_table "accepts", force: :cascade do |t|
     t.integer  "basket_id"
@@ -932,6 +932,7 @@ ActiveRecord::Schema.define(version: 20160813203039) do
     t.integer  "message_request_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "most_recent"
   end
 
   add_index "message_request_transitions", ["message_request_id"], name: "index_message_request_transitions_on_message_request_id"
@@ -962,11 +963,12 @@ ActiveRecord::Schema.define(version: 20160813203039) do
 
   create_table "message_transitions", force: :cascade do |t|
     t.string   "to_state"
-    t.text     "metadata",   default: "{}"
+    t.text     "metadata",    default: "{}"
     t.integer  "sort_key"
     t.integer  "message_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "most_recent"
   end
 
   add_index "message_transitions", ["message_id"], name: "index_message_transitions_on_message_id"
