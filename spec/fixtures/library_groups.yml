@@ -7,7 +7,7 @@ one:
   note: 
   my_networks: 0.0.0.0/0
   url: "http://localhost:3000/"
-
+  user_id: 1
 
 # == Schema Information
 #
