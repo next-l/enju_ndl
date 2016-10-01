@@ -38,6 +38,8 @@ describe NdlBook do
       manifestation.subjects.first.subject_heading_type.name.should eq 'ndlsh'
       manifestation.subjects.first.term.should eq 'プログラミング (コンピュータ)'
       manifestation.statement_of_responsibility.should eq '秋葉拓哉, 岩田陽一, 北川宜稔 著; Usu-ya 編'
+      manifestation.extent.should eq "315p"
+      manifestation.dimensions.should eq "24cm"
     end
 
     it "should import bibliographic record that does not have any classifications", :vcr => true do
@@ -197,6 +199,9 @@ describe NdlBook do
     it "should import even with invalid url", vcr: true do
       manifestation = NdlBook.import_from_sru_response( "R100000002-I000003523406-00 " )
       expect(manifestation.original_title).to eq "The little boat / written by Kathy Henderson ; illustrated by Patrick Benson"
+      expect(manifestation.language.name).to eq "English"
+      expect(manifestation.extent).to eq "1 v. (unpaged) : col. ill."
+      expect(manifestation.dimensions).to eq "25 x 29 cm"
     end
   end
 end

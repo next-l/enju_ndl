@@ -132,6 +132,8 @@ module EnjuNdl
             :start_page => extent[:start_page],
             :end_page => extent[:end_page],
             :height => extent[:height],
+            :extent => extent[:extent],
+            :dimensions => extent[:dimensions],
             :publication_place => publication_place,
             :edition_string => edition_string,
           )
@@ -349,11 +351,13 @@ module EnjuNdl
         if extent
           extent = extent.split(';')
           page = extent[0].try(:strip)
+          value[:extent] = page
           if page =~ /\d+p/
             value[:start_page] = 1
             value[:end_page] = page.to_i
           end
           height = extent[1].try(:strip)
+          value[:dimensions] = height
           if height =~ /\d+cm/
             value[:height] = height.to_i
           end
