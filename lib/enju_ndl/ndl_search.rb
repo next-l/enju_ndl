@@ -213,8 +213,11 @@ module EnjuNdl
             end
             if classification_urls
               classification_urls.each do |url|
-                ndc_url = URI.parse(URI.escape(url))
-                if ndc_url.path.split('/').reverse[1] == "ndc9"
+                begin
+                  ndc_url = URI.parse(URI.escape(url))
+                rescue URI::InvalidURIError
+                end
+                if ndc_url and ndc_url.path.split('/').reverse[1] == "ndc9"
                   ndc_type = "ndc9"
                   ndc = ndc_url.path.split('/').last
                   classification_type = ClassificationType.where(name: ndc_type).first || ClassificationType.create!(name: ndc_type)

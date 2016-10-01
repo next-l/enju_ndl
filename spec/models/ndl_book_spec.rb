@@ -193,5 +193,10 @@ describe NdlBook do
       manifestation.original_title.should eq "じゃらん 関東・東北"
       manifestation.title_transcription.should eq "ジャラン カントウ トウホク"
     end
+
+    it "should import even with invalid url", vcr: true do
+      manifestation = NdlBook.import_from_sru_response( "R100000002-I000003523406-00 " )
+      expect(manifestation.original_title).to eq "The little boat / written by Kathy Henderson ; illustrated by Patrick Benson"
+    end
   end
 end
