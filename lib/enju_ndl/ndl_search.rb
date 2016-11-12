@@ -132,6 +132,8 @@ module EnjuNdl
             :start_page => extent[:start_page],
             :end_page => extent[:end_page],
             :height => extent[:height],
+            :extent => extent[:extent],
+            :dimensions => extent[:dimensions],
             :publication_place => publication_place,
             :edition_string => edition_string,
           )
@@ -213,8 +215,11 @@ module EnjuNdl
             end
             if classification_urls
               classification_urls.each do |url|
-                ndc_url = URI.parse(URI.escape(url))
-                if ndc_url.path.split('/').reverse[1] == "ndc9"
+                begin
+                  ndc_url = URI.parse(URI.escape(url))
+                rescue URI::InvalidURIError
+                end
+                if ndc_url and ndc_url.path.split('/').reverse[1] == "ndc9"
                   ndc_type = "ndc9"
                   ndc = ndc_url.path.split('/').last
                   classification_type = ClassificationType.where(name: ndc_type).first || ClassificationType.create!(name: ndc_type)
@@ -280,6 +285,11 @@ module EnjuNdl
           :alternative => doc.at('//dcndl:alternative/rdf:Description/rdf:value').try(:content),
           :alternative_transcription => doc.at('//dcndl:alternative/rdf:Description/dcndl:transcription').try(:content)
         }
+        volumeTitle = doc.at('//dcndl:volumeTitle/rdf:Description/rdf:value').try(:content)
+        volumeTitle_transcription = doc.at('//dcndl:volumeTitle/rdf:Description/dcndl:transcription').try(:content)
+        title[:manifestation] << " #{ volumeTitle }" if volumeTitle
+        title[:transcription] << " #{ volumeTitle_transcription }" if volumeTitle_transcription
+        title
       end
 
       def get_creators(doc)
@@ -341,11 +351,13 @@ module EnjuNdl
         if extent
           extent = extent.split(';')
           page = extent[0].try(:strip)
+          value[:extent] = page
           if page =~ /\d+p/
             value[:start_page] = 1
             value[:end_page] = page.to_i
           end
           height = extent[1].try(:strip)
+          value[:dimensions] = height
           if height =~ /\d+cm/
             value[:height] = height.to_i
           end

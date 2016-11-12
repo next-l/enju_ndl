@@ -1,8 +1,5 @@
-require 'nokogiri'
+require 'enju_subject'
 require 'rss'
-require 'lisbn'
-require 'library_stdnums'
-require 'faraday'
 
 module EnjuNdl
   class Engine < ::Rails::Engine
