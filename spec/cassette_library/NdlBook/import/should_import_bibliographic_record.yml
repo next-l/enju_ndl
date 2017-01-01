@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.9.2
+      - Faraday v0.10.1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -19,28 +19,28 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 06 Jul 2016 16:14:35 GMT
+      - Sun, 01 Jan 2017 09:29:42 GMT
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
       X-Runtime:
-      - '0.125996'
+      - '1.020070'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Etag:
-      - '"224b74ad02ef70141036f72e34460151"'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
+      - '"dc2dd9f672b54d076db9bd8637e6a93c"'
       Status:
       - '200'
       Content-Type:
       - application/xml; charset=utf-8
       Set-Cookie:
-      - ROUTEID=.ps01; path=/
-      - TS01cb7804=011338590a51daccff5262a97bc64730b11ba7f848a78e5970bee92a25920ba3d0c25e355097b9eeb11afae0943d8752f7d94f1e71;
+      - ROUTEID=.ps26; path=/
+      - TS01cb7804=011338590a4700092bfcac71d5eb746e05384078d1798ddaf0aa0e9be9b6551a50cebb1cd978f413815cac60e588800067b9d96b71;
         path=/; domain=.iss.ndl.go.jp
-      - TS01f3cfdf=011338590a2fe060d4109681c86e13dcffa7cc4879ea9e188ea2b82d6c9ea2171f22c99d531a411043f901890fe7b0ddd6ecc67fc5b60513f9be7c1fc5b0a7c171bba8bc0dfc3ce0e527dc958198220b5b9a92d28d;
+      - TS01f3cfdf=011338590ae3aee1706b9228b1db3a57f27dd4d93c58dc2c8e07aaf5c75bd14d35534e23f23982d2380964b7d3394ca3a57a550b0ca5304f658777d9d914dce423340714983c52509a0be3097b14b7255cc861f8c4;
         Path=/
-      - _front_session_id=b604b034a73b7d5260bff2720dd4ef4d; domain=.iss.ndl.go.jp;
-        path=/; expires=Wed, 06-Jul-2016 17:14:35 GMT; HttpOnly
-      - ndl.go.jp=rd2o00000000000000000000ffff0a024f68o80; path=/
+      - _front_session_id=4c50be1dee1b5094608f510160775dd0; domain=.iss.ndl.go.jp;
+        path=/; expires=Sun, 01-Jan-2017 10:29:43 GMT; HttpOnly
+      - ndl.go.jp=rd2o00000000000000000000ffff0a024f69o80; path=/
       - serverid=1101; path=/
       Vary:
       - Accept-Encoding,User-Agent
@@ -85,14 +85,14 @@ http_interactions:
         ZFNjaGVtYT4KICAgICAgPHJlY29yZFBhY2tpbmc+c3RyaW5nPC9yZWNvcmRQ
         YWNraW5nPgogICAgICA8cmVjb3JkRGF0YT4KJmx0O3JkZjpSREYgeG1sbnM6
         ZGN0ZXJtcz0mcXVvdDtodHRwOi8vcHVybC5vcmcvZGMvdGVybXMvJnF1b3Q7
-        IHhtbG5zOmZvYWY9JnF1b3Q7aHR0cDovL3htbG5zLmNvbS9mb2FmLzAuMS8m
-        cXVvdDsgeG1sbnM6ZGM9JnF1b3Q7aHR0cDovL3B1cmwub3JnL2RjL2VsZW1l
-        bnRzLzEuMS8mcXVvdDsgeG1sbnM6cmRmcz0mcXVvdDtodHRwOi8vd3d3Lncz
-        Lm9yZy8yMDAwLzAxL3JkZi1zY2hlbWEjJnF1b3Q7IHhtbG5zOm93bD0mcXVv
-        dDtodHRwOi8vd3d3LnczLm9yZy8yMDAyLzA3L293bCMmcXVvdDsgeG1sbnM6
-        cmRmPSZxdW90O2h0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5
-        bnRheC1ucyMmcXVvdDsgeG1sbnM6ZGNuZGw9JnF1b3Q7aHR0cDovL25kbC5n
-        by5qcC9kY25kbC90ZXJtcy8mcXVvdDsmZ3Q7CiAgJmx0O2RjbmRsOkJpYkFk
+        IHhtbG5zOnJkZj0mcXVvdDtodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIy
+        LXJkZi1zeW50YXgtbnMjJnF1b3Q7IHhtbG5zOnJkZnM9JnF1b3Q7aHR0cDov
+        L3d3dy53My5vcmcvMjAwMC8wMS9yZGYtc2NoZW1hIyZxdW90OyB4bWxuczpk
+        Yz0mcXVvdDtodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyZxdW90
+        OyB4bWxuczpvd2w9JnF1b3Q7aHR0cDovL3d3dy53My5vcmcvMjAwMi8wNy9v
+        d2wjJnF1b3Q7IHhtbG5zOmRjbmRsPSZxdW90O2h0dHA6Ly9uZGwuZ28uanAv
+        ZGNuZGwvdGVybXMvJnF1b3Q7IHhtbG5zOmZvYWY9JnF1b3Q7aHR0cDovL3ht
+        bG5zLmNvbS9mb2FmLzAuMS8mcXVvdDsmZ3Q7CiAgJmx0O2RjbmRsOkJpYkFk
         bWluUmVzb3VyY2UgcmRmOmFib3V0PSZxdW90O2h0dHA6Ly9pc3MubmRsLmdv
         LmpwL2Jvb2tzL1IxMDAwMDAwMDItSTAwMDAxMDk4MDkwMS0wMCZxdW90OyZn
         dDsKICAgICZsdDtkY25kbDpjYXRhbG9naW5nU3RhdHVzJmd0O0M3Jmx0Oy9k
@@ -200,5 +200,5 @@ http_interactions:
         CiAgICA8L3JlY29yZD4KICA8L3JlY29yZHM+Cjwvc2VhcmNoUmV0cmlldmVS
         ZXNwb25zZT4K
     http_version: 
-  recorded_at: Wed, 06 Jul 2016 16:14:35 GMT
+  recorded_at: Sun, 01 Jan 2017 09:29:42 GMT
 recorded_with: VCR 3.0.3

@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.9.2
+      - Faraday v0.10.1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -19,13 +19,13 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 06 Jul 2016 16:15:09 GMT
+      - Sun, 01 Jan 2017 09:31:02 GMT
       Cache-Control:
       - max-age=0, private, must-revalidate
-      X-Runtime:
-      - '0.160739'
       Etag:
-      - '"5ea63f68747e31da0936a6fdf10172d9"'
+      - '"cc36d72669279bf077b26b5fb1278db0"'
+      X-Runtime:
+      - '1.047037'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Status:
@@ -33,13 +33,13 @@ http_interactions:
       Content-Type:
       - application/xml; charset=utf-8
       Set-Cookie:
-      - ROUTEID=.ps21; path=/
-      - TS01cb7804=011338590ad535504901ff3bcff55e9c47de2d2b46e8be404ea3eaab0a49a31c9e9b0fdf4513a78f3c7cb3791dee82a28ce315e632;
+      - ROUTEID=.ps23; path=/
+      - TS01cb7804=011338590a811a1169a3561b222b72fcc90421aa56b190eebbfe95c32cd9c65942d0e3b3a239f3e1993b2de42591c5d64d3119bdbd;
         path=/; domain=.iss.ndl.go.jp
-      - TS01f3cfdf=011338590a35af841b77fe8e652e3e0e21c258320f1a43f4a4f04bdc3a58b7a86a136585892208398aa112fd74196bef578db657fc2c9d943eaec702369a8e2f217d604913a4fc6ab70846440b1733171b5aa70f44;
+      - TS01f3cfdf=011338590ac465a1d13b1c1874d3121aed391e0e167a37267c5f3d67639c1f026326d4ad218adb10d8e27f8eb6798f7638ce9e4dd8ddf6880b0692d5bf878e3d1ca2ccd0bf6323761d5b65ab741f03ccea9fc0fea0;
         Path=/
-      - _front_session_id=4b3065b7e07e67cf57653bc527a2c876; domain=.iss.ndl.go.jp;
-        path=/; expires=Wed, 06-Jul-2016 17:15:09 GMT; HttpOnly
+      - _front_session_id=0519c7fcc4981bc93df18e2edbbefe25; domain=.iss.ndl.go.jp;
+        path=/; expires=Sun, 01-Jan-2017 10:31:03 GMT; HttpOnly
       - ndl.go.jp=rd2o00000000000000000000ffff0a024f68o80; path=/
       - serverid=1101; path=/
       Vary:
@@ -49,7 +49,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Content-Length:
-      - '1587'
+      - '1588'
       Connection:
       - close
     body:
@@ -75,14 +75,14 @@ http_interactions:
         ZWNvcmRTY2hlbWE+aW5mbzpzcncvc2NoZW1hLzEvZGMtdjEuMTwvcmVjb3Jk
         U2NoZW1hPgogICAgICA8cmVjb3JkUGFja2luZz5zdHJpbmc8L3JlY29yZFBh
         Y2tpbmc+CiAgICAgIDxyZWNvcmREYXRhPgombHQ7cmRmOlJERiB4bWxuczpk
-        Y25kbD0mcXVvdDtodHRwOi8vbmRsLmdvLmpwL2RjbmRsL3Rlcm1zLyZxdW90
-        OyB4bWxuczpyZGZzPSZxdW90O2h0dHA6Ly93d3cudzMub3JnLzIwMDAvMDEv
-        cmRmLXNjaGVtYSMmcXVvdDsgeG1sbnM6Zm9hZj0mcXVvdDtodHRwOi8veG1s
-        bnMuY29tL2ZvYWYvMC4xLyZxdW90OyB4bWxuczpyZGY9JnF1b3Q7aHR0cDov
-        L3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyZxdW90OyB4
-        bWxuczpkYz0mcXVvdDtodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4x
-        LyZxdW90OyB4bWxuczpkY3Rlcm1zPSZxdW90O2h0dHA6Ly9wdXJsLm9yZy9k
-        Yy90ZXJtcy8mcXVvdDsgeG1sbnM6b3dsPSZxdW90O2h0dHA6Ly93d3cudzMu
+        Y3Rlcm1zPSZxdW90O2h0dHA6Ly9wdXJsLm9yZy9kYy90ZXJtcy8mcXVvdDsg
+        eG1sbnM6cmRmPSZxdW90O2h0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjIt
+        cmRmLXN5bnRheC1ucyMmcXVvdDsgeG1sbnM6Zm9hZj0mcXVvdDtodHRwOi8v
+        eG1sbnMuY29tL2ZvYWYvMC4xLyZxdW90OyB4bWxuczpkY25kbD0mcXVvdDto
+        dHRwOi8vbmRsLmdvLmpwL2RjbmRsL3Rlcm1zLyZxdW90OyB4bWxuczpkYz0m
+        cXVvdDtodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyZxdW90OyB4
+        bWxuczpyZGZzPSZxdW90O2h0dHA6Ly93d3cudzMub3JnLzIwMDAvMDEvcmRm
+        LXNjaGVtYSMmcXVvdDsgeG1sbnM6b3dsPSZxdW90O2h0dHA6Ly93d3cudzMu
         b3JnLzIwMDIvMDcvb3dsIyZxdW90OyZndDsKICAmbHQ7ZGNuZGw6QmliQWRt
         aW5SZXNvdXJjZSByZGY6YWJvdXQ9JnF1b3Q7aHR0cDovL2lzcy5uZGwuZ28u
         anAvYm9va3MvUjEwMDAwMDAwMi1JMDI1NDc4Mjk2LTAwJnF1b3Q7Jmd0Owog
@@ -159,15 +159,15 @@ http_interactions:
         ZGMvdGVybXMvSVNPNjM5LTImcXVvdDsmZ3Q7anBuJmx0Oy9kY3Rlcm1zOmxh
         bmd1YWdlJmd0OwogICAgJmx0O2RjdGVybXM6ZXh0ZW50Jmd0O+WcsOWbsyAx
         5p6aIDog6Imy5Yi3IDsgNDbDlzU4Y20mbHQ7L2RjdGVybXM6ZXh0ZW50Jmd0
-        OwogICAgJmx0O2RjbmRsOm1hdGVyaWFsVHlwZSByZGY6cmVzb3VyY2U9JnF1
-        b3Q7aHR0cDovL25kbC5nby5qcC9uZGx0eXBlL01hcCZxdW90OyByZGZzOmxh
-        YmVsPSZxdW90O+WcsOWbsyZxdW90Oy8mZ3Q7CiAgICAmbHQ7ZGNuZGw6bWF0
-        ZXJpYWxUeXBlIHJkZjpyZXNvdXJjZT0mcXVvdDtodHRwOi8vbmRsLmdvLmpw
-        L25kbHR5cGUvR292ZXJubWVudFB1YmxpY2F0aW9uJnF1b3Q7IHJkZnM6bGFi
-        ZWw9JnF1b3Q75pS/5bqc5YiK6KGM54mpJnF1b3Q7LyZndDsKICAgICZsdDtk
-        Y25kbDptYXRlcmlhbFR5cGUgcmRmOnJlc291cmNlPSZxdW90O2h0dHA6Ly9u
-        ZGwuZ28uanAvbmRsdHlwZS9OYXRpb25hbFB1YmxpY2F0aW9uJnF1b3Q7IHJk
-        ZnM6bGFiZWw9JnF1b3Q75a6Y5YWs5bqB5YiK6KGM54mpJnF1b3Q7LyZndDsK
+        OwogICAgJmx0O2RjbmRsOm1hdGVyaWFsVHlwZSByZGZzOmxhYmVsPSZxdW90
+        O+WcsOWbsyZxdW90OyByZGY6cmVzb3VyY2U9JnF1b3Q7aHR0cDovL25kbC5n
+        by5qcC9uZGx0eXBlL01hcCZxdW90Oy8mZ3Q7CiAgICAmbHQ7ZGNuZGw6bWF0
+        ZXJpYWxUeXBlIHJkZnM6bGFiZWw9JnF1b3Q75pS/5bqc5YiK6KGM54mpJnF1
+        b3Q7IHJkZjpyZXNvdXJjZT0mcXVvdDtodHRwOi8vbmRsLmdvLmpwL25kbHR5
+        cGUvR292ZXJubWVudFB1YmxpY2F0aW9uJnF1b3Q7LyZndDsKICAgICZsdDtk
+        Y25kbDptYXRlcmlhbFR5cGUgcmRmczpsYWJlbD0mcXVvdDvlrpjlhazluoHl
+        iIrooYzniakmcXVvdDsgcmRmOnJlc291cmNlPSZxdW90O2h0dHA6Ly9uZGwu
+        Z28uanAvbmRsdHlwZS9OYXRpb25hbFB1YmxpY2F0aW9uJnF1b3Q7LyZndDsK
         ICAgICZsdDtkY3Rlcm1zOmFjY2Vzc1JpZ2h0cyZndDtTMDFQOTlVOTkmbHQ7
         L2RjdGVybXM6YWNjZXNzUmlnaHRzJmd0OwogICAgJmx0O2RjdGVybXM6c3Bh
         dGlhbCByZGY6ZGF0YXR5cGU9JnF1b3Q7VVRNTk8mcXVvdDsmZ3Q7TkotNTQt
@@ -177,5 +177,5 @@ http_interactions:
         bj4KICAgIDwvcmVjb3JkPgogIDwvcmVjb3Jkcz4KPC9zZWFyY2hSZXRyaWV2
         ZVJlc3BvbnNlPgo=
     http_version: 
-  recorded_at: Wed, 06 Jul 2016 16:15:09 GMT
+  recorded_at: Sun, 01 Jan 2017 09:31:02 GMT
 recorded_with: VCR 3.0.3

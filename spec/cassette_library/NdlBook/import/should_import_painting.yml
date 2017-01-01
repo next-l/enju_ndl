@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.9.2
+      - Faraday v0.10.1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -19,27 +19,27 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 06 Jul 2016 16:15:10 GMT
-      X-Runtime:
-      - '0.106104'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
+      - Sun, 01 Jan 2017 09:31:07 GMT
       Etag:
-      - '"cfd302b32f91478ae07ffe6d4a4e89ae"'
+      - '"8029796de3b1b9a56316b527e3632d90"'
       Cache-Control:
       - max-age=0, private, must-revalidate
+      X-Runtime:
+      - '1.018285'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
       Status:
       - '200'
       Content-Type:
       - application/xml; charset=utf-8
       Set-Cookie:
-      - ROUTEID=.ps17; path=/
-      - TS01cb7804=011338590a3a71bb654ffa8bbe85947b7272db63302757d847cb6f034f3717d9f81386983516f05ee460973df7b3b7d674d3a79338;
+      - ROUTEID=.ps20; path=/
+      - TS01cb7804=011338590aada7ba90ce47fd9d2ce4cbf740ad89ad1aa130c8f178dec9c3ab96840dc1f2431daf81b9662fcf4c3426461b786ed955;
         path=/; domain=.iss.ndl.go.jp
-      - TS01f3cfdf=011338590ac5940359c98a6e645a89b2d4fa1c82af59a9b81c81cd426e14939c8867198aafeb7f9c40c3889052b5cddaccbd5b77884deea8c982f4edd1afc3c1fde531ae8a4e5a479726d9427fb9f4d3d2af55f24e;
+      - TS01f3cfdf=011338590a362a5ad436ea26e8726a19e34d87e782677d6030c94adc1a0ef8fb111fdf635d2576c5589e48259148b75742e6c229a28d6cfb5ef7efcd42272d769d5bae0eff3f392fe88bce3f9b34ec758c8464c264;
         Path=/
-      - _front_session_id=91384dca2eaca430eafa8e27a73cc2d5; domain=.iss.ndl.go.jp;
-        path=/; expires=Wed, 06-Jul-2016 17:15:10 GMT; HttpOnly
+      - _front_session_id=123af2e9398dc4095ba12c2561b6636a; domain=.iss.ndl.go.jp;
+        path=/; expires=Sun, 01-Jan-2017 10:31:08 GMT; HttpOnly
       - ndl.go.jp=rd2o00000000000000000000ffff0a024f69o80; path=/
       - serverid=1101; path=/
       Vary:
@@ -49,7 +49,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Content-Length:
-      - '1426'
+      - '1429'
       Connection:
       - close
     body:
@@ -73,16 +73,16 @@ http_interactions:
         bnNlRGF0YT4KICA8cmVjb3Jkcz4KICAgIDxyZWNvcmQ+CiAgICAgIDxyZWNv
         cmRTY2hlbWE+aW5mbzpzcncvc2NoZW1hLzEvZGMtdjEuMTwvcmVjb3JkU2No
         ZW1hPgogICAgICA8cmVjb3JkUGFja2luZz5zdHJpbmc8L3JlY29yZFBhY2tp
-        bmc+CiAgICAgIDxyZWNvcmREYXRhPgombHQ7cmRmOlJERiB4bWxuczpkYz0m
-        cXVvdDtodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyZxdW90OyB4
-        bWxuczpkY3Rlcm1zPSZxdW90O2h0dHA6Ly9wdXJsLm9yZy9kYy90ZXJtcy8m
-        cXVvdDsgeG1sbnM6Zm9hZj0mcXVvdDtodHRwOi8veG1sbnMuY29tL2ZvYWYv
-        MC4xLyZxdW90OyB4bWxuczpvd2w9JnF1b3Q7aHR0cDovL3d3dy53My5vcmcv
-        MjAwMi8wNy9vd2wjJnF1b3Q7IHhtbG5zOnJkZj0mcXVvdDtodHRwOi8vd3d3
-        LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjJnF1b3Q7IHhtbG5z
+        bmc+CiAgICAgIDxyZWNvcmREYXRhPgombHQ7cmRmOlJERiB4bWxuczpmb2Fm
+        PSZxdW90O2h0dHA6Ly94bWxucy5jb20vZm9hZi8wLjEvJnF1b3Q7IHhtbG5z
+        Om93bD0mcXVvdDtodHRwOi8vd3d3LnczLm9yZy8yMDAyLzA3L293bCMmcXVv
+        dDsgeG1sbnM6ZGNuZGw9JnF1b3Q7aHR0cDovL25kbC5nby5qcC9kY25kbC90
+        ZXJtcy8mcXVvdDsgeG1sbnM6cmRmPSZxdW90O2h0dHA6Ly93d3cudzMub3Jn
+        LzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMmcXVvdDsgeG1sbnM6ZGN0ZXJt
+        cz0mcXVvdDtodHRwOi8vcHVybC5vcmcvZGMvdGVybXMvJnF1b3Q7IHhtbG5z
         OnJkZnM9JnF1b3Q7aHR0cDovL3d3dy53My5vcmcvMjAwMC8wMS9yZGYtc2No
-        ZW1hIyZxdW90OyB4bWxuczpkY25kbD0mcXVvdDtodHRwOi8vbmRsLmdvLmpw
-        L2RjbmRsL3Rlcm1zLyZxdW90OyZndDsKICAmbHQ7ZGNuZGw6QmliQWRtaW5S
+        ZW1hIyZxdW90OyB4bWxuczpkYz0mcXVvdDtodHRwOi8vcHVybC5vcmcvZGMv
+        ZWxlbWVudHMvMS4xLyZxdW90OyZndDsKICAmbHQ7ZGNuZGw6QmliQWRtaW5S
         ZXNvdXJjZSByZGY6YWJvdXQ9JnF1b3Q7aHR0cDovL2lzcy5uZGwuZ28uanAv
         Ym9va3MvUjEwMDAwMDAwMi1JMDAwMDA5MTk5OTMwLTAwJnF1b3Q7Jmd0Owog
         ICAgJmx0O2RjbmRsOmNhdGFsb2dpbmdTdGF0dXMmZ3Q7QzcmbHQ7L2RjbmRs
@@ -138,17 +138,17 @@ http_interactions:
         dDtkY3Rlcm1zOmV4dGVudCZndDvopIfoo73nlLsgM+aemiA7IDIxw5cxNmNt
         ICgzMMOXMjFjbSkmbHQ7L2RjdGVybXM6ZXh0ZW50Jmd0OwogICAgJmx0O2Rj
         dGVybXM6YXVkaWVuY2UmZ3Q75LiA6IisJmx0Oy9kY3Rlcm1zOmF1ZGllbmNl
-        Jmd0OwogICAgJmx0O2RjbmRsOm1hdGVyaWFsVHlwZSByZGY6cmVzb3VyY2U9
-        JnF1b3Q7aHR0cDovL3B1cmwub3JnL2RjL2RjbWl0eXBlL1N0aWxsSW1hZ2Um
-        cXVvdDsgcmRmczpsYWJlbD0mcXVvdDvpnZnmraLnlLvos4fmlpkmcXVvdDsv
-        Jmd0OwogICAgJmx0O2RjbmRsOm1hdGVyaWFsVHlwZSByZGY6cmVzb3VyY2U9
-        JnF1b3Q7aHR0cDovL25kbC5nby5qcC9uZGx0eXBlL1BhaW50aW5nJnF1b3Q7
-        IHJkZnM6bGFiZWw9JnF1b3Q757W155S7JnF1b3Q7LyZndDsKICAgICZsdDtk
+        Jmd0OwogICAgJmx0O2RjbmRsOm1hdGVyaWFsVHlwZSByZGZzOmxhYmVsPSZx
+        dW90O+mdmeatoueUu+izh+aWmSZxdW90OyByZGY6cmVzb3VyY2U9JnF1b3Q7
+        aHR0cDovL3B1cmwub3JnL2RjL2RjbWl0eXBlL1N0aWxsSW1hZ2UmcXVvdDsv
+        Jmd0OwogICAgJmx0O2RjbmRsOm1hdGVyaWFsVHlwZSByZGZzOmxhYmVsPSZx
+        dW90O+e1teeUuyZxdW90OyByZGY6cmVzb3VyY2U9JnF1b3Q7aHR0cDovL25k
+        bC5nby5qcC9uZGx0eXBlL1BhaW50aW5nJnF1b3Q7LyZndDsKICAgICZsdDtk
         Y3Rlcm1zOmFjY2Vzc1JpZ2h0cyZndDtTMDFQOTlVOTkmbHQ7L2RjdGVybXM6
         YWNjZXNzUmlnaHRzJmd0OwogICZsdDsvZGNuZGw6QmliUmVzb3VyY2UmZ3Q7
         CiZsdDsvcmRmOlJERiZndDsKICAgICAgPC9yZWNvcmREYXRhPgogICAgICA8
         cmVjb3JkUG9zaXRpb24+MTwvcmVjb3JkUG9zaXRpb24+CiAgICA8L3JlY29y
         ZD4KICA8L3JlY29yZHM+Cjwvc2VhcmNoUmV0cmlldmVSZXNwb25zZT4K
     http_version: 
-  recorded_at: Wed, 06 Jul 2016 16:15:10 GMT
+  recorded_at: Sun, 01 Jan 2017 09:31:08 GMT
 recorded_with: VCR 3.0.3

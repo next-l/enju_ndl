@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.9.2
+      - Faraday v0.10.1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -19,27 +19,27 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 06 Jul 2016 16:15:11 GMT
+      - Sun, 01 Jan 2017 09:31:10 GMT
+      Cache-Control:
+      - max-age=0, private, must-revalidate
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - '"469f4296a1749bd3a9171e6e16f72acb"'
+      - '"6d3ee542d99f359173e8735480d2d934"'
       X-Runtime:
-      - '0.128808'
-      Cache-Control:
-      - max-age=0, private, must-revalidate
+      - '1.095792'
       Status:
       - '200'
       Content-Type:
       - application/xml; charset=utf-8
       Set-Cookie:
-      - ROUTEID=.ps24; path=/
-      - TS01cb7804=011338590a1e4be1fbae9538a4a416c1b7602f13f2230317a8eaf0cdeec830d598bd6eb166afaba567186119831f5e117341048a3c;
+      - ROUTEID=.ps01; path=/
+      - TS01cb7804=011338590ad16a5f17f186e165ca456e09913f1bf170f5fb94b0b78fdddd53e0c595d4c910601c114778cf8b9dbbe45131017e5864;
         path=/; domain=.iss.ndl.go.jp
-      - TS01f3cfdf=011338590afe85ae8c6a12ecd8f20936c9aac3c207458b4636ab540bd9d4415d7660aa1744ebffe34eff5feac42a45e5c3900549044195ba3186d7c6ea8bfa39b17c769b1b37654d2c07ea5dfea13399b8ea9979bb;
+      - TS01f3cfdf=011338590a9a9225ae50d8e73572596f9118263fd5e44c616b8e3ad19729e1674bfb87df2d40a8207f31be3c7dbd0a86dc98c551714122643ec95d953255908cf7c118e9239a70bfa765e0373855f775b720b485da;
         Path=/
-      - _front_session_id=9831bc7219c017c96845a0c0e6f6fa85; domain=.iss.ndl.go.jp;
-        path=/; expires=Wed, 06-Jul-2016 17:15:11 GMT; HttpOnly
+      - _front_session_id=78e46132018024c4ac3b46f649eaff37; domain=.iss.ndl.go.jp;
+        path=/; expires=Sun, 01-Jan-2017 10:31:11 GMT; HttpOnly
       - ndl.go.jp=rd2o00000000000000000000ffff0a024f69o80; path=/
       - serverid=1101; path=/
       Vary:
@@ -48,10 +48,10 @@ http_interactions:
       - nosniff
       X-Frame-Options:
       - SAMEORIGIN
-      Content-Length:
-      - '1549'
       Connection:
       - close
+      Transfer-Encoding:
+      - chunked
     body:
       encoding: ASCII-8BIT
       string: !binary |-
@@ -78,14 +78,14 @@ http_interactions:
         ICAgPHJlY29yZFNjaGVtYT5pbmZvOnNydy9zY2hlbWEvMS9kYy12MS4xPC9y
         ZWNvcmRTY2hlbWE+CiAgICAgIDxyZWNvcmRQYWNraW5nPnN0cmluZzwvcmVj
         b3JkUGFja2luZz4KICAgICAgPHJlY29yZERhdGE+CiZsdDtyZGY6UkRGIHht
-        bG5zOmRjbmRsPSZxdW90O2h0dHA6Ly9uZGwuZ28uanAvZGNuZGwvdGVybXMv
-        JnF1b3Q7IHhtbG5zOm93bD0mcXVvdDtodHRwOi8vd3d3LnczLm9yZy8yMDAy
-        LzA3L293bCMmcXVvdDsgeG1sbnM6cmRmPSZxdW90O2h0dHA6Ly93d3cudzMu
-        b3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMmcXVvdDsgeG1sbnM6Zm9h
-        Zj0mcXVvdDtodHRwOi8veG1sbnMuY29tL2ZvYWYvMC4xLyZxdW90OyB4bWxu
-        czpkYz0mcXVvdDtodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyZx
-        dW90OyB4bWxuczpyZGZzPSZxdW90O2h0dHA6Ly93d3cudzMub3JnLzIwMDAv
-        MDEvcmRmLXNjaGVtYSMmcXVvdDsgeG1sbnM6ZGN0ZXJtcz0mcXVvdDtodHRw
+        bG5zOnJkZj0mcXVvdDtodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJk
+        Zi1zeW50YXgtbnMjJnF1b3Q7IHhtbG5zOmZvYWY9JnF1b3Q7aHR0cDovL3ht
+        bG5zLmNvbS9mb2FmLzAuMS8mcXVvdDsgeG1sbnM6cmRmcz0mcXVvdDtodHRw
+        Oi8vd3d3LnczLm9yZy8yMDAwLzAxL3JkZi1zY2hlbWEjJnF1b3Q7IHhtbG5z
+        OmRjbmRsPSZxdW90O2h0dHA6Ly9uZGwuZ28uanAvZGNuZGwvdGVybXMvJnF1
+        b3Q7IHhtbG5zOmRjPSZxdW90O2h0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50
+        cy8xLjEvJnF1b3Q7IHhtbG5zOm93bD0mcXVvdDtodHRwOi8vd3d3LnczLm9y
+        Zy8yMDAyLzA3L293bCMmcXVvdDsgeG1sbnM6ZGN0ZXJtcz0mcXVvdDtodHRw
         Oi8vcHVybC5vcmcvZGMvdGVybXMvJnF1b3Q7Jmd0OwogICZsdDtkY25kbDpC
         aWJBZG1pblJlc291cmNlIHJkZjphYm91dD0mcXVvdDtodHRwOi8vaXNzLm5k
         bC5nby5qcC9ib29rcy9SMTAwMDAwMDAyLUkwMjQwMTY0OTctMDAmcXVvdDsm
@@ -169,5 +169,5 @@ http_interactions:
         CiAgICA8L3JlY29yZD4KICA8L3JlY29yZHM+Cjwvc2VhcmNoUmV0cmlldmVS
         ZXNwb25zZT4K
     http_version: 
-  recorded_at: Wed, 06 Jul 2016 16:15:11 GMT
+  recorded_at: Sun, 01 Jan 2017 09:31:11 GMT
 recorded_with: VCR 3.0.3

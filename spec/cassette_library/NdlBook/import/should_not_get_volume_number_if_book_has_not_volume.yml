@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.9.2
+      - Faraday v0.10.1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -19,27 +19,27 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 06 Jul 2016 16:15:04 GMT
-      Etag:
-      - '"29cb0277710849474cf42bf1fae961f1"'
+      - Sun, 01 Jan 2017 09:30:27 GMT
       X-Runtime:
-      - '0.248958'
+      - '0.554346'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Cache-Control:
       - max-age=0, private, must-revalidate
+      Etag:
+      - '"6cd0e7fb8a767fdd3dea48a4704b50de"'
       Status:
       - '200'
       Content-Type:
       - application/xml; charset=utf-8
       Set-Cookie:
-      - ROUTEID=.ps19; path=/
-      - TS01cb7804=011338590acc5522f3951ba5b6b0af047070cc21b520f6636490e7a9aaedfc0cc2332936b05e5a957d820e0d9076a42d1798ad0262;
+      - ROUTEID=.ps05; path=/
+      - TS01cb7804=011338590a7b26da0b61b794ec5e8af92e635c9254d2d04eedaa0b59fe4a03076c0748bc7a4ee6d0f3d2eac3869343d68adfda4f83;
         path=/; domain=.iss.ndl.go.jp
-      - TS01f3cfdf=011338590abf207fff50ae687929e0fde6a9e90d9107b118f072f43af591c019ed9685539bfddbae9839de4c511dd768fbd7b1c845c67558719ed0fc83fbca152b953fe8b781078b976d7d3f078e379f12cca5f19c;
+      - TS01f3cfdf=011338590ac9b7a2facc45eb5e3893307ea49e3bf13328924a4355fb76a5c752c2a6721e29b45e5eac5190a5b363555c3012514e7da0cee660c417e35e515ea4a6024637f82d4c95f3c704142b42fd97277ba384e5;
         Path=/
-      - _front_session_id=92d4f64e0567c831ef4fbf8807b4dca6; domain=.iss.ndl.go.jp;
-        path=/; expires=Wed, 06-Jul-2016 17:15:04 GMT; HttpOnly
+      - _front_session_id=391df6d3f00e24949b38191fd87e4e7f; domain=.iss.ndl.go.jp;
+        path=/; expires=Sun, 01-Jan-2017 10:30:27 GMT; HttpOnly
       - ndl.go.jp=rd2o00000000000000000000ffff0a024f69o80; path=/
       - serverid=1101; path=/
       Vary:
@@ -49,30 +49,30 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Content-Length:
-      - '1448'
+      - '1468'
       Connection:
       - close
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHJzcyB2
-        ZXJzaW9uPSIyLjAiIHhtbG5zOmRjbWl0eXBlPSJodHRwOi8vcHVybC5vcmcv
-        ZGMvZGNtaXR5cGUvIiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5
-        OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiIHhtbG5zOmRjPSJodHRwOi8vcHVy
-        bC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6ZGNuZGw9Imh0dHA6Ly9u
-        ZGwuZ28uanAvZGNuZGwvdGVybXMvIiB4bWxuczpkY3Rlcm1zPSJodHRwOi8v
-        cHVybC5vcmcvZGMvdGVybXMvIiB4bWxuczpyZGZzPSJodHRwOi8vd3d3Lncz
-        Lm9yZy8yMDAwLzAxL3JkZi1zY2hlbWEjIiB4bWxuczpvcGVuU2VhcmNoPSJo
-        dHRwOi8vYTkuY29tLy0vc3BlYy9vcGVuc2VhcmNocnNzLzEuMC8iIHhtbG5z
-        OnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFu
-        Y2UiPgogIDxjaGFubmVsPgogICAgPHRpdGxlPjEgOTc4LTQtMDQtODc0MDEz
+        PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHJzcyB4
+        bWxuczp4c2k9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWlu
+        c3RhbmNlIiB4bWxuczpkY25kbD0iaHR0cDovL25kbC5nby5qcC9kY25kbC90
+        ZXJtcy8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMv
+        MS4xLyIgeG1sbnM6b3BlblNlYXJjaD0iaHR0cDovL2E5LmNvbS8tL3NwZWMv
+        b3BlbnNlYXJjaHJzcy8xLjAvIiB4bWxuczpkY3Rlcm1zPSJodHRwOi8vcHVy
+        bC5vcmcvZGMvdGVybXMvIiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3Jn
+        LzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiIHhtbG5zOmRjbWl0eXBlPSJo
+        dHRwOi8vcHVybC5vcmcvZGMvZGNtaXR5cGUvIiB4bWxuczpyZGZzPSJodHRw
+        Oi8vd3d3LnczLm9yZy8yMDAwLzAxL3JkZi1zY2hlbWEjIiB2ZXJzaW9uPSIy
+        LjAiPgogIDxjaGFubmVsPgogICAgPHRpdGxlPjEgOTc4LTQtMDQtODc0MDEz
         LTUgaXNzLW5kbC1vcGFjIC0g5Zu956uL5Zu95Lya5Zuz5pu46aSo44K144O8
         44OBIE9wZW5TZWFyY2g8L3RpdGxlPgogICAgPGxpbms+aHR0cDovL2lzcy5u
         ZGwuZ28uanAvYXBpL29wZW5zZWFyY2g/aWR4PTEmYW1wO2FueT05NzgtNC0w
         NC04NzQwMTMtNSZhbXA7ZHBpZD1pc3MtbmRsLW9wYWMmYW1wO2NudD0xMCZh
         bXA7bWVkaWF0eXBlPTE8L2xpbms+CiAgICA8ZGVzY3JpcHRpb24+U2VhcmNo
-        IHJlc3VsdHMgZm9yIGRwaWQ9aXNzLW5kbC1vcGFjIGFueT05NzgtNC0wNC04
-        NzQwMTMtNSBjbnQ9MTAgbWVkaWF0eXBlPTEgPC9kZXNjcmlwdGlvbj4KICAg
+        IHJlc3VsdHMgZm9yIGNudD0xMCBtZWRpYXR5cGU9MSBkcGlkPWlzcy1uZGwt
+        b3BhYyBhbnk9OTc4LTQtMDQtODc0MDEzLTUgPC9kZXNjcmlwdGlvbj4KICAg
         IDxsYW5ndWFnZT5qYTwvbGFuZ3VhZ2U+CiAgICA8b3BlblNlYXJjaDp0b3Rh
         bFJlc3VsdHM+MTwvb3BlblNlYXJjaDp0b3RhbFJlc3VsdHM+CiAgICA8b3Bl
         blNlYXJjaDpzdGFydEluZGV4PjE8L29wZW5TZWFyY2g6c3RhcnRJbmRleD4K
@@ -140,7 +140,10 @@ http_interactions:
         MTU3OTg0OCIvPgogICAgICA8cmRmczpzZWVBbHNvIHJkZjpyZXNvdXJjZT0i
         aHR0cHM6Ly93d3cyLmxpYnJhcnkucHJlZi5zaGltYW5lLmxnLmpwL29wYWMv
         c3dpdGNoLWRldGFpbC1pY2NhcC5kbz9iaWJpZD0xMTEwMDQ2NTEwIi8+CiAg
-        ICA8L2l0ZW0+CiAgPC9jaGFubmVsPgo8L3Jzcz4K
+        ICAgIDxyZGZzOnNlZUFsc28gcmRmOnJlc291cmNlPSJodHRwczovL3d3dy5s
+        aWJyYXJ5LnByZWYub3Nha2EuanAvbGljc3hwLW9wYWMvV09wYWNNc2dOZXdM
+        aXN0VG9UaWZUaWxEZXRhaWxBY3Rpb24uZG8/dGlsY29kPTEwMDIwOTAxNjM3
+        ODgwIi8+CiAgICA8L2l0ZW0+CiAgPC9jaGFubmVsPgo8L3Jzcz4K
     http_version: 
-  recorded_at: Wed, 06 Jul 2016 16:15:05 GMT
+  recorded_at: Sun, 01 Jan 2017 09:30:26 GMT
 recorded_with: VCR 3.0.3

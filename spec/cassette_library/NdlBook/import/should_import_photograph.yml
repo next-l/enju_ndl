@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.9.2
+      - Faraday v0.10.1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -19,28 +19,28 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 06 Jul 2016 16:15:10 GMT
+      - Sun, 01 Jan 2017 09:31:06 GMT
       X-Runtime:
-      - '0.125077'
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Etag:
-      - '"e160be38528286bf95fefb467af12f82"'
+      - '1.039122'
       Cache-Control:
       - max-age=0, private, must-revalidate
+      Etag:
+      - '"a5936cb9df659f9acf55d92962a385b3"'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
       Status:
       - '200'
       Content-Type:
       - application/xml; charset=utf-8
       Set-Cookie:
-      - ROUTEID=.ps28; path=/
-      - TS01cb7804=011338590a201f42fcbe157f9dd56f12e3b479be2616692d4a7fc970b55eeecd50b7b8238077b81c6fc62441bad02daf7ab17d42f7;
+      - ROUTEID=.ps19; path=/
+      - TS01cb7804=011338590a1649e760683cc963ebf6ccae86b43541bf826c34ab4672d08a66ea3a168c40d461c20ca4954e3a65ebd57fed5530d991;
         path=/; domain=.iss.ndl.go.jp
-      - TS01f3cfdf=011338590a0542dfb37114dc9447e1d814326d0d9fcac5e2cd7959441110b743ce7e29fb49f44f9b1a0e74092b6f17268327db852694afcbca7e5a07407b4e2a7e58fa04574172e2e5b76796e711a0b11d97e7d6a7;
+      - TS01f3cfdf=011338590a3c79c01f1b48343a309e5a4d5b9faf50b8048e326d48fa821db39df57c3098245fec174a22b3e7f5eedaff5fb0c79fe95347127053d1d85bebe72122923b8ec08f326046e4461afe615469a3193f83b7;
         Path=/
-      - _front_session_id=a9d19c5f13395d9c6b8bb14ba6ad9153; domain=.iss.ndl.go.jp;
-        path=/; expires=Wed, 06-Jul-2016 17:15:10 GMT; HttpOnly
-      - ndl.go.jp=rd2o00000000000000000000ffff0a024f68o80; path=/
+      - _front_session_id=fb57adac70584f4b2e2b9289e9c3a1de; domain=.iss.ndl.go.jp;
+        path=/; expires=Sun, 01-Jan-2017 10:31:07 GMT; HttpOnly
+      - ndl.go.jp=rd2o00000000000000000000ffff0a024f6co80; path=/
       - serverid=1101; path=/
       Vary:
       - Accept-Encoding,User-Agent
@@ -49,7 +49,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Content-Length:
-      - '1402'
+      - '1404'
       Connection:
       - close
     body:
@@ -73,15 +73,15 @@ http_interactions:
         bnNlRGF0YT4KICA8cmVjb3Jkcz4KICAgIDxyZWNvcmQ+CiAgICAgIDxyZWNv
         cmRTY2hlbWE+aW5mbzpzcncvc2NoZW1hLzEvZGMtdjEuMTwvcmVjb3JkU2No
         ZW1hPgogICAgICA8cmVjb3JkUGFja2luZz5zdHJpbmc8L3JlY29yZFBhY2tp
-        bmc+CiAgICAgIDxyZWNvcmREYXRhPgombHQ7cmRmOlJERiB4bWxuczpyZGZz
-        PSZxdW90O2h0dHA6Ly93d3cudzMub3JnLzIwMDAvMDEvcmRmLXNjaGVtYSMm
-        cXVvdDsgeG1sbnM6ZGM9JnF1b3Q7aHR0cDovL3B1cmwub3JnL2RjL2VsZW1l
-        bnRzLzEuMS8mcXVvdDsgeG1sbnM6cmRmPSZxdW90O2h0dHA6Ly93d3cudzMu
-        b3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMmcXVvdDsgeG1sbnM6ZGN0
-        ZXJtcz0mcXVvdDtodHRwOi8vcHVybC5vcmcvZGMvdGVybXMvJnF1b3Q7IHht
-        bG5zOmRjbmRsPSZxdW90O2h0dHA6Ly9uZGwuZ28uanAvZGNuZGwvdGVybXMv
-        JnF1b3Q7IHhtbG5zOmZvYWY9JnF1b3Q7aHR0cDovL3htbG5zLmNvbS9mb2Fm
-        LzAuMS8mcXVvdDsgeG1sbnM6b3dsPSZxdW90O2h0dHA6Ly93d3cudzMub3Jn
+        bmc+CiAgICAgIDxyZWNvcmREYXRhPgombHQ7cmRmOlJERiB4bWxuczpyZGY9
+        JnF1b3Q7aHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4
+        LW5zIyZxdW90OyB4bWxuczpkYz0mcXVvdDtodHRwOi8vcHVybC5vcmcvZGMv
+        ZWxlbWVudHMvMS4xLyZxdW90OyB4bWxuczpkY25kbD0mcXVvdDtodHRwOi8v
+        bmRsLmdvLmpwL2RjbmRsL3Rlcm1zLyZxdW90OyB4bWxuczpyZGZzPSZxdW90
+        O2h0dHA6Ly93d3cudzMub3JnLzIwMDAvMDEvcmRmLXNjaGVtYSMmcXVvdDsg
+        eG1sbnM6Zm9hZj0mcXVvdDtodHRwOi8veG1sbnMuY29tL2ZvYWYvMC4xLyZx
+        dW90OyB4bWxuczpkY3Rlcm1zPSZxdW90O2h0dHA6Ly9wdXJsLm9yZy9kYy90
+        ZXJtcy8mcXVvdDsgeG1sbnM6b3dsPSZxdW90O2h0dHA6Ly93d3cudzMub3Jn
         LzIwMDIvMDcvb3dsIyZxdW90OyZndDsKICAmbHQ7ZGNuZGw6QmliQWRtaW5S
         ZXNvdXJjZSByZGY6YWJvdXQ9JnF1b3Q7aHR0cDovL2lzcy5uZGwuZ28uanAv
         Ym9va3MvUjEwMDAwMDAwMi1JMDAwMDEwNjc3MjI1LTAwJnF1b3Q7Jmd0Owog
@@ -152,5 +152,5 @@ http_interactions:
         cmVjb3JkPgogIDwvcmVjb3Jkcz4KPC9zZWFyY2hSZXRyaWV2ZVJlc3BvbnNl
         Pgo=
     http_version: 
-  recorded_at: Wed, 06 Jul 2016 16:15:10 GMT
+  recorded_at: Sun, 01 Jan 2017 09:31:06 GMT
 recorded_with: VCR 3.0.3

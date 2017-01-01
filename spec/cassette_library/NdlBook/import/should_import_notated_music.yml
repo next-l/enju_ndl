@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.9.2
+      - Faraday v0.10.1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -19,27 +19,27 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 06 Jul 2016 16:15:10 GMT
+      - Sun, 01 Jan 2017 09:31:03 GMT
+      Etag:
+      - '"0735b4adf6c3ba486dc193ba6fbf3530"'
       Cache-Control:
       - max-age=0, private, must-revalidate
-      Etag:
-      - '"4d68a4c9bdf99099351b62dfa828e029"'
+      X-Runtime:
+      - '1.080438'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
-      X-Runtime:
-      - '0.135815'
       Status:
       - '200'
       Content-Type:
       - application/xml; charset=utf-8
       Set-Cookie:
-      - ROUTEID=.ps29; path=/
-      - TS01cb7804=011338590a63f23cd5e52f46800b058be91baf6d78f2eafc04a6f1772a609127625a7acee6994e1673805da85329c0f236bc76617f;
+      - ROUTEID=.ps20; path=/
+      - TS01cb7804=011338590a191b29ebde1034aa219c033d02fdd3945606f157a06f6f7ddd4a3593bda33dbdea55eb53253ff16b197fb1ce260c1998;
         path=/; domain=.iss.ndl.go.jp
-      - TS01f3cfdf=011338590a91ea71ebcfcb3d36f2f1fc47e1840f1d602b163ac99dde88464c7cc252b67b07ad9d1375a85793cce2bf940cccd3f7e937ce5dcc81a5afd22f0c9ef14e0cc2a76af0ca3650c557b256eb7fce0f7ac9f3;
+      - TS01f3cfdf=011338590a16b0990eb789da70a804cf68f936a28dcf182a1d7fa93db8075dc8a5fb742a8757ba8619f238d6663cbb5299936294ae7d7c8198b1783b018ad4ed79779194803c871692c4afc6af639178ef3553cc79;
         Path=/
-      - _front_session_id=0d779b6dc486ff111b3c76dc4a51308b; domain=.iss.ndl.go.jp;
-        path=/; expires=Wed, 06-Jul-2016 17:15:10 GMT; HttpOnly
+      - _front_session_id=9cde6f8a026456aeea105a2e738e90e5; domain=.iss.ndl.go.jp;
+        path=/; expires=Sun, 01-Jan-2017 10:31:04 GMT; HttpOnly
       - ndl.go.jp=rd2o00000000000000000000ffff0a024f68o80; path=/
       - serverid=1101; path=/
       Vary:
@@ -49,7 +49,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Content-Length:
-      - '1357'
+      - '1359'
       Connection:
       - close
     body:
@@ -74,16 +74,16 @@ http_interactions:
         c3BvbnNlRGF0YT4KICA8cmVjb3Jkcz4KICAgIDxyZWNvcmQ+CiAgICAgIDxy
         ZWNvcmRTY2hlbWE+aW5mbzpzcncvc2NoZW1hLzEvZGMtdjEuMTwvcmVjb3Jk
         U2NoZW1hPgogICAgICA8cmVjb3JkUGFja2luZz5zdHJpbmc8L3JlY29yZFBh
-        Y2tpbmc+CiAgICAgIDxyZWNvcmREYXRhPgombHQ7cmRmOlJERiB4bWxuczpk
-        Y3Rlcm1zPSZxdW90O2h0dHA6Ly9wdXJsLm9yZy9kYy90ZXJtcy8mcXVvdDsg
-        eG1sbnM6ZGNuZGw9JnF1b3Q7aHR0cDovL25kbC5nby5qcC9kY25kbC90ZXJt
-        cy8mcXVvdDsgeG1sbnM6cmRmcz0mcXVvdDtodHRwOi8vd3d3LnczLm9yZy8y
-        MDAwLzAxL3JkZi1zY2hlbWEjJnF1b3Q7IHhtbG5zOmRjPSZxdW90O2h0dHA6
-        Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvJnF1b3Q7IHhtbG5zOnJkZj0m
-        cXVvdDtodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgt
-        bnMjJnF1b3Q7IHhtbG5zOmZvYWY9JnF1b3Q7aHR0cDovL3htbG5zLmNvbS9m
-        b2FmLzAuMS8mcXVvdDsgeG1sbnM6b3dsPSZxdW90O2h0dHA6Ly93d3cudzMu
-        b3JnLzIwMDIvMDcvb3dsIyZxdW90OyZndDsKICAmbHQ7ZGNuZGw6QmliQWRt
+        Y2tpbmc+CiAgICAgIDxyZWNvcmREYXRhPgombHQ7cmRmOlJERiB4bWxuczpm
+        b2FmPSZxdW90O2h0dHA6Ly94bWxucy5jb20vZm9hZi8wLjEvJnF1b3Q7IHht
+        bG5zOm93bD0mcXVvdDtodHRwOi8vd3d3LnczLm9yZy8yMDAyLzA3L293bCMm
+        cXVvdDsgeG1sbnM6ZGNuZGw9JnF1b3Q7aHR0cDovL25kbC5nby5qcC9kY25k
+        bC90ZXJtcy8mcXVvdDsgeG1sbnM6cmRmPSZxdW90O2h0dHA6Ly93d3cudzMu
+        b3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMmcXVvdDsgeG1sbnM6ZGN0
+        ZXJtcz0mcXVvdDtodHRwOi8vcHVybC5vcmcvZGMvdGVybXMvJnF1b3Q7IHht
+        bG5zOnJkZnM9JnF1b3Q7aHR0cDovL3d3dy53My5vcmcvMjAwMC8wMS9yZGYt
+        c2NoZW1hIyZxdW90OyB4bWxuczpkYz0mcXVvdDtodHRwOi8vcHVybC5vcmcv
+        ZGMvZWxlbWVudHMvMS4xLyZxdW90OyZndDsKICAmbHQ7ZGNuZGw6QmliQWRt
         aW5SZXNvdXJjZSByZGY6YWJvdXQ9JnF1b3Q7aHR0cDovL2lzcy5uZGwuZ28u
         anAvYm9va3MvUjEwMDAwMDAwMi1JMDI1NTE2NDE5LTAwJnF1b3Q7Jmd0Owog
         ICAgJmx0O2RjbmRsOmNhdGFsb2dpbmdTdGF0dXMmZ3Q7QzcmbHQ7L2RjbmRs
@@ -157,5 +157,5 @@ http_interactions:
         b3NpdGlvbj4KICAgIDwvcmVjb3JkPgogIDwvcmVjb3Jkcz4KPC9zZWFyY2hS
         ZXRyaWV2ZVJlc3BvbnNlPgo=
     http_version: 
-  recorded_at: Wed, 06 Jul 2016 16:15:10 GMT
+  recorded_at: Sun, 01 Jan 2017 09:31:05 GMT
 recorded_with: VCR 3.0.3

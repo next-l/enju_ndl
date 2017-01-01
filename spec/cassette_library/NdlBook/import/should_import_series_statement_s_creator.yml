@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.9.2
+      - Faraday v0.10.1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -19,27 +19,27 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 06 Jul 2016 16:14:58 GMT
+      - Sun, 01 Jan 2017 09:30:16 GMT
+      X-Runtime:
+      - '1.141250'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Cache-Control:
       - max-age=0, private, must-revalidate
-      X-Runtime:
-      - '0.206203'
       Etag:
-      - '"583b957b1f80d0790d656b882b2feb40"'
+      - '"75627bd89e1d1b5775194b0004bfbf7b"'
       Status:
       - '200'
       Content-Type:
       - application/xml; charset=utf-8
       Set-Cookie:
-      - ROUTEID=.ps27; path=/
-      - TS01cb7804=011338590a7628b0b6fc23c1e8002e351926594f88472c60ea1e83922af30f052ecf9a02ac036cd77c64d074788da674e603a13611;
+      - ROUTEID=.ps05; path=/
+      - TS01cb7804=011338590adee7cb64204090b8a1a7c1a4078cf6870ac3ec0f8b61ff35350c637ae47ce1b4b98adba52a1d68c1c006a8c7e9581104;
         path=/; domain=.iss.ndl.go.jp
-      - TS01f3cfdf=011338590a277cec4adbbee7b551381c1d81debeb47ee266907cb2e170c2ec85cca45462ce419d2edee583a6c51d0fcfbc39fb9be8c565fe7bfd9b9944e37a0c5c7ad8821bfb25d89215d2777666546fca59d21c42;
+      - TS01f3cfdf=011338590a688a774cf9ee652ff0d51bcdd35c0ea5ff044ff5232c55ea7747eae76c885265982495d943836b1c9b9b1a15c4e4a413210e34023a1f9c73f947c7360b7835f305e09af3ae2c82159618ea9a21c14e09;
         Path=/
-      - _front_session_id=6bbceaa7111a6c8d64d6f49a3c1cb64a; domain=.iss.ndl.go.jp;
-        path=/; expires=Wed, 06-Jul-2016 17:14:58 GMT; HttpOnly
+      - _front_session_id=bb055d549b2d7aeed99e2ec2da0cf8a2; domain=.iss.ndl.go.jp;
+        path=/; expires=Sun, 01-Jan-2017 10:30:17 GMT; HttpOnly
       - ndl.go.jp=rd2o00000000000000000000ffff0a024f69o80; path=/
       - serverid=1101; path=/
       Vary:
@@ -48,10 +48,10 @@ http_interactions:
       - nosniff
       X-Frame-Options:
       - SAMEORIGIN
+      Content-Length:
+      - '2114'
       Connection:
       - close
-      Transfer-Encoding:
-      - chunked
     body:
       encoding: ASCII-8BIT
       string: !binary |-
@@ -151,16 +151,16 @@ http_interactions:
         PgogIDxyZWNvcmRzPgogICAgPHJlY29yZD4KICAgICAgPHJlY29yZFNjaGVt
         YT5pbmZvOnNydy9zY2hlbWEvMS9kYy12MS4xPC9yZWNvcmRTY2hlbWE+CiAg
         ICAgIDxyZWNvcmRQYWNraW5nPnN0cmluZzwvcmVjb3JkUGFja2luZz4KICAg
-        ICAgPHJlY29yZERhdGE+CiZsdDtyZGY6UkRGIHhtbG5zOmRjPSZxdW90O2h0
-        dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvJnF1b3Q7IHhtbG5zOnJk
-        Zj0mcXVvdDtodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50
-        YXgtbnMjJnF1b3Q7IHhtbG5zOmRjdGVybXM9JnF1b3Q7aHR0cDovL3B1cmwu
-        b3JnL2RjL3Rlcm1zLyZxdW90OyB4bWxuczpmb2FmPSZxdW90O2h0dHA6Ly94
-        bWxucy5jb20vZm9hZi8wLjEvJnF1b3Q7IHhtbG5zOmRjbmRsPSZxdW90O2h0
-        dHA6Ly9uZGwuZ28uanAvZGNuZGwvdGVybXMvJnF1b3Q7IHhtbG5zOnJkZnM9
-        JnF1b3Q7aHR0cDovL3d3dy53My5vcmcvMjAwMC8wMS9yZGYtc2NoZW1hIyZx
-        dW90OyB4bWxuczpvd2w9JnF1b3Q7aHR0cDovL3d3dy53My5vcmcvMjAwMi8w
-        Ny9vd2wjJnF1b3Q7Jmd0OwogICZsdDtkY25kbDpCaWJBZG1pblJlc291cmNl
+        ICAgPHJlY29yZERhdGE+CiZsdDtyZGY6UkRGIHhtbG5zOmRjbmRsPSZxdW90
+        O2h0dHA6Ly9uZGwuZ28uanAvZGNuZGwvdGVybXMvJnF1b3Q7IHhtbG5zOmZv
+        YWY9JnF1b3Q7aHR0cDovL3htbG5zLmNvbS9mb2FmLzAuMS8mcXVvdDsgeG1s
+        bnM6ZGM9JnF1b3Q7aHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8m
+        cXVvdDsgeG1sbnM6b3dsPSZxdW90O2h0dHA6Ly93d3cudzMub3JnLzIwMDIv
+        MDcvb3dsIyZxdW90OyB4bWxuczpkY3Rlcm1zPSZxdW90O2h0dHA6Ly9wdXJs
+        Lm9yZy9kYy90ZXJtcy8mcXVvdDsgeG1sbnM6cmRmPSZxdW90O2h0dHA6Ly93
+        d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMmcXVvdDsgeG1s
+        bnM6cmRmcz0mcXVvdDtodHRwOi8vd3d3LnczLm9yZy8yMDAwLzAxL3JkZi1z
+        Y2hlbWEjJnF1b3Q7Jmd0OwogICZsdDtkY25kbDpCaWJBZG1pblJlc291cmNl
         IHJkZjphYm91dD0mcXVvdDtodHRwOi8vaXNzLm5kbC5nby5qcC9ib29rcy9S
         MTAwMDAwMDAyLUkwMDAwMDgzNjk4ODQtMDAmcXVvdDsmZ3Q7CiAgICAmbHQ7
         ZGNuZGw6Y2F0YWxvZ2luZ1N0YXR1cyZndDtDNyZsdDsvZGNuZGw6Y2F0YWxv
@@ -276,5 +276,5 @@ http_interactions:
         bj4xPC9yZWNvcmRQb3NpdGlvbj4KICAgIDwvcmVjb3JkPgogIDwvcmVjb3Jk
         cz4KPC9zZWFyY2hSZXRyaWV2ZVJlc3BvbnNlPgo=
     http_version: 
-  recorded_at: Wed, 06 Jul 2016 16:14:58 GMT
+  recorded_at: Sun, 01 Jan 2017 09:30:16 GMT
 recorded_with: VCR 3.0.3

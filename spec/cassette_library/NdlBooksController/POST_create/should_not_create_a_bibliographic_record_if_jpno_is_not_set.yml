@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.9.2
+      - Faraday v0.10.1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -19,28 +19,28 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 06 Jul 2016 16:13:52 GMT
+      - Sun, 01 Jan 2017 09:33:01 GMT
+      X-Runtime:
+      - '0.010110'
       X-Ua-Compatible:
       - IE=Edge,chrome=1
-      Etag:
-      - '"79f8f250e63181b33a2145c0edfd1141"'
-      X-Runtime:
-      - '0.006232'
       Cache-Control:
       - max-age=0, private, must-revalidate
+      Etag:
+      - '"79f8f250e63181b33a2145c0edfd1141"'
       Status:
       - '200'
       Content-Type:
       - application/xml; charset=utf-8
       Set-Cookie:
-      - ROUTEID=.ps24; path=/
-      - TS01cb7804=011338590a265546626cf48c5ab3e8ee5a2334f5fa29fd929e15e0af62b771366eeac1c0f5f7b3285af9152c26eb49228573f15502;
+      - ROUTEID=.ps05; path=/
+      - TS01cb7804=011338590a3a4d38e014489468c3f734956cecaa516394a15cc6bcaba1ee376cf4e176bae8633d5c1c0cd49369a0397676642e54c7;
         path=/; domain=.iss.ndl.go.jp
-      - TS01f3cfdf=011338590a9e7833a6cf9b78852dc9448d37e76d31fdf9609b8f3afe584c9e1a09deda85e00a96582cd24cc3ffb475b440332db88dd851bcfa233a01e4f68fa0cfc9c264e761a23ce029e23681cfeeee3ad7778feb;
+      - TS01f3cfdf=011338590a2901fc12cf6ce31ab75e3d6dc5819699a893133ed2403e5abc48c82e3aa3e54a83ccf78039f88a42a4d25c6c60074c561ccaddc1f66ad25cc2085ddd83256a50f01955c56a99640218c4abd931e44e3b;
         Path=/
-      - _front_session_id=382a2fd8c1fb6be51aedb7f98c2b7f7e; domain=.iss.ndl.go.jp;
-        path=/; expires=Wed, 06-Jul-2016 17:13:52 GMT; HttpOnly
-      - ndl.go.jp=rd2o00000000000000000000ffff0a024f6co80; path=/
+      - _front_session_id=2f0dc9c3ff7cce3d65d27fad06b2c946; domain=.iss.ndl.go.jp;
+        path=/; expires=Sun, 01-Jan-2017 10:33:01 GMT; HttpOnly
+      - ndl.go.jp=rd2o00000000000000000000ffff0a024f68o80; path=/
       - serverid=1101; path=/
       Vary:
       - Accept-Encoding,User-Agent
@@ -66,5 +66,5 @@ http_interactions:
           </diagnostics>
         </searchRetrieveResponse>
     http_version: 
-  recorded_at: Wed, 06 Jul 2016 16:13:52 GMT
+  recorded_at: Sun, 01 Jan 2017 09:33:01 GMT
 recorded_with: VCR 3.0.3

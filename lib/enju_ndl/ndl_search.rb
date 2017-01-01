@@ -162,11 +162,11 @@ module EnjuNdl
           manifestation.carrier_type = carrier_type if carrier_type
           manifestation.manifestation_content_type = content_type if content_type
           if manifestation.save
+            create_additional_attributes(doc, manifestation)
             identifier.each do |k, v|
               manifestation.identifiers << v if v.valid?
             end
             manifestation.publishers << publisher_agents
-            create_additional_attributes(doc, manifestation)
             if is_serial
               series_statement = SeriesStatement.new(
                 :original_title => title[:manifestation],
@@ -182,8 +182,6 @@ module EnjuNdl
             end
           end
         end
-
-        #manifestation.send_later(:create_frbr_instance, doc.to_s)
         manifestation
       end
 

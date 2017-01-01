@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.9.2
+      - Faraday v0.10.1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -19,28 +19,28 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 06 Jul 2016 16:13:52 GMT
+      - Sun, 01 Jan 2017 09:33:02 GMT
       X-Ua-Compatible:
       - IE=Edge,chrome=1
+      X-Runtime:
+      - '1.139676'
       Cache-Control:
       - max-age=0, private, must-revalidate
-      X-Runtime:
-      - '0.122919'
       Etag:
-      - '"3f2328f301f35c8ce6ee45e47ebd558f"'
+      - '"58f2b44c66bbf7fd1181b6d0a0d20773"'
       Status:
       - '200'
       Content-Type:
       - application/xml; charset=utf-8
       Set-Cookie:
-      - ROUTEID=.ps27; path=/
-      - TS01cb7804=011338590a029ad30a2d9d8da3bb29db2a85d367e16e154144215984c772b761fc83025527ce70d736e92c31b0a3b6e45d7d95cdfb;
+      - ROUTEID=.ps07; path=/
+      - TS01cb7804=011338590a5823261ba6815a4a8a9d0d5c6e03a513eefae074880beb2ce134d39ce8388a1b80f7ac8d595cf24c0fbfb92b838da28c;
         path=/; domain=.iss.ndl.go.jp
-      - TS01f3cfdf=011338590a77eff4e926dc5a19beac0e3386bfbf73e54cccc43fe611d06926046b378fb0e53ca051ae1834539c59bf29f9bac71ddccbcd82cab17c2a6ab871e8b5488a9b3d8a090b03891ad066a1eae0c46c467782;
+      - TS01f3cfdf=011338590a5b9a2c032375d9203f6d6ee7ebc7b07e3c7099db004008c15cd9791354b026934906f35b793e6711ad983f9c308df9395ca6d70dafd5d07fc24261755a45088d82507488813c405cb24b8cc45c4416c6;
         Path=/
-      - _front_session_id=227b857f09663b9953fa57e2e5a78963; domain=.iss.ndl.go.jp;
-        path=/; expires=Wed, 06-Jul-2016 17:13:52 GMT; HttpOnly
-      - ndl.go.jp=rd2o00000000000000000000ffff0a024f68o80; path=/
+      - _front_session_id=74201ac4febf8f952db952a1fa77a121; domain=.iss.ndl.go.jp;
+        path=/; expires=Sun, 01-Jan-2017 10:33:03 GMT; HttpOnly
+      - ndl.go.jp=rd2o00000000000000000000ffff0a024f6co80; path=/
       - serverid=1101; path=/
       Vary:
       - Accept-Encoding,User-Agent
@@ -48,10 +48,10 @@ http_interactions:
       - nosniff
       X-Frame-Options:
       - SAMEORIGIN
+      Content-Length:
+      - '1530'
       Connection:
       - close
-      Transfer-Encoding:
-      - chunked
     body:
       encoding: ASCII-8BIT
       string: !binary |-
@@ -75,15 +75,15 @@ http_interactions:
         IDxyZWNvcmRTY2hlbWE+aW5mbzpzcncvc2NoZW1hLzEvZGMtdjEuMTwvcmVj
         b3JkU2NoZW1hPgogICAgICA8cmVjb3JkUGFja2luZz5zdHJpbmc8L3JlY29y
         ZFBhY2tpbmc+CiAgICAgIDxyZWNvcmREYXRhPgombHQ7cmRmOlJERiB4bWxu
-        czpkYz0mcXVvdDtodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyZx
-        dW90OyB4bWxuczpyZGY9JnF1b3Q7aHR0cDovL3d3dy53My5vcmcvMTk5OS8w
-        Mi8yMi1yZGYtc3ludGF4LW5zIyZxdW90OyB4bWxuczpkY3Rlcm1zPSZxdW90
-        O2h0dHA6Ly9wdXJsLm9yZy9kYy90ZXJtcy8mcXVvdDsgeG1sbnM6Zm9hZj0m
-        cXVvdDtodHRwOi8veG1sbnMuY29tL2ZvYWYvMC4xLyZxdW90OyB4bWxuczpk
-        Y25kbD0mcXVvdDtodHRwOi8vbmRsLmdvLmpwL2RjbmRsL3Rlcm1zLyZxdW90
-        OyB4bWxuczpyZGZzPSZxdW90O2h0dHA6Ly93d3cudzMub3JnLzIwMDAvMDEv
-        cmRmLXNjaGVtYSMmcXVvdDsgeG1sbnM6b3dsPSZxdW90O2h0dHA6Ly93d3cu
-        dzMub3JnLzIwMDIvMDcvb3dsIyZxdW90OyZndDsKICAmbHQ7ZGNuZGw6Qmli
+        czpyZGY9JnF1b3Q7aHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYt
+        c3ludGF4LW5zIyZxdW90OyB4bWxuczpkYz0mcXVvdDtodHRwOi8vcHVybC5v
+        cmcvZGMvZWxlbWVudHMvMS4xLyZxdW90OyB4bWxuczpkY25kbD0mcXVvdDto
+        dHRwOi8vbmRsLmdvLmpwL2RjbmRsL3Rlcm1zLyZxdW90OyB4bWxuczpyZGZz
+        PSZxdW90O2h0dHA6Ly93d3cudzMub3JnLzIwMDAvMDEvcmRmLXNjaGVtYSMm
+        cXVvdDsgeG1sbnM6Zm9hZj0mcXVvdDtodHRwOi8veG1sbnMuY29tL2ZvYWYv
+        MC4xLyZxdW90OyB4bWxuczpvd2w9JnF1b3Q7aHR0cDovL3d3dy53My5vcmcv
+        MjAwMi8wNy9vd2wjJnF1b3Q7IHhtbG5zOmRjdGVybXM9JnF1b3Q7aHR0cDov
+        L3B1cmwub3JnL2RjL3Rlcm1zLyZxdW90OyZndDsKICAmbHQ7ZGNuZGw6Qmli
         QWRtaW5SZXNvdXJjZSByZGY6YWJvdXQ9JnF1b3Q7aHR0cDovL2lzcy5uZGwu
         Z28uanAvYm9va3MvUjEwMDAwMDAwMi1JMDAwMDAwMDI5MzcxLTAwJnF1b3Q7
         Jmd0OwogICAgJmx0O2RjbmRsOmNhdGFsb2dpbmdTdGF0dXMmZ3Q7QzcmbHQ7
@@ -177,5 +177,5 @@ http_interactions:
         PC9yZWNvcmQ+CiAgPC9yZWNvcmRzPgo8L3NlYXJjaFJldHJpZXZlUmVzcG9u
         c2U+Cg==
     http_version: 
-  recorded_at: Wed, 06 Jul 2016 16:13:52 GMT
+  recorded_at: Sun, 01 Jan 2017 09:33:02 GMT
 recorded_with: VCR 3.0.3
