@@ -5,12 +5,12 @@ class NdlBooksController < ApplicationController
     if params[:page].to_i == 0
       page = 1
     else
-      page = params[:page]
+      page = params[:page].to_i
     end
     @query = params[:query].to_s.strip
     books = NdlBook.search(params[:query], page)
     @books = Kaminari.paginate_array(
-      books[:items], total_count: books[:total_entries], page: page
+      books[:items], total_count: books[:total_entries]
     ).page(page).per(10)
 
     respond_to do |format|
