@@ -1,4 +1,3 @@
-# -*- encoding: utf-8 -*-
 module EnjuNdl
   module NdlSearch
     def self.included(base)
@@ -28,8 +27,7 @@ module EnjuNdl
 
       def import_record(doc)
         iss_itemno = URI.parse(doc.at('//dcndl:BibAdminResource[@rdf:about]').values.first).path.split('/').last
-        identifier_type = IdentifierType.where(name: 'iss_itemno').first
-        identifier_type = IdentifierType.where(name: 'iss_itemno').create! unless identifier_type
+        identifier_type = IdentifierType.where(name: 'iss_itemno').first_or_create!
         identifier = Identifier.where(body: iss_itemno, identifier_type_id: identifier_type.id).first
         return identifier.manifestation if identifier
 
@@ -70,10 +68,10 @@ module EnjuNdl
         doc.xpath('//dcndl:materialType[@rdf:resource]').each do |d|
           case d.attributes['resource'].try(:content)
           when 'http://ndl.go.jp/ndltype/Book'
-            carrier_type = CarrierType.where(name: 'print').first
-            content_type = ContentType.where(name: 'text').first
+            carrier_type = CarrierType.find_by(name: 'print')
+            content_type = ContentType.find_by(name: 'text')
           when 'http://ndl.go.jp/ndltype/Braille'
-            content_type = ContentType.where(name: 'tactile_text').first
+            content_type = ContentType.find_by(name: 'tactile_text')
           #when 'http://ndl.go.jp/ndltype/ComputerProgram'
           #  content_type = ContentType.where(name: 'computer_program').first
           when 'http://ndl.go.jp/ndltype/ElectronicResource'
@@ -81,23 +79,23 @@ module EnjuNdl
           when 'http://ndl.go.jp/ndltype/Journal'
             is_serial = true
           when 'http://ndl.go.jp/ndltype/Map'
-            content_type = ContentType.where(name: 'cartographic_image').first
+            content_type = ContentType.find_by(name: 'cartographic_image')
           when 'http://ndl.go.jp/ndltype/Music'
-            content_type = ContentType.where(name: 'performed_music').first
+            content_type = ContentType.find_by(name: 'performed_music')
           when 'http://ndl.go.jp/ndltype/MusicScore'
-            content_type = ContentType.where(name: 'notated_music').first
+            content_type = ContentType.find_by(name: 'notated_music')
           when 'http://ndl.go.jp/ndltype/Painting'
-            content_type = ContentType.where(name: 'still_image').first
+            content_type = ContentType.find_by(name: 'still_image')
           when 'http://ndl.go.jp/ndltype/Photograph'
-            content_type = ContentType.where(name: 'still_image').first
+            content_type = ContentType.find_by(name: 'still_image')
           when 'http://ndl.go.jp/ndltype/PicturePostcard'
-            content_type = ContentType.where(name: 'still_image').first
+            content_type = ContentType.find_by(name: 'still_image')
           when 'http://purl.org/dc/dcmitype/MovingImage'
-            content_type = ContentType.where(name: 'two_dimensional_moving_image').first
+            content_type = ContentType.find_by(name: 'two_dimensional_moving_image')
           when 'http://purl.org/dc/dcmitype/Sound'
-            content_type = ContentType.where(name: 'sounds').first
+            content_type = ContentType.find_by(name: 'sounds')
           when 'http://purl.org/dc/dcmitype/StillImage'
-            content_type = ContentType.where(name: 'still_image').first
+            content_type = ContentType.find_by(name: 'still_image')
           end
         end
 
@@ -141,23 +139,23 @@ module EnjuNdl
           identifier = {}
           if isbn
             identifier[:isbn] = Identifier.new(body: isbn)
-            identifier[:isbn].identifier_type = IdentifierType.where(name: 'isbn').first || IdnetifierType.create!(name: 'isbn')
+            identifier[:isbn].identifier_type = IdentifierType.where(name: 'isbn').first_or_create!
           end
           if iss_itemno
             identifier[:iss_itemno] = Identifier.new(body: iss_itemno)
-            identifier[:iss_itemno].identifier_type = IdentifierType.where(name: 'iss_itemno').first || IdentifierType.create!(name: 'iss_itemno')
+            identifier[:iss_itemno].identifier_type = IdentifierType.where(name: 'iss_itemno').first_or_create!
           end
           if jpno
             identifier[:jpno] = Identifier.new(body: jpno)
-            identifier[:jpno].identifier_type = IdentifierType.where(name: 'jpno').first || IdentifierType.create!(name: 'jpno')
+            identifier[:jpno].identifier_type = IdentifierType.where(name: 'jpno').first_or_create!
           end
           if issn
             identifier[:issn] = Identifier.new(body: issn)
-            identifier[:issn].identifier_type = IdentifierType.where(name: 'issn').first || IdentifierType.create!(name: 'issn')
+            identifier[:issn].identifier_type = IdentifierType.where(name: 'issn').first_or_create!
           end
           if issn_l
             identifier[:issn_l] = Identifier.new(body: issn_l)
-            identifier[:issn_l].identifier_type = IdentifierType.where(name: 'issn_l').first || IdentifierType.create!(name: 'issn_l')
+            identifier[:issn_l].identifier_type = IdentifierType.where(name: 'issn_l').first_or_create!
           end
           manifestation.carrier_type = carrier_type if carrier_type
           manifestation.manifestation_content_type = content_type if content_type
@@ -198,13 +196,13 @@ module EnjuNdl
           manifestation.creators << creator_agents
 
           if defined?(EnjuSubject)
-            subject_heading_type = SubjectHeadingType.where(name: 'ndlsh').first || SubjectHeadingType.create!(name: 'ndlsh')
+            subject_heading_type = SubjectHeadingType.where(name: 'ndlsh').first_or_create!
             subjects.each do |term|
               subject = Subject.where(term: term[:term]).first
               unless subject
                 subject = Subject.new(term)
                 subject.subject_heading_type = subject_heading_type
-                subject.subject_type = SubjectType.where(name: 'concept').first || SubjectType.create!(name: 'concept')
+                subject.subject_type = SubjectType.where(name: 'concept').first_or_create!
               end
               #if subject.valid?
                 manifestation.subjects << subject
@@ -220,7 +218,7 @@ module EnjuNdl
                 if ndc_url and ndc_url.path.split('/').reverse[1] == "ndc9"
                   ndc_type = "ndc9"
                   ndc = ndc_url.path.split('/').last
-                  classification_type = ClassificationType.where(name: ndc_type).first || ClassificationType.create!(name: ndc_type)
+                  classification_type = ClassificationType.where(name: ndc_type).first_or_create!
                   classification = Classification.new(category: ndc)
                   classification.classification_type = classification_type
                   manifestation.classifications << classification if classification.valid?
@@ -229,7 +227,7 @@ module EnjuNdl
             end
             ndc8 = doc.xpath('//dc:subject[@rdf:datatype="http://ndl.go.jp/dcndl/terms/NDC8"]').first
             if ndc8
-              classification_type = ClassificationType.where(name: "ndc8").first || ClassificationType.create!(name: "ndc8")
+              classification_type = ClassificationType.where(name: "ndc8").first_or_create!
               classification = Classification.new(category: ndc8.content)
               classification.classification_type = classification_type
               manifestation.classifications << classification if classification.valid?

@@ -1,7 +1,7 @@
 --- 
 subject_heading_type_00001: 
   name: unknown
-  display_name: unknown
+  display_name_translations: {"en": "unknown", "ja": "不明"}
   updated_at: 2008-03-03 00:44:49.850140 +09:00
   id: 1
   note: ""
@@ -9,7 +9,7 @@ subject_heading_type_00001:
   position: 1
 subject_heading_type_00002: 
   name: ndlsh
-  display_name: NDLSH
+  display_name_translations: {"en": "NDLSH", "ja": "NDLSH"}
   updated_at: 2008-03-03 00:44:49.850140 +09:00
   id: 2
   note: ""
@@ -17,7 +17,7 @@ subject_heading_type_00002:
   position: 2
 subject_heading_type_00003: 
   name: bsh
-  display_name: BSH
+  display_name_translations: {"en": "BSH", "ja": "BSH"}
   updated_at: 2008-03-03 00:44:58.685360 +09:00
   id: 3
   note: ""
@@ -28,12 +28,11 @@ subject_heading_type_00003:
 #
 # Table name: subject_heading_types
 #
-#  id           :integer          not null, primary key
-#  name         :string(255)      not null
-#  display_name :text
-#  note         :text
-#  position     :integer
-#  created_at   :datetime         not null
-#  updated_at   :datetime         not null
+#  id                        :integer          not null, primary key
+#  name                      :string           not null
+#  display_name_translations :jsonb
+#  note                      :text
+#  position                  :integer
+#  created_at                :datetime         not null
+#  updated_at                :datetime         not null
 #
-

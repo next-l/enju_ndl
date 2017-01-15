@@ -1,0 +1,119 @@
+--- 
+classification_00006: 
+  updated_at: 2008-03-02 19:25:19.555182 +09:00
+  classification_type_id: 2
+  category: "500"
+  id: 90ffd7cf-5c77-42bc-b627-8ab5e58cf5dd
+  note: 
+  parent_id: 
+  created_at: 2008-03-02 19:25:19.555182 +09:00
+  lft: 11
+  rgt: 12
+classification_00007: 
+  updated_at: 2008-03-02 19:25:31.846101 +09:00
+  classification_type_id: 2
+  category: "600"
+  id: 14570611-cb5b-4fa7-8e33-545ecbf14c1e
+  note: 
+  parent_id: 
+  created_at: 2008-03-02 19:25:31.846101 +09:00
+  lft: 13
+  rgt: 14
+classification_00008: 
+  updated_at: 2008-03-02 19:25:42.485981 +09:00
+  classification_type_id: 2
+  category: "700"
+  id: 862f2d29-e13a-407b-9921-9c3058ef60ec
+  note: 
+  parent_id: 
+  created_at: 2008-03-02 19:25:42.485981 +09:00
+  lft: 15
+  rgt: 16
+classification_00009: 
+  updated_at: 2008-03-02 19:25:54.879049 +09:00
+  classification_type_id: 2
+  category: "800"
+  id: ab75b50e-9489-48d8-ba8e-e22b6574d57c
+  note: 
+  parent_id: 
+  created_at: 2008-03-02 19:25:54.879049 +09:00
+  lft: 17
+  rgt: 18
+classification_00010: 
+  updated_at: 2008-03-02 19:26:03.099902 +09:00
+  classification_type_id: 2
+  category: "900"
+  id: 12895fbc-2661-4db3-9772-67c471d1e258
+  note: 
+  parent_id: 
+  created_at: 2008-03-02 19:26:03.099902 +09:00
+  lft: 19
+  rgt: 20
+classification_00001: 
+  updated_at: 2008-03-02 19:23:02.050270 +09:00
+  classification_type_id: 1
+  category: "000"
+  id: 4a6eb67e-2625-4675-83bd-8350df45e8d9
+  note: ""
+  parent_id: 
+  created_at: 2008-03-02 19:21:50.689538 +09:00
+  lft: 1
+  rgt: 2
+classification_00002: 
+  updated_at: 2008-03-02 19:23:55.187964 +09:00
+  classification_type_id: 1
+  category: "100"
+  id: 9cbac84e-6373-4e58-8b3d-5bc0a398eb26
+  note: 
+  parent_id: 
+  created_at: 2008-03-02 19:23:55.187964 +09:00
+  lft: 3
+  rgt: 4
+classification_00003: 
+  updated_at: 2008-03-02 19:24:44.271616 +09:00
+  classification_type_id: 1
+  category: "200"
+  id: b2e1213a-b008-47a9-bcfd-e0ab03c82b36
+  note: 
+  parent_id: 
+  created_at: 2008-03-02 19:24:44.271616 +09:00
+  lft: 5
+  rgt: 6
+classification_00004: 
+  updated_at: 2008-03-02 19:24:56.797259 +09:00
+  classification_type_id: 1
+  category: "300"
+  id: 761442db-5812-4373-af5e-157f0896c9ad
+  note: 
+  parent_id: 
+  created_at: 2008-03-02 19:24:56.797259 +09:00
+  lft: 7
+  rgt: 8
+classification_00005: 
+  updated_at: 2008-03-02 19:25:08.317117 +09:00
+  classification_type_id: 1
+  category: "400"
+  id: 1fef12ec-c263-4433-b965-b3d2258513d8
+  note: 
+  parent_id: 
+  created_at: 2008-03-02 19:25:08.317117 +09:00
+  lft: 9
+  rgt: 10
+
+# == Schema Information
+#
+# Table name: classifications
+#
+#  id                     :uuid             not null, primary key
+#  parent_id              :integer
+#  category               :string           not null
+#  note                   :text
+#  classification_type_id :integer          not null
+#  created_at             :datetime
+#  updated_at             :datetime
+#  lft                    :integer
+#  rgt                    :integer
+#  manifestation_id       :integer
+#  url                    :string
+#  label                  :string
+#

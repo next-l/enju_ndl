@@ -1,29 +1,29 @@
 --- 
 subject_type_00001:
   id: 1
-  name: concept  
-  display_name: Concept
+  name: concept
+  display_name_translations: {"en": "Concept"}
   note: 
   position: 1
 
 subject_type_00002:
   id: 2
-  name: event  
-  display_name: Event
+  name: event
+  display_name_translations: {"en": "Event"}
   note: 
   position: 2
 
 subject_type_00003:
   id: 3
-  name: object  
-  display_name: Object
+  name: object
+  display_name_translations: {"en": "Object"}
   note: 
   position: 3
 
 subject_type_00004:
   id: 4
-  name: place  
-  display_name: Place
+  name: place
+  display_name_translations: {"en": "Place"}
   note: 
   position: 4
 
@@ -31,12 +31,11 @@ subject_type_00004:
 #
 # Table name: subject_types
 #
-#  id           :integer          not null, primary key
-#  name         :string(255)      not null
-#  display_name :text
-#  note         :text
-#  position     :integer
-#  created_at   :datetime         not null
-#  updated_at   :datetime         not null
+#  id                        :integer          not null, primary key
+#  name                      :string           not null
+#  display_name_translations :jsonb
+#  note                      :text
+#  position                  :integer
+#  created_at                :datetime         not null
+#  updated_at                :datetime         not null
 #
-

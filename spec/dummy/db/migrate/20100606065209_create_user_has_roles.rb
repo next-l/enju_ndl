@@ -1,12 +1,10 @@
-class CreateUserHasRoles < ActiveRecord::Migration
+class CreateUserHasRoles < ActiveRecord::Migration[5.0]
   def change
     create_table :user_has_roles do |t|
-      t.integer :user_id
-      t.integer :role_id
+      t.references :user, foreign_key: true, null: false
+      t.references :role, foreign_key: true, null: false
 
       t.timestamps
     end
-    add_index :user_has_roles, :user_id
-    add_index :user_has_roles, :role_id
   end
 end
