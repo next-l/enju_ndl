@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170114174536) do
+ActiveRecord::Schema.define(version: 20170116150432) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -611,6 +611,15 @@ ActiveRecord::Schema.define(version: 20170114174536) do
     t.index ["manifestation_id"], name: "index_items_on_manifestation_id", using: :btree
     t.index ["required_role_id"], name: "index_items_on_required_role_id", using: :btree
     t.index ["shelf_id"], name: "index_items_on_shelf_id", using: :btree
+  end
+
+  create_table "jpno_records", force: :cascade do |t|
+    t.string   "body",             null: false
+    t.uuid     "manifestation_id", null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["body"], name: "index_jpno_records_on_body", unique: true, using: :btree
+    t.index ["manifestation_id"], name: "index_jpno_records_on_manifestation_id", using: :btree
   end
 
   create_table "languages", force: :cascade do |t|
@@ -1339,6 +1348,7 @@ ActiveRecord::Schema.define(version: 20170114174536) do
   add_foreign_key "isbn_records", "manifestations"
   add_foreign_key "issn_records", "manifestations"
   add_foreign_key "items", "manifestations"
+  add_foreign_key "jpno_records", "manifestations"
   add_foreign_key "library_groups", "users"
   add_foreign_key "owns", "agents"
   add_foreign_key "owns", "items"
