@@ -219,13 +219,15 @@ module EnjuNdl
                   ndc_url = URI.parse(URI.escape(url))
                 rescue URI::InvalidURIError
                 end
-                if ndc_url and ndc_url.path.split('/').reverse[1] == "ndc9"
-                  ndc_type = "ndc9"
-                  ndc = ndc_url.path.split('/').last
-                  classification_type = ClassificationType.where(name: ndc_type).first || ClassificationType.create!(name: ndc_type)
-                  classification = Classification.new(category: ndc)
-                  classification.classification_type = classification_type
-                  manifestation.classifications << classification if classification.valid?
+                if ndc_url
+                  ndc_type = ndc_url.path.split('/').reverse[1]
+                  if ndc_type == "ndc9" or ndc_type == "ndc10"
+                    ndc = ndc_url.path.split('/').last
+                    classification_type = ClassificationType.where(name: ndc_type).first || ClassificationType.create!(name: ndc_type)
+                    classification = Classification.new(category: ndc)
+                    classification.classification_type = classification_type
+                    manifestation.classifications << classification if classification.valid?
+                  end
                 end
               end
             end
