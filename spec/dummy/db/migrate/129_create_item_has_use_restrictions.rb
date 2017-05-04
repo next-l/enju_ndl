@@ -1,4 +1,4 @@
-class CreateItemHasUseRestrictions < ActiveRecord::Migration
+class CreateItemHasUseRestrictions < ActiveRecord::Migration[5.0]
   def self.up
     create_table :item_has_use_restrictions do |t|
       t.integer :item_id, :null => false

@@ -1,4 +1,4 @@
-class CreateItemTransitions < ActiveRecord::Migration
+class CreateItemTransitions < ActiveRecord::Migration[5.0]
   def change
     create_table :item_transitions do |t|
       t.string :to_state, null: false

@@ -1,4 +1,4 @@
-class CreateAgentImportFiles < ActiveRecord::Migration
+class CreateAgentImportFiles < ActiveRecord::Migration[5.0]
   def change
     create_table :agent_import_files do |t|
       t.integer :parent_id

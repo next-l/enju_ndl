@@ -1,4 +1,4 @@
-class CreateEventImportResults < ActiveRecord::Migration
+class CreateEventImportResults < ActiveRecord::Migration[5.0]
   def self.up
     create_table :event_import_results do |t|
       t.integer :event_import_file_id

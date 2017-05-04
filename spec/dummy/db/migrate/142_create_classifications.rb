@@ -1,4 +1,4 @@
-class CreateClassifications < ActiveRecord::Migration
+class CreateClassifications < ActiveRecord::Migration[5.0]
   def change
     create_table :classifications, id: :uuid, default: 'gen_random_uuid()' do |t|
       t.integer :parent_id, index: true
