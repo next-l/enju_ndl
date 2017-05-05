@@ -2,7 +2,7 @@ class CreateItemTransitions < ActiveRecord::Migration[5.0]
   def change
     create_table :item_transitions do |t|
       t.string :to_state, null: false
-      t.jsonb :metadata, default: '{}'
+      t.jsonb :metadata, default: {}
       t.integer :sort_key, null: false
       t.uuid :item_id, null: false
       t.boolean :most_recent, null: false

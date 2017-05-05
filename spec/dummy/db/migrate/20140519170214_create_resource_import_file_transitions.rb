@@ -2,11 +2,7 @@ class CreateResourceImportFileTransitions < ActiveRecord::Migration[5.0]
   def change
     create_table :resource_import_file_transitions do |t|
       t.string :to_state
-      if ActiveRecord::Base.configurations[Rails.env]["adapter"].try(:match, /mysql/)
-        t.jsonb :metadata
-      else
-        t.jsonb :metadata, default: "{}"
-      end
+      t.jsonb :metadata, default: {}
       t.integer :sort_key
       t.integer :resource_import_file_id
       t.timestamps

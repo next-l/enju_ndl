@@ -11,9 +11,9 @@ accept_00001:
 # Table name: accepts
 #
 #  id           :integer          not null, primary key
-#  basket_id    :integer
+#  basket_id    :uuid
 #  item_id      :uuid
-#  librarian_id :integer
+#  librarian_id :integer          not null
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #
