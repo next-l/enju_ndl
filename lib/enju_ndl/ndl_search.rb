@@ -111,7 +111,9 @@ module EnjuNdl
         publication_place = doc.at('//dcterms:publisher/foaf:Agent/dcndl:location').try(:content)
         edition_string = doc.at('//dcndl:edition').try(:content)
 
-        manifestation = nil
+        manifestation = Manifestation.where(manifestation_identifier: admin_identifier).first
+        return manifestation if manifestation
+
         Agent.transaction do
           publisher_agents = Agent.import_agents(publishers)
 
