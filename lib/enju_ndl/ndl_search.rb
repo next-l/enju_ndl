@@ -17,7 +17,7 @@ module EnjuNdl
         raise EnjuNdl::InvalidIsbn unless lisbn.valid?
         # end
 
-        manifestation = Manifestation.find_by(isbn: lisbn.isbn)
+        manifestation = Manifestation.find_by_isbn(lisbn.isbn)
         return manifestation.first if manifestation.present?
 
         doc = return_xml(lisbn.isbn)
