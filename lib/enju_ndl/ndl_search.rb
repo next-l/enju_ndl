@@ -27,9 +27,6 @@ module EnjuNdl
 
       def import_record(doc)
         iss_itemno = URI.parse(doc.at('//dcndl:BibAdminResource[@rdf:about]').values.first).path.split('/').last
-        identifier_type = IdentifierType.where(name: 'iss_itemno').first_or_create!
-        identifier = Identifier.where(body: iss_itemno, identifier_type_id: identifier_type.id).first
-        return identifier.manifestation if identifier
 
         jpno = doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/JPNO"]').try(:content)
 
@@ -138,18 +135,10 @@ module EnjuNdl
           manifestation.serial = true if is_serial
           identifier = {}
           isbn_record = IsbnRecord.where(body: isbn).first_or_initialize if isbn
-          if iss_itemno
-            identifier[:iss_itemno] = Identifier.new(body: iss_itemno)
-            identifier[:iss_itemno].identifier_type = IdentifierType.where(name: 'iss_itemno').first_or_create!
-          end
           if jpno
             manifestation.jpno_record = JpnoRecord.where(body: jpno).first_or_initialize
           end
           issn_record = IssnRecord.where(body: issn).first_or_initialize if issn
-          if issn_l
-            identifier[:issn_l] = Identifier.new(body: issn_l)
-            identifier[:issn_l].identifier_type = IdentifierType.where(name: 'issn_l').first_or_create!
-          end
           manifestation.carrier_type = carrier_type if carrier_type
           manifestation.manifestation_content_type = content_type if content_type
           if manifestation.save

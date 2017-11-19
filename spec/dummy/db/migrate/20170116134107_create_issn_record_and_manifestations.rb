@@ -1,4 +1,4 @@
-class CreateIssnRecordAndManifestations < ActiveRecord::Migration[5.0]
+class CreateIssnRecordAndManifestations < ActiveRecord::Migration[5.1]
   def change
     create_table :issn_record_and_manifestations do |t|
       t.references :issn_record, foreign_key: true, on_delete: :cascade, null: false

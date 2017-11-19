@@ -24,7 +24,7 @@ describe NdlBook do
       manifestation.manifestation_identifier.should eq 'http://iss.ndl.go.jp/books/R100000002-I000010980901-00'
       manifestation.isbn_records.pluck(:body).should eq ['9784839931995']
       manifestation.classifications.pluck(:category).should eq ['007.64']
-      manifestation.identifier_contents(:iss_itemno).should eq ['R100000002-I000010980901-00']
+      #manifestation.identifier_contents(:iss_itemno).should eq ['R100000002-I000010980901-00']
       manifestation.jpno_record.body.should eq '21816393'
       manifestation.language.name.should eq 'Japanese'
       manifestation.creators.first.full_name.should eq '秋葉, 拓哉'

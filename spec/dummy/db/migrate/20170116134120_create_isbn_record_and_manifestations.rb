@@ -1,4 +1,4 @@
-class CreateIsbnRecordAndManifestations < ActiveRecord::Migration[5.0]
+class CreateIsbnRecordAndManifestations < ActiveRecord::Migration[5.1]
   def change
     create_table :isbn_record_and_manifestations do |t|
       t.references :isbn_record, foreign_key: true, on_delete: :cascade, null: false

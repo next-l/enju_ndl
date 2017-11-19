@@ -1,4 +1,4 @@
-class CreateIssnRecordAndPeriodicals < ActiveRecord::Migration[5.0]
+class CreateIssnRecordAndPeriodicals < ActiveRecord::Migration[5.1]
   def change
     create_table :issn_record_and_periodicals do |t|
       t.references :issn_record, foreign_key: true, on_delete: :cascade, null: false
