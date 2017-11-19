@@ -63,34 +63,46 @@ module EnjuNdl
         doc.xpath('//dcndl:materialType[@rdf:resource]').each do |d|
           case d.attributes['resource'].try(:content)
           when 'http://ndl.go.jp/ndltype/Book'
-            carrier_type = CarrierType.find_by(name: 'print')
+            carrier_type = CarrierType.find_by(name: 'volume')
             content_type = ContentType.find_by(name: 'text')
           when 'http://ndl.go.jp/ndltype/Braille'
+            carrier_type = CarrierType.find_by(name: 'volume')
             content_type = ContentType.find_by(name: 'tactile_text')
           # when 'http://ndl.go.jp/ndltype/ComputerProgram'
           #  content_type = ContentType.where(name: 'computer_program').first
           when 'http://ndl.go.jp/ndltype/ElectronicResource'
-            carrier_type = CarrierType.where(name: 'file').first
+            carrier_type = CarrierType.find_by(name: 'online_resource')
           when 'http://ndl.go.jp/ndltype/Journal'
             is_serial = true
           when 'http://ndl.go.jp/ndltype/Map'
+            carrier_type = CarrierType.find_by(name: 'volume')
             content_type = ContentType.find_by(name: 'cartographic_image')
           when 'http://ndl.go.jp/ndltype/Music'
+            carrier_type = CarrierType.find_by(name: 'volume')
             content_type = ContentType.find_by(name: 'performed_music')
           when 'http://ndl.go.jp/ndltype/MusicScore'
+            carrier_type = CarrierType.find_by(name: 'volume')
             content_type = ContentType.find_by(name: 'notated_music')
           when 'http://ndl.go.jp/ndltype/Painting'
+            carrier_type = CarrierType.find_by(name: 'volume')
             content_type = ContentType.find_by(name: 'still_image')
           when 'http://ndl.go.jp/ndltype/Photograph'
+            carrier_type = CarrierType.find_by(name: 'volume')
             content_type = ContentType.find_by(name: 'still_image')
           when 'http://ndl.go.jp/ndltype/PicturePostcard'
+            carrier_type = CarrierType.find_by(name: 'volume')
             content_type = ContentType.find_by(name: 'still_image')
           when 'http://purl.org/dc/dcmitype/MovingImage'
+            carrier_type = CarrierType.find_by(name: 'volume')
             content_type = ContentType.find_by(name: 'two_dimensional_moving_image')
           when 'http://purl.org/dc/dcmitype/Sound'
+            carrier_type = CarrierType.find_by(name: 'volume')
             content_type = ContentType.find_by(name: 'sounds')
           when 'http://purl.org/dc/dcmitype/StillImage'
+            carrier_type = CarrierType.find_by(name: 'volume')
             content_type = ContentType.find_by(name: 'still_image')
+          else
+            carrier_type = CarrierType.find_by(name: 'volume')
           end
         end
 
@@ -177,7 +189,7 @@ module EnjuNdl
         Agent.transaction do
           creator_agents = Agent.import_agents(creators)
           content_type_id = begin
-                              ContentType.where(name: 'text').first.id
+                              ContentType.find_by(name: 'text').id
                             rescue
                               1
                             end
