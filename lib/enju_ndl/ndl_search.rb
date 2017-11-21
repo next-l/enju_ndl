@@ -74,6 +74,7 @@ module EnjuNdl
             carrier_type = CarrierType.find_by(name: 'online_resource')
           when 'http://ndl.go.jp/ndltype/Journal'
             is_serial = true
+            carrier_type = CarrierType.find_by(name: 'volume')
           when 'http://ndl.go.jp/ndltype/Map'
             carrier_type = CarrierType.find_by(name: 'volume')
             content_type = ContentType.find_by(name: 'cartographic_image')
