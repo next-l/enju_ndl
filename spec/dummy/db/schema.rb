@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170305064014) do
+ActiveRecord::Schema.define(version: 20171126072934) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -82,8 +82,8 @@ ActiveRecord::Schema.define(version: 20170305064014) do
     t.string "last_name"
     t.string "full_name"
     t.bigint "language_id"
-    t.bigint "agent_id"
-    t.bigint "profile_id"
+    t.uuid "agent_id", null: false
+    t.uuid "profile_id"
     t.integer "position"
     t.string "source"
     t.string "name_type"
@@ -125,7 +125,7 @@ ActiveRecord::Schema.define(version: 20170305064014) do
     t.index ["name"], name: "index_agent_types_on_name", unique: true
   end
 
-  create_table "agents", force: :cascade do |t|
+  create_table "agents", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "last_name"
     t.string "middle_name"
     t.string "first_name"
@@ -310,7 +310,7 @@ ActiveRecord::Schema.define(version: 20170305064014) do
   end
 
   create_table "creates", force: :cascade do |t|
-    t.bigint "agent_id", null: false
+    t.uuid "agent_id", null: false
     t.uuid "work_id", null: false
     t.integer "position"
     t.datetime "created_at", null: false
@@ -333,7 +333,7 @@ ActiveRecord::Schema.define(version: 20170305064014) do
   end
 
   create_table "donates", force: :cascade do |t|
-    t.bigint "agent_id", null: false
+    t.uuid "agent_id", null: false
     t.uuid "item_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -869,8 +869,17 @@ ActiveRecord::Schema.define(version: 20170305064014) do
     t.index ["sender_id"], name: "index_messages_on_sender_id"
   end
 
+  create_table "ndla_records", force: :cascade do |t|
+    t.uuid "agent_id"
+    t.string "body", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["agent_id"], name: "index_ndla_records_on_agent_id"
+    t.index ["body"], name: "index_ndla_records_on_body", unique: true
+  end
+
   create_table "owns", force: :cascade do |t|
-    t.bigint "agent_id", null: false
+    t.uuid "agent_id", null: false
     t.uuid "item_id", null: false
     t.integer "position"
     t.datetime "created_at", null: false
@@ -927,7 +936,7 @@ ActiveRecord::Schema.define(version: 20170305064014) do
   end
 
   create_table "produces", force: :cascade do |t|
-    t.bigint "agent_id", null: false
+    t.uuid "agent_id", null: false
     t.uuid "manifestation_id", null: false
     t.integer "position"
     t.datetime "created_at", null: false
@@ -966,7 +975,7 @@ ActiveRecord::Schema.define(version: 20170305064014) do
   end
 
   create_table "realizes", force: :cascade do |t|
-    t.bigint "agent_id", null: false
+    t.uuid "agent_id", null: false
     t.uuid "expression_id", null: false
     t.integer "position"
     t.datetime "created_at", null: false
@@ -1340,6 +1349,9 @@ ActiveRecord::Schema.define(version: 20170305064014) do
   add_foreign_key "accepts", "items"
   add_foreign_key "accepts", "users", column: "librarian_id"
   add_foreign_key "agent_import_files", "users"
+  add_foreign_key "agent_names", "agents"
+  add_foreign_key "agent_names", "languages"
+  add_foreign_key "agent_names", "profiles"
   add_foreign_key "baskets", "users"
   add_foreign_key "creates", "agents"
   add_foreign_key "creates", "manifestations", column: "work_id"
@@ -1362,6 +1374,7 @@ ActiveRecord::Schema.define(version: 20170305064014) do
   add_foreign_key "items", "shelves"
   add_foreign_key "jpno_records", "manifestations"
   add_foreign_key "library_groups", "users"
+  add_foreign_key "ndla_records", "agents"
   add_foreign_key "owns", "agents"
   add_foreign_key "owns", "items"
   add_foreign_key "periodicals", "manifestations"

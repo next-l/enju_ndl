@@ -8,3 +8,4 @@ end
 
 Manifestation.include(EnjuSubject::EnjuManifestation)
 Manifestation.include(EnjuNdl::EnjuManifestation)
+Agent.include(EnjuNdl::EnjuAgent)

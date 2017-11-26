@@ -10,7 +10,7 @@ require 'spec_helper'
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 require 'vcr'
-require 'factory_girl'
+require 'factory_bot'
 require 'pundit/rspec'
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |f| require f }
 
@@ -72,8 +72,8 @@ RSpec.configure do |config|
   end
 end
 
-FactoryGirl.definition_file_paths << "#{::Rails.root}/../../spec/factories"
-FactoryGirl.find_definitions
+FactoryBot.definition_file_paths << "#{::Rails.root}/../../spec/factories"
+FactoryBot.find_definitions
 
 VCR.configure do |c|
   c.cassette_library_dir = 'spec/cassette_library'

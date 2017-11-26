@@ -27,9 +27,9 @@ describe NdlBook do
       #manifestation.identifier_contents(:iss_itemno).should eq ['R100000002-I000010980901-00']
       manifestation.jpno_record.body.should eq '21816393'
       manifestation.language.name.should eq 'Japanese'
-      manifestation.creators.first.full_name.should eq '秋葉, 拓哉'
-      manifestation.creators.first.full_name_transcription.should eq 'アキバ, タクヤ'
-      manifestation.creators.first.agent_identifier.should eq 'http://id.ndl.go.jp/auth/entity/01208840'
+      manifestation.creators.order(created_at: :asc).first.full_name.should eq '秋葉, 拓哉'
+      manifestation.creators.order(created_at: :asc).first.full_name_transcription.should eq 'アキバ, タクヤ'
+      manifestation.creators.order(created_at: :asc).first.agent_identifier.should eq 'http://id.ndl.go.jp/auth/entity/01208840'
       manifestation.price.should eq 3280
       manifestation.start_page.should eq 1
       manifestation.end_page.should eq 315

@@ -3,13 +3,13 @@
 one:
   id: 1
   agent_import_file_id: 1
-  agent_id: 1
+  agent_id: 727eae50-90a8-419b-ab0c-bd8f9a3a2873
   body: MyText
 
 two:
   id: 2
   agent_import_file_id: 1
-  agent_id: 1
+  agent_id: 727eae50-90a8-419b-ab0c-bd8f9a3a2873
   body: MyText
 
 # == Schema Information
