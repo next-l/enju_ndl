@@ -204,5 +204,10 @@ describe NdlBook do
       expect(manifestation.extent).to eq "1 v. (unpaged) : col. ill."
       expect(manifestation.dimensions).to eq "25 x 29 cm"
     end
+
+    it "should import with DDC [Fic]", vcr: true do
+      manifestation = NdlBook.import_from_sru_response( "R100000002-I000008410444-00" )
+      expect(manifestation.original_title).to eq "A single shard / Linda Sue Park"
+    end
   end
 end
