@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "enju_subject", "~> 0.2.2"
 
-  s.add_development_dependency "enju_leaf", "~> 1.2.1"
+  s.add_development_dependency "enju_leaf", "~> 1.2.2"
   s.add_development_dependency "enju_question", "~> 0.2.0"
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "mysql2"
