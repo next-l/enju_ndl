@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+
 class NdlBook
   attr_reader :jpno, :permalink, :title, :creator, :publisher, :issued, :isbn,
     :itemno

@@ -1,10 +1,9 @@
-# -*- encoding: utf-8 -*-
 require 'rails_helper'
 
 describe ImportRequest do
   fixtures :all
 
-  it "should import isbn", :vcr => true do
+  it "should import isbn", vcr: true do
     ImportRequest.import_isbn('4797327030').should be_valid
   end
 end
