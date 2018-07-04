@@ -1,4 +1,4 @@
-class CreateSubjectTypes < ActiveRecord::Migration
+class CreateSubjectTypes < ActiveRecord::Migration[4.2]
   def self.up
     create_table :subject_types do |t|
       t.string :name, :null => false

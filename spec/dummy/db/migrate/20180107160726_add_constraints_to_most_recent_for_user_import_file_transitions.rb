@@ -1,4 +1,4 @@
-class AddConstraintsToMostRecentForUserImportFileTransitions < ActiveRecord::Migration
+class AddConstraintsToMostRecentForUserImportFileTransitions < ActiveRecord::Migration[4.2]
   disable_ddl_transaction!
 
   def up

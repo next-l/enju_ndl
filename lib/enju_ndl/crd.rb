@@ -60,7 +60,7 @@ module EnjuNdl
                           end
 
         resources = response[:results]
-        Kaminari.paginate_array(resources, total_count: crd_total_count, page: crd_page).page(crd_page)
+        Kaminari.paginate_array(resources, total_count: crd_total_count).page(crd_page)
       end
     end
   end

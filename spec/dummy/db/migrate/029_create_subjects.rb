@@ -1,4 +1,4 @@
-class CreateSubjects < ActiveRecord::Migration
+class CreateSubjects < ActiveRecord::Migration[4.2]
   def self.up
     create_table :subjects do |t|
       t.integer :parent_id

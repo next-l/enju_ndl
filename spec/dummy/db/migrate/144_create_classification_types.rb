@@ -1,4 +1,4 @@
-class CreateClassificationTypes < ActiveRecord::Migration
+class CreateClassificationTypes < ActiveRecord::Migration[4.2]
   def self.up
     create_table :classification_types do |t|
       t.string :name, :null => false

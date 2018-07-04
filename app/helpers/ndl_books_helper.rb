@@ -1,5 +1,3 @@
-# -*- encoding: utf-8 -*-
-
 module NdlBooksHelper
   def link_to_import_from_ndl(iss_itemno)
     if iss_itemno.blank?

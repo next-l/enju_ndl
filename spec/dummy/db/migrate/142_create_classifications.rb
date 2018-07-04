@@ -1,4 +1,4 @@
-class CreateClassifications < ActiveRecord::Migration
+class CreateClassifications < ActiveRecord::Migration[4.2]
   def self.up
     create_table :classifications do |t|
       t.integer :parent_id

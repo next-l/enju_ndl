@@ -1,16 +1,16 @@
 class NdlBooksController < ApplicationController
-  before_action :check_policy, only: [:index, :create]
+  before_action :check_policy, only: %i[index create]
 
   def index
-    if params[:page].to_i == 0
-      page = 1
-    else
-      page = params[:page]
-    end
+    page = if params[:page].to_i == 0
+             1
+           else
+             params[:page]
+           end
     @query = params[:query].to_s.strip
     books = NdlBook.search(params[:query], page)
     @books = Kaminari.paginate_array(
-      books[:items], total_count: books[:total_entries], page: page
+      books[:items], total_count: books[:total_entries]
     ).page(page).per(10)
 
     respond_to do |format|
@@ -35,6 +35,7 @@ class NdlBooksController < ApplicationController
   end
 
   private
+
   def check_policy
     authorize NdlBook
   end
