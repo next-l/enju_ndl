@@ -21,7 +21,7 @@ class NdlBooksController < ApplicationController
   def create
     if params[:book]
       begin
-        @manifestation = NdlBook.import_from_sru_response(params[:book][:iss_itemno])
+        @manifestation = NdlBook.import_from_sru_response(params[:book].try(:[], 'iss_itemno'))
       rescue EnjuNdl::RecordNotFound
       end
       respond_to do |format|
