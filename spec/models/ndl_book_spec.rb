@@ -179,25 +179,25 @@ describe NdlBook do
     end
 
     it "should import ndc8 classification", vcr: true do
-      manifestation = NdlBook.import_from_sru_response( "R100000002-I000002467093-00" )
+      manifestation = NdlBook.import_from_sru_response("R100000002-I000002467093-00")
       manifestation.classifications.should_not be_empty
       manifestation.classifications.first.classification_type.name.should eq "ndc8"
       manifestation.classifications.first.category.should eq "547.48"
     end
 
     it "should import edition", vcr: true do
-      manifestation = NdlBook.import_from_sru_response( "R100000002-I025107686-00" )
+      manifestation = NdlBook.import_from_sru_response("R100000002-I025107686-00")
       manifestation.edition_string.should eq "改訂第2版"
     end
 
     it "should import volume title", vcr: true do
-      manifestation = NdlBook.import_from_sru_response( "R100000002-I000011225479-00" )
+      manifestation = NdlBook.import_from_sru_response("R100000002-I000011225479-00")
       manifestation.original_title.should eq "じゃらん 関東・東北"
       manifestation.title_transcription.should eq "ジャラン カントウ トウホク"
     end
 
     it "should import even with invalid url", vcr: true do
-      manifestation = NdlBook.import_from_sru_response( "R100000002-I000003523406-00 " )
+      manifestation = NdlBook.import_from_sru_response("R100000002-I000003523406-00 ")
       expect(manifestation.original_title).to eq "The little boat / written by Kathy Henderson ; illustrated by Patrick Benson"
       expect(manifestation.language.name).to eq "English"
       expect(manifestation.extent).to eq "1 v. (unpaged) : col. ill."
@@ -205,7 +205,7 @@ describe NdlBook do
     end
 
     it "should import with DDC [Fic]", vcr: true do
-      manifestation = NdlBook.import_from_sru_response( "R100000002-I000008410444-00" )
+      manifestation = NdlBook.import_from_sru_response("R100000002-I000008410444-00")
       expect(manifestation.original_title).to eq "A single shard / Linda Sue Park"
     end
   end
