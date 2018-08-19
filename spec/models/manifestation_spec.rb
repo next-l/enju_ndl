@@ -18,4 +18,10 @@ describe Manifestation do
     manifestation.series_statements.count.should eq  1
     manifestation.series_statements.first.original_title.should eq '新潮新書'
   end
+
+  it "should import with ndl_bib_id", vcr: true do
+    manifestation = Manifestation.import_ndl_bib_id("000000471440")
+    expect(manifestation).to be_valid
+    expect(manifestation.original_title).to eq "化学"
+  end
 end

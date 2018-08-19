@@ -10,6 +10,13 @@ module EnjuNdl
         manifestation
       end
 
+      # Use http://www.ndl.go.jp/jp/dlib/standards/opendataset/aboutIDList.txt
+      def import_ndl_bib_id(ndl_bib_id)
+        url = "http://iss.ndl.go.jp/books/R100000002-I#{ndl_bib_id}-00.rdf"
+        doc = Nokogiri::XML(Faraday.get(url).body)
+        import_record(doc)
+      end
+
       def import_from_ndl_search(options)
         # if options[:isbn]
         lisbn = Lisbn.new(options[:isbn])
