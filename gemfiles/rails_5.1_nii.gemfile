@@ -3,7 +3,6 @@
 source "https://rubygems.org"
 
 gem "jquery-rails"
-gem "enju_leaf", branch: "1.3", git: "https://github.com/next-l/enju_leaf.git"
 gem "enju_nii", "~> 0.3.0.beta.1"
 gem "enju_loc", branch: "1.3", git: "https://github.com/next-l/enju_loc.git"
 gem "rails-controller-testing"

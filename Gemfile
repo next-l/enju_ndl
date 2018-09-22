@@ -14,7 +14,6 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
-gem 'enju_leaf', github: 'next-l/enju_leaf', branch: '1.3'
 gem 'enju_nii', github: 'next-l/enju_nii', branch: '1.3'
 gem 'enju_loc', github: 'next-l/enju_loc', branch: '1.3'
 gem 'rails-controller-testing'
