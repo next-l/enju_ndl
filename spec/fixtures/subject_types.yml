@@ -2,28 +2,28 @@
 subject_type_00001:
   id: 1
   name: concept
-  display_name_translations: {"en": "Concept"}
+  display_name_translations: {"en": "Concept", "ja": "Concept"}
   note: 
   position: 1
 
 subject_type_00002:
   id: 2
   name: event
-  display_name_translations: {"en": "Event"}
+  display_name_translations: {"en": "Event", "ja": "Event"}
   note: 
   position: 2
 
 subject_type_00003:
   id: 3
   name: object
-  display_name_translations: {"en": "Object"}
+  display_name_translations: {"en": "Object", "ja": "Object"}
   note: 
   position: 3
 
 subject_type_00004:
   id: 4
   name: place
-  display_name_translations: {"en": "Place"}
+  display_name_translations: {"en": "Place", "ja": "Place"}
   note: 
   position: 4
 
