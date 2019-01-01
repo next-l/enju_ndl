@@ -1,17 +1,24 @@
-class CreateSubjects < ActiveRecord::Migration[5.0]
-  def change
-    create_table :subjects, id: :uuid, default: 'gen_random_uuid()' do |t|
-      t.integer :parent_id, index: true
-      t.integer :use_term_id, index: true
-      t.string :term, index: true
+class CreateSubjects < ActiveRecord::Migration[4.2]
+  def self.up
+    create_table :subjects do |t|
+      t.references :parent, index: true
+      t.integer :use_term_id
+      t.string :term
       t.text :term_transcription
-      t.integer :subject_type_id, index: true, null: false
+      t.references :subject_type, index: true, null: false
       t.text :scope_note
       t.text :note
-      t.integer :required_role_id, default: 1, null: false
+      t.references :required_role, index: true, default: 1, null: false
       t.integer :lock_version, default: 0, null: false
-      t.timestamps
+      t.datetime :created_at
+      t.datetime :updated_at
       t.datetime :deleted_at
     end
+    add_index :subjects, :term
+    add_index :subjects, :use_term_id
+  end
+
+  def self.down
+    drop_table :subjects
   end
 end

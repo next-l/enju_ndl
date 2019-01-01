@@ -1,4 +1,4 @@
-class AddAdditionalAttributesToUser < ActiveRecord::Migration[5.0]
+class AddAdditionalAttributesToUser < ActiveRecord::Migration[4.2]
   def change
     add_column :users, :username, :string
     add_column :users, :deleted_at, :datetime
@@ -11,6 +11,6 @@ class AddAdditionalAttributesToUser < ActiveRecord::Migration[5.0]
     add_column :users, :confirmed_at, :datetime
 
     add_index :users, :username, unique: true
-    add_index :users, :unlock_token, unique: true
+    add_index :users, :unlock_token,         unique: true
   end
 end

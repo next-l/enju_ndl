@@ -1,62 +1,13 @@
 --- 
 classification_type_00001: 
-  name: ndc
-  display_name_translations: {"en": "NDC", "ja": "NDC"}
-  updated_at: 2008-03-02 22:53:40.696331 +09:00
+  name: ndc9
+  display_name: NDC9
   id: 1
   note: ""
-  created_at: 2008-03-02 22:53:40.696331 +09:00
   position: 1
 classification_type_00002: 
-  name: ndlc
-  display_name_translations: {"en": "NDLC", "ja": "NDLC"}
-  updated_at: 2008-03-02 22:53:51.394954 +09:00
+  name: ddc
+  display_name: DDC
   id: 2
   note: ""
-  created_at: 2008-03-02 22:53:51.394954 +09:00
   position: 2
-classification_type_00003: 
-  name: ddc
-  display_name_translations: {"en": "DDC", "ja": "DDC"}
-  updated_at: 2008-03-02 22:53:58.937354 +09:00
-  id: 3
-  note: ""
-  created_at: 2008-03-02 22:53:58.937354 +09:00
-  position: 3
-classification_type_00004: 
-  name: udc
-  display_name_translations: {"en": "UDC", "ja": "UDC"}
-  updated_at: 2008-03-02 22:54:20.265696 +09:00
-  id: 4
-  note: ""
-  created_at: 2008-03-02 22:54:20.265696 +09:00
-  position: 4
-classification_type_00005: 
-  name: lcc
-  display_name_translations: {"en": "LCC", "ja": "LCC"}
-  updated_at: 2008-03-02 22:54:41.169172 +09:00
-  id: 5
-  note: ""
-  created_at: 2008-03-02 22:54:41.169172 +09:00
-  position: 5
-classification_type_00006: 
-  name: nlmc
-  display_name_translations: {"en": "NLMC", "ja": "NLMC"}
-  updated_at: 2008-03-02 22:54:56.181793 +09:00
-  id: 6
-  note: ""
-  created_at: 2008-03-02 22:54:56.181793 +09:00
-  position: 6
-
-# == Schema Information
-#
-# Table name: classification_types
-#
-#  id                        :integer          not null, primary key
-#  name                      :string           not null
-#  display_name_translations :jsonb
-#  note                      :text
-#  position                  :integer
-#  created_at                :datetime         not null
-#  updated_at                :datetime         not null
-#

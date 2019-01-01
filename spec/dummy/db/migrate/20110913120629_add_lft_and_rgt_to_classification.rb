@@ -1,4 +1,4 @@
-class AddLftAndRgtToClassification < ActiveRecord::Migration[5.0]
+class AddLftAndRgtToClassification < ActiveRecord::Migration[4.2]
   def self.up
     add_column :classifications, :lft, :integer
     add_column :classifications, :rgt, :integer

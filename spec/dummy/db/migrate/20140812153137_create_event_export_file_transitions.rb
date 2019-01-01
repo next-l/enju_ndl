@@ -1,4 +1,4 @@
-class CreateEventExportFileTransitions < ActiveRecord::Migration[5.0]
+class CreateEventExportFileTransitions < ActiveRecord::Migration[4.2]
   def change
     create_table :event_export_file_transitions do |t|
       t.string :to_state

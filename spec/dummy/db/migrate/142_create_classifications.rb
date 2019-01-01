@@ -1,12 +1,19 @@
-class CreateClassifications < ActiveRecord::Migration[5.0]
-  def change
-    create_table :classifications, id: :uuid, default: 'gen_random_uuid()' do |t|
-      t.integer :parent_id, index: true
-      t.string :category, null: false, index: true
+class CreateClassifications < ActiveRecord::Migration[4.2]
+  def self.up
+    create_table :classifications do |t|
+      t.integer :parent_id
+      t.string :category, null: false
       t.text :note
-      t.integer :classification_type_id, null: false, index: true
+      t.integer :classification_type_id, null: false
 
       t.timestamps
     end
+    add_index :classifications, :parent_id
+    add_index :classifications, :category
+    add_index :classifications, :classification_type_id
+  end
+
+  def self.down
+    drop_table :classifications
   end
 end

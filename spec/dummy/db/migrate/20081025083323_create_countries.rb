@@ -1,4 +1,4 @@
-class CreateCountries < ActiveRecord::Migration[5.1]
+class CreateCountries < ActiveRecord::Migration[4.2]
 
   # ISO 3166 is the International Standard for country codes.
   #
@@ -12,11 +12,11 @@ class CreateCountries < ActiveRecord::Migration[5.1]
 
   def change
     create_table :countries do |t|
-      t.string :name,         :size => 80, :null => false
+      t.string :name,         size: 80, null: false
       t.text :display_name
-      t.string :alpha_2,      :size => 2
-      t.string :alpha_3,      :size => 3
-      t.string :numeric_3, :size => 3
+      t.string :alpha_2,      size: 2
+      t.string :alpha_3,      size: 3
+      t.string :numeric_3, size: 3
       t.text :note
       t.integer :position
     end

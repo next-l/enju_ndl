@@ -1,4 +1,4 @@
-class CreateEventImportFiles < ActiveRecord::Migration[5.0]
+class CreateEventImportFiles < ActiveRecord::Migration[4.2]
   def self.up
     create_table :event_import_files do |t|
       t.integer :parent_id

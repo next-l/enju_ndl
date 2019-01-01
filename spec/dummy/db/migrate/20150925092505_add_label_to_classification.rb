@@ -1,4 +1,4 @@
-class AddLabelToClassification < ActiveRecord::Migration[5.0]
+class AddLabelToClassification < ActiveRecord::Migration[4.2]
   def change
     add_column :classifications, :label, :string
   end

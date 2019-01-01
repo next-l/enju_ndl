@@ -4,7 +4,7 @@ class CreateIssnRecords < ActiveRecord::Migration[5.1]
       t.string :body, index: {unique: true}, null: false
       t.string :issn_type
       t.string :source
-      t.references :manifestation, foreign_key: true, type: :uuid
+      t.references :manifestation, foreign_key: true
 
       t.timestamps
     end
