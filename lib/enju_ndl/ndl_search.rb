@@ -16,8 +16,11 @@ module EnjuNdl
         raise EnjuNdl::InvalidIsbn unless lisbn.valid?
         # end
 
-        manifestation = Manifestation.find_by_isbn(lisbn.isbn)
-        return manifestation.first if manifestation.present?
+        isbn_record = IsbnRecord.find_by(lisbn.isbn13)
+        if isbn_record
+          manifestation = isbn_record.manifestations.first
+          return manifestation if manifestation
+        end
 
         doc = return_xml(lisbn.isbn)
         raise EnjuNdl::RecordNotFound unless doc
