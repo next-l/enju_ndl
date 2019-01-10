@@ -12,6 +12,7 @@ gem "enju_manifestation_viewer", git: "https://github.com/next-l/enju_manifestat
 gem "jquery-rails"
 gem "rails-controller-testing"
 gem "mobility"
+gem "rspec_junit_formatter"
 gem "enju_loc", git: "https://github.com/next-l/enju_loc.git"
 
 gemspec path: "../"
