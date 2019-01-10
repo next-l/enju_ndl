@@ -150,10 +150,8 @@ module EnjuNdl
           )
           manifestation.serial = true if is_serial
           identifier = {}
-          isbn_record = IsbnRecord.where(body: isbn).first_or_initialize if isbn
-          if jpno
-            manifestation.jpno_record = JpnoRecord.where(body: jpno).first_or_initialize
-          end
+          isbn_record = IsbnRecord.where(body: isbn).first_or_initialize if isbn.present?
+          manifestation.jpno_record = JpnoRecord.where(body: jpno).first_or_initialize if jpno.present?
           issn_record = IssnRecord.where(body: issn).first_or_initialize if issn
           manifestation.carrier_type = carrier_type if carrier_type
           manifestation.manifestation_content_type = content_type if content_type
