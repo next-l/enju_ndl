@@ -16,7 +16,7 @@ module EnjuNdl
         raise EnjuNdl::InvalidIsbn unless lisbn.valid?
         # end
 
-        isbn_record = IsbnRecord.find_by(lisbn.isbn13)
+        isbn_record = IsbnRecord.find_by(body: lisbn.isbn13)
         if isbn_record
           manifestation = isbn_record.manifestations.first
           return manifestation if manifestation
