@@ -23,7 +23,7 @@ module EnjuNdl
         raise EnjuNdl::InvalidIsbn unless lisbn.valid?
         # end
 
-        isbn_record = IsbnRecord.find_by(body: lisbn.isbn13)
+        isbn_record = IsbnRecord.find_by(body: lisbn.isbn13) || IsbnRecord.find_by(body: lisbn.isbn10)
         if isbn_record
           manifestation = isbn_record.manifestations.first
           return manifestation if manifestation
@@ -64,7 +64,7 @@ module EnjuNdl
                         1
                       end
 
-        isbn = Lisbn.new(doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/ISBN"]').try(:content).to_s).try(:isbn)
+        isbn = Lisbn.new(doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/ISBN"]').try(:content).to_s)
         issn = StdNum::ISSN.normalize(doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/ISSN"]').try(:content))
         issn_l = StdNum::ISSN.normalize(doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/ISSNL"]').try(:content))
 
@@ -157,7 +157,10 @@ module EnjuNdl
           )
           manifestation.serial = true if is_serial
           identifier = {}
-          isbn_record = IsbnRecord.where(body: isbn).first_or_initialize if isbn.present?
+          if isbn.present?
+            isbn_record = IsbnRecord.find_by(body: isbn.isbn13) || IsbnRecord.find_by(body: isbn.isbn10)
+            isbn_record = IsbnRecord.create(body: isbn.isbn13) unless isbn_record
+          end
           manifestation.jpno_record = JpnoRecord.where(body: jpno).first_or_initialize if jpno.present?
           issn_record = IssnRecord.where(body: issn).first_or_initialize if issn
           manifestation.carrier_type = carrier_type if carrier_type
