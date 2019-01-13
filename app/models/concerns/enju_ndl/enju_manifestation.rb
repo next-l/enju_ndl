@@ -4,8 +4,10 @@ module EnjuNdl
 
     included do
       has_one :jpno_record
-      string :jpno do
-        jpno_record.try(:body)
+      searchable do
+        string :jpno do
+          jpno_record.try(:body)
+        end
       end
     end
   end
