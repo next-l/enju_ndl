@@ -1,5 +1,5 @@
 module EnjuNdl
-  module EnjuCrd
+  module EnjuQuestion
     extend ActiveSupport::Concern
 
     included do
