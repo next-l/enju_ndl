@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
 end
 
 Manifestation.include(EnjuSubject::EnjuManifestation)
+ImportRequest.include(EnjuNdl::EnjuManifestation)
 Manifestation.include(EnjuNdl::EnjuManifestation)
 Agent.include(EnjuNdl::EnjuAgent)
 Question.include(EnjuNdl::EnjuQuestion)
