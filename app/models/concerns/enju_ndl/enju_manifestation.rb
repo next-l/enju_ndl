@@ -11,8 +11,7 @@ module EnjuNdl
       end
 
       def self.import_isbn(isbn)
-        manifestation = Manifestation.import_from_ndl_search(isbn: isbn)
-        manifestation
+        self.import_from_ndl_search(isbn: isbn)
       end
 
       # Use http://www.ndl.go.jp/jp/dlib/standards/opendataset/aboutIDList.txt
