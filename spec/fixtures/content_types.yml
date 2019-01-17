@@ -1,23 +1,20 @@
 --- 
 content_type_00001:
   id: 1
-  name: text  
-  display_name: "en: text\r\n\
-    ja: 文字"
+  name: text
+  display_name: {"en": "text", "ja": "文字"}
   note: 
   position: 1
 content_type_00002:
   id: 2
   name: performed_music
-  display_name: "en: Performed music\r\n\
-    ja: 音楽"
+  display_name: {"en": "Performed music", "ja": "音楽"}
   note: 曲の演奏など
   position: 2
 content_type_00003:
   id: 3
   name: two_dimensional_moving_image
-  display_name: "en: Two-dimensional moving image\r\n\
-    ja: 動画"
+  display_name: {"en": "Two-dimensional moving image", "ja": "動画"}
   note: 
   position: 3
 content_type_00004:
@@ -65,21 +62,31 @@ content_type_00009:
 content_type_00010:
   id: 10
   name: three_dimensional_moving_image
-  display_name: "en: Three-dimensional moving image\r\n\
-    ja: 3D動画"
+  display_name: {"en": "Three-dimensional moving image", "ja": "3D動画"}
   note: 
   position: 10
 content_type_00011:
   id: 11
   name: other
-  display_name: "en: Other\r\n\
-    ja: その他"
+  display_name: {"en": "Other", "ja": "その他"}
   note: LCMARCに由来
   position: 11
 content_type_00012:
   id: 12
   name: unspecified
-  display_name: "en: Unspecified\r\n\
-    ja: 不明"
+  display_name: {"en": "Unspecified", "ja": "不明"}
   note: LCMARCに由来
   position: 12
+
+# == Schema Information
+#
+# Table name: content_types
+#
+#  id           :bigint(8)        not null, primary key
+#  name         :string           not null
+#  display_name :jsonb            not null
+#  note         :text
+#  position     :integer          default(1), not null
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
