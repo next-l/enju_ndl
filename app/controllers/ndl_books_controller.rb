@@ -22,7 +22,7 @@ class NdlBooksController < ApplicationController
     if params[:book]
       begin
         @manifestation = NdlBook.import_from_sru_response(params.require(:book).permit(:iss_itemno)[:iss_itemno])
-      rescue EnjuNdl::RecordNotFound
+      rescue Manifestation::RecordNotFound
       end
       respond_to do |format|
         if @manifestation.try(:save)

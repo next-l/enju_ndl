@@ -19,9 +19,9 @@ gem "enju_question", github: "next-l/enju_question"
 gem "enju_manifestation_viewer", github: "next-l/enju_manifestation_viewer"
 gem "enju_bookmark", github: "next-l/enju_bookmark"
 gem "jquery-rails"
-gem "rails-controller-testing"
 gem "mobility"
-gem 'rspec_junit_formatter'
+gem "rails-controller-testing", group: :test
+gem 'rspec_junit_formatter', group: :test
 
 # To use a debugger
 # gem 'byebug', group: [:development, :test]

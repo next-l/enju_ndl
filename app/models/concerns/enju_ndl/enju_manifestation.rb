@@ -24,7 +24,7 @@ module EnjuNdl
       def self.import_from_ndl_search(options)
         # if options[:isbn]
         lisbn = Lisbn.new(options[:isbn])
-        raise EnjuNdl::InvalidIsbn unless lisbn.valid?
+        raise Manifestation::InvalidIsbn unless lisbn.valid?
         # end
 
         isbn_record = IsbnRecord.find_by(body: lisbn.isbn13) || IsbnRecord.find_by(body: lisbn.isbn10)
@@ -34,8 +34,8 @@ module EnjuNdl
         end
 
         doc = return_xml(lisbn.isbn)
-        raise EnjuNdl::RecordNotFound unless doc
-        # raise EnjuNdl::RecordNotFound if doc.at('//openSearch:totalResults').content.to_i == 0
+        raise Manifestation::RecordNotFound unless doc
+        # raise Manifestation::RecordNotFound if doc.at('//openSearch:totalResults').content.to_i == 0
         import_record(doc)
       end
 
