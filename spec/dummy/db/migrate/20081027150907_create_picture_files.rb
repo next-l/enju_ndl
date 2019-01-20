@@ -1,8 +1,8 @@
 class CreatePictureFiles < ActiveRecord::Migration[5.2]
   def change
     create_table :picture_files do |t|
-      t.integer :picture_attachable_id
-      t.string :picture_attachable_type
+      t.references :picture_attachable, null: false
+      t.string :picture_attachable_type, null: false
       t.string :content_type
       t.text :title
       t.string :thumbnail
