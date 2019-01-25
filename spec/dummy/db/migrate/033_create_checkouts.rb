@@ -1,10 +1,10 @@
-class CreateCheckouts < ActiveRecord::Migration[4.2]
-  def self.up
+class CreateCheckouts < ActiveRecord::Migration[5.2]
+  def change
     create_table :checkouts do |t|
-      t.references :user, index: true, foreign_key: true
-      t.references :item, index: true, foreign_key: true, null: false
-      t.references :checkin, index: true, foreign_key: true
-      t.references :librarian, index: true
+      t.references :user, foreign_key: true
+      t.references :item, foreign_key: true, null: false, type: :uuid
+      t.references :checkin, foreign_key: true
+      t.references :librarian, foreign_key: {to_table: :users}
       t.references :basket, index: true
       t.datetime :due_date
       t.integer :checkout_renewal_count, default: 0, null: false
@@ -12,9 +12,5 @@ class CreateCheckouts < ActiveRecord::Migration[4.2]
       t.timestamps
     end
     add_index :checkouts, [:item_id, :basket_id], unique: true
-  end
-
-  def self.down
-    drop_table :checkouts
   end
 end

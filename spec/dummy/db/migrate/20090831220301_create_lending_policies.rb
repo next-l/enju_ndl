@@ -1,8 +1,8 @@
-class CreateLendingPolicies < ActiveRecord::Migration[4.2]
-  def self.up
+class CreateLendingPolicies < ActiveRecord::Migration[5.2]
+  def change
     create_table :lending_policies do |t|
-      t.references :item, index: false, foreign_key: true, null: false
-      t.references :user_group, index: false, foreign_key: true, null: false
+      t.references :item, index: false, foreign_key: true, null: false, type: :uuid
+      t.references :user_group, index: false, foreign_key: true, null: false, type: :uuid
       t.integer :loan_period, default: 0, null: false
       t.datetime :fixed_due_date
       t.integer :renewal, default: 0, null: false
@@ -13,9 +13,5 @@ class CreateLendingPolicies < ActiveRecord::Migration[4.2]
       t.timestamps
     end
     add_index :lending_policies, [:item_id, :user_group_id], unique: true
-  end
-
-  def self.down
-    drop_table :lending_policies
   end
 end

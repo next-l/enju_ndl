@@ -4,7 +4,7 @@ class CreateShelves < ActiveRecord::Migration[5.2]
       t.string :name, null: false
       t.jsonb :display_name, default: {}, null: false
       t.text :note
-      t.references :library, index: true, null: false
+      t.references :library, foreign_key: true, null: false
       t.integer :items_count, default: 0, null: false
       t.integer :position
       t.timestamps
