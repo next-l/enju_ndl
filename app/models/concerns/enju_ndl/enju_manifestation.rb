@@ -61,7 +61,7 @@ module EnjuNdl
                  end
         end
 
-        language = Language.where(iso_639_2: get_language(doc)).first
+        language = Language.find_by(iso_639_2: get_language(doc))
         language_id = if language
                         language.id
                       else
@@ -214,7 +214,7 @@ module EnjuNdl
           if defined?(EnjuSubject)
             subject_heading_type = SubjectHeadingType.where(name: 'ndlsh').first_or_create!
             subjects.each do |term|
-              subject = Subject.where(term: term[:term]).first
+              subject = Subject.find_by(term: term[:term])
               unless subject
                 subject = Subject.new(term)
                 subject.subject_heading_type = subject_heading_type

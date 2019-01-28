@@ -4,7 +4,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.string :call_number
       t.string :item_identifier, index: {unique: true}
       t.timestamps
-      t.references :shelf
+      t.references :shelf, type: :uuid
       t.boolean :include_supplements, default: false, null: false
       t.text :note
       t.string :url
