@@ -48,7 +48,7 @@ module EnjuNdl
         title = get_title(doc)
 
         # date of publication
-        pub_date = doc.at('//dcterms:date').try(:content).to_s.tr('.', '-')
+        pub_date = doc.at('//dcterms:issued').try(:content).to_s.tr('.', '-')
         pub_date = nil unless pub_date =~ /^\d+(-\d{0,2}){0,2}$/
         if pub_date
           date = pub_date.split('-')

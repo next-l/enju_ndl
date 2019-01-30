@@ -102,8 +102,8 @@ describe NdlBook do
 
     it "should import url contain whitespace", vcr: true do
       manifestation = NdlBook.import_from_sru_response('R100000002-I000002109818-00')
-      manifestation.original_title.should eq "ザ・スコット・フィッツジェラルド・ブック"
-      manifestation.pub_date.should eq "1991-04"
+      manifestation.original_title.should eq 'ザ・スコット・フィッツジェラルド・ブック'
+      manifestation.pub_date.should eq '1991'
     end
 
     it "should import audio cd", vcr: true do
