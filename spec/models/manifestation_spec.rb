@@ -3,7 +3,7 @@ require 'rails_helper'
 describe Manifestation do
   fixtures :all
 
-  it "should imporrt a bibliographic record", vcr: true do
+  it "should import a bibliographic record", vcr: true do
     manifestation = Manifestation.import_from_ndl_search(isbn: '406258087X')
     manifestation.should be_valid
   end
