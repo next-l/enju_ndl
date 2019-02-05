@@ -7,7 +7,7 @@ class CreateMessages < ActiveRecord::Migration[5.2]
       t.string   :subject, null: false
       t.text     :body
       t.references :message_request, index: true
-      t.references :parent, foreign_key: {to_table: :messages}, type: :uuid
+      t.references :parent, foreign_key: { to_table: :messages }, type: :uuid
 
       t.timestamps
     end

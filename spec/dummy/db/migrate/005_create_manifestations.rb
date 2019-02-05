@@ -5,7 +5,7 @@ class CreateManifestations < ActiveRecord::Migration[5.2]
       t.text :title_alternative
       t.text :title_transcription
       t.string :classification_number
-      t.string :manifestation_identifier, index: {unique: true}
+      t.string :manifestation_identifier, index: { unique: true }
       t.datetime :date_of_publication, index: true
       t.datetime :copyright_date
       t.timestamps

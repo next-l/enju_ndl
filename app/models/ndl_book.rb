@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class NdlBook
   attr_reader :jpno, :permalink, :title, :creator, :publisher, :issued, :isbn,
     :itemno

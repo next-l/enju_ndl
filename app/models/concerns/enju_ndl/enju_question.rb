@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module EnjuNdl
   module EnjuQuestion
     extend ActiveSupport::Concern
@@ -15,7 +17,7 @@ module EnjuNdl
         delimiter = '.'
         url = "http://crd.ndl.go.jp/refapi/servlet/refapi.RSearchAPI?query=#{URI.escape(query.join(delimiter))}&query_logic=#{params[:query_logic]}&results_get_position=#{params[:results_get_position]}&results_num=#{params[:results_num]}&sort=#{params[:sort]}"
 
-        xml = open(url).read.to_s
+        open(url).read.to_s
       end
 
       def self.search_crd(options)
@@ -61,7 +63,7 @@ module EnjuNdl
                           end
 
         resources = response[:results]
-        crd_results = Kaminari.paginate_array(resources, total_count: crd_total_count).page(crd_page)
+        Kaminari.paginate_array(resources, total_count: crd_total_count).page(crd_page)
       end
     end
   end

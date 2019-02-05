@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module EnjuNdl
   module EnjuManifestation
     extend ActiveSupport::Concern
@@ -22,10 +24,8 @@ module EnjuNdl
       end
 
       def self.import_from_ndl_search(options)
-        # if options[:isbn]
         lisbn = Lisbn.new(options[:isbn])
         raise Manifestation::InvalidIsbn unless lisbn.valid?
-        # end
 
         isbn_record = IsbnRecord.find_by(body: lisbn.isbn13) || IsbnRecord.find_by(body: lisbn.isbn10)
         if isbn_record
@@ -35,7 +35,7 @@ module EnjuNdl
 
         doc = return_xml(lisbn.isbn)
         raise Manifestation::RecordNotFound unless doc
-        # raise Manifestation::RecordNotFound if doc.at('//openSearch:totalResults').content.to_i == 0
+
         import_record(doc)
       end
 
@@ -253,8 +253,6 @@ module EnjuNdl
 
       def self.search_ndl(query, options = {})
         options = { dpid: 'iss-ndl-opac', item: 'any', idx: 1, per_page: 10, raw: false, mediatype: 1 }.merge(options)
-        doc = nil
-        results = {}
         startrecord = options[:idx].to_i
         startrecord = 1 if startrecord == 0
         url = "http://iss.ndl.go.jp/api/opensearch?dpid=#{options[:dpid]}&#{options[:item]}=#{format_query(query)}&cnt=#{options[:per_page]}&idx=#{startrecord}&mediatype=#{options[:mediatype]}"
@@ -263,7 +261,7 @@ module EnjuNdl
         else
           RSS::Rss::Channel.install_text_element('openSearch:totalResults', 'http://a9.com/-/spec/opensearchrss/1.0/', '?', 'totalResults', :text, 'openSearch:totalResults')
           RSS::BaseListener.install_get_text_element 'http://a9.com/-/spec/opensearchrss/1.0/', 'totalResults', 'totalResults='
-          feed = RSS::Parser.parse(url, false)
+          RSS::Parser.parse(url, false)
         end
       end
 
@@ -282,7 +280,7 @@ module EnjuNdl
           rss = search_ndl(isbn, dpid: 'iss-ndl-opac', item: 'isbn')
         end
         if rss.items.first
-          doc = Nokogiri::XML(Faraday.get("#{rss.items.first.link}.rdf").body)
+          Nokogiri::XML(Faraday.get("#{rss.items.first.link}.rdf").body)
         end
       end
 
@@ -295,10 +293,10 @@ module EnjuNdl
           alternative: doc.at('//dcndl:alternative/rdf:Description/rdf:value').try(:content),
           alternative_transcription: doc.at('//dcndl:alternative/rdf:Description/dcndl:transcription').try(:content)
         }
-        volumeTitle = doc.at('//dcndl:volumeTitle/rdf:Description/rdf:value').try(:content)
-        volumeTitle_transcription = doc.at('//dcndl:volumeTitle/rdf:Description/dcndl:transcription').try(:content)
-        title[:manifestation] << " #{volumeTitle}" if volumeTitle
-        title[:transcription] << " #{volumeTitle_transcription}" if volumeTitle_transcription
+        volume_title = doc.at('//dcndl:volume_title/rdf:Description/rdf:value').try(:content)
+        volume_title_transcription = doc.at('//dcndl:volume_title/rdf:Description/dcndl:transcription').try(:content)
+        title[:manifestation] << " #{volume_title}" if volume_title
+        title[:transcription] << " #{volume_title_transcription}" if volume_title_transcription
         title
       end
 
@@ -384,7 +382,7 @@ module EnjuNdl
         end
 
         if series_title[:title]
-          series_statement = SeriesStatement.where(original_title: series_title[:title]).first
+          series_statement = SeriesStatement.find_by(original_title: series_title[:title])
           series_statement ||= SeriesStatement.new(
             original_title: series_title[:title],
             title_transcription: series_title[:title_transcription],

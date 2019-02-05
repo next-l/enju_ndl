@@ -1,4 +1,6 @@
 inherit_from: .rubocop_todo.yml
 
+Allcops:
+  TargetRubyVersion: 2.3
 Rails:
   Enabled: true

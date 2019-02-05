@@ -1,4 +1,4 @@
-class CreateJpnoRecords < ActiveRecord::Migration[5.1]
+class CreateJpnoRecords < ActiveRecord::Migration[5.2]
   def change
     create_table :jpno_records do |t|
       t.string :body, index: {unique: true}, null: false
