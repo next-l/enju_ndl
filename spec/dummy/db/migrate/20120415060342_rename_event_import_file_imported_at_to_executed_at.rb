@@ -1,4 +1,4 @@
-class RenameEventImportFileImportedAtToExecutedAt < ActiveRecord::Migration[4.2]
+class RenameEventImportFileImportedAtToExecutedAt < ActiveRecord::Migration[5.2]
   def up
     rename_column :event_import_files, :imported_at, :executed_at
   end

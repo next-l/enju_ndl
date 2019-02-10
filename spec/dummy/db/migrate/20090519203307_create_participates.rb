@@ -1,17 +1,11 @@
-class CreateParticipates < ActiveRecord::Migration[4.2]
-  def self.up
+class CreateParticipates < ActiveRecord::Migration[5.2]
+  def change
     create_table :participates do |t|
-      t.integer :agent_id, null: false
-      t.integer :event_id, null: false
+      t.references :agent, index: true, null: false, type: :uuid
+      t.references :event, foreign_key: true, null: false, type: :uuid
       t.integer :position
 
       t.timestamps
     end
-    add_index :participates, :event_id
-    add_index :participates, :agent_id
-  end
-
-  def self.down
-    drop_table :participates
   end
 end
