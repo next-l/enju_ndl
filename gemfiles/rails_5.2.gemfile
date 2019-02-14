@@ -11,7 +11,7 @@ gem "enju_question", git: "https://github.com/next-l/enju_question.git"
 gem "enju_manifestation_viewer", git: "https://github.com/next-l/enju_manifestation_viewer.git"
 gem "enju_bookmark", git: "https://github.com/next-l/enju_bookmark.git"
 gem "jquery-rails"
-gem "mobility"
+gem "json_translate"
 gem "rails-controller-testing", group: :test
 gem "rspec_junit_formatter", group: :test
 gem "coveralls", require: false

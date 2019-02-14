@@ -4,7 +4,7 @@ admin:
   user_group_id: ded8b35c-5fa4-426a-92b8-da7a44cb6fec
   id: 4025f49c-6fac-4ff4-ac6c-31cfe1e4e446
   note: 
-  library_id: 2
+  library_id: f6ba26aa-9481-4804-b30f-04692c0189ac
   created_at: 2007-11-19 16:58:32.111941 +09:00
   required_role_id: 4
   user_number: "00001"
@@ -14,7 +14,7 @@ librarian1:
   user_group_id: 2d387a28-f738-4afb-93d4-c42e0b593435
   id: 42b03250-1cc1-4b0f-b491-bd6c221e601a
   note: 
-  library_id: 1
+  library_id: e1008b98-d49c-4145-a763-4ca6083fbc41
   created_at: 2007-11-19 16:58:33.172441 +09:00
   required_role_id: 1
   user_number: "00002"
@@ -24,7 +24,7 @@ user1:
   user_group_id: 2d387a28-f738-4afb-93d4-c42e0b593435
   id: 9e1e2fff-5134-4ce9-a813-2eacafb0a2b5
   note: 
-  library_id: 2
+  library_id: f6ba26aa-9481-4804-b30f-04692c0189ac
   created_at: 2007-11-19 16:58:34.637413 +09:00
   required_role_id: 3
   user_number: "00003"
@@ -34,7 +34,7 @@ librarian2:
   user_group_id: 2d387a28-f738-4afb-93d4-c42e0b593435
   id: a7fed980-07e2-48aa-880a-7b2204c7fc73
   note: 
-  library_id: 2
+  library_id: f6ba26aa-9481-4804-b30f-04692c0189ac
   created_at: 2008-01-18 12:24:04.222344 +09:00
   required_role_id: 1
   user_number: "00004"
@@ -44,7 +44,7 @@ user2:
   user_group_id: 2d387a28-f738-4afb-93d4-c42e0b593435
   id: b92ac994-62a5-4997-9a38-3903bb31491b
   note: 
-  library_id: 1
+  library_id: e1008b98-d49c-4145-a763-4ca6083fbc41
   created_at: 2008-01-18 13:29:06.922728 +09:00
   required_role_id: 2
 #  user_number: '00005'
@@ -54,7 +54,7 @@ user3:
   user_group_id: 2d387a28-f738-4afb-93d4-c42e0b593435
   id: 06bfb232-e063-45e8-b31f-37b38c98e69b
   note: 
-  library_id: 2
+  library_id: f6ba26aa-9481-4804-b30f-04692c0189ac
   created_at: 2007-11-19 16:58:34.637413 +09:00
   required_role_id: 3
   user_number: "00006"
@@ -64,7 +64,7 @@ user4:
   user_group_id: 2d387a28-f738-4afb-93d4-c42e0b593435
   id: a225c3bd-e6aa-47d3-b300-20e232054aa5
   note: 
-  library_id: 2
+  library_id: f6ba26aa-9481-4804-b30f-04692c0189ac
   created_at: 2007-11-19 16:58:34.637413 +09:00
   required_role_id: 3
   user_number: "00007"
@@ -75,7 +75,7 @@ user4:
 # Table name: profiles
 #
 #  id                       :uuid             not null, primary key
-#  user_group_id            :bigint(8)
+#  user_group_id            :uuid             not null
 #  library_id               :bigint(8)
 #  locale                   :string
 #  user_number              :string
