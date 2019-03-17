@@ -4,7 +4,7 @@ class CreateReserveTransitions < ActiveRecord::Migration[5.2]
       t.string :to_state
       t.jsonb :metadata, default: {}
       t.integer :sort_key
-      t.references :reserve
+      t.references :reserve, type: :uuid
       t.timestamps
     end
 

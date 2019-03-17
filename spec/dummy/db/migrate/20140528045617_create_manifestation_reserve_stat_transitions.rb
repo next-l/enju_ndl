@@ -4,7 +4,7 @@ class CreateManifestationReserveStatTransitions < ActiveRecord::Migration[5.2]
       t.string :to_state
       t.jsonb :metadata, default: {}
       t.integer :sort_key
-      t.references :manifestation_reserve_stat, index: false
+      t.references :manifestation_reserve_stat, index: false, type: :uuid
       t.timestamps
     end
 

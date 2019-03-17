@@ -1,6 +1,6 @@
 class CreateBookstores < ActiveRecord::Migration[5.2]
   def change
-    create_table :bookstores do |t|
+    create_table :bookstores, id: :uuid do |t|
       t.text :name, null: false
       t.string :zip_code
       t.text :address

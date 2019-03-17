@@ -4,7 +4,7 @@ class CreateUserReserveStatTransitions < ActiveRecord::Migration[5.2]
       t.string :to_state
       t.jsonb :metadata, default: {}
       t.integer :sort_key
-      t.references :user_reserve_stat
+      t.references :user_reserve_stat, type: :uuid
       t.timestamps
     end
 
