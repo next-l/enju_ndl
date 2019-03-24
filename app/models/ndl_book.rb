@@ -74,6 +74,14 @@ class NdlBook
     Manifestation.import_record(Nokogiri::XML(response.content))
   end
 
+  def subjects
+    @node.xpath('//dcterms:subject/rdf:Description').map{|a| {id: a.attributes['about'].content, value: a.at('./rdf:value').content}}
+  end
+
+  def authors
+    @node.xpath('//dcterms:creator/foaf:Agent').map{|a| {id: a.attributes['about'].content, name: a.at('./foaf:name').content, transcription: a.at('./dcndl:transcription').try(:content)}}
+  end
+
   attr_accessor :url
 
   class AlreadyImported < StandardError
