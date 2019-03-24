@@ -208,5 +208,20 @@ describe NdlBook do
       manifestation = NdlBook.import_from_sru_response("R100000002-I000008410444-00")
       expect(manifestation.original_title).to eq "A single shard / Linda Sue Park"
     end
+
+    it 'should get subject IDs from NDLA', vcr: true do
+      url = "https://iss.ndl.go.jp/books/R100000002-I028087126-00.rdf"
+      doc = Nokogiri::XML(Faraday.get(url).body)
+      ndl_book = NdlBook.new(doc)
+      ndl_book.subjects[0].should eq({id: 'http://id.ndl.go.jp/auth/ndlsh/01058852', value: 'ウェブアプリケーション'})
+      ndl_book.subjects[1].should eq({id: 'http://id.ndl.go.jp/auth/ndlsh/00569223', value: 'プログラミング (コンピュータ)'})
+    end
+
+    it 'should get author IDs from NDLA', vcr: true do
+      url = "https://iss.ndl.go.jp/books/R100000002-I028087126-00.rdf"
+      doc = Nokogiri::XML(Faraday.get(url).body)
+      ndl_book = NdlBook.new(doc)
+      ndl_book.authors[0].should eq({id: "http://id.ndl.go.jp/auth/entity/00730574", name: "山田, 祥寛", transcription: "ヤマダ, ヨシヒロ"})
+    end
   end
 end
