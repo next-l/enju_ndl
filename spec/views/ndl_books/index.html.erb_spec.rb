@@ -10,7 +10,7 @@ describe "ndl_books/index" do
                                              total_count: books[:total_entries],
                                              ).page(1).per(10))
       render
-      expect(rendered).to include "http://iss.ndl.go.jp/books?any=test"
+      expect(rendered).to include "https://iss.ndl.go.jp/books?any=test"
     end
   end
 end

@@ -70,7 +70,7 @@ class NdlBook
     identifier_type ||= IdentifierType.create!(name: 'iss_itemno')
     identifier = Identifier.where(body: itemno, identifier_type_id: identifier_type.id).first
     return if identifier
-    url = "http://iss.ndl.go.jp/api/sru?operation=searchRetrieve&recordSchema=dcndl&maximumRecords=1&query=%28itemno=#{itemno}%29&onlyBib=true"
+    url = "https://iss.ndl.go.jp/api/sru?operation=searchRetrieve&recordSchema=dcndl&maximumRecords=1&query=%28itemno=#{itemno}%29&onlyBib=true"
     xml = Faraday.get(url).body
     response = Nokogiri::XML(xml).at('//xmlns:recordData')
     return unless response.try(:content)

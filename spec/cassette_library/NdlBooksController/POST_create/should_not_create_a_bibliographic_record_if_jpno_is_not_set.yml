@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: get
-    uri: http://iss.ndl.go.jp/api/sru?maximumRecords=1&onlyBib=true&operation=searchRetrieve&query=(itemno=)&recordSchema=dcndl
+    uri: https://iss.ndl.go.jp/api/sru?maximumRecords=1&onlyBib=true&operation=searchRetrieve&query=(itemno=)&recordSchema=dcndl
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.9.2
+      - Faraday v0.15.4
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -19,37 +19,42 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 06 Nov 2015 15:58:28 GMT
-      Server:
-      - Apache
-      Etag:
-      - '"79f8f250e63181b33a2145c0edfd1141"'
+      - Sun, 24 Mar 2019 03:06:34 GMT
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       X-Runtime:
-      - '0.007558'
+      - '0.010813'
+      Etag:
+      - '"79f8f250e63181b33a2145c0edfd1141"'
       Cache-Control:
       - max-age=0, private, must-revalidate
+      Content-Length:
+      - '393'
       Status:
       - '200'
       Content-Type:
       - application/xml; charset=utf-8
       Set-Cookie:
-      - _front_session_id=64e0a82a3736681d3083e3f8593c7f21; domain=.iss.ndl.go.jp;
-        path=/; expires=Fri, 06-Nov-2015 16:58:28 GMT; HttpOnly
-      - serverid=1105; path=/
+      - HTTP_Z308_KEY_DATA_01=; domain=.ndl.go.jp; path=/; expires=Thu, 01-Jan-1970
+        00:00:00 GMT
+      - ROUTEID=.ps23; path=/
+      - TS0162cc8a=011338590a9c3da3b57c4e14218d5048d4e600fd18412348df16f63c918d8c03330c3e85b29cf2695bcdcd3fd7237922457fa084618040e2926fe329beb8252b6f149bdfce0b1512a9fddbd1bbf46360ce3f6de040;
+        path=/; domain=.ndl.go.jp
+      - TS01f3cfdf=011338590afd387dd4599f4b7f8a3ba6f1e03847c2e47be74ed33ee86c7cb866d7bc17d7d45127536dc6bfcaadb81303ce6f7242dc144e49f84eac8967af8bd8ffe39e64786c0690b36645b353862b6559bf449d1a7dd2b3352d4e2db2173aa6b9abcc8ea7;
+        Path=/
+      - _front_session_id=998664fdae7c078235f561c2c69b1870;Secure; path=/; expires=Sun,
+        24-Mar-2019 04:06:34 GMT; HttpOnly
+      - cookieId=;secure; domain=.ndl.go.jp; path=/; expires=Thu, 01-Jan-1970 00:00:00
+        GMT
+      - ndl.go.jp=rd2o00000000000000000000ffff0a024f75o80; path=/
+      - serverid=1103; path=/
+      - sessionId=; domain=.ndl.go.jp; path=/; expires=Thu, 01-Jan-1970 00:00:00 GMT
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - SAMEORIGIN
-      Content-Length:
-      - '232'
-      Accept-Ranges:
-      - none
-      Connection:
-      - close
     body:
-      encoding: ASCII-8BIT
+      encoding: UTF-8
       string: |
         <?xml version="1.0" encoding="UTF-8"?>
         <searchRetrieveResponse xmlns="http://www.loc.gov/zing/srw/">
@@ -62,5 +67,5 @@ http_interactions:
           </diagnostics>
         </searchRetrieveResponse>
     http_version: 
-  recorded_at: Fri, 06 Nov 2015 15:56:26 GMT
-recorded_with: VCR 3.0.0
+  recorded_at: Sun, 24 Mar 2019 03:06:34 GMT
+recorded_with: VCR 4.0.0
