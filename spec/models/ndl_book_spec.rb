@@ -9,7 +9,7 @@ describe NdlBook do
 
   context 'search' do
     it 'should search bibliographic record', vcr: true do
-      NdlBook.search('library system')[:total_entries].should eq 5366
+      NdlBook.search('library system')[:total_entries].should eq 5374
     end
 
     it 'should not distinguish double byte space from one-byte space in a query', vcr: true do

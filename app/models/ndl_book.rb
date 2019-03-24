@@ -67,7 +67,7 @@ class NdlBook
   end
 
   def self.import_from_sru_response(itemno)
-    url = "http://iss.ndl.go.jp/api/sru?operation=searchRetrieve&recordSchema=dcndl&maximumRecords=1&query=%28itemno=#{itemno}%29&onlyBib=true"
+    url = "https://iss.ndl.go.jp/api/sru?operation=searchRetrieve&recordSchema=dcndl&maximumRecords=1&query=%28itemno=#{itemno}%29&onlyBib=true"
     xml = Faraday.get(url).body
     response = Nokogiri::XML(xml).at('//xmlns:recordData')
     return unless response.try(:content)
