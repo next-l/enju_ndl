@@ -13,9 +13,9 @@ services:
   - postgresql
   - redis-server
 gemfile:
-  - gemfiles/rails_5.1.gemfile
-  - gemfiles/rails_5.1_nii.gemfile
-  - gemfiles/rails_5.1_loc.gemfile
+  - gemfiles/rails_5.2.gemfile
+  - gemfiles/rails_5.2_nii.gemfile
+  - gemfiles/rails_5.2_loc.gemfile
 env:
   - DB=sqlite
   - DB=mysql
