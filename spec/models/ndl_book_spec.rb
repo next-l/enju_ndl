@@ -7,9 +7,9 @@ describe NdlBook do
     NdlBook.per_page.should eq 10
   end
 
-  context "search" do
-    it "should search bibliographic record", vcr: true do
-      NdlBook.search('library system')[:total_entries].should eq 5345
+  context 'search' do
+    it 'should search bibliographic record', vcr: true do
+      NdlBook.search('library system')[:total_entries].should eq 5374
     end
 
     it "should not distinguish double byte space from one-byte space in a query", vcr: true do
@@ -102,8 +102,8 @@ describe NdlBook do
 
     it "should import url contain whitespace", vcr: true do
       manifestation = NdlBook.import_from_sru_response('R100000002-I000002109818-00')
-      manifestation.original_title.should eq "ザ・スコット・フィッツジェラルド・ブック"
-      manifestation.pub_date.should eq "1991-04"
+      manifestation.original_title.should eq 'ザ・スコット・フィッツジェラルド・ブック'
+      manifestation.pub_date.should eq '1991'
     end
 
     it "should import audio cd", vcr: true do
@@ -207,6 +207,21 @@ describe NdlBook do
     it "should import with DDC [Fic]", vcr: true do
       manifestation = NdlBook.import_from_sru_response("R100000002-I000008410444-00")
       expect(manifestation.original_title).to eq "A single shard / Linda Sue Park"
+    end
+
+    it 'should get subject IDs from NDLA', vcr: true do
+      url = "https://iss.ndl.go.jp/books/R100000002-I028087126-00.rdf"
+      doc = Nokogiri::XML(Faraday.get(url).body)
+      ndl_book = NdlBook.new(doc)
+      ndl_book.subjects[0].should eq({id: 'http://id.ndl.go.jp/auth/ndlsh/01058852', value: 'ウェブアプリケーション'})
+      ndl_book.subjects[1].should eq({id: 'http://id.ndl.go.jp/auth/ndlsh/00569223', value: 'プログラミング (コンピュータ)'})
+    end
+
+    it 'should get author IDs from NDLA', vcr: true do
+      url = "https://iss.ndl.go.jp/books/R100000002-I028087126-00.rdf"
+      doc = Nokogiri::XML(Faraday.get(url).body)
+      ndl_book = NdlBook.new(doc)
+      ndl_book.authors[0].should eq({id: "http://id.ndl.go.jp/auth/entity/00730574", name: "山田, 祥寛", transcription: "ヤマダ, ヨシヒロ"})
     end
   end
 end

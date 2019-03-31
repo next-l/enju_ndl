@@ -4,6 +4,6 @@ source "https://rubygems.org"
 
 gem "jquery-rails"
 gem "rails-controller-testing"
-gem "enju_loc", "~> 0.3.0.beta.1"
+gem "enju_loc", "~> 0.3.0"
 
 gemspec path: "../"

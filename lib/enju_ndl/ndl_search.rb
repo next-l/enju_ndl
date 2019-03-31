@@ -13,7 +13,7 @@ module EnjuNdl
 
       # Use http://www.ndl.go.jp/jp/dlib/standards/opendataset/aboutIDList.txt
       def import_ndl_bib_id(ndl_bib_id)
-        url = "http://iss.ndl.go.jp/books/R100000002-I#{ndl_bib_id}-00.rdf"
+        url = "https://iss.ndl.go.jp/books/R100000002-I#{ndl_bib_id}-00.rdf"
         doc = Nokogiri::XML(Faraday.get(url).body)
         import_record(doc)
       end
@@ -48,7 +48,7 @@ module EnjuNdl
         title = get_title(doc)
 
         # date of publication
-        pub_date = doc.at('//dcterms:date').try(:content).to_s.tr('.', '-')
+        pub_date = doc.at('//dcterms:issued').try(:content).to_s.tr('.', '-')
         pub_date = nil unless pub_date =~ /^\d+(-\d{0,2}){0,2}$/
         if pub_date
           date = pub_date.split('-')
@@ -257,7 +257,7 @@ module EnjuNdl
         results = {}
         startrecord = options[:idx].to_i
         startrecord = 1 if startrecord == 0
-        url = "http://iss.ndl.go.jp/api/opensearch?dpid=#{options[:dpid]}&#{options[:item]}=#{format_query(query)}&cnt=#{options[:per_page]}&idx=#{startrecord}&mediatype=#{options[:mediatype]}"
+        url = "https://iss.ndl.go.jp/api/opensearch?dpid=#{options[:dpid]}&#{options[:item]}=#{format_query(query)}&cnt=#{options[:per_page]}&idx=#{startrecord}&mediatype=#{options[:mediatype]}"
         if options[:raw] == true
           Faraday.get(url).body
         else
