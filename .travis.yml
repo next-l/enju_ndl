@@ -9,6 +9,8 @@ before_script:
   - bundle exec rake db:migrate
   - bundle exec rake app:sunspot:solr:start
 services:
+  - mysql
+  - postgresql
   - redis-server
 gemfile:
   - gemfiles/rails_5.1.gemfile
