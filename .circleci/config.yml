@@ -35,7 +35,7 @@ jobs:
       - run:
           name: install dependencies
           command: |
-            bundle exec appraisal install --jobs=4 --retry=3 --path vendor/bundle
+            bundle install --jobs=4 --retry=3 --path vendor/bundle
 
       - save_cache:
           paths:
@@ -45,8 +45,8 @@ jobs:
       # Database setup
       - run:
           command: dockerize -wait tcp://localhost:5432 -timeout 1m
-      - run: bundle exec appraisal rake db:create
-      - run: bundle exec appraisal rake db:schema:load
+      - run: bundle exec rake db:create
+      - run: bundle exec rake db:schema:load
       - run: bundle exec rake app:sunspot:solr:start RAILS_ENV=test
 
       # run tests!
@@ -56,7 +56,7 @@ jobs:
             mkdir /tmp/test-results
             TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)"
 
-            bundle exec appraisal rspec --format progress \
+            bundle exec rspec --format progress \
                             --format RspecJunitFormatter \
                             --out /tmp/test-results/rspec.xml \
                             --format progress \
