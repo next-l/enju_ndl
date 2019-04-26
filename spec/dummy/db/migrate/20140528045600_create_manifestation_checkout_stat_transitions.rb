@@ -4,7 +4,7 @@ class CreateManifestationCheckoutStatTransitions < ActiveRecord::Migration[5.2]
       t.string :to_state
       t.jsonb :metadata, default: {}
       t.integer :sort_key
-      t.references :manifestation_checkout_stat, index: false, type: :uuid
+      t.references :manifestation_checkout_stat, index: false
       t.timestamps
     end
 

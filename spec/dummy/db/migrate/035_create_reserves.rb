@@ -1,9 +1,9 @@
 class CreateReserves < ActiveRecord::Migration[5.2]
   def change
-    create_table :reserves, id: :uuid do |t|
+    create_table :reserves do |t|
       t.references :user, foreign_key: true, null: false
-      t.references :manifestation, foreign_key: true, null: false, type: :uuid
-      t.references :item, foreign_key: true, type: :uuid
+      t.references :manifestation, foreign_key: true, null: false
+      t.references :item, foreign_key: true
       t.references :request_status_type, null: false
       t.datetime :checked_out_at
       t.timestamps
