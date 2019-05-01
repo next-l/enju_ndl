@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_14_151124) do
+ActiveRecord::Schema.define(version: 2019_05_01_043418) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -954,6 +954,15 @@ ActiveRecord::Schema.define(version: 2019_03_14_151124) do
     t.index ["sender_id"], name: "index_messages_on_sender_id"
   end
 
+  create_table "ndl_bib_id_records", force: :cascade do |t|
+    t.string "body", null: false
+    t.bigint "manifestation_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["body"], name: "index_ndl_bib_id_records_on_body", unique: true
+    t.index ["manifestation_id"], name: "index_ndl_bib_id_records_on_manifestation_id"
+  end
+
   create_table "ndla_records", force: :cascade do |t|
     t.bigint "agent_id"
     t.string "body", null: false
@@ -1659,6 +1668,7 @@ ActiveRecord::Schema.define(version: 2019_03_14_151124) do
   add_foreign_key "manifestation_reserve_stats", "users"
   add_foreign_key "manifestations", "carrier_types"
   add_foreign_key "messages", "messages", column: "parent_id"
+  add_foreign_key "ndl_bib_id_records", "manifestations"
   add_foreign_key "ndla_records", "agents"
   add_foreign_key "periodical_and_manifestations", "manifestations"
   add_foreign_key "periodical_and_manifestations", "periodicals"
