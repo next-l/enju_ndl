@@ -6,9 +6,9 @@ end
 #
 # Table name: jpno_records
 #
-#  id               :bigint(8)        not null, primary key
+#  id               :bigint           not null, primary key
 #  body             :string           not null
-#  manifestation_id :bigint(8)        not null
+#  manifestation_id :bigint           not null
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
 #
