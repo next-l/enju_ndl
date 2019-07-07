@@ -3,7 +3,10 @@ module NdlBooksHelper
     if iss_itemno.blank?
       t('enju_ndl.not_available')
     else
-      manifestation = Identifier.where(body: iss_itemno).first.try(:manifestation)
+      identifier_type = IdentifierType.where(name: 'iss_itemno').first
+      if identifier_type
+        manifestation = Identifier.where(body: iss_itemno, identifier_type_id: identifier_type.id).first.try(:manifestation)
+      end
       if manifestation
         link_to t('enju_ndl.already_exists'), manifestation
       else

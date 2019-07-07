@@ -8,3 +8,4 @@ en:
     number_of_search_results:
       one: "1 record found."
       other: "%{count} records found."
+    same_query_in_ndl_search: Search NDL Search with the same query.

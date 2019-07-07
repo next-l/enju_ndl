@@ -1,4 +1,4 @@
-require "enju_ndl/engine"
+require 'enju_ndl/engine'
 require 'open-uri'
 
 module EnjuNdl

@@ -1,12 +1,12 @@
 class NdlBooksController < ApplicationController
-  before_action :check_policy, only: [:index, :create]
+  before_action :check_policy, only: %i[index create]
 
   def index
-    if params[:page].to_i == 0
-      page = 1
-    else
-      page = params[:page].to_i
-    end
+    page = if params[:page].to_i == 0
+             1
+           else
+             params[:page]
+           end
     @query = params[:query].to_s.strip
     books = NdlBook.search(params[:query], page)
     @books = Kaminari.paginate_array(
@@ -21,8 +21,8 @@ class NdlBooksController < ApplicationController
   def create
     if params[:book]
       begin
-        @manifestation = NdlBook.import_from_sru_response(params.require(:book).permit(:iss_itemno)[:iss_itemno])
-      rescue Manifestation::RecordNotFound
+        @manifestation = NdlBook.import_from_sru_response(params[:book].try(:[], 'iss_itemno'))
+      rescue EnjuNdl::RecordNotFound
       end
       respond_to do |format|
         if @manifestation.try(:save)
@@ -35,6 +35,7 @@ class NdlBooksController < ApplicationController
   end
 
   private
+
   def check_policy
     authorize NdlBook
   end

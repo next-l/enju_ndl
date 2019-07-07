@@ -8,11 +8,19 @@ class AddTranslationTableToLibraryGroup < ActiveRecord::Migration[4.2]
         migrate_data: true
       })
     end
+
+    if defined?(AwesomeHstoreTranslate)
+      add_column :library_groups, :login_banner, :hstore
+    end
   end
 
   def down
     if defined?(Globalize)
       LibraryGroup.drop_translation_table! migrate_data: true
+    end
+
+    if defined?(AwesomeHstoreTranslate)
+      remove_column :library_groups, :login_banner
     end
   end
 end

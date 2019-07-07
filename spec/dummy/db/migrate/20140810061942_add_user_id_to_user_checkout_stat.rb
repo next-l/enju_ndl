@@ -1,8 +1,12 @@
-class AddUserIdToUserCheckoutStat < ActiveRecord::Migration[5.2]
+class AddUserIdToUserCheckoutStat < ActiveRecord::Migration[4.2]
   def change
-    add_reference :user_checkout_stats, :user, foreign_key: true
-    add_reference :user_reserve_stats, :user, foreign_key: true
-    add_reference :manifestation_checkout_stats, :user, foreign_key: true
-    add_reference :manifestation_reserve_stats, :user, foreign_key: true
+    add_column :user_checkout_stats, :user_id, :integer
+    add_column :user_reserve_stats, :user_id, :integer
+    add_column :manifestation_checkout_stats, :user_id, :integer
+    add_column :manifestation_reserve_stats, :user_id, :integer
+    add_index :user_checkout_stats, :user_id
+    add_index :user_reserve_stats, :user_id
+    add_index :manifestation_checkout_stats, :user_id
+    add_index :manifestation_reserve_stats, :user_id
   end
 end

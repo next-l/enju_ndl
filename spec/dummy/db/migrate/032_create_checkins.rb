@@ -1,9 +1,17 @@
-class CreateCheckins < ActiveRecord::Migration[5.2]
-  def change
+class CreateCheckins < ActiveRecord::Migration[4.2]
+  def self.up
     create_table :checkins do |t|
-      t.references :librarian, index: true
-      t.references :basket, index: true
+      t.integer :item_id, null: false
+      t.integer :librarian_id
+      t.integer :basket_id
       t.timestamps
     end
+    add_index :checkins, :item_id
+    add_index :checkins, :librarian_id
+    add_index :checkins, :basket_id
+  end
+
+  def self.down
+    drop_table :checkins
   end
 end

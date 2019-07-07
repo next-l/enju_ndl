@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-# Declare your gem's dependencies in enju5.gemspec.
+# Declare your gem's dependencies in enju_ndl.gemspec.
 # Bundler will treat runtime dependencies like base dependencies, and
 # development dependencies will be added by default to the :development group.
 gemspec
@@ -20,6 +20,7 @@ gem "enju_manifestation_viewer", github: "next-l/enju_manifestation_viewer"
 gem "enju_bookmark", github: "next-l/enju_bookmark"
 gem "jquery-rails"
 gem "json_translate"
+gem 'paper_trail'
 group :test do
   gem 'rails-controller-testing'
   gem 'rspec_junit_formatter'

@@ -1,10 +1,14 @@
-class CreateManifestationReserveStatTransitions < ActiveRecord::Migration[5.2]
+class CreateManifestationReserveStatTransitions < ActiveRecord::Migration[4.2]
   def change
     create_table :manifestation_reserve_stat_transitions do |t|
       t.string :to_state
-      t.jsonb :metadata, default: {}
+      if ActiveRecord::Base.configurations[Rails.env]["adapter"].try(:match, /mysql/)
+        t.text :metadata
+      else
+        t.text :metadata, default: "{}"
+      end
       t.integer :sort_key
-      t.references :manifestation_reserve_stat, index: false
+      t.integer :manifestation_reserve_stat_id
       t.timestamps
     end
 

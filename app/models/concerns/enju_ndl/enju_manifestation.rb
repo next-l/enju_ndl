@@ -5,16 +5,9 @@ module EnjuNdl
     extend ActiveSupport::Concern
 
     included do
-      has_one :jpno_record
-      has_one :ndl_bib_id_record
-      searchable do
-        string :jpno do
-          jpno_record.try(:body)
-        end
-      end
-
       def self.import_isbn(isbn)
-        self.import_from_ndl_search(isbn: isbn)
+        manifestation = Manifestation.import_from_ndl_search(isbn: isbn)
+        manifestation
       end
 
       # Use http://www.ndl.go.jp/jp/dlib/standards/opendataset/aboutIDList.txt
@@ -25,23 +18,25 @@ module EnjuNdl
       end
 
       def self.import_from_ndl_search(options)
+        # if options[:isbn]
         lisbn = Lisbn.new(options[:isbn])
-        raise Manifestation::InvalidIsbn unless lisbn.valid?
+        raise EnjuNdl::InvalidIsbn unless lisbn.valid?
+        # end
 
-        isbn_record = IsbnRecord.find_by(body: lisbn.isbn13) || IsbnRecord.find_by(body: lisbn.isbn10)
-        if isbn_record
-          manifestation = isbn_record.manifestations.first
-          return manifestation if manifestation
-        end
+        manifestation = Manifestation.find_by_isbn(lisbn.isbn)
+        return manifestation.first if manifestation.present?
 
         doc = return_xml(lisbn.isbn)
-        raise Manifestation::RecordNotFound unless doc
-
+        raise EnjuNdl::RecordNotFound unless doc
+        # raise EnjuNdl::RecordNotFound if doc.at('//openSearch:totalResults').content.to_i == 0
         import_record(doc)
       end
 
       def self.import_record(doc)
         iss_itemno = URI.parse(doc.at('//dcndl:BibAdminResource[@rdf:about]').values.first).path.split('/').last
+        identifier_type = IdentifierType.where(name: 'iss_itemno').first_or_create!
+        identifier = Identifier.find_by(body: iss_itemno, identifier_type_id: identifier_type.id)
+        return identifier.manifestation if identifier
 
         jpno = doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/JPNO"]').try(:content)
 
@@ -69,7 +64,7 @@ module EnjuNdl
                         1
                       end
 
-        isbn = Lisbn.new(doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/ISBN"]').try(:content).to_s)
+        isbn = Lisbn.new(doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/ISBN"]').try(:content).to_s).try(:isbn)
         issn = StdNum::ISSN.normalize(doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/ISSN"]').try(:content))
         issn_l = StdNum::ISSN.normalize(doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/ISSNL"]').try(:content))
 
@@ -78,47 +73,34 @@ module EnjuNdl
         doc.xpath('//dcndl:materialType[@rdf:resource]').each do |d|
           case d.attributes['resource'].try(:content)
           when 'http://ndl.go.jp/ndltype/Book'
-            carrier_type = CarrierType.find_by(name: 'volume')
+            carrier_type = CarrierType.find_by(name: 'print')
             content_type = ContentType.find_by(name: 'text')
           when 'http://ndl.go.jp/ndltype/Braille'
-            carrier_type = CarrierType.find_by(name: 'volume')
-            content_type = ContentType.find_by(name: 'tactile_text')
+            content_type = ContentType.where(name: 'tactile_text').first
           # when 'http://ndl.go.jp/ndltype/ComputerProgram'
           #  content_type = ContentType.where(name: 'computer_program').first
           when 'http://ndl.go.jp/ndltype/ElectronicResource'
-            carrier_type = CarrierType.find_by(name: 'online_resource')
+            carrier_type = CarrierType.where(name: 'file').first
           when 'http://ndl.go.jp/ndltype/Journal'
             is_serial = true
-            carrier_type = CarrierType.find_by(name: 'volume')
           when 'http://ndl.go.jp/ndltype/Map'
-            carrier_type = CarrierType.find_by(name: 'volume')
-            content_type = ContentType.find_by(name: 'cartographic_image')
+            content_type = ContentType.where(name: 'cartographic_image').first
           when 'http://ndl.go.jp/ndltype/Music'
-            carrier_type = CarrierType.find_by(name: 'volume')
-            content_type = ContentType.find_by(name: 'performed_music')
+            content_type = ContentType.where(name: 'performed_music').first
           when 'http://ndl.go.jp/ndltype/MusicScore'
-            carrier_type = CarrierType.find_by(name: 'volume')
-            content_type = ContentType.find_by(name: 'notated_music')
+            content_type = ContentType.where(name: 'notated_music').first
           when 'http://ndl.go.jp/ndltype/Painting'
-            carrier_type = CarrierType.find_by(name: 'volume')
-            content_type = ContentType.find_by(name: 'still_image')
+            content_type = ContentType.where(name: 'still_image').first
           when 'http://ndl.go.jp/ndltype/Photograph'
-            carrier_type = CarrierType.find_by(name: 'volume')
-            content_type = ContentType.find_by(name: 'still_image')
+            content_type = ContentType.where(name: 'still_image').first
           when 'http://ndl.go.jp/ndltype/PicturePostcard'
-            carrier_type = CarrierType.find_by(name: 'volume')
-            content_type = ContentType.find_by(name: 'still_image')
+            content_type = ContentType.where(name: 'still_image').first
           when 'http://purl.org/dc/dcmitype/MovingImage'
-            carrier_type = CarrierType.find_by(name: 'volume')
-            content_type = ContentType.find_by(name: 'two_dimensional_moving_image')
+            content_type = ContentType.where(name: 'two_dimensional_moving_image').first
           when 'http://purl.org/dc/dcmitype/Sound'
-            carrier_type = CarrierType.find_by(name: 'volume')
-            content_type = ContentType.find_by(name: 'sounds')
+            content_type = ContentType.where(name: 'sounds').first
           when 'http://purl.org/dc/dcmitype/StillImage'
-            carrier_type = CarrierType.find_by(name: 'volume')
-            content_type = ContentType.find_by(name: 'still_image')
-          else
-            carrier_type = CarrierType.find_by(name: 'volume')
+            content_type = ContentType.where(name: 'still_image').first
           end
         end
 
@@ -162,22 +144,34 @@ module EnjuNdl
           )
           manifestation.serial = true if is_serial
           identifier = {}
-          if isbn.present?
-            isbn_record = IsbnRecord.find_by(body: isbn.isbn13) || IsbnRecord.find_by(body: isbn.isbn10)
-            isbn_record = IsbnRecord.create(body: isbn.isbn13) unless isbn_record
+          if isbn
+            identifier[:isbn] = Identifier.new(body: isbn)
+            identifier[:isbn].identifier_type = IdentifierType.where(name: 'isbn').first || IdnetifierType.create!(name: 'isbn')
           end
-          manifestation.jpno_record = JpnoRecord.where(body: jpno).first_or_initialize if jpno.present?
-          issn_record = IssnRecord.where(body: issn).first_or_initialize if issn
+          if iss_itemno
+            identifier[:iss_itemno] = Identifier.new(body: iss_itemno)
+            identifier[:iss_itemno].identifier_type = IdentifierType.where(name: 'iss_itemno').first || IdentifierType.create!(name: 'iss_itemno')
+          end
+          if jpno
+            identifier[:jpno] = Identifier.new(body: jpno)
+            identifier[:jpno].identifier_type = IdentifierType.where(name: 'jpno').first || IdentifierType.create!(name: 'jpno')
+          end
+          if issn
+            identifier[:issn] = Identifier.new(body: issn)
+            identifier[:issn].identifier_type = IdentifierType.where(name: 'issn').first || IdentifierType.create!(name: 'issn')
+          end
+          if issn_l
+            identifier[:issn_l] = Identifier.new(body: issn_l)
+            identifier[:issn_l].identifier_type = IdentifierType.where(name: 'issn_l').first || IdentifierType.create!(name: 'issn_l')
+          end
           manifestation.carrier_type = carrier_type if carrier_type
           manifestation.manifestation_content_type = content_type if content_type
           if manifestation.save
-            manifestation.isbn_records << isbn_record if isbn_record
-            manifestation.issn_records << issn_record if issn_record
-            create_additional_attributes(doc, manifestation)
             identifier.each do |_k, v|
               manifestation.identifiers << v if v.valid?
             end
             manifestation.publishers << publisher_agents
+            create_additional_attributes(doc, manifestation)
             if is_serial
               series_statement = SeriesStatement.new(
                 original_title: title[:manifestation],
@@ -193,6 +187,8 @@ module EnjuNdl
             end
           end
         end
+
+        # manifestation.send_later(:create_frbr_instance, doc.to_s)
         manifestation
       end
 
@@ -206,20 +202,20 @@ module EnjuNdl
         Agent.transaction do
           creator_agents = Agent.import_agents(creators)
           content_type_id = begin
-                              ContentType.find_by(name: 'text').id
+                              ContentType.where(name: 'text').first.id
                             rescue
                               1
                             end
           manifestation.creators << creator_agents
 
           if defined?(EnjuSubject)
-            subject_heading_type = SubjectHeadingType.where(name: 'ndlsh').first_or_create!
+            subject_heading_type = SubjectHeadingType.where(name: 'ndlsh').first || SubjectHeadingType.create!(name: 'ndlsh')
             subjects.each do |term|
-              subject = Subject.find_by(term: term[:term])
+              subject = Subject.where(term: term[:term]).first
               unless subject
                 subject = Subject.new(term)
                 subject.subject_heading_type = subject_heading_type
-                subject.subject_type = SubjectType.where(name: 'concept').first_or_create!
+                subject.subject_type = SubjectType.where(name: 'concept').first || SubjectType.create!(name: 'concept')
               end
               # if subject.valid?
               manifestation.subjects << subject
@@ -232,10 +228,11 @@ module EnjuNdl
                   ndc_url = URI.parse(URI.escape(url))
                 rescue URI::InvalidURIError
                 end
-                next unless ndc_url && (ndc_url.path.split('/').reverse[1] == 'ndc9')
-                ndc_type = 'ndc9'
+                next unless ndc_url
+                ndc_type = ndc_url.path.split('/').reverse[1]
+                next unless (ndc_type == 'ndc9') || (ndc_type == 'ndc10')
                 ndc = ndc_url.path.split('/').last
-                classification_type = ClassificationType.where(name: ndc_type).first_or_create!
+                classification_type = ClassificationType.where(name: ndc_type).first || ClassificationType.create!(name: ndc_type)
                 classification = Classification.new(category: ndc)
                 classification.classification_type = classification_type
                 manifestation.classifications << classification if classification.valid?
@@ -243,7 +240,7 @@ module EnjuNdl
             end
             ndc8 = doc.xpath('//dc:subject[@rdf:datatype="http://ndl.go.jp/dcndl/terms/NDC8"]').first
             if ndc8
-              classification_type = ClassificationType.where(name: 'ndc8').first_or_create!
+              classification_type = ClassificationType.where(name: 'ndc8').first || ClassificationType.create!(name: 'ndc8')
               classification = Classification.new(category: ndc8.content)
               classification.classification_type = classification_type
               manifestation.classifications << classification if classification.valid?
@@ -254,6 +251,8 @@ module EnjuNdl
 
       def self.search_ndl(query, options = {})
         options = { dpid: 'iss-ndl-opac', item: 'any', idx: 1, per_page: 10, raw: false, mediatype: 1 }.merge(options)
+        doc = nil
+        results = {}
         startrecord = options[:idx].to_i
         startrecord = 1 if startrecord == 0
         url = "https://iss.ndl.go.jp/api/opensearch?dpid=#{options[:dpid]}&#{options[:item]}=#{format_query(query)}&cnt=#{options[:per_page]}&idx=#{startrecord}&mediatype=#{options[:mediatype]}"
@@ -262,7 +261,7 @@ module EnjuNdl
         else
           RSS::Rss::Channel.install_text_element('openSearch:totalResults', 'http://a9.com/-/spec/opensearchrss/1.0/', '?', 'totalResults', :text, 'openSearch:totalResults')
           RSS::BaseListener.install_get_text_element 'http://a9.com/-/spec/opensearchrss/1.0/', 'totalResults', 'totalResults='
-          RSS::Parser.parse(url, false)
+          feed = RSS::Parser.parse(url, false)
         end
       end
 
@@ -281,7 +280,7 @@ module EnjuNdl
           rss = search_ndl(isbn, dpid: 'iss-ndl-opac', item: 'isbn')
         end
         if rss.items.first
-          Nokogiri::XML(Faraday.get("#{rss.items.first.link}.rdf").body)
+          doc = Nokogiri::XML(Faraday.get("#{rss.items.first.link}.rdf").body)
         end
       end
 
@@ -294,10 +293,10 @@ module EnjuNdl
           alternative: doc.at('//dcndl:alternative/rdf:Description/rdf:value').try(:content),
           alternative_transcription: doc.at('//dcndl:alternative/rdf:Description/dcndl:transcription').try(:content)
         }
-        volume_title = doc.at('//dcndl:volume_title/rdf:Description/rdf:value').try(:content)
-        volume_title_transcription = doc.at('//dcndl:volume_title/rdf:Description/dcndl:transcription').try(:content)
-        title[:manifestation] << " #{volume_title}" if volume_title
-        title[:transcription] << " #{volume_title_transcription}" if volume_title_transcription
+        volumeTitle = doc.at('//dcndl:volumeTitle/rdf:Description/rdf:value').try(:content)
+        volumeTitle_transcription = doc.at('//dcndl:volumeTitle/rdf:Description/dcndl:transcription').try(:content)
+        title[:manifestation] << " #{volumeTitle}" if volumeTitle
+        title[:transcription] << " #{volumeTitle_transcription}" if volumeTitle_transcription
         title
       end
 
@@ -383,7 +382,7 @@ module EnjuNdl
         end
 
         if series_title[:title]
-          series_statement = SeriesStatement.find_by(original_title: series_title[:title])
+          series_statement = SeriesStatement.where(original_title: series_title[:title]).first
           series_statement ||= SeriesStatement.new(
             original_title: series_title[:title],
             title_transcription: series_title[:title_transcription],

@@ -2,7 +2,8 @@
 language_00001: 
   position: 1
   name: unknown  
-  display_name: {"en": "unknown", "ja": "不明"}
+  display_name: "en: unknown\r\n\
+    ja: 不明"
   iso_639_1: unknown
   iso_639_2: unknown
   iso_639_3: unknown
@@ -1354,7 +1355,8 @@ language_00160:
 language_00077: 
   position: 77
   name: Japanese  
-  display_name: {"en": "Japanese", "ja": "日本語"}
+  display_name: "en: Japanese\r\n\
+    ja: 日本語"
   iso_639_1: ja
   iso_639_2: jpn
   iso_639_3: jpn
@@ -1880,19 +1882,20 @@ language_00140:
   iso_639_3: srd
   id: 140
   note: 
-  native_name:
+  native_name: 
 
 # == Schema Information
 #
 # Table name: languages
 #
-#  id           :bigint(8)        not null, primary key
-#  name         :string           not null
-#  native_name  :string
+#  id           :integer         not null, primary key
+#  name         :string(255)     not null
+#  native_name  :string(255)
 #  display_name :text
-#  iso_639_1    :string
-#  iso_639_2    :string
-#  iso_639_3    :string
+#  iso_639_1    :string(255)
+#  iso_639_2    :string(255)
+#  iso_639_3    :string(255)
 #  note         :text
 #  position     :integer
 #
+
