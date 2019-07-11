@@ -26,11 +26,11 @@ notifications:
     secure: EuTqNaE8+B3qoxRJahmNz2n9pkklXb/7o8iqboqoeKlU1TnI4n2D31zqhfUNq8od5/evHvLXsbXEGoFlw2hrGnS+b435ppy5js+BxG4Ra/xZeplGZ+3F9kBTFhhiwVopsbMXImkN8xG3ZHeodQm0Inqeq/et6OhLX76N2NrDOuk=
 sudo: false
 addons:
-  postgresql: "11"
+  postgresql: "10"
   apt:
     packages:
-    - postgresql-11
-    - postgresql-client-11
+    - postgresql-10
+    - postgresql-client-10
 jdk:
   - openjdk8
 dist: xenial
