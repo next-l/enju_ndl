@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_01_07_161410) do
+ActiveRecord::Schema.define(version: 2019_07_12_163038) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -91,6 +91,7 @@ ActiveRecord::Schema.define(version: 2018_01_07_161410) do
     t.integer "position"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.jsonb "display_name_translations", default: {}, null: false
   end
 
   create_table "agent_relationships", id: :serial, force: :cascade do |t|
@@ -111,6 +112,7 @@ ActiveRecord::Schema.define(version: 2018_01_07_161410) do
     t.integer "position"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.jsonb "display_name_translations", default: {}, null: false
   end
 
   create_table "agents", id: :serial, force: :cascade do |t|
@@ -243,6 +245,7 @@ ActiveRecord::Schema.define(version: 2018_01_07_161410) do
     t.integer "position"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.jsonb "display_name_translations", default: {}, null: false
   end
 
   create_table "carrier_type_has_checkout_types", id: :serial, force: :cascade do |t|
@@ -267,6 +270,7 @@ ActiveRecord::Schema.define(version: 2018_01_07_161410) do
     t.string "attachment_content_type"
     t.bigint "attachment_file_size"
     t.datetime "attachment_updated_at"
+    t.jsonb "display_name_translations", default: {}, null: false
   end
 
   create_table "checked_items", id: :serial, force: :cascade do |t|
@@ -394,6 +398,7 @@ ActiveRecord::Schema.define(version: 2018_01_07_161410) do
     t.integer "position"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.jsonb "display_name_translations", default: {}, null: false
   end
 
   create_table "countries", id: :serial, force: :cascade do |t|
@@ -417,6 +422,7 @@ ActiveRecord::Schema.define(version: 2018_01_07_161410) do
     t.integer "position"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.jsonb "display_name_translations", default: {}, null: false
   end
 
   create_table "creates", id: :serial, force: :cascade do |t|
@@ -554,6 +560,7 @@ ActiveRecord::Schema.define(version: 2018_01_07_161410) do
     t.integer "position"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.jsonb "display_name_translations", default: {}, null: false
   end
 
   create_table "frequencies", id: :serial, force: :cascade do |t|
@@ -563,6 +570,7 @@ ActiveRecord::Schema.define(version: 2018_01_07_161410) do
     t.integer "position"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.jsonb "display_name_translations", default: {}, null: false
   end
 
   create_table "identifier_types", id: :serial, force: :cascade do |t|
@@ -661,6 +669,7 @@ ActiveRecord::Schema.define(version: 2018_01_07_161410) do
     t.string "iso_639_3"
     t.text "note"
     t.integer "position"
+    t.jsonb "display_name_translations", default: {}, null: false
     t.index ["iso_639_1"], name: "index_languages_on_iso_639_1"
     t.index ["iso_639_2"], name: "index_languages_on_iso_639_2"
     t.index ["iso_639_3"], name: "index_languages_on_iso_639_3"
@@ -706,6 +715,7 @@ ActiveRecord::Schema.define(version: 2018_01_07_161410) do
     t.string "isil"
     t.float "latitude"
     t.float "longitude"
+    t.jsonb "display_name_translations", default: {}, null: false
     t.index ["library_group_id"], name: "index_libraries_on_library_group_id"
     t.index ["name"], name: "index_libraries_on_name"
   end
@@ -736,6 +746,9 @@ ActiveRecord::Schema.define(version: 2018_01_07_161410) do
     t.bigint "header_logo_file_size"
     t.datetime "header_logo_updated_at"
     t.text "header_logo_meta"
+    t.jsonb "display_name_translations", default: {}, null: false
+    t.jsonb "login_banner_translations", default: {}, null: false
+    t.jsonb "footer_banner_translations", default: {}, null: false
     t.index ["short_name"], name: "index_library_groups_on_short_name"
     t.index ["user_id"], name: "index_library_groups_on_user_id"
   end
@@ -747,6 +760,7 @@ ActiveRecord::Schema.define(version: 2018_01_07_161410) do
     t.integer "position"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.jsonb "display_name_translations", default: {}, null: false
   end
 
   create_table "manifestation_checkout_stat_transitions", id: :serial, force: :cascade do |t|
@@ -779,6 +793,7 @@ ActiveRecord::Schema.define(version: 2018_01_07_161410) do
     t.integer "position"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.jsonb "display_name_translations", default: {}, null: false
   end
 
   create_table "manifestation_relationships", id: :serial, force: :cascade do |t|
@@ -889,6 +904,7 @@ ActiveRecord::Schema.define(version: 2018_01_07_161410) do
     t.integer "position"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.jsonb "display_name_translations", default: {}, null: false
   end
 
   create_table "message_request_transitions", id: :serial, force: :cascade do |t|
@@ -1003,6 +1019,7 @@ ActiveRecord::Schema.define(version: 2018_01_07_161410) do
     t.integer "position"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.jsonb "display_name_translations", default: {}, null: false
   end
 
   create_table "produces", id: :serial, force: :cascade do |t|
@@ -1035,6 +1052,8 @@ ActiveRecord::Schema.define(version: 2018_01_07_161410) do
     t.text "full_name_transcription"
     t.datetime "date_of_birth"
     t.index ["checkout_icalendar_token"], name: "index_profiles_on_checkout_icalendar_token", unique: true
+    t.index ["library_id"], name: "index_profiles_on_library_id"
+    t.index ["user_group_id"], name: "index_profiles_on_user_group_id"
     t.index ["user_id"], name: "index_profiles_on_user_id"
     t.index ["user_number"], name: "index_profiles_on_user_number", unique: true
   end
@@ -1046,6 +1065,7 @@ ActiveRecord::Schema.define(version: 2018_01_07_161410) do
     t.integer "position"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.jsonb "display_name_translations", default: {}, null: false
   end
 
   create_table "realizes", id: :serial, force: :cascade do |t|
@@ -1066,6 +1086,7 @@ ActiveRecord::Schema.define(version: 2018_01_07_161410) do
     t.integer "position"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.jsonb "display_name_translations", default: {}, null: false
   end
 
   create_table "request_types", id: :serial, force: :cascade do |t|
@@ -1075,6 +1096,7 @@ ActiveRecord::Schema.define(version: 2018_01_07_161410) do
     t.integer "position"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.jsonb "display_name_translations", default: {}, null: false
   end
 
   create_table "reserve_stat_has_manifestations", id: :serial, force: :cascade do |t|
@@ -1210,6 +1232,7 @@ ActiveRecord::Schema.define(version: 2018_01_07_161410) do
     t.datetime "updated_at"
     t.integer "score", default: 0, null: false
     t.integer "position"
+    t.jsonb "display_name_translations", default: {}, null: false
   end
 
   create_table "search_engines", id: :serial, force: :cascade do |t|
@@ -1224,6 +1247,7 @@ ActiveRecord::Schema.define(version: 2018_01_07_161410) do
     t.integer "position"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.jsonb "display_name_translations", default: {}, null: false
   end
 
   create_table "series_statement_merge_lists", id: :serial, force: :cascade do |t|
@@ -1276,6 +1300,7 @@ ActiveRecord::Schema.define(version: 2018_01_07_161410) do
     t.datetime "updated_at"
     t.datetime "deleted_at"
     t.boolean "closed", default: false, null: false
+    t.jsonb "display_name_translations", default: {}, null: false
     t.index ["library_id"], name: "index_shelves_on_library_id"
   end
 
@@ -1454,11 +1479,12 @@ ActiveRecord::Schema.define(version: 2018_01_07_161410) do
     t.integer "number_of_day_to_notify_overdue", default: 1, null: false
     t.integer "number_of_day_to_notify_due_date", default: 7, null: false
     t.integer "number_of_time_to_notify_overdue", default: 3, null: false
+    t.jsonb "display_name_translations", default: {}, null: false
   end
 
   create_table "user_has_roles", id: :serial, force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "role_id"
+    t.integer "user_id", null: false
+    t.integer "role_id", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["role_id"], name: "index_user_has_roles_on_role_id"
@@ -1584,4 +1610,7 @@ ActiveRecord::Schema.define(version: 2018_01_07_161410) do
   add_foreign_key "items", "manifestations"
   add_foreign_key "libraries", "library_groups"
   add_foreign_key "library_groups", "users"
+  add_foreign_key "profiles", "users"
+  add_foreign_key "user_has_roles", "roles"
+  add_foreign_key "user_has_roles", "users"
 end
