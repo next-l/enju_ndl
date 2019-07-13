@@ -19,7 +19,6 @@ gem "enju_question", github: "next-l/enju_question"
 gem "enju_manifestation_viewer", github: "next-l/enju_manifestation_viewer"
 gem "enju_bookmark", github: "next-l/enju_bookmark"
 gem "jquery-rails"
-gem "json_translate"
 gem 'paper_trail'
 group :test do
   gem 'rails-controller-testing'

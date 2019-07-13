@@ -1,4 +1,4 @@
-$:.push File.expand_path("../lib", __FILE__)
+$:.push File.expand_path("lib", __dir__)
 
 # Maintain your gem's version:
 require "enju_ndl/version"
@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.summary     = "enju_ndl plugin"
   s.description = "NDL WebAPI wrapper for Next-L Enju"
 
-  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["spec/**/*"] - Dir["spec/dummy/log/*"] - Dir["spec/dummy/solr/{data,pids,default,development,test}/*"] - Dir["spec/dummy/tmp/*"]
 
   s.add_dependency "lisbn"
@@ -33,4 +33,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency "resque"
   s.add_development_dependency "appraisal"
   s.add_development_dependency "annotate"
+  s.add_development_dependency "coveralls"
 end
