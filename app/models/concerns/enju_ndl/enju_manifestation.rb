@@ -5,6 +5,14 @@ module EnjuNdl
     extend ActiveSupport::Concern
 
     included do
+      has_one :jpno_record
+      has_one :ndl_bib_id_record
+      searchable do
+        string :jpno do
+          jpno_record.try(:body)
+        end
+      end
+
       def self.import_isbn(isbn)
         manifestation = Manifestation.import_from_ndl_search(isbn: isbn)
         manifestation
