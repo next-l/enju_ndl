@@ -1,7 +1,6 @@
-AllCops:
-  TargetRubyVersion: 2.2
-Rails:
-  Enabled: true
+require: rubocop-rails
+inherit_from: .rubocop_todo.yml
+
 Layout/SpaceInsideHashLiteralBraces:
   Enabled: false
 Layout/SpaceInsideBlockBraces:
