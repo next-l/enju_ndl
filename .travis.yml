@@ -24,3 +24,15 @@ notifications:
   slack:
     secure: EuTqNaE8+B3qoxRJahmNz2n9pkklXb/7o8iqboqoeKlU1TnI4n2D31zqhfUNq8od5/evHvLXsbXEGoFlw2hrGnS+b435ppy5js+BxG4Ra/xZeplGZ+3F9kBTFhhiwVopsbMXImkN8xG3ZHeodQm0Inqeq/et6OhLX76N2NrDOuk=
 sudo: false
+addons:
+  postgresql: "10"
+  apt:
+    sources:
+      - google-chrome
+    packages:
+    - postgresql-10
+    - postgresql-client-10
+    - google-chrome-stable
+jdk:
+  - openjdk8
+dist: xenial
