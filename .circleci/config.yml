@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-       - image: circleci/ruby:2.5-node-browsers
+       - image: circleci/ruby:2.5-stretch-node-browsers
          environment:
            PGHOST: 127.0.0.1
            PGUSER: postgres
@@ -15,7 +15,7 @@ jobs:
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
       # documented at https://circleci.com/docs/2.0/circleci-images/
-       - image: circleci/postgres:10
+       - image: circleci/postgres:11
          environment:
            POSTGRES_USER: postgres
            POSTGRES_DB: enju_ndl_dummy_test
@@ -45,6 +45,10 @@ jobs:
       # Database setup
       - run:
           command: dockerize -wait tcp://localhost:5432 -timeout 1m
+      - run:
+          command: sudo apt install -y openjdk-8-jre-headless
+      - run:
+          command: sudo update-alternatives --set java /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
       - run: bundle exec rake db:create
       - run: bundle exec rake db:schema:load
       - run: bundle exec rake app:sunspot:solr:start RAILS_ENV=test
