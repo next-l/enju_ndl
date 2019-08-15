@@ -1,5 +1,4 @@
 appraise 'rails-5.2' do
-  gem 'coveralls', require: false
 end
 
 appraise 'rails-5.2-nii' do
