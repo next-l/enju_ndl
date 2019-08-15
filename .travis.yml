@@ -11,6 +11,7 @@ before_script:
   - psql enju_ndl_dummy_test -c 'CREATE EXTENSION pgcrypto'
   - bundle exec rake db:migrate
   - bundle exec rake app:sunspot:solr:start
+  - yarn install
 script:
   - bundle exec rspec
 after_script:

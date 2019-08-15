@@ -16,6 +16,7 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["spec/**/*"] - Dir["spec/dummy/log/*"] - Dir["spec/dummy/solr/{data,pids,default,development,test}/*"] - Dir["spec/dummy/tmp/*"]
 
+  s.add_dependency "enju_biblio"
   s.add_dependency "lisbn"
   s.add_dependency "library_stdnums"
   s.add_dependency "faraday"
@@ -25,9 +26,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency "factory_bot_rails"
   s.add_development_dependency "vcr", "~> 5.0"
   s.add_development_dependency "webmock"
-  #s.add_development_dependency "enju_leaf", "~> 1.2.0"
-  #s.add_development_dependency "enju_question", "~> 0.2.0"
-  #s.add_development_dependency "enju_subject", "~> 0.2.0"
   s.add_development_dependency "sunspot_solr", "~> 2.5"
   s.add_development_dependency "simplecov"
   s.add_development_dependency "resque"
