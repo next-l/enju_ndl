@@ -11,6 +11,8 @@ gem "enju_manifestation_viewer", git: "https://github.com/next-l/enju_manifestat
 gem "jquery-rails"
 gem "paper_trail"
 gem "paperclip-meta"
+gem "sprockets", "~> 3.7"
+gem "rails", "~> 5.2"
 gem "enju_nii", git: "https://github.com/next-l/enju_nii.git"
 
 group :test do
