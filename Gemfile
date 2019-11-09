@@ -15,6 +15,7 @@ gem "enju_question", github: "next-l/enju_question"
 gem "enju_bookmark", github: "next-l/enju_bookmark"
 gem "jquery-rails"
 gem 'paper_trail'
+gem 'sprockets', '~> 3.7'
 group :test do
   gem 'rails-controller-testing'
   gem 'rspec_junit_formatter'
