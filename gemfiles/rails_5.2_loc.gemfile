@@ -8,6 +8,7 @@ gem "enju_question", git: "https://github.com/next-l/enju_question.git"
 gem "enju_bookmark", git: "https://github.com/next-l/enju_bookmark.git"
 gem "jquery-rails"
 gem "paper_trail"
+gem "sprockets", "~> 3.7"
 gem "enju_loc", git: "https://github.com/next-l/enju_loc.git"
 
 group :test do
