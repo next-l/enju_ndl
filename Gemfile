@@ -10,13 +10,11 @@ gemspec
 # your gemspec. These might include edge Rails or gems from your path or
 # Git. Remember to move these dependencies to your gemspec before releasing
 # your gem to rubygems.org.
-gem "enju_leaf", github: "next-l/enju_leaf", branch: '2.x'
-gem "enju_biblio", github: "next-l/enju_biblio", branch: '2.x'
 gem "enju_question", github: "next-l/enju_question"
 gem "enju_bookmark", github: "next-l/enju_bookmark"
 gem "jquery-rails"
-gem 'paper_trail'
 gem 'sprockets', '~> 3.7'
+gem 'rails', '~> 5.2'
 group :test do
   gem 'rails-controller-testing'
   gem 'rspec_junit_formatter'
