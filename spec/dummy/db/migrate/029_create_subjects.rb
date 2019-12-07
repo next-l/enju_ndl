@@ -1,27 +1,19 @@
-class CreateSubjects < ActiveRecord::Migration[4.2]
-  def self.up
+class CreateSubjects < ActiveRecord::Migration[5.2]
+  def change
     create_table :subjects do |t|
-      t.integer :parent_id
+      t.references :parent, index: true
       t.integer :use_term_id
-      t.string :term
+      t.string :term, null: false
       t.text :term_transcription
-      t.integer :subject_type_id, null: false
+      t.references :subject_type, index: true, null: false
       t.text :scope_note
       t.text :note
-      t.integer :required_role_id, default: 1, null: false
+      t.references :required_role, index: true, default: 1, null: false
       t.integer :lock_version, default: 0, null: false
-      t.datetime :created_at
-      t.datetime :updated_at
-      t.datetime :deleted_at
+
+      t.timestamps
     end
     add_index :subjects, :term
-    add_index :subjects, :parent_id
     add_index :subjects, :use_term_id
-    add_index :subjects, :subject_type_id
-    add_index :subjects, :required_role_id
-  end
-
-  def self.down
-    drop_table :subjects
   end
 end

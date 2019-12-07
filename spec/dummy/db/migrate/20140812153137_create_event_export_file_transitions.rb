@@ -1,12 +1,8 @@
-class CreateEventExportFileTransitions < ActiveRecord::Migration[4.2]
+class CreateEventExportFileTransitions < ActiveRecord::Migration[5.2]
   def change
     create_table :event_export_file_transitions do |t|
       t.string :to_state
-      if ActiveRecord::Base.configurations[Rails.env]["adapter"].try(:match, /mysql/)
-        t.text :metadata
-      else
-        t.text :metadata, default: "{}"
-      end
+      t.jsonb :metadata, default: {}
       t.integer :sort_key
       t.integer :event_export_file_id
       t.timestamps

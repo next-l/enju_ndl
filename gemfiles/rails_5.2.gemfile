@@ -2,6 +2,7 @@
 
 source "https://rubygems.org"
 
+gem "rails", "~> 5.2"
 gem "enju_seed", git: "https://github.com/next-l/enju_seed.git"
 gem "enju_leaf", git: "https://github.com/next-l/enju_leaf.git"
 gem "enju_biblio", git: "https://github.com/next-l/enju_biblio.git"
@@ -9,10 +10,7 @@ gem "enju_library", git: "https://github.com/next-l/enju_library.git"
 gem "enju_subject", git: "https://github.com/next-l/enju_subject.git"
 gem "enju_manifestation_viewer", git: "https://github.com/next-l/enju_manifestation_viewer.git"
 gem "jquery-rails"
-gem "paper_trail"
-gem "paperclip-meta"
 gem "sprockets", "~> 3.7"
-gem "rails", "~> 5.2"
 
 group :test do
   gem "rails-controller-testing"

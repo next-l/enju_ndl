@@ -1,8 +1,8 @@
-class CreateEventImportResults < ActiveRecord::Migration[4.2]
+class CreateEventImportResults < ActiveRecord::Migration[5.2]
   def self.up
     create_table :event_import_results do |t|
-      t.integer :event_import_file_id
-      t.integer :event_id
+      t.references :event_import_file
+      t.references :event
       t.text :body
 
       t.timestamps

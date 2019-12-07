@@ -1,5 +1,5 @@
-class AddDefaultLibraryIdToEventImportFile < ActiveRecord::Migration[4.2]
+class AddDefaultLibraryIdToEventImportFile < ActiveRecord::Migration[5.2]
   def change
-    add_column :event_import_files, :default_library_id, :integer
+    add_reference :event_import_files, :default_library
   end
 end
