@@ -2,11 +2,15 @@
 
 source "https://rubygems.org"
 
-gem "enju_question", git: "https://github.com/next-l/enju_question.git"
-gem "enju_bookmark", git: "https://github.com/next-l/enju_bookmark.git"
 gem "jquery-rails"
 gem "sprockets", "~> 3.7"
 gem "rails", "~> 5.2"
+gem "enju_leaf", branch: "2.x", git: "https://github.com/next-l/enju_leaf.git"
+gem "enju_library", branch: "2.x", git: "https://github.com/next-l/enju_library.git"
+gem "enju_biblio", branch: "2.x", git: "https://github.com/next-l/enju_biblio.git"
+gem "enju_bookmark", branch: "2.x", git: "https://github.com/next-l/enju_bookmark.git"
+gem "enju_question", branch: "2.x", git: "https://github.com/next-l/enju_question.git"
+gem "enju_subject", branch: "2.x", git: "https://github.com/next-l/enju_subject.git"
 
 group :test do
   gem "rails-controller-testing"
