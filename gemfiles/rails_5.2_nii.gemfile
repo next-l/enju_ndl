@@ -3,8 +3,11 @@
 source "https://rubygems.org"
 
 gem "jquery-rails"
-gem "rspec_junit_formatter", group: :test
-gem "rails-controller-testing", group: :test
 gem "enju_nii", "~> 0.3.0"
+
+group :test do
+  gem "rspec_junit_formatter"
+  gem "rails-controller-testing"
+end
 
 gemspec path: "../"
