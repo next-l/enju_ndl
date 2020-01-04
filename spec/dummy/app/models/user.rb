@@ -6,5 +6,4 @@ class User < ApplicationRecord
   include EnjuSeed::EnjuUser
 end
 
-Manifestation.include(EnjuNdl::EnjuManifestation)
 Manifestation.include(EnjuSubject::EnjuManifestation)
