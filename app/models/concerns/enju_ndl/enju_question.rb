@@ -1,12 +1,15 @@
+# frozen_string_literal: true
 
 module EnjuNdl
-  module Crd
-    def self.included(base)
-      base.extend ClassMethods
-    end
+  module EnjuQuestion
+    extend ActiveSupport::Concern
 
-    module ClassMethods
-      def get_crd_response(options)
+    included do
+      def self.crd_per_page
+        5
+      end
+
+      def self.get_crd_response(options)
         params = { query_logic: 1, results_get_position: 1, results_num: 200, sort: 10 }.merge(options)
         query = []
         query << "01_#{params[:query_01].to_s.tr('　', ' ')}" if params[:query_01]
@@ -14,10 +17,10 @@ module EnjuNdl
         delimiter = '.'
         url = "http://crd.ndl.go.jp/refapi/servlet/refapi.RSearchAPI?query=#{URI.escape(query.join(delimiter))}&query_logic=#{params[:query_logic]}&results_get_position=#{params[:results_get_position]}&results_num=#{params[:results_num]}&sort=#{params[:sort]}"
 
-        xml = open(url).read.to_s
+        open(url).read.to_s
       end
 
-      def search_crd(options)
+      def self.search_crd(options)
         params = { page: 1 }.merge(options)
         crd_page = params[:page].to_i
         crd_page = 1 if crd_page <= 0
