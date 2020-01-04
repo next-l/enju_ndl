@@ -11,7 +11,7 @@ gem "enju_biblio", branch: "2.x", git: "https://github.com/next-l/enju_biblio.gi
 gem "enju_bookmark", branch: "2.x", git: "https://github.com/next-l/enju_bookmark.git"
 gem "enju_question", branch: "2.x", git: "https://github.com/next-l/enju_question.git"
 gem "enju_subject", branch: "2.x", git: "https://github.com/next-l/enju_subject.git"
-gem "enju_loc", git: "https://github.com/next-l/enju_loc.git"
+gem "enju_loc", branch: "2.x", git: "https://github.com/next-l/enju_loc.git"
 
 group :test do
   gem "rails-controller-testing"
