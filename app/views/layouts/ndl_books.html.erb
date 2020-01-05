@@ -1,23 +1,20 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<%= @locale.to_s -%>" lang="<%= @locale.to_s -%>">
-<head>
-  <meta charset="UTF-8" />
-  <%= render 'page/include' %>
-  <%= render 'page/portlets' %>
-  <title><%= t('enju_ndl.import_from_ndl_search') %></title>
-</head>
-<body itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    <meta charset="UTF-8" />
+    <%= render 'page/include' %>
+    <title><%= t('enju_ndl.import_from_ndl_search') %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage">
 
-<%= render 'page/header' %>
-<%= render 'page/menu' %>
+    <%= render 'page/menu' %>
 
-<div id="content">
+    <div class="container">
+      <%= yield %>
+    </div>
 
-<%= yield %>
+    <%= render 'page/footer' %>
 
-</div>
-
-<%= render 'page/footer' %>
-
-</body>
+  </body>
 </html>
