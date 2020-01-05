@@ -1,4 +1,4 @@
-class CreateLibraryGroups < ActiveRecord::Migration[4.2]
+class CreateLibraryGroups < ActiveRecord::Migration[5.2]
   def change
     create_table :library_groups do |t|
       t.string :name, null: false

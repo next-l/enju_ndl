@@ -16,10 +16,10 @@ end
 #
 # Table name: import_requests
 #
-#  id               :integer          not null, primary key
+#  id               :bigint           not null, primary key
 #  isbn             :string
 #  manifestation_id :integer
 #  user_id          :integer
-#  created_at       :datetime
-#  updated_at       :datetime
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
 #

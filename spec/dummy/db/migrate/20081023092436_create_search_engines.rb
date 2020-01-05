@@ -1,4 +1,4 @@
-class CreateSearchEngines < ActiveRecord::Migration[4.2]
+class CreateSearchEngines < ActiveRecord::Migration[5.2]
   def change
     create_table :search_engines do |t|
       t.string :name, null: false
