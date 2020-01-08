@@ -5,3 +5,5 @@ class User < ActiveRecord::Base
 
   include EnjuLibrary::EnjuUser
 end
+
+Manifestation.include(EnjuSubject::EnjuManifestation)
