@@ -12,7 +12,7 @@ module EnjuNdl
         query << "01_#{params[:query_01].to_s.tr('　', ' ')}" if params[:query_01]
         query << "02_#{params[:query_02].to_s.tr('　', ' ')}" if params[:query_02]
         delimiter = '.'
-        url = "http://crd.ndl.go.jp/refapi/servlet/refapi.RSearchAPI?query=#{URI.escape(query.join(delimiter))}&query_logic=#{params[:query_logic]}&results_get_position=#{params[:results_get_position]}&results_num=#{params[:results_num]}&sort=#{params[:sort]}"
+        url = "http://crd.ndl.go.jp/refapi/servlet/refapi.RSearchAPI?query=#{Addressable::URI.encode(query.join(delimiter))}&query_logic=#{params[:query_logic]}&results_get_position=#{params[:results_get_position]}&results_num=#{params[:results_num]}&sort=#{params[:sort]}"
 
         xml = open(url).read.to_s
       end

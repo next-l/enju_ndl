@@ -227,7 +227,7 @@ module EnjuNdl
             if classification_urls
               classification_urls.each do |url|
                 begin
-                  ndc_url = URI.parse(URI.escape(url))
+                  ndc_url = URI.parse(url)
                 rescue URI::InvalidURIError
                 end
                 next unless ndc_url
@@ -398,8 +398,8 @@ module EnjuNdl
         manifestation
       end
 
-      def format_query(query)
-        URI.escape(query.to_s.tr('　', ' '))
+      def self.format_query(query)
+        Addressable::URI.encode(query.to_s.tr('　', ' '))
       end
     end
 
