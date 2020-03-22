@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
   s.add_dependency "lisbn"
   s.add_dependency "library_stdnums"
   s.add_dependency "faraday"
+  s.add_dependency "addressable"
 
   s.add_development_dependency "enju_leaf", "~> 2.0.0.rc.1"
   s.add_development_dependency "pg"
