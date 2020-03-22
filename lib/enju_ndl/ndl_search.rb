@@ -398,7 +398,7 @@ module EnjuNdl
         manifestation
       end
 
-      def self.format_query(query)
+      def format_query(query)
         Addressable::URI.encode(query.to_s.tr('　', ' '))
       end
     end
