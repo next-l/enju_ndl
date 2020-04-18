@@ -18,9 +18,9 @@ after_script:
 services:
   - redis-server
 gemfile:
-  - gemfiles/rails_5.2.gemfile
-  - gemfiles/rails_5.2_nii.gemfile
-  - gemfiles/rails_5.2_loc.gemfile
+  - gemfiles/rails.gemfile
+  - gemfiles/rails_nii.gemfile
+  - gemfiles/rails_loc.gemfile
 notifications:
   slack:
     secure: EuTqNaE8+B3qoxRJahmNz2n9pkklXb/7o8iqboqoeKlU1TnI4n2D31zqhfUNq8od5/evHvLXsbXEGoFlw2hrGnS+b435ppy5js+BxG4Ra/xZeplGZ+3F9kBTFhhiwVopsbMXImkN8xG3ZHeodQm0Inqeq/et6OhLX76N2NrDOuk=
