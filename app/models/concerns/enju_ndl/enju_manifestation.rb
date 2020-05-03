@@ -42,7 +42,7 @@ module EnjuNdl
 
       def self.import_record(doc)
         iss_itemno = URI.parse(doc.at('//dcndl:BibAdminResource[@rdf:about]').values.first).path.split('/').last
-        identifier_type = IdentifierType.where(name: 'iss_itemno').first_or_create!
+        identifier_type = IdentifierType.find_or_create_by!(name: 'iss_itemno')
         identifier = Identifier.find_by(body: iss_itemno, identifier_type_id: identifier_type.id)
         return identifier.manifestation if identifier
 
@@ -152,9 +152,17 @@ module EnjuNdl
           )
           manifestation.serial = true if is_serial
           identifier = {}
-          if isbn
-            identifier[:isbn] = Identifier.new(body: isbn)
-            identifier[:isbn].identifier_type = IdentifierType.where(name: 'isbn').first || IdnetifierType.create!(name: 'isbn')
+          if isbn.present?
+            IsbnRecordAndManifestation.create(
+              isbn_record: IsbnRecord.find_or_create_by(body: isbn),
+              manifestation: manifestation
+            )
+          end
+          if issn.present?
+            IssnRecordAndManifestation.create(
+              issn_record: IssnRecord.find_or_create_by(body: issn),
+              manifestation: manifestation
+            )
           end
           if iss_itemno
             identifier[:iss_itemno] = Identifier.new(body: iss_itemno)
@@ -163,10 +171,6 @@ module EnjuNdl
           if jpno
             identifier[:jpno] = Identifier.new(body: jpno)
             identifier[:jpno].identifier_type = IdentifierType.where(name: 'jpno').first || IdentifierType.create!(name: 'jpno')
-          end
-          if issn
-            identifier[:issn] = Identifier.new(body: issn)
-            identifier[:issn].identifier_type = IdentifierType.where(name: 'issn').first || IdentifierType.create!(name: 'issn')
           end
           if issn_l
             identifier[:issn_l] = Identifier.new(body: issn_l)
