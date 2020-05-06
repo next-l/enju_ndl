@@ -168,9 +168,8 @@ module EnjuNdl
             identifier[:iss_itemno] = Identifier.new(body: iss_itemno)
             identifier[:iss_itemno].identifier_type = IdentifierType.where(name: 'iss_itemno').first || IdentifierType.create!(name: 'iss_itemno')
           end
-          if jpno
-            identifier[:jpno] = Identifier.new(body: jpno)
-            identifier[:jpno].identifier_type = IdentifierType.where(name: 'jpno').first || IdentifierType.create!(name: 'jpno')
+          if jpno.present?
+            manifestation.jpno_record = JpnoRecord.find_or_create_by(body: jpno.strip)
           end
           if issn_l
             identifier[:issn_l] = Identifier.new(body: issn_l)
