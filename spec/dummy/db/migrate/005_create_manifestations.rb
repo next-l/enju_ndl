@@ -1,19 +1,18 @@
 class CreateManifestations < ActiveRecord::Migration[5.2]
   def change
-    create_table :manifestations do |t|
-      t.text :original_title, null: false
+    create_table :manifestations, comment: '書誌' do |t|
+      t.text :original_title, null: false, comment: 'タイトル'
       t.text :title_alternative
       t.text :title_transcription
-      t.string :classification_number
       t.string :manifestation_identifier
-      t.datetime :date_of_publication
       t.datetime :copyright_date
+      t.datetime :date_of_publication, comment: '出版日'
       t.timestamps
-      t.string :access_address
+      t.string :access_address, comment: 'アクセスアドレス'
       t.integer :language_id, default: 1, null: false
       t.integer :carrier_type_id, default: 1, null: false
-      t.integer :start_page
-      t.integer :end_page
+      t.integer :start_page, comment: '開始ページ'
+      t.integer :end_page, comment: '終了ページ'
       t.integer :height
       t.integer :width
       t.integer :depth
@@ -23,7 +22,7 @@ class CreateManifestations < ActiveRecord::Migration[5.2]
       t.string :issue_number_string
       t.string :serial_number_string
       t.integer :edition
-      t.text :note
+      t.text :note, comment: '備考'
       t.boolean :repository_content, default: false, null: false
       t.integer :lock_version, default: 0, null: false
       t.integer :required_role_id, default: 1, null: false

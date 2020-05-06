@@ -1,0 +1,55 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+default:
+  id: 1
+  name: default
+  display_name_translations: {"en": "default", "ja": "既定"}
+  note: default
+  url: 
+  position: 1
+
+unknown:
+  id: 2
+  name: unknown
+  display_name_translations: {"en": "unknown", "ja": "不明"}
+  note: unknown
+  url: 
+  position: 2
+
+cc-by:
+  id: 3
+  name: cc-by
+  display_name_translations: {"en": "Creative Commons Attribution 4.0 (CC BY)", "ja": "クリエイティブ・コモンズ 表示 4.0 (CC BY)"}
+  note: CC BY
+  url: https://creativecommons.org/licenses/by/4.0/
+  position: 3
+
+cc0:
+  id: 4
+  name: cc0
+  display_name_translations: {"en": "Public Domain (CC0)", "ja": "パブリックドメイン (CC0)"}
+  note: CC0
+  url: https://creativecommons.org/publicdomain/zero/1.0/
+  position: 4
+
+mit:
+  id: 5
+  name: mit
+  display_name_translations: {"en": "MIT License", "ja": "MITライセンス"}
+  note: MIT
+  url: https://opensource.org/licenses/MIT
+  position: 5
+
+# == Schema Information
+#
+# Table name: licenses
+#
+#  id                        :bigint           not null, primary key
+#  name                      :string           not null
+#  note                      :text
+#  position                  :integer
+#  created_at                :datetime         not null
+#  updated_at                :datetime         not null
+#  display_name_translations :jsonb            not null
+#  url                       :string
+#

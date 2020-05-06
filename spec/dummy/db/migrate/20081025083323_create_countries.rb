@@ -11,13 +11,13 @@ class CreateCountries < ActiveRecord::Migration[5.2]
   # http://www.iso.org/iso/country_codes/background_on_iso_3166/what_is_iso_3166.htm
 
   def change
-    create_table :countries do |t|
+    create_table :countries, comment: '国・地域' do |t|
       t.string :name,         size: 80, null: false
       t.text :display_name
       t.string :alpha_2,      size: 2
       t.string :alpha_3,      size: 3
       t.string :numeric_3, size: 3
-      t.text :note
+      t.text :note, comment: '備考'
       t.integer :position
     end
     add_index :countries, :name

@@ -4,6 +4,6 @@ class AddNoteToSeriesStatement < ActiveRecord::Migration[5.2]
   end
 
   def self.down
-    remove_column :series_statements, :note
+    remove_column :series_statements, :note, comment: '備考'
   end
 end

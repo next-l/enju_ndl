@@ -5,14 +5,14 @@ class CreateLanguages < ActiveRecord::Migration[5.2]
   # Information on macrolanguages http://en.wikipedia.org/wiki/ISO_639_macrolanguage
 
   def change
-    create_table :languages do |t|
+    create_table :languages, comment: '言語' do |t|
       t.string :name, null: false
       t.string :native_name
       t.text :display_name
       t.string :iso_639_1,        size: 3
       t.string :iso_639_2,        size: 3
       t.string :iso_639_3,        size: 3
-      t.text :note
+      t.text :note, comment: '備考'
       t.integer :position
     end
     add_index :languages, :name, unique: true

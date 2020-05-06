@@ -35,7 +35,7 @@ class CreateAgents < ActiveRecord::Migration[5.2]
       t.integer :country_id, default: 1, null: false
       t.integer :agent_type_id, default: 1, null: false
       t.integer :lock_version, default: 0, null: false
-      t.text :note
+      t.text :note, comment: '備考'
       t.integer :required_role_id, default: 1, null: false
       t.integer :required_score, default: 0, null: false
       t.text :email
