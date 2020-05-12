@@ -20,12 +20,12 @@ describe NdlBook do
   context "import" do
     it "should import bibliographic record", vcr: true do
       manifestation = NdlBook.import_from_sru_response('R100000002-I000010980901-00')
-      manifestation.manifestation_identifier.should eq 'http://iss.ndl.go.jp/books/R100000002-I000010980901-00'
+      expect(manifestation.manifestation_identifier).to eq 'http://iss.ndl.go.jp/books/R100000002-I000010980901-00'
       expect(manifestation.isbn_records.pluck(:body)).to eq ['9784839931995']
-      manifestation.classifications.pluck(:category).should eq ["007.64"]
-      manifestation.identifier_contents(:iss_itemno).should eq ["R100000002-I000010980901-00"]
+      expect(manifestation.classifications.pluck(:category)).to eq ["007.64"]
+      expect(manifestation.ndl_bib_id_record.body).to eq "000010980901"
       expect(manifestation.jpno_record.body).to eq "21816393"
-      manifestation.language.name.should eq "Japanese"
+      expect(manifestation.language.name).to eq "Japanese"
       manifestation.creators.first.full_name.should eq '秋葉, 拓哉'
       manifestation.creators.first.full_name_transcription.should eq 'アキバ, タクヤ'
       manifestation.creators.first.agent_identifier.should eq 'http://id.ndl.go.jp/auth/entity/01208840'
@@ -188,13 +188,13 @@ describe NdlBook do
 
     it "should import edition", vcr: true do
       manifestation = NdlBook.import_from_sru_response("R100000002-I025107686-00")
-      manifestation.edition_string.should eq "改訂第2版"
+      expect(manifestation.edition_string).to eq "改訂第2版"
     end
 
     it "should import volume title", vcr: true do
       manifestation = NdlBook.import_from_sru_response("R100000002-I000011225479-00")
-      manifestation.original_title.should eq "じゃらん 関東・東北"
-      manifestation.title_transcription.should eq "ジャラン カントウ トウホク"
+      expect(manifestation.original_title).to eq "じゃらん 関東・東北"
+      expect(manifestation.title_transcription).to eq "ジャラン カントウ トウホク"
     end
 
     it "should import even with invalid url", vcr: true do

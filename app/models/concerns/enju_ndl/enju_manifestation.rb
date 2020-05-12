@@ -42,9 +42,8 @@ module EnjuNdl
 
       def self.import_record(doc)
         iss_itemno = URI.parse(doc.at('//dcndl:BibAdminResource[@rdf:about]').values.first).path.split('/').last
-        identifier_type = IdentifierType.find_or_create_by!(name: 'iss_itemno')
-        identifier = Identifier.find_by(body: iss_itemno, identifier_type_id: identifier_type.id)
-        return identifier.manifestation if identifier
+        ndl_bib_id = NdlBibIdRecord.find_by(body: iss_itemno.split('-')[1].gsub(/^I/, ''))
+        return ndl_bib_id.manifestation if ndl_bib_id
 
         jpno = doc.at('//dcterms:identifier[@rdf:datatype="http://ndl.go.jp/dcndl/terms/JPNO"]').try(:content)
 
@@ -164,9 +163,8 @@ module EnjuNdl
               manifestation: manifestation
             )
           end
-          if iss_itemno
-            identifier[:iss_itemno] = Identifier.new(body: iss_itemno)
-            identifier[:iss_itemno].identifier_type = IdentifierType.where(name: 'iss_itemno').first || IdentifierType.create!(name: 'iss_itemno')
+          if iss_itemno.present?
+            manifestation.ndl_bib_id_record = NdlBibIdRecord.find_or_create_by(body: iss_itemno.split('-')[1].gsub(/^I/, ''))
           end
           if jpno.present?
             manifestation.jpno_record = JpnoRecord.find_or_create_by(body: jpno.strip)
