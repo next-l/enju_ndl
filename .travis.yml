@@ -27,12 +27,10 @@ sudo: false
 addons:
   postgresql: "10"
   apt:
-    sources:
-      - google-chrome
     packages:
     - postgresql-10
     - postgresql-client-10
-    - google-chrome-stable
+    - chromium-browser
 jdk:
   - openjdk8
 dist: xenial
