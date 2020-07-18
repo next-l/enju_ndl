@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
   s.add_dependency "faraday"
   s.add_dependency "addressable"
 
-  s.add_development_dependency "enju_leaf", "~> 1.3.4.rc.2"
+  s.add_development_dependency "enju_leaf", "~> 1.3.4"
   s.add_development_dependency "enju_question", "~> 0.3.1"
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "mysql2"
