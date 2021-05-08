@@ -148,19 +148,19 @@ module EnjuNdl
           identifier = {}
           if isbn
             identifier[:isbn] = Identifier.new(body: isbn)
-            identifier[:isbn].identifier_type = IdentifierType.where(name: 'isbn').first || IdnetifierType.create!(name: 'isbn')
+            identifier[:isbn].identifier_type = IdentifierType.find_by(name: 'isbn') || IdnetifierType.create!(name: 'isbn')
           end
           if iss_itemno
             identifier[:iss_itemno] = Identifier.new(body: iss_itemno)
-            identifier[:iss_itemno].identifier_type = IdentifierType.where(name: 'iss_itemno').first || IdentifierType.create!(name: 'iss_itemno')
+            identifier[:iss_itemno].identifier_type = IdentifierType.find_by(name: 'iss_itemno') || IdentifierType.create!(name: 'iss_itemno')
           end
           if jpno
             identifier[:jpno] = Identifier.new(body: jpno)
-            identifier[:jpno].identifier_type = IdentifierType.where(name: 'jpno').first || IdentifierType.create!(name: 'jpno')
+            identifier[:jpno].identifier_type = IdentifierType.find_by(name: 'jpno') || IdentifierType.create!(name: 'jpno')
           end
           if issn
             identifier[:issn] = Identifier.new(body: issn)
-            identifier[:issn].identifier_type = IdentifierType.where(name: 'issn').first || IdentifierType.create!(name: 'issn')
+            identifier[:issn].identifier_type = IdentifierType.find_by(name: 'issn') || IdentifierType.create!(name: 'issn')
           end
           if issn_l
             identifier[:issn_l] = Identifier.new(body: issn_l)
