@@ -164,10 +164,10 @@ module EnjuNdl
             )
           end
           if iss_itemno.present?
-            manifestation.ndl_bib_id_record = NdlBibIdRecord.find_or_create_by(body: iss_itemno.split('-')[1].gsub(/^I/, ''))
+            manifestation.ndl_bib_id_record = NdlBibIdRecord.find_or_initialize_by(body: iss_itemno.split('-')[1].gsub(/^I/, ''))
           end
           if jpno.present?
-            manifestation.jpno_record = JpnoRecord.find_or_create_by(body: jpno.strip)
+            manifestation.jpno_record = JpnoRecord.find_or_initialize_by(body: jpno.strip)
           end
           if issn_l
             identifier[:issn_l] = Identifier.new(body: issn_l)
