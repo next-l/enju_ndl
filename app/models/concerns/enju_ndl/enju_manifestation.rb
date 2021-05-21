@@ -13,6 +13,8 @@ module EnjuNdl
         end
       end
 
+      accepts_nested_attributes_for :jpno_record, allow_destroy: true, reject_if: :all_blank
+
       def self.import_isbn(isbn)
         self.import_from_ndl_search(isbn: isbn)
       end
