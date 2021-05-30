@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<%= @locale.to_s -%>" lang="<%= @locale.to_s -%>">
-<head>
-  <meta charset="UTF-8" />
-  <%= render 'page/include' %>
-  <%= render 'page/portlets' %>
-  <title><%= t('enju_ndl.import_from_ndl_search') %></title>
-</head>
-<body itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    <title><%= t('enju_ndl.import_from_ndl_search') %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
 
-<%= render 'page/header' %>
-<%= render 'page/menu' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage">
 
-<div id="content">
+    <%= render 'page/header' %>
+    <%= render 'page/menu' %>
 
-<%= yield %>
+    <div id="content">
 
-</div>
+    <%= yield %>
 
-<%= render 'page/footer' %>
+    </div>
 
-</body>
+    <%= render 'page/footer' %>
+
+  </body>
 </html>
