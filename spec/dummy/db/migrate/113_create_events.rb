@@ -8,7 +8,6 @@ class CreateEvents < ActiveRecord::Migration[4.2]
       t.datetime :start_at
       t.datetime :end_at
       t.boolean :all_day, default: false, null: false
-      t.datetime :deleted_at
       t.text :display_name
 
       t.timestamps

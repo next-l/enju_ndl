@@ -2,7 +2,11 @@ class CreateUserExportFileTransitions < ActiveRecord::Migration[5.2]
   def change
     create_table :user_export_file_transitions do |t|
       t.string :to_state
-      t.text :metadata, default: "{}"
+      if ActiveRecord::Base.configurations[Rails.env]["adapter"].try(:match, /mysql/)
+        t.text :metadata
+      else
+        t.text :metadata, default: "{}"
+      end
       t.integer :sort_key
       t.references :user_export_file, index: true
       t.timestamps

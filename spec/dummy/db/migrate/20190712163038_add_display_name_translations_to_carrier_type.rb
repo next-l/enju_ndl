@@ -15,6 +15,7 @@ class AddDisplayNameTranslationsToCarrierType < ActiveRecord::Migration[5.2]
       :produce_types,
       :realize_types
     ].each do |table|
+      rename_column table, :display_name, :old_display_name
       add_column table, :display_name_translations, :jsonb, default: {}, null: false
     end
   end

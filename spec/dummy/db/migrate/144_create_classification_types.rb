@@ -1,5 +1,5 @@
-class CreateClassificationTypes < ActiveRecord::Migration[4.2]
-  def self.up
+class CreateClassificationTypes < ActiveRecord::Migration[5.2]
+  def change
     create_table :classification_types do |t|
       t.string :name, null: false
       t.text :display_name
@@ -8,9 +8,5 @@ class CreateClassificationTypes < ActiveRecord::Migration[4.2]
 
       t.timestamps
     end
-  end
-
-  def self.down
-    drop_table :classification_types
   end
 end

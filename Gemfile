@@ -12,14 +12,17 @@ gemspec
 # your gem to rubygems.org.
 gem "jquery-rails"
 gem 'sprockets', '~> 3.7'
-gem 'rails', '~> 5.2'
+gem 'rails', '~> 6.0.3'
 group :test do
   gem 'rails-controller-testing'
-  gem 'rspec_junit_formatter'
+  gem 'rspec_junit_formatter', require: false
 end
 
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
 gem 'enju_leaf', github: 'next-l/enju_leaf', branch: '2.x'
+gem 'enju_seed', github: 'next-l/enju_seed', branch: '2.x'
+gem 'enju_library', github: 'next-l/enju_library', branch: '2.x'
+gem 'enju_biblio', github: 'next-l/enju_biblio', branch: '2.x'
 gem 'enju_bookmark', github: 'next-l/enju_bookmark', branch: '2.x'
 gem 'enju_question', github: 'next-l/enju_question', branch: '2.x'
