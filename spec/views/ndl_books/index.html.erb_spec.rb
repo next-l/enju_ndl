@@ -7,7 +7,7 @@ describe "ndl_books/index" do
       assign(:query, "test")
       books = NdlBook.search(params[:query])
       assign(:books, Kaminari.paginate_array(books[:items],
-                                             total_count: books[:total_entries],
+                                             total_count: books[:total_entries]
                                              ).page(1).per(10))
       render
       expect(rendered).to include "https://iss.ndl.go.jp/books?any=test"

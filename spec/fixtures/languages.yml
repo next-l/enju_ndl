@@ -2,8 +2,7 @@
 language_00001: 
   position: 1
   name: unknown  
-  display_name: "en: unknown\r\n\
-    ja: 不明"
+  display_name: "unknown / 不明"
   iso_639_1: unknown
   iso_639_2: unknown
   iso_639_3: unknown
@@ -1333,9 +1332,7 @@ language_00104:
 language_00132: 
   position: 132
   name: Pali
-  display_name: !binary |
-    UMSBbGk=
-
+  display_name: Pali
   iso_639_1: pi
   iso_639_2: pli
   iso_639_3: pli
@@ -1355,8 +1352,7 @@ language_00160:
 language_00077: 
   position: 77
   name: Japanese  
-  display_name: "en: Japanese\r\n\
-    ja: 日本語"
+  display_name: 日本語
   iso_639_1: ja
   iso_639_2: jpn
   iso_639_3: jpn
@@ -1883,19 +1879,3 @@ language_00140:
   id: 140
   note: 
   native_name: 
-
-# == Schema Information
-#
-# Table name: languages
-#
-#  id           :integer         not null, primary key
-#  name         :string(255)     not null
-#  native_name  :string(255)
-#  display_name :text
-#  iso_639_1    :string(255)
-#  iso_639_2    :string(255)
-#  iso_639_3    :string(255)
-#  note         :text
-#  position     :integer
-#
-
