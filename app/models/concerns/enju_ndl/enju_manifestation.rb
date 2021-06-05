@@ -9,7 +9,7 @@ module EnjuNdl
       has_one :ndl_bib_id_record
       searchable do
         string :jpno do
-          jpno_record.try(:body)
+          jpno_record&.body
         end
       end
 

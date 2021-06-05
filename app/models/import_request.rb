@@ -1,7 +1,7 @@
 require_dependency EnjuBiblio::Engine.config.root.join('app', 'models', 'import_request.rb').to_s
 
 class ImportRequest < ApplicationRecord
-  include EnjuNdl::EnjuManifestation
+  # include EnjuNdl::EnjuManifestation
 end
 
 # == Schema Information
