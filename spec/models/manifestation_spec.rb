@@ -12,6 +12,10 @@ describe Manifestation do
     expect(Manifestation.import_isbn('4797327030')).to be_valid
   end
 
+  it "should import a foreign book", vcr: true do
+    expect(Manifestation.import_isbn('0262220733')).to be_valid
+  end
+
   it "should import series statement", vcr: true do
     manifestation = Manifestation.import_isbn('4106101491')
     expect(manifestation.series_statements.count).to eq  1
