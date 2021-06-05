@@ -1,6 +1,12 @@
 require: rubocop-rails
-inherit_from: .rubocop_todo.yml
-
+Rails:
+  Enabled: true
+AllCops:
+  TargetRubyVersion: 2.5
+  Exclude:
+    - 'node_modules/**/*'
+    - 'spec/dummy/node_modules/**/*'
+    - 'spec/dummy/db/schema.rb'
 Layout/SpaceInsideHashLiteralBraces:
   Enabled: false
 Layout/SpaceInsideBlockBraces:
@@ -20,4 +26,10 @@ Metrics/MethodLength:
 Metrics/LineLength:
   Enabled: false
 Metrics/BlockLength:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/SymbolArray:
+  Enabled: false
+Style/BlockDelimiters:
   Enabled: false

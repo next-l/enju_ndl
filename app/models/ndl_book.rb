@@ -66,9 +66,9 @@ class NdlBook
   end
 
   def self.import_from_sru_response(itemno)
-    identifier_type = IdentifierType.where(name: 'iss_itemno').first
+    identifier_type = IdentifierType.find_by(name: 'iss_itemno')
     identifier_type ||= IdentifierType.create!(name: 'iss_itemno')
-    identifier = Identifier.where(body: itemno, identifier_type_id: identifier_type.id).first
+    identifier = Identifier.find_by(body: itemno, identifier_type_id: identifier_type.id)
     return if identifier
     url = "https://iss.ndl.go.jp/api/sru?operation=searchRetrieve&recordSchema=dcndl&maximumRecords=1&query=%28itemno=#{itemno}%29&onlyBib=true"
     xml = Faraday.get(url).body
